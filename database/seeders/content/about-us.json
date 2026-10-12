@@ -1,0 +1,906 @@
+{
+    "page": {
+        "slug": "about-us",
+        "config": {
+            "title": "About Us | Intelliworkz",
+            "body_class": "page-about",
+            "extra_css": [
+                "assets/css/about.css"
+            ],
+            "no_zoom": true,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "11-final-cta",
+            "section_label": "11 Final Cta",
+            "key": "11-final-cta.1",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 1
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.1",
+            "label": "Link text: Home",
+            "type": "text",
+            "value": "Home",
+            "sort": 2
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.2",
+            "label": "Text: About Us",
+            "type": "text",
+            "value": "About Us",
+            "sort": 3
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.3",
+            "label": "Paragraph: 01 / About Intelliworkz",
+            "type": "text",
+            "value": "01 / About Intelliworkz",
+            "sort": 4
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.4",
+            "label": "Text: Technology.",
+            "type": "text",
+            "value": "Technology.",
+            "sort": 5
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.5",
+            "label": "Text: Creativity.",
+            "type": "text",
+            "value": "Creativity.",
+            "sort": 6
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.6",
+            "label": "Text: Digital.",
+            "type": "text",
+            "value": "Digital.",
+            "sort": 7
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.7",
+            "label": "Text: One Connected Partner.",
+            "type": "text",
+            "value": "One Connected Partner.",
+            "sort": 8
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.8",
+            "label": "Paragraph: A technology, creative and digital partner bu…",
+            "type": "text",
+            "value": "A technology, creative and digital partner built around the way your business works.",
+            "sort": 9
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.9",
+            "label": "Paragraph: Intelliworkz brings together technology, crea…",
+            "type": "textarea",
+            "value": "Intelliworkz brings together technology, creativity, digital expertise and business understanding to help organisations build, improve and scale. From digital transformation and enterprise software to branding, UI/UX, marketing and custom technology solutions, we bring the right capabilities together around your business requirements.",
+            "sort": 10
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.10",
+            "label": "Button text: Start a Conversation",
+            "type": "text",
+            "value": "Start a Conversation",
+            "sort": 11
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.11",
+            "label": "Button link: Start a Conversation",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 12
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.12",
+            "label": "Button text: Explore Our Capabilities",
+            "type": "text",
+            "value": "Explore Our Capabilities",
+            "sort": 13
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.13",
+            "label": "Button link: Explore Our Capabilities",
+            "type": "url",
+            "value": "#capabilities",
+            "sort": 14
+        },
+        {
+            "section": "01-hero",
+            "section_label": "01 Hero",
+            "key": "01-hero.14",
+            "label": "Paragraph: One partner. Multiple capabilities.",
+            "type": "text",
+            "value": "One partner. Multiple capabilities.",
+            "sort": 15
+        },
+        {
+            "section": "02-who-we-are",
+            "section_label": "02 Who We Are",
+            "key": "02-who-we-are.1",
+            "label": "Paragraph: 02 / Who We Are",
+            "type": "text",
+            "value": "02 / Who We Are",
+            "sort": 16
+        },
+        {
+            "section": "02-who-we-are",
+            "section_label": "02 Who We Are",
+            "key": "02-who-we-are.2",
+            "label": "Heading: Different Capabilities. One Connected Approac…",
+            "type": "html",
+            "value": "Different<br>Capabilities.<br><em>One Connected</em><br><em>Approach.</em>",
+            "sort": 17
+        },
+        {
+            "section": "02-who-we-are",
+            "section_label": "02 Who We Are",
+            "key": "02-who-we-are.3",
+            "label": "Paragraph: Intelliworkz Business Solutions Private Limit…",
+            "type": "textarea",
+            "value": "Intelliworkz Business Solutions Private Limited is a Digital and Technology Services Company delivering solutions across digital transformation, enterprise software, technology, digital marketing, design, UI/UX, web development, custom software development, eCommerce and mobile applications.",
+            "sort": 18
+        },
+        {
+            "section": "02-who-we-are",
+            "section_label": "02 Who We Are",
+            "key": "02-who-we-are.4",
+            "label": "Paragraph: Businesses rarely operate within one discipli…",
+            "type": "textarea",
+            "value": "Businesses rarely operate within one discipline. Their technology, brand, customer experience, marketing and operations are connected — and the solutions supporting them should be too.",
+            "sort": 19
+        },
+        {
+            "section": "02-who-we-are",
+            "section_label": "02 Who We Are",
+            "key": "02-who-we-are.5",
+            "label": "Paragraph: At Intelliworkz, we bring these capabilities …",
+            "type": "textarea",
+            "value": "At Intelliworkz, we bring these capabilities together so businesses can work with one connected team rather than managing multiple disconnected specialists.",
+            "sort": 20
+        },
+        {
+            "section": "03-the-intelliworkz-difference",
+            "section_label": "03 The Intelliworkz Difference",
+            "key": "03-the-intelliworkz-difference.1",
+            "label": "Paragraph: 03 / Why Intelliworkz",
+            "type": "text",
+            "value": "03 / Why Intelliworkz",
+            "sort": 21
+        },
+        {
+            "section": "03-the-intelliworkz-difference",
+            "section_label": "03 The Intelliworkz Difference",
+            "key": "03-the-intelliworkz-difference.2",
+            "label": "Heading: We Bring the Right Disciplines Together.",
+            "type": "text",
+            "value": "We Bring the Right Disciplines Together.",
+            "sort": 22
+        },
+        {
+            "section": "03-the-intelliworkz-difference",
+            "section_label": "03 The Intelliworkz Difference",
+            "key": "03-the-intelliworkz-difference.3",
+            "label": "Paragraph: The strongest solutions happen when these dis…",
+            "type": "text",
+            "value": "The strongest solutions happen when these disciplines work together.",
+            "sort": 23
+        },
+        {
+            "section": "03-the-intelliworkz-difference",
+            "section_label": "03 The Intelliworkz Difference",
+            "key": "03-the-intelliworkz-difference.4",
+            "label": "Paragraph: That is why Intelliworkz brings multiple capa…",
+            "type": "textarea",
+            "value": "That is why Intelliworkz brings multiple capabilities under one roof — allowing our teams to collaborate across creative, digital and technology disciplines to create work that is functional, scalable, engaging and aligned with business objectives.",
+            "sort": 24
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.1",
+            "label": "Paragraph: 04 / How We Think",
+            "type": "text",
+            "value": "04 / How We Think",
+            "sort": 25
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.2",
+            "label": "Heading: Understanding the Business Before Building th…",
+            "type": "text",
+            "value": "Understanding the Business Before Building the Solution.",
+            "sort": 26
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.3",
+            "label": "Paragraph: Every organisation has different challenges, …",
+            "type": "textarea",
+            "value": "Every organisation has different challenges, customers, processes and goals. We begin by understanding those differences before defining the solution.",
+            "sort": 27
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.4",
+            "label": "Paragraph: We study the business model, requirements, au…",
+            "type": "textarea",
+            "value": "We study the business model, requirements, audience and existing ecosystem before recommending an approach. This allows our teams to create solutions around the organisation rather than applying the same approach to every client.",
+            "sort": 28
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.5",
+            "label": "Paragraph: Once the direction is established, our creati…",
+            "type": "textarea",
+            "value": "Once the direction is established, our creative, digital and technology teams work collaboratively through planning, design, development, testing and implementation.",
+            "sort": 29
+        },
+        {
+            "section": "04-how-we-think",
+            "section_label": "04 How We Think",
+            "key": "04-how-we-think.6",
+            "label": "Text: Foundation first",
+            "type": "text",
+            "value": "Foundation first",
+            "sort": 30
+        },
+        {
+            "section": "05-values",
+            "section_label": "05 Values",
+            "key": "05-values.1",
+            "label": "Paragraph: 05 / Our Values",
+            "type": "text",
+            "value": "05 / Our Values",
+            "sort": 31
+        },
+        {
+            "section": "05-values",
+            "section_label": "05 Values",
+            "key": "05-values.2",
+            "label": "Heading: What We Expect From Ourselves",
+            "type": "text",
+            "value": "What We Expect From Ourselves",
+            "sort": 32
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.1",
+            "label": "Paragraph: 06 / What We Bring",
+            "type": "text",
+            "value": "06 / What We Bring",
+            "sort": 33
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.2",
+            "label": "Heading: One Partner. Multiple Capabilities.",
+            "type": "text",
+            "value": "One Partner. Multiple Capabilities.",
+            "sort": 34
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.3",
+            "label": "Paragraph: Businesses need to communicate, operate and g…",
+            "type": "textarea",
+            "value": "Businesses need to communicate, operate and grow across multiple touchpoints. Intelliworkz brings specialised capabilities together through one connected team.",
+            "sort": 35
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.4",
+            "label": "Text: Custom",
+            "type": "text",
+            "value": "Custom",
+            "sort": 36
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.5",
+            "label": "Text: Software",
+            "type": "text",
+            "value": "Software",
+            "sort": 37
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.6",
+            "label": "Text: Websites",
+            "type": "text",
+            "value": "Websites",
+            "sort": 38
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.7",
+            "label": "Text: Portals",
+            "type": "text",
+            "value": "Portals",
+            "sort": 39
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.8",
+            "label": "Text: eCommerce",
+            "type": "text",
+            "value": "eCommerce",
+            "sort": 40
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.9",
+            "label": "Text: Platforms",
+            "type": "text",
+            "value": "Platforms",
+            "sort": 41
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.10",
+            "label": "Text: Mobile",
+            "type": "text",
+            "value": "Mobile",
+            "sort": 42
+        },
+        {
+            "section": "06-capabilities",
+            "section_label": "06 Capabilities",
+            "key": "06-capabilities.11",
+            "label": "Text: Applications",
+            "type": "text",
+            "value": "Applications",
+            "sort": 43
+        },
+        {
+            "section": "07-how-we-work",
+            "section_label": "07 How We Work",
+            "key": "07-how-we-work.1",
+            "label": "Paragraph: 07 / How We Work",
+            "type": "text",
+            "value": "07 / How We Work",
+            "sort": 44
+        },
+        {
+            "section": "07-how-we-work",
+            "section_label": "07 How We Work",
+            "key": "07-how-we-work.2",
+            "label": "Heading: From Understanding to Execution.",
+            "type": "text",
+            "value": "From Understanding to Execution.",
+            "sort": 45
+        },
+        {
+            "section": "08-team",
+            "section_label": "08 Team",
+            "key": "08-team.1",
+            "label": "Paragraph: 08 / The People Behind the Work",
+            "type": "text",
+            "value": "08 / The People Behind the Work",
+            "sort": 46
+        },
+        {
+            "section": "08-team",
+            "section_label": "08 Team",
+            "key": "08-team.2",
+            "label": "Heading: Different Skills. One Shared Commitment.",
+            "type": "text",
+            "value": "Different Skills. One Shared Commitment.",
+            "sort": 47
+        },
+        {
+            "section": "08-team",
+            "section_label": "08 Team",
+            "key": "08-team.3",
+            "label": "Paragraph: Our team brings together people from creative…",
+            "type": "textarea",
+            "value": "Our team brings together people from creative, digital and technology disciplines. That diversity allows us to approach business challenges from different perspectives and find solutions that balance business requirements with creativity and technology.",
+            "sort": 48
+        },
+        {
+            "section": "08-team",
+            "section_label": "08 Team",
+            "key": "08-team.4",
+            "label": "Paragraph: We are driven by curiosity, continuous learni…",
+            "type": "textarea",
+            "value": "We are driven by curiosity, continuous learning and the desire to create better work — staying adaptable as technologies, digital behaviour and business needs continue to evolve.",
+            "sort": 49
+        },
+        {
+            "section": "09-ecosystem",
+            "section_label": "09 Ecosystem",
+            "key": "09-ecosystem.1",
+            "label": "Paragraph: 09 / Our Ecosystem",
+            "type": "text",
+            "value": "09 / Our Ecosystem",
+            "sort": 50
+        },
+        {
+            "section": "09-ecosystem",
+            "section_label": "09 Ecosystem",
+            "key": "09-ecosystem.2",
+            "label": "Heading: A Wider Ecosystem of Expertise.",
+            "type": "text",
+            "value": "A Wider Ecosystem of Expertise.",
+            "sort": 51
+        },
+        {
+            "section": "09-ecosystem",
+            "section_label": "09 Ecosystem",
+            "key": "09-ecosystem.3",
+            "label": "Paragraph: Intelliworkz operates alongside a group of sp…",
+            "type": "textarea",
+            "value": "Intelliworkz operates alongside a group of specialised companies, creating access to additional expertise across enterprise technology, business consulting, startups and industrial automation.",
+            "sort": 52
+        },
+        {
+            "section": "10-why-clients-stay",
+            "section_label": "10 Why Clients Stay",
+            "key": "10-why-clients-stay.1",
+            "label": "Paragraph: 10 / The Relationship",
+            "type": "text",
+            "value": "10 / The Relationship",
+            "sort": 53
+        },
+        {
+            "section": "10-why-clients-stay",
+            "section_label": "10 Why Clients Stay",
+            "key": "10-why-clients-stay.2",
+            "label": "Heading: We Don’t Just Deliver Projects. We Build Rela…",
+            "type": "html",
+            "value": "We Don’t Just Deliver Projects.<br><em>We Build Relationships.</em>",
+            "sort": 54
+        },
+        {
+            "section": "10-why-clients-stay",
+            "section_label": "10 Why Clients Stay",
+            "key": "10-why-clients-stay.3",
+            "label": "Paragraph: The work may start with a project. The relati…",
+            "type": "text",
+            "value": "The work may start with a project. The relationship should go further.",
+            "sort": 55
+        },
+        {
+            "section": "10-why-clients-stay",
+            "section_label": "10 Why Clients Stay",
+            "key": "10-why-clients-stay.4",
+            "label": "Text: Project",
+            "type": "text",
+            "value": "Project",
+            "sort": 56
+        },
+        {
+            "section": "10-why-clients-stay",
+            "section_label": "10 Why Clients Stay",
+            "key": "10-why-clients-stay.5",
+            "label": "Text: Relationship",
+            "type": "text",
+            "value": "Relationship",
+            "sort": 57
+        },
+        {
+            "section": "11-final-cta",
+            "section_label": "11 Final Cta",
+            "key": "11-final-cta.2",
+            "label": "Paragraph: Let’s bring the right people, ideas and techn…",
+            "type": "text",
+            "value": "Let’s bring the right people, ideas and technology together",
+            "sort": 58
+        },
+        {
+            "section": "11-final-cta",
+            "section_label": "11 Final Cta",
+            "key": "11-final-cta.3",
+            "label": "Heading: Have a Business Challenge to Solve?",
+            "type": "text",
+            "value": "Have a Business Challenge to Solve?",
+            "sort": 59
+        },
+        {
+            "section": "11-final-cta",
+            "section_label": "11 Final Cta",
+            "key": "11-final-cta.4",
+            "label": "Paragraph: Whether you’re starting something new, transf…",
+            "type": "textarea",
+            "value": "Whether you’re starting something new, transforming an existing business or looking for a reliable team to support your digital and technology requirements, Intelliworkz can help you move from idea to execution.",
+            "sort": 60
+        }
+    ],
+    "lists": [
+        {
+            "key": "ab_metrics",
+            "scope": "about-us",
+            "items": [
+                {
+                    "value": "18",
+                    "suffix": "+",
+                    "label": "Years of Experience"
+                },
+                {
+                    "value": "1200",
+                    "suffix": "+",
+                    "label": "Global Clients"
+                },
+                {
+                    "value": "2500",
+                    "suffix": "+",
+                    "label": "Projects Delivered"
+                },
+                {
+                    "value": "7",
+                    "suffix": "",
+                    "label": "Countries Global Presence"
+                }
+            ]
+        },
+        {
+            "key": "ab_caps",
+            "scope": "about-us",
+            "items": [
+                {
+                    "no": "01",
+                    "name": "Brand",
+                    "c": "var(--c-blue)",
+                    "img": "collaterals/services.png",
+                    "alt": "Brand and corporate collateral system",
+                    "text": "Brand strategy, logo design, visual identity and brand guidelines.",
+                    "items": [
+                        "Brand strategy",
+                        "Logo design",
+                        "Visual identity",
+                        "Brand guidelines"
+                    ]
+                },
+                {
+                    "no": "02",
+                    "name": "Creative",
+                    "c": "var(--c-orange)",
+                    "img": "packaging/services.png",
+                    "alt": "Packaging and creative design work",
+                    "text": "Packaging, outdoor communication, presentations, marketing collateral and corporate branding.",
+                    "items": [
+                        "Packaging",
+                        "Outdoor communication",
+                        "Presentations",
+                        "Marketing collateral",
+                        "Corporate branding"
+                    ]
+                },
+                {
+                    "no": "03",
+                    "name": "Digital",
+                    "c": "var(--c-green)",
+                    "img": "seo/services.png",
+                    "alt": "SEO and digital marketing dashboard",
+                    "text": "SEO, lead generation, digital campaigns, social media content and email marketing.",
+                    "items": [
+                        "SEO",
+                        "Lead generation",
+                        "Digital campaigns",
+                        "Social media content",
+                        "Email marketing"
+                    ]
+                },
+                {
+                    "no": "04",
+                    "name": "Technology",
+                    "c": "var(--c-purple)",
+                    "img": null,
+                    "alt": "",
+                    "text": "Websites, custom software, portals, eCommerce platforms and mobile applications.",
+                    "items": [
+                        "Websites",
+                        "Custom software",
+                        "Portals",
+                        "eCommerce platforms",
+                        "Mobile applications"
+                    ]
+                },
+                {
+                    "no": "05",
+                    "name": "Motion",
+                    "c": "var(--c-pink)",
+                    "img": "video/services.png",
+                    "alt": "Video editing and motion graphics workflow",
+                    "text": "Explainer videos, motion graphics, product demonstrations, software demos and corporate films.",
+                    "items": [
+                        "Explainer videos",
+                        "Motion graphics",
+                        "Product demonstrations",
+                        "Software demos",
+                        "Corporate films"
+                    ]
+                },
+                {
+                    "no": "06",
+                    "name": "Experiential",
+                    "c": "var(--c-yellow)",
+                    "img": "3d/services.png",
+                    "alt": "3D, AR and VR visualisation",
+                    "text": "UI/UX, AR, VR and mixed reality experiences.",
+                    "items": [
+                        "UI/UX",
+                        "AR",
+                        "VR",
+                        "Mixed reality"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ab_diff_lines",
+            "scope": "about-us",
+            "items": [
+                [
+                    "Technology",
+                    "can solve problems."
+                ],
+                [
+                    "Creativity",
+                    "can create connections."
+                ],
+                [
+                    "Digital",
+                    "can create visibility."
+                ],
+                [
+                    "Strategy",
+                    "can provide direction."
+                ]
+            ]
+        },
+        {
+            "key": "ab_think",
+            "scope": "about-us",
+            "items": [
+                [
+                    "BUSINESS",
+                    "Model, audience and existing ecosystem"
+                ],
+                [
+                    "UNDERSTAND",
+                    "Challenges, customers, processes and goals"
+                ],
+                [
+                    "DEFINE",
+                    "A direction built around the organisation"
+                ],
+                [
+                    "COLLABORATE",
+                    "Creative, digital and technology teams together"
+                ],
+                [
+                    "BUILD",
+                    "Planning, design, development and testing"
+                ],
+                [
+                    "IMPROVE",
+                    "Implementation, feedback and refinement"
+                ]
+            ]
+        },
+        {
+            "key": "ab_values",
+            "scope": "about-us",
+            "items": [
+                {
+                    "no": "01",
+                    "icon": "<circle cx=\"9\" cy=\"8\" r=\"4\"/><path d=\"M2 21c0-4 3-7 7-7s7 3 7 7\"/><path d=\"M16 11l2 2 4-4\"/>",
+                    "tag": "Client First",
+                    "title": "Your Business Comes First",
+                    "text": "We start by understanding your objectives, challenges, customers and expectations, then build solutions around what genuinely matters to the business."
+                },
+                {
+                    "no": "02",
+                    "icon": "<path d=\"M22 7l-8.5 8.5-5-5L2 17\"/><path d=\"M16 7h6v6\"/>",
+                    "tag": "Result Driven",
+                    "title": "Ideas Matter. Outcomes Matter More.",
+                    "text": "We focus on work that serves a business purpose — improving experiences, strengthening brands, streamlining operations or creating new opportunities."
+                },
+                {
+                    "no": "03",
+                    "icon": "<path d=\"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z\"/><path d=\"M8.5 12l2.5 2.5L16 9.5\"/>",
+                    "tag": "Accountability",
+                    "title": "Built on Transparency and Ownership",
+                    "text": "We communicate openly, take responsibility for our work and remain accountable throughout the engagement."
+                },
+                {
+                    "no": "04",
+                    "icon": "<path d=\"M9 18h6\"/><path d=\"M10 21h4\"/><path d=\"M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z\"/>",
+                    "tag": "Continuously Curious",
+                    "title": "Curious Minds. Diverse Skills. Shared Commitment.",
+                    "text": "Our teams continue learning, exploring new technologies and adapting to changing digital behaviour."
+                }
+            ]
+        },
+        {
+            "key": "ab_steps",
+            "scope": "about-us",
+            "items": [
+                {
+                    "no": "01",
+                    "title": "Understand",
+                    "text": "We learn about your business, audience, objectives, challenges and existing ecosystem."
+                },
+                {
+                    "no": "02",
+                    "title": "Define",
+                    "text": "We identify priorities, requirements and opportunities and establish a clear direction."
+                },
+                {
+                    "no": "03",
+                    "title": "Create",
+                    "text": "Our creative, digital and technology teams collaborate to develop the solution."
+                },
+                {
+                    "no": "04",
+                    "title": "Execute",
+                    "text": "We move from concepts into production through structured development, implementation and testing."
+                },
+                {
+                    "no": "05",
+                    "title": "Review",
+                    "text": "We evaluate the outcome, gather feedback and refine where required."
+                },
+                {
+                    "no": "06",
+                    "title": "Grow",
+                    "text": "We continue supporting, improving and scaling the solution as the business evolves."
+                }
+            ]
+        },
+        {
+            "key": "ab_team_tiles",
+            "scope": "about-us",
+            "items": [
+                {
+                    "img": "video/pf-base-19393f.png",
+                    "label": "Motion",
+                    "cls": "is-a"
+                },
+                {
+                    "img": "magazine/ex-mockup.png",
+                    "label": "Print & Brand",
+                    "cls": "is-b"
+                },
+                {
+                    "img": "seo/portfolio-main.png",
+                    "label": "Digital & UI",
+                    "cls": "is-c"
+                },
+                {
+                    "img": "packaging/tile-a.png",
+                    "label": "Packaging",
+                    "cls": "is-d"
+                },
+                {
+                    "img": "manufacture/collage.png",
+                    "label": "Technology",
+                    "cls": "is-e"
+                }
+            ]
+        },
+        {
+            "key": "ab_team_tags",
+            "scope": "about-us",
+            "items": [
+                "Young & passionate",
+                "Multidisciplinary",
+                "Continuously learning"
+            ]
+        },
+        {
+            "key": "ab_eco",
+            "scope": "about-us",
+            "items": [
+                {
+                    "name": "Safal Infosoft",
+                    "cat": "Enterprise Technology",
+                    "tags": [
+                        "ERP",
+                        "CRM",
+                        "DMS",
+                        "POS",
+                        "Agile Development",
+                        "Mobile Applications"
+                    ]
+                },
+                {
+                    "name": "Ideaz Ventures India",
+                    "cat": "Business & Startup Consulting",
+                    "tags": [
+                        "Startup Strategy",
+                        "Technology Implementation",
+                        "Financial Management"
+                    ]
+                },
+                {
+                    "name": "Intel-iot Automation",
+                    "cat": "Industrial Automation & Smart Technology",
+                    "tags": [
+                        "Factory Automation",
+                        "Robotics",
+                        "Machine Learning",
+                        "Energy Monitoring",
+                        "Industry 4.0"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "ab_stay",
+            "scope": "about-us",
+            "items": [
+                {
+                    "icon": "<path d=\"M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1\"/><path d=\"M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1\"/>",
+                    "title": "One Connected Team",
+                    "text": "Work across multiple capabilities without managing disconnected vendors."
+                },
+                {
+                    "icon": "<circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.3-4.3\"/>",
+                    "title": "Business Understanding",
+                    "text": "We take time to understand the business behind the requirement."
+                },
+                {
+                    "icon": "<path d=\"M21 2v6h-6\"/><path d=\"M3 12a9 9 0 0 1 15-6.7L21 8\"/><path d=\"M3 22v-6h6\"/><path d=\"M21 12a9 9 0 0 1-15 6.7L3 16\"/>",
+                    "title": "Long-Term Support",
+                    "text": "Continue improving, supporting and scaling after initial delivery."
+                },
+                {
+                    "icon": "<path d=\"M12 2l10 5-10 5L2 7z\"/><path d=\"M2 17l10 5 10-5\"/><path d=\"M2 12l10 5 10-5\"/>",
+                    "title": "Adaptable Expertise",
+                    "text": "Bring in the right capabilities as business requirements evolve."
+                }
+            ]
+        }
+    ]
+}

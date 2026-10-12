@@ -1,0 +1,382 @@
+{
+    "page": {
+        "slug": "contact-us",
+        "config": {
+            "title": "Contact Us | Intelliworkz",
+            "body_class": "page-contact",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css",
+                "assets/css/manufacture.css",
+                "assets/css/contact.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Image (hero.png)",
+            "type": "image",
+            "value": "assets/images/contact/hero.png",
+            "sort": 1
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.1",
+            "label": "Image (outline.png)",
+            "type": "image",
+            "value": "assets/images/contact/outline.png",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Paragraph: Home / Contact Us",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <span>Contact Us</span>",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading: Let’s Start a Conversation.",
+            "type": "html",
+            "value": "Let’s Start a<br>Conversation.",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Paragraph: Tell us what you’re trying to build, improve,…",
+            "type": "textarea",
+            "value": "Tell us what you’re trying to build, improve, market or manage. We’ll understand your requirement, identify the right capabilities and connect you with the right team.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Button link: Start a Project",
+            "type": "url",
+            "value": "#contact-form",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Button text: Explore Our Services",
+            "type": "text",
+            "value": "Explore Our Services",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Button link: Explore Our Services",
+            "type": "url",
+            "value": "#",
+            "sort": 9
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.2",
+            "label": "Heading: Bring Us the Requirement. We’ll Bring the Rig…",
+            "type": "html",
+            "value": "Bring Us the Requirement.<br>We’ll Bring the Right Expertise.",
+            "sort": 10
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.3",
+            "label": "Paragraph: Whether you need a single specialist service,…",
+            "type": "textarea",
+            "value": "Whether you need a single specialist service, an ongoing delivery partner or a dedicated team, tell us what you need and we’ll connect the relevant capabilities around your requirement.",
+            "sort": 11
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.4",
+            "label": "Heading: Let’s Bring Your Packaging Vision to Life.",
+            "type": "text",
+            "value": "Let’s Bring Your Packaging Vision to Life.",
+            "sort": 12
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.5",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your project.",
+            "sort": 13
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.6",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 14
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.7",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 15
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.8",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 16
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.1",
+            "label": "Heading: Working Across Markets. Connected From One Te…",
+            "type": "html",
+            "value": "Working Across Markets.<br>Connected From One Team.",
+            "sort": 17
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.2",
+            "label": "Paragraph: Our teams work with businesses across markets…",
+            "type": "textarea",
+            "value": "Our teams work with businesses across markets while maintaining a consistent delivery structure, project communication and quality standard.",
+            "sort": 18
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.3",
+            "label": "Text: Phone",
+            "type": "text",
+            "value": "Phone",
+            "sort": 19
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.4",
+            "label": "Text: Email :",
+            "type": "text",
+            "value": "Email :",
+            "sort": 20
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.5",
+            "label": "Text: Consistent communication",
+            "type": "text",
+            "value": "Consistent communication",
+            "sort": 21
+        },
+        {
+            "section": "offices-dark",
+            "section_label": "Offices (dark)",
+            "key": "offices-dark.6",
+            "label": "Text: Global project delivery",
+            "type": "text",
+            "value": "Global project delivery",
+            "sort": 22
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 23
+        }
+    ],
+    "lists": [
+        {
+            "key": "ct_offices",
+            "scope": "contact-us",
+            "items": {
+                "india": {
+                    "tab": "INDIA",
+                    "country": "India",
+                    "city": "Ahmedabad, Gujarat",
+                    "blocks": [
+                        [
+                            [
+                                "Registered Office",
+                                "Block-B, B912-A, World Trade Tower, Nr. BMW Showroom, SG Highway, Ahmedabad - 380051 Gujarat – India."
+                            ]
+                        ]
+                    ],
+                    "phone": "+91 92740 02997, +91 9427801299",
+                    "email": "hello@intelliworkz.tech",
+                    "call": "+919274002997",
+                    "blocks2": [
+                        [
+                            "Tech Product Division",
+                            "Shivalik Corporate Park B Wing, Second Floor 202-202A, 205-205A,Opp. Ashwamedh Bunglows Part 1, Satellite, Ahmedabad 380015"
+                        ],
+                        [
+                            "Service Division",
+                            "A Wing, 401-411, World Trade Tower, Nr. BMW Showroom, SG Highway, Ahmedabad - 380051 Gujarat – India"
+                        ]
+                    ],
+                    "map": "https://www.google.com/maps/search/?api=1&query=World+Trade+Tower+SG+Highway+Ahmedabad"
+                },
+                "usa": {
+                    "tab": "USA",
+                    "country": "USA",
+                    "city": "Lewis Center, Ohio",
+                    "blocks": [
+                        [
+                            [
+                                "Office",
+                                "5511, Mercier Street, Lewis Center, Ohio 43035"
+                            ]
+                        ]
+                    ],
+                    "phone": "+1 614 999 2286",
+                    "email": "hello@intelliworkz.tech",
+                    "call": "+16149992286",
+                    "blocks2": [],
+                    "map": "https://www.google.com/maps/search/?api=1&query=5511+Mercier+Street+Lewis+Center+Ohio+43035"
+                },
+                "dubai": {
+                    "tab": "DUBAI",
+                    "country": "Dubai",
+                    "city": "Sheikh Zayed Road, UAE",
+                    "blocks": [
+                        [
+                            [
+                                "Office",
+                                "Office No. 25, 13th Floor, Al Saqar Business Tower, Nr. Future Museum, Sheikh Zayed Road, Dubai, UAE."
+                            ]
+                        ]
+                    ],
+                    "phone": "+971 56 343 5362",
+                    "email": "hello@intelliworkz.tech",
+                    "call": "+971563435362",
+                    "blocks2": [],
+                    "map": "https://www.google.com/maps/search/?api=1&query=Al+Saqar+Business+Tower+Sheikh+Zayed+Road+Dubai"
+                }
+            }
+        },
+        {
+            "key": "ct_pins",
+            "scope": "contact-us",
+            "items": [
+                [
+                    "USA",
+                    269.31,
+                    546.97,
+                    295.04,
+                    560.14
+                ],
+                [
+                    "Dubai",
+                    567.25,
+                    601.49,
+                    497.82,
+                    573.52
+                ],
+                [
+                    "India",
+                    621.2,
+                    611.64,
+                    646.93,
+                    624.81
+                ]
+            ]
+        },
+        {
+            "key": "ct_faqs",
+            "scope": "contact-us",
+            "items": [
+                [
+                    "What services does Intelliworkz provide?",
+                    "We provide brand, creative, digital, technology, publishing, post-production, animation, engineering and dedicated team services. The right combination depends on your business requirement, project scope and objectives."
+                ],
+                [
+                    "Can you handle both one-time projects and ongoing work?",
+                    "Yes. We work on one-time and milestone-based projects as well as ongoing work, through engagement models such as FTE / retainership, GCC, transaction and one-time."
+                ],
+                [
+                    "Can I discuss my requirement before deciding to work with you?",
+                    "Yes. Tell us what you are trying to build, improve, market or manage, and we will understand your requirement, identify the right capabilities and connect you with the right team. Where it helps, we can run a proof of concept on a paid or free trial."
+                ],
+                [
+                    "Will I have a dedicated team for my project?",
+                    "Yes. The same or similarly skilled resources work on your orders every time, with a dedicated project manager as your point of contact."
+                ],
+                [
+                    "Do you outsource the work to freelancers?",
+                    "No. Our 100% in-house team does not further outsource or engage freelance teams to execute orders, which ensures client confidentiality."
+                ],
+                [
+                    "Can you work with our existing brand guidelines and materials?",
+                    "Yes. We work from your brand guidelines and existing content, and address anything missing before design begins."
+                ]
+            ]
+        },
+        {
+            "key": "ve_form_fields",
+            "scope": "global",
+            "items": [
+                [
+                    "Full Name",
+                    "Enter your first name",
+                    "text"
+                ],
+                [
+                    "Company Name",
+                    "Enter your company name",
+                    "text"
+                ],
+                [
+                    "Email ID",
+                    "Enter your email ID",
+                    "email"
+                ],
+                [
+                    "Contact Number",
+                    "Enter your contact number",
+                    "tel"
+                ]
+            ]
+        }
+    ]
+}

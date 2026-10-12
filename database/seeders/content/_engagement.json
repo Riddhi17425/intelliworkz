@@ -1,0 +1,126 @@
+{
+    "page": null,
+    "fields": [
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
+            "key": "engagement-model.1",
+            "label": "Button text: Let’s Collaborate",
+            "type": "text",
+            "value": "Let’s Collaborate",
+            "sort": 1
+        },
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
+            "key": "engagement-model.2",
+            "label": "Heading: Engagement Model",
+            "type": "text",
+            "value": "Engagement Model",
+            "sort": 2
+        },
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
+            "key": "engagement-model.3",
+            "label": "Paragraph: Our 100% in-house team offers different engag…",
+            "type": "textarea",
+            "value": "Our 100% in-house team offers different engagement models to fit your business needs. We do not further outsource or engage freelance teams to execute our orders, which ensures client confidentiality. We make sure the same or similarly skilled resources work on your orders every time, so you get smooth and consistent delivery that meets your quality and turnaround commitments. How you work with us depends on what you need.",
+            "sort": 3
+        },
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
+            "key": "engagement-model.4",
+            "label": "Heading: Flexible hourLy pricing",
+            "type": "text",
+            "value": "Flexible hourLy pricing",
+            "sort": 4
+        },
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
+            "key": "engagement-model.5",
+            "label": "Paragraph: Terms & conditions apply · Minimum 5-hour boo…",
+            "type": "text",
+            "value": "Terms &amp; conditions apply · Minimum 5-hour booking",
+            "sort": 5
+        }
+    ],
+    "lists": [
+        {
+            "key": "engagement_models",
+            "scope": "global",
+            "items": [
+                {
+                    "no": "01",
+                    "title": "FTE / <br>Retainership Model",
+                    "tag": "Fixed <br>monthly Cost",
+                    "color": "#6565FE",
+                    "num_color": "#716AFD",
+                    "img": "model-1-64ffad.png",
+                    "panel": "is-image",
+                    "height": "tall",
+                    "bullets": [
+                        "Skilled resources are identified and assigned to work on your specific account.",
+                        "The resource works exclusively on your account for 40 hours every week, in the preferred shift timing of our client.",
+                        "Resources can be managed directly by you.",
+                        "A dedicated project manager is assigned as your point of contact.",
+                        "If you are not happy with a resource's performance, we provide a replacement at no extra cost.",
+                        "You pay a fixed monthly cost for the number of resources you engage.",
+                        "You can scale up or scale down with a written notice of 30 to 45 days, depending on the number of resources."
+                    ]
+                },
+                {
+                    "no": "02",
+                    "title": "GCC Model",
+                    "tag": "30% Advance",
+                    "color": "#E85260",
+                    "num_color": "#F15B65",
+                    "img": "model-2-466154.png",
+                    "panel": "is-radial",
+                    "height": "tall",
+                    "img_class": "is-wide",
+                    "bullets": [
+                        "This model lets you set up your own offshore team through a Build, Operate, Deliver (BOT) approach.",
+                        "You get the advantage of a dedicated offshore team without handling the setup yourself.",
+                        "We take care of compliance, infrastructure, and hiring on your behalf.",
+                        "We also manage the overall day-to-day running of the team, so it stays smooth and hands-off for you."
+                    ]
+                },
+                {
+                    "no": "03",
+                    "title": "Transaction <br>Model",
+                    "tag": "Pay on Invoice",
+                    "color": "#C8B083",
+                    "num_color": "#CEA16D",
+                    "img": "model-3.png",
+                    "panel": "is-radial",
+                    "height": "short",
+                    "bullets": [
+                        "This model fits you well if you do not have consistent orders or tasks to assign.",
+                        "The cost per unit of delivery is defined after we complete a proof of concept, on a paid or free trial.",
+                        "We send you a report of the orders delivered in a given month, and you pay on receipt of the invoice.",
+                        "The job is carried out by competent resources to ensure consistent delivery every time."
+                    ]
+                },
+                {
+                    "no": "04",
+                    "title": "One-time / <br>Milestone-based",
+                    "tag": "Hands-off Setup",
+                    "color": "#7CAF9E",
+                    "num_color": "#63B59D",
+                    "img": "model-4.png",
+                    "panel": "is-radial",
+                    "height": "short",
+                    "img_class": "is-wide",
+                    "bullets": [
+                        "This model suits you best when you have a large backlog to complete.",
+                        "We share the cost per unit of delivery and the timeline to complete the order after we perform a proof of concept on a paid or free trial.",
+                        "You pay an advance, normally 30% of the project cost, with the balance released as per the mutually agreed milestones."
+                    ]
+                }
+            ]
+        }
+    ]
+}

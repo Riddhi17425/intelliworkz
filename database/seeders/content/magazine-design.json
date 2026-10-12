@@ -1,0 +1,636 @@
+{
+    "page": {
+        "slug": "magazine-design",
+        "config": {
+            "title": "Magazine Design for Print & Digital Publishing | Intelliworkz",
+            "body_class": "page-magazine",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: Magazine design services over… (services-597d79.png)",
+            "type": "image",
+            "value": "assets/images/magazine/services-597d79.png",
+            "sort": 1
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Paragraph: Home / Services / Print & Publication / Magaz…",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Print &amp; Publication</a> / <span>Magazine design</span>",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Main heading: Magazine Design for Print & Digital Publishing",
+            "type": "text",
+            "value": "Magazine Design for Print &amp; Digital Publishing",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Paragraph: Publishers and brands producing regular issue…",
+            "type": "textarea",
+            "value": "Publishers and brands producing regular issues face the same challenge every cycle - getting quality design delivered on time, to a consistent standard, without rebuilding the brief from scratch each time. Our magazine design services cover the full production scope: cover, layout, print files, and digital editions, managed by a dedicated in-house team that already knows your publication.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Bold label: Dedicated in-house design team",
+            "type": "text",
+            "value": "Dedicated in-house design team",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Text: Focused on quality, consistency & on-time del…",
+            "type": "text",
+            "value": "Focused on quality, consistency &amp; on-time delivery.",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Heading: Let's bring your magazine to life.",
+            "type": "text",
+            "value": "Let's bring your magazine to life.",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your project.",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 12
+        },
+        {
+            "section": "our-examples",
+            "section_label": "Our Examples",
+            "key": "our-examples.1",
+            "label": "Heading: Our Examples",
+            "type": "text",
+            "value": "Our Examples",
+            "sort": 13
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.1",
+            "label": "Heading: Why Intelliworkz",
+            "type": "text",
+            "value": "Why Intelliworkz",
+            "sort": 14
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.2",
+            "label": "Paragraph: Most design problems in publishing are not cr…",
+            "type": "textarea",
+            "value": "Most design problems in publishing are not creative problems. They are production problems: inconsistent output, missed deadlines, each issue that needs re-briefing, and source files that nobody can edit. We work differently. The same team handles your publication across every issue. Your grid, your typography, your cover format, and your brand rules are documented and followed from the first issue onward.",
+            "sort": 15
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.3",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 16
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.4",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 17
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.2",
+            "label": "Heading: What Our Magazine Design Services Cover",
+            "type": "html",
+            "value": "What Our Magazine Design <br>Services Cover",
+            "sort": 18
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.3",
+            "label": "Paragraph: We produce magazine covers, editorial layouts…",
+            "type": "textarea",
+            "value": "We produce magazine covers, editorial layouts, print editions, and digital publications. A four-page newsletter and a two-hundred-page annual magazine follow the same production sequence with only the scale of each stage differing.",
+            "sort": 19
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 20
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.5",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 21
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.6",
+            "label": "Heading: Workflow",
+            "type": "text",
+            "value": "Workflow",
+            "sort": 22
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.7",
+            "label": "Paragraph: How a Magazine Issue Gets Designed",
+            "type": "text",
+            "value": "How a Magazine Issue Gets Designed",
+            "sort": 23
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2",
+            "label": "Heading: what we offer",
+            "type": "text",
+            "value": "what we offer",
+            "sort": 24
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.3",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
+            "type": "textarea",
+            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "sort": 25
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.4",
+            "label": "Heading: Book a Free Consultation",
+            "type": "text",
+            "value": "Book a Free Consultation",
+            "sort": 26
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 27
+        }
+    ],
+    "lists": [
+        {
+            "key": "mg_benefits",
+            "scope": "magazine-design",
+            "items": [
+                "Creative-Driven Efficiency",
+                "Deadline-Guaranteed Workflows",
+                "Print & Digital Ready",
+                "Flexible Engagement Models"
+            ]
+        },
+        {
+            "key": "mg_examples",
+            "scope": "magazine-design",
+            "items": [
+                {
+                    "type": "blank"
+                },
+                {
+                    "type": "img",
+                    "img": "ex-fashion.png"
+                },
+                {
+                    "type": "frame",
+                    "img": "ex-mockup.png"
+                },
+                {
+                    "type": "img",
+                    "img": "ex-fashion.png"
+                },
+                {
+                    "type": "img",
+                    "img": "ex-magazine.png"
+                },
+                {
+                    "type": "frame",
+                    "img": "ex-mockup.png"
+                },
+                {
+                    "type": "img",
+                    "img": "ex-magazine.png"
+                },
+                {
+                    "type": "blank-border"
+                }
+            ]
+        },
+        {
+            "key": "mg_metrics",
+            "scope": "magazine-design",
+            "items": [
+                [
+                    "m-send.svg",
+                    "2500",
+                    "Projects Delivered"
+                ],
+                [
+                    "m-globe.svg",
+                    "7",
+                    "Countries Global Presence"
+                ],
+                [
+                    "m-briefcase.svg",
+                    "30",
+                    "Industries Served"
+                ],
+                [
+                    "m-clock.svg",
+                    "18",
+                    "Years of Experience"
+                ],
+                [
+                    "m-users.svg",
+                    "1200",
+                    "Global Clients"
+                ],
+                [
+                    "m-award.svg",
+                    "120",
+                    "Skilled Professional"
+                ]
+            ]
+        },
+        {
+            "key": "mg_why",
+            "scope": "magazine-design",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "no": "01",
+                    "noa": 0.25,
+                    "icon": "why-1.svg",
+                    "shadow": true,
+                    "border": false,
+                    "title": "In-house design team",
+                    "text": "All design work produced entirely in-house: no freelancers, no subcontracting."
+                },
+                {
+                    "c": "var(--c-red)",
+                    "no": "02",
+                    "noa": 0.2,
+                    "icon": "why-2.svg",
+                    "shadow": true,
+                    "border": true,
+                    "title": "Dedicated project team",
+                    "text": "The same designer or team works on your publication every issue: your standards carry forward without re-briefing."
+                },
+                {
+                    "c": "var(--c-charcoal)",
+                    "no": "03",
+                    "noa": 0.15,
+                    "icon": "why-3.svg",
+                    "shadow": false,
+                    "border": true,
+                    "title": "Data security",
+                    "text": "Your content, files, and unpublished material are handled under strict security, kept within our team and never shared outside."
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "no": "04",
+                    "noa": 0.2,
+                    "icon": "why-4.svg",
+                    "shadow": false,
+                    "border": true,
+                    "title": "Transparent pricing",
+                    "text": "All design work produced entirely in-house: no freelancers, no subcontracting."
+                }
+            ]
+        },
+        {
+            "key": "mg_tools",
+            "scope": "magazine-design",
+            "items": [
+                [
+                    "tool-indesign.svg",
+                    "#54001A",
+                    "Adobe InDesign",
+                    "Layout | Publish"
+                ],
+                [
+                    "tool-illustrator.svg",
+                    "#330000",
+                    "Adobe Illustrator",
+                    "Illustrate | Create"
+                ],
+                [
+                    "tool-photoshop.svg",
+                    "#001834",
+                    "Adobe Photoshop",
+                    "Edit | Retouch"
+                ],
+                [
+                    "tool-figma.svg",
+                    "#1A1A1A",
+                    "Figma",
+                    "Design | Collaborate"
+                ],
+                [
+                    "tool-acrobat.svg",
+                    "#B40B00",
+                    "Adobe Acrobat",
+                    "Review | Share"
+                ]
+            ]
+        },
+        {
+            "key": "mg_services",
+            "scope": "magazine-design",
+            "items": [
+                {
+                    "title": "Cover Design",
+                    "open": true,
+                    "dots": true,
+                    "points": [
+                        "Cover concept development from your issue brief",
+                        "Typography and image composition for the cover",
+                        "Cover variations for print and digital formats"
+                    ]
+                },
+                {
+                    "title": "Layout and Editorial Design",
+                    "points": [
+                        "Spreads designed section by section against the approved grid",
+                        "Typography system applied across every page",
+                        "Captions, pull quotes, and supporting elements set in place"
+                    ]
+                },
+                {
+                    "title": "Digital Magazine Design",
+                    "points": [
+                        "Digital editions exported and tested across devices",
+                        "Layouts adapted for on-screen reading",
+                        "Cover variations for digital formats"
+                    ]
+                },
+                {
+                    "title": "Print Magazine Design",
+                    "points": [
+                        "Print-ready PDFs to your printer's specifications",
+                        "Cover variations for print formats",
+                        "Source files organised for future use"
+                    ]
+                },
+                {
+                    "title": "Custom Magazine Design",
+                    "points": [
+                        "Layouts built around your brief and content plan",
+                        "Grid, typography and cover format documented to your brand rules",
+                        "The same team on every issue"
+                    ]
+                },
+                {
+                    "title": "Template and Style Guide Development",
+                    "points": [
+                        "Templates that carry your grid and typography forward",
+                        "A style guide documenting your brand rules",
+                        "Source files that your team can edit"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "mg_flow",
+            "scope": "magazine-design",
+            "items": [
+                {
+                    "x": 0,
+                    "y": 14,
+                    "w": 276,
+                    "tw": 245,
+                    "align": "left",
+                    "title": "Brief and content plan",
+                    "text": "We confirm the issue scope: theme, content structure, page count, and format. Print, digital, or both are agreed at this stage along with the delivery date."
+                },
+                {
+                    "x": 64,
+                    "y": 296,
+                    "w": 313,
+                    "tw": 313,
+                    "align": "left",
+                    "title": "Cover concept",
+                    "text": "Cover direction and key design decisions for the issue are developed and approved before internal layout work begins."
+                },
+                {
+                    "x": 336,
+                    "y": 539,
+                    "w": 364,
+                    "tw": 364,
+                    "align": "left",
+                    "title": "Layout design",
+                    "text": "Spreads are designed section by section against the approved grid and typography system. You review at agreed checkpoints, not at the end when changes become expensive."
+                },
+                {
+                    "x": 1094,
+                    "y": 539,
+                    "w": 289,
+                    "tw": 289,
+                    "align": "center",
+                    "title": "Content integration",
+                    "text": "Final copy and images are placed into approved layouts. Captions, pull quotes, and supporting elements are set at this stage."
+                },
+                {
+                    "x": 1401,
+                    "y": 296,
+                    "w": 274,
+                    "tw": 274,
+                    "align": "center",
+                    "title": "Review and revisions",
+                    "text": "You review the full issue and provide consolidated feedback. Revisions are completed within the agreed rounds."
+                },
+                {
+                    "x": 1469,
+                    "y": 14,
+                    "w": 302,
+                    "tw": 302,
+                    "align": "left",
+                    "title": "Final delivery",
+                    "text": "Print-ready PDFs go to your printer's specifications. Digital editions are exported and tested across devices. Source files are transferred on completion, organised for future use."
+                }
+            ]
+        },
+        {
+            "key": "mg_offers",
+            "scope": "magazine-design",
+            "items": [
+                {
+                    "no": "01",
+                    "noc": "#D1C7E6",
+                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
+                    "title": "Desktop Publishing Services",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Document publishing is much more than writing good content; it is about designing the right layouts, formatting, applying the correct typography, and ensuring document preparation is done."
+                },
+                {
+                    "no": "02",
+                    "noc": "#EAD3C4",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "Newsletter Design",
+                    "img": "offer-2-56586a.png",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "A newsletter is not a one-off project. It goes out weekly, monthly, or quarterly, and every time it lands, it either reinforces your brand or quietly undermines it."
+                },
+                {
+                    "no": "03",
+                    "noc": "#A2DDDD",
+                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
+                    "title": "Scientific Journal",
+                    "img": "offer-3-56586b.png",
+                    "x": 34,
+                    "y": 265,
+                    "w": 505,
+                    "h": 343,
+                    "arrow": "offer-arrow-3.svg",
+                    "text": "Journal publication is the process of having your finished research paper evaluated, approved, and published in a scholarly publication or journal."
+                },
+                {
+                    "no": "04",
+                    "noc": "#D9D3A0",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Product Catalogue Design",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "A catalogue is only useful when it is easy to browse. We keep product information consistent, accurate, and ready for print and digital output."
+                }
+            ]
+        },
+        {
+            "key": "mg_faqs",
+            "scope": "magazine-design",
+            "items": [
+                [
+                    "What are magazine design services?",
+                    "Magazine design services cover the end-to-end design of a publication: cover design, layout design, typography, image treatment, and file preparation for print or digital output. The scope depends on whether you need a single issue or an ongoing production arrangement."
+                ],
+                [
+                    "What is the difference between print and digital magazine design?",
+                    "Print files are prepared to your printer's specifications. Digital editions are exported and tested across devices. Both can be produced for the same issue."
+                ],
+                [
+                    "Do you offer custom magazine design or work from templates?",
+                    "Both. We design custom magazines around your brief, and we develop templates and style guides so your format stays consistent."
+                ],
+                [
+                    "How long does it take to design a magazine?",
+                    "The timeline is agreed at the start, once the issue scope, page count, format and delivery date are confirmed."
+                ],
+                [
+                    "Can you design both the cover and internal layouts?",
+                    "Yes. The scope covers the cover concept, the internal layouts, and the placement of final copy and images."
+                ],
+                [
+                    "What file formats do you deliver?",
+                    "Print-ready PDFs, digital editions, and the source files, organised for future use."
+                ],
+                [
+                    "Do you handle ongoing issues or only one-off projects?",
+                    "Both. The same designer or team can work on your publication every issue, so your standards carry forward without re-briefing."
+                ]
+            ]
+        }
+    ]
+}

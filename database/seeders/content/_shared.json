@@ -1,0 +1,410 @@
+{
+    "site": {
+        "name": "Intelliworkz",
+        "copyright": "Copyright © 2026 Intelliworkz Business Solutions Pvt. Ltd. All Rights Reserved."
+    },
+    "menus": {
+        "header": [
+            {
+                "title": "Branding & Creative",
+                "items": [
+                    {
+                        "label": "Brand Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Creative Design",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Graphic Design",
+                        "url": "#"
+                    },
+                    {
+                        "label": "UI/UX Design",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Video & Animation",
+                        "url": "video-editing.php"
+                    },
+                    {
+                        "label": "3D Visualization",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Digital Marketing",
+                "items": [
+                    {
+                        "label": "SEO",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Social Media Marketing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Content Marketing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Performance Marketing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Digital Marketing",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Print & Publication",
+                "items": [
+                    {
+                        "label": "InDesign Services",
+                        "url": "#"
+                    },
+                    {
+                        "label": "DTP",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Pre-Press",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Magazine Design",
+                        "url": "magazine-design.php"
+                    },
+                    {
+                        "label": "Newsletter Design",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Scientific Journal",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Product Catalogue Design",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Post-Production",
+                "items": [
+                    {
+                        "label": "Image Editing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Video Editing",
+                        "url": "video-editing.php"
+                    },
+                    {
+                        "label": "Motion Graphics",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Technology",
+                "items": [
+                    {
+                        "label": "Website Design & Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Mobile App Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Custom Software Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "CRM & ERP Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "API & System Integration",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Portal Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "eCommerce Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Maintenance & Support",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Animation",
+                "items": [
+                    {
+                        "label": "2D Animation",
+                        "url": "#"
+                    },
+                    {
+                        "label": "3D Animation",
+                        "url": "#"
+                    },
+                    {
+                        "label": "3D Modeling and Rendering",
+                        "url": "3d-modeling-rendering.php"
+                    },
+                    {
+                        "label": "Explainer Videos",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Engineering Services",
+                "items": [
+                    {
+                        "label": "ERP & Custom Software Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Mobile Application Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Web Development",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Application Maintenance & Support",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Hire Talent",
+                "items": [
+                    {
+                        "label": "FTE / Retainership Model",
+                        "url": "#"
+                    },
+                    {
+                        "label": "GCC Model",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Transaction Model",
+                        "url": "#"
+                    },
+                    {
+                        "label": "One-time / Milestone-based",
+                        "url": "#"
+                    }
+                ]
+            }
+        ],
+        "footer": [
+            {
+                "handle": "industries",
+                "title": "Industries",
+                "items": [
+                    {
+                        "label": "Manufacturing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Industrial & Engineering",
+                        "url": "#"
+                    },
+                    {
+                        "label": "B2B Services",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Retail & eCommerce",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Healthcare",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Education",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Real Estate",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Logistics & Distribution",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Startups & SaaS",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "handle": "products",
+                "title": "Products",
+                "items": [
+                    {
+                        "label": "DataNote",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Formezy",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Docezy",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "handle": "company",
+                "title": "Company",
+                "items": [
+                    {
+                        "label": "About Us",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Why Intelliworkz",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Our Process",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Careers",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Contact Us",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "handle": "services",
+                "title": "Services",
+                "items": [
+                    {
+                        "label": "Branding & Creative",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Digital Marketing",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Print & Publication",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Post-Production",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Technology",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Animation",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Engineering Services",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Hire Talent",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "handle": "insights",
+                "title": "Insights",
+                "items": [
+                    {
+                        "label": "Blog",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Guides",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Case Studies",
+                        "url": "#"
+                    },
+                    {
+                        "label": "News & Updates",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Resources",
+                        "url": "#"
+                    }
+                ]
+            },
+            {
+                "handle": "policies",
+                "title": "Company Policies",
+                "items": [
+                    {
+                        "label": "Privacy Policy",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Terms of Use",
+                        "url": "#"
+                    },
+                    {
+                        "label": "Cookies",
+                        "url": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "offices": [
+        {
+            "flag": "flag-india.svg",
+            "map": "map-india.png",
+            "map_opacity": ".4",
+            "name": "India",
+            "address": "Block-B, B912-A, World Trade Tower, Nr. BMW Showroom, SG Highway, Ahmedabad - 380051 Gujarat - India.",
+            "phone": "+91 92740 02997 , +91 92740 02997"
+        },
+        {
+            "flag": "flag-usa.svg",
+            "map": "map-usa-35ebcb.png",
+            "map_opacity": ".4",
+            "name": "USA",
+            "address": "5511, Mercier Street,<br>Lewis Center, <br>Ohio 43035",
+            "phone": "+1 614 999 2286"
+        },
+        {
+            "flag": "flag-dubai.svg",
+            "map": "map-dubai.png",
+            "map_opacity": ".5",
+            "name": "Dubai",
+            "address": "Office No. 25, 13th Floor, Al Saqar Business Tower, Nr. Future Museum, Sheikh Zayed Road, Dubai, UAE.",
+            "phone": "+971 56 343 5362"
+        }
+    ]
+}

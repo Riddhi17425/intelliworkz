@@ -1,0 +1,805 @@
+{
+    "page": {
+        "slug": "seo-services",
+        "config": {
+            "title": "SEO Services | Intelliworkz",
+            "body_class": "page-seo",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/seo.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "dark-showcase",
+            "section_label": "Dark Showcase",
+            "key": "dark-showcase.1",
+            "label": "Heading: What Our SEO Services Cover",
+            "type": "text",
+            "value": "What Our SEO Services Cover",
+            "sort": 1
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.1",
+            "label": "Image (portfolio-bg.png)",
+            "type": "image",
+            "value": "assets/images/seo/portfolio-bg.png",
+            "sort": 2
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.2",
+            "label": "Image: SEO results dashboard: keywor… (portfolio-main.png)",
+            "type": "image",
+            "value": "assets/images/seo/portfolio-main.png",
+            "sort": 3
+        },
+        {
+            "section": "tools-strip",
+            "section_label": "Tools Strip",
+            "key": "tools-strip.1",
+            "label": "Image (tools-bg.png)",
+            "type": "image",
+            "value": "assets/images/seo/tools-bg.png",
+            "sort": 4
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: SEO services overview (services.png)",
+            "type": "image",
+            "value": "assets/images/seo/services.png",
+            "sort": 5
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Paragraph: Home / Services / Digital Marketing & Growth …",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Digital Marketing &amp; Growth</a> / <span>SEO SERVICES</span>",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Main heading: SEO SERVICES",
+            "type": "text",
+            "value": "SEO SERVICES",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Paragraph: Our SEO services in India serve two very diff…",
+            "type": "textarea",
+            "value": "Our SEO services in India serve two very different clients. Some are brands looking for a partner to run their search programme and bring in qualified leads. Others are corporate marketing teams that need execution taken off their hands, either to scale up or to break into a new market. Website launches. Migrations. Ongoing content. Campaigns across several regions. We keep the work accurate and consistent, and we keep it moving. As an established SEO outsourcing company in India, based in Ahmedabad, we give you senior expertise without the cost of hiring a team.",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Bold label: Dedicated senior SEO team",
+            "type": "text",
+            "value": "Dedicated senior SEO team",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Text: Ahmedabad-based expertise with accurate, cons…",
+            "type": "text",
+            "value": "Ahmedabad-based expertise with accurate, consistent delivery.",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Heading: Let’s bring your 3D vision to life.",
+            "type": "text",
+            "value": "Let’s bring your 3D vision to life.",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your project.",
+            "sort": 13
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 14
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 15
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 16
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.3",
+            "label": "Heading: Selected SEO Work",
+            "type": "text",
+            "value": "Selected SEO Work",
+            "sort": 17
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.4",
+            "label": "Paragraph: Our SEO work supports brands and corporate ma…",
+            "type": "textarea",
+            "value": "Our SEO work supports brands and corporate marketing teams with search programme management, qualified lead generation, website launches, migrations, ongoing content, and multi-region campaigns—delivered accurately and consistently by our senior Ahmedabad-based team.",
+            "sort": 18
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.5",
+            "label": "Sub-heading: Flexibel",
+            "type": "text",
+            "value": "Flexibel",
+            "sort": 19
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.6",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur.",
+            "type": "text",
+            "value": "Lorem ipsum dolor sit amet consectetur.",
+            "sort": 20
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.7",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Conva…",
+            "type": "textarea",
+            "value": "Lorem ipsum dolor sit amet consectetur. Convallis sed dui netus suscipit quis. Porttitor ut egestas faucibus consectetur scelerisque magna. Orci adipiscing proin facilisis semper tortor viverra sed nulla duis. Ut eu.",
+            "sort": 21
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.1",
+            "label": "Heading: Why Intelliworkz",
+            "type": "text",
+            "value": "Why Intelliworkz",
+            "sort": 22
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.2",
+            "label": "Paragraph: Picking an SEO agency in India comes down to …",
+            "type": "textarea",
+            "value": "Picking an SEO agency in India comes down to one question: can they actually execute, or do they just advise? We do both. Our own developers ship the fixes we recommend.",
+            "sort": 23
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.3",
+            "label": "Paragraph: SEO counts when it shows up in the places tha…",
+            "type": "textarea",
+            "value": "SEO counts when it shows up in the places that matter. Rankings, yes, but also traffic quality and pipeline. Every campaign has to be technically right and commercially aligned, and it has to move through audits, implementation, and reporting without getting stuck somewhere in the middle.",
+            "sort": 24
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.4",
+            "label": "Paragraph: Our team knows both sides of the search. Audi…",
+            "type": "textarea",
+            "value": "Our team knows both sides of the search. Audit, strategy, on-page, technical work, content, link building:. We work alongside digita lmarketing teams to keep campaigns consistent and deliver efficiently.",
+            "sort": 25
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 26
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.6",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 27
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.2",
+            "label": "Heading: OUR SEO EXPERTISE AND SERVICES",
+            "type": "text",
+            "value": "OUR SEO EXPERTISE AND SERVICES",
+            "sort": 28
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.3",
+            "label": "Paragraph: Strategic Thinking. Technical Execution. Cons…",
+            "type": "textarea",
+            "value": "Strategic Thinking. Technical Execution. Consistent Search Growth.",
+            "sort": 29
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Paragraph: Our professional SEO services cover three dis…",
+            "type": "textarea",
+            "value": "Our professional SEO services cover three disciplines: technical SEO, on-page and content, and off-page authority. Run together, they form a complete programme rather than a handful of disconnected tactics.",
+            "sort": 30
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.5",
+            "label": "Paragraph: Rankings are the start, not the point. Search…",
+            "type": "textarea",
+            "value": "Rankings are the start, not the point. Search growth that lasts needs a solid technical base, content that genuinely earns its place, and authority built up slowly enough to hold. All of it is managed the same way in every market. That is the thinking behind our delivery, and it is why our programmes stay practical and scalable. It is also why marketing teams hand us the execution-heavy work they would rather not do themselves, everything from technical audits through to reporting.",
+            "sort": 31
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.6",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 32
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.7",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 33
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2",
+            "label": "Heading: what we offer",
+            "type": "text",
+            "value": "what we offer",
+            "sort": 34
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.3",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
+            "type": "textarea",
+            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "sort": 35
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.4",
+            "label": "Heading: Book a Free Consultation",
+            "type": "text",
+            "value": "Book a Free Consultation",
+            "sort": 36
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 37
+        }
+    ],
+    "lists": [
+        {
+            "key": "seo_benefits",
+            "scope": "seo-services",
+            "items": [
+                "Qualified Lead Generation",
+                "End-to-End SEO Management",
+                "Launch & Migration Support",
+                "Multi-Region SEO Campaigns"
+            ]
+        },
+        {
+            "key": "seo_filters",
+            "scope": "seo-services",
+            "items": {
+                "all": "All",
+                "strategy": "SEO Strategy",
+                "leads": "Lead Generation",
+                "launches": "Website Launches",
+                "migrations": "Migrations",
+                "content": "Content SEO",
+                "multi": "Multi-Region"
+            }
+        },
+        {
+            "key": "seo_gallery",
+            "scope": "seo-services",
+            "items": [
+                {
+                    "img": "thumb-1.png",
+                    "cats": "strategy"
+                },
+                {
+                    "img": "thumb-2.png",
+                    "cats": "leads"
+                },
+                {
+                    "img": "thumb-3.png",
+                    "cats": "launches"
+                },
+                {
+                    "img": "thumb-4.png",
+                    "cats": "migrations"
+                },
+                {
+                    "img": "thumb-5.png",
+                    "cats": "content"
+                },
+                {
+                    "img": "thumb-featured.png",
+                    "cats": "strategy leads"
+                },
+                {
+                    "img": "thumb-6.png",
+                    "cats": "multi"
+                },
+                {
+                    "img": "thumb-7.png",
+                    "cats": "content"
+                },
+                {
+                    "img": "thumb-8.png",
+                    "cats": "launches"
+                },
+                {
+                    "img": "thumb-9.png",
+                    "cats": "migrations"
+                },
+                {
+                    "img": "thumb-10.png",
+                    "cats": "multi"
+                }
+            ]
+        },
+        {
+            "key": "seo_metrics",
+            "scope": "seo-services",
+            "items": [
+                [
+                    "m-globe.svg",
+                    "7",
+                    "Countries Global Presence"
+                ],
+                [
+                    "m-clock.svg",
+                    "18",
+                    "Years of Experience"
+                ],
+                [
+                    "m-users.svg",
+                    "1200",
+                    "Global Clients"
+                ],
+                [
+                    "m-award.svg",
+                    "120",
+                    "Skilled Professional"
+                ]
+            ]
+        },
+        {
+            "key": "seo_why",
+            "scope": "seo-services",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "no": "01",
+                    "noa": 0.2,
+                    "icon": "why-1.svg",
+                    "title": "Technical SEO",
+                    "text": "Site architecture and crawlability, Core Web Vitals and page speed, schema and structured data, indexation management, JavaScript SEO, and site-health monitoring."
+                },
+                {
+                    "c": "var(--c-red)",
+                    "no": "02",
+                    "noa": 0.2,
+                    "icon": "why-2.svg",
+                    "title": "On-Page & Content SEO",
+                    "text": "Keyword and intent mapping, on-page optimisation, internal linking structure, SEO content and copywriting, topical authority building, and content optimised for AI answer engines."
+                },
+                {
+                    "c": "var(--c-charcoal)",
+                    "no": "03",
+                    "noa": 0.15,
+                    "icon": "why-3.svg",
+                    "title": "Off-Page SEO & Link Building",
+                    "text": "Digital PR and editorial outreach, backlink strategy and vetting, brand-authority building, competitor link analysis, and local and international link acquisition."
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "no": "04",
+                    "noa": 0.2,
+                    "icon": "why-4.svg",
+                    "title": "B2B & International SEO",
+                    "text": "Long, considered buying cycles where technical buyers research for weeks. Multi-language, multi-region rollouts with hreflang and market-specific content."
+                }
+            ]
+        },
+        {
+            "key": "seo_tools",
+            "scope": "seo-services",
+            "items": [
+                [
+                    [
+                        "tool-gsc.png",
+                        "Google Search Console",
+                        "Monitor | Optimise"
+                    ],
+                    [
+                        "tool-gtm.png",
+                        "Google Tag Manager",
+                        "Manage | Track"
+                    ],
+                    [
+                        "tool-ahrefs.svg",
+                        "Ahrefs",
+                        "Backlinks | Research"
+                    ]
+                ],
+                [
+                    [
+                        "tool-gbp.png",
+                        "Google Business Profile",
+                        "Local | Visibility"
+                    ],
+                    [
+                        "tool-bing.png",
+                        "Bing Webmaster",
+                        "Index | Monitor"
+                    ],
+                    [
+                        "tool-screamingfrog.png",
+                        "Screaming Frog",
+                        "Crawl | Audit"
+                    ]
+                ],
+                [
+                    [
+                        "tool-ga4.png",
+                        "Google Analytics 4",
+                        "Track | Analyse"
+                    ],
+                    [
+                        "tool-semrush.png",
+                        "Semrush",
+                        "Research | Analyse"
+                    ],
+                    [
+                        "tool-surfer.svg",
+                        "Surfer",
+                        "Content | Optimise"
+                    ]
+                ]
+            ]
+        },
+        {
+            "key": "seo_services",
+            "scope": "seo-services",
+            "items": [
+                {
+                    "title": "Technical SEO",
+                    "open": true,
+                    "points": [
+                        "Site architecture and crawlability",
+                        "Core Web Vitals and page speed",
+                        "Schema and structured data",
+                        "Indexation management",
+                        "JavaScript SEO",
+                        "Site-health monitoring"
+                    ]
+                },
+                {
+                    "title": "On-Page & Content SEO",
+                    "points": [
+                        "Keyword and intent mapping",
+                        "On-page optimisation",
+                        "Internal linking structure",
+                        "SEO content and copywriting",
+                        "Topical authority building",
+                        "Content optimised for AI answer engines"
+                    ]
+                },
+                {
+                    "title": "Off-Page SEO & Link Building",
+                    "points": [
+                        "Digital PR and editorial outreach",
+                        "Backlink strategy and vetting",
+                        "Brand-authority building",
+                        "Competitor link analysis",
+                        "Local and international link acquisition"
+                    ]
+                },
+                {
+                    "title": "B2B & International SEO",
+                    "points": [
+                        "Long, considered buying cycles",
+                        "Multi-language, multi-region rollouts",
+                        "Hreflang implementation",
+                        "Market-specific content"
+                    ]
+                },
+                {
+                    "title": "Local SEO",
+                    "points": [
+                        "Google Business Profile management",
+                        "Local visibility and citations",
+                        "Local link acquisition"
+                    ]
+                },
+                {
+                    "title": "SEO Reporting & Analytics",
+                    "points": [
+                        "Transparent monthly reporting",
+                        "Traffic, leads, and revenue tracking",
+                        "Clear next steps"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "seo_workflow",
+            "scope": "seo-services",
+            "items": [
+                {
+                    "no": "01",
+                    "color": "var(--c-yellow)",
+                    "img": "step-1.png",
+                    "art": [
+                        -0.92,
+                        0,
+                        301.84,
+                        300
+                    ],
+                    "title": "Discover",
+                    "text": "Understand your business, market, competitors, target audience, and commercial objectives."
+                },
+                {
+                    "no": "02",
+                    "color": "var(--c-pink)",
+                    "img": "step-2.png",
+                    "art": [
+                        0,
+                        31.19,
+                        300,
+                        237.61
+                    ],
+                    "title": "Audit",
+                    "text": "Assess technical health, content gaps, backlink profile, and ranking opportunities in a clear, prioritised report."
+                },
+                {
+                    "no": "03",
+                    "color": "var(--c-green)",
+                    "img": "step-3.png",
+                    "art": [
+                        9.76,
+                        23.52,
+                        280.49,
+                        252.96
+                    ],
+                    "title": "Strategy",
+                    "text": "Build a keyword and content roadmap mapped to buyer intent and ranked by commercial impact."
+                },
+                {
+                    "no": "04",
+                    "color": "var(--c-gold)",
+                    "img": "step-4.png",
+                    "art": [
+                        9.44,
+                        34.91,
+                        281.13,
+                        230.19
+                    ],
+                    "title": "Execution",
+                    "text": "Implement technical fixes, on-page optimisation, content, and authority building against the roadmap."
+                },
+                {
+                    "no": "05",
+                    "color": "var(--c-teal)",
+                    "img": "step-5.png",
+                    "art": [
+                        1.29,
+                        29.14,
+                        297.43,
+                        241.72
+                    ],
+                    "title": "Reporting",
+                    "text": "Deliver transparent monthly reporting tied to traffic, leads, and revenue, with clear next steps."
+                }
+            ]
+        },
+        {
+            "key": "seo_offers",
+            "scope": "seo-services",
+            "items": [
+                {
+                    "no": "01",
+                    "noc": "#D1C7E6",
+                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
+                    "title": "AEO Services",
+                    "dir": "seo",
+                    "img": "offer-1.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Make your content easier for AI assistants and answer engines to discover, understand and reference. Our AEO services focus on structured content, search intent and clear answers that improve visibility across AI-powered search experiences."
+                },
+                {
+                    "no": "02",
+                    "noc": "#EAD3C4",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "GEO Services",
+                    "dir": "seo",
+                    "img": "offer-2.png",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "Build visibility across generative AI search platforms. Our GEO services improve how your brand, expertise and content are represented/"
+                },
+                {
+                    "no": "03",
+                    "noc": "#A2DDDD",
+                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
+                    "title": "Lead Generation Campaigns",
+                    "dir": "seo",
+                    "img": "offer-3.png",
+                    "x": 34,
+                    "y": 265,
+                    "w": 505,
+                    "h": 343,
+                    "arrow": "offer-arrow-3.svg",
+                    "text": "Turn search visibility into business opportunities with targeted lead generation campaigns. We combine audience research, campaign planning, landing page optimisation."
+                },
+                {
+                    "no": "04",
+                    "noc": "#D9D3A0",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Local SEO Services",
+                    "dir": "video",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Get found by customers in the places you operate. We manage your Google Business Profile, local citations and local link acquisition."
+                }
+            ]
+        },
+        {
+            "key": "seo_faqs",
+            "scope": "seo-services",
+            "items": [
+                [
+                    "What is included in your SEO services?",
+                    "A technical audit to begin with, then keyword and content strategy, on-page optimisation, content production, link building, and monthly reporting. The technical fixes get implemented by our own developers rather than handed back to you as a to-do list. Scope is agreed upfront, based on what you are trying to achieve."
+                ],
+                [
+                    "What engagement models do you offer for SEO outsourcing?",
+                    "Four models: FTE / Retainership (a fixed monthly cost), GCC (a Build, Operate, Deliver approach), Transaction (pay on invoice), and One-time / Milestone-based. How you work with us depends on what you need."
+                ],
+                [
+                    "How is your SEO outsourcing model different from hiring a freelancer or building an in-house team?",
+                    "Our 100% in-house team gives you senior expertise without the cost of hiring. We do not outsource further or engage freelancers, the same or similarly skilled resources work on your account every time, and a dedicated project manager is your point of contact."
+                ],
+                [
+                    "Can your team work in our time zone?",
+                    "Yes. Resources work exclusively on your account for 40 hours every week, in the preferred shift timing of our client."
+                ],
+                [
+                    "Do you only work with a specific industry?",
+                    "No. We work across manufacturing, industrial and engineering, B2B services, retail and eCommerce, healthcare, education, real estate, logistics and distribution, and startups and SaaS."
+                ],
+                [
+                    "How do you measure SEO success?",
+                    "Rankings matter, but so do traffic quality and pipeline. We deliver transparent monthly reporting tied to traffic, leads, and revenue, with clear next steps."
+                ],
+                [
+                    "How long does SEO take to show results?",
+                    "It depends on your starting point, your market and the competition. Search growth that lasts needs a solid technical base, content that earns its place, and authority built up slowly enough to hold, and we confirm the roadmap and priorities at the strategy stage."
+                ]
+            ]
+        },
+        {
+            "key": "ve_form_fields",
+            "scope": "global",
+            "items": [
+                [
+                    "Full Name",
+                    "Enter your first name",
+                    "text"
+                ],
+                [
+                    "Company Name",
+                    "Enter your company name",
+                    "text"
+                ],
+                [
+                    "Email ID",
+                    "Enter your email ID",
+                    "email"
+                ],
+                [
+                    "Contact Number",
+                    "Enter your contact number",
+                    "tel"
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,438 @@
+{
+    "page": {
+        "slug": "manufacturing",
+        "config": {
+            "title": "Manufacturing Marketing Agency | Intelliworkz",
+            "body_class": "page-manufacture",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css",
+                "assets/css/manufacture.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Image (hero.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/hero.png",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Image (hero-decor.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/hero-decor.png",
+            "sort": 2
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.1",
+            "label": "Image: Industrial engineering market… (collage.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/collage.png",
+            "sort": 3
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.1",
+            "label": "Image (dark-decor-top.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/dark-decor-top.png",
+            "sort": 4
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.2",
+            "label": "Image (dark-decor-bottom.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/dark-decor-bottom.png",
+            "sort": 5
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.3",
+            "label": "Image: Industrial precision engineer… (showcase.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/showcase.png",
+            "sort": 6
+        },
+        {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.1",
+            "label": "Button text: Start a Conversation",
+            "type": "text",
+            "value": "Start a Conversation",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Paragraph: Home / Industries / Manufacturing",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Industries</a> / <span>Manufacturing</span>",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Main heading: Great Manufacturing Deserves Greater Visibili…",
+            "type": "text",
+            "value": "Great Manufacturing Deserves Greater Visibility",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Paragraph: Manufacturing businesses earn their reputatio…",
+            "type": "textarea",
+            "value": "Manufacturing businesses earn their reputation through what they produce, their process, their quality standards, and their clients. Communicating this to their ever increasing market at to the market, clearly and to the right buyers, is where most fall short. As a manufacturing marketing agency, Intelliworkz brings brand, creative, and digital capability built around how industrial businesses sell.",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Button link: Start a Project",
+            "type": "url",
+            "value": "#",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Button text: Explore Our Services",
+            "type": "text",
+            "value": "Explore Our Services",
+            "sort": 13
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Button link: Explore Our Services",
+            "type": "url",
+            "value": "#",
+            "sort": 14
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.2",
+            "label": "Heading: Buyers Decide Before They Call",
+            "type": "text",
+            "value": "Buyers Decide Before They Call",
+            "sort": 15
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.3",
+            "label": "Paragraph: The manufacturing sector has always been rela…",
+            "type": "textarea",
+            "value": "The manufacturing sector has always been relationship-driven. Referrals, trade shows, and long-standing distributor networks used to be enough. That is no longer the case. Today, a procurement manager researching suppliers starts online, comparing websites and reviewing capability statements before a conversation takes place.",
+            "sort": 16
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.4",
+            "label": "Paragraph: At the same time, buyer expectations are risi…",
+            "type": "textarea",
+            "value": "At the same time, buyer expectations are rising. They want to see what you produce, understand the scale of your operation, verify your certifications, and get a sense of whether you are the kind of business they want to work with, all from your digital presence alone. Manufacturers who have invested in how they present themselves online are meeting that expectation.",
+            "sort": 17
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.5",
+            "label": "Paragraph: The brands that grow in this environment are …",
+            "type": "textarea",
+            "value": "The brands that grow in this environment are not just operationally strong. They are visible, credible, and easy to evaluate, and they have built the marketing infrastructure to stay that way consistently.",
+            "sort": 18
+        },
+        {
+            "section": "where-manufacturers-lose-ground",
+            "section_label": "Where Manufacturers Lose Ground",
+            "key": "where-manufacturers-lose-ground.1",
+            "label": "Heading: Where Manufacturers Lose Ground",
+            "type": "text",
+            "value": "Where Manufacturers Lose Ground",
+            "sort": 19
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.4",
+            "label": "Heading: Built for Manufacturers. Not Adapted for Them.",
+            "type": "text",
+            "value": "Built for Manufacturers. Not Adapted for Them.",
+            "sort": 20
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.5",
+            "label": "Paragraph: We work as a dedicated manufacturing marketin…",
+            "type": "textarea",
+            "value": "We work as a dedicated manufacturing marketing agency. Every service is built around the buying behaviour and sales cycles specific to manufacturing.",
+            "sort": 21
+        },
+        {
+            "section": "who-we-support",
+            "section_label": "Who We Support",
+            "key": "who-we-support.1",
+            "label": "Heading: The Manufacturers We Support",
+            "type": "text",
+            "value": "The Manufacturers We Support",
+            "sort": 22
+        },
+        {
+            "section": "who-we-support",
+            "section_label": "Who We Support",
+            "key": "who-we-support.2",
+            "label": "Paragraph: We work with industrial goods and component m…",
+            "type": "textarea",
+            "value": "We work with industrial goods and component manufacturers, consumer product producers, contract and custom manufacturers, OEM suppliers, and assembly operations. Growing businesses building their market presence for the first time and established ones that have outgrown how they currently present themselves. The work is always shaped around your specific situation, not a generic manufacturing template.",
+            "sort": 23
+        },
+        {
+            "section": "who-we-support",
+            "section_label": "Who We Support",
+            "key": "who-we-support.3",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 24
+        },
+        {
+            "section": "who-we-support",
+            "section_label": "Who We Support",
+            "key": "who-we-support.4",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 25
+        },
+        {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.2",
+            "label": "Heading: What We Bring",
+            "type": "text",
+            "value": "What We Bring",
+            "sort": 26
+        },
+        {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.3",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
+            "type": "textarea",
+            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "sort": 27
+        },
+        {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.4",
+            "label": "Heading: Let the Right Buyers Find You",
+            "type": "text",
+            "value": "Let the Right Buyers Find You",
+            "sort": 28
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 29
+        }
+    ],
+    "lists": [
+        {
+            "key": "mf_lose",
+            "scope": "manufacturing",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "tc": "var(--c-teal)",
+                    "title": "Brand",
+                    "img": "lose-1.png",
+                    "box": [
+                        36.7,
+                        50.89,
+                        506.6,
+                        285.11
+                    ],
+                    "text": "When your brand does not reflect the strength of your operation, the right buyers look elsewhere. Not because your product is wrong, but because your presence did not give them a reason to stay."
+                },
+                {
+                    "c": "#141717",
+                    "tc": "#141717",
+                    "title": "Collateral",
+                    "img": "lose-2.png",
+                    "box": [
+                        48,
+                        65,
+                        484.01,
+                        272.4
+                    ],
+                    "text": "A well-designed brochure for a manufacturing company does more than list services. It gives the buyer a clear picture of your capability, your standards, and why your business is the right fit, before they have spoken to anyone on your team. "
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "tc": "var(--c-olive)",
+                    "title": "Visibility",
+                    "img": "lose-3.png",
+                    "box": [
+                        40,
+                        57,
+                        500,
+                        281.4
+                    ],
+                    "text": "Marketing for manufacturing companies works when it reaches the right people at the right moment. We build programmes that put your business in front of industrial buyers when they are actively evaluating suppliers."
+                }
+            ]
+        },
+        {
+            "key": "mf_services",
+            "scope": "manufacturing",
+            "items": [
+                {
+                    "title": "Branding",
+                    "open": true,
+                    "text": "We build identities that reflect operational credibility. Manufacturing branding services are more than just about a logo. They define how your business is perceived at every touchpoint."
+                },
+                {
+                    "title": "Digital Marketing",
+                    "text": "Programmes that put your business in front of industrial buyers when they are actively evaluating suppliers."
+                },
+                {
+                    "title": "Social Media",
+                    "text": "Consistent, credible presence that shows your capability, scale and standards to the buyers researching you."
+                },
+                {
+                    "title": "Graphic Design",
+                    "text": "Design built around how industrial businesses sell, held to one standard across every piece."
+                },
+                {
+                    "title": "Brochure Design",
+                    "text": "Brochures that give the buyer a clear picture of your capability and standards before they have spoken to your team."
+                },
+                {
+                    "title": "Video Production",
+                    "text": "Video that shows what you produce and the scale of your operation, so buyers can evaluate you from your digital presence alone."
+                },
+                {
+                    "title": "Product Videos",
+                    "text": "Product videos that show your products and process clearly, ready for your website, trade shows and sales conversations."
+                }
+            ]
+        },
+        {
+            "key": "mf_offers",
+            "scope": "manufacturing",
+            "items": [
+                {
+                    "no": "01",
+                    "noc": "#D1C7E6",
+                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
+                    "title": "Brand Identity & Design",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Create a distinctive brand identity through consistent visual design, packaging graphics & creative elements that strengthen brand recognition across every customer touchpoint."
+                },
+                {
+                    "no": "02",
+                    "noc": "#EAD3C4",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "Marketing & Sales Collaterals",
+                    "img": "offer-2-56586a.png",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "Develop professionally designed brochures, catalogues, presentations and promotional materials that communicate your brand support your marketing and sales activities."
+                },
+                {
+                    "no": "03",
+                    "noc": "#A2DDDD",
+                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
+                    "title": "Corporate Communication",
+                    "img": "offer-3-56586b.png",
+                    "x": 34,
+                    "y": 265,
+                    "w": 505,
+                    "h": 343,
+                    "arrow": "offer-arrow-3.svg",
+                    "text": "Design consistent, brand-aligned corporate materials that help businesses communicate effectively through company profiles, internal publications, professional business documents."
+                }
+            ]
+        },
+        {
+            "key": "mf_faqs",
+            "scope": "manufacturing",
+            "items": [
+                [
+                    "What does a manufacturing marketing agency do?",
+                    "A manufacturing marketing agency handles the brand, creative, and digital work that helps manufacturers attract the right buyers and communicate their capability clearly. This covers branding, graphic design, digital marketing, video production, and sales collateral, built around how industrial buying decisions are actually made."
+                ],
+                [
+                    "Why do manufacturers need specialised marketing?",
+                    "Because buyers now research suppliers online before any conversation takes place. Every service we offer is built around the buying behaviour and sales cycles specific to manufacturing, rather than adapted from a generic template."
+                ],
+                [
+                    "What does digital marketing for manufacturers include?",
+                    "Programmes that put your business in front of industrial buyers when they are actively evaluating suppliers, supported by a website, brand and collateral that show your capability, certifications and scale."
+                ],
+                [
+                    "How does video production help manufacturers grow?",
+                    "Video lets buyers see what you produce and the scale of your operation, and helps them judge whether you are the kind of business they want to work with, all from your digital presence."
+                ],
+                [
+                    "How long does manufacturing marketing take to show results?",
+                    "It depends on your starting point and market. We shape the work around your specific situation, and agree the scope and priorities with you at the start."
+                ],
+                [
+                    "Do you work with manufacturers outside India?",
+                    "Yes. Intelliworkz has a global presence across 7 countries, with offices in India, the USA and Dubai."
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,739 @@
+{
+    "page": {
+        "slug": "packaging-design",
+        "config": {
+            "title": "Packaging Design Services | Intelliworkz",
+            "body_class": "page-packaging",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css",
+                "assets/css/seo.css",
+                "assets/css/collaterals.css",
+                "assets/css/packaging.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "dark-showcase",
+            "section_label": "Dark Showcase",
+            "key": "dark-showcase.1",
+            "label": "Heading: What Our Packaging Design Services …",
+            "type": "text",
+            "value": "What Our Packaging Design Services Cover",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Image (hero.png)",
+            "type": "image",
+            "value": "assets/images/packaging/hero.png",
+            "sort": 2
+        },
+        {
+            "section": "stats",
+            "section_label": "Stats",
+            "key": "stats.1",
+            "label": "Image (stats.png)",
+            "type": "image",
+            "value": "assets/images/packaging/stats.png",
+            "sort": 3
+        },
+        {
+            "section": "tools-strip",
+            "section_label": "Tools Strip",
+            "key": "tools-strip.1",
+            "label": "Image (tools-bg.png)",
+            "type": "image",
+            "value": "assets/images/packaging/tools-bg.png",
+            "sort": 4
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: Packaging design services ove… (services.png)",
+            "type": "image",
+            "value": "assets/images/packaging/services.png",
+            "sort": 5
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Paragraph: Home / Services / Branding & Creative / Packa…",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>Packaging design</span>",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading: PACKAGING DESIGN SERVICES",
+            "type": "text",
+            "value": "PACKAGING DESIGN SERVICES",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Paragraph: Successful packaging goes beyond creative des…",
+            "type": "textarea",
+            "value": "Successful packaging goes beyond creative design. It requires artwork that is carefully adapted, technically accurate, and prepared for production, ensuring a smooth transition from concept to press. As a trusted packaging design company, we support that process from start to finish. Our packaging design services, Packaging Rollout, and Pre-Press services help brands and packaging printers manage packaging artwork across the entire production cycle. Whether it’s a new product launch or package redesign, multi-SKU graphics conversion or preflighting for printing, we will help ensure your projects stay true and on time. Using our creativity and understanding of production, we can help you streamline your process and save revisions along the way.",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Bold label: Dedicated In-House Packaging Team",
+            "type": "text",
+            "value": "Dedicated In-House Packaging Team",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Text: Creative and technical expertise focused on a…",
+            "type": "text",
+            "value": "Creative and technical expertise focused on accurate artwork, consistent branding and timely delivery.",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Heading: Let’s Bring Your Packaging Vision to Life.",
+            "type": "text",
+            "value": "Let’s Bring Your Packaging Vision to Life.",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your project.",
+            "sort": 13
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 14
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 15
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 16
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.1",
+            "label": "Heading: Selected Packaging Design Work",
+            "type": "text",
+            "value": "Selected Packaging Design Work",
+            "sort": 17
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.2",
+            "label": "Paragraph: Explore packaging design, artwork adaptation …",
+            "type": "textarea",
+            "value": "Explore packaging design, artwork adaptation and production-ready packaging solutions created for brands and packaging printers. Our work covers custom boxes, product labels, packaging concepts, multi-SKU rollouts and artwork localisation, combining creative thinking with technical accuracy to maintain brand consistency across packaging formats.",
+            "sort": 18
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.3",
+            "label": "Bold label: Lorem ipsum",
+            "type": "text",
+            "value": "Lorem ipsum",
+            "sort": 19
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.4",
+            "label": "Text: Lorem ipsum dolor sit",
+            "type": "text",
+            "value": "Lorem ipsum dolor sit",
+            "sort": 20
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.1",
+            "label": "Heading: Why Intelliworkz",
+            "type": "text",
+            "value": "Why Intelliworkz",
+            "sort": 21
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.2",
+            "label": "Paragraph: Good packaging design will never be considere…",
+            "type": "textarea",
+            "value": "Good packaging design will never be considered good unless it works well during production. Every piece of artwork must be technically correct and prepared for the approval process, pre-press, and printing without delay.",
+            "sort": 22
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.3",
+            "label": "Paragraph: As one of the established packaging design ag…",
+            "type": "textarea",
+            "value": "As one of the established packaging design agencies, we are aware of both the creative and technical aspects of packaging. Artworks will be designed and edited, packaging will be launched, and print-ready files will be created.",
+            "sort": 23
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.4",
+            "label": "Paragraph: We work with our clients and the Printers to …",
+            "type": "text",
+            "value": "We work with our clients and the Printers to ensure consistent and timely delivery for their SKU rollout.",
+            "sort": 24
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 25
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.6",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 26
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.2",
+            "label": "Heading: Packaging Design Services We Offer",
+            "type": "text",
+            "value": "Packaging Design Services We Offer",
+            "sort": 27
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.3",
+            "label": "Paragraph: Good packaging is more than an attractive des…",
+            "type": "textarea",
+            "value": "Good packaging is more than an attractive design. It should represent your brand, work well across different packaging formats, and be easy to manage throughout the production process.",
+            "sort": 28
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Paragraph: We combine creative thinking with a structure…",
+            "type": "textarea",
+            "value": "We combine creative thinking with a structured production process to help brands build packaging that's practical, consistent, and ready for production. As a product packaging design company, we help brands develop packaging that balances creativity, technical accuracy, and production readiness for a smooth transition to print.",
+            "sort": 29
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 30
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.6",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 31
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.7",
+            "label": "Heading: A Streamlined Workflow from Design to Press",
+            "type": "text",
+            "value": "A Streamlined Workflow from Design to Press",
+            "sort": 32
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.8",
+            "label": "Paragraph: Every packaging project follows a structured …",
+            "type": "textarea",
+            "value": "Every packaging project follows a structured process designed to support accuracy, consistency, and production readiness.",
+            "sort": 33
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2",
+            "label": "Heading: what we offer",
+            "type": "text",
+            "value": "what we offer",
+            "sort": 34
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.3",
+            "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
+            "type": "textarea",
+            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "sort": 35
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.4",
+            "label": "Heading: Book a Free Consultation",
+            "type": "text",
+            "value": "Book a Free Consultation",
+            "sort": 36
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 37
+        }
+    ],
+    "lists": [
+        {
+            "key": "pk_benefits",
+            "scope": "packaging-design",
+            "items": [
+                "Creative & Production-Ready Design",
+                "Accurate Packaging Artwork",
+                "Multi-SKU Packaging Rollouts",
+                "Flexible Engagement Models"
+            ]
+        },
+        {
+            "key": "pk_filters",
+            "scope": "packaging-design",
+            "items": {
+                "all": "All",
+                "design": "Packaging Design",
+                "boxes": "Custom Boxes",
+                "labels": "Product Labels",
+                "rollout": "Packaging Rollout",
+                "mockups": "3D Mockups",
+                "prepress": "Pre-Press"
+            }
+        },
+        {
+            "key": "pk_tiles",
+            "scope": "packaging-design",
+            "items": [
+                {
+                    "img": "tile-a.png",
+                    "x": 0,
+                    "y": 0,
+                    "w": 570,
+                    "h": 685,
+                    "ih": 615,
+                    "cats": "design boxes"
+                },
+                {
+                    "img": "tile-b.png",
+                    "x": 585,
+                    "y": 0,
+                    "w": 600,
+                    "h": 335,
+                    "ih": 258,
+                    "cats": "design labels"
+                },
+                {
+                    "img": "tile-c.png",
+                    "x": 1200,
+                    "y": 0,
+                    "w": 600,
+                    "h": 335,
+                    "ih": 258,
+                    "cats": "rollout mockups"
+                },
+                {
+                    "img": "tile-d.png",
+                    "x": 585,
+                    "y": 350,
+                    "w": 395,
+                    "h": 335,
+                    "ih": 258,
+                    "cats": "boxes prepress"
+                },
+                {
+                    "img": "tile-e.png",
+                    "x": 995,
+                    "y": 350,
+                    "w": 395,
+                    "h": 335,
+                    "ih": 258,
+                    "cats": "labels rollout"
+                },
+                {
+                    "img": "tile-f.png",
+                    "x": 1405,
+                    "y": 350,
+                    "w": 395,
+                    "h": 335,
+                    "ih": 258,
+                    "cats": "mockups prepress"
+                }
+            ]
+        },
+        {
+            "key": "pk_stats",
+            "scope": "packaging-design",
+            "items": [
+                [
+                    [
+                        "500",
+                        "+",
+                        "Packaging Projects<br>Completed"
+                    ],
+                    [
+                        "1000",
+                        "+",
+                        "SKU Variants<br>Adapted"
+                    ],
+                    [
+                        "150",
+                        "+",
+                        "Brands<br>Supported"
+                    ]
+                ],
+                [
+                    [
+                        "98",
+                        "%",
+                        "On-Time<br>Delivery"
+                    ],
+                    [
+                        "250",
+                        "+",
+                        "Packaging Formats<br>Handled"
+                    ],
+                    [
+                        "15",
+                        "+",
+                        "Years of<br>Design Expertise"
+                    ]
+                ]
+            ]
+        },
+        {
+            "key": "pk_why",
+            "scope": "packaging-design",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "no": "01",
+                    "icon": "why-1.svg",
+                    "bg": "why-bg-1.png",
+                    "title": "In-House Design Team",
+                    "text": "Every marketing and sales collateral piece is designed by our in-house team, with no freelancers or subcontracting."
+                },
+                {
+                    "c": "#E31E36",
+                    "no": "02",
+                    "icon": "why-2.svg",
+                    "bg": "why-bg-2.png",
+                    "title": "Dedicated Design Team",
+                    "text": "The skilled designers work across your marketing materials, maintaining brand consistency without repeated briefing."
+                },
+                {
+                    "c": "#141717",
+                    "no": "03",
+                    "icon": "why-3.svg",
+                    "bg": "why-bg-3.png",
+                    "title": "Data Security & Confidentiality",
+                    "text": "Your marketing plans, sales materials and confidential business information are handled securely within our in-house team."
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "no": "04",
+                    "icon": "why-4.svg",
+                    "bg": "why-bg-4.png",
+                    "title": "Flexible & Transparent Pricing",
+                    "text": "Choose an engagement model that suits your design requirements, with the scope and pricing agreed before work begins."
+                }
+            ]
+        },
+        {
+            "key": "pk_tools",
+            "scope": "packaging-design",
+            "items": [
+                [
+                    "tool-indesign.svg",
+                    "#54001A",
+                    "Adobe InDesign",
+                    "Layout | Publish"
+                ],
+                [
+                    "tool-illustrator.svg",
+                    "#330000",
+                    "Adobe Illustrator",
+                    "Illustrate | Create"
+                ],
+                [
+                    "tool-photoshop.svg",
+                    "#001834",
+                    "Adobe Photoshop",
+                    "Edit | Retouch"
+                ]
+            ]
+        },
+        {
+            "key": "pk_services",
+            "scope": "packaging-design",
+            "items": [
+                {
+                    "title": "Packaging Design",
+                    "open": true,
+                    "points": [
+                        "Custom Packaging Design",
+                        "Packaging rollout",
+                        "Custom Box Packaging Design",
+                        "Product Label Design",
+                        "Packaging Concepts",
+                        "Brand Identity Integration",
+                        "Product Mockups & 3D Visualizations"
+                    ]
+                },
+                {
+                    "title": "Packaging Rollout",
+                    "points": [
+                        "Approved artwork adapted across multiple SKUs",
+                        "Product variants and packaging formats",
+                        "Language and artwork localisation"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "pk_flow",
+            "scope": "packaging-design",
+            "items": [
+                {
+                    "no": "01",
+                    "c": "#F6B700",
+                    "nx": 47.51,
+                    "img": "step-1.png",
+                    "iw": 296,
+                    "ih": 222,
+                    "title": "Discovery",
+                    "text": "Understand your products, packaging requirements, brand guidelines, production workflow, and project objectives."
+                },
+                {
+                    "no": "02",
+                    "c": "#CF6CB9",
+                    "nx": 34.51,
+                    "img": "step-2.png",
+                    "iw": 310,
+                    "ih": 212,
+                    "title": "Design",
+                    "text": "Develop packaging concepts that balance creativity, functionality, and brand consistency."
+                },
+                {
+                    "no": "03",
+                    "c": "#59B38D",
+                    "nx": 34.51,
+                    "img": "step-3.png",
+                    "iw": 287.34,
+                    "ih": 198.77,
+                    "title": "Packaging Rollout",
+                    "text": "Adapt approved artwork across multiple SKUs, product variants, languages, and packaging formats."
+                },
+                {
+                    "no": "04",
+                    "c": "#7F68CE",
+                    "nx": 34.51,
+                    "img": "step-4.png",
+                    "iw": 296,
+                    "ih": 211,
+                    "title": "Pre-Press",
+                    "text": "Validate artwork, refine technical specifications, and prepare accurate print-ready files."
+                },
+                {
+                    "no": "05",
+                    "c": "#53A2BC",
+                    "nx": 31.01,
+                    "img": "step-5.png",
+                    "iw": 310,
+                    "ih": 217,
+                    "title": "Delivery",
+                    "text": "Deliver production-ready artwork that supports faster approvals and efficient manufacturing."
+                }
+            ]
+        },
+        {
+            "key": "pk_offers",
+            "scope": "packaging-design",
+            "items": [
+                {
+                    "no": "01",
+                    "noc": "#D1C7E6",
+                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
+                    "title": "Brand Identity & Design",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Create a distinctive brand identity through consistent visual design, packaging graphics & creative elements that strengthen brand recognition across every customer touchpoint."
+                },
+                {
+                    "no": "02",
+                    "noc": "#EAD3C4",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "Marketing & Sales Collaterals",
+                    "img": "offer-2-56586a.png",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "Develop professionally designed brochures, catalogues, presentations and promotional materials that communicate your brand support your marketing and sales activities."
+                },
+                {
+                    "no": "03",
+                    "noc": "#A2DDDD",
+                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
+                    "title": "Corporate Communication",
+                    "img": "offer-3-56586b.png",
+                    "x": 34,
+                    "y": 265,
+                    "w": 505,
+                    "h": 343,
+                    "arrow": "offer-arrow-3.svg",
+                    "text": "Design consistent, brand-aligned corporate materials that help businesses communicate effectively through company profiles, internal publications, professional business documents."
+                },
+                {
+                    "no": "04",
+                    "noc": "#D9D3A0",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Pre-Press Services",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Validated artwork and accurate print-ready files, prepared for a smooth transition from design to press."
+                }
+            ]
+        },
+        {
+            "key": "pk_faqs",
+            "scope": "packaging-design",
+            "items": [
+                [
+                    "What are packaging design services, and what do they include?",
+                    "Packaging design services encompass activities such as design of packaging, revisions on current packaging designs and artwork, and preparation of the design for printing. Services may include label design, packaging launch, artwork revision, pre-press assistance, and file preparation. The objective is to ensure that your packaging design is perfect and production-ready."
+                ],
+                [
+                    "How do I choose the right packaging design company?",
+                    "Look for a team that understands both the creative and the technical side of packaging: one that designs the artwork, adapts it across SKUs, and prepares print-ready files, working with you and your printers for consistent, on-time delivery."
+                ],
+                [
+                    "Do you offer custom box packaging design for unique product shapes?",
+                    "Yes. Our packaging design services include custom box packaging design, packaging concepts, and product mockups and 3D visualizations so you can see the result before production."
+                ],
+                [
+                    "What makes a luxury packaging design agency different from a standard one?",
+                    "Technical accuracy and consistency. Luxury packaging depends on precise artwork, brand identity integration and production-ready files that hold up through approval, pre-press and printing without delay."
+                ],
+                [
+                    "Do you provide product label design along with packaging design?",
+                    "Yes. Product label design is part of our packaging design services, alongside custom packaging, packaging rollout and pre-press."
+                ],
+                [
+                    "Can you redesign our existing packaging instead of starting from scratch?",
+                    "Yes. We handle package redesigns as well as new product launches, adapting approved artwork across multiple SKUs, variants, languages and packaging formats."
+                ]
+            ]
+        },
+        {
+            "key": "ve_form_fields",
+            "scope": "global",
+            "items": [
+                [
+                    "Full Name",
+                    "Enter your first name",
+                    "text"
+                ],
+                [
+                    "Company Name",
+                    "Enter your company name",
+                    "text"
+                ],
+                [
+                    "Email ID",
+                    "Enter your email ID",
+                    "email"
+                ],
+                [
+                    "Contact Number",
+                    "Enter your contact number",
+                    "tel"
+                ]
+            ]
+        }
+    ]
+}

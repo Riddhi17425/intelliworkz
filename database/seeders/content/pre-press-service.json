@@ -1,0 +1,702 @@
+{
+    "page": {
+        "slug": "pre-press-service",
+        "config": {
+            "title": "Pre-Press Service | Intelliworkz",
+            "body_class": "page-prepress",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css",
+                "assets/css/seo.css",
+                "assets/css/collaterals.css",
+                "assets/css/prepress.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "dark-showcase",
+            "section_label": "Dark Showcase",
+            "key": "dark-showcase.1",
+            "label": "Heading: What Our Pre-Press Services Cover",
+            "type": "text",
+            "value": "What Our Pre-Press Services Cover",
+            "sort": 1
+        },
+        {
+            "section": "stats",
+            "section_label": "Stats",
+            "key": "stats.1",
+            "label": "Image (stats.png)",
+            "type": "image",
+            "value": "assets/images/prepress/stats.png",
+            "sort": 2
+        },
+        {
+            "section": "tools-strip",
+            "section_label": "Tools Strip",
+            "key": "tools-strip.1",
+            "label": "Image (tools-bg.png)",
+            "type": "image",
+            "value": "assets/images/seo/tools-bg.png",
+            "sort": 3
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: Pre-press services overview (services.png)",
+            "type": "image",
+            "value": "assets/images/prepress/services.png",
+            "sort": 4
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Paragraph: Home / Services / Branding & Creative / Pre-P…",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>Pre-Press Service</span>",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Main heading: Print Ready File",
+            "type": "text",
+            "value": "Print Ready File",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Paragraph: The highest print quality can only be achieve…",
+            "type": "textarea",
+            "value": "The highest print quality can only be achieved even before the printing press is started to print. Even a brilliant, innovative design can end up being really expensive errors if your file is not properly ready. Color shifts, pixilated files, missing fonts, or incorrect layout- it all makes sense for a delay in production and also leads to an impact on the final results.",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Paragraph: We’ve developed pre-press services to provide…",
+            "type": "textarea",
+            "value": "We’ve developed pre-press services to provide each artwork with an official tech review before it’s ready for printing. Whether you need packaging, commercial print goods, labels, marketing materials, or wide-format display work, we can enable your company to eradicate production defects and secure greater quality control on all jobs.",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Bold label: Dedicated In-House Pre-Press Team",
+            "type": "text",
+            "value": "Dedicated In-House Pre-Press Team",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Text: Experienced pre-press specialists delivering …",
+            "type": "textarea",
+            "value": "Experienced pre-press specialists delivering technically accurate, colour-consistent, print-ready artwork with reliable turnaround.",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Heading: Let’s Make Your Artwork Print-Ready.",
+            "type": "text",
+            "value": "Let’s Make Your Artwork Print-Ready.",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your project.",
+            "sort": 13
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 14
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 15
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 16
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.1",
+            "label": "Heading: Selected Pre-Press Work",
+            "type": "text",
+            "value": "Selected Pre-Press Work",
+            "sort": 17
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.2",
+            "label": "Paragraph: Our pre-press work supports brands, packaging…",
+            "type": "textarea",
+            "value": "Our pre-press work supports brands, packaging printers and businesses with artwork verification, colour management, print proofing and production-ready file preparation. Every file undergoes technical checks to minimise printing errors, maintain colour consistency and ensure accurate results across different printing formats.",
+            "sort": 18
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.1",
+            "label": "Heading: What You Get From Our Pre-Press Services Beyo…",
+            "type": "text",
+            "value": "What You Get From Our Pre-Press Services Beyond File Preparation",
+            "sort": 19
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.2",
+            "label": "Paragraph: Pre-production & Color Management is Not Just…",
+            "type": "textarea",
+            "value": "Pre-production &amp; Color Management is Not Just a Case of Exporting the PDF. Artwork preparation for print covers a wide range of activities that ensure your finished printed product matches your design aspirations accurately. Quality control ensures every artwork is screened for color profile, the images have been supplied with the required resolution, any necessary bleed has been set correctly, fonts used are all embedded or outlined, copy and positioning are perfectly consistent, and it is 100% production ready to ensure there are no reprinting, lost production time, or poor print results.",
+            "sort": 20
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.3",
+            "label": "Paragraph: The whole process must culminate in file inte…",
+            "type": "textarea",
+            "value": "The whole process must culminate in file integrity, and at Intelliworkz, we adhere to a very rigorous pre-press &amp; color management procedure before every file goes into production; we're in communication with the designer, printer, and production team daily.",
+            "sort": 21
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.4",
+            "label": "Paragraph: Having trusted pre-press companies that can s…",
+            "type": "textarea",
+            "value": "Having trusted pre-press companies that can support all our graphic needs is a must, a team of specialists that take files from brief through to litho and digital production consistently throughout all.",
+            "sort": 22
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 23
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.6",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 24
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.2",
+            "label": "Heading: Comprehensive Pre-Press Services for Commerci…",
+            "type": "text",
+            "value": "Comprehensive Pre-Press Services for Commercial and Packaging Printing",
+            "sort": 25
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.3",
+            "label": "Paragraph: Get every print project prepared for producti…",
+            "type": "textarea",
+            "value": "Get every print project prepared for production before we start, no matter if your project is in packaging printing, in printing labels, in marketing collateral printing, in producing brochures printing, or in wide-format print graphics. Our digital pre-press services ensure every potential print production problem is prevented or caught before the first page is sent for print, every.single.print job, to the very last page.",
+            "sort": 26
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 27
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.5",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
+            "sort": 28
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2",
+            "label": "Heading: What we offer",
+            "type": "text",
+            "value": "What we offer",
+            "sort": 29
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.3",
+            "label": "Paragraph: We design brochures, company profiles, sales …",
+            "type": "textarea",
+            "value": "We design brochures, company profiles, sales presentations, proposals, product catalogues and digital marketing materials. From a single brochure to a complete suite of branded collateral, every piece follows a consistent design process tailored to its format and purpose.",
+            "sort": 30
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.4",
+            "label": "Heading: Book a Free Consultation",
+            "type": "text",
+            "value": "Book a Free Consultation",
+            "sort": 31
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 32
+        }
+    ],
+    "lists": [
+        {
+            "key": "pp_benefits",
+            "scope": "pre-press-service",
+            "items": [
+                "Accurate Artwork Verification",
+                "Professional Colour Management",
+                "Preflight & Quality Checks",
+                "Production-Ready File Delivery"
+            ]
+        },
+        {
+            "key": "pp_filters",
+            "scope": "pre-press-service",
+            "items": {
+                "all": "All",
+                "packaging": "Packaging Pre-Press",
+                "commercial": "Commercial Print",
+                "digital": "Digital Pre-Press",
+                "colour": "Colour Management & Proofing"
+            }
+        },
+        {
+            "key": "pp_strip",
+            "scope": "pre-press-service",
+            "items": [
+                {
+                    "img": "strip-a.png",
+                    "cats": "packaging"
+                },
+                {
+                    "img": "strip-b.png",
+                    "cats": "commercial"
+                },
+                {
+                    "img": "strip-a.png",
+                    "cats": "digital"
+                },
+                {
+                    "img": "strip-b.png",
+                    "cats": "colour"
+                },
+                {
+                    "img": "strip-a.png",
+                    "cats": "packaging commercial"
+                }
+            ]
+        },
+        {
+            "key": "pp_stats_top",
+            "scope": "pre-press-service",
+            "items": [
+                [
+                    "2500",
+                    "Projects Delivered"
+                ],
+                [
+                    "7",
+                    "Countries Global Presence"
+                ],
+                [
+                    "30",
+                    "Industries Served"
+                ]
+            ]
+        },
+        {
+            "key": "pp_stats_bottom",
+            "scope": "pre-press-service",
+            "items": [
+                [
+                    "18",
+                    "Years of Experience"
+                ],
+                [
+                    "1200",
+                    "Global Clients"
+                ],
+                [
+                    "120",
+                    "Skilled Professional"
+                ]
+            ]
+        },
+        {
+            "key": "pp_why",
+            "scope": "pre-press-service",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "tint": "#B5DEEB",
+                    "no": "01",
+                    "icon": "why-1.svg",
+                    "title": "In-House Pre-Press Team",
+                    "text": "Every artwork file is prepared and checked by our experienced in-house pre-press specialists, with no freelancers or subcontracting."
+                },
+                {
+                    "c": "var(--c-red)",
+                    "tint": "#FFD5D9",
+                    "no": "02",
+                    "icon": "why-2.svg",
+                    "title": "Dedicated Project Team",
+                    "text": "The same or similarly skilled specialists work across your print projects, maintaining technical accuracy and consistency without repeated briefing."
+                },
+                {
+                    "c": "#141717",
+                    "tint": "#666666",
+                    "no": "03",
+                    "icon": "why-3.svg",
+                    "title": "Data Security & Confidentiality",
+                    "text": "Your artwork files, packaging designs and confidential production information are handled securely within our in-house team."
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "tint": "#8DAC65",
+                    "no": "04",
+                    "icon": "why-4.svg",
+                    "title": "Flexible & Transparent Pricing",
+                    "text": "Choose an engagement model that suits your pre-press requirements, with the scope, timelines and pricing agreed before work begins."
+                }
+            ]
+        },
+        {
+            "key": "pp_tools",
+            "scope": "pre-press-service",
+            "items": [
+                [
+                    [
+                        "mag",
+                        "tool-illustrator.svg",
+                        "#330000",
+                        "Adobe Illustrator",
+                        "Create | Refine"
+                    ],
+                    [
+                        "png",
+                        "tool-esko-artpro.png",
+                        null,
+                        "Esko ArtPro+",
+                        "Preflight | Optimise"
+                    ],
+                    [
+                        "svg",
+                        "tool-gmg.svg",
+                        null,
+                        "GMG Color Management",
+                        "Calibrate | Match"
+                    ]
+                ],
+                [
+                    [
+                        "mag",
+                        "tool-indesign.svg",
+                        "#54001A",
+                        "Adobe InDesign",
+                        "Layout | Prepare"
+                    ],
+                    [
+                        "png",
+                        "tool-esko-automation.png",
+                        null,
+                        "Esko Automation Engine",
+                        "Automate | Streamline"
+                    ],
+                    [
+                        "png",
+                        "tool-pitstop.png",
+                        null,
+                        "Enfocus PitStop Pro",
+                        "Preflight | Correct"
+                    ]
+                ],
+                [
+                    [
+                        "mag",
+                        "tool-photoshop.svg",
+                        "#001834",
+                        "Adobe Photoshop",
+                        "Edit | Enhance"
+                    ],
+                    [
+                        "mag",
+                        "tool-acrobat.svg",
+                        "#B40B00",
+                        "Adobe Acrobat Pro",
+                        "Inspect | Validate"
+                    ]
+                ]
+            ]
+        },
+        {
+            "key": "pp_services",
+            "scope": "pre-press-service",
+            "items": [
+                {
+                    "title": "Artwork Preparation",
+                    "open": true,
+                    "points": [
+                        "File verification",
+                        "Resolution and image checks",
+                        "Font and typography validation",
+                        "Bleed, margins, and crop mark setup",
+                        "Layout optimization"
+                    ]
+                },
+                {
+                    "title": "Print Production Support",
+                    "points": [
+                        "Print optimization for offset, flexo, gravure, or digital",
+                        "Overprinting and trapping checks",
+                        "Production-ready file delivery"
+                    ]
+                },
+                {
+                    "title": "Quality Assurance",
+                    "points": [
+                        "Digital proofs and pre-flights",
+                        "Colour, alignment and typo checks",
+                        "Client review and approval"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "pp_flow",
+            "scope": "pre-press-service",
+            "items": [
+                {
+                    "no": "01",
+                    "bg": "#EFF7FA",
+                    "c": "#53A2BC",
+                    "iy": 234,
+                    "title": "Artwork Review",
+                    "text": "First, we examine your design files. We then use the dimensions, specifications, and production guidelines for the print run and the colors you require to check for any problems before the file gets into production."
+                },
+                {
+                    "no": "02",
+                    "bg": "#FAEFEF",
+                    "c": "#CF6CB9",
+                    "iy": 234,
+                    "title": "File Preparation",
+                    "text": "After that, artwork will be prepared, where we will be checking image quality and resolution, fonts used, bleed settings, profiles used, etc., and also overprinting and trapping will be checked; layout is also checked."
+                },
+                {
+                    "no": "03",
+                    "bg": "#FAF6EF",
+                    "c": "#C9AC61",
+                    "iy": 263.23,
+                    "title": "Proofing & Quality Checks",
+                    "text": "Digital proofs & pre-flights: they run a check for color(s), alignment(s), and typos and check for any technical problem(s) & omissions (the ‘pre’ phase for pre-press)."
+                },
+                {
+                    "no": "04",
+                    "bg": "#EFF7FA",
+                    "c": "#59B38D",
+                    "iy": 234,
+                    "title": "Print Optimization",
+                    "text": "The artwork file is adapted for the print method of choice (offset, flexo, gravure, or digital) so as to enable an accurate color result and efficient production."
+                },
+                {
+                    "no": "05",
+                    "bg": "#FAEFFA",
+                    "c": "#7F68CE",
+                    "iy": 234,
+                    "title": "Client Review & Approval",
+                    "text": "Final proofs are then sent out for production approval. Any necessary amendments are made to ensure artwork complies with specifications and the brand."
+                },
+                {
+                    "no": "06",
+                    "bg": "#FAF6EF",
+                    "c": "#53A2BC",
+                    "iy": 234,
+                    "title": "Production-Ready Delivery",
+                    "text": "Files are then delivered as final, ready-to-print; specifications will transition seamlessly to the printing stage."
+                }
+            ]
+        },
+        {
+            "key": "pp_offers",
+            "scope": "pre-press-service",
+            "items": [
+                {
+                    "no": "01",
+                    "noc": "#D1C7E6",
+                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
+                    "title": "Desktop Publishing Services",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "Document publishing is much more than writing good content; it is about designing the right layouts, formatting, applying the correct typography, and ensuring document preparation is done."
+                },
+                {
+                    "no": "02",
+                    "noc": "#EAD3C4",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "Newsletter Design",
+                    "img": "offer-2-56586a.png",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "A newsletter is not a one-off project. It goes out weekly, monthly, or quarterly, and every time it lands, it either reinforces your brand or quietly undermines it."
+                },
+                {
+                    "no": "03",
+                    "noc": "#A2DDDD",
+                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
+                    "title": "Scientific Journal",
+                    "img": "offer-3-56586b.png",
+                    "x": 34,
+                    "y": 265,
+                    "w": 505,
+                    "h": 343,
+                    "arrow": "offer-arrow-3.svg",
+                    "text": "Journal publication is the process of having your finished research paper evaluated, approved, and published in a scholarly publication or journal."
+                },
+                {
+                    "no": "04",
+                    "noc": "#D9D3A0",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Product Catalogue Design",
+                    "img": "offer-1-625569.png",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "A catalogue is only useful when it is easy to browse. We keep product information consistent, accurate, and ready for print and digital output."
+                }
+            ]
+        },
+        {
+            "key": "pp_faqs",
+            "scope": "pre-press-service",
+            "items": [
+                [
+                    "What are pre-press services?",
+                    "Pre-press services involve preparing digital artwork for printing through processes such as file verification, colour management, proofing, layout validation, and print optimization. This ensures every file is technically ready before production begins."
+                ],
+                [
+                    "What is included in professional pre-press services?",
+                    "Artwork review, file preparation (resolution, fonts, bleed, colour profiles, overprinting and trapping), proofing and quality checks, print optimization, client review and approval, and production-ready delivery."
+                ],
+                [
+                    "How long does the pre-press process take?",
+                    "The timeline depends on the number of files and how much preparation each one needs. It is agreed with you before work begins, together with the scope and pricing."
+                ],
+                [
+                    "What software is used for pre-press?",
+                    "We work with Adobe Illustrator, InDesign, Photoshop and Acrobat Pro, Esko ArtPro+ and Automation Engine, GMG colour management, and Enfocus PitStop Pro."
+                ],
+                [
+                    "What industries use pre-press services?",
+                    "Any business that prints: packaging and label printers, commercial print, marketing collateral, brochures and wide-format display work."
+                ],
+                [
+                    "Do I need pre-press services for digital printing?",
+                    "Yes. Colour shifts, low-resolution images, missing fonts and incorrect layouts cause problems in digital printing too. A pre-press check catches them before the first page is printed."
+                ]
+            ]
+        },
+        {
+            "key": "ve_form_fields",
+            "scope": "global",
+            "items": [
+                [
+                    "Full Name",
+                    "Enter your first name",
+                    "text"
+                ],
+                [
+                    "Company Name",
+                    "Enter your company name",
+                    "text"
+                ],
+                [
+                    "Email ID",
+                    "Enter your email ID",
+                    "email"
+                ],
+                [
+                    "Contact Number",
+                    "Enter your contact number",
+                    "tel"
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Packaging Design page (Figma: IW / "Packaging Design", 1920px)
+   Builds on video.css (hero, form, stats, offers, FAQ) + seo.css (services header, tools text)
+   + collaterals.css (services image).
+   ========================================================================== */
+
+.pk .ve-hero::after { display: none; }
+.pk-hero__art { position: absolute; left: 548px; top: 525px; width: 731px; height: 412px; max-width: none; object-fit: cover;  opacity: .2; }
+
+/* ---------- Selected work: header + a 1800x685 masonry grid at fixed Figma coordinates ---------- */
+.pk-pf { display: flex; flex-direction: column; gap: 40px; }
+.pk-pf__head { display: flex; flex-direction: column; gap: 24px; }
+.pk-pf__title { width: 1551px; max-width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.pk-pf__title p { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.pk-grid { position: relative; height: 685px; }
+.pk-tile { position: absolute; display: block; overflow: hidden; background: var(--c-white); border: 1px solid var(--c-border-gray); border-radius: 10px; transition: transform .3s; }
+.pk-tile[hidden] { display: none; }
+.pk-tile:hover { transform: translateY(-4px); }
+.pk-tile img { display: block; width: 100%; object-fit: cover; margin: -1px -1px 0; width: calc(100% + 2px); max-width: none; }
+.pk-tile__meta { display: flex; flex-direction: column; gap: 2px; padding: 16px 14px 0; }
+.pk-tile__row { display: flex; justify-content: space-between; align-items: center; }
+.pk-tile__row strong { font-weight: 600; font-size: 18px; line-height: 24px; text-transform: uppercase; color: #111827; }
+.pk-tile__sub { font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+
+/* ---------- Stats: 3 x 2 grid, photo fades into black, cutting-lines art on the right ---------- */
+.pk-stats__lines { left: 1140.5px; top: -30px; width: 793px; height: 459px; opacity: .3; }
+.pk-stats__bg { left: 0; top: -83.26px; width: 1006.61px; height: 566.52px; object-fit: cover; }
+.pk-stats::after { content: ""; position: absolute; left: 0; top: -83.26px; width: 1006.61px; height: 566.52px; background: linear-gradient(90deg, rgba(0, 0, 0, 0) 58%, #000 88%); }
+.pk-stats .ve-stats__content { left: 790px; z-index: 1; }
+
+/* ---------- Why cards: photo on top, number top-left, content overlapping the fade ---------- */
+.pk-why { display: flex; justify-content: space-between; width: 1800px; max-width: 100%; }
+.pk-why__card { position: relative; width: 420px; height: 464px; overflow: hidden; background: var(--c-white); border: 1px solid var(--c); border-radius: 10px; }
+.pk-why__bg { position: absolute; left: 0; top: 0; width: 420px; height: 266px; max-width: none; object-fit: cover; }
+.pk-why__card::after { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 266px; background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 45%); }
+.pk-why__no { position: absolute; z-index: 1; left: 24px; top: 33.94px; font-family: var(--font-display); font-weight: 500; font-size: 42px; line-height: 34px; color: var(--c); }
+.pk-why__content { position: absolute; z-index: 1; left: 0; top: 229px; width: 100%; display: flex; flex-direction: column; gap: 24px; padding: 0 24px; }
+.pk-why__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 32px; background: var(--c); }
+.pk-why__text { display: flex; flex-direction: column; gap: 12px; }
+.pk-why__text h3 { font-weight: 500; font-size: 24px; line-height: normal; color: #1A1A1A; }
+.pk-why__text p { font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+
+/* ---------- Tools strip: three tools over a dark monitor photo ---------- */
+.pk-tools { position: relative; width: 1920px; max-width: 100%; height: 500px; overflow: hidden; background: #000; }
+.pk-tools__photo { position: absolute; left: -7px; top: -58px; width: 1960px; height: 1103.09px; max-width: none; object-fit: cover; }
+.pk-tools__row { position: absolute; z-index: 1; left: 450px; top: 61px; display: flex; align-items: center; gap: 76px; }
+.pk-tools__divider { flex: none; width: 1px; height: 58px; background: var(--c-border-gray); }
+
+/* ---------- Services ---------- */
+.pk-services-flow { gap: 100px; }
+.ve-split--center > .pk-services__title { flex: none; width: 617px; text-align: left; }
+.pk-services__img { width: 830px; max-width: 48%; }
+
+/* ---------- Workflow: 5 steps with big pictures on a coloured timeline ---------- */
+.pk-flow-wrap { width: 1800px; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.pk-flow-head { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.pk-flow-head p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-body-gray); text-align: center; }
+.pk-flow { position: relative; flex: none; width: 1800px; max-width: 100%; height: 572px; }
+.pk-flow__seg { position: absolute; top: 322px; height: 2px; }
+.pk-step { position: absolute; top: 2px; width: 250px; display: flex; flex-direction: column; align-items: center; gap: 27px; }
+.pk-step__art { position: relative; width: 310px; height: 285px; }
+.pk-step__no { position: absolute; top: 0; font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; color: var(--c); }
+.pk-step__art img { position: absolute; left: 0; top: 63px; max-width: none; object-fit: cover; }
+.pk-step__copy { display: flex; flex-direction: column; align-items: center; gap: 20px; align-self: stretch; }
+.pk-step__dot { width: 17.69px; height: 17.69px; box-sizing: border-box; border: 5px solid var(--c); border-radius: 50%; background: var(--c-white); }
+.pk-step__copy h3 { display: flex; flex-direction: column; align-items: center; gap: 8px; font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); text-align: center; }
+.pk-step__copy h3 span { width: 34px; height: 3px; border-radius: 100px; background: var(--c); }
+.pk-step__copy p { text-align: center; font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+.pk-flow__next { position: absolute; top: 308px; width: 30px; height: 30px; }
+
+.pk .ve-hero__copy { padding-top: 0; }

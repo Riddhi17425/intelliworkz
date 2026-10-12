@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Contact page (Figma: IW / "Contact", 1920px)
+   Builds on video.css (hero shell, FAQ) + manufacture.css (hero copy + buttons).
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.ct .ve-hero::after { display: none; }
+.ct-hero__photo { position: absolute; left: 168.79px; top: 176px; width: 1751.21px; height: 860.71px; max-width: none; object-fit: cover; }
+.ct-hero::before { content: ""; position: absolute; z-index: 1; left: 168.79px; top: 176px; width: 1751.21px; height: 860.71px; pointer-events: none; background: linear-gradient(270deg, rgba(0, 0, 0, 0) 28%, #000 100%); }
+.ct-hero__copy { padding-top: 31px; }
+.ct-hero__text { display: flex; flex-direction: column; gap: 12px; width: 700px; max-width: 100%; }
+.ct-hero__text .h1 { width: 985.78px; max-width: 100%; }
+.ct-hero__text p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
+.ct-hero__copy { gap: 40px; }
+
+.ct-body { display: flex; flex-direction: column; align-items: center; gap: 100px; width: 100%; }
+
+/* ---------- Form ---------- */
+.ct-form { position: relative; display: flex; justify-content: space-between; align-items: flex-start; }
+.ct-form__copy { position: relative; width: 986px; min-height: 700px; display: flex; flex-direction: column; gap: 24px; }
+.ct-form__copy p { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.ct-form__outline { position: absolute; left: 0; top: 243px; width: 784.75px; height: 438px; max-width: none; object-fit: cover; opacity: .28; }
+.ct-card { flex: none; width: 720px; padding: 32px; display: flex; flex-direction: column; gap: 24px; border: 1px solid var(--c-border-gray); border-radius: 5px; background: var(--c-white); }
+.ct-card__head { display: flex; flex-direction: column; gap: 12px; }
+.ct-card__head h2 { font-weight: 500; font-size: 22px; line-height: 28px; color: #070A0E; }
+.ct-card__head p { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.ct-card__fields { display: flex; flex-direction: column; gap: 24px; }
+.ct-card__row { display: flex; gap: 24px; }
+.ct-field { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.ct-field span { font-weight: 500; font-size: 17px; line-height: 20px; color: var(--c-ink); }
+.ct-field input, .ct-field textarea { width: 100%; padding: 14px; background: transparent; color: var(--c-ink); border: 1px solid var(--c-border-gray); border-radius: 5px; font: 500 15px/18px var(--font-body); outline: none; resize: none; transition: border-color .2s, box-shadow .2s; }
+.ct-field textarea { padding-bottom: 56px; }
+.ct-field input::placeholder, .ct-field textarea::placeholder { color: var(--c-body-gray); }
+.ct-field input:focus, .ct-field textarea:focus { border-color: var(--c-red); box-shadow: 0 0 0 3px rgba(196, 32, 48, .15); }
+.ct-card__privacy { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 500; font-size: 14px; line-height: 18px; color: #888; }
+
+/* ---------- Dark offices block ---------- */
+.ct-dark { position: relative; width: 1920px; max-width: 100%; height: 920px; overflow: hidden; background: var(--c-black); }
+.ct-dark__head { position: absolute; left: 60px; top: 98.5px; display: flex; flex-direction: column; gap: 6px; width: 829.89px; max-width: 45%; }
+.ct-dark__head .h2 { color: var(--c-white); }
+.ct-dark__head p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
+.ct-dark__map { position: absolute; left: 60px; top: 406.35px; width: 830px; height: 415.15px; max-width: none; }
+.ct-pin { position: absolute; width: 20px; height: 20px; border-radius: 50%; background: var(--c-red); box-shadow: 0 0 0 6px rgba(196, 32, 48, .25); }
+.ct-pin__label { position: absolute; font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-border-gray); }
+
+.ct-offices { position: absolute; left: 986px; top: 98.5px; width: 874px; border: 1px solid var(--c-body-gray); border-radius: 5px; overflow: hidden; }
+.ct-offices__tabs { display: flex; height: 74px; background: #0E0F11; border-bottom: 1px solid rgba(255, 255, 255, .13); }
+.ct-offices__tab { flex: 1; display: grid; place-items: center; font-weight: 600; font-size: 18px; color: var(--c-light-bg); transition: background-color .2s; }
+.ct-offices__tab + .ct-offices__tab { border-left: 1px solid var(--c-body-gray); }
+.ct-offices__tab:hover { background: #1b1c1f; }
+.ct-offices__tab.is-active { background: var(--c-red); }
+.ct-office { display: flex; flex-direction: column; gap: 28px; padding: 32px; }
+.ct-office[hidden] { display: none; }
+.ct-office__id { display: flex; align-items: baseline; gap: 16px; }
+.ct-office__id strong { font-family: var(--font-display); font-weight: 500; font-size: 36px; line-height: 44px; color: var(--c-white); }
+.ct-office__id span { font-weight: 500; font-size: 14px; color: #888; }
+.ct-office__rule { height: 1px; border: 0; background: rgba(255, 255, 255, .1); }
+.ct-office__cols { display: flex; gap: 58px; }
+.ct-office__block { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.ct-office__block--contact { gap: 14px; }
+.ct-office__block--contact > div { display: flex; flex-direction: column; gap: 10px; }
+.ct-office__label { font-weight: 600; font-size: 16px; line-height: 24px; color: #888; }
+.ct-office__block p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
+.ct-office__actions { display: flex; gap: 14px; }
+.ct-office__btn { display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 5px; font-weight: 600; font-size: 18px; color: var(--c-light-bg); transition: background-color .2s, color .2s; }
+.ct-office__btn--ghost { box-shadow: inset 0 0 0 1px var(--c-divider-gray); }
+.ct-office__btn--ghost:hover { background: var(--c-white); color: var(--c-black); }
+.ct-office__btn--red { background: var(--c-red); }
+.ct-office__btn--red:hover { background: #a81a28; }
+.ct-office__note { display: flex; justify-content: space-between; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .09); }
+.ct-office__note span { font-weight: 600; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #686A6F; }

@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Magazine Design service page (Figma: IW / "Magazine design", 1920px)
+   Reuses the hero / form / accordion / offers / FAQ styles from video.css.
+   ========================================================================== */
+
+/* ---------- Hero (plain black, no photo) ---------- */
+.ve-hero--plain::after { display: none; }
+.breadcrumb--light { color: var(--c-divider-gray); }
+
+/* ---------- Our Examples (Figma: centred heading, full-bleed strip; auto-sliding + drag) ---------- */
+.mg-examples { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.mg-viewport { width: 100%; overflow: hidden; cursor: grab; touch-action: pan-y; }
+.mg-viewport.is-dragging { cursor: grabbing; }
+.mg-strip { display: flex; align-items: center; gap: 40px; user-select: none; }
+.mg-strip.is-sliding { transition: transform .6s cubic-bezier(.22, .8, .24, 1); }
+.mg-tile { position: relative; flex: none; width: 300px; height: 300px; overflow: hidden; border-radius: 8px; background: var(--c-white); }
+.mg-tile img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
+.mg-tile--frame img { position: absolute; left: -18px; top: -97px; width: 336px; height: 494px; max-width: none; }
+.mg-tile.has-border { border: 1px solid var(--c-border-gray); }
+
+/* ---------- Dark metrics row ---------- */
+.metrics--dark { background: var(--c-black); border-color: transparent; }
+.metrics--dark .metric__icon { border-color: var(--c-white); }
+.metrics--dark .metric__value { color: var(--c-white); }
+.metrics--dark .metric__label { font-weight: 500; line-height: 30px; color: var(--c-border-gray); }
+
+/* ---------- Why cards ---------- */
+.mg-why { display: flex; gap: 24px; height: 252px; }
+.mg-why__card { flex: 1; display: flex; flex-direction: column; border-radius: 12px; }
+.mg-why__card.has-shadow { box-shadow: 0 4px 16px rgba(0, 0, 0, .1); border-radius: 16px; }
+.mg-why__head { display: flex; justify-content: space-between; align-items: center; height: 100px; padding: 24px; background: var(--c); border-radius: 10px 10px 0 0; }
+.mg-why__card:first-child .mg-why__head { border-radius: 12px 12px 0 0; }
+.mg-why__icon { display: grid; place-items: center; flex: none; width: 64px; height: 64px; background: var(--c-white); border-radius: 32px; }
+.mg-why__no { font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; }
+.mg-why__body { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 24px 20px 28px; background: var(--c-white); border-radius: 0 0 10px 10px; }
+.mg-why__body.has-border { border: 1px solid var(--c); border-top: 0; }
+.mg-why__body h3 { font-weight: 700; font-size: 16px; line-height: 22px; color: #1A1A1A; }
+.mg-why__body p { font-size: 15px; line-height: 22px; color: var(--c-body-gray); }
+
+/* ---------- Tools strip ---------- */
+.mg-tools { width: 1920px; max-width: 100%; padding: 32px 64px; border-block: 1px solid var(--c-border-gray); }
+.mg-tools__row { display: flex; justify-content: space-between; align-items: center; }
+.mg-tool { display: flex; align-items: center; gap: 20px; }
+.mg-tool__icon { display: grid; place-items: center; flex: none; width: 72px; height: 72px; border-radius: 10px; }
+.mg-tool__icon img { max-width: none; }
+.mg-tool div { display: flex; flex-direction: column; gap: 8px; }
+.mg-tool strong { font-weight: 600; font-size: 18px; line-height: normal; color: #111827; }
+.mg-tool span { font-size: 16px; line-height: 24px; color: var(--c-dark-gray); }
+.mg-tools__divider { flex: none; width: 1px; height: 58px; background: var(--c-border-gray); }
+
+/* ---------- Services accordion (variant) ---------- */
+.acc--mag .acc-points { width: 458px; }
+.mg-services__img { flex: none; width: 681px; height: 692px; object-fit: cover; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+
+/* ---------- Workflow infographic ---------- */
+.mg-workflow { position: relative; width: 1771px; max-width: 100%; height: 678px; flex: none; }
+.mg-workflow__art { position: absolute; left: 303px; top: 14px; max-width: none; }
+.mg-workflow__icon { position: absolute; left: 371px; top: 89px; max-width: none; }
+.mg-workflow__title { position: absolute; left: 715px; top: 17px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.mg-workflow__title p { width: 262px; text-align: center; font-size: 24px; line-height: 32px; color: var(--c-body-gray); }
+.mg-flow { position: absolute; display: flex; flex-direction: column; gap: 16px; }
+.mg-flow h3 { font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); }
+.mg-flow p { font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+.mg-flow[style*="center"] h3 { margin-inline: auto; }

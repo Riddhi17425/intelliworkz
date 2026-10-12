@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Marketing & Sales Collaterals page (Figma: IW / "Marketing & Sales Collaterals", 1920px)
+   Builds on style.css + video.css + magazine.css (hero, form, metrics, tools strip, accordion, offers, FAQ).
+   ========================================================================== */
+
+/* ---------- Hero: photo sits at the bottom centre, under the pattern ---------- */
+/* Figma shows the book fading from solid black at the top to clear at the bottom (sampled from a render of the node) */
+.cl-hero__art { position: absolute; left: 580.34px; top: 410px; width: 733.33px; height: 550px; opacity: .5; background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0) 65%), url("../images/collaterals/hero.png") center / cover no-repeat; }
+/* Figma's copy block starts 14px higher than the video page's */
+.cl .ve-hero__copy { padding-top: 0; }
+
+/* ---------- Selected work: header + full-bleed 570x380 tile strip ---------- */
+.cl-pf { width: 1920px; max-width: 100%; display: flex; flex-direction: column; gap: 40px; }
+.cl-pf__head { display: flex; flex-direction: column; gap: 24px; padding: 0 60px; }
+.cl-pf__top { display: flex; justify-content: space-between; align-items: center; }
+.cl-pf__title { width: 1551px; max-width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.cl-pf__title p { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.cl-tile { position: relative; flex: none; width: 570px; height: 380px; overflow: hidden; border-radius: 10px; }
+.cl-tile img { width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
+.cl-tile[hidden] { display: none; }
+
+/* ---------- Dark metrics row: Figma pads this one 32px all round (the magazine default) ---------- */
+
+/* ---------- Why cards: coloured header bar + tab, photo at the bottom ---------- */
+.cl-why { display: flex; justify-content: space-between; align-items: stretch; width: 1800px; max-width: 100%; }
+.cl-why__card { position: relative; width: 420px; height: 520px; overflow: hidden; background: var(--c-white); border: 1px solid var(--c); border-radius: 10px; }
+.cl-why__bg { position: absolute; left: 0; top: 205px; width: 420px; height: 315px; max-width: none; object-fit: cover; }
+.cl-why__card::after { content: ""; position: absolute; left: 0; top: 205px; width: 100%; height: 315px; background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 24%); }
+.cl-why__tabbar { position: relative; z-index: 1; height: 53.88px; }
+.cl-why__tabbar::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 32px; background: var(--c); }
+.cl-why__tab { position: absolute; left: 272.3px; top: -9px; width: 158px; height: 74px; max-width: none; }
+.cl-why__no { position: absolute; left: 344.86px; top: 9.94px; font-family: var(--font-display); font-weight: 500; font-size: 42px; line-height: 34px; }
+.cl-why__content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; padding: 0 24px; }
+.cl-why__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 32px; background: var(--c); }
+.cl-why__text { display: flex; flex-direction: column; gap: 12px; }
+.cl-why__text h3 { font-weight: 500; font-size: 24px; line-height: normal; color: #1A1A1A; }
+.cl-why__text p { font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+
+/* ---------- Tools strip: the white PowerPoint / Slides tile ---------- */
+.cl-tool__tile { flex: none; width: 108px; height: 72px; }
+
+/* ---------- Services accordion + image ---------- */
+.cl-services-flow { gap: 100px; }
+.cl-services__head { gap: 16px; }
+.cl-services__title { flex: none; width: 789.3px; text-align: center; }
+.ve-split--center > .cl-services__title { flex: none; width: 789.3px; }
+.cl-services__img { flex: none; width: 750px; max-width: 45%; align-self: stretch; overflow: hidden; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+.cl-services__img img { width: 100%; height: 100%; object-fit: cover; }
+.cl .acc--services .acc-points { width: 450px; max-width: 100%; }
+
+/* ---------- Workflow: 6-step timeline on a 1824x392 canvas ---------- */
+.cl-flow { position: relative; flex: none; width: 1824px; max-width: 100%; height: 392.18px; }
+.cl-flow__seg { position: absolute; top: 146px; width: 304px; height: 1px; }
+.cl-flow__img { position: absolute; top: -40.67px; width: 245.33px; height: 184px; max-width: none; object-fit: cover; }
+.cl-flow__dot { position: absolute; top: 140px; width: 14px; height: 14px; margin-left: 0; box-sizing: border-box; border: 2px solid var(--c); border-radius: 50%; background: var(--c-white); }
+.cl-flow__dot::after { content: ""; position: absolute; left: 50%; top: 100%; width: 1px; height: 58.71px; background: var(--c); transform: translateX(-50%); }
+.cl-flow__text { position: absolute; top: 221.38px; display: flex; flex-direction: column; gap: 14px; }
+.cl-flow__text h3 { font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); }
+.cl-flow__text p { font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+.cl-flow__next { position: absolute; top: 131.5px; width: 30px; height: 30px; }

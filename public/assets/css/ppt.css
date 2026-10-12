@@ -1,0 +1,37 @@
+/* ==========================================================================
+   PPT Design page (Figma: IW / "PPT Design", 1920px)
+   Builds on video.css (hero, form, workflow rings, offers, FAQ) + seo.css (tools strip, services header)
+   + collaterals.css (portfolio header) + prepress.css (stats photo, why cards).
+   ========================================================================== */
+
+.ppt .ve-hero::after { display: none; }
+.ppt-hero__art { position: absolute; left: 638.46px; top: 520px; width: 588.07px; height: 418.05px; max-width: none; object-fit: cover;  opacity: .2; }
+
+/* ---------- Selected work: 1920x920 scene ---------- */
+.ppt-pf { gap: 40px; }
+.ppt-scene { position: relative; width: 1920px; max-width: 100%; height: 920px; overflow: hidden; background: var(--c-white); }
+.ppt-scene > img { position: absolute; max-width: none; }
+.ppt-scene__bg { left: 0; top: -80.29px; width: 1920px; height: 1080.57px; object-fit: cover; }
+.ppt-scene__layer--left { left: 108.68px; top: 235.2px; width: 318.25px; height: 181.97px; object-fit: contain; }
+.ppt-scene__layer--right { left: 1482.51px; top: 417.17px; width: 230.82px; height: 198.23px; object-fit: cover; }
+.ppt-scene__main { left: 417px; top: 0; width: 1086px; height: 724px; object-fit: cover; }
+
+.ppt-gallery { position: absolute; z-index: 2; left: 166.66px; top: 766px; display: flex; align-items: center; gap: 60px; }
+.ppt-gallery__viewport { width: 1306.7px; max-width: 1306.7px; overflow: hidden; }
+.ppt-gallery__track { display: flex; align-items: center; gap: 60px; }
+.ppt-gallery__track.is-sliding { transition: transform .5s cubic-bezier(.22, .8, .24, 1); }
+.ppt-gallery__tile { position: relative; display: block; flex: none; width: 202.67px; height: 114px; margin-top: 0; border-radius: 5px; overflow: hidden; opacity: .5; transition: opacity .25s, width .3s ease, height .3s ease, margin-top .3s ease; }
+.ppt-gallery__tile:hover { opacity: .8; }
+.ppt-gallery__tile img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.ppt-gallery__tile.is-featured { width: 256px; height: 144px; margin-top: 0; opacity: 1; border: 1px solid var(--c-red); }
+.ppt-gallery__tile[hidden] { display: none; }
+
+/* ---------- Stats: faint extra layer on the right ---------- */
+.ppt-stats__layer { left: 1486px; top: 80px; width: 314px; height: 320px; opacity: .12; }
+
+/* ---------- Tools strip: wider photo, grid sits lower ---------- */
+.ppt-tools .seo-tools__photo, .ppt-tools::after { left: -105px; top: -95px; width: 2025px; height: 776px; }
+.ppt-tools::after { background: none; }
+.ppt-tools .seo-tools__grid { top: 145.5px; }
+
+.ppt .ve-hero__copy { padding-top: 0; }

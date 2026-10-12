@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Motion layer: scroll reveals, hero entrance, hover/press feedback.
+   Loaded on every page. The reveal classes are added by effects.js, so a page
+   without JS (or with reduced motion) simply shows everything as normal.
+   ========================================================================== */
+
+:root { --fx-ease: cubic-bezier(.22, .8, .24, 1); }
+html { scroll-behavior: smooth; }
+::selection { background: var(--c-red); color: #fff; }
+:focus-visible { outline: 2px solid var(--c-red); outline-offset: 3px; }
+
+/* ---------- Scroll reveal ---------- */
+.fx { opacity: 0; transition: opacity .9s var(--fx-ease), transform .9s var(--fx-ease); transition-delay: calc(var(--fx-d, 0) * 85ms); }
+.fx-up { transform: translateY(34px); }
+.fx-left { transform: translateX(-44px); }
+.fx-right { transform: translateX(44px); }
+.fx-zoom { transform: scale(.94); }
+.fx.fx-in { opacity: 1; transform: none; }
+
+/* ---------- Hero entrance (plays once on load) ---------- */
+.fx-hero { animation: fx-hero .95s var(--fx-ease) backwards; animation-delay: calc(var(--fx-d, 0) * 90ms + .12s); }
+@keyframes fx-hero { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+/* slow "breathing" zoom on the big hero photos */
+.hero__bg, .mf-hero__photo, .ct-hero__photo { animation: fx-breathe 22s ease-in-out infinite alternate; transform-origin: 60% 50%; }
+@keyframes fx-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+/* ---------- Scroll progress bar + back-to-top ---------- */
+.fx-progress { position: fixed; left: 0; top: 0; z-index: 3000; width: 100%; height: 3px; background: linear-gradient(90deg, var(--c-red), #ff6b7a); transform: scaleX(0); transform-origin: left; pointer-events: none; }
+.fx-top { position: fixed; right: 24px; bottom: 24px; z-index: 900; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: var(--c-red); color: #fff; box-shadow: 0 10px 28px rgba(196, 32, 48, .4); opacity: 0; transform: translateY(18px) scale(.9); pointer-events: none; transition: opacity .35s, transform .35s var(--fx-ease), background-color .2s; }
+.fx-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+.fx-top:hover { background: #a91a28; transform: translateY(-4px); }
+.fx-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Buttons: lift + light sweep + arrow nudge ---------- */
+.btn, .mf-btn, .ct-office__btn, .pill { position: relative; overflow: hidden; isolation: isolate; transition: background-color .25s, color .25s, box-shadow .3s, transform .3s var(--fx-ease); }
+.btn::before, .mf-btn::before, .ct-office__btn::before, .pill::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: -70%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .38), transparent); transform: skewX(-20deg); transition: left .75s var(--fx-ease); pointer-events: none; }
+.btn img, .mf-btn img, .pill img, .text-link img { transition: transform .3s var(--fx-ease); }
+.btn:active, .mf-btn:active, .ct-office__btn:active, .pill:active { transform: translateY(0) scale(.98); }
+@media (hover: hover) {
+    .btn:hover::before, .mf-btn:hover::before, .ct-office__btn:hover::before, .pill:hover::before { left: 125%; }
+    .btn:hover, .mf-btn:hover, .ct-office__btn:hover, .pill:hover { transform: translateY(-2px); }
+    .btn:not(.btn--ghost):not(.btn--stroke):hover, .mf-btn--red:hover, .ct-office__btn--red:hover { box-shadow: 0 12px 26px rgba(196, 32, 48, .38); }
+    .btn:hover img, .mf-btn:hover img, .pill:hover img { transform: translateX(4px); }
+}
+
+/* ---------- Cards: lift + soft shadow ---------- */
+.domain-card, .reason, .process-card, .outsource-card, .model, .post, .pillar, .whitelabel, .office,
+.seo-why__card, .mg-why__card, .td-benefit, .cl-why__card, .pk-why__card, .pp-why__card, .mf-card, .ct-card, .acc--faq .acc-item {
+    transition: transform .5s var(--fx-ease), box-shadow .5s var(--fx-ease), border-color .3s;
+}
+@media (hover: hover) {
+    .domain-card:hover, .process-card:hover, .outsource-card:hover, .model:hover, .post:hover, .pillar:hover, .office:hover,
+    .seo-why__card:hover, .mg-why__card:hover, .td-benefit:hover, .cl-why__card:hover, .pk-why__card:hover, .pp-why__card:hover, .mf-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(17, 17, 17, .14); }
+    .reason:hover { transform: translateY(-8px); border-color: var(--c-red); box-shadow: 0 20px 46px rgba(196, 32, 48, .24); }
+    .acc--faq .acc-item:hover { border-color: #c4c4c9; box-shadow: 0 10px 24px rgba(0, 0, 0, .07); }
+}
+
+/* ---------- Images inside clipped frames: slow zoom on hover ---------- */
+.industry img, .mg-tile img, .cl-tile img, .pk-tile img, .showcase-card__img, .pillar__img, .cl-why__bg, .pk-why__bg, .process-card__bg, .model__img, .pp-step img, .td-gallery__tile img, .seo-gallery__tile img, .ppt-gallery__tile img {
+    transition: transform .9s var(--fx-ease);
+}
+.process-card__bg { transition: transform .9s var(--fx-ease); }
+@media (hover: hover) {
+    .industry:hover img, .mg-tile:hover img, .cl-tile:hover img, .pk-tile:hover img, .showcase-card:hover .showcase-card__img, .pillar:hover .pillar__img,
+    .cl-why__card:hover .cl-why__bg, .pk-why__card:hover .pk-why__bg, .process-card:hover .process-card__bg, .model:hover .model__img, .pp-step:hover img { transform: scale(1.06); }
+    .post:hover .post__img { box-shadow: 0 20px 44px rgba(0, 0, 0, .2); }
+    .pk-tile:hover { box-shadow: 0 22px 46px rgba(0, 0, 0, .16); }
+}
+.post__img { transition: box-shadow .5s var(--fx-ease); }
+.offer-card__img { transition: transform .8s var(--fx-ease); }
+.offer-card:hover .offer-card__img { transform: translateY(-8px) scale(1.03); }
+.wstep__art, .seo-step__art, .pk-step__art, .metric__icon, .step > img { transition: transform .5s var(--fx-ease); }
+@media (hover: hover) {
+    .wstep:hover .wstep__art, .pk-step:hover .pk-step__art { transform: translateY(-6px) scale(1.04); }
+    .seo-step:hover .seo-step__art, .step:hover > img { transform: translateY(-6px); }
+    .metric:hover .metric__icon { transform: rotate(-8deg) scale(1.1); }
+}
+
+/* ---------- Pills, tabs, tools ---------- */
+.filter-tab, .tab, .dots__dot, .round-arrow { transition: background-color .2s, color .2s, transform .3s var(--fx-ease), box-shadow .3s, border-color .2s, width .3s, height .3s; }
+@media (hover: hover) {
+    .filter-tab:hover { transform: translateY(-2px); }
+    .round-arrow:hover { transform: scale(1.08); }
+    .ve-tool, .mg-tool, .seo-tool { transition: transform .4s var(--fx-ease); }
+    .ve-tool:hover, .mg-tool:hover, .seo-tool:hover { transform: translateX(6px); }
+    .domain-card__list li { transition: transform .3s var(--fx-ease); }
+    .domain-card__list li:hover { transform: translateX(6px); }
+}
+.acc--services .acc-head:hover .acc-icons { transform: scale(1.08); }
+.acc-icons { transition: transform .3s var(--fx-ease); }
+
+/* ---------- Forms ---------- */
+.lead-form, .ct-card { transition: box-shadow .4s, border-color .4s, transform .5s var(--fx-ease); }
+.lead-form:focus-within { border-color: rgba(196, 32, 48, .55); box-shadow: 0 0 48px rgba(196, 32, 48, .25); }
+.ct-card:focus-within { border-color: rgba(196, 32, 48, .45); box-shadow: 0 18px 50px rgba(196, 32, 48, .14); }
+
+/* ---------- Header + footer links ---------- */
+.logo img { transition: transform .4s var(--fx-ease); }
+.logo:hover img { transform: scale(1.04); }
+.menu-toggle img { transition: transform .4s var(--fx-ease); }
+.menu-toggle:hover img { transform: rotate(90deg); }
+.subnav__btn { position: relative; }
+.subnav__btn::after { content: ""; position: absolute; left: 0; right: 14px; bottom: 10px; height: 2px; background: var(--c-red); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--fx-ease); }
+.subnav__btn:hover::after, .subnav__item.is-open .subnav__btn::after { transform: scaleX(1); }
+.footer-col__list a { position: relative; display: inline-block; transition: color .25s, transform .3s var(--fx-ease); }
+.footer-col__list a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--fx-ease); }
+.footer-col__list a:hover { transform: translateX(5px); }
+.footer-col__list a:hover::after { transform: scaleX(1); }
+.footer-social a { display: inline-block; transition: transform .35s var(--fx-ease); }
+.footer-social a:hover { transform: translateY(-4px) rotate(-6deg); }
+.bottom-bar__links a { transition: color .2s; }
+.bottom-bar__links a:hover { color: var(--c-red); }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fx, .fx-hero { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+    .hero__bg, .mf-hero__photo, .ct-hero__photo { animation: none; }
+    .btn::before, .mf-btn::before, .ct-office__btn::before, .pill::before { display: none; }
+}
+
+/* ---------- Price seal ("Starting @ $10/hr"): always-on, gentle motion ---------- */
+.price-badge { filter: drop-shadow(0 0 16px rgba(196, 32, 48, .55)); }
+.price-badge::before, .price-badge::after { content: ""; position: absolute; inset: 8px; border: 2px solid rgba(255, 255, 255, .45); border-radius: 50%; opacity: 0; pointer-events: none; animation: pb-ring 3.8s ease-out infinite; }
+.price-badge::after { animation-delay: 1.9s; }
+@keyframes pb-ring { 0% { transform: scale(.88); opacity: .65; } 100% { transform: scale(1.28); opacity: 0; } }
+.pbadge { display: block; width: 100%; height: 100%; overflow: visible; }
+.pbadge__float { transform-origin: 95px 95px; animation: pb-float 4.4s ease-in-out infinite; }
+@keyframes pb-float { 0%, 100% { transform: translateY(0) rotate(-2.5deg); } 50% { transform: translateY(-7px) rotate(2.5deg); } }
+.pbadge__seal { transform-origin: 95px 95px; animation: pb-spin 26s linear infinite; }
+@keyframes pb-spin { to { transform: rotate(360deg); } }
+.pbadge__dash { animation: pb-dash 1.2s linear infinite; }
+@keyframes pb-dash { to { stroke-dashoffset: -8.08; } }
+.pbadge__star { transform-box: fill-box; transform-origin: center; animation: pb-twinkle 2.2s ease-in-out infinite; }
+@keyframes pb-twinkle { 0%, 100% { transform: scale(1) rotate(0); opacity: 1; } 50% { transform: scale(1.7) rotate(72deg); opacity: .65; } }
+.pbadge__price { transform-box: fill-box; transform-origin: center; animation: pb-pop 4.4s ease-in-out infinite; }
+@keyframes pb-pop { 0%, 70%, 100% { transform: scale(1); } 80% { transform: scale(1.06); } 90% { transform: scale(1); } }
+.pbadge__shine { animation: pb-shine 4.4s ease-in-out infinite; }
+@keyframes pb-shine { 0%, 40% { transform: translateX(0) skewX(-18deg); } 85%, 100% { transform: translateX(300px) skewX(-18deg); } }
+@media (prefers-reduced-motion: reduce) {
+    .pbadge *, .price-badge::before, .price-badge::after { animation: none !important; }
+}

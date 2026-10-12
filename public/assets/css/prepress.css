@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Pre-Press Service page (Figma: IW / "Pre-Press Service", 1920px)
+   Builds on video.css + magazine.css + seo.css (tools strip) + collaterals.css (image strip, services image).
+   ========================================================================== */
+
+/* ---------- Hero: two intro paragraphs ---------- */
+.pp .ve-hero::after { display: none; }
+.pp .ve-hero__intro p + p { margin-top: -0px; }
+
+/* ---------- Stats: one left-bleed photo fading to black ---------- */
+/* Figma flips this photo horizontally (laptop on the left, slides on the right) and fades it to black on the right */
+.pp-stats__bg { left: 0; top: -45.51px; width: 872.48px; height: 491.03px; object-fit: cover; transform: scaleX(-1); }
+.pp-stats::after { content: ""; position: absolute; left: 0; top: -45.51px; width: 872.48px; height: 491.03px; background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0) 77%); }
+.pp-stats .ve-stats__content { z-index: 1; }
+
+/* ---------- Why cards ---------- */
+.pp-why__title { width: 626.42px; }
+.pp-why { display: flex; justify-content: space-between; width: 1800px; max-width: 100%; }
+.pp-why__card { position: relative; width: 420px; display: flex; flex-direction: column; gap: 14px; padding-bottom: 32px; background: var(--c-white); border: 1px solid var(--c); border-radius: 5px; overflow: hidden; }
+.pp-why__bar { position: relative; display: block; height: 32px; background: var(--c); }
+.pp-why__bar::after { content: ""; position: absolute; left: 260px; top: 0; width: 140px; height: 16px; background: var(--t); border-radius: 2px 2px 500px 500px; }
+.pp-why__head { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
+.pp-why__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 32px; background: var(--c); }
+.pp-why__no { font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; color: var(--t); }
+.pp-why__text { display: flex; flex-direction: column; gap: 12px; padding: 0 24px; margin-top: 4px; }
+.pp-why__text h3 { font-weight: 500; font-size: 24px; line-height: normal; color: #1A1A1A; }
+.pp-why__text p { font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+
+/* ---------- Tools strip: photo sits a little further right than the SEO page ---------- */
+.pp-tools .seo-tools__photo, .pp-tools::after { left: 1007px; top: -6.88px; width: 913px; height: 514px; }
+
+/* ---------- Services header ---------- */
+.pp-services-flow { gap: 100px; }
+.pp-services__head { gap: 16px; }
+.ve-split--center > .pp-services__title { flex: none; width: 930px; text-align: left; }
+
+/* ---------- Workflow: 6 cards, 3 per row ---------- */
+.pp-flow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px 0; width: 1800px; max-width: 100%; }
+.pp-step { position: relative; width: 580px; height: 580px; overflow: hidden; border-radius: 5px; }
+.pp-step__no { position: absolute; left: 30px; top: 30px; font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; color: var(--c); }
+.pp-step h3 { position: absolute; left: 30px; top: 99.69px; width: 520px; font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); }
+.pp-step p { position: absolute; left: 30px; top: 142.69px; width: 520px; font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+.pp-step img { position: absolute; left: 59.33px; width: 461.33px; height: 346px; max-width: none; object-fit: cover; }
+
+.pp .ve-hero__copy { padding-top: 0; }

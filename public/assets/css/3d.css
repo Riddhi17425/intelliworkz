@@ -1,0 +1,98 @@
+/* ==========================================================================
+   3D Modeling and Rendering service page (Figma: IW / "3D MODELING AND RENDERING", 1920px)
+   Builds on style.css + video.css (hero, form, accordion, offers, FAQ, tools strip).
+   ========================================================================== */
+
+/* ---------- Hero floor art (this page has no camera photo, just a soft floor glow) ---------- */
+.td .ve-hero::after { display: none; }
+.td .ve-hero__floor { left: 442px; top: 681px; width: 382px; height: 318px; opacity: .2; }
+
+/* ---------- 360 viewer + Selected Work: ONE overlaid scene (pixel-exact to Figma node 6:179) ----------
+   Every left/top here is that node's own coordinate — nothing is guessed or auto-centred. */
+.td-viewer { position: relative; width: 1920px; max-width: 100%; height: 920px; overflow: hidden; background: var(--c-white); }
+.td-viewer__bg { position: absolute; left: 0; top: -90.79px; width: 1920px; height: 1080.57px; max-width: none; object-fit: cover; opacity: .15; }
+.td-viewer__texture { position: absolute; left: -296.4px; top: -55.94px; width: 994.9px; height: 555.29px; max-width: none; object-fit: cover; opacity: .24; }
+
+.td-viewer__heading { position: absolute; left: 306px; top: 0; width: 1308px; }
+.td-viewer__tabs { position: absolute; left: 476.5px; top: 90px; }
+
+.td-rings { position: absolute; left: 313.84px; top: 358px; width: 1292.31px; height: 420px; }
+.td-rings__ellipse { position: absolute; border-radius: 50%; box-sizing: border-box; }
+.td-rings__ellipse--shadow { left: 193.85px; top: 141.35px; width: 904.62px; height: 153.46px; background: radial-gradient(circle at 50% 50%, rgba(221, 225, 230, .45) 0%, rgba(255, 255, 255, 0) 100%); }
+.td-rings__ellipse--outer-dash { left: 121.16px; top: 64.62px; width: 1050px; height: 266.54px; border: 1.6px dashed #666666; opacity: .7; }
+.td-rings__ellipse--outer { left: 117.12px; top: 63px; width: 1058.08px; height: 269.77px; border: 1.6px solid #666666; }
+.td-rings__ellipse--mid { left: 185.77px; top: 91.27px; width: 920.77px; height: 213.23px; border: 1.2px solid #D4D8DE; }
+.td-rings__ellipse--inner { left: 266.54px; top: 117.12px; width: 759.23px; height: 161.54px; border: 1.2px solid #E2E5E9; }
+.td-rings__dot { position: absolute; left: 634.85px; top: 256.85px; width: 22.62px; height: 22.62px; border-radius: 50%; border: 2.4px solid #6E7580; }
+.td-rings__product { position: absolute; left: 395.44px; top: -157.5px; width: 501.45px; height: 444.23px; max-width: none; --poster-color: transparent; background-color: transparent; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .15)); cursor: grab; transition: filter .3s ease; }
+.td-rings__product:active { cursor: grabbing; }
+.td-rings__product.is-exploded { filter: drop-shadow(0 40px 50px rgba(0, 0, 0, .22)); }
+.td-rings__cursor { position: absolute; left: 806.08px; top: 225.51px; width: 34.07px; height: 53.14px; max-width: none; opacity: .7; }
+.td-cue { position: absolute; left: 877.5px; top: 637.88px; display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(255, 255, 255, .9); border: 1px solid var(--c-border-gray); border-radius: 999px; box-shadow: 0 2px 8px rgba(0, 0, 0, .08); font-size: 12px; }
+.td-cue strong { color: var(--c-red); font-weight: 600; }
+.td-cue span { color: var(--c-body-gray); font-weight: 500; }
+
+.td-viewer__panel { position: absolute; left: 1388px; top: 177.5px; width: 472px; display: flex; flex-direction: column; gap: 6px; }
+.td-viewer__panel h3 { font-weight: 600; font-size: 32px; line-height: 40px; color: var(--c-ink); text-transform: capitalize; }
+.td-viewer__panel-sub { font-weight: 500; font-size: 16px; color: var(--c-red); }
+.td-viewer__panel-text { margin-top: 18px; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.td-viewer__btn { position: absolute; left: 601.1px; top: 471.35px; width: 246px; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 12px 12px 12px 20px; background: var(--c-body-gray); border-radius: 5px; box-shadow: 0 2px 2px rgba(0, 0, 0, .1); color: var(--c-white); font-size: 16px; line-height: 24px; transition: background-color .2s; }
+.td-viewer__btn:hover { background: #4a4a4a; }
+.td-viewer__btn-icon { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--c-border-gray); border-radius: 4px; }
+
+/* Gallery strip: 10 small tiles (106.67x60) + 1 taller featured tile (177.78x100), 24px gap */
+.td-gallery { position: absolute; left: 77.77px; top: 768px; display: flex; align-items: center; gap: 60px; }
+.td-gallery__viewport { width: 1484px; max-width: 1484px; overflow: hidden; }
+.td-gallery__track { display: flex; align-items: center; gap: 24px; }
+.td-gallery__track.is-sliding { transition: transform .5s cubic-bezier(.22, .8, .24, 1); }
+.td-gallery__tile { position: relative; display: block; flex: none; width: 106.67px; height: 60px; margin-top: 20px; border-radius: 5px; overflow: hidden; opacity: .5; transition: opacity .25s, width .3s ease, height .3s ease, margin-top .3s ease; }
+.td-gallery__tile:hover { opacity: .8; }
+.td-gallery__tile img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.td-gallery__tile.is-featured { width: 177.78px; height: 100px; margin-top: 0; opacity: 1; border: 2px solid var(--c-red); }
+.td-gallery__tile[hidden] { display: none; }
+.td-gallery__badge { position: absolute; left: 4px; top: 4px; padding: 9px 8px; background: var(--c-red); border-radius: 100px; font-weight: 700; font-size: 14px; line-height: 1; color: var(--c-white); opacity: 0; transition: opacity .2s; }
+.td-gallery__tile.is-featured .td-gallery__badge { opacity: 1; }
+
+/* ---------- Stats variant (single left-bleed image instead of 3 corner images) ---------- */
+.td-stats { display: flex; align-items: center; justify-content: flex-end; padding-right: 60px; }
+.td-stats__bg { position: absolute; left: 0; top: 0; width: 703px; height: 396px; max-width: none; object-fit: cover; }
+.td-stats::after { content: ""; position: absolute; left: 0; top: 0; width: 703px; height: 396px; background: linear-gradient(-90deg, #000 0%, rgba(0, 0, 0, 0) 23%); }
+.ve-stats__content--center { position: relative; left: auto; top: auto; }
+
+/* ---------- Benefit cards ---------- */
+.td-benefits { display: flex; align-self: stretch; gap: 32px; }
+.td-benefit { position: relative; flex: 1; padding: 26px 30px 24px; background: var(--c-off-white); border: 1px solid var(--c-border-gray); border-radius: 18px; overflow: hidden; }
+.td-benefit.is-raised { background: #FCFCFB; border-color: #CED2D4; box-shadow: 0 9px 16px rgba(24, 32, 40, .09); }
+.td-benefit__deco { position: absolute; inset: 10px; border: 1px solid #D8DBDD; border-radius: 14px; pointer-events: none; }
+.td-benefit__no { position: absolute; right: 24px; top: 24px; font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; }
+.td-benefit__icon { position: relative; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 32px; margin-bottom: 16px; }
+.td-benefit__copy { position: relative; display: flex; flex-direction: column; gap: 10px; }
+.td-benefit__copy h3 { font-weight: 700; font-size: 16px; line-height: 22px; color: #1A1A1A; }
+.td-benefit__copy p { font-size: 15px; line-height: 22px; color: var(--c-body-gray); }
+.td-benefit__rule { position: relative; display: block; margin-top: 16px; width: 44px; height: 3px; border-radius: 2px; }
+
+/* ---------- Tools strip: 4 real tools + format chips ---------- */
+/* V-Ray / Blender ship as white line-art (no fill of their own) meant to sit directly on the
+   dark strip photo, so they skip the square photo-crop treatment the other tool icons use. */
+.td-tools .ve-tool--mark img { width: auto; height: 54px; object-fit: contain; border-radius: 0; }
+.td-tools .td-tool-formats__img { width: 180px; height: auto; max-width: none; object-fit: contain; }
+
+/* ---------- Services accordion image (page has no magazine.css, so this needs its own width rule
+   — without it the unconstrained <img> forces the accordion column down to a sliver) ---------- */
+.td-services__img { flex: none; align-self: stretch; width: 746px; max-width: 40%; object-fit: cover; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+
+/* ---------- Workflow: single row of 5 steps (not the circular ring layout) ---------- */
+.td-workflow { display: flex; align-self: stretch; gap: 60px; width: 1800px; max-width: 100%; }
+.td-step { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.td-step__img { width: 100%; height: 255px; object-fit: cover; border-radius: 10px; } /* Figma: layout_522bd296, fixed 255px */
+.td-step__no { display: flex; align-items: center; gap: 12px; font-family: var(--font-body); font-weight: 600; font-size: 25px; color: var(--c); }
+.td-step__no span { width: 63px; flex: none; height: 0; border-top: 1.5px solid var(--c); }
+.td-step h3 { font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); }
+.td-step p { font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
+
+/* Tools strip, as in Figma node 6:349: photo is a 1960x932 stretch of the cropped export, with a black (not white) fade on top */
+.td-tools .ve-tools__bg { left: -20px; top: 28px; width: 1960px; height: 932px; }
+.td-tools::after { left: -20px; top: -257px; width: 1960px; height: 1103.09px; background: linear-gradient(180deg, #000 28%, rgba(0, 0, 0, 0) 44%); }
+.td-tools .td-tool--lg img { height: 72px; }
+.td-tool__tile { display: grid; place-items: center; flex: none; width: 72px; height: 72px; background: #001834; border-radius: 10px; }
+.td-tools .td-tool__tile img { width: 32.75px; height: 25px; border-radius: 0; object-fit: contain; }

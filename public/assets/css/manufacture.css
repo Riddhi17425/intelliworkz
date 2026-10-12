@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Manufacturing industry page (Figma: IW / "Manufacture", 1920px)
+   Builds on style.css + video.css (hero shell, accordion, offers, FAQ).
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.mf .ve-hero::after { display: none; }
+.mf-hero__photo { position: absolute; left: 739.86px; top: -52.23px; width: 1673.86px; height: 1116.45px; max-width: none; object-fit: cover; }
+.mf-hero::before { content: ""; position: absolute; z-index: 1; left: 739.86px; top: -52.23px; width: 1673.86px; height: 1116.45px; pointer-events: none;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 27%); }
+.mf-hero__decor { position: absolute; z-index: 1; left: -11.73px; top: 509.53px; width: 739.59px; height: 554.7px; max-width: none; object-fit: cover; opacity: .2; }
+.mf-hero__copy { display: flex; flex-direction: column; gap: 40px; padding-top: 16px; }
+.mf-hero__text { display: flex; flex-direction: column; gap: 24px; width: 985.78px; max-width: 100%; }
+.mf-hero__text .h1 { width: 985.78px; max-width: 100%; }
+.mf-hero__text p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
+.mf-hero__btns { display: flex; align-items: center; gap: 32px; }
+.mf-btn { display: inline-flex; align-items: center; padding: 14px 46px; border-radius: 5px; font-weight: 500; font-size: 18px; line-height: 24px; color: var(--c-light-bg); transition: background-color .2s, color .2s; }
+.mf-btn--red { background: var(--c-red); }
+.mf-btn--red:hover { background: #a81a28; }
+.mf-btn--ghost { box-shadow: inset 0 0 0 1px var(--c-white); }
+.mf-btn--ghost:hover { background: var(--c-white); color: var(--c-black); }
+
+/* ---------- Page body ---------- */
+.mf-body { display: flex; flex-direction: column; align-items: center; gap: 120px; width: 100%; }
+
+/* ---------- Buyers decide ---------- */
+.mf-buyers { position: relative; display: flex; justify-content: space-between; height: 486px; }
+.mf-buyers__copy { width: 1029px; max-width: 58%; display: flex; flex-direction: column; gap: 24px; }
+.mf-buyers__text { display: flex; flex-direction: column; gap: 16px; }
+.mf-buyers__text p { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+.mf-buyers__img { position: absolute; left: 849.63px; top: -24.32px; width: 960.63px; height: 540.64px; max-width: none; object-fit: cover; }
+
+/* ---------- Where manufacturers lose ground ---------- */
+.mf-lose { display: flex; flex-direction: column; gap: 40px; }
+.mf-lose__row { display: flex; gap: 30px; }
+.mf-card { position: relative; flex: 1; height: 464px; overflow: hidden; background: var(--c-white); border: 1px solid var(--c); border-radius: 10px; }
+.mf-card__img { position: absolute; max-width: none; object-fit: cover; }
+.mf-card__title { position: absolute; left: 40px; top: 40px; font-family: var(--font-display); font-weight: 500; font-size: 42px; line-height: 34px; color: var(--c); }
+.mf-card__text { position: absolute; left: 40px; right: 40px; bottom: 28px; font-size: 18px; line-height: 26px; color: var(--c-body-gray); }
+
+/* ---------- Dark block ---------- */
+.mf-dark { position: relative; width: 1920px; max-width: 100%; height: 920px; overflow: hidden; background: var(--c-black); }
+.mf-dark__decor { position: absolute; max-width: none; object-fit: cover; pointer-events: none; }
+.mf-dark__decor--top { left: 1690.35px; top: -94.38px; width: 373.65px; height: 357.38px; opacity: .3; }
+.mf-dark__decor--bottom { left: -49.65px; top: 526.4px; width: 694.93px; height: 521.2px; }
+.mf-dark__head { position: absolute; left: 187px; top: 40.37px; display: flex; flex-direction: column; gap: 6px; }
+.mf-dark__head .h2 { color: var(--c-white); }
+.mf-dark__head p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
+.mf-dark__shot { position: absolute; left: 60px; top: 187px; width: 854.66px; height: 481px; max-width: none; object-fit: cover; border: 1px solid var(--c-body-gray); border-radius: 5px; }
+.mf-acc { position: absolute; left: 970px; top: 187px; width: 890px; max-width: calc(100% - 970px); display: flex; flex-direction: column; gap: 0; }
+.mf-acc .acc-item { display: flex; flex-direction: column; }
+.mf-acc .acc-head { padding-bottom: 20px; }
+.mf-acc .acc-title { color: var(--c-body-gray); }
+.mf-acc .acc-item.is-open .acc-title { color: var(--c-white); }
+.mf-acc .acc-head:hover .acc-title { color: var(--c-red); }
+.mf-acc .acc-panel p { padding: 0 0 20px; font-size: 18px; line-height: 26px; color: var(--c-white); }
+.mf-acc .acc__rule { margin: 0 0 20px; height: 1px; background: var(--c-border-gray); border: 0; }
+.mf-acc .acc-item:last-child .acc__rule { display: none; }
+
+/* ---------- Manufacturers we support ---------- */
+.mf-support { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.mf-support__body { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.mf-support__body p { width: 1440px; max-width: 100%; font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-body-gray); text-align: center; }
+
+.mf-offers-wrap { gap: 80px; }

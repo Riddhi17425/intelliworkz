@@ -1,4 +1,4 @@
-@props(['name', 'label', 'current' => null, 'help' => null, 'removable' => true, 'compact' => false, 'accept' => 'image/png,image/jpeg,image/webp,image/gif', 'removeName' => null])
+@props(['name', 'label', 'current' => null, 'help' => null, 'removable' => true, 'compact' => false, 'accept' => 'image/png,image/jpeg,image/webp,image/gif', 'removeName' => null, 'dark' => false])
 @php
     $id = 'img_' . preg_replace('/[^a-z0-9_]/i', '_', $name);
     $errKey = preg_replace('/\[(\w+)\]/', '.$1', $name);
@@ -7,7 +7,7 @@
 @endphp
 <div {{ $attributes->only('class')->merge(['class' => 'mb-3']) }}>
     @if($label)<label class="form-label" for="{{ $id }}">{{ $label }}</label>@endif
-    <div class="adm-img js-image {{ $compact ? 'is-compact' : '' }}">
+    <div class="adm-img js-image {{ $compact ? 'is-compact' : '' }} {{ $dark ? 'is-dark' : '' }}">
         <div class="adm-img__preview">@if($url)<img src="{{ $url }}" alt="">@else<i class="bi bi-image"></i>@endif</div>
         <div class="adm-img__body">
             <span class="adm-img__name">{{ $current ? basename($current) : 'No image selected' }}</span>

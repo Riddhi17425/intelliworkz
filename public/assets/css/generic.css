@@ -1,5 +1,5 @@
 /* Pages created in the admin panel (site/generic.blade.php). Fluid layout; header/footer come from style.css. */
-.gp { gap: 0; align-items: stretch; }
+.gp.page { gap: 0; align-items: stretch; }   /* two classes: responsive.css also sets a gap on .page */
 .gp-hero { padding: clamp(48px, 7vw, 110px) 0; background: linear-gradient(135deg, var(--c-navy) 0%, #15153d 100%); color: var(--c-white); }
 .gp-hero__inner { padding-inline: clamp(20px, 4vw, 60px); }
 .gp-hero .breadcrumb { margin: 0 0 14px; font-size: 15px; opacity: .8; color: var(--c-white); }
@@ -27,3 +27,46 @@
 .gp-prose th, .gp-prose td { padding: 10px 14px; border: 1px solid var(--c-border-gray); text-align: left; }
 .gp-prose th { background: var(--c-off-white); }
 .gp-prose hr { margin: 2em 0; border: 0; border-top: 1px solid var(--c-border-gray); }
+
+/* ---------- Shared header + footer: fluid overrides (same approach as the About page) ---------- */
+.page-generic { --gx: clamp(20px, 4vw, 60px); }
+.page-generic .topbar { height: auto; min-height: 84px; }
+.page-generic .topbar__inner,
+.page-generic .subnav__list { width: 100%; max-width: 1920px; padding-inline: var(--gx); }
+.page-generic .topbar__inner { padding-block: 10px; }
+.page-generic .logo img { width: clamp(150px, 20vw, 297px); height: auto; }
+.page-generic .menu-drawer__top, .page-generic .menu-drawer__bottom { margin-inline: 24px; }
+.page-generic .menu-drawer__grid { padding-inline: 24px; }
+.page-generic .site-footer__inner { padding-inline: var(--gx); }
+.page-generic .footer-brand__about img { max-width: 100%; height: auto; }
+.page-generic .office__info p { width: auto; }
+.page-generic .gp-hero__inner, .page-generic .gp-body__inner { max-width: 1920px; }
+
+@media (max-width: 1500px) {
+    .page-generic .subnav__list { gap: 16px; }
+    .page-generic .subnav__btn { font-size: 15px; white-space: nowrap; }
+}
+@media (max-width: 1280px) {
+    .page-generic .site-footer__top { flex-direction: column; gap: 40px; }
+    .page-generic .footer-brand { width: 100%; }
+    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .page-generic .footer-links .v-line { display: none; }
+    .page-generic .footer-col { width: auto; }
+}
+@media (max-width: 1180px) {
+    .page-generic .subnav { display: none; }
+    .page-generic .offices { flex-direction: column; gap: 20px; }
+}
+@media (max-width: 720px) {
+    .page-generic .bottom-bar { flex-direction: column; gap: 12px; text-align: center; }
+    .page-generic .bottom-bar__links { flex-wrap: wrap; justify-content: center; }
+    .page-generic .office__phone { font-size: 17px; }
+}
+@media (max-width: 640px) {
+    .page-generic .menu-toggle { width: auto; font-size: 18px; }
+}
+@media (max-width: 560px) {
+    .page-generic .btn--header { display: none; }
+    .page-generic .topbar__inner { justify-content: space-between; }
+    .page-generic .menu-drawer__grid { grid-template-columns: 1fr; }
+}

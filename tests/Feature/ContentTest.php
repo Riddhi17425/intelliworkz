@@ -185,7 +185,7 @@ class ContentTest extends CmsTestCase
 
         // add a row
         $data = $this->formData($url);
-        $data['lists'][$list->id]['items'][] = ['0' => 'Do you sign NDAs?', '1' => 'Yes, always.'];
+        $data['lists'][$list->id]['items']['n48213'] = ['0' => 'Do you sign NDAs?', '1' => 'Yes, always.'];   // the admin JavaScript names new rows like this
         $this->put($url, $data)->assertSessionHas('success')->assertSessionHasNoErrors();
         $items = $list->fresh()->items;
         $this->assertCount($count + 1, $items);

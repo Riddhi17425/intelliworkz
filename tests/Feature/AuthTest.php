@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Tests\CmsTestCase;
 
 class AuthTest extends CmsTestCase
@@ -84,6 +86,51 @@ class AuthTest extends CmsTestCase
         $this->get('/admin/pages')->assertOk();
         $this->get('/admin/inquiries')->assertOk();
         $this->get('/admin/menu')->assertOk();
+    }
+
+    public function test_admin_create_command_makes_an_admin_and_can_reset_a_password(): void
+    {
+        $this->artisan('admin:create', ['email' => 'boss@example.com', '--name' => 'The Boss', '--password' => 'first-long-password'])->assertSuccessful();
+        $user = User::where('email', 'boss@example.com')->firstOrFail();
+        $this->assertSame('admin', $user->role);
+        $this->assertTrue($user->is_active);
+        $this->assertTrue(Hash::check('first-long-password', $user->password));
+        $this->assertNotSame('first-long-password', $user->password);
+
+        $this->artisan('admin:create', ['email' => 'boss@example.com', '--password' => 'second-long-password'])->assertSuccessful();
+        $this->assertSame(1, User::where('email', 'boss@example.com')->count());
+        $this->assertTrue(Hash::check('second-long-password', $user->fresh()->password));
+        $this->post('/admin/login', ['email' => 'boss@example.com', 'password' => 'second-long-password'])->assertRedirect(route('admin.dashboard'));
+    }
+
+    public function test_resetting_a_password_does_not_rename_or_promote_the_user(): void
+    {
+        $editor = $this->editor(['is_active' => false]);
+        $name = $editor->name;
+
+        $this->artisan('admin:create', ['email' => $editor->email, '--password' => 'brand-new-long-pass'])->assertSuccessful();
+
+        $fresh = $editor->fresh();
+        $this->assertSame($name, $fresh->name);
+        $this->assertSame('editor', $fresh->role);                      // not silently made an administrator
+        $this->assertTrue($fresh->is_active);                           // recovery path: locked-out account works again
+        $this->assertTrue(Hash::check('brand-new-long-pass', $fresh->password));
+
+        $this->artisan('admin:create', ['email' => $editor->email, '--password' => 'brand-new-long-pass', '--role' => 'admin'])->assertSuccessful();
+        $this->assertSame('admin', $editor->fresh()->role);             // only when asked for explicitly
+    }
+
+    public function test_admin_create_command_refuses_weak_passwords_and_bad_roles(): void
+    {
+        $this->artisan('admin:create', ['email' => 'weak@example.com', '--name' => 'W', '--password' => 'short'])->assertFailed();
+        $this->artisan('admin:create', ['email' => 'role@example.com', '--name' => 'R', '--password' => 'long-enough-pass', '--role' => 'root'])->assertFailed();
+        $this->assertSame(0, User::count());
+    }
+
+    public function test_generated_password_is_strong_and_printed_once(): void
+    {
+        $this->artisan('admin:create', ['email' => 'gen@example.com', '--name' => 'G', '--generate' => true])->assertSuccessful();
+        $this->assertNotNull(User::where('email', 'gen@example.com')->first());
     }
 
     public function test_profile_cannot_be_used_to_become_administrator(): void

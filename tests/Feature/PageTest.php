@@ -162,6 +162,17 @@ class PageTest extends CmsTestCase
         $this->assertSame(0, Page::where('is_system', false)->count());
     }
 
+    public function test_a_deleted_pages_address_can_be_used_again(): void
+    {
+        $this->actingAs($this->admin());
+        $this->post('/admin/pages', $this->newPage(['status' => 'published']))->assertRedirect();
+        $this->delete('/admin/pages/our-process')->assertRedirect(route('admin.pages.index'));
+        $this->post('/admin/pages', $this->newPage(['title' => 'Our Process v2', 'status' => 'published']))->assertSessionHasNoErrors()->assertRedirect();
+        $this->assertSame('Our Process v2', Page::where('slug', 'our-process')->value('title'));
+        auth()->logout();
+        $this->get('/our-process')->assertOk()->assertSee('Our Process v2');
+    }
+
     public function test_only_admins_can_delete(): void
     {
         $this->actingAs($this->admin())->post('/admin/pages', $this->newPage());

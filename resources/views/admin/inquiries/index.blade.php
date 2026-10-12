@@ -55,7 +55,7 @@
                     <th>{{ $sortLink('name', 'From') }}</th>
                     <th class="d-none d-md-table-cell">Message</th>
                     <th class="d-none d-lg-table-cell">{{ $sortLink('source', 'Page') }}</th>
-                    <th>{{ $sortLink('created_at', 'Received') }}</th>
+                    <th class="d-none d-sm-table-cell">{{ $sortLink('created_at', 'Received') }}</th>
                     <th class="text-end">Actions</th>
                 </tr></thead>
                 <tbody>
@@ -65,10 +65,11 @@
                         <td>
                             <a class="row-title" href="{{ route('admin.inquiries.show', $i) }}">@unless($i->is_read)<span class="adm-dot" title="Unread"></span>@endunless{{ $i->name }}</a>
                             <div class="small text-muted">{{ $i->email }}@if($i->company) · {{ $i->company }}@endif</div>
+                            <div class="small text-muted d-sm-none">{{ $i->created_at->diffForHumans() }}</div>
                         </td>
                         <td class="d-none d-md-table-cell small" style="max-width: 340px"><div class="text-truncate">@if($i->subject)<strong>{{ $i->subject }}</strong> — @endif{{ $i->message ?: '—' }}</div></td>
                         <td class="d-none d-lg-table-cell small text-muted">{{ $i->source ?: '—' }}</td>
-                        <td class="small text-muted text-nowrap"><span title="{{ $i->created_at->format('d M Y, H:i') }}">{{ $i->created_at->diffForHumans() }}</span></td>
+                        <td class="small text-muted text-nowrap d-none d-sm-table-cell"><span title="{{ $i->created_at->format('d M Y, H:i') }}">{{ $i->created_at->diffForHumans() }}</span></td>
                         <td class="text-end text-nowrap">
                             <a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.inquiries.show', $i) }}" title="View"><i class="bi bi-eye"></i></a>
                             @can('delete-content')

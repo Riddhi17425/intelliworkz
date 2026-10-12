@@ -14,15 +14,20 @@ class CreateAdmin extends Command
         {--name= : Display name}
         {--password= : Password (prompted if omitted; use --generate to get a random one)}
         {--generate : Generate a strong random password and print it once}
-        {--role=admin : admin or editor}';
+        {--role= : admin or editor (a new account defaults to admin; an existing account keeps its role unless given)}';
 
     protected $description = 'Create (or reset the password of) an admin-panel user. No password is ever stored in the source code.';
 
     public function handle(): int
     {
         $email = $this->argument('email') ?: $this->ask('E-mail address');
-        $name = $this->option('name') ?: ($this->input->isInteractive() ? $this->ask('Name', 'Administrator') : 'Administrator');
-        $role = $this->option('role');
+        $user = User::firstOrNew(['email' => $email]);
+        $existed = $user->exists;
+
+        // an existing account keeps its name and role unless they are given explicitly (a password reset must not demote/rename anyone)
+        $name = $this->option('name')
+            ?: ($existed ? $user->name : ($this->input->isInteractive() ? $this->ask('Name', 'Administrator') : 'Administrator'));
+        $role = $this->option('role') ?: ($existed ? $user->role : User::ROLE_ADMIN);
 
         if ($this->option('generate')) {
             $password = Str::password(16, symbols: false);
@@ -55,15 +60,17 @@ class CreateAdmin extends Command
             return self::FAILURE;
         }
 
-        $user = User::firstOrNew(['email' => $email]);
-        $existed = $user->exists;
+        $wasDisabled = $existed && !$user->is_active;
         $user->name = $name;
         $user->password = $password;           // hashed by the model cast
         $user->role = $role;
-        $user->is_active = true;
+        $user->is_active = true;               // this command is also the recovery path for a locked-out administrator
         $user->save();
 
         $this->info(($existed ? 'Updated' : 'Created') . " {$role} account: {$email}");
+        if ($wasDisabled) {
+            $this->warn('The account was disabled and has been re-activated.');
+        }
         if ($generated) {
             $this->warn("Generated password (shown once, change it after signing in): {$password}");
         }

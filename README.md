@@ -1,59 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Intelliworkz — website + admin panel (Laravel 12)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+The public website is the original Intelliworkz design, unchanged, now rendered from a MySQL database.
+Everything on it (texts, pictures, lists, menus, SEO, logo, contact details) is edited in a separate admin panel at **`/admin`**.
 
-## About Laravel
+| | |
+|---|---|
+| Website | `http://127.0.0.1:8000/` (12 pages, same addresses as before: `/about-us.php`, `/seo-services.php`, …) |
+| Admin panel | `http://127.0.0.1:8000/admin` |
+| Stack | PHP 8.2 · Laravel 12 · MySQL/MariaDB · Bootstrap 5 (admin only) · Quill (rich text) |
+| Original PHP site | `C:\xampp\htdocs\intelliworkz` — untouched, kept as the visual reference |
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 1. Set up on XAMPP (Windows)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Needs XAMPP with PHP 8.2+ and MySQL running, and Composer.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+cd C:\xampp\htdocs\intelliworkz-cms
 
-## Learning Laravel
+composer install
+copy .env.example .env            # then edit DB_* if your MySQL user/password differ
+php artisan key:generate
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# create an empty database (phpMyAdmin, or:)
+mysql -u root -e "CREATE DATABASE intelliworkz_cms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+php artisan migrate               # creates the tables (never drops anything)
+php artisan content:import        # loads the site's texts/lists/menus/settings into the database
+php artisan admin:create          # asks for e-mail, name and a password (or use --generate to get a random one) — nothing is hard-coded
+php artisan serve                 # http://127.0.0.1:8000
+```
 
-## Laravel Sponsors
+`content:import` only fills what is missing. Re-running it **never overwrites edits** unless you add `--force`
+(which asks for confirmation, or pass `--yes`). Use `--force` only to reset the content to the original site.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Uploaded pictures are stored in `public/uploads` (no `storage:link` needed on Windows).
+Make sure that folder is writable. It is git-ignored.
 
-### Premium Partners
+### Running under Apache instead of `php artisan serve`
+Point a virtual host's `DocumentRoot` at the **`public`** folder (never at the project root), with `AllowOverride All`
+so `public/.htaccess` can rewrite URLs. Set `APP_URL` in `.env` to that address.
+`.env`, `vendor/`, `app/` etc. must stay outside the web root — they are, as long as only `public/` is exposed.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Going live
+```
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://your-domain
+```
+then `php artisan config:cache && php artisan route:cache && php artisan view:cache`, serve over HTTPS and set
+`SESSION_SECURE_COOKIE=true`. Give the database user only the rights it needs. Configure `MAIL_*` if you want
+enquiries e-mailed as well (see below).
 
-## Contributing
+## 2. What the admin panel does
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Section | What you can do |
+|---|---|
+| **Dashboard** | Real numbers: pages, menu entries, inquiries (unread / this week, 14-day chart), content blocks, latest inquiries, recent activity |
+| **Pages** | The 12 original pages: edit SEO (title, description, keywords, share image), publish / unpublish, open the content editor. New pages: title, address, rich text, featured image, SEO, draft/published, delete |
+| **Page content editor** | Every text, image, link and list of a page, grouped by section. Replace/remove pictures (with preview), add / remove / reorder list rows (FAQs, tools, steps…). Colours, spacing and layout are fixed so the design cannot be broken |
+| **Services & menus** | Header "Services" mega-menu (add/rename/reorder/hide groups and links, link to a page or any URL) and the footer link columns |
+| **Header, footer & shared** | Texts used on every page: header button, call-to-action, offices, dark showcase slider, engagement models |
+| **Contact inquiries** | Everything sent from the website forms: search, filter (read/unread, page, dates), sort, read/unread, bulk actions, CSV export, delete (admin) |
+| **Company settings** *(admin)* | Company name, copyright, footer text, header/footer logo, favicon, certification badge, notification e-mail, phone, social links, default SEO description + share image |
+| **Users** *(admin)* | Create / edit / disable users, roles, password reset. The last active administrator cannot be removed or demoted |
+| **Activity log / My profile** | Who changed what and when; change own name, e-mail, password |
 
-## Code of Conduct
+**Roles** — *Editor*: edits content, pages, menus, reads inquiries. *Administrator*: all of that plus deleting, company settings and users.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Everything you save is live immediately (caches are cleared on save).
 
-## Security Vulnerabilities
+## 3. Website forms
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+All 9 forms of the site (the lead form on 8 service pages + the contact page) post to `POST /inquiries`: validated, stored in `contact_inquiries`, shown in the admin
+panel. They work with JavaScript (inline success/error message) and without it (redirect back with a message).
+Protection: CSRF token, hidden honeypot field, rate limit (5 per minute and 40 per day per IP), plain-text storage.
+To also receive each inquiry by e-mail, set **Company settings → Contact details → Inquiry notification e-mail**
+and configure `MAIL_*` in `.env` (`MAIL_MAILER=log` just writes mails to `storage/logs`).
 
-## License
+## 4. Security notes
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Passwords hashed (bcrypt), login rate-limited (5 failures / minute per e-mail+IP), session regenerated on login, disabled accounts are signed out immediately.
+* CSRF on every form; Eloquent/query builder only (no raw SQL with user input); mass assignment guarded (role, slug, scope… are set explicitly, never from a request).
+* All editable text passes `App\Support\Html`: scripts, event handlers, `style` attributes and `javascript:`/`data:` links are removed; links are checked.
+* Uploads: type + size validated (jpg/png/webp/gif ≤ 5 MB, SVG only for logos and sanitised), random file names, stored under `public/uploads`.
+* Admin responses are sent `no-store` + `noindex`; `.env` and application code are not inside `public/`.
+* No credentials in source; the first administrator is created with `php artisan admin:create`.
+
+## 5. Tests
+
+```bash
+php artisan test            # 95 tests: auth, roles, inquiries, pages, content editor, menus, settings, users, sanitising
+```
+Tests run on an in-memory SQLite database and the real imported content — they never touch your MySQL data.
+
+## 6. Project map
+
+```
+app/Http/Controllers/Admin/*      admin panel          app/Http/Controllers/{Page,Inquiry}Controller   public site
+app/Support/{Html,Media,Content}  sanitising, uploads, content lookup (cached)
+app/Content/ListSchema.php        how each repeatable list is edited and saved   config/content_lists.php   list definitions
+resources/views/admin/**          admin panel (Bootstrap 5)                      resources/views/site/**   public pages (original markup)
+database/migrations/**            schema                                         database/seeders/content/*.json   original content
+tools/                            one-off converter used to turn the PHP site into these templates
+docs/IMPLEMENTATION_PLAN.md       inspection findings, decisions, schema
+```
+
+## 7. Troubleshooting
+
+* **Blank page / 500** — look at `storage/logs/laravel.log`; check `.env` DB settings; `php artisan config:clear`.
+* **Pictures don't upload** — `public/uploads` must be writable; PHP `upload_max_filesize` ≥ 5M (`php.ini`).
+* **Changed `.env` but nothing happens** — `php artisan config:clear`.
+* **Forgot the admin password** — `php artisan admin:create you@example.com` sets a new password for that existing user (it also creates the user if missing), or reset it from **Users** with another administrator.

@@ -190,7 +190,7 @@ class ListSchema
             if (!$hasOrig && (!$this->canAdd() || $fixed)) {
                 continue;                       // new rows are not allowed for this list
             }
-            if (!$hasOrig && !ctype_digit((string) $n)) {
+            if (!$hasOrig && ((string) $n === '__N__' || !preg_match('/^[A-Za-z0-9]+$/', (string) $n))) {
                 continue;                       // the hidden "add row" prototype (key __N__) is never a real row
             }
             $base = $hasOrig ? $this->items[(int) $orig] : $this->blank();

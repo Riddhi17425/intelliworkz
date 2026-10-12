@@ -105,7 +105,7 @@ class PageController extends Controller
         Media::delete($page->featured_image);
         Media::delete($page->og_image);
         $title = $page->title;
-        $page->delete();
+        $page->forceDelete();               // really gone, so the same web address can be used again (slug is unique)
 
         ActivityLog::record('deleted', "Deleted page “{$title}”");
         return redirect()->route('admin.pages.index')->with('success', "Page “{$title}” was deleted.");

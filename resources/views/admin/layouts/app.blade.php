@@ -9,6 +9,7 @@
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/vendor/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/vendor/icons/bootstrap-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/vendor/quill/quill.snow.css') }}">
     <link rel="stylesheet" href="{{ asset('admin-assets/css/admin.css') }}?v={{ filemtime(public_path('admin-assets/css/admin.css')) }}">
     @stack('head')
 </head>

@@ -2,7 +2,7 @@
 @section('title', 'Services & menus')
 
 @section('content')
-<x-admin.head title="Services &amp; menus" subtitle="The “Services” menu under the logo and the link columns in the footer.">
+<x-admin.head title="Services & menus" subtitle="The “Services” menu under the logo and the link columns in the footer.">
     <x-slot:actions>
         @if($tab === 'header')
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#groupAddModal"><i class="bi bi-plus-lg me-1"></i> Add service group</button>

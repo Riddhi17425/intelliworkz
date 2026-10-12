@@ -40,7 +40,10 @@ $vc = 'assets/icons/video/';   // shared icons
                     </div>
                 </div>
 
-                <form class="lead-form" action="#" method="post">
+                <form class="lead-form" action="{{ route('inquiries.store') }}" method="post" data-inquiry-form novalidate>
+@csrf
+<input type="hidden" name="source" value="{{ $page->slug }}">
+<input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
                     <div class="lead-form__head">
                         <h2>{!! $T('hero.6') !!}</h2> <!-- kept exactly as written in Figma; looks like a leftover from the 3D page -->
                         <p>{!! $T('hero.7') !!}</p>
@@ -49,13 +52,14 @@ $vc = 'assets/icons/video/';   // shared icons
                         <?php foreach (array_chunk($ve_form_fields, 2) as $row): ?>
                             <div class="lead-form__row">
                                 <?php foreach ($row as $f): ?>
-                                    <label class="field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= strtolower(str_replace(' ', '_', $f[0])) ?>" placeholder="<?= $f[1] ?>"></label>
+                                    <label class="field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= ($f[3] ?? strtolower(str_replace(' ', '_', $f[0]))) ?>" placeholder="<?= $f[1] ?>"></label>
                                 <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
                         <label class="field"><span>{!! $T('hero.8') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
                         <label class="field"><span>{!! $T('hero.9') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
                     </div>
+                    <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                     <button type="submit" class="btn btn--cta btn--block">{!! $T('hero.10') !!}</button>
                     <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
                 </form>
@@ -132,7 +136,7 @@ $vc = 'assets/icons/video/';   // shared icons
                 <p>{!! $T('why-intelliworkz.2') !!}</p>
                 <p>{!! $T('why-intelliworkz.3') !!}</p>
                 <p>{!! $T('why-intelliworkz.4') !!}</p>
-                <div><a href="#" class="btn btn--enquire">{!! $T('why-intelliworkz.5') !!}</a></div>
+                <div><a href="{{ $T('why-intelliworkz.6') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.5') !!}</a></div>
             </div>
         </div>
         <div class="seo-why">
@@ -178,7 +182,7 @@ $vc = 'assets/icons/video/';   // shared icons
                     <p>{!! $T('services-workflow.3') !!}</p>
                     <p>{!! $T('services-workflow.4') !!}</p>
                     <p>{!! $T('services-workflow.5') !!}</p>
-                    <div><a href="#" class="btn btn--enquire">{!! $T('services-workflow.6') !!}</a></div>
+                    <div><a href="{{ $T('services-workflow.7') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.6') !!}</a></div>
                 </div>
             </div>
 
@@ -221,7 +225,7 @@ $vc = 'assets/icons/video/';   // shared icons
 
     <!-- ============ DARK SHOWCASE (shared) ============ -->
     @php
-$showcase_title = $T('dark-showcase.1');
+$showcase_title = $T('dark-showcase-shared.1');
 @endphp
     @include('site.sections.showcase')
 

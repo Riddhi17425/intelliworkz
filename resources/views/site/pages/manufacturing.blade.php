@@ -24,8 +24,8 @@ $vc = 'assets/icons/video/';         // shared icons
                     <p>{!! $T('hero.5') !!}</p>
                 </div>
                 <div class="mf-hero__btns">
-                    <a href="#" class="mf-btn mf-btn--red">{!! $T('hero.6') !!}</a>
-                    <a href="#" class="mf-btn mf-btn--ghost">{!! $T('hero.8') !!}</a>
+                    <a href="{{ $T('hero.7') ?: '#' }}" class="mf-btn mf-btn--red">{!! $T('hero.6') !!}</a>
+                    <a href="{{ $T('hero.9') ?: '#' }}" class="mf-btn mf-btn--ghost">{!! $T('hero.8') !!}</a>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@ $vc = 'assets/icons/video/';         // shared icons
             <h2 class="h2">{!! $T('who-we-support.1') !!}</h2>
             <div class="mf-support__body">
                 <p>{!! $T('who-we-support.2') !!}</p>
-                <div><a href="#" class="btn btn--enquire">{!! $T('who-we-support.3') !!}</a></div>
+                <div><a href="{{ $T('who-we-support.4') ?: '#' }}" class="btn btn--enquire">{!! $T('who-we-support.3') !!}</a></div>
             </div>
         </section>
 

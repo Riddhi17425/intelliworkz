@@ -20,103 +20,13 @@
     },
     "fields": [
         {
-            "section": "dark-showcase",
-            "section_label": "Dark Showcase",
-            "key": "dark-showcase.1",
-            "label": "Heading: What Our PPT Design Services Cover",
-            "type": "text",
-            "value": "What Our PPT Design Services Cover",
-            "sort": 1
-        },
-        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.1",
             "label": "Image (hero.png)",
             "type": "image",
             "value": "assets/images/ppt/hero.png",
-            "sort": 2
-        },
-        {
-            "section": "selected-work",
-            "section_label": "Selected Work",
-            "key": "selected-work.1",
-            "label": "Image (scene-bg.png)",
-            "type": "image",
-            "value": "assets/images/ppt/scene-bg.png",
-            "sort": 3
-        },
-        {
-            "section": "selected-work",
-            "section_label": "Selected Work",
-            "key": "selected-work.2",
-            "label": "Image (scene-layer-left.png)",
-            "type": "image",
-            "value": "assets/images/ppt/scene-layer-left.png",
-            "sort": 4
-        },
-        {
-            "section": "selected-work",
-            "section_label": "Selected Work",
-            "key": "selected-work.3",
-            "label": "Image (scene-layer-right.png)",
-            "type": "image",
-            "value": "assets/images/ppt/scene-layer-right.png",
-            "sort": 5
-        },
-        {
-            "section": "selected-work",
-            "section_label": "Selected Work",
-            "key": "selected-work.4",
-            "label": "Image: Presentation design examples (scene-main.png)",
-            "type": "image",
-            "value": "assets/images/ppt/scene-main.png",
-            "sort": 6
-        },
-        {
-            "section": "stats",
-            "section_label": "Stats",
-            "key": "stats.1",
-            "label": "Image (stats-layer.png)",
-            "type": "image",
-            "value": "assets/images/ppt/stats-layer.png",
-            "sort": 7
-        },
-        {
-            "section": "stats",
-            "section_label": "Stats",
-            "key": "stats.2",
-            "label": "Image (stats.png)",
-            "type": "image",
-            "value": "assets/images/prepress/stats.png",
-            "sort": 8
-        },
-        {
-            "section": "tools-strip",
-            "section_label": "Tools Strip",
-            "key": "tools-strip.1",
-            "label": "Image (tools-bg.png)",
-            "type": "image",
-            "value": "assets/images/ppt/tools-bg.png",
-            "sort": 9
-        },
-        {
-            "section": "services-workflow",
-            "section_label": "Services + Workflow",
-            "key": "services-workflow.1",
-            "label": "Image: PPT design services overview (services.png)",
-            "type": "image",
-            "value": "assets/images/ppt/services.png",
-            "sort": 10
-        },
-        {
-            "section": "what-we-offer-cta-engagement",
-            "section_label": "What We Offer + Cta + Engagement",
-            "key": "what-we-offer-cta-engagement.1",
-            "label": "Button text: Let’s Talk",
-            "type": "text",
-            "value": "Let’s Talk",
-            "sort": 11
+            "sort": 1
         },
         {
             "section": "hero",
@@ -125,7 +35,7 @@
             "label": "Paragraph: Home / Services / Branding & Creative / PPT D…",
             "type": "html",
             "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>PPT Design</span>",
-            "sort": 12
+            "sort": 2
         },
         {
             "section": "hero",
@@ -134,7 +44,7 @@
             "label": "Main heading: PPT Design Services",
             "type": "text",
             "value": "PPT Design Services",
-            "sort": 13
+            "sort": 3
         },
         {
             "section": "hero",
@@ -143,7 +53,7 @@
             "label": "Paragraph: A presentation is often where your idea first…",
             "type": "textarea",
             "value": "A presentation is often where your idea first meets an investor, a client or your own team. When the slides are cluttered or hard to follow, the message weakens before you have finished speaking, no matter how strong the idea behind it is. A good deck does the opposite: it holds attention, makes each point land, and gives you the confidence to present. We design presentations that carry your message clearly, so your slides support what you are saying instead of competing with it.",
-            "sort": 14
+            "sort": 4
         },
         {
             "section": "hero",
@@ -152,7 +62,7 @@
             "label": "Bold label: Dedicated In-House Design Team",
             "type": "text",
             "value": "Dedicated In-House Design Team",
-            "sort": 15
+            "sort": 5
         },
         {
             "section": "hero",
@@ -161,7 +71,7 @@
             "label": "Text: Professional presentation designers deliverin…",
             "type": "text",
             "value": "Professional presentation designers delivering brand-consistent, high-quality slides with reliable turnaround.",
-            "sort": 16
+            "sort": 6
         },
         {
             "section": "hero",
@@ -170,7 +80,7 @@
             "label": "Heading: Let’s Bring Your Presentation to Life.",
             "type": "text",
             "value": "Let’s Bring Your Presentation to Life.",
-            "sort": 17
+            "sort": 7
         },
         {
             "section": "hero",
@@ -179,7 +89,7 @@
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
             "value": "Tell us about your project.",
-            "sort": 18
+            "sort": 8
         },
         {
             "section": "hero",
@@ -188,7 +98,7 @@
             "label": "Text: Subject",
             "type": "text",
             "value": "Subject",
-            "sort": 19
+            "sort": 9
         },
         {
             "section": "hero",
@@ -197,7 +107,7 @@
             "label": "Text: Your Message",
             "type": "text",
             "value": "Your Message",
-            "sort": 20
+            "sort": 10
         },
         {
             "section": "hero",
@@ -206,7 +116,7 @@
             "label": "Button text: Start a Project",
             "type": "text",
             "value": "Start a Project",
-            "sort": 21
+            "sort": 11
         },
         {
             "section": "selected-work",
@@ -215,7 +125,7 @@
             "label": "Heading: Selected PPT Design Work",
             "type": "text",
             "value": "Selected PPT Design Work",
-            "sort": 22
+            "sort": 12
         },
         {
             "section": "selected-work",
@@ -224,7 +134,61 @@
             "label": "Paragraph: Our presentation design work supports busines…",
             "type": "textarea",
             "value": "Our presentation design work supports businesses, startups, corporate teams and marketing agencies with investor pitch decks, sales presentations, company profiles, business reports and custom PowerPoint templates. Every presentation is designed to communicate clearly, maintain brand consistency and deliver a professional visual experience.",
-            "sort": 23
+            "sort": 13
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.1",
+            "label": "Image (scene-bg.png)",
+            "type": "image",
+            "value": "assets/images/ppt/scene-bg.png",
+            "sort": 14
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.2",
+            "label": "Image (scene-layer-left.png)",
+            "type": "image",
+            "value": "assets/images/ppt/scene-layer-left.png",
+            "sort": 15
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.3",
+            "label": "Image (scene-layer-right.png)",
+            "type": "image",
+            "value": "assets/images/ppt/scene-layer-right.png",
+            "sort": 16
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.4",
+            "label": "Image: Presentation design examples (scene-main.png)",
+            "type": "image",
+            "value": "assets/images/ppt/scene-main.png",
+            "sort": 17
+        },
+        {
+            "section": "stats",
+            "section_label": "Stats",
+            "key": "stats.1",
+            "label": "Image (stats-layer.png)",
+            "type": "image",
+            "value": "assets/images/ppt/stats-layer.png",
+            "sort": 18
+        },
+        {
+            "section": "stats",
+            "section_label": "Stats",
+            "key": "stats.2",
+            "label": "Image (stats.png)",
+            "type": "image",
+            "value": "assets/images/prepress/stats.png",
+            "sort": 19
         },
         {
             "section": "why-intelliworkz",
@@ -233,7 +197,7 @@
             "label": "Heading: Why Intelliworkz",
             "type": "text",
             "value": "Why Intelliworkz",
-            "sort": 24
+            "sort": 20
         },
         {
             "section": "why-intelliworkz",
@@ -242,7 +206,7 @@
             "label": "Paragraph: Most presentations fail for the same reason: …",
             "type": "textarea",
             "value": "Most presentations fail for the same reason: there is too much on every slide, and no clear point for the audience to follow. The information is all there, but it is buried under long bullet lists, dense text, and charts that are hard to read. The audience ends up reading the slide instead of listening to you. We fix this by designing around your message first, then making each slide simple to read and simple to present from.",
-            "sort": 25
+            "sort": 21
         },
         {
             "section": "why-intelliworkz",
@@ -251,7 +215,7 @@
             "label": "Paragraph: We start with your content and your goal, whe…",
             "type": "textarea",
             "value": "We start with your content and your goal, whether that is winning an investment, closing a sale, or bringing a team together. We then put the story in a clear order, cut each slide down to the one point it needs to make, and design it to match your brand. Dense data becomes simple charts, heavy text becomes short and clear lines, and the deck is easy for an audience to follow.",
-            "sort": 26
+            "sort": 22
         },
         {
             "section": "why-intelliworkz",
@@ -260,16 +224,7 @@
             "label": "Paragraph: As a branding partner, we also make sure your…",
             "type": "textarea",
             "value": "As a branding partner, we also make sure your presentation matches the rest of your business. The colours, fonts and style follow your brand, so every deck looks like it belongs to your company.",
-            "sort": 27
-        },
-        {
-            "section": "why-intelliworkz",
-            "section_label": "Why Intelliworkz",
-            "key": "why-intelliworkz.5",
-            "label": "Button text: Enquire Now",
-            "type": "text",
-            "value": "Enquire Now",
-            "sort": 28
+            "sort": 23
         },
         {
             "section": "why-intelliworkz",
@@ -278,7 +233,25 @@
             "label": "Button link: Enquire Now",
             "type": "url",
             "value": "#",
-            "sort": 29
+            "sort": 24
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 25
+        },
+        {
+            "section": "tools-strip",
+            "section_label": "Tools Strip",
+            "key": "tools-strip.1",
+            "label": "Image (tools-bg.png)",
+            "type": "image",
+            "value": "assets/images/ppt/tools-bg.png",
+            "sort": 26
         },
         {
             "section": "services-workflow",
@@ -287,7 +260,7 @@
             "label": "Heading: The Presentations We Design",
             "type": "text",
             "value": "The Presentations We Design",
-            "sort": 30
+            "sort": 27
         },
         {
             "section": "services-workflow",
@@ -296,16 +269,7 @@
             "label": "Paragraph: Our PPT design services cover the presentatio…",
             "type": "textarea",
             "value": "Our PPT design services cover the presentations businesses rely on most, from high-stakes pitches that have to win in one meeting to the everyday internal decks a team presents week after week. You can hand us raw content, a rough draft, a Word document, or an old deck that needs rebuilding, and we turn it into a finished, professional presentation.",
-            "sort": 31
-        },
-        {
-            "section": "services-workflow",
-            "section_label": "Services + Workflow",
-            "key": "services-workflow.4",
-            "label": "Button text: Enquire Now",
-            "type": "text",
-            "value": "Enquire Now",
-            "sort": 32
+            "sort": 28
         },
         {
             "section": "services-workflow",
@@ -314,7 +278,34 @@
             "label": "Button link: Enquire Now",
             "type": "url",
             "value": "#",
-            "sort": 33
+            "sort": 29
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 30
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: PPT design services overview (services.png)",
+            "type": "image",
+            "value": "assets/images/ppt/services.png",
+            "sort": 31
+        },
+        {
+            "section": "dark-showcase-shared",
+            "section_label": "Dark Showcase (shared)",
+            "key": "dark-showcase-shared.1",
+            "label": "Heading: What Our PPT Design Services Cover",
+            "type": "text",
+            "value": "What Our PPT Design Services Cover",
+            "sort": 32
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -323,7 +314,7 @@
             "label": "Heading: what we offer",
             "type": "text",
             "value": "what we offer",
-            "sort": 34
+            "sort": 33
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -332,7 +323,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 35
+            "sort": 34
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -341,6 +332,15 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
+            "sort": 35
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
             "sort": 36
         },
         {
@@ -735,22 +735,26 @@
                 [
                     "Full Name",
                     "Enter your first name",
-                    "text"
+                    "text",
+                    "name"
                 ],
                 [
                     "Company Name",
                     "Enter your company name",
-                    "text"
+                    "text",
+                    "company"
                 ],
                 [
                     "Email ID",
                     "Enter your email ID",
+                    "email",
                     "email"
                 ],
                 [
                     "Contact Number",
                     "Enter your contact number",
-                    "tel"
+                    "tel",
+                    "phone"
                 ]
             ]
         }

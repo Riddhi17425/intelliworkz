@@ -52,11 +52,19 @@
     </div>
 @endif
 
+{{-- result of an enquiry sent without JavaScript --}}
+@if(session('inquiry_status'))
+    <div id="form-result" class="form-flash" role="status">{{ session('inquiry_status') }}</div>
+@elseif($errors->any() && old('source') !== null)
+    <div id="form-result" class="form-flash is-error" role="alert">{{ $errors->first() }}</div>
+@endif
+
 @yield('content')
 
 @include('site.partials.footer')
 
 <script src="{{ asset_url('assets/js/main.js') }}"></script>
 <script src="{{ asset_url('assets/js/effects.js') }}" defer></script>
+<script src="{{ asset_url('assets/js/inquiry.js') }}" defer></script>
 </body>
 </html>

@@ -50,8 +50,8 @@ foreach ($ab_caps as $i => $cap) {
                 <p class="ab-hero__lead" data-reveal style="--d:2">{!! $T('01-hero.8') !!}</p>
                 <p class="ab-hero__text" data-reveal style="--d:3">{!! $T('01-hero.9') !!}</p>
                 <div class="ab-hero__btns" data-reveal style="--d:4">
-                    <a href="contact-us.php" class="ab-btn ab-btn--red">{!! $T('01-hero.10') !!}</a>
-                    <a href="#capabilities" class="ab-btn ab-btn--ghost">{!! $T('01-hero.12') !!}</a>
+                    <a href="{{ $T('01-hero.11') ?: '#' }}" class="ab-btn ab-btn--red">{!! $T('01-hero.10') !!}</a>
+                    <a href="{{ $T('01-hero.13') ?: '#' }}" class="ab-btn ab-btn--ghost">{!! $T('01-hero.12') !!}</a>
                 </div>
             </div>
 

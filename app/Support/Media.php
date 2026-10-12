@@ -68,6 +68,53 @@ class Media
         return preg_match('#^https?://#i', $path) ? $path : asset(ltrim($path, '/'));
     }
 
+    /**
+     * URL to preview an editor value. Values are either full paths ("uploads/…", "assets/…") or the bare file names
+     * the original site used ("thumb-1.png", "collaterals/services.png"), which are looked up under assets/.
+     */
+    public static function preview(?string $value): ?string
+    {
+        $v = trim((string) $value);
+        if ($v === '') {
+            return null;
+        }
+        if (preg_match('#^(https?:)?//#', $v)) {
+            return $v;
+        }
+        if (str_starts_with($v, 'uploads/') || str_starts_with($v, 'assets/')) {
+            return asset($v);
+        }
+        foreach (['assets/images/', 'assets/icons/'] as $dir) {
+            if (is_file(public_path($dir . $v))) {
+                return asset($dir . $v);
+            }
+        }
+        $found = self::assetIndex()[basename($v)] ?? null;
+        return $found ? asset($found) : null;
+    }
+
+    /** basename => relative path for every original image/icon (cached; built once). */
+    private static function assetIndex(): array
+    {
+        return \Illuminate\Support\Facades\Cache::rememberForever('media.asset_index', function () {
+            $map = [];
+            foreach (['assets/images', 'assets/icons'] as $root) {
+                $base = public_path($root);
+                if (!is_dir($base)) {
+                    continue;
+                }
+                $it = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($base, \FilesystemIterator::SKIP_DOTS));
+                foreach ($it as $file) {
+                    if ($file->isFile() && preg_match('/\.(png|jpe?g|webp|gif|svg)$/i', $file->getFilename())) {
+                        $rel = $root . '/' . str_replace('\\', '/', substr($file->getPathname(), strlen($base) + 1));
+                        $map[$file->getFilename()] ??= $rel;
+                    }
+                }
+            }
+            return $map;
+        });
+    }
+
     public static function sanitizeSvg(string $svg): string
     {
         if (stripos($svg, '<!ENTITY') !== false || stripos($svg, '<!DOCTYPE') !== false) {

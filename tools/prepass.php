@@ -40,6 +40,27 @@ function inSection(Ctx $ctx, array $markers, int $offset, callable $fn)
 
 function prepass(string $body, Ctx $ctx): string
 {
+    // 0) the enquiry forms post to the CMS: CSRF token, which page it came from, a honeypot, and a line for the result message
+    $body = preg_replace(
+        '~<form class="(lead-form|ct-card)" action="#" method="post">~',
+        '<form class="$1" action="{{ route(\'inquiries.store\') }}" method="post" data-inquiry-form novalidate>' . "\n"
+        . '@csrf' . "\n"
+        . '<input type="hidden" name="source" value="{{ $page->slug }}">' . "\n"
+        . '<input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">',
+        $body
+    );
+    $body = preg_replace(
+        '~(<form class="(?:lead-form|ct-card)"[^>]*data-inquiry-form.*?)(\s*)(<button type="submit")~s',
+        '$1$2<p class="form-status" data-form-status role="status" aria-live="polite"></p>$2$3',
+        $body
+    );
+    // field names come from a stable 4th value in $ve_form_fields, so renaming a label in the admin cannot break the form
+    $body = str_replace(
+        "strtolower(str_replace(' ', '_', \$f[0]))",
+        "(\$f[3] ?? strtolower(str_replace(' ', '_', \$f[0])))",
+        $body
+    );
+
     $markers = sectionMarkers($body);
 
     // 1) content images:  src="(php echo of $si)file.png"   or   src="assets/images/..."

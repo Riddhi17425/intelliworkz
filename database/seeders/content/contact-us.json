@@ -27,22 +27,13 @@
             "sort": 1
         },
         {
-            "section": "form",
-            "section_label": "Form",
-            "key": "form.1",
-            "label": "Image (outline.png)",
-            "type": "image",
-            "value": "assets/images/contact/outline.png",
-            "sort": 2
-        },
-        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.2",
             "label": "Paragraph: Home / Contact Us",
             "type": "html",
             "value": "<a href=\"index.php\">Home</a> / <span>Contact Us</span>",
-            "sort": 3
+            "sort": 2
         },
         {
             "section": "hero",
@@ -51,7 +42,7 @@
             "label": "Main heading: Let’s Start a Conversation.",
             "type": "html",
             "value": "Let’s Start a<br>Conversation.",
-            "sort": 4
+            "sort": 3
         },
         {
             "section": "hero",
@@ -60,6 +51,15 @@
             "label": "Paragraph: Tell us what you’re trying to build, improve,…",
             "type": "textarea",
             "value": "Tell us what you’re trying to build, improve, market or manage. We’ll understand your requirement, identify the right capabilities and connect you with the right team.",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Button link: Start a Project",
+            "type": "url",
+            "value": "#contact-form",
             "sort": 5
         },
         {
@@ -74,10 +74,10 @@
         {
             "section": "hero",
             "section_label": "Hero",
-            "key": "hero.6",
-            "label": "Button link: Start a Project",
+            "key": "hero.8",
+            "label": "Button link: Explore Our Services",
             "type": "url",
-            "value": "#contact-form",
+            "value": "#",
             "sort": 7
         },
         {
@@ -90,22 +90,13 @@
             "sort": 8
         },
         {
-            "section": "hero",
-            "section_label": "Hero",
-            "key": "hero.8",
-            "label": "Button link: Explore Our Services",
-            "type": "url",
-            "value": "#",
-            "sort": 9
-        },
-        {
             "section": "form",
             "section_label": "Form",
             "key": "form.2",
             "label": "Heading: Bring Us the Requirement. We’ll Bring the Rig…",
             "type": "html",
             "value": "Bring Us the Requirement.<br>We’ll Bring the Right Expertise.",
-            "sort": 10
+            "sort": 9
         },
         {
             "section": "form",
@@ -114,6 +105,15 @@
             "label": "Paragraph: Whether you need a single specialist service,…",
             "type": "textarea",
             "value": "Whether you need a single specialist service, an ongoing delivery partner or a dedicated team, tell us what you need and we’ll connect the relevant capabilities around your requirement.",
+            "sort": 10
+        },
+        {
+            "section": "form",
+            "section_label": "Form",
+            "key": "form.1",
+            "label": "Image (outline.png)",
+            "type": "image",
+            "value": "assets/images/contact/outline.png",
             "sort": 11
         },
         {
@@ -359,22 +359,26 @@
                 [
                     "Full Name",
                     "Enter your first name",
-                    "text"
+                    "text",
+                    "name"
                 ],
                 [
                     "Company Name",
                     "Enter your company name",
-                    "text"
+                    "text",
+                    "company"
                 ],
                 [
                     "Email ID",
                     "Enter your email ID",
+                    "email",
                     "email"
                 ],
                 [
                     "Contact Number",
                     "Enter your contact number",
-                    "tel"
+                    "tel",
+                    "phone"
                 ]
             ]
         }

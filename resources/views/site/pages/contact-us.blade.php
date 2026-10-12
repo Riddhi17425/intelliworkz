@@ -22,8 +22,8 @@ $vc = 'assets/icons/video/';      // shared icons
                     <p>{!! $T('hero.4') !!}</p>
                 </div>
                 <div class="mf-hero__btns">
-                    <a href="#contact-form" class="mf-btn mf-btn--red">{!! $T('hero.5') !!}</a>
-                    <a href="#" class="mf-btn mf-btn--ghost">{!! $T('hero.7') !!}</a>
+                    <a href="{{ $T('hero.6') ?: '#' }}" class="mf-btn mf-btn--red">{!! $T('hero.5') !!}</a>
+                    <a href="{{ $T('hero.8') ?: '#' }}" class="mf-btn mf-btn--ghost">{!! $T('hero.7') !!}</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,10 @@ $vc = 'assets/icons/video/';      // shared icons
                 <img class="ct-form__outline" src="{{ $T('form.1') }}" alt="">
             </div>
 
-            <form class="ct-card" action="#" method="post">
+            <form class="ct-card" action="{{ route('inquiries.store') }}" method="post" data-inquiry-form novalidate>
+@csrf
+<input type="hidden" name="source" value="{{ $page->slug }}">
+<input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
                 <div class="ct-card__head">
                     <h2>{!! $T('form.4') !!}</h2> <!-- kept exactly as written in Figma; looks like a leftover from the Packaging page -->
                     <p>{!! $T('form.5') !!}</p>
@@ -48,13 +51,14 @@ $vc = 'assets/icons/video/';      // shared icons
                     <?php foreach (array_chunk($ve_form_fields, 2) as $row): ?>
                         <div class="ct-card__row">
                             <?php foreach ($row as $f): ?>
-                                <label class="ct-field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= strtolower(str_replace(' ', '_', $f[0])) ?>" placeholder="<?= $f[1] ?>"></label>
+                                <label class="ct-field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= ($f[3] ?? strtolower(str_replace(' ', '_', $f[0]))) ?>" placeholder="<?= $f[1] ?>"></label>
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
                     <label class="ct-field"><span>{!! $T('form.6') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
                     <label class="ct-field"><span>{!! $T('form.7') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
                 </div>
+                <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                 <button type="submit" class="btn btn--cta btn--block">{!! $T('form.8') !!}</button>
                 <p class="ct-card__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
             </form>

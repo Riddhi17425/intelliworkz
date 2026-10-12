@@ -145,9 +145,9 @@ tr.is-unread .row-title { font-weight: 700; }
 
 /* ---------- Content editor (fields + repeaters) ---------- */
 .adm-tabs { display: flex; gap: .3rem; overflow-x: auto; padding: .35rem; margin-bottom: 1.25rem; background: #fff; border: 1px solid var(--bs-border-color); border-radius: .9rem; box-shadow: var(--adm-card-shadow); scrollbar-width: thin; }
-.adm-tabs a { flex: none; padding: .5rem .95rem; font-weight: 600; font-size: .84rem; color: var(--adm-muted); border-radius: .6rem; white-space: nowrap; }
-.adm-tabs a:hover { color: var(--adm-brand); background: #fdf1f2; }
-.adm-tabs a.active { color: #fff; background: var(--adm-brand); }
+.adm-tabs a, .adm-tabs button { flex: none; padding: .5rem .95rem; border: 0; background: none; font-weight: 600; font-size: .84rem; color: var(--adm-muted); border-radius: .6rem; white-space: nowrap; }
+.adm-tabs a:hover, .adm-tabs button:hover { color: var(--adm-brand); background: #fdf1f2; }
+.adm-tabs a.active, .adm-tabs button.active { color: #fff; background: var(--adm-brand); }
 .adm-fieldgroup { scroll-margin-top: 90px; }
 .adm-fieldrow { margin-bottom: 1.1rem; }
 .adm-fieldrow:last-child { margin-bottom: 0; }

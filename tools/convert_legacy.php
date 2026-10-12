@@ -247,28 +247,20 @@ function extractChunk(string $html, Ctx $ctx): string
         $subs[] = [$c['s'], $c['e'], substr($c['inner'], 0, $lead) . "{!! \$T('{$key}') !!}" . ($trail ? substr($c['inner'], -$trail) : '')];
 
         // button / link targets
-        if ($c['tag'] === 'a' && preg_match('/class="[^"]*\b(btn|pill|text-link|mf-btn)/', $c['attrs']) && preg_match('/href="([^"{<]*)"/', $c['attrs'], $h)) {
-            $urlKey = $ctx->add('url', 'Button link: ' . preview($value, 30), $h[1]);
-            // the href lives in the opening tag; it is rewritten after the inner replacements
-            $subs[] = ['href', $c['at'], $urlKey];
+        if ($c['tag'] === 'a' && preg_match('/class="[^"]*\b(btn|pill|text-link|mf-btn)/', $c['attrs'])) {
+            $openTag = substr($html, $c['at'], $c['s'] - $c['at']);
+            if (preg_match('/href="([^"{<]*)"/', $openTag, $h, PREG_OFFSET_CAPTURE)) {
+                $urlKey = $ctx->add('url', 'Button link: ' . preview($value, 30), $h[1][0]);
+                $vs = $c['at'] + $h[1][1];
+                $subs[] = [$vs, $vs + strlen($h[1][0]), "{{ \$T('{$urlKey}') ?: '#' }}"];
+            }
         }
     }
 
-    // apply: href rewrites first (they live in the opening tag, before the inner range), then inner replacements from the end
-    $hrefs = array_filter($subs, fn ($s) => $s[0] === 'href');
-    $inner = array_filter($subs, fn ($s) => $s[0] !== 'href');
-    usort($inner, fn ($a, $b) => $b[0] <=> $a[0]);
-    foreach ($inner as [$s, $e, $new]) {
+    // apply every edit (inner text and href values alike) from the end of the chunk backwards, so offsets stay valid
+    usort($subs, fn ($a, $b) => $b[0] <=> $a[0]);
+    foreach ($subs as [$s, $e, $new]) {
         $html = substr($html, 0, $s) . $new . substr($html, $e);
-    }
-    // hrefs: positions are of the opening tag start; apply from the end as well, re-locating after inner edits
-    usort($hrefs, fn ($a, $b) => $b[1] <=> $a[1]);
-    foreach ($hrefs as [, $at, $urlKey]) {
-        // inner edits happened after $at, so the opening tag text is unchanged at that offset
-        if (preg_match('/\G<a\b[^>]*?href="([^"{<]*)"/s', $html, $mm, PREG_OFFSET_CAPTURE, $at)) {
-            $valStart = $mm[1][1];
-            $html = substr($html, 0, $valStart) . "{{ \$T('{$urlKey}') ?: '#' }}" . substr($html, $valStart + strlen($mm[1][0]));
-        }
     }
     return $html;
 }
@@ -346,6 +338,14 @@ function convertPage(string $slug, string $legacy, string $root, array $pages): 
             }
             $shared = $partial || ($df !== $primary);
             if (is_array($value)) {
+                if ($name === 've_form_fields') {
+                    // stable machine names for the enquiry form (the visible label may be reworded in the admin)
+                    $names = ['full name' => 'name', 'company name' => 'company', 'email id' => 'email', 'contact number' => 'phone'];
+                    foreach ($value as &$row) {
+                        $row[3] = $names[strtolower($row[0])] ?? preg_replace('/[^a-z0-9]+/', '_', strtolower($row[0]));
+                    }
+                    unset($row);
+                }
                 $lists[$name] = ['scope' => $shared ? 'global' : $slug, 'items' => $value];
             } elseif (is_string($value)) {
                 $strings[$name] = $value;
@@ -361,7 +361,7 @@ function convertPage(string $slug, string $legacy, string $root, array $pages): 
         function ($m) use ($ctx) {
             $block = $m[1];
             if (preg_match('~\$showcase_title\s*=\s*\'((?:[^\'\\\\]|\\\\.)*)\';[^\n]*~', $block, $st)) {
-                $ctx->setSection('Dark Showcase');
+                $ctx->setSection('Dark Showcase (shared)');
                 $title = stripslashes($st[1]);
                 $key = $ctx->add('text', 'Heading: ' . preview($title, 36), $title);
                 $block = str_replace($st[0], "\$showcase_title = \$T('{$key}');", $block);
@@ -400,6 +400,20 @@ function convertPage(string $slug, string $legacy, string $root, array $pages): 
         }
     }
     $out = preg_replace('/^\?>\R?/', '', $out, 1);
+
+    // order the fields the way they appear in the template (top to bottom), so the admin lists them naturally
+    $acc = $partial ? 'G' : 'T';
+    foreach ($ctx->fields as &$fld) {
+        $p = strpos($out, "\${$acc}('{$fld['key']}')");
+        $fld['pos'] = $p === false ? -1 : $p;
+    }
+    unset($fld);
+    usort($ctx->fields, fn ($a, $b) => $a['pos'] <=> $b['pos']);
+    foreach ($ctx->fields as $i => &$fld) {
+        $fld['sort'] = $i + 1;
+        unset($fld['pos']);
+    }
+    unset($fld);
 
     // ---- write the view
     $php = trim($stringPhp . $keepPhp);

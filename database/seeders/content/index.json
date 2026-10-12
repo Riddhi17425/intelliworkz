@@ -33,137 +33,11 @@
         {
             "section": "hero",
             "section_label": "Hero",
-            "key": "hero.2",
-            "label": "Button text: Start a Project",
-            "type": "text",
-            "value": "Start a Project",
-            "sort": 3
-        },
-        {
-            "section": "hero",
-            "section_label": "Hero",
-            "key": "hero.3",
-            "label": "Button text: Explore Our Services",
-            "type": "text",
-            "value": "Explore Our Services",
-            "sort": 4
-        },
-        {
-            "section": "domain-expertise",
-            "section_label": "Domain Expertise",
-            "key": "domain-expertise.1",
-            "label": "Button text: About us",
-            "type": "text",
-            "value": "About us",
-            "sort": 5
-        },
-        {
-            "section": "services",
-            "section_label": "Services",
-            "key": "services.1",
-            "label": "Button text: View All Services",
-            "type": "text",
-            "value": "View All Services",
-            "sort": 6
-        },
-        {
-            "section": "cta-band",
-            "section_label": "Cta Band",
-            "key": "cta-band.1",
-            "label": "Button text: Let’s Talk",
-            "type": "text",
-            "value": "Let’s Talk",
-            "sort": 7
-        },
-        {
-            "section": "outsourcing",
-            "section_label": "Outsourcing",
-            "key": "outsourcing.1",
-            "label": "Button text: Explore Outsourcing Solutions",
-            "type": "text",
-            "value": "Explore Outsourcing Solutions",
-            "sort": 8
-        },
-        {
-            "section": "products",
-            "section_label": "Products",
-            "key": "products.1",
-            "label": "Button text: Explore",
-            "type": "text",
-            "value": "Explore",
-            "sort": 9
-        },
-        {
-            "section": "insights",
-            "section_label": "Insights",
-            "key": "insights.1",
-            "label": "Button text: Read More",
-            "type": "text",
-            "value": "Read More",
-            "sort": 10
-        },
-        {
-            "section": "industries",
-            "section_label": "Industries",
-            "key": "industries.1",
-            "label": "Heading: Solutions Shaped Around Your Indust…",
-            "type": "text",
-            "value": "Solutions Shaped Around Your Industry",
-            "sort": 11
-        },
-        {
-            "section": "industries",
-            "section_label": "Industries",
-            "key": "industries.2",
-            "label": "Intro: The right digital, creative, or tec…",
-            "type": "html",
-            "value": "The right digital, creative, or technology solution depends on the business behind it. A manufacturing company has different operational requirements from a real estate business, while a technology company may need a completely different customer experience.<br><br>Our teams bring domain expertise into the projects they work on, adapting the approach to the audience, processes, technology environment, and objectives involved.",
-            "sort": 12
-        },
-        {
-            "section": "products",
-            "section_label": "Products",
-            "key": "products.2",
-            "label": "Heading: Technology Products Built Around Re…",
-            "type": "text",
-            "value": "Technology Products Built Around Real Business Needs",
-            "sort": 13
-        },
-        {
-            "section": "products",
-            "section_label": "Products",
-            "key": "products.3",
-            "label": "Intro: Alongside our client services, Inte…",
-            "type": "textarea",
-            "value": "Alongside our client services, Intelliworkz develops products that address practical business requirements. These solutions bring together our understanding of technology, business processes, and user needs to simplify the way organizations work.",
-            "sort": 14
-        },
-        {
-            "section": "process",
-            "section_label": "Process",
-            "key": "process.1",
-            "label": "Heading: From Requirement to Reliable Delive…",
-            "type": "text",
-            "value": "From Requirement to Reliable Delivery",
-            "sort": 15
-        },
-        {
-            "section": "process",
-            "section_label": "Process",
-            "key": "process.2",
-            "label": "Intro: We don't start with a fixed solutio…",
-            "type": "text",
-            "value": "We don't start with a fixed solution. We start by understanding what you need to achieve.",
-            "sort": 16
-        },
-        {
-            "section": "hero",
-            "section_label": "Hero",
             "key": "hero.4",
             "label": "Main heading: Technology, Creative & Digital Capabilities B…",
             "type": "text",
             "value": "Technology, Creative &amp; Digital Capabilities Built Around Your Business",
-            "sort": 17
+            "sort": 3
         },
         {
             "section": "hero",
@@ -172,7 +46,25 @@
             "label": "Paragraph: In the ever-changing global landscape, compan…",
             "type": "textarea",
             "value": "In the ever-changing global landscape, companies today need more than individual service providers. They need partners with the right resources, domain expertise, and the latest technology who can deliver consistently. At Intelliworkz, we provide offshore solutions to deliver creative and digital marketing services that operate as an extended team under one roof.",
-            "sort": 18
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Button text: Explore Our Services",
+            "type": "text",
+            "value": "Explore Our Services",
+            "sort": 6
         },
         {
             "section": "hero",
@@ -181,7 +73,7 @@
             "label": "Paragraph: A seamless flow: your creative ideas transfor…",
             "type": "text",
             "value": "A seamless flow: your creative ideas transformed into digital growth",
-            "sort": 19
+            "sort": 7
         },
         {
             "section": "domain-expertise",
@@ -190,7 +82,7 @@
             "label": "Heading: Domain Expertise Across Creative, Digital & T…",
             "type": "text",
             "value": "Domain Expertise Across Creative, Digital &amp; Technology",
-            "sort": 20
+            "sort": 8
         },
         {
             "section": "domain-expertise",
@@ -199,7 +91,7 @@
             "label": "Paragraph: Your business may need a new brand, a website…",
             "type": "textarea",
             "value": "Your business may need a new brand, a website, a mobile application, ongoing digital marketing, or a team to manage technology requirements. These needs may sit in different domains, but they often need to work towards the same business objective.",
-            "sort": 21
+            "sort": 9
         },
         {
             "section": "domain-expertise",
@@ -208,7 +100,7 @@
             "label": "Paragraph: Intelliworkz brings together brand developmen…",
             "type": "textarea",
             "value": "Intelliworkz brings together brand development, creative design, digital marketing, technology, and outsourcing capabilities, backed by teams with expertise across the domains they work in. This allows us to understand not only what needs to be delivered but also the business context, audience, workflows, and objectives behind the requirement.",
-            "sort": 22
+            "sort": 10
         },
         {
             "section": "domain-expertise",
@@ -217,7 +109,7 @@
             "label": "Paragraph: Our domain expertise spans creative and commu…",
             "type": "textarea",
             "value": "Our domain expertise spans creative and communication, digital marketing, web and mobile applications, enterprise systems, publishing, and technology services. With these capabilities under one roof, you can work with one partner across different requirements instead of coordinating multiple specialists for connected work.",
-            "sort": 23
+            "sort": 11
         },
         {
             "section": "domain-expertise",
@@ -226,7 +118,16 @@
             "label": "Paragraph: Whether you need a single specialist service …",
             "type": "textarea",
             "value": "Whether you need a single specialist service or an ongoing technology, creative or digital partner, our 100% in-house teams bring the relevant expertise together around your requirement.",
-            "sort": 24
+            "sort": 12
+        },
+        {
+            "section": "domain-expertise",
+            "section_label": "Domain Expertise",
+            "key": "domain-expertise.1",
+            "label": "Button text: About us",
+            "type": "text",
+            "value": "About us",
+            "sort": 13
         },
         {
             "section": "services",
@@ -235,7 +136,7 @@
             "label": "Heading: Everything Your Business Needs to Build, Grow…",
             "type": "text",
             "value": "Everything Your Business Needs to Build, Grow &amp; Transform",
-            "sort": 25
+            "sort": 14
         },
         {
             "section": "services",
@@ -244,7 +145,16 @@
             "label": "Paragraph: We work across creative, digital, technology,…",
             "type": "textarea",
             "value": "We work across creative, digital, technology, and publishing requirements, bringing specialized capabilities together when a project calls for more than one discipline.",
-            "sort": 26
+            "sort": 15
+        },
+        {
+            "section": "services",
+            "section_label": "Services",
+            "key": "services.1",
+            "label": "Button text: View All Services",
+            "type": "text",
+            "value": "View All Services",
+            "sort": 16
         },
         {
             "section": "cta-band",
@@ -253,7 +163,16 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
-            "sort": 27
+            "sort": 17
+        },
+        {
+            "section": "cta-band",
+            "section_label": "Cta Band",
+            "key": "cta-band.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
+            "sort": 18
         },
         {
             "section": "outsourcing",
@@ -262,7 +181,7 @@
             "label": "Heading: Extend Your Team With Creative & Engineering …",
             "type": "text",
             "value": "Extend Your Team With Creative &amp; Engineering Expertise",
-            "sort": 28
+            "sort": 19
         },
         {
             "section": "outsourcing",
@@ -271,7 +190,7 @@
             "label": "Paragraph: Building every capability internally isn't al…",
             "type": "textarea",
             "value": "Building every capability internally isn't always practical. You may need additional creative capacity for ongoing production, engineering expertise for a technology project, or a dedicated team to manage development and digital requirements without expanding your internal headcount.",
-            "sort": 29
+            "sort": 20
         },
         {
             "section": "outsourcing",
@@ -280,7 +199,7 @@
             "label": "Paragraph: Intelliworkz provides IT outsourcing services…",
             "type": "textarea",
             "value": "Intelliworkz provides IT outsourcing services, creative service outsourcing, and engineering service outsourcing through 100% in-house teams. You can outsource a specific function, a complete project or build a dedicated team around your ongoing requirements.",
-            "sort": 30
+            "sort": 21
         },
         {
             "section": "outsourcing",
@@ -289,7 +208,7 @@
             "label": "Sub-heading: OUR 4-STEP ENGAGEMENT PROCESS",
             "type": "text",
             "value": "OUR 4-STEP ENGAGEMENT PROCESS",
-            "sort": 31
+            "sort": 22
         },
         {
             "section": "outsourcing",
@@ -298,7 +217,7 @@
             "label": "Sub-heading: WHITE-LABEL & OFFSHORE SUPPORT",
             "type": "text",
             "value": "WHITE-LABEL &amp; OFFSHORE SUPPORT",
-            "sort": 32
+            "sort": 23
         },
         {
             "section": "outsourcing",
@@ -307,7 +226,7 @@
             "label": "Small heading: Extend Delivery Without Extending Your Brand",
             "type": "text",
             "value": "Extend Delivery Without Extending Your Brand",
-            "sort": 33
+            "sort": 24
         },
         {
             "section": "outsourcing",
@@ -316,7 +235,7 @@
             "label": "List item: Confidential collaboration",
             "type": "text",
             "value": "Confidential collaboration",
-            "sort": 34
+            "sort": 25
         },
         {
             "section": "outsourcing",
@@ -325,7 +244,7 @@
             "label": "List item: Brand-safe delivery standards",
             "type": "text",
             "value": "Brand-safe delivery standards",
-            "sort": 35
+            "sort": 26
         },
         {
             "section": "outsourcing",
@@ -334,7 +253,7 @@
             "label": "List item: Scalable offshore resources",
             "type": "text",
             "value": "Scalable offshore resources",
-            "sort": 36
+            "sort": 27
         },
         {
             "section": "outsourcing",
@@ -343,7 +262,7 @@
             "label": "List item: Consistent project execution",
             "type": "text",
             "value": "Consistent project execution",
-            "sort": 37
+            "sort": 28
         },
         {
             "section": "outsourcing",
@@ -352,7 +271,34 @@
             "label": "Paragraph: Build a team around your specific requirement…",
             "type": "textarea",
             "value": "Build a team around your specific requirements with dedicated resources, project management, and the flexibility to scale as your workload changes. The team can work alongside your existing employees, follow your processes, and collaborate within your preferred working structure.",
-            "sort": 38
+            "sort": 29
+        },
+        {
+            "section": "outsourcing",
+            "section_label": "Outsourcing",
+            "key": "outsourcing.1",
+            "label": "Button text: Explore Outsourcing Solutions",
+            "type": "text",
+            "value": "Explore Outsourcing Solutions",
+            "sort": 30
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.1",
+            "label": "Heading: Solutions Shaped Around Your Indust…",
+            "type": "text",
+            "value": "Solutions Shaped Around Your Industry",
+            "sort": 31
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.2",
+            "label": "Intro: The right digital, creative, or tec…",
+            "type": "html",
+            "value": "The right digital, creative, or technology solution depends on the business behind it. A manufacturing company has different operational requirements from a real estate business, while a technology company may need a completely different customer experience.<br><br>Our teams bring domain expertise into the projects they work on, adapting the approach to the audience, processes, technology environment, and objectives involved.",
+            "sort": 32
         },
         {
             "section": "why-intelliworkz",
@@ -361,7 +307,34 @@
             "label": "Heading: Why Businesses Choose Intelliworkz",
             "type": "text",
             "value": "Why Businesses Choose Intelliworkz",
-            "sort": 39
+            "sort": 33
+        },
+        {
+            "section": "products",
+            "section_label": "Products",
+            "key": "products.2",
+            "label": "Heading: Technology Products Built Around Re…",
+            "type": "text",
+            "value": "Technology Products Built Around Real Business Needs",
+            "sort": 34
+        },
+        {
+            "section": "products",
+            "section_label": "Products",
+            "key": "products.3",
+            "label": "Intro: Alongside our client services, Inte…",
+            "type": "textarea",
+            "value": "Alongside our client services, Intelliworkz develops products that address practical business requirements. These solutions bring together our understanding of technology, business processes, and user needs to simplify the way organizations work.",
+            "sort": 35
+        },
+        {
+            "section": "products",
+            "section_label": "Products",
+            "key": "products.1",
+            "label": "Button text: Explore",
+            "type": "text",
+            "value": "Explore",
+            "sort": 36
         },
         {
             "section": "products",
@@ -370,7 +343,25 @@
             "label": "Small heading: Key Capabilities:",
             "type": "text",
             "value": "Key Capabilities:",
-            "sort": 40
+            "sort": 37
+        },
+        {
+            "section": "process",
+            "section_label": "Process",
+            "key": "process.1",
+            "label": "Heading: From Requirement to Reliable Delive…",
+            "type": "text",
+            "value": "From Requirement to Reliable Delivery",
+            "sort": 38
+        },
+        {
+            "section": "process",
+            "section_label": "Process",
+            "key": "process.2",
+            "label": "Intro: We don't start with a fixed solutio…",
+            "type": "text",
+            "value": "We don't start with a fixed solution. We start by understanding what you need to achieve.",
+            "sort": 39
         },
         {
             "section": "insights",
@@ -379,6 +370,15 @@
             "label": "Heading: Insights & Intelligence",
             "type": "text",
             "value": "Insights &amp; Intelligence",
+            "sort": 40
+        },
+        {
+            "section": "insights",
+            "section_label": "Insights",
+            "key": "insights.1",
+            "label": "Button text: Read More",
+            "type": "text",
+            "value": "Read More",
             "sort": 41
         }
     ],

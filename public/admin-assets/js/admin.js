@@ -47,8 +47,10 @@
         modalEl.addEventListener('hidden.bs.modal', function () { pending = null; });
     }
 
-    /* ---------- Image inputs ---------- */
-    $$('.js-image').forEach(function (box) {
+    /* ---------- Image inputs (also called for rows added dynamically by the content editor) ---------- */
+    var initImage = function (box) {
+        if (box.dataset.ready) return;
+        box.dataset.ready = '1';
         var file = $('input[type=file]', box);
         var preview = $('.adm-img__preview', box);
         var name = $('.adm-img__name', box);
@@ -75,7 +77,10 @@
                 if (name) name.textContent = originalName;
             }
         });
-    });
+    };
+    var initImages = function (root) { $$('.js-image', root || document).forEach(initImage); };
+    initImages();
+    window.AdminUI = { initImages: initImages };
 
     /* ---------- Slug helper: <input data-slug-from="#title"> ---------- */
     var slugify = function (s) {

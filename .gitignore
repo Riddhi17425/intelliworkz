@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# files uploaded through the admin panel
+/public/uploads/*
+!/public/uploads/.gitkeep

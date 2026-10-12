@@ -29,6 +29,13 @@ class Page extends Model
         ];
     }
 
+    protected static function booted(): void
+    {
+        // menus cache the linked page (address + published state), so any page change must refresh them
+        static::saved(fn () => \App\Support\SiteMenus::flush());
+        static::deleted(fn () => \App\Support\SiteMenus::flush());
+    }
+
     /** Admin URLs read /admin/pages/seo-services/edit rather than /admin/pages/7/edit */
     public function getRouteKeyName(): string
     {

@@ -19,58 +19,13 @@
     },
     "fields": [
         {
-            "section": "dark-showcase",
-            "section_label": "Dark Showcase",
-            "key": "dark-showcase.1",
-            "label": "Heading: What Our Pre-Press Services Cover",
-            "type": "text",
-            "value": "What Our Pre-Press Services Cover",
-            "sort": 1
-        },
-        {
-            "section": "stats",
-            "section_label": "Stats",
-            "key": "stats.1",
-            "label": "Image (stats.png)",
-            "type": "image",
-            "value": "assets/images/prepress/stats.png",
-            "sort": 2
-        },
-        {
-            "section": "tools-strip",
-            "section_label": "Tools Strip",
-            "key": "tools-strip.1",
-            "label": "Image (tools-bg.png)",
-            "type": "image",
-            "value": "assets/images/seo/tools-bg.png",
-            "sort": 3
-        },
-        {
-            "section": "services-workflow",
-            "section_label": "Services + Workflow",
-            "key": "services-workflow.1",
-            "label": "Image: Pre-press services overview (services.png)",
-            "type": "image",
-            "value": "assets/images/prepress/services.png",
-            "sort": 4
-        },
-        {
-            "section": "what-we-offer-cta-engagement",
-            "section_label": "What We Offer + Cta + Engagement",
-            "key": "what-we-offer-cta-engagement.1",
-            "label": "Button text: Let’s Talk",
-            "type": "text",
-            "value": "Let’s Talk",
-            "sort": 5
-        },
-        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Branding & Creative / Pre-P…",
             "type": "html",
             "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>Pre-Press Service</span>",
-            "sort": 6
+            "sort": 1
         },
         {
             "section": "hero",
@@ -79,7 +34,7 @@
             "label": "Main heading: Print Ready File",
             "type": "text",
             "value": "Print Ready File",
-            "sort": 7
+            "sort": 2
         },
         {
             "section": "hero",
@@ -88,7 +43,7 @@
             "label": "Paragraph: The highest print quality can only be achieve…",
             "type": "textarea",
             "value": "The highest print quality can only be achieved even before the printing press is started to print. Even a brilliant, innovative design can end up being really expensive errors if your file is not properly ready. Color shifts, pixilated files, missing fonts, or incorrect layout- it all makes sense for a delay in production and also leads to an impact on the final results.",
-            "sort": 8
+            "sort": 3
         },
         {
             "section": "hero",
@@ -97,7 +52,7 @@
             "label": "Paragraph: We’ve developed pre-press services to provide…",
             "type": "textarea",
             "value": "We’ve developed pre-press services to provide each artwork with an official tech review before it’s ready for printing. Whether you need packaging, commercial print goods, labels, marketing materials, or wide-format display work, we can enable your company to eradicate production defects and secure greater quality control on all jobs.",
-            "sort": 9
+            "sort": 4
         },
         {
             "section": "hero",
@@ -106,7 +61,7 @@
             "label": "Bold label: Dedicated In-House Pre-Press Team",
             "type": "text",
             "value": "Dedicated In-House Pre-Press Team",
-            "sort": 10
+            "sort": 5
         },
         {
             "section": "hero",
@@ -115,7 +70,7 @@
             "label": "Text: Experienced pre-press specialists delivering …",
             "type": "textarea",
             "value": "Experienced pre-press specialists delivering technically accurate, colour-consistent, print-ready artwork with reliable turnaround.",
-            "sort": 11
+            "sort": 6
         },
         {
             "section": "hero",
@@ -124,7 +79,7 @@
             "label": "Heading: Let’s Make Your Artwork Print-Ready.",
             "type": "text",
             "value": "Let’s Make Your Artwork Print-Ready.",
-            "sort": 12
+            "sort": 7
         },
         {
             "section": "hero",
@@ -133,7 +88,7 @@
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
             "value": "Tell us about your project.",
-            "sort": 13
+            "sort": 8
         },
         {
             "section": "hero",
@@ -142,7 +97,7 @@
             "label": "Text: Subject",
             "type": "text",
             "value": "Subject",
-            "sort": 14
+            "sort": 9
         },
         {
             "section": "hero",
@@ -151,7 +106,7 @@
             "label": "Text: Your Message",
             "type": "text",
             "value": "Your Message",
-            "sort": 15
+            "sort": 10
         },
         {
             "section": "hero",
@@ -160,7 +115,7 @@
             "label": "Button text: Start a Project",
             "type": "text",
             "value": "Start a Project",
-            "sort": 16
+            "sort": 11
         },
         {
             "section": "selected-work",
@@ -169,7 +124,7 @@
             "label": "Heading: Selected Pre-Press Work",
             "type": "text",
             "value": "Selected Pre-Press Work",
-            "sort": 17
+            "sort": 12
         },
         {
             "section": "selected-work",
@@ -178,7 +133,16 @@
             "label": "Paragraph: Our pre-press work supports brands, packaging…",
             "type": "textarea",
             "value": "Our pre-press work supports brands, packaging printers and businesses with artwork verification, colour management, print proofing and production-ready file preparation. Every file undergoes technical checks to minimise printing errors, maintain colour consistency and ensure accurate results across different printing formats.",
-            "sort": 18
+            "sort": 13
+        },
+        {
+            "section": "stats",
+            "section_label": "Stats",
+            "key": "stats.1",
+            "label": "Image (stats.png)",
+            "type": "image",
+            "value": "assets/images/prepress/stats.png",
+            "sort": 14
         },
         {
             "section": "what-you-get",
@@ -187,7 +151,7 @@
             "label": "Heading: What You Get From Our Pre-Press Services Beyo…",
             "type": "text",
             "value": "What You Get From Our Pre-Press Services Beyond File Preparation",
-            "sort": 19
+            "sort": 15
         },
         {
             "section": "what-you-get",
@@ -196,7 +160,7 @@
             "label": "Paragraph: Pre-production & Color Management is Not Just…",
             "type": "textarea",
             "value": "Pre-production &amp; Color Management is Not Just a Case of Exporting the PDF. Artwork preparation for print covers a wide range of activities that ensure your finished printed product matches your design aspirations accurately. Quality control ensures every artwork is screened for color profile, the images have been supplied with the required resolution, any necessary bleed has been set correctly, fonts used are all embedded or outlined, copy and positioning are perfectly consistent, and it is 100% production ready to ensure there are no reprinting, lost production time, or poor print results.",
-            "sort": 20
+            "sort": 16
         },
         {
             "section": "what-you-get",
@@ -205,7 +169,7 @@
             "label": "Paragraph: The whole process must culminate in file inte…",
             "type": "textarea",
             "value": "The whole process must culminate in file integrity, and at Intelliworkz, we adhere to a very rigorous pre-press &amp; color management procedure before every file goes into production; we're in communication with the designer, printer, and production team daily.",
-            "sort": 21
+            "sort": 17
         },
         {
             "section": "what-you-get",
@@ -214,16 +178,7 @@
             "label": "Paragraph: Having trusted pre-press companies that can s…",
             "type": "textarea",
             "value": "Having trusted pre-press companies that can support all our graphic needs is a must, a team of specialists that take files from brief through to litho and digital production consistently throughout all.",
-            "sort": 22
-        },
-        {
-            "section": "what-you-get",
-            "section_label": "What You Get",
-            "key": "what-you-get.5",
-            "label": "Button text: Enquire Now",
-            "type": "text",
-            "value": "Enquire Now",
-            "sort": 23
+            "sort": 18
         },
         {
             "section": "what-you-get",
@@ -232,7 +187,25 @@
             "label": "Button link: Enquire Now",
             "type": "url",
             "value": "#",
-            "sort": 24
+            "sort": 19
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "what-you-get.5",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 20
+        },
+        {
+            "section": "tools-strip",
+            "section_label": "Tools Strip",
+            "key": "tools-strip.1",
+            "label": "Image (tools-bg.png)",
+            "type": "image",
+            "value": "assets/images/seo/tools-bg.png",
+            "sort": 21
         },
         {
             "section": "services-workflow",
@@ -241,7 +214,7 @@
             "label": "Heading: Comprehensive Pre-Press Services for Commerci…",
             "type": "text",
             "value": "Comprehensive Pre-Press Services for Commercial and Packaging Printing",
-            "sort": 25
+            "sort": 22
         },
         {
             "section": "services-workflow",
@@ -250,16 +223,7 @@
             "label": "Paragraph: Get every print project prepared for producti…",
             "type": "textarea",
             "value": "Get every print project prepared for production before we start, no matter if your project is in packaging printing, in printing labels, in marketing collateral printing, in producing brochures printing, or in wide-format print graphics. Our digital pre-press services ensure every potential print production problem is prevented or caught before the first page is sent for print, every.single.print job, to the very last page.",
-            "sort": 26
-        },
-        {
-            "section": "services-workflow",
-            "section_label": "Services + Workflow",
-            "key": "services-workflow.4",
-            "label": "Button text: Enquire Now",
-            "type": "text",
-            "value": "Enquire Now",
-            "sort": 27
+            "sort": 23
         },
         {
             "section": "services-workflow",
@@ -268,7 +232,34 @@
             "label": "Button link: Enquire Now",
             "type": "url",
             "value": "#",
-            "sort": 28
+            "sort": 24
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Enquire Now",
+            "sort": 25
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: Pre-press services overview (services.png)",
+            "type": "image",
+            "value": "assets/images/prepress/services.png",
+            "sort": 26
+        },
+        {
+            "section": "dark-showcase-shared",
+            "section_label": "Dark Showcase (shared)",
+            "key": "dark-showcase-shared.1",
+            "label": "Heading: What Our Pre-Press Services Cover",
+            "type": "text",
+            "value": "What Our Pre-Press Services Cover",
+            "sort": 27
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -277,7 +268,7 @@
             "label": "Heading: What we offer",
             "type": "text",
             "value": "What we offer",
-            "sort": 29
+            "sort": 28
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -286,7 +277,7 @@
             "label": "Paragraph: We design brochures, company profiles, sales …",
             "type": "textarea",
             "value": "We design brochures, company profiles, sales presentations, proposals, product catalogues and digital marketing materials. From a single brochure to a complete suite of branded collateral, every piece follows a consistent design process tailored to its format and purpose.",
-            "sort": 30
+            "sort": 29
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -295,6 +286,15 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
+            "sort": 30
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Let’s Talk",
             "sort": 31
         },
         {
@@ -679,22 +679,26 @@
                 [
                     "Full Name",
                     "Enter your first name",
-                    "text"
+                    "text",
+                    "name"
                 ],
                 [
                     "Company Name",
                     "Enter your company name",
-                    "text"
+                    "text",
+                    "company"
                 ],
                 [
                     "Email ID",
                     "Enter your email ID",
+                    "email",
                     "email"
                 ],
                 [
                     "Contact Number",
                     "Enter your contact number",
-                    "tel"
+                    "tel",
+                    "phone"
                 ]
             ]
         }

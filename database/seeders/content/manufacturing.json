@@ -35,58 +35,13 @@
             "sort": 2
         },
         {
-            "section": "buyers-decide",
-            "section_label": "Buyers Decide",
-            "key": "buyers-decide.1",
-            "label": "Image: Industrial engineering market… (collage.png)",
-            "type": "image",
-            "value": "assets/images/manufacture/collage.png",
-            "sort": 3
-        },
-        {
-            "section": "dark-built-for-manufacturers",
-            "section_label": "Dark: Built For Manufacturers",
-            "key": "dark-built-for-manufacturers.1",
-            "label": "Image (dark-decor-top.png)",
-            "type": "image",
-            "value": "assets/images/manufacture/dark-decor-top.png",
-            "sort": 4
-        },
-        {
-            "section": "dark-built-for-manufacturers",
-            "section_label": "Dark: Built For Manufacturers",
-            "key": "dark-built-for-manufacturers.2",
-            "label": "Image (dark-decor-bottom.png)",
-            "type": "image",
-            "value": "assets/images/manufacture/dark-decor-bottom.png",
-            "sort": 5
-        },
-        {
-            "section": "dark-built-for-manufacturers",
-            "section_label": "Dark: Built For Manufacturers",
-            "key": "dark-built-for-manufacturers.3",
-            "label": "Image: Industrial precision engineer… (showcase.png)",
-            "type": "image",
-            "value": "assets/images/manufacture/showcase.png",
-            "sort": 6
-        },
-        {
-            "section": "what-we-bring-cta",
-            "section_label": "What We Bring + Cta",
-            "key": "what-we-bring-cta.1",
-            "label": "Button text: Start a Conversation",
-            "type": "text",
-            "value": "Start a Conversation",
-            "sort": 7
-        },
-        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.3",
             "label": "Paragraph: Home / Industries / Manufacturing",
             "type": "html",
             "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Industries</a> / <span>Manufacturing</span>",
-            "sort": 8
+            "sort": 3
         },
         {
             "section": "hero",
@@ -95,7 +50,7 @@
             "label": "Main heading: Great Manufacturing Deserves Greater Visibili…",
             "type": "text",
             "value": "Great Manufacturing Deserves Greater Visibility",
-            "sort": 9
+            "sort": 4
         },
         {
             "section": "hero",
@@ -104,16 +59,7 @@
             "label": "Paragraph: Manufacturing businesses earn their reputatio…",
             "type": "textarea",
             "value": "Manufacturing businesses earn their reputation through what they produce, their process, their quality standards, and their clients. Communicating this to their ever increasing market at to the market, clearly and to the right buyers, is where most fall short. As a manufacturing marketing agency, Intelliworkz brings brand, creative, and digital capability built around how industrial businesses sell.",
-            "sort": 10
-        },
-        {
-            "section": "hero",
-            "section_label": "Hero",
-            "key": "hero.6",
-            "label": "Button text: Start a Project",
-            "type": "text",
-            "value": "Start a Project",
-            "sort": 11
+            "sort": 5
         },
         {
             "section": "hero",
@@ -122,16 +68,16 @@
             "label": "Button link: Start a Project",
             "type": "url",
             "value": "#",
-            "sort": 12
+            "sort": 6
         },
         {
             "section": "hero",
             "section_label": "Hero",
-            "key": "hero.8",
-            "label": "Button text: Explore Our Services",
+            "key": "hero.6",
+            "label": "Button text: Start a Project",
             "type": "text",
-            "value": "Explore Our Services",
-            "sort": 13
+            "value": "Start a Project",
+            "sort": 7
         },
         {
             "section": "hero",
@@ -140,7 +86,16 @@
             "label": "Button link: Explore Our Services",
             "type": "url",
             "value": "#",
-            "sort": 14
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Button text: Explore Our Services",
+            "type": "text",
+            "value": "Explore Our Services",
+            "sort": 9
         },
         {
             "section": "buyers-decide",
@@ -149,7 +104,7 @@
             "label": "Heading: Buyers Decide Before They Call",
             "type": "text",
             "value": "Buyers Decide Before They Call",
-            "sort": 15
+            "sort": 10
         },
         {
             "section": "buyers-decide",
@@ -158,7 +113,7 @@
             "label": "Paragraph: The manufacturing sector has always been rela…",
             "type": "textarea",
             "value": "The manufacturing sector has always been relationship-driven. Referrals, trade shows, and long-standing distributor networks used to be enough. That is no longer the case. Today, a procurement manager researching suppliers starts online, comparing websites and reviewing capability statements before a conversation takes place.",
-            "sort": 16
+            "sort": 11
         },
         {
             "section": "buyers-decide",
@@ -167,7 +122,7 @@
             "label": "Paragraph: At the same time, buyer expectations are risi…",
             "type": "textarea",
             "value": "At the same time, buyer expectations are rising. They want to see what you produce, understand the scale of your operation, verify your certifications, and get a sense of whether you are the kind of business they want to work with, all from your digital presence alone. Manufacturers who have invested in how they present themselves online are meeting that expectation.",
-            "sort": 17
+            "sort": 12
         },
         {
             "section": "buyers-decide",
@@ -176,7 +131,16 @@
             "label": "Paragraph: The brands that grow in this environment are …",
             "type": "textarea",
             "value": "The brands that grow in this environment are not just operationally strong. They are visible, credible, and easy to evaluate, and they have built the marketing infrastructure to stay that way consistently.",
-            "sort": 18
+            "sort": 13
+        },
+        {
+            "section": "buyers-decide",
+            "section_label": "Buyers Decide",
+            "key": "buyers-decide.1",
+            "label": "Image: Industrial engineering market… (collage.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/collage.png",
+            "sort": 14
         },
         {
             "section": "where-manufacturers-lose-ground",
@@ -185,7 +149,25 @@
             "label": "Heading: Where Manufacturers Lose Ground",
             "type": "text",
             "value": "Where Manufacturers Lose Ground",
-            "sort": 19
+            "sort": 15
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.1",
+            "label": "Image (dark-decor-top.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/dark-decor-top.png",
+            "sort": 16
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.2",
+            "label": "Image (dark-decor-bottom.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/dark-decor-bottom.png",
+            "sort": 17
         },
         {
             "section": "dark-built-for-manufacturers",
@@ -194,7 +176,7 @@
             "label": "Heading: Built for Manufacturers. Not Adapted for Them.",
             "type": "text",
             "value": "Built for Manufacturers. Not Adapted for Them.",
-            "sort": 20
+            "sort": 18
         },
         {
             "section": "dark-built-for-manufacturers",
@@ -203,7 +185,16 @@
             "label": "Paragraph: We work as a dedicated manufacturing marketin…",
             "type": "textarea",
             "value": "We work as a dedicated manufacturing marketing agency. Every service is built around the buying behaviour and sales cycles specific to manufacturing.",
-            "sort": 21
+            "sort": 19
+        },
+        {
+            "section": "dark-built-for-manufacturers",
+            "section_label": "Dark: Built For Manufacturers",
+            "key": "dark-built-for-manufacturers.3",
+            "label": "Image: Industrial precision engineer… (showcase.png)",
+            "type": "image",
+            "value": "assets/images/manufacture/showcase.png",
+            "sort": 20
         },
         {
             "section": "who-we-support",
@@ -212,7 +203,7 @@
             "label": "Heading: The Manufacturers We Support",
             "type": "text",
             "value": "The Manufacturers We Support",
-            "sort": 22
+            "sort": 21
         },
         {
             "section": "who-we-support",
@@ -221,6 +212,15 @@
             "label": "Paragraph: We work with industrial goods and component m…",
             "type": "textarea",
             "value": "We work with industrial goods and component manufacturers, consumer product producers, contract and custom manufacturers, OEM suppliers, and assembly operations. Growing businesses building their market presence for the first time and established ones that have outgrown how they currently present themselves. The work is always shaped around your specific situation, not a generic manufacturing template.",
+            "sort": 22
+        },
+        {
+            "section": "who-we-support",
+            "section_label": "Who We Support",
+            "key": "who-we-support.4",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "#",
             "sort": 23
         },
         {
@@ -233,22 +233,13 @@
             "sort": 24
         },
         {
-            "section": "who-we-support",
-            "section_label": "Who We Support",
-            "key": "who-we-support.4",
-            "label": "Button link: Enquire Now",
-            "type": "url",
-            "value": "#",
-            "sort": 25
-        },
-        {
             "section": "what-we-bring-cta",
             "section_label": "What We Bring + Cta",
             "key": "what-we-bring-cta.2",
             "label": "Heading: What We Bring",
             "type": "text",
             "value": "What We Bring",
-            "sort": 26
+            "sort": 25
         },
         {
             "section": "what-we-bring-cta",
@@ -257,7 +248,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 27
+            "sort": 26
         },
         {
             "section": "what-we-bring-cta",
@@ -266,6 +257,15 @@
             "label": "Heading: Let the Right Buyers Find You",
             "type": "text",
             "value": "Let the Right Buyers Find You",
+            "sort": 27
+        },
+        {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.1",
+            "label": "Button text: Start a Conversation",
+            "type": "text",
+            "value": "Start a Conversation",
             "sort": 28
         },
         {

@@ -3,7 +3,7 @@
     $id = 'img_' . preg_replace('/[^a-z0-9_]/i', '_', $name);
     $errKey = preg_replace('/\[(\w+)\]/', '.$1', $name);
     $removeName = $removeName ?: 'remove_' . $name;
-    $url = \App\Support\Media::url($current);
+    $url = \App\Support\Media::preview($current);
 @endphp
 <div {{ $attributes->only('class')->merge(['class' => 'mb-3']) }}>
     @if($label)<label class="form-label" for="{{ $id }}">{{ $label }}</label>@endif

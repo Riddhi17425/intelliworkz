@@ -140,3 +140,15 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
     .pbadge *, .price-badge::before, .price-badge::after { animation: none !important; }
 }
+
+/* ---------- Enquiry forms (CMS): result line, honeypot, no-JS flash ---------- */
+.hp-field { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+.form-status { margin: 0; font-size: 15px; line-height: 22px; font-weight: 500; }
+.form-status:empty { display: none; }
+.form-status.is-ok { color: #4cd08f; }
+.form-status.is-error { color: #ff7b86; }
+.ct-card .form-status.is-ok { color: #138a5b; }
+.ct-card .form-status.is-error { color: #C42030; }
+[data-inquiry-form] [aria-invalid="true"] { border-color: #C42030 !important; box-shadow: 0 0 0 3px rgba(196, 32, 48, .2) !important; }
+.form-flash { position: fixed; z-index: 99998; left: 50%; bottom: 24px; max-width: min(560px, calc(100vw - 32px)); padding: 14px 22px; transform: translateX(-50%); font: 500 16px/24px Inter, sans-serif; color: #fff; background: #138a5b; border-radius: 12px; box-shadow: 0 16px 40px rgba(0, 0, 0, .35); }
+.form-flash.is-error { background: #C42030; }

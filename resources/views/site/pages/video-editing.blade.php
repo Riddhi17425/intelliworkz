@@ -40,7 +40,10 @@ $vc = 'assets/icons/video/';    // page icons
                     </div>
                 </div>
 
-                <form class="lead-form" action="#" method="post">
+                <form class="lead-form" action="{{ route('inquiries.store') }}" method="post" data-inquiry-form novalidate>
+@csrf
+<input type="hidden" name="source" value="{{ $page->slug }}">
+<input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
                     <div class="lead-form__head">
                         <h2>{!! $T('hero.8') !!}</h2>
                         <p>{!! $T('hero.9') !!}</p>
@@ -49,13 +52,14 @@ $vc = 'assets/icons/video/';    // page icons
                         <?php foreach (array_chunk($ve_form_fields, 2) as $row): ?>
                             <div class="lead-form__row">
                                 <?php foreach ($row as $f): ?>
-                                    <label class="field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= strtolower(str_replace(' ', '_', $f[0])) ?>" placeholder="<?= $f[1] ?>"></label>
+                                    <label class="field"><span><?= $f[0] ?></span><input type="<?= $f[2] ?>" name="<?= ($f[3] ?? strtolower(str_replace(' ', '_', $f[0]))) ?>" placeholder="<?= $f[1] ?>"></label>
                                 <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
                         <label class="field"><span>{!! $T('hero.10') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
                         <label class="field"><span>{!! $T('hero.11') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
                     </div>
+                    <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                     <button type="submit" class="btn btn--cta btn--block">{!! $T('hero.12') !!}</button>
                     <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
                 </form>
@@ -131,7 +135,7 @@ $vc = 'assets/icons/video/';    // page icons
             <h2 class="h2">{!! $T('why-intelliworkz.1') !!}</h2>
             <div class="ve-split__side">
                 <p>{!! $T('why-intelliworkz.2') !!} </p>
-                <div><a href="#" class="btn btn--enquire">{!! $T('why-intelliworkz.3') !!}</a></div>
+                <div><a href="{{ $T('why-intelliworkz.4') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.3') !!}</a></div>
             </div>
         </div>
         <div class="pillars">
@@ -171,7 +175,7 @@ $vc = 'assets/icons/video/';    // page icons
                 <h2 class="h2">{!! $T('services-workflow.2') !!}</h2>
                 <div class="ve-split__side">
                     <p>{!! $T('services-workflow.3') !!}</p>
-                    <div><a href="#" class="btn btn--enquire">{!! $T('services-workflow.4') !!}</a></div>
+                    <div><a href="{{ $T('services-workflow.5') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.4') !!}</a></div>
                 </div>
             </div>
 
@@ -228,7 +232,7 @@ $vc = 'assets/icons/video/';    // page icons
 
     <!-- ============ DARK SHOWCASE (shared) ============ -->
     @php
-$showcase_title = $T('dark-showcase.1');
+$showcase_title = $T('dark-showcase-shared.1');
     $showcase_decor = [
         ['src' => $vi . 'floor-glow.png',      'style' => 'left:1145.53px;top:508.46px;width:969.91px;height:599.17px;opacity:.5'],
         ['src' => $vi . 'showcase-deco.png',   'style' => 'left:-111.5px;top:766px;width:699.31px;height:208.5px;opacity:.4'],

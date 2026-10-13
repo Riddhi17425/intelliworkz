@@ -70,6 +70,10 @@
             }).then(function (r) {
                 if (r.status === 200 && r.body.ok) {
                     form.reset();
+                    if (r.body.redirect) {
+                        window.location.href = r.body.redirect;     // the thank-you page
+                        return;
+                    }
                     toast(r.body.message || 'Thank you! Your message has been sent.', true);
                 } else if (r.status === 422 && r.body.errors) {
                     // one toast per field that needs attention, in the order of the form

@@ -70,3 +70,31 @@
     .page-generic .topbar__inner { justify-content: space-between; }
     .page-generic .menu-drawer__grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- 404 and thank-you pages (site/message.blade.php) ---------- */
+.msg-hero { display: grid; place-items: center; min-height: clamp(380px, 52vh, 620px); padding: clamp(56px, 8vw, 120px) 0; text-align: center; color: var(--c-white); background: radial-gradient(circle at 80% 0%, rgba(196, 32, 48, .35) 0%, transparent 45%), linear-gradient(135deg, var(--c-navy) 0%, #15153d 100%); }
+.msg-hero__inner { width: min(100%, var(--container)); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 18px; padding-inline: clamp(20px, 4vw, 60px); }
+.msg-code { font-family: var(--font-display); font-weight: 400; font-size: clamp(88px, 14vw, 220px); line-height: 1; letter-spacing: .04em; color: transparent; -webkit-text-stroke: 2px var(--c-red); text-shadow: 0 0 60px rgba(196, 32, 48, .35); }
+.msg-icon { display: grid; place-items: center; width: clamp(76px, 8vw, 104px); height: clamp(76px, 8vw, 104px); color: #fff; background: #138a5b; border-radius: 50%; box-shadow: 0 0 0 12px rgba(19, 138, 91, .2); animation: msg-pop .55s cubic-bezier(.22, .8, .24, 1); }
+.msg-icon svg { stroke-dasharray: 30; stroke-dashoffset: 30; animation: msg-draw .5s .3s ease forwards; }
+.msg-title { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 4vw, 60px); line-height: 1.15; }
+.msg-text { max-width: 640px; margin: 0; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.7; color: #d4d6ea; }
+.msg-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 14px; }
+.msg-links { padding: clamp(36px, 5vw, 72px) 0; background: var(--c-white); }
+.msg-links__inner { width: min(100%, var(--container)); box-sizing: border-box; padding-inline: clamp(20px, 4vw, 60px); text-align: center; }
+.msg-links h2 { margin: 0 0 22px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2vw, 32px); color: var(--c-ink); }
+.msg-links ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; margin: 0; padding: 0; list-style: none; }
+.msg-links a { display: inline-block; padding: 10px 20px; font-weight: 500; color: var(--c-ink); border: 1px solid var(--c-border-gray); border-radius: 100px; transition: color .2s, border-color .2s, background .2s; }
+.msg-links a:hover { color: var(--c-white); background: var(--c-red); border-color: var(--c-red); }
+@keyframes msg-pop { from { opacity: 0; transform: scale(.6); } }
+@keyframes msg-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .msg-icon, .msg-icon svg { animation: none; stroke-dashoffset: 0; } }
+
+/* The 4-column footer needs ~1450px of width: stack it earlier than responsive.css does (same rule as the About page) */
+@media (max-width: 1480px) {
+    .page-generic .site-footer__top { flex-direction: column; gap: 40px; }
+    .page-generic .footer-brand { width: 100%; }
+    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .page-generic .footer-links .v-line { display: none; }
+    .page-generic .footer-col { width: auto; }
+}

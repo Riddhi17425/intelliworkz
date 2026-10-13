@@ -35,6 +35,7 @@
 .ab-display em { font-style: normal; color: var(--c-red); }
 .ab-display--light { color: #fff; }
 .ab-display--sm { font-size: clamp(32px, 4vw, 68px); line-height: 1.06; }
+.ab-h2, .ab-display, .ab-value h3, .ab-company h3 { overflow-wrap: break-word; }   /* a long word may never push the layout wider than the screen */
 .ab-body { max-width: 62ch; font-size: 18px; line-height: 30px; color: var(--c-body-gray); }
 .ab-dark .ab-body { color: var(--muted-d); }
 .ab-head { margin-bottom: clamp(40px, 5vw, 80px); }
@@ -70,7 +71,7 @@
     .page-about .subnav__list { gap: 16px; }
     .page-about .subnav__btn { font-size: 15px; white-space: nowrap; }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1480px) {   /* the 4-column footer needs ~1450px; stack it earlier than the rest */
     .page-about .site-footer__top { flex-direction: column; gap: 40px; }
     .page-about .footer-brand { width: 100%; }
     .page-about .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
@@ -168,7 +169,7 @@
 .ab-chain li { flex: 1; display: flex; align-items: center; gap: 12px; white-space: nowrap; font: 600 clamp(12px, 1.15vw, 17px)/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
 .ab-chain li:last-child { flex: none; }
 .ab-chain li:not(:last-child)::after { content: ""; flex: 1; min-width: 20px; height: 1px; margin-inline: 8px 12px; background: linear-gradient(90deg, var(--c), var(--c-border-gray)); }
-.ab-chain__no { font-size: .8em; letter-spacing: .08em; color: var(--c); }
+.ab-chain__no { font-size: max(12px, .8em); letter-spacing: .08em; color: var(--c); }
 
 /* ==========================================================================
    03 Difference (operating-system capability map)
@@ -225,14 +226,14 @@
 .ab-plate.is-active::after { background: #fff; box-shadow: 0 0 0 6px rgba(255, 255, 255, .2), 0 0 24px #fff; }
 /* vertical axis through the centre of every plate */
 .ab-axis { position: absolute; left: 50%; top: calc(50% + var(--sy) - var(--g) * 4.33); width: 1px; height: calc(var(--g) * 4.33); background: linear-gradient(var(--c-red), rgba(196, 32, 48, 0)); transform: translateX(-.5px); pointer-events: none; }
-.ab-stage__tag { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font: 600 11px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #8C8C99; white-space: nowrap; }
+.ab-stage__tag { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font: 600 12px/1 var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: #8C8C99; white-space: nowrap; }
 
 .ab-think__steps { position: relative; z-index: 1; display: grid; }
 .ab-think__steps li + li { border-top: 1px solid #22242E; }
 .ab-tstep { position: relative; display: grid; grid-template-columns: clamp(36px, 3.4vw, 56px) minmax(0, 1fr); gap: 8px; width: 100%; padding: clamp(14px, 1.5vw, 22px) 0 clamp(14px, 1.5vw, 22px) 18px; text-align: left; color: #6C6C79; transition: color .35s; }
 .ab-tstep::before { content: ""; position: absolute; left: 0; top: 14%; bottom: 14%; width: 3px; border-radius: 3px; background: var(--c-red); transform: scaleY(0); transition: transform .4s cubic-bezier(.22, .8, .24, 1); }
 .ab-tstep__no { padding-top: .55em; font: 600 13px/1 var(--font-body); letter-spacing: .2em; }
-.ab-tstep__word { display: block; font: 500 clamp(22px, 2.4vw, 42px)/1.1 var(--font-display); letter-spacing: -.01em; }
+.ab-tstep__word { display: block; font: 500 clamp(22px, 2.4vw, 42px)/1.1 var(--font-display); letter-spacing: -.01em; overflow-wrap: anywhere; }
 .ab-tstep__sub { display: block; margin-top: 6px; font-size: 15px; line-height: 22px; color: #55555F; transition: color .35s; }
 .ab-tstep:hover, .ab-tstep:focus-visible { color: #C9C9D1; }
 .ab-tstep:focus-visible { outline: 2px solid var(--c-red); outline-offset: 2px; }
@@ -308,7 +309,7 @@
 .ab-panel__info { display: flex; flex-direction: column; gap: 18px; padding-block: 8px; }
 .ab-panel__no { display: flex; align-items: center; gap: 12px; font: 600 15px/1 var(--font-body); letter-spacing: .22em; color: var(--c); }
 .ab-panel__no::after { content: ""; width: 48px; height: 1px; background: var(--c); }
-.ab-panel h3 { font: 500 clamp(36px, 4.2vw, 72px)/1 var(--font-display); letter-spacing: -.02em; color: #fff; }
+.ab-panel h3 { font: 500 clamp(28px, min(3.7vw, 50px), 50px)/1 var(--font-display); letter-spacing: -.02em; color: #fff; overflow-wrap: anywhere; }   /* "Experiential" is ~7.8em wide and must fit the info column */
 .ab-panel__info p { font-size: 18px; line-height: 30px; color: var(--muted-d); }
 .ab-panel .ab-chips { margin-top: auto; padding-top: 12px; }
 .ab-panel__visual { display: grid; place-items: center; align-self: center; aspect-ratio: 16 / 10; overflow: hidden; background: #FBF8F5; border-radius: 14px; }
@@ -431,6 +432,7 @@
 
     .ab-cap__track { align-items: flex-start; }
     .ab-panel { grid-template-columns: minmax(0, 1fr); }
+    .ab-panel h3 { font-size: clamp(28px, 7.5vw, 56px); }       /* one column: the heading may be bigger again */
     .ab-panel__visual { order: -1; }
 
     /* the serpentine path becomes a single vertical line */
@@ -467,8 +469,11 @@
 @media (max-width: 560px) {
     .ab-eyebrow { font-size: 12px; letter-spacing: .16em; }
     .ab-hero__btns { flex-direction: column; align-items: stretch; }
-    .ab-orbit__label { font-size: 20px; }
-    .ab-orbit__no { font-size: 14px; }
+    /* the diagram is drawn on a 760-unit canvas; on a phone it shrinks to ~0.4, so the labels are enlarged (and tracked less) to stay readable */
+    .ab-orbit__label { font-size: 25px; letter-spacing: .04em; }
+    .ab-orbit__no { font-size: 17px; letter-spacing: .06em; transform: translateY(-10px); }   /* sits above the bigger label, not on it */
+    .ab-orbit__center { font-size: 19px; letter-spacing: .16em; }
+    .ab-map__small { font-size: 17px; }
     .ab-node__label { font-size: 28px; }
     .ab-node__no { font-size: 20px; }
     .ab-hero__tag { letter-spacing: .2em; }
@@ -490,4 +495,11 @@
 @media (prefers-reduced-motion: reduce) {
     .ab *, .ab *::before, .ab *::after { animation: none !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
     .ab-js [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* very small phones (320-380px): the display font is wide, give the long words room */
+@media (max-width: 380px) {
+    .ab-tstep { padding-left: 14px; gap: 4px; grid-template-columns: 30px minmax(0, 1fr); }
+    .ab-tstep__word { font-size: 19px; letter-spacing: 0; }
+    .ab-tstep__no { letter-spacing: .08em; }
 }

@@ -29,6 +29,52 @@ class PageController extends Controller
         return response()->view($view, $this->data($page, $preview));
     }
 
+    /** Friendly 404 in the site design (called from the exception handler in bootstrap/app.php). */
+    public function notFound(Request $request): Response
+    {
+        // an address that matches no route never went through the web middleware (no session, no $errors): give the layout what it expects
+        if (!$request->hasSession()) {
+            view()->share('errors', new \Illuminate\Support\ViewErrorBag());
+        }
+
+        $page = $this->messagePage('Page not found');
+        $data = $this->data($page, false);
+        $data['meta']['robots'] = 'noindex, nofollow';
+        $data['meta']['canonical'] = url('/');
+
+        return response()->view('site.message', $data + ['kind' => '404', 'name' => null, 'links' => $this->suggestions()], 404);
+    }
+
+    /** Shown after an enquiry has been sent (the form redirects here). */
+    public function thanks(Request $request): Response
+    {
+        $page = $this->messagePage('Thank you');
+        $data = $this->data($page, false);
+        $data['meta']['robots'] = 'noindex, nofollow';
+        $data['meta']['canonical'] = url('thank-you');
+
+        $name = Html::plain((string) $request->session()->get('inquiry_name', ''));
+        $first = $name !== '' ? \Illuminate\Support\Str::before($name, ' ') : null;
+
+        return response()->view('site.message', $data + ['kind' => 'thanks', 'name' => $first ? \Illuminate\Support\Str::limit($first, 40, '') : null, 'links' => $this->suggestions()])
+            ->header('Cache-Control', 'no-store');
+    }
+
+    private function messagePage(string $title): Page
+    {
+        $page = new Page(['title' => $title, 'status' => Page::STATUS_PUBLISHED]);
+        $page->slug = 'message';
+        $page->template = 'generic';
+        $page->is_system = false;
+        return $page;
+    }
+
+    /** A few published pages to send the visitor on to. */
+    private function suggestions()
+    {
+        return Page::published()->where('slug', '!=', 'index')->where('slug', '!=', 'contact-us')->orderBy('sort')->orderBy('id')->limit(8)->get(['id', 'slug', 'title', 'is_system']);
+    }
+
     private function data(Page $page, bool $preview): array
     {
         $content = app(Content::class);

@@ -63,6 +63,7 @@ class InquiryController extends Controller
 
         ActivityLog::record('inquiry', "New inquiry from {$inquiry->name}" . ($inquiry->source ? " ({$inquiry->source})" : ''), $inquiry);
         $this->notify($inquiry);
+        $request->session()->flash('inquiry_name', $inquiry->name);   // greeted on the thank-you page
 
         return $this->ok($request);
     }
@@ -96,8 +97,8 @@ class InquiryController extends Controller
     private function ok(Request $request): JsonResponse|RedirectResponse
     {
         if ($request->expectsJson()) {
-            return response()->json(['ok' => true, 'message' => self::SUCCESS_MESSAGE]);
+            return response()->json(['ok' => true, 'message' => self::SUCCESS_MESSAGE, 'redirect' => route('thanks')]);
         }
-        return redirect()->to(url()->previous() . '#form-result')->with('inquiry_status', self::SUCCESS_MESSAGE);
+        return redirect()->route('thanks');
     }
 }

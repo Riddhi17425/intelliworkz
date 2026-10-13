@@ -26,3 +26,10 @@ Thumbs.db
 # files uploaded through the admin panel
 /public/uploads/*
 !/public/uploads/.gitkeep
+
+# deployment output (rebuilt with: php deploy/build.php)
+/deploy/build
+/deploy/dist
+
+# zip archives (e.g. config.zip, release packages) are never committed
+*.zip

@@ -27,11 +27,10 @@ class InquiryTest extends CmsTestCase
         $this->assertFalse((bool) $row->is_read);
     }
 
-    public function test_inquiry_without_javascript_redirects_back_with_a_message(): void
+    public function test_inquiry_without_javascript_redirects_to_the_thank_you_page(): void
     {
-        $this->from('/contact-us.php')->post('/inquiries', $this->payload())
-            ->assertRedirect('/contact-us.php#form-result')->assertSessionHas('inquiry_status');
-        $this->get('/contact-us.php')->assertOk(); // page still renders with the flash
+        $this->from('/contact-us.php')->post('/inquiries', $this->payload())->assertRedirect(route('thanks'));
+        $this->get('/thank-you')->assertOk()->assertSee('Thank you');
     }
 
     public function test_validation_errors_are_reported_and_nothing_is_saved(): void

@@ -20,7 +20,7 @@ $vc = 'assets/icons/video/';        // shared icons
             <?php foreach ($pk_why as $w): ?>
                 <article class="pk-why__card" style="--c: <?= $w['c'] ?>">
                     <img class="pk-why__bg" src="<?= iu($ki, $w['bg']) ?>" alt="">
-                    <span class="pk-why__no"><?= $w['no'] ?></span>
+                    <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="pk-why__no"><?= $w['no'] ?></span><?php endif; ?>
                     <div class="pk-why__content">
                         <span class="pk-why__icon"><img src="<?= iu($kc, $w['icon']) ?>" alt=""></span>
                         <div class="pk-why__text">

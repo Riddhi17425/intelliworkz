@@ -20,11 +20,13 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
         <img class="td-viewer__texture" src="{{ $T('360-viewer-selected-work.2') }}" alt="">
 
         <h2 class="h2 h2--center td-viewer__heading">{!! $T('360-viewer-selected-work.3') !!}</h2>
-        <div class="filter-tabs td-viewer__tabs">
+        <?php if ($T('filter-tabs.1', '1') !== '0'): ?>
+            <div class="filter-tabs td-viewer__tabs">
             <?php foreach ($td_filters as $key => $label): ?>
                 <button type="button" class="filter-tab <?= $key === 'all' ? 'is-active' : '' ?>" data-filter="<?= $key ?>"><?= $label ?></button>
             <?php endforeach; ?>
         </div>
+            <?php endif; ?>
 
         <div class="td-rings">
             <span class="td-rings__ellipse td-rings__ellipse--shadow"></span>

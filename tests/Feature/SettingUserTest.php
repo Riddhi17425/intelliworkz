@@ -57,7 +57,7 @@ class SettingUserTest extends CmsTestCase
 
     public function test_empty_social_link_hides_the_icon(): void
     {
-        $this->actingAs($this->admin())->put('/admin/settings', $this->settingsPayload(['social_instagram' => '']))->assertSessionHasNoErrors();
+        $this->actingAs($this->admin())->put('/admin/settings', $this->settingsPayload(['social_instagram' => '', 'social_linkedin' => 'https://linkedin.com/company/acme']))->assertSessionHasNoErrors();
         auth()->logout();
         $this->get('/')->assertDontSee('aria-label="Instagram"', false)->assertSee('aria-label="LinkedIn"', false);
     }

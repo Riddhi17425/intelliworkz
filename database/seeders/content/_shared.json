@@ -9,53 +9,65 @@
                 "title": "Branding & Creative",
                 "items": [
                     {
-                        "label": "Brand Development",
-                        "url": "#"
+                        "label": "Logo Design",
+                        "url": "logo-design"
                     },
                     {
-                        "label": "Creative Design",
-                        "url": "#"
+                        "label": "Brand Identity & Design",
+                        "url": "services.php#svc-1"
                     },
                     {
-                        "label": "Graphic Design",
-                        "url": "#"
+                        "label": "Marketing & Sales Collaterals",
+                        "url": "marketing-sales-collaterals.php"
+                    },
+                    {
+                        "label": "Packaging Design",
+                        "url": "packaging-design.php"
+                    },
+                    {
+                        "label": "Campaign Concepts & Ad Creatives",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "Corporate Communication",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "Visual Identity Systems",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "PPT Design",
+                        "url": "ppt-design.php"
+                    },
+                    {
+                        "label": "Advertising Services",
+                        "url": "services.php#svc-1"
                     },
                     {
                         "label": "UI/UX Design",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Video & Animation",
-                        "url": "video-editing.php"
-                    },
-                    {
-                        "label": "3D Visualization",
-                        "url": "#"
+                        "url": "services.php#svc-1"
                     }
                 ]
             },
             {
-                "title": "Digital Marketing",
+                "title": "Digital Marketing & Growth",
                 "items": [
                     {
-                        "label": "SEO",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Social Media Marketing",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Content Marketing",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Performance Marketing",
-                        "url": "#"
-                    },
-                    {
                         "label": "Digital Marketing",
-                        "url": "#"
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "SEO Services",
+                        "url": "seo-services.php"
+                    },
+                    {
+                        "label": "AEO Services",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "GEO Services",
+                        "url": "services.php#svc-2"
                     }
                 ]
             },
@@ -63,32 +75,32 @@
                 "title": "Print & Publication",
                 "items": [
                     {
-                        "label": "InDesign Services",
-                        "url": "#"
-                    },
-                    {
-                        "label": "DTP",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Pre-Press",
-                        "url": "#"
+                        "label": "Pre-Press Services",
+                        "url": "pre-press-service.php"
                     },
                     {
                         "label": "Magazine Design",
                         "url": "magazine-design.php"
                     },
                     {
+                        "label": "Academic & Technical Publishing Support",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "Multilingual Publishing & Localization",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "Product Catalog",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "InDesign Services",
+                        "url": "services.php#svc-3"
+                    },
+                    {
                         "label": "Newsletter Design",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Scientific Journal",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Product Catalogue Design",
-                        "url": "#"
+                        "url": "services.php#svc-3"
                     }
                 ]
             },
@@ -96,53 +108,28 @@
                 "title": "Post-Production",
                 "items": [
                     {
-                        "label": "Image Editing",
-                        "url": "#"
-                    },
-                    {
                         "label": "Video Editing",
                         "url": "video-editing.php"
                     },
                     {
+                        "label": "Image Editing",
+                        "url": "services.php#svc-4"
+                    },
+                    {
                         "label": "Motion Graphics",
-                        "url": "#"
-                    }
-                ]
-            },
-            {
-                "title": "Technology",
-                "items": [
-                    {
-                        "label": "Website Design & Development",
-                        "url": "#"
+                        "url": "services.php#svc-4"
                     },
                     {
-                        "label": "Mobile App Development",
-                        "url": "#"
+                        "label": "Explainer Videos",
+                        "url": "services.php#svc-4"
                     },
                     {
-                        "label": "Custom Software Development",
-                        "url": "#"
+                        "label": "Product Video",
+                        "url": "services.php#svc-4"
                     },
                     {
-                        "label": "CRM & ERP Development",
-                        "url": "#"
-                    },
-                    {
-                        "label": "API & System Integration",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Portal Development",
-                        "url": "#"
-                    },
-                    {
-                        "label": "eCommerce Development",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Maintenance & Support",
-                        "url": "#"
+                        "label": "Social Media Reels",
+                        "url": "services.php#svc-4"
                     }
                 ]
             },
@@ -150,62 +137,28 @@
                 "title": "Animation",
                 "items": [
                     {
-                        "label": "2D Animation",
-                        "url": "#"
+                        "label": "Product Demo Videos",
+                        "url": "services.php#svc-5"
                     },
                     {
-                        "label": "3D Animation",
-                        "url": "#"
+                        "label": "Corporate Videos & Shoots",
+                        "url": "services.php#svc-5"
                     },
                     {
-                        "label": "3D Modeling and Rendering",
+                        "label": "Presentation Videos",
+                        "url": "services.php#svc-5"
+                    },
+                    {
+                        "label": "3D Modelling & 3D Rendering",
                         "url": "3d-modeling-rendering.php"
                     },
                     {
-                        "label": "Explainer Videos",
-                        "url": "#"
-                    }
-                ]
-            },
-            {
-                "title": "Engineering Services",
-                "items": [
-                    {
-                        "label": "ERP & Custom Software Development",
-                        "url": "#"
+                        "label": "3D Visualization (Product / Architectural / Industrial)",
+                        "url": "services.php#svc-5"
                     },
                     {
-                        "label": "Mobile Application Development",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Web Development",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Application Maintenance & Support",
-                        "url": "#"
-                    }
-                ]
-            },
-            {
-                "title": "Hire Talent",
-                "items": [
-                    {
-                        "label": "FTE / Retainership Model",
-                        "url": "#"
-                    },
-                    {
-                        "label": "GCC Model",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Transaction Model",
-                        "url": "#"
-                    },
-                    {
-                        "label": "One-time / Milestone-based",
-                        "url": "#"
+                        "label": "3D Animation",
+                        "url": "services.php#svc-5"
                     }
                 ]
             }
@@ -217,83 +170,49 @@
                 "items": [
                     {
                         "label": "Manufacturing",
-                        "url": "#"
+                        "url": "manufacturing.php"
                     },
                     {
                         "label": "Industrial & Engineering",
-                        "url": "#"
+                        "url": "industrial-engineering"
                     },
                     {
                         "label": "B2B Services",
-                        "url": "#"
+                        "url": "b2b-services"
                     },
                     {
                         "label": "Retail & eCommerce",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Healthcare",
-                        "url": "#"
+                        "url": "retail-ecommerce"
                     },
                     {
                         "label": "Education",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Real Estate",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Logistics & Distribution",
-                        "url": "#"
+                        "url": "education"
                     },
                     {
                         "label": "Startups & SaaS",
-                        "url": "#"
-                    }
-                ]
-            },
-            {
-                "handle": "products",
-                "title": "Products",
-                "items": [
-                    {
-                        "label": "DataNote",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Formezy",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Docezy",
-                        "url": "#"
+                        "url": "startups-saas"
                     }
                 ]
             },
             {
                 "handle": "company",
-                "title": "Company",
+                "title": "Quick Links",
                 "items": [
                     {
                         "label": "About Us",
-                        "url": "#"
+                        "url": "about-us.php"
                     },
                     {
-                        "label": "Why Intelliworkz",
-                        "url": "#"
+                        "label": "Privacy Policy",
+                        "url": "privacy-policy"
                     },
                     {
-                        "label": "Our Process",
-                        "url": "#"
+                        "label": "Terms of Use",
+                        "url": "terms-of-use"
                     },
                     {
-                        "label": "Careers",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Contact Us",
-                        "url": "#"
+                        "label": "Cookies",
+                        "url": "cookies"
                     }
                 ]
             },
@@ -303,61 +222,23 @@
                 "items": [
                     {
                         "label": "Branding & Creative",
-                        "url": "#"
+                        "url": "services.php#svc-1"
                     },
                     {
-                        "label": "Digital Marketing",
-                        "url": "#"
+                        "label": "Digital Marketing & Growth",
+                        "url": "services.php#svc-2"
                     },
                     {
                         "label": "Print & Publication",
-                        "url": "#"
+                        "url": "services.php#svc-3"
                     },
                     {
                         "label": "Post-Production",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Technology",
-                        "url": "#"
+                        "url": "services.php#svc-4"
                     },
                     {
                         "label": "Animation",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Engineering Services",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Hire Talent",
-                        "url": "#"
-                    }
-                ]
-            },
-            {
-                "handle": "insights",
-                "title": "Insights",
-                "items": [
-                    {
-                        "label": "Blog",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Guides",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Case Studies",
-                        "url": "#"
-                    },
-                    {
-                        "label": "News & Updates",
-                        "url": "#"
-                    },
-                    {
-                        "label": "Resources",
-                        "url": "#"
+                        "url": "services.php#svc-5"
                     }
                 ]
             },
@@ -367,15 +248,15 @@
                 "items": [
                     {
                         "label": "Privacy Policy",
-                        "url": "#"
+                        "url": "privacy-policy"
                     },
                     {
                         "label": "Terms of Use",
-                        "url": "#"
+                        "url": "terms-of-use"
                     },
                     {
                         "label": "Cookies",
-                        "url": "#"
+                        "url": "cookies"
                     }
                 ]
             }

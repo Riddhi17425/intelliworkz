@@ -21,7 +21,7 @@ $vc = 'assets/icons/video/';         // shared icons
                     <img class="cl-why__bg" src="<?= iu($ci, $w['bg']) ?>" alt="">
                     <div class="cl-why__tabbar">
                         <img class="cl-why__tab" src="<?= iu($cc, $w['tab']) ?>" alt="">
-                        <span class="cl-why__no" style="color: <?= $w['num'] ?>"><?= $w['no'] ?></span>
+                        <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="cl-why__no" style="color: <?= $w['num'] ?>"><?= $w['no'] ?></span><?php endif; ?>
                     </div>
                     <div class="cl-why__content">
                         <span class="cl-why__icon"><img src="<?= iu($cc, $w['icon']) ?>" alt=""></span>

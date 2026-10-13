@@ -49,7 +49,7 @@
 @media (max-width: 1280px) {
     .page-generic .site-footer__top { flex-direction: column; gap: 40px; }
     .page-generic .footer-brand { width: 100%; }
-    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding-left: 0; }
     .page-generic .footer-links .v-line { display: none; }
     .page-generic .footer-col { width: auto; }
 }
@@ -94,7 +94,7 @@
 @media (max-width: 1480px) {
     .page-generic .site-footer__top { flex-direction: column; gap: 40px; }
     .page-generic .footer-brand { width: 100%; }
-    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    .page-generic .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding-left: 0; }
     .page-generic .footer-links .v-line { display: none; }
     .page-generic .footer-col { width: auto; }
 }

@@ -55,12 +55,12 @@ $vc = 'assets/icons/video/';      // shared icons
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>
-                    <label class="ct-field"><span>{!! $T('form.6') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
-                    <label class="ct-field"><span>{!! $T('form.7') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
+                    <label class="ct-field"><span>{!! $T('form.6') !!}</span><input type="text" name="subject" placeholder="{{ $G('form.2', 'Enter your subject') }}"></label>
+                    <label class="ct-field"><span>{!! $T('form.7') !!}</span><textarea name="message" rows="1" placeholder="{{ $G('form.3', 'Tell us about your requirements') }}"></textarea></label>
                 </div>
                 <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                 <button type="submit" class="btn btn--cta btn--block">{!! $T('form.8') !!}</button>
-                <p class="ct-card__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
+                <p class="ct-card__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">{{ $G('form.1', 'We respect your privacy. Your information is safe with us.') }}</p>
             </form>
         </section>
 
@@ -97,8 +97,8 @@ $vc = 'assets/icons/video/';      // shared icons
                             </div>
                         </div>
                         <div class="ct-office__actions">
-                            <a href="<?= $o['map'] ?>" target="_blank" rel="noopener" class="ct-office__btn ct-office__btn--ghost">View on Map ↗</a>
-                            <a href="tel:<?= $o['call'] ?>" class="ct-office__btn ct-office__btn--red">Call Office →</a>
+                            <a href="<?= $o['map'] ?>" target="_blank" rel="noopener" class="ct-office__btn ct-office__btn--ghost">{{ $G('contact.1', 'View on Map ↗') }}</a>
+                            <a href="tel:<?= $o['call'] ?>" class="ct-office__btn ct-office__btn--red">{{ $G('contact.2', 'Call Office →') }}</a>
                         </div>
                         <?php if ($o['blocks2']): ?>
                             <hr class="ct-office__rule">

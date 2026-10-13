@@ -69,3 +69,7 @@
 .pk-flow__next { position: absolute; top: 308px; width: 30px; height: 30px; }
 
 .pk .ve-hero__copy { padding-top: 0; }
+
+/* picture swap when a filter tab is chosen */
+.pk-tile img { transition: opacity .18s ease; }
+.pk-tile img.is-swapping { opacity: 0; }

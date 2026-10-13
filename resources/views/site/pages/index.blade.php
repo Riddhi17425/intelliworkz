@@ -16,8 +16,8 @@ $industry_text = $T('shared-copy.1');
             <h1 class="h1">{!! $T('hero.4') !!}</h1>
             <p class="hero__text">{!! $T('hero.5') !!}</p>
             <div class="hero__actions">
-                <?php btn($T('hero.2'), '', null, 'contact-us.php'); ?>
-                <?php btn($T('hero.3'), 'btn--stroke'); ?>
+                <?php btn($T('hero.2'), '', null, $T('hero.2.url', 'contact-us.php')); ?>
+                <?php btn($T('hero.3'), 'btn--stroke', null, $T('hero.3.url', 'services.php')); ?>
             </div>
         </div>
 
@@ -49,7 +49,7 @@ $industry_text = $T('shared-copy.1');
                 <p>{!! $T('domain-expertise.5') !!}</p>
                 <p>{!! $T('domain-expertise.6') !!}</p>
             </div>
-            <div><?php btn($T('domain-expertise.1'), '', null, 'about-us.php'); ?></div>
+            <div><?php btn($T('domain-expertise.1'), '', null, $T('domain-expertise.1.url', 'about-us.php')); ?></div>
         </div>
     </section>
 
@@ -59,35 +59,39 @@ $industry_text = $T('shared-copy.1');
             <h2 class="h2">{!! $T('services.2') !!}</h2>
             <div class="split-head__side">
                 <p class="lead">{!! $T('services.3') !!}</p>
-                <div><?php btn($T('services.1')); ?></div>
+                <div><?php btn($T('services.1'), '', null, $T('services.1.url', 'services.php')); ?></div>
             </div>
         </div>
 
-        <div class="domain-grid">
-            <?php foreach ($domains as $d): ?>
-                <article class="domain-card" style="--c: <?= $d['color'] ?>">
-                    <h3 class="domain-card__title"><?= $d['title'] ?></h3>
-                    <div class="domain-card__body">
-                        <div class="domain-card__main">
-                            <p class="lead lead--left"><?= $d['intro'] ?></p>
-                            <ul class="domain-card__list">
-                                <?php foreach ($d['items'] as $item): ?>
-                                    <li><a href="#"><?= $item ?></a><img src="assets/icons/arrow-red.svg" width="10" height="10" alt=""></li>
-                                <?php endforeach; ?>
-                            </ul>
+        <div class="domain-slider" data-cards-slider data-autoplay="4500">
+            <div class="domain-grid" data-cards-track tabindex="0" aria-label="Our services, scroll horizontally">
+                <?php foreach ($domains as $n => $d): ?>
+                    <article class="domain-card" style="--c: <?= $d['color'] ?>">
+                        <h3 class="domain-card__title"><?= $d['title'] ?></h3>
+                        <div class="domain-card__body">
+                            <div class="domain-card__main">
+                                <p class="lead lead--left"><?= $d['intro'] ?></p>
+                                <ul class="domain-card__list">
+                                    <?php foreach ((array) $d['items'] as $line):
+                                        [$label, $href] = array_pad(array_map('trim', explode('|', (string) $line, 2)), 2, '');
+                                        $href = $href !== '' ? $href : (($d['href'] ?? '') ?: 'services.php#svc-' . ($n + 1)); ?>
+                                        <li><a href="<?= e($href) ?>"><?= $label ?></a><img src="assets/icons/arrow-red.svg" width="10" height="10" alt=""></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                            <a href="<?= e(($d['href'] ?? '') ?: 'services.php#svc-' . ($n + 1)) ?>" class="pill"><?= $d['cta'] ?><img src="assets/icons/arrow-circle.svg" width="14" height="14" alt=""></a>
                         </div>
-                        <a href="#" class="pill"><?= $d['cta'] ?><img src="assets/icons/arrow-circle.svg" width="14" height="14" alt=""></a>
-                    </div>
-                </article>
-            <?php endforeach; ?>
-        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+            <div class="dots" data-cards-dots></div>
     </section>
 
     <!-- ============ CTA BAND ============ -->
     <section class="cta-band">
         <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
         <h2 class="cta-title">{!! $T('cta-band.2') !!}</h2>
-        <?php btn($T('cta-band.1'), 'btn--cta', 'arrow-cta.svg', 'contact-us.php'); ?>
+        <?php btn($T('cta-band.1'), 'btn--cta', 'arrow-cta.svg', $T('cta-band.1.url', 'contact-us.php')); ?>
     </section>
 
     <!-- ============ OUTSOURCING ============ -->
@@ -157,7 +161,7 @@ $industry_text = $T('shared-copy.1');
             <span class="v-line"></span>
             <div class="whitelabel__right">
                 <p class="small">{!! $T('outsourcing.12') !!}</p>
-                <div><?php btn($T('outsourcing.1'), 'btn--cta'); ?></div>
+                <div><?php btn($T('outsourcing.1'), 'btn--cta', null, $T('outsourcing.1.url', 'contact-us.php')); ?></div>
             </div>
         </div>
     </section>
@@ -215,23 +219,13 @@ $industry_text = $T('shared-copy.1');
                                 <p class="products__tag"><?= $pr['tag'] ?></p>
                             </div>
                             <p><?= $pr['text'] ?></p>
-                            <div><?php btn($T('products.1') . ' ' . $pr['name'], 'btn--cta'); ?></div>
                         </div>
                         <div class="products__features">
                             <h4 class="h-card">{!! $T('products.4') !!}</h4>
                             <div class="feature-grid">
-                                <?php foreach ($pr['features'] as $fi => $f): $fid = "feature-$i-$fi"; ?>
+                                <?php foreach ($pr['features'] as $f): ?>
                                     <div class="feature-item">
-                                        <button type="button" class="feature" aria-expanded="false" aria-controls="<?= $fid ?>">
-                                            <span><?= $f[0] ?></span>
-                                            <span class="feature__icon"><img src="assets/icons/icon-plus-box.svg" width="20" height="20" alt=""></span>
-                                        </button>
-                                        <div class="feature-panel" id="<?= $fid ?>" role="region">
-                                            <div class="feature-panel__inner">
-                                                <p><?= $f[1] ?></p>
-                                                <a class="feature-panel__link" href="contact-us.php">Enquire about <?= $pr['name'] ?> &rarr;</a>
-                                            </div>
-                                        </div>
+                                        <div class="feature"><span><?= $f[0] ?></span></div>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -297,7 +291,7 @@ $industry_text = $T('shared-copy.1');
                         <span class="small small--dark"><?= $b['date'] ?></span>
                         <div class="post__text">
                             <h3 class="post__title"><?= $b['title'] ?></h3>
-                            <div><?php btn($T('insights.1'), 'btn--cta'); ?></div>
+                            <div><?php btn($T('insights.1'), 'btn--cta', null, !empty($b['href']) ? $b['href'] : 'blog'); ?></div>
                         </div>
                     </div>
                 </article>

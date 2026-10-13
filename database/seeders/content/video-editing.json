@@ -38,7 +38,7 @@
             "key": "hero.3",
             "label": "Paragraph: Home / Services / Brand & Creative / Video Ed…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Brand &amp; Creative</a> / <span>Video Editing</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Brand &amp; Creative</a> / <span>Video Editing</span>",
             "sort": 3
         },
         {
@@ -159,13 +159,22 @@
             "sort": 16
         },
         {
+            "section": "portfolio",
+            "section_label": "Portfolio",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 17
+        },
+        {
             "section": "stats",
             "section_label": "Stats",
             "key": "stats.1",
             "label": "Image (stats-bg-1.png)",
             "type": "image",
             "value": "assets/images/video/stats-bg-1.png",
-            "sort": 17
+            "sort": 18
         },
         {
             "section": "stats",
@@ -174,7 +183,7 @@
             "label": "Image (stats-bg-2.png)",
             "type": "image",
             "value": "assets/images/video/stats-bg-2.png",
-            "sort": 18
+            "sort": 19
         },
         {
             "section": "stats",
@@ -183,7 +192,7 @@
             "label": "Image (stats-bg-3.png)",
             "type": "image",
             "value": "assets/images/video/stats-bg-3.png",
-            "sort": 19
+            "sort": 20
         },
         {
             "section": "why-intelliworkz",
@@ -192,7 +201,7 @@
             "label": "Heading: Why Intelliworkz",
             "type": "text",
             "value": "Why Intelliworkz",
-            "sort": 20
+            "sort": 21
         },
         {
             "section": "why-intelliworkz",
@@ -201,7 +210,7 @@
             "label": "Paragraph: Most design problems in publishing are not cr…",
             "type": "textarea",
             "value": "Most design problems in publishing are not creative problems. They are production problems: inconsistent output, missed deadlines, each issue that needs re-briefing, and source files that nobody can edit. We work differently. The same team handles your publication across every issue. Your grid, your typography, your cover format, and your brand rules are documented and followed from the first issue onward.",
-            "sort": 21
+            "sort": 22
         },
         {
             "section": "why-intelliworkz",
@@ -209,8 +218,8 @@
             "key": "why-intelliworkz.4",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 22
+            "value": "contact-us.php",
+            "sort": 23
         },
         {
             "section": "why-intelliworkz",
@@ -219,7 +228,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 23
+            "sort": 24
         },
         {
             "section": "editing-tools",
@@ -228,7 +237,7 @@
             "label": "Image (tools-bg-63eb73.png)",
             "type": "image",
             "value": "assets/images/video/tools-bg-63eb73.png",
-            "sort": 24
+            "sort": 25
         },
         {
             "section": "services-workflow",
@@ -237,7 +246,7 @@
             "label": "Heading: What Our Video Editing Services Cover",
             "type": "text",
             "value": "What Our Video Editing Services Cover",
-            "sort": 25
+            "sort": 26
         },
         {
             "section": "services-workflow",
@@ -246,7 +255,7 @@
             "label": "Paragraph: We work across corporate brand films, commerc…",
             "type": "textarea",
             "value": "We work across corporate brand films, commercials, product videos, documentaries, training content, event coverage and short-form social content. Finishing work is part of the scope rather than quoted separately.",
-            "sort": 26
+            "sort": 27
         },
         {
             "section": "services-workflow",
@@ -254,8 +263,8 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 27
+            "value": "contact-us.php",
+            "sort": 28
         },
         {
             "section": "services-workflow",
@@ -264,7 +273,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 28
+            "sort": 29
         },
         {
             "section": "services-workflow",
@@ -273,7 +282,7 @@
             "label": "Image: Video editing services overvi… (services.png)",
             "type": "image",
             "value": "assets/images/video/services.png",
-            "sort": 29
+            "sort": 30
         },
         {
             "section": "dark-showcase-shared",
@@ -282,7 +291,7 @@
             "label": "Heading: What Our Video Editing Services Cov…",
             "type": "text",
             "value": "What Our Video Editing Services Cover",
-            "sort": 30
+            "sort": 31
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -291,7 +300,7 @@
             "label": "Heading: what we offer",
             "type": "text",
             "value": "what we offer",
-            "sort": 31
+            "sort": 32
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -300,7 +309,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 32
+            "sort": 33
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -309,7 +318,7 @@
             "label": "Image (cta-bg.png)",
             "type": "image",
             "value": "assets/images/video/cta-bg.png",
-            "sort": 33
+            "sort": 34
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -318,7 +327,7 @@
             "label": "Heading: Book a Free Consultation",
             "type": "html",
             "value": "Book a Free <br>Consultation",
-            "sort": 34
+            "sort": 35
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -327,7 +336,16 @@
             "label": "Button text: Let’s Talk",
             "type": "text",
             "value": "Let’s Talk",
-            "sort": 35
+            "sort": 36
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 37
         },
         {
             "section": "faqs",
@@ -336,7 +354,7 @@
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 36
+            "sort": 38
         }
     ],
     "lists": [

@@ -17,7 +17,7 @@ $vc = 'assets/icons/video/';         // shared icons
                         <?php if ($i): ?><hr class="seo-tools__rule"><?php endif; ?>
                         <div class="seo-tool">
                             <?php if ($t[0] === 'mag'): ?>
-                                <span class="mg-tool__icon" style="background: <?= $t[2] ?>"><img src="<?= iu($mc, $t[1]) ?>" alt=""></span>
+                                <?= tool_icon($mc, $t[1], $t[2]) ?>
                             <?php else: ?>
                                 <img src="<?= iu(($t[0] === 'svg' ? $tc : $ti), $t[1]) ?>" width="72" height="72" alt="">
                             <?php endif; ?>

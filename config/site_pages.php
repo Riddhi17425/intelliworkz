@@ -180,4 +180,19 @@ return array (
     'footer_class' => 'site-footer--service',
     'phone_icon' => 'video/icon-phone-outline.svg',
   ),
+  'services' => 
+  array (
+    'title' => 'Our Services | Intelliworkz',
+    'body_class' => 'page-services',
+    'extra_css' => 
+    array (
+      0 => 'assets/css/video.css',
+      1 => 'assets/css/magazine.css',
+      2 => 'assets/css/services.css',
+    ),
+    'no_zoom' => false,
+    'show_prefooter' => false,
+    'footer_class' => 'site-footer--service',
+    'phone_icon' => 'video/icon-phone-outline.svg',
+  ),
 );

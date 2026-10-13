@@ -34,7 +34,7 @@
             "key": "hero.2",
             "label": "Paragraph: Home / Services / Branding & Creative / PPT D…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>PPT Design</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>PPT Design</span>",
             "sort": 2
         },
         {
@@ -173,13 +173,22 @@
             "sort": 17
         },
         {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 18
+        },
+        {
             "section": "stats",
             "section_label": "Stats",
             "key": "stats.1",
             "label": "Image (stats-layer.png)",
             "type": "image",
             "value": "assets/images/ppt/stats-layer.png",
-            "sort": 18
+            "sort": 19
         },
         {
             "section": "stats",
@@ -188,7 +197,7 @@
             "label": "Image (stats.png)",
             "type": "image",
             "value": "assets/images/prepress/stats.png",
-            "sort": 19
+            "sort": 20
         },
         {
             "section": "why-intelliworkz",
@@ -197,7 +206,7 @@
             "label": "Heading: Why Intelliworkz",
             "type": "text",
             "value": "Why Intelliworkz",
-            "sort": 20
+            "sort": 21
         },
         {
             "section": "why-intelliworkz",
@@ -206,7 +215,7 @@
             "label": "Paragraph: Most presentations fail for the same reason: …",
             "type": "textarea",
             "value": "Most presentations fail for the same reason: there is too much on every slide, and no clear point for the audience to follow. The information is all there, but it is buried under long bullet lists, dense text, and charts that are hard to read. The audience ends up reading the slide instead of listening to you. We fix this by designing around your message first, then making each slide simple to read and simple to present from.",
-            "sort": 21
+            "sort": 22
         },
         {
             "section": "why-intelliworkz",
@@ -215,7 +224,7 @@
             "label": "Paragraph: We start with your content and your goal, whe…",
             "type": "textarea",
             "value": "We start with your content and your goal, whether that is winning an investment, closing a sale, or bringing a team together. We then put the story in a clear order, cut each slide down to the one point it needs to make, and design it to match your brand. Dense data becomes simple charts, heavy text becomes short and clear lines, and the deck is easy for an audience to follow.",
-            "sort": 22
+            "sort": 23
         },
         {
             "section": "why-intelliworkz",
@@ -224,7 +233,7 @@
             "label": "Paragraph: As a branding partner, we also make sure your…",
             "type": "textarea",
             "value": "As a branding partner, we also make sure your presentation matches the rest of your business. The colours, fonts and style follow your brand, so every deck looks like it belongs to your company.",
-            "sort": 23
+            "sort": 24
         },
         {
             "section": "why-intelliworkz",
@@ -232,8 +241,8 @@
             "key": "why-intelliworkz.6",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 24
+            "value": "contact-us.php",
+            "sort": 25
         },
         {
             "section": "why-intelliworkz",
@@ -242,7 +251,16 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 25
+            "sort": 26
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 27
         },
         {
             "section": "tools-strip",
@@ -251,7 +269,7 @@
             "label": "Image (tools-bg.png)",
             "type": "image",
             "value": "assets/images/ppt/tools-bg.png",
-            "sort": 26
+            "sort": 28
         },
         {
             "section": "services-workflow",
@@ -260,7 +278,7 @@
             "label": "Heading: The Presentations We Design",
             "type": "text",
             "value": "The Presentations We Design",
-            "sort": 27
+            "sort": 29
         },
         {
             "section": "services-workflow",
@@ -269,7 +287,7 @@
             "label": "Paragraph: Our PPT design services cover the presentatio…",
             "type": "textarea",
             "value": "Our PPT design services cover the presentations businesses rely on most, from high-stakes pitches that have to win in one meeting to the everyday internal decks a team presents week after week. You can hand us raw content, a rough draft, a Word document, or an old deck that needs rebuilding, and we turn it into a finished, professional presentation.",
-            "sort": 28
+            "sort": 30
         },
         {
             "section": "services-workflow",
@@ -277,8 +295,8 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 29
+            "value": "contact-us.php",
+            "sort": 31
         },
         {
             "section": "services-workflow",
@@ -287,7 +305,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 30
+            "sort": 32
         },
         {
             "section": "services-workflow",
@@ -296,7 +314,7 @@
             "label": "Image: PPT design services overview (services.png)",
             "type": "image",
             "value": "assets/images/ppt/services.png",
-            "sort": 31
+            "sort": 33
         },
         {
             "section": "dark-showcase-shared",
@@ -305,7 +323,7 @@
             "label": "Heading: What Our PPT Design Services Cover",
             "type": "text",
             "value": "What Our PPT Design Services Cover",
-            "sort": 32
+            "sort": 34
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -314,7 +332,7 @@
             "label": "Heading: what we offer",
             "type": "text",
             "value": "what we offer",
-            "sort": 33
+            "sort": 35
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -323,7 +341,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 34
+            "sort": 36
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -332,7 +350,7 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
-            "sort": 35
+            "sort": 37
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -341,7 +359,16 @@
             "label": "Button text: Let’s Talk",
             "type": "text",
             "value": "Let’s Talk",
-            "sort": 36
+            "sort": 38
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 39
         },
         {
             "section": "faqs",
@@ -350,7 +377,7 @@
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 37
+            "sort": 40
         }
     ],
     "lists": [

@@ -13,9 +13,9 @@ class PageTest extends CmsTestCase
         return $over + ['title' => 'Our Process', 'slug' => 'our-process', 'status' => 'draft', 'meta_title' => '', 'meta_description' => 'How we work.', 'content' => '<h2>Step one</h2><p>We listen.</p>'];
     }
 
-    public function test_all_twelve_original_pages_are_published_and_render(): void
+    public function test_all_original_pages_are_published_and_render(): void
     {
-        $this->assertSame(12, Page::where('is_system', true)->count());
+        $this->assertSame(13, Page::where('is_system', true)->count());
         foreach (Page::where('is_system', true)->get() as $page) {
             $url = $page->slug === 'index' ? '/' : "/{$page->slug}.php";
             $this->get($url)->assertOk()->assertSee('<title>', false);
@@ -68,6 +68,7 @@ class PageTest extends CmsTestCase
     public function test_slug_rules(): void
     {
         $this->actingAs($this->admin());
+        $before = Page::where('is_system', false)->count();   // starter pages (industries, legal pages …) already exist
         $this->post('/admin/pages', $this->newPage())->assertRedirect();
 
         $this->post('/admin/pages', $this->newPage(['title' => 'Dup']))->assertSessionHasErrors('slug');                    // taken
@@ -75,7 +76,7 @@ class PageTest extends CmsTestCase
         foreach (['admin', 'assets', 'uploads', 'login', 'inquiries', 'Has Space', 'UPPER', 'a/b', '-lead', 'trail-', 'x..y'] as $bad) {
             $this->post('/admin/pages', $this->newPage(['slug' => $bad]))->assertSessionHasErrors('slug');
         }
-        $this->assertSame(1, Page::where('is_system', false)->count());
+        $this->assertSame($before + 1, Page::where('is_system', false)->count());
     }
 
     public function test_original_pages_are_protected(): void
@@ -156,10 +157,11 @@ class PageTest extends CmsTestCase
     public function test_dangerous_uploads_are_refused(): void
     {
         $this->actingAs($this->admin());
+        $before = Page::where('is_system', false)->count();
         $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('shell.php', 5, 'application/x-php')]))->assertSessionHasErrors('featured_image');
         $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('evil.svg', 5, 'image/svg+xml')]))->assertSessionHasErrors('featured_image');   // svg not allowed for pages
         $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('big.png', 6000, 'image/png')]))->assertSessionHasErrors('featured_image');       // > 5 MB
-        $this->assertSame(0, Page::where('is_system', false)->count());
+        $this->assertSame($before, Page::where('is_system', false)->count());
     }
 
     public function test_a_deleted_pages_address_can_be_used_again(): void

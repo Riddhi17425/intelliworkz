@@ -27,7 +27,7 @@ $vc = 'assets/icons/video/';         // shared icons
                             </button>
                             <div class="acc-panel"><div class="acc-panel__inner">
                                 <ul class="dot-list dot-list--plain acc-points">
-                                    <?php foreach ($s['points'] as $pt): ?><li><?= $pt ?></li><?php endforeach; ?>
+                                    <?php foreach ($s['points'] as $pt): ?><li><span><?= $pt ?></span></li><?php endforeach; ?>
                                 </ul>
                             </div></div>
                         </div>
@@ -38,6 +38,7 @@ $vc = 'assets/icons/video/';         // shared icons
             </div>
         </div>
 
+        <?php if ($T('services-workflow.6')): ?><h2 class="h2 h2--center cl-flow__title">{!! $T('services-workflow.6') !!}</h2><?php endif; ?>
         <div class="cl-flow">
             <?php foreach ($cl_flow as $f): ?>
                 <span class="cl-flow__seg" style="left: <?= $f['seg'] ?>px; background: <?= $f['c'] ?>"></span>

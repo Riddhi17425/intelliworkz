@@ -2,7 +2,7 @@
     "page": {
         "slug": "marketing-sales-collaterals",
         "config": {
-            "title": "Marketing & Sales Collaterals | Intelliworkz",
+            "title": "Marketing Collateral Design Services | Intelliworkz",
             "body_class": "page-collaterals",
             "extra_css": [
                 "assets/css/video.css",
@@ -13,7 +13,9 @@
             "show_prefooter": false,
             "footer_class": "site-footer--service",
             "phone_icon": "video/icon-phone-outline.svg"
-        }
+        },
+        "meta_description": "Design consistent brochures, presentations, proposals and sales materials for print and digital. Get marketing collateral design support from Intelliworkz.",
+        "meta_keywords": "marketing collateral design services, brand collateral design services, brand collateral design, marketing collateral management, sales collateral design, brand identity collateral, collateral design services"
     },
     "fields": [
         {
@@ -22,7 +24,7 @@
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Branding & Creative / Marke…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>Marketing &amp; Sales Collaterals</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>Marketing &amp; Sales Collaterals</span>",
             "sort": 1
         },
         {
@@ -107,13 +109,40 @@
             "sort": 10
         },
         {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Hero button text (the button under the \"dedicated team\" line)",
+            "type": "text",
+            "value": "Get Started",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.12",
+            "label": "Hero button link (#enquiry scrolls to the form)",
+            "type": "url",
+            "value": "#enquiry",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.13",
+            "label": "Privacy note under the form (empty = the shared one)",
+            "type": "text",
+            "value": "",
+            "sort": 13
+        },
+        {
             "section": "selected-work",
             "section_label": "Selected Work",
             "key": "selected-work.1",
             "label": "Heading: Selected Marketing & Sales Collateral Work",
             "type": "text",
-            "value": "Selected Marketing &amp; Sales Collateral Work",
-            "sort": 11
+            "value": "Selected Collateral Design Work",
+            "sort": 14
         },
         {
             "section": "selected-work",
@@ -121,8 +150,17 @@
             "key": "selected-work.2",
             "label": "Paragraph: Our collateral design work supports businesse…",
             "type": "textarea",
-            "value": "Our collateral design work supports businesses, corporate teams and marketing agencies with brochures, company profiles, sales materials, product catalogues and digital marketing assets. Every piece is designed to communicate clearly, strengthen brand consistency and support marketing and sales activities across print and digital platforms.",
-            "sort": 12
+            "value": "Explore marketing and sales collateral created for different industries, target audiences and sales environments. The gallery shows how each design maintains visual consistency, readability and impact across print and digital mediums.",
+            "sort": 15
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 16
         },
         {
             "section": "why-intelliworkz",
@@ -130,8 +168,8 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "Why Intelliworkz",
-            "sort": 13
+            "value": "One Brand Running Through Your Sales and Marketing Material",
+            "sort": 17
         },
         {
             "section": "why-intelliworkz",
@@ -140,7 +178,7 @@
             "label": "Paragraph: We handle your collateral as one connected wh…",
             "type": "textarea",
             "value": "We handle your collateral as one connected whole. A brochure, a deck, and a proposal all shape the same impression, so we design them to hold together. When they do, your business looks confident at every step.",
-            "sort": 14
+            "sort": 18
         },
         {
             "section": "why-intelliworkz",
@@ -149,7 +187,7 @@
             "label": "Paragraph: We bring that consistency by treating your br…",
             "type": "textarea",
             "value": "We bring that consistency by treating your brand as the starting point for everything we produce, then designing each piece. And because your teams move quickly, we build much of this material as templates they can own and reuse, so your brand stays intact long after we hand it over.",
-            "sort": 15
+            "sort": 19
         },
         {
             "section": "why-intelliworkz",
@@ -157,8 +195,8 @@
             "key": "why-intelliworkz.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 16
+            "value": "contact-us.php",
+            "sort": 20
         },
         {
             "section": "why-intelliworkz",
@@ -166,8 +204,17 @@
             "key": "why-intelliworkz.4",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "Enquire Now",
-            "sort": 17
+            "value": "Request a Quote",
+            "sort": 21
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
         },
         {
             "section": "services-workflow",
@@ -176,7 +223,7 @@
             "label": "Heading: Everything Your Brand Needs to Support Sales",
             "type": "text",
             "value": "Everything Your Brand Needs to Support Sales",
-            "sort": 18
+            "sort": 23
         },
         {
             "section": "services-workflow",
@@ -185,7 +232,7 @@
             "label": "Paragraph: We design the full range of material your mar…",
             "type": "textarea",
             "value": "We design the full range of material your marketing and sales teams use, all held to one standard and shaped around how your business sells. Take a single piece, or a complete set that shares one consistent look.",
-            "sort": 19
+            "sort": 24
         },
         {
             "section": "services-workflow",
@@ -193,8 +240,8 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 20
+            "value": "contact-us.php",
+            "sort": 25
         },
         {
             "section": "services-workflow",
@@ -203,7 +250,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 21
+            "sort": 26
         },
         {
             "section": "services-workflow",
@@ -212,7 +259,16 @@
             "label": "Image: Marketing and sales collatera… (services.png)",
             "type": "image",
             "value": "assets/images/collaterals/services.png",
-            "sort": 22
+            "sort": 27
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.6",
+            "label": "Heading above the process steps (empty = none)",
+            "type": "text",
+            "value": "From Brief to Ongoing Delivery",
+            "sort": 28
         },
         {
             "section": "dark-showcase-shared",
@@ -220,8 +276,17 @@
             "key": "dark-showcase-shared.1",
             "label": "Heading: What Our PPT Design Services Cover",
             "type": "text",
-            "value": "What Our PPT Design Services Cover",
-            "sort": 23
+            "value": "Selected Marketing &amp; Sales Collateral Case Studies",
+            "sort": 29
+        },
+        {
+            "section": "dark-showcase-shared",
+            "section_label": "Dark Showcase (shared)",
+            "key": "dark-showcase-shared.2",
+            "label": "Paragraph under the heading (empty = the shared one)",
+            "type": "textarea",
+            "value": "Explore selected collateral projects showing how brochures, presentations and sales materials can carry one consistent brand across print and digital formats.",
+            "sort": 30
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -229,8 +294,8 @@
             "key": "what-we-offer-cta-engagement.2",
             "label": "Heading: what we offer",
             "type": "text",
-            "value": "what we offer",
-            "sort": 24
+            "value": "Explore Related Branding and Creative Services",
+            "sort": 31
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -238,8 +303,8 @@
             "key": "what-we-offer-cta-engagement.3",
             "label": "Paragraph: We design brochures, company profiles, sales …",
             "type": "textarea",
-            "value": "We design brochures, company profiles, sales presentations, proposals, product catalogues and digital marketing materials. From a single brochure to a complete suite of branded collateral, every piece follows a consistent design process tailored to its format and purpose.",
-            "sort": 25
+            "value": "Marketing collateral is one part of a connected brand experience. Explore related creative services that help keep your identity, communication and digital touchpoints aligned.",
+            "sort": 32
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -247,8 +312,8 @@
             "key": "what-we-offer-cta-engagement.4",
             "label": "Heading: Book a Free Consultation",
             "type": "text",
-            "value": "Book a Free Consultation",
-            "sort": 26
+            "value": "Keep Every Sales and Marketing Touchpoint Consistent",
+            "sort": 33
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -256,8 +321,53 @@
             "key": "what-we-offer-cta-engagement.1",
             "label": "Button text: Let’s Talk",
             "type": "text",
-            "value": "Let’s Talk",
-            "sort": 27
+            "value": "Get a Quote",
+            "sort": 34
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 35
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.5",
+            "label": "Banner: small heading above the main heading (empty = none)",
+            "type": "text",
+            "value": "Get Started",
+            "sort": 36
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.6",
+            "label": "Banner: paragraph under the heading",
+            "type": "textarea",
+            "value": "Tell us what your marketing and sales teams need, and we will design it around your brand and ready to use. Our brand collateral design services hold every piece to one standard, so your business always looks its best, and because we look after the whole brand, your collateral, identity and campaigns stay in step.",
+            "sort": 37
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.7",
+            "label": "Related services: text of the link on every card (empty = no link)",
+            "type": "text",
+            "value": "Explore Service",
+            "sort": 38
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.8",
+            "label": "Note under the pricing badge (empty = none)",
+            "type": "textarea",
+            "value": "Pricing depends on deliverables, volume and turnaround. Share your brief for a quote based on your project scope.",
+            "sort": 39
         },
         {
             "section": "faqs",
@@ -265,8 +375,8 @@
             "key": "faqs.1",
             "label": "Heading: FAQs",
             "type": "text",
-            "value": "FAQs",
-            "sort": 28
+            "value": "Frequently Asked Questions About Marketing and Sales Collateral Design",
+            "sort": 40
         }
     ],
     "lists": [
@@ -275,9 +385,9 @@
             "scope": "marketing-sales-collaterals",
             "items": [
                 "Consistent Brand Collateral Design",
-                "Print & Digital Marketing Materials",
-                "Customisable & Reusable Templates",
-                "Sales & Marketing Design Support"
+                "Print &amp; Digital Marketing Materials",
+                "Customisable &amp; Reusable Templates",
+                "Sales &amp; Marketing Design Support"
             ]
         },
         {
@@ -285,7 +395,7 @@
             "scope": "marketing-sales-collaterals",
             "items": {
                 "all": "All",
-                "brochures": "Brochures & Catalogues",
+                "brochures": "Brochures &amp; Catalogues",
                 "sales": "Sales Collateral",
                 "digital": "Digital Marketing Materials"
             }
@@ -363,8 +473,8 @@
                     "tab": "tab-1.svg",
                     "icon": "why-1.svg",
                     "bg": "why-bg-1.png",
-                    "title": "In-House Design Team",
-                    "text": "Every marketing and sales collateral piece is designed by our in-house team, with no freelancers or subcontracting."
+                    "title": "Consistent Brand Standard",
+                    "text": "We design brochures, presentations and proposals to share one clear visual standard across your sales and marketing materials."
                 },
                 {
                     "c": "var(--c-red)",
@@ -373,8 +483,8 @@
                     "tab": "tab-2.svg",
                     "icon": "why-2.svg",
                     "bg": "why-bg-2.png",
-                    "title": "Dedicated Design Team",
-                    "text": "The skilled designers work across your marketing materials, maintaining brand consistency without repeated briefing."
+                    "title": "Brand-Led Design",
+                    "text": "Each piece begins with your brand, so colours, typography and messaging stay aligned across every format."
                 },
                 {
                     "c": "#141717",
@@ -383,8 +493,8 @@
                     "tab": "tab-3.svg",
                     "icon": "why-3.svg",
                     "bg": "why-bg-3.png",
-                    "title": "Data Security & Confidentiality",
-                    "text": "Your marketing plans, sales materials and confidential business information are handled securely within our in-house team."
+                    "title": "Reusable Templates",
+                    "text": "Editable templates help your team produce recurring materials faster while keeping layouts and brand details consistent."
                 },
                 {
                     "c": "var(--c-olive)",
@@ -393,8 +503,8 @@
                     "tab": "tab-4.svg",
                     "icon": "why-4.svg",
                     "bg": "why-bg-4.png",
-                    "title": "Flexible & Transparent Pricing",
-                    "text": "Choose an engagement model that suits your design requirements, with the scope and pricing agreed before work begins."
+                    "title": "Print and Digital Files",
+                    "text": "Receive print-ready and digital files, with source files provided so your team can use and adapt the work."
                 }
             ]
         },
@@ -440,28 +550,30 @@
             "items": [
                 {
                     "title": "Marketing Material",
-                    "open": true,
                     "points": [
                         "Brochures, flyers and leaflets",
                         "Company profiles and corporate presentations",
                         "Posters, banners and event material",
                         "Product catalogues and datasheets"
-                    ]
+                    ],
+                    "open": true
                 },
                 {
                     "title": "Sales Material",
                     "points": [
-                        "Sales presentations and proposals",
-                        "Product sheets",
-                        "Case studies"
+                        "Sales decks and pitch presentations",
+                        "Proposals and quotation templates",
+                        "Case studies and one-pagers",
+                        "Product and price sheets"
                     ]
                 },
                 {
                     "title": "Digital Collateral",
                     "points": [
-                        "Digital marketing materials",
-                        "Customisable and reusable templates",
-                        "Print-ready and digital files"
+                        "Editable presentation and document templates",
+                        "PDFs built for email and download",
+                        "Social media and campaign graphics",
+                        "Branded email and newsletter layouts"
                     ]
                 }
             ]
@@ -544,100 +656,42 @@
             ]
         },
         {
-            "key": "cl_offers",
-            "scope": "marketing-sales-collaterals",
-            "items": [
-                {
-                    "no": "01",
-                    "noc": "#D1C7E6",
-                    "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
-                    "title": "PPT Design Services",
-                    "img": "offer-1-625569.png",
-                    "x": 58,
-                    "y": 277,
-                    "w": 457,
-                    "h": 341,
-                    "arrow": "offer-arrow-1.svg",
-                    "text": "A presentation is often where your idea first meets an investor, a client or your own team. "
-                },
-                {
-                    "no": "02",
-                    "noc": "#EAD3C4",
-                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
-                    "title": "Corporate Communication",
-                    "img": "offer-2-56586a.png",
-                    "x": 45,
-                    "y": 265,
-                    "w": 486,
-                    "h": 372,
-                    "arrow": "offer-arrow-2.svg",
-                    "text": "Consistent, brand-aligned communication materials that help businesses share information effectively with internal and external audiences."
-                },
-                {
-                    "no": "03",
-                    "noc": "#A2DDDD",
-                    "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
-                    "title": "Advertising Services",
-                    "img": "offer-3-56586b.png",
-                    "x": 34,
-                    "y": 265,
-                    "w": 505,
-                    "h": 343,
-                    "arrow": "offer-arrow-3.svg",
-                    "text": "Creative advertising materials designed to capture attention, communicate your brand message and support your marketing campaigns."
-                },
-                {
-                    "no": "04",
-                    "noc": "#D9D3A0",
-                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
-                    "title": "Product Catalogues",
-                    "img": "offer-1-625569.png",
-                    "x": 58,
-                    "y": 277,
-                    "w": 457,
-                    "h": 341,
-                    "arrow": "offer-arrow-1.svg",
-                    "text": "Clear, consistent product catalogues and datasheets, designed for print and digital use."
-                }
-            ]
-        },
-        {
             "key": "cl_faqs",
             "scope": "marketing-sales-collaterals",
             "items": [
                 [
                     "What are marketing and sales collateral design services?",
-                    "They cover the design of the material your teams use to market and sell, from brochures and presentations to proposals, product sheets and case studies. The purpose is to make every piece clear and credible, so your brand carries weight. "
+                    "They cover the design of the material your teams use to market and sell, from brochures and presentations to proposals, product sheets and case studies. The purpose is to make every piece clear and credible, so your brand carries weight."
                 ],
                 [
                     "What types of marketing and sales collateral do you design?",
-                    "Brochures, flyers and leaflets, company profiles and corporate presentations, posters, banners and event material, product catalogues and datasheets, sales material, and digital collateral."
+                    "Brochures, company profiles, presentations, sales decks, proposals, case studies, product and price sheets, banners, event material and digital PDFs, along with editable templates for the pieces your team produces often."
                 ],
                 [
                     "Do you provide outsourced sales collateral design for global businesses?",
-                    "Yes. Our 100% in-house team works with businesses across 7 countries, and the same or similarly skilled designers work on your orders every time, so delivery stays smooth and consistent."
+                    "Yes. We work with businesses across regions and time zones, with our team operating in your preferred shift. It makes outsourcing your sales collateral design to us straightforward, with delivery you can depend on."
                 ],
                 [
                     "Do you provide B2B marketing and sales collateral design?",
-                    "Yes. We design the full range of material your marketing and sales teams use, all held to one standard and shaped around how your business sells."
+                    "Yes, and much of our work is B2B, where the material has to make a detailed offer easy to grasp. We design decks, proposals, and product sheets that give a considered buyer a clear reason to move forward."
                 ],
                 [
                     "Can you create white-label marketing and sales collateral for agencies?",
-                    "Yes. We work with marketing agencies, and because everything is produced by our in-house team with no freelancers or subcontracting, your clients' confidential material stays within our team."
+                    "Yes. We produce material under your agency's brand, with confidentiality agreements in place, ready for you to present to your clients as your own. Our marketing collateral management support lets you hand us regular work and rely on a consistent standard."
                 ],
                 [
                     "How can professional sales collateral design help improve sales?",
-                    "When your brochures, decks and proposals are designed well and all look part of the same brand, your business looks credible and your team's job gets easier at every step of the sale."
+                    "Strong material makes your offer clearer and your business more convincing, which helps a buyer commit. Considered brand identity collateral keeps every touchpoint aligned, so your brand feels established and trustworthy at each stage of the sale."
                 ]
             ]
         },
         {
             "key": "ve_form_fields",
-            "scope": "global",
+            "scope": "marketing-sales-collaterals",
             "items": [
                 [
                     "Full Name",
-                    "Enter your first name",
+                    "Enter your full name",
                     "text",
                     "name"
                 ],
@@ -649,7 +703,7 @@
                 ],
                 [
                     "Email ID",
-                    "Enter your email ID",
+                    "Enter your email address",
                     "email",
                     "email"
                 ],
@@ -659,6 +713,57 @@
                     "tel",
                     "phone"
                 ]
+            ]
+        },
+        {
+            "key": "cl_related",
+            "scope": "marketing-sales-collaterals",
+            "items": [
+                {
+                    "title": "Logo Design",
+                    "text": "We design logos that reflect your business and remain clear from large signage to small app icons. Each logo is supplied in practical versions and file formats for print and digital use.",
+                    "href": "logo-design"
+                },
+                {
+                    "title": "Brand Identity &amp; Design",
+                    "text": "We bring your logo, colours, typography, imagery and brand language together into one consistent system. The identity is designed to work across websites, packaging, business cards, print and digital touchpoints.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Packaging Design",
+                    "text": "We develop and adapt packaging artwork for new launches, redesigns and multi-SKU rollouts. Design and adaptation are handled with production requirements in mind, supporting a smooth transition from concept to press.",
+                    "href": "packaging-design.php"
+                },
+                {
+                    "title": "Campaign Concepts &amp; Ad Creatives",
+                    "text": "We develop the core campaign idea and creative direction before designing individual assets. The approved concept is carried across banners, video and social formats so the campaign feels connected.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Corporate Communication",
+                    "text": "We help shape how your business communicates with employees, customers, investors and the public. Strategy, messaging and supporting materials keep communication clear and consistent across audiences.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Visual Identity Systems",
+                    "text": "We unify colour, typography, imagery and graphic language into a system that works across websites, packaging, presentations and ads. Clear usage rules help keep the identity consistent as the business grows.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "PPT Design",
+                    "text": "We structure and design presentations for sales, company profiles, pitches and internal communication. Clear visual hierarchy helps the audience follow your message, with reusable templates where needed.",
+                    "href": "ppt-design.php"
+                },
+                {
+                    "title": "Advertising Services",
+                    "text": "We bring strategy, creative, media planning and reporting together in one connected advertising process. Campaigns are planned, produced and measured against a shared objective.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "UI/UX Design",
+                    "text": "We design digital experiences around user needs and business goals, from research and user flows to interfaces and prototypes. The process covers websites, mobile apps and other digital products.",
+                    "href": "services.php#svc-1"
+                }
             ]
         }
     ]

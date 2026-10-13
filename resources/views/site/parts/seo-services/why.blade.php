@@ -20,7 +20,7 @@ $vc = 'assets/icons/video/';   // shared icons
                 <article class="seo-why__card" style="--c: <?= $w['c'] ?>">
                     <div class="seo-why__head">
                         <span class="seo-why__icon"><img src="<?= iu($sc, $w['icon']) ?>" alt=""></span>
-                        <span class="seo-why__no" style="color: rgba(255,255,255,<?= $w['noa'] ?>)"><?= $w['no'] ?></span>
+                        <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="seo-why__no" style="color: rgba(255,255,255,<?= $w['noa'] ?>)"><?= $w['no'] ?></span><?php endif; ?>
                     </div>
                     <div class="seo-why__body">
                         <h3><?= $w['title'] ?></h3>

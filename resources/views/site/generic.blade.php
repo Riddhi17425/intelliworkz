@@ -7,7 +7,7 @@
 
     <section class="gp-hero">
         <div class="container gp-hero__inner">
-            <p class="breadcrumb breadcrumb--light"><a href="{{ url('/') }}">Home</a> / <span>{{ $page->title }}</span></p>
+            <p class="breadcrumb breadcrumb--light"><a href="{{ url('/') }}">{{ $G('page.1', 'Home') }}</a> / <span>{{ $page->title }}</span></p>
             <h1 class="gp-hero__title">{{ $page->title }}</h1>
         </div>
     </section>

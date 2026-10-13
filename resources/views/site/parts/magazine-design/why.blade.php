@@ -18,7 +18,7 @@ $vc = 'assets/icons/video/';       // icons shared with the video page
                 <article class="mg-why__card <?= $w['shadow'] ? 'has-shadow' : '' ?>" style="--c: <?= $w['c'] ?>">
                     <div class="mg-why__head">
                         <span class="mg-why__icon"><img src="<?= iu($mc, $w['icon']) ?>" alt=""></span>
-                        <span class="mg-why__no" style="color: rgba(255,255,255,<?= $w['noa'] ?>)"><?= $w['no'] ?></span>
+                        <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="mg-why__no" style="color: rgba(255,255,255,<?= $w['noa'] ?>)"><?= $w['no'] ?></span><?php endif; ?>
                     </div>
                     <div class="mg-why__body <?= $w['border'] ? 'has-border' : '' ?>">
                         <h3><?= $w['title'] ?></h3>

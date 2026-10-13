@@ -12,7 +12,7 @@ $vc = 'assets/icons/video/';         // shared icons
                 <?php if ($i): ?><li class="mg-tools__divider"></li><?php endif; ?>
                 <li class="mg-tool">
                     <?php if ($t[1]): ?>
-                        <span class="mg-tool__icon" style="background: <?= $t[1] ?>"><img src="<?= iu($mc, $t[0]) ?>" alt=""></span>
+                        <?= tool_icon($mc, $t[0], $t[1]) ?>
                     <?php else: ?>
                         <img class="cl-tool__tile" src="<?= iu($ci, $t[0]) ?>" width="108" height="72" alt="">
                     <?php endif; ?>

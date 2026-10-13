@@ -24,7 +24,7 @@ $vc = 'assets/icons/video/';          // shared icons
                     <span class="pp-why__bar"></span>
                     <div class="pp-why__head">
                         <span class="pp-why__icon"><img src="<?= iu($pc, $w['icon']) ?>" alt=""></span>
-                        <span class="pp-why__no"><?= $w['no'] ?></span>
+                        <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="pp-why__no"><?= $w['no'] ?></span><?php endif; ?>
                     </div>
                     <div class="pp-why__text">
                         <h3><?= $w['title'] ?></h3>

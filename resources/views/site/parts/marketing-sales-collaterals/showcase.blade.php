@@ -8,5 +8,6 @@ $vc = 'assets/icons/video/';         // shared icons
     <!-- ============ DARK SHOWCASE (shared) ============ -->
     @php
 $showcase_title = $T('dark-showcase-shared.1');
+$showcase_lead = $T('dark-showcase-shared.2') ?: null;
 @endphp
     @include('site.sections.showcase')

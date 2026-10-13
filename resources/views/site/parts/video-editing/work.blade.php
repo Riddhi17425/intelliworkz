@@ -15,11 +15,13 @@ $vc = 'assets/icons/video/';    // page icons
                     <button type="button" class="round-arrow" aria-label="Next" data-pf-next><img src="<?= $vc ?>slider-arrow-right.svg" width="52" height="52" alt=""></button>
                 </div>
             </div>
+            <?php if ($T('filter-tabs.1', '1') !== '0'): ?>
             <div class="filter-tabs" data-filter-tabs>
                 <?php foreach ($ve_filters as $key => $label): ?>
                     <button type="button" class="filter-tab <?= $key === 'all' ? 'is-active' : '' ?>" data-filter="<?= $key ?>"><?= $label ?></button>
                 <?php endforeach; ?>
             </div>
+            <?php endif; ?>
         </div>
 
         <div class="pf-cards" data-pf-track>

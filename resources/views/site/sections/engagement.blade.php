@@ -33,8 +33,9 @@
             <div class="cta-band__copy">
                 <h2 class="cta-title">{!! $G('engagement-model.4') !!}</h2>
                 <p>{!! $G('engagement-model.5') !!}</p>
+                <?php if ($note = $T('what-we-offer-cta-engagement.8', '')): ?><p>{!! $note !!}</p><?php endif; ?>
             </div>
-            <?php btn($G('engagement-model.1'), 'btn--cta', 'arrow-cta.svg'); ?>
+            <?php btn($G('engagement-model.1'), 'btn--cta', 'arrow-cta.svg', $G('engagement-model.1.url', 'contact-us.php')); ?>
         </div>
     </section>
 

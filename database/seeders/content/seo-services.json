@@ -21,7 +21,7 @@
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Digital Marketing & Growth …",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Digital Marketing &amp; Growth</a> / <span>SEO SERVICES</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-2\">Digital Marketing &amp; Growth</a> / <span>SEO SERVICES</span>",
             "sort": 1
         },
         {
@@ -169,13 +169,22 @@
             "sort": 17
         },
         {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 18
+        },
+        {
             "section": "why-intelliworkz",
             "section_label": "Why Intelliworkz",
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
             "value": "Why Intelliworkz",
-            "sort": 18
+            "sort": 19
         },
         {
             "section": "why-intelliworkz",
@@ -184,7 +193,7 @@
             "label": "Paragraph: Picking an SEO agency in India comes down to …",
             "type": "textarea",
             "value": "Picking an SEO agency in India comes down to one question: can they actually execute, or do they just advise? We do both. Our own developers ship the fixes we recommend.",
-            "sort": 19
+            "sort": 20
         },
         {
             "section": "why-intelliworkz",
@@ -193,7 +202,7 @@
             "label": "Paragraph: SEO counts when it shows up in the places tha…",
             "type": "textarea",
             "value": "SEO counts when it shows up in the places that matter. Rankings, yes, but also traffic quality and pipeline. Every campaign has to be technically right and commercially aligned, and it has to move through audits, implementation, and reporting without getting stuck somewhere in the middle.",
-            "sort": 20
+            "sort": 21
         },
         {
             "section": "why-intelliworkz",
@@ -202,7 +211,7 @@
             "label": "Paragraph: Our team knows both sides of the search. Audi…",
             "type": "textarea",
             "value": "Our team knows both sides of the search. Audit, strategy, on-page, technical work, content, link building:. We work alongside digita lmarketing teams to keep campaigns consistent and deliver efficiently.",
-            "sort": 21
+            "sort": 22
         },
         {
             "section": "why-intelliworkz",
@@ -210,8 +219,8 @@
             "key": "why-intelliworkz.6",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 22
+            "value": "contact-us.php",
+            "sort": 23
         },
         {
             "section": "why-intelliworkz",
@@ -220,7 +229,16 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 23
+            "sort": 24
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 25
         },
         {
             "section": "tools-strip",
@@ -229,7 +247,7 @@
             "label": "Image (tools-bg.png)",
             "type": "image",
             "value": "assets/images/seo/tools-bg.png",
-            "sort": 24
+            "sort": 26
         },
         {
             "section": "services-workflow",
@@ -238,7 +256,7 @@
             "label": "Heading: OUR SEO EXPERTISE AND SERVICES",
             "type": "text",
             "value": "OUR SEO EXPERTISE AND SERVICES",
-            "sort": 25
+            "sort": 27
         },
         {
             "section": "services-workflow",
@@ -247,7 +265,7 @@
             "label": "Paragraph: Strategic Thinking. Technical Execution. Cons…",
             "type": "textarea",
             "value": "Strategic Thinking. Technical Execution. Consistent Search Growth.",
-            "sort": 26
+            "sort": 28
         },
         {
             "section": "services-workflow",
@@ -256,7 +274,7 @@
             "label": "Paragraph: Our professional SEO services cover three dis…",
             "type": "textarea",
             "value": "Our professional SEO services cover three disciplines: technical SEO, on-page and content, and off-page authority. Run together, they form a complete programme rather than a handful of disconnected tactics.",
-            "sort": 27
+            "sort": 29
         },
         {
             "section": "services-workflow",
@@ -265,7 +283,7 @@
             "label": "Paragraph: Rankings are the start, not the point. Search…",
             "type": "textarea",
             "value": "Rankings are the start, not the point. Search growth that lasts needs a solid technical base, content that genuinely earns its place, and authority built up slowly enough to hold. All of it is managed the same way in every market. That is the thinking behind our delivery, and it is why our programmes stay practical and scalable. It is also why marketing teams hand us the execution-heavy work they would rather not do themselves, everything from technical audits through to reporting.",
-            "sort": 28
+            "sort": 30
         },
         {
             "section": "services-workflow",
@@ -273,8 +291,8 @@
             "key": "services-workflow.7",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 29
+            "value": "contact-us.php",
+            "sort": 31
         },
         {
             "section": "services-workflow",
@@ -283,7 +301,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 30
+            "sort": 32
         },
         {
             "section": "services-workflow",
@@ -292,7 +310,7 @@
             "label": "Image: SEO services overview (services.png)",
             "type": "image",
             "value": "assets/images/seo/services.png",
-            "sort": 31
+            "sort": 33
         },
         {
             "section": "dark-showcase-shared",
@@ -301,7 +319,7 @@
             "label": "Heading: What Our SEO Services Cover",
             "type": "text",
             "value": "What Our SEO Services Cover",
-            "sort": 32
+            "sort": 34
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -310,7 +328,7 @@
             "label": "Heading: what we offer",
             "type": "text",
             "value": "what we offer",
-            "sort": 33
+            "sort": 35
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -319,7 +337,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 34
+            "sort": 36
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -328,7 +346,7 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
-            "sort": 35
+            "sort": 37
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -337,7 +355,16 @@
             "label": "Button text: Let’s Talk",
             "type": "text",
             "value": "Let’s Talk",
-            "sort": 36
+            "sort": 38
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 39
         },
         {
             "section": "faqs",
@@ -346,7 +373,7 @@
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 37
+            "sort": 40
         }
     ],
     "lists": [

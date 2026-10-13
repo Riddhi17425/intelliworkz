@@ -12,7 +12,7 @@ $vc = 'assets/icons/video/';        // shared icons
             <?php foreach ($pk_tools as $i => $t): ?>
                 <?php if ($i): ?><li class="pk-tools__divider"></li><?php endif; ?>
                 <li class="seo-tool">
-                    <span class="mg-tool__icon" style="background: <?= $t[1] ?>"><img src="<?= iu($mc, $t[0]) ?>" alt=""></span>
+                    <?= tool_icon($mc, $t[0], $t[1]) ?>
                     <div><strong><?= $t[2] ?></strong><span><?= $t[3] ?></span></div>
                 </li>
             <?php endforeach; ?>

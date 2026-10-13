@@ -1,43 +1,31 @@
-@php
-$ci = 'assets/images/collaterals/';  // page images
-$cc = 'assets/icons/collaterals/';   // page icons
-$mc = 'assets/icons/magazine/';      // shared with the magazine page (metric + tool icons)
-$vi = 'assets/images/video/';        // shared with the video page (offer art)
-$vc = 'assets/icons/video/';         // shared icons
-@endphp
-    <!-- ============ WHAT WE OFFER + CTA + ENGAGEMENT ============ -->
+    <!-- ============ WHAT WE OFFER (related services) + CTA + ENGAGEMENT ============ -->
     <div class="ve-offer-engagement">
-        <section class="ve-offers">
+        <section class="ve-offers cl-related">
             <div class="ve-offers__head">
                 <h2 class="h2 h2--center">{!! $T('what-we-offer-cta-engagement.2') !!}</h2>
                 <p>{!! $T('what-we-offer-cta-engagement.3') !!}</p>
             </div>
-            <div class="container offer-viewport" data-offers>
-                <div class="offer-cards" data-offers-track>
-                    <?php foreach ($cl_offers as $k => $o): ?>
-                        <article class="offer-card" data-i="<?= $k ?>" style="background: <?= $o['bg'] ?>">
-                            <div class="offer-card__top">
-                                <span class="offer-card__no" style="color: <?= $o['noc'] ?>"><?= $o['no'] ?></span>
-                                <a href="#" aria-label="<?= $o['title'] ?>"><img src="<?= iu($vc, $o['arrow']) ?>" width="48" height="48" alt=""></a>
-                            </div>
-                            <div class="offer-card__body">
-                                <h3><?= $o['title'] ?></h3>
-                                <p><?= $o['text'] ?></p>
-                            </div>
-                            <img class="offer-card__img" src="<?= iu($vi, $o['img']) ?>" alt="" style="left: <?= $o['x'] ?>px; top: <?= $o['y'] ?>px; width: <?= $o['w'] ?>px; height: <?= $o['h'] ?>px">
-                        </article>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <div class="dots dots--navy dots--center" data-offers-dots>
-                <?php foreach ($cl_offers as $o): ?><button type="button" class="dots__dot" aria-label="Show <?= $o['title'] ?>"></button><?php endforeach; ?>
+            <div class="container cl-related__grid">
+                <?php foreach ($cl_related as $k => $o): ?>
+                    <article class="cl-related__card">
+                        <h3><?= $o['title'] ?></h3>
+                        <p><?= $o['text'] ?></p>
+                        <?php if ($T('what-we-offer-cta-engagement.7')): ?>
+                            <a class="cl-related__link" href="<?= e(!empty($o['href']) ? $o['href'] : 'services.php') ?>"><?= $T('what-we-offer-cta-engagement.7') ?><span class="cl-related__arrow" aria-hidden="true"></span></a>
+                        <?php endif; ?>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </section>
 
-        <section class="cta-band">
+        <section class="cta-band cta-band--rich">
             <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
-            <h2 class="cta-title">{!! $T('what-we-offer-cta-engagement.4') !!}</h2>
-            <?php btn($T('what-we-offer-cta-engagement.1'), 'btn--cta', 'arrow-cta.svg'); ?>
+            <div class="cta-band__copy">
+                <?php if ($T('what-we-offer-cta-engagement.5')): ?><p class="cta-band__eyebrow">{!! $T('what-we-offer-cta-engagement.5') !!}</p><?php endif; ?>
+                <h2 class="cta-title">{!! $T('what-we-offer-cta-engagement.4') !!}</h2>
+                <?php if ($T('what-we-offer-cta-engagement.6')): ?><p>{!! $T('what-we-offer-cta-engagement.6') !!}</p><?php endif; ?>
+            </div>
+            <?php btn($T('what-we-offer-cta-engagement.1'), 'btn--cta', 'arrow-cta.svg', $T('what-we-offer-cta-engagement.1.url', 'contact-us.php')); ?>
         </section>
 
         @include('site.sections.engagement')

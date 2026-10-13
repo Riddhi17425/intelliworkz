@@ -27,9 +27,9 @@
                     <img src="{{ $settings['logo_footer'] ?? 'assets/icons/footer-logo.svg' }}" width="381" height="80" alt="{{ $settings['company_name'] ?? 'Intelliworkz' }}">
                     <p>{!! nl2br(e($settings['footer_about'] ?? '')) !!}</p>
                     <div class="footer-social">
-                        @if(!empty($settings['social_facebook']))<a href="{{ $settings['social_facebook'] }}" aria-label="Facebook" target="_blank" rel="noopener"><img src="assets/icons/social-facebook.svg" width="32" height="32" alt=""></a>@endif
-                        @if(!empty($settings['social_instagram']))<a href="{{ $settings['social_instagram'] }}" aria-label="Instagram" target="_blank" rel="noopener"><img src="assets/icons/social-2.svg" width="32" height="32" alt=""></a>@endif
-                        @if(!empty($settings['social_linkedin']))<a href="{{ $settings['social_linkedin'] }}" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/icons/social-3.svg" width="32" height="32" alt=""></a>@endif
+                        @if(!in_array(trim($settings['social_facebook'] ?? ''), ['', '#'], true))<a href="{{ $settings['social_facebook'] }}" aria-label="Facebook" target="_blank" rel="noopener"><img src="assets/icons/social-facebook.svg" width="32" height="32" alt=""></a>@endif
+                        @if(!in_array(trim($settings['social_instagram'] ?? ''), ['', '#'], true))<a href="{{ $settings['social_instagram'] }}" aria-label="Instagram" target="_blank" rel="noopener"><img src="assets/icons/social-2.svg" width="32" height="32" alt=""></a>@endif
+                        @if(!in_array(trim($settings['social_linkedin'] ?? ''), ['', '#'], true))<a href="{{ $settings['social_linkedin'] }}" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/icons/social-3.svg" width="32" height="32" alt=""></a>@endif
                     </div>
                 </div>
                 <hr class="footer-brand__line">
@@ -42,19 +42,9 @@
             <div class="footer-links">
                 @include('site.partials.footer-col', ['col' => $column('industries')])
                 <span class="v-line"></span>
-                <div class="footer-stack">
-                    @include('site.partials.footer-col', ['col' => $column('products')])
-                    <hr class="h-line">
-                    @include('site.partials.footer-col', ['col' => $column('company')])
-                </div>
+                @include('site.partials.footer-col', ['col' => $column('company')])
                 <span class="v-line"></span>
                 @include('site.partials.footer-col', ['col' => $column('services')])
-                <span class="v-line"></span>
-                <div class="footer-stack">
-                    @include('site.partials.footer-col', ['col' => $column('insights')])
-                    <hr class="h-line">
-                    @include('site.partials.footer-col', ['col' => $column('policies')])
-                </div>
             </div>
         </div>
 

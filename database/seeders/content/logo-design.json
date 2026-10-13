@@ -1,0 +1,755 @@
+{
+    "page": {
+        "slug": "logo-design",
+        "template": "marketing-sales-collaterals",
+        "is_system": false,
+        "config": {
+            "title": "Logo Design Services | Intelliworkz"
+        },
+        "meta_description": "Custom logo design from Intelliworkz: original concepts that work at every size, delivered as a complete set of vector and image files for print and digital."
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Paragraph: Home / Services / Branding & Creative / Marke…",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>Logo Design Services</span>",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Main heading: Marketing & Sales Collaterals",
+            "type": "html",
+            "value": "Logo Design<br>Services",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Paragraph: Marketing and sales collateral is the set of …",
+            "type": "textarea",
+            "value": "Your logo is usually the very first impression a potential customer makes of your brand, and the way a customer interacts with your brand on your shopfront needs to reflect their interaction with a small icon on an app. We design logos that hold their clarity at any size and in any colour, and we deliver them as a complete set of files rather than a single image that cannot be resized.",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Bold label: Dedicated In-House Design Team",
+            "type": "text",
+            "value": "Dedicated In-House Design Team",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Text: Experienced designers creating consistent, hi…",
+            "type": "textarea",
+            "value": "Your logo is developed by our in-house team, with scope, feedback rounds and file delivery agreed before work begins.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Heading: Let’s Bring Your Presentation to Life.",
+            "type": "text",
+            "value": "Let's Talk About Your Logo",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Paragraph: Tell us about your project.",
+            "type": "text",
+            "value": "Tell us about your logo requirements. Our team will review your brief and contact you about the next steps.",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Text: Subject",
+            "type": "text",
+            "value": "Subject",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Text: Your Message",
+            "type": "text",
+            "value": "Your Message",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Hero button text (the button under the \"dedicated team\" line)",
+            "type": "text",
+            "value": "Get Your Logo Designed",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.12",
+            "label": "Hero button link (#enquiry scrolls to the form)",
+            "type": "url",
+            "value": "#enquiry",
+            "sort": 12
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.13",
+            "label": "Privacy note under the form (empty = the shared one)",
+            "type": "text",
+            "value": "Your details will be handled confidentially.",
+            "sort": 13
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.1",
+            "label": "Heading: Selected Marketing & Sales Collateral Work",
+            "type": "text",
+            "value": "Selected Logo Design Work",
+            "sort": 14
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "selected-work.2",
+            "label": "Paragraph: Our collateral design work supports businesse…",
+            "type": "textarea",
+            "value": "Explore logo design work created for different brand personalities, industries and applications. The gallery should show how each identity is shaped for recognition, readability and practical use across print and digital touchpoints.",
+            "sort": 15
+        },
+        {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 16
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.1",
+            "label": "Heading: Why Intelliworkz",
+            "type": "text",
+            "value": "We Design More Than a Graphic",
+            "sort": 17
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.2",
+            "label": "Paragraph: We handle your collateral as one connected wh…",
+            "type": "textarea",
+            "value": "Many logo projects finish with one image file and nothing more. This is fine up to the point you need your logo reversed out in white or in a single colour, or the logo scaled down to an app icon, and at that point a flat graphic isn’t good enough.",
+            "sort": 18
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.3",
+            "label": "Paragraph: We bring that consistency by treating your br…",
+            "type": "textarea",
+            "value": "Each logo we send comes with the versions a working brand uses: a hero locked-up logo, horizontal, icon-only mark and a one-colour version for those limited print or budget occasions. And because we offer more than just a logo, as a full-service brand company, we also extend your logo across your entire brand, including business cards and websites - everything. This is the difference between a quick graphic and considered brand logo design that holds together across every application.",
+            "sort": 19
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.5",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 20
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "why-intelliworkz.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "Get a Free Logo Consultation",
+            "sort": 21
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.2",
+            "label": "Heading: Everything Your Brand Needs to Support Sales",
+            "type": "text",
+            "value": "Your Logo, Designed and Delivered in Every Format",
+            "sort": 23
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.3",
+            "label": "Paragraph: We design the full range of material your mar…",
+            "type": "textarea",
+            "value": "Different businesses call for different kinds of marks, and part of our role is helping you choose the right one before we design it. Our professional logo design work covers every style and delivers each one ready for print and screen.",
+            "sort": 24
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.5",
+            "label": "Button link: Enquire Now",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 25
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.4",
+            "label": "Button text: Enquire Now",
+            "type": "text",
+            "value": "See Which Logo Type Fits Your Business",
+            "sort": 26
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.1",
+            "label": "Image: Marketing and sales collatera… (services.png)",
+            "type": "image",
+            "value": "assets/images/collaterals/services.png",
+            "sort": 27
+        },
+        {
+            "section": "services-workflow",
+            "section_label": "Services + Workflow",
+            "key": "services-workflow.6",
+            "label": "Heading above the process steps (empty = none)",
+            "type": "text",
+            "value": "",
+            "sort": 28
+        },
+        {
+            "section": "dark-showcase-shared",
+            "section_label": "Dark Showcase (shared)",
+            "key": "dark-showcase-shared.1",
+            "label": "Heading: What Our PPT Design Services Cover",
+            "type": "text",
+            "value": "Selected Logo Design Case Studies",
+            "sort": 29
+        },
+        {
+            "section": "dark-showcase-shared",
+            "section_label": "Dark Showcase (shared)",
+            "key": "dark-showcase-shared.2",
+            "label": "Paragraph under the heading (empty = the shared one)",
+            "type": "textarea",
+            "value": "Explore selected logo projects that show how a clear design direction can be carried into practical logo versions for print and digital use.",
+            "sort": 30
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.2",
+            "label": "Heading: what we offer",
+            "type": "text",
+            "value": "What We Offer",
+            "sort": 31
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.3",
+            "label": "Paragraph: We design brochures, company profiles, sales …",
+            "type": "textarea",
+            "value": "Logo design is one part of a broader brand experience. Explore related creative services that help keep your visual identity, communication and digital touchpoints aligned.",
+            "sort": 32
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.4",
+            "label": "Heading: Book a Free Consultation",
+            "type": "text",
+            "value": "Ready for a Logo That Works Everywhere?",
+            "sort": 33
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1",
+            "label": "Button text: Let’s Talk",
+            "type": "text",
+            "value": "Get Your Logo Designed",
+            "sort": 34
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 35
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.5",
+            "label": "Banner: small heading above the main heading (empty = none)",
+            "type": "text",
+            "value": "",
+            "sort": 36
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.6",
+            "label": "Banner: paragraph under the heading",
+            "type": "textarea",
+            "value": "Tell us what your business stands for and where your logo needs to appear. We will discuss the right scope, deliverables and next steps for your project.",
+            "sort": 37
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.7",
+            "label": "Related services: text of the link on every card (empty = no link)",
+            "type": "text",
+            "value": "Explore Service",
+            "sort": 38
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.8",
+            "label": "Note under the pricing badge (empty = none)",
+            "type": "textarea",
+            "value": "",
+            "sort": 39
+        },
+        {
+            "section": "faqs",
+            "section_label": "Faqs",
+            "key": "faqs.1",
+            "label": "Heading: FAQs",
+            "type": "text",
+            "value": "FAQs",
+            "sort": 40
+        }
+    ],
+    "lists": [
+        {
+            "key": "cl_benefits",
+            "scope": "logo-design",
+            "items": [
+                "Custom, Original Concepts",
+                "Works at Every Size",
+                "Files for Every Use",
+                "Consistent Logo Variations"
+            ]
+        },
+        {
+            "key": "cl_filters",
+            "scope": "logo-design",
+            "items": {
+                "all": "All",
+                "wordmarks": "Wordmarks",
+                "lettermarks": "Lettermarks",
+                "symbol": "Symbol Marks",
+                "combination": "Combination Marks",
+                "redesign": "Logo Redesign"
+            }
+        },
+        {
+            "key": "cl_strip",
+            "scope": "logo-design",
+            "items": [
+                {
+                    "img": "strip-a.png",
+                    "cats": "wordmarks"
+                },
+                {
+                    "img": "strip-b.png",
+                    "cats": "lettermarks"
+                },
+                {
+                    "img": "strip-a.png",
+                    "cats": "symbol"
+                },
+                {
+                    "img": "strip-b.png",
+                    "cats": "combination"
+                },
+                {
+                    "img": "strip-a.png",
+                    "cats": "redesign"
+                }
+            ]
+        },
+        {
+            "key": "cl_metrics",
+            "scope": "logo-design",
+            "items": [
+                [
+                    "m-send.svg",
+                    "2500",
+                    "Projects Delivered"
+                ],
+                [
+                    "m-globe.svg",
+                    "7",
+                    "Countries Served"
+                ],
+                [
+                    "m-briefcase.svg",
+                    "30",
+                    "Industries Served"
+                ],
+                [
+                    "m-clock.svg",
+                    "18",
+                    "Years of Experience"
+                ],
+                [
+                    "m-users.svg",
+                    "1200",
+                    "Global Clients"
+                ],
+                [
+                    "m-award.svg",
+                    "120",
+                    "Skilled Professionals"
+                ]
+            ]
+        },
+        {
+            "key": "cl_why",
+            "scope": "logo-design",
+            "items": [
+                {
+                    "c": "var(--c-teal)",
+                    "num": "#53A2BC",
+                    "no": "01",
+                    "tab": "tab-1.svg",
+                    "icon": "why-1.svg",
+                    "bg": "why-bg-1.png",
+                    "title": "In-House Design Team",
+                    "text": "Your project is handled by our in-house design team, helping keep communication, quality checks and delivery coordinated."
+                },
+                {
+                    "c": "var(--c-red)",
+                    "num": "#E32329",
+                    "no": "02",
+                    "tab": "tab-2.svg",
+                    "icon": "why-2.svg",
+                    "bg": "why-bg-2.png",
+                    "title": "Consistent Design Support",
+                    "text": "Work with a team that understands your brief and can support related brand assets when your requirements grow."
+                },
+                {
+                    "c": "#141717",
+                    "num": "#141717",
+                    "no": "03",
+                    "tab": "tab-3.svg",
+                    "icon": "why-3.svg",
+                    "bg": "why-bg-3.png",
+                    "title": "Confidential File Handling",
+                    "text": "Your logo concepts, business information and working files are handled within the agreed project workflow."
+                },
+                {
+                    "c": "var(--c-olive)",
+                    "num": "#6B8F3E",
+                    "no": "04",
+                    "tab": "tab-4.svg",
+                    "icon": "why-4.svg",
+                    "bg": "why-bg-4.png",
+                    "title": "Clear Scope and Pricing",
+                    "text": "Deliverables, revision rounds, timelines and project pricing are agreed before design work begins."
+                }
+            ]
+        },
+        {
+            "key": "cl_tools",
+            "scope": "logo-design",
+            "items": [
+                [
+                    "tool-illustrator.svg",
+                    "#330000",
+                    "Adobe Illustrator",
+                    "Illustrate | Create"
+                ],
+                [
+                    "tool-photoshop.svg",
+                    "#001834",
+                    "Adobe Photoshop",
+                    "Edit | Retouch"
+                ],
+                [
+                    "tool-indesign.svg",
+                    "#54001A",
+                    "Adobe InDesign",
+                    "Layout | Publish"
+                ],
+                [
+                    "tool-coreldraw.svg",
+                    "#0E3B2A",
+                    "CorelDRAW",
+                    "Vector | Design"
+                ]
+            ]
+        },
+        {
+            "key": "cl_services",
+            "scope": "logo-design",
+            "items": [
+                {
+                    "title": "Logo Types We Design",
+                    "points": [
+                        "<strong>Wordmarks:</strong> Where the business name itself forms the logo, as with Google.",
+                        "<strong>Lettermarks:</strong> Built from initials for longer company names.",
+                        "<strong>Pictorial &amp; Icon Marks:</strong> A single recognisable symbol representing your identity.",
+                        "<strong>Abstract Marks:</strong> A custom shape that represents the brand personality.",
+                        "<strong>Mascot Logos:</strong> A character that gives the brand a distinct, approachable face.",
+                        "<strong>Combination Marks:</strong> A name and symbol designed to work together seamlessly."
+                    ],
+                    "open": true
+                },
+                {
+                    "title": "What You Receive",
+                    "points": [
+                        "<strong>A choice of initial concepts</strong> to review and evaluate.",
+                        "<strong>Primary, horizontal, stacked and single-colour versions</strong> for every placement.",
+                        "<strong>Every format you need:</strong> AI, EPS, SVG, PDF, PNG and JPG.",
+                        "<strong>Colour codes for print and digital</strong> (CMYK, RGB, HEX, Pantone®) so the logo stays consistent across media.",
+                        "<strong>A short usage guide</strong> explaining clear space, minimum sizing and how to apply the logo correctly."
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "cl_flow",
+            "scope": "logo-design",
+            "items": [
+                {
+                    "c": "#C42030",
+                    "seg": 0,
+                    "img": 29.33,
+                    "dot": 145,
+                    "tx": 37,
+                    "tw": 230,
+                    "title": "1. Understanding Your Brand",
+                    "text": "We begin with a short brief covering what you do, who you serve, and how you want your business to be seen."
+                },
+                {
+                    "c": "#CF6CB9",
+                    "seg": 304,
+                    "img": 337.1,
+                    "dot": 452.77,
+                    "tx": 335.27,
+                    "tw": 230,
+                    "title": "2. Concept Development",
+                    "text": "We design a set of initial logo concepts, each with a clear reason behind it, and share them for your review."
+                },
+                {
+                    "c": "#59B38D",
+                    "seg": 608,
+                    "img": 655.95,
+                    "dot": 771.61,
+                    "tx": 663.61,
+                    "tw": 230,
+                    "title": "3. Your Feedback",
+                    "text": "You tell us which concepts work and which do not, and we talk through the options and directions together."
+                },
+                {
+                    "c": "#C9AC61",
+                    "seg": 912,
+                    "img": 940.35,
+                    "dot": 1056.02,
+                    "tx": 948.02,
+                    "tw": 230,
+                    "title": "4. Refinement",
+                    "text": "We develop your chosen concept, adjusting the type, colour and spacing until the logo is right for your brand."
+                },
+                {
+                    "c": "#53A2BC",
+                    "seg": 1216,
+                    "img": 1245.33,
+                    "dot": 1361,
+                    "tx": 1253,
+                    "tw": 230,
+                    "title": "5. Final Delivery",
+                    "text": "We prepare every version and file format you need, along with your colour codes and a short usage guide."
+                },
+                {
+                    "c": "#7F68CE",
+                    "seg": 1520,
+                    "img": 1568.76,
+                    "dot": 1684.43,
+                    "tx": 1554.93,
+                    "tw": 269,
+                    "title": "6. Beyond the Logo",
+                    "text": "Where you want it, we carry the new logo into the rest of your branding, from stationery to social media."
+                }
+            ]
+        },
+        {
+            "key": "cl_flow_next",
+            "scope": "logo-design",
+            "items": [
+                291,
+                611,
+                921,
+                1241,
+                1551
+            ]
+        },
+        {
+            "key": "cl_faqs",
+            "scope": "logo-design",
+            "items": [
+                [
+                    "What is included in your logo design services?",
+                    "You also choose from either a selection of original ideas or your chosen idea fully refined into a logo, which we deliver to you in every format possible. In addition to our basic/horizontal and mono options and your colours and brief usage info, the source files will all be included."
+                ],
+                [
+                    "How much does professional logo design cost?",
+                    "Depending on the size of the project: a solo logo, or a logo together with a broader visual identity. Once you’ve defined this need, you'll know exactly what to pay from one of our logo packages – no hidden extra charges when the work is done."
+                ],
+                [
+                    "How long does the logo design process take?",
+                    "Logos generally take 1 to 2 weeks to finalize based on the number of concepts and rounds of revision. We will agree with you on the project turnaround time and stick to it."
+                ],
+                [
+                    "Do you offer logo design for small businesses and startups?",
+                    "Definitely. A good portion of the logos we produce are for start-ups and expanding small businesses. We make the logo process straightforward and our logo pricing affordable so a first logo is manageable rather than daunting."
+                ],
+                [
+                    "What file formats will I receive with my logo?",
+                    "Vector files (AI, EPS, SVG and PDF) for printing and scaling to any size, and image files (PNG and JPG) for everyday digital use. CorelDRAW (CDR) files are available if your printer requires them."
+                ],
+                [
+                    "Can you redesign or refresh an existing logo?",
+                    "Depending on the brand, we might refresh an old one, keeping what our customers know and are used to, or start one from scratch if the brand has outgrown it. We start off looking at the pros and cons of the current logomark, the symbol, image, or graphic form."
+                ],
+                [
+                    "What tools do you use in logo design?",
+                    "Primarily Adobe Illustrator, so the logo is built as vector artwork that stays sharp at any size, supported by Photoshop for mockups and CorelDRAW where CDR files are needed."
+                ]
+            ]
+        },
+        {
+            "key": "ve_form_fields",
+            "scope": "logo-design",
+            "items": [
+                [
+                    "Full Name",
+                    "Enter your full name",
+                    "text",
+                    "name"
+                ],
+                [
+                    "Company Name",
+                    "Enter your company name",
+                    "text",
+                    "company"
+                ],
+                [
+                    "Email ID",
+                    "Enter your email address",
+                    "email",
+                    "email"
+                ],
+                [
+                    "Contact Number",
+                    "Enter your contact number",
+                    "tel",
+                    "phone"
+                ]
+            ]
+        },
+        {
+            "key": "cl_related",
+            "scope": "logo-design",
+            "items": [
+                {
+                    "title": "Brand Identity &amp; Design",
+                    "text": "We bring logos, colours, typography, imagery and brand language together into one consistent system for print, screen and everyday touchpoints.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Marketing and Sales Collaterals",
+                    "text": "We design brochures, presentations, proposals, product sheets and case studies that keep sales and marketing materials clear and on-brand.",
+                    "href": "marketing-sales-collaterals.php"
+                },
+                {
+                    "title": "Packaging Design",
+                    "text": "We develop and adapt packaging artwork for new launches, redesigns and multi-SKU rollouts, with production requirements in mind.",
+                    "href": "packaging-design.php"
+                },
+                {
+                    "title": "Campaign Concepts &amp; Ad Creatives",
+                    "text": "We shape the campaign idea, then carry it across banners, video and social creative so every format feels connected.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Corporate Communication",
+                    "text": "We align communication for employees, customers, investors and the public through clear strategy, messaging and supporting materials.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "Visual Identity Systems",
+                    "text": "We unify colour, typography, imagery and graphic style, then define usage rules to keep every touchpoint consistent.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "PPT Design",
+                    "text": "We structure and design clear presentations for sales, company profiles, pitches and internal communication, with reusable templates where needed.",
+                    "href": "ppt-design.php"
+                },
+                {
+                    "title": "Advertising Services",
+                    "text": "We connect advertising strategy, creative, media and reporting so campaigns work toward a shared goal across platforms.",
+                    "href": "services.php#svc-1"
+                },
+                {
+                    "title": "UI/UX Design",
+                    "text": "We design digital experiences around user needs and business goals, from research and user flows to interfaces and prototypes.",
+                    "href": "services.php#svc-1"
+                }
+            ]
+        }
+    ]
+}

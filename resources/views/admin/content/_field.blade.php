@@ -10,6 +10,11 @@
         <label class="form-label" for="fld_{{ $id }}">{{ $f->label }}<span class="adm-type">{{ \App\Models\ContentField::TYPES[$f->type] ?? $f->type }}</span></label>
         @if($f->type === 'text')
             <input id="fld_{{ $id }}" type="text" name="fields[{{ $id }}]" value="{{ $val }}" maxlength="500" class="form-control @if($err) is-invalid @endif">
+        @elseif($f->type === 'toggle')
+            <select id="fld_{{ $id }}" name="fields[{{ $id }}]" class="form-select" style="max-width: 260px">
+                <option value="1" @selected($val !== '0')>Show</option>
+                <option value="0" @selected($val === '0')>Hide</option>
+            </select>
         @elseif($f->type === 'url')
             <input id="fld_{{ $id }}" type="text" name="fields[{{ $id }}]" value="{{ $val }}" maxlength="500" placeholder="https://… or contact-us.php or #" class="form-control @if($err) is-invalid @endif">
         @else

@@ -21,7 +21,7 @@
 
 $faq = ['label' => 'Questions & answers', 'section' => 'FAQs', 'title' => 0, 'sort' => 90, 'fields' => [0 => ['Question'], 1 => ['Answer', 'textarea']]];
 $offer = ['label' => '"What we offer" cards', 'section' => 'What We Offer', 'title' => 'title', 'sort' => 80, 'add' => false, 'remove' => false,
-    'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image']]];
+    'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image'], 'href' => ['Link of the arrow (page address)', 'url']]];
 $services = ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'points' => ['Points (one per line)', 'lines']]];
 $benefits = ['label' => 'Benefit chips under the intro', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5];
 $statsPair = ['label' => 'Statistic', 'section' => 'Numbers', 'title' => 1, 'sort' => 30, 'add' => false, 'remove' => false, 'fields' => [0 => ['Number'], 1 => ['Label']]];
@@ -48,14 +48,15 @@ return [
     've_form_fields' => ['label' => 'Enquiry form fields', 'section' => 'Enquiry form', 'title' => 0, 'sort' => 2, 'add' => false, 'remove' => false, 'reorder' => false,
         'fields' => [0 => ['Field label'], 1 => ['Placeholder']]],
     'showcase_cards' => ['label' => 'Dark showcase slides', 'section' => 'Dark Showcase', 'title' => 'tag', 'sort' => 3, 'add' => false, 'remove' => false,
-        'fields' => ['img' => ['Picture', 'image'], 'tag' => ['Tag']]],
+        'fields' => ['img' => ['Picture', 'image'], 'tag' => ['Tag'], 'title' => ['Heading (leave empty for the shared one)'], 'text' => ['Text (leave empty for the shared one)', 'textarea'], 'href' => ['Button link (page address)', 'url'],
+            'stats' => ['Three numbers', 'repeater', 'fields' => [0 => ['Number'], 1 => ['Label']]]]],
     'engagement_models' => ['label' => 'Engagement models', 'section' => 'Engagement Model', 'title' => 'title', 'sort' => 4, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Title', 'html'], 'tag' => ['Tag', 'html'], 'img' => ['Picture', 'image'], 'bullets' => ['Points (one per line)', 'lines']]],
 
     // ---------- home page ----------
     'metrics' => ['label' => 'Number strip', 'section' => 'Hero', 'title' => 'label', 'sort' => 10, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
     'domains' => ['label' => 'Service cards', 'section' => 'Services', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
-        'fields' => ['title' => ['Card title'], 'intro' => ['Introduction', 'textarea'], 'items' => ['Links (one per line)', 'lines'], 'cta' => ['Button text']]],
+        'fields' => ['title' => ['Card title'], 'intro' => ['Introduction', 'textarea'], 'items' => ['Links (one per line; add  | page-address  to link one)', 'lines'], 'cta' => ['Button text'], 'href' => ['Button link', 'url']]],
     'outsourcing_steps' => ['label' => '4-step engagement process', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 30, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
     'outsourcing_cards' => ['label' => 'Outsourcing cards', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 31, 'add' => false, 'remove' => false,
@@ -71,22 +72,13 @@ return [
     'process_row_2' => ['label' => 'Process cards (bottom row)', 'section' => 'Process', 'title' => 'title', 'sort' => 71, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Photo', 'image']]],
     'blog_posts' => ['label' => 'Insight posts', 'section' => 'Insights', 'title' => 'title', 'sort' => 80,
-        'fields' => ['img' => ['Image', 'image'], 'date' => ['Date'], 'title' => ['Title']]],
+        'fields' => ['img' => ['Image', 'image'], 'date' => ['Date'], 'title' => ['Title'], 'href' => ['Read More link (page address)', 'url']]],
 
     // ---------- about ----------
-    'ab_metrics' => ['label' => 'Number strip', 'section' => 'Numbers', 'title' => 'label', 'sort' => 5, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'suffix' => ['Suffix (e.g. +)'], 'label' => ['Label']]],
-    'ab_caps' => ['label' => 'The six capabilities', 'section' => 'Capabilities', 'title' => 'name', 'sort' => 10, 'add' => false, 'remove' => false,
-        'fields' => ['name' => ['Name'], 'text' => ['Description', 'textarea'], 'items' => ['Services (one per line)', 'lines'], 'img' => ['Picture', 'image'], 'alt' => ['Picture description (alt text)']]],
-    'ab_diff_lines' => ['label' => 'Discipline statements', 'section' => 'The Intelliworkz Difference', 'title' => 0, 'sort' => 12, 'fields' => [0 => ['Highlighted word'], 1 => ['Rest of the sentence']]],
-    'ab_think' => ['label' => 'How-we-think steps', 'section' => 'How We Think', 'title' => 0, 'sort' => 14, 'add' => false, 'remove' => false, 'fields' => [0 => ['Word'], 1 => ['Short description']]],
-    'ab_values' => ['label' => 'Values', 'section' => 'Values', 'title' => 'tag', 'sort' => 16, 'add' => false, 'remove' => false, 'fields' => ['tag' => ['Label'], 'title' => ['Statement'], 'text' => ['Description', 'textarea']]],
-    'ab_steps' => ['label' => 'How-we-work steps', 'section' => 'How We Work', 'title' => 'title', 'sort' => 18, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
-    'ab_team_tiles' => ['label' => 'Collage pictures', 'section' => 'Team', 'title' => 'label', 'sort' => 20, 'add' => false, 'remove' => false, 'fields' => ['img' => ['Picture', 'image'], 'label' => ['Caption']]],
-    'ab_team_tags' => ['label' => 'Team tags', 'section' => 'Team', 'kind' => 'strings', 'sort' => 21],
-    'ab_eco' => ['label' => 'Group companies', 'section' => 'Ecosystem', 'title' => 'name', 'sort' => 22,
-        'fields' => ['name' => ['Company name'], 'cat' => ['What they do'], 'tags' => ['Expertise tags (one per line)', 'lines']]],
-    'ab_stay' => ['label' => 'Relationship points', 'section' => 'Why Clients Stay', 'title' => 'title', 'sort' => 24, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
-
+    'ab_metrics' => ['label' => 'Number strip', 'section' => 'Numbers', 'title' => 'label', 'sort' => 5, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
+    'ab_purpose' => ['label' => 'Purpose points', 'section' => '04 Our Purpose', 'title' => 'title', 'sort' => 10, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
+    'ab_nodes' => ['label' => 'Capability circles around the centre', 'section' => '05 Our Approach', 'title' => 'label', 'sort' => 12, 'add' => false, 'remove' => false, 'fields' => ['label' => ['Name']]],
+    'ab_reasons' => ['label' => 'Reasons to choose us', 'section' => '07 Why Choose Us', 'title' => 'title', 'sort' => 16, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
     // ---------- contact ----------
     'ct_offices' => ['label' => 'Office details (tabs)', 'section' => 'Offices', 'kind' => 'maprows', 'title' => 'country', 'sort' => 10, 'add' => false, 'remove' => false,
         'fields' => ['tab' => ['Tab label'], 'country' => ['Country'], 'city' => ['City / region'], 'phone' => ['Phone number(s)'], 'email' => ['E-mail'], 'call' => ['Phone number for the "Call" button (digits only)'],
@@ -156,14 +148,16 @@ return [
     'cl_services' => $services,
     'cl_flow' => ['label' => 'Workflow steps', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
     'cl_flow_next' => ['label' => 'Arrow positions', 'section' => 'Process', 'hidden' => true],
-    'cl_offers' => $offer,
+    'cl_related' => ['label' => 'Related service cards', 'section' => 'What We Offer + Cta + Engagement', 'title' => 'title', 'sort' => 80,
+        'fields' => ['title' => ['Service name'], 'text' => ['Description', 'textarea'], 'href' => ['Card link (page address)', 'url']]],
     'cl_faqs' => $faq,
 
     // ---------- packaging ----------
     'pk_benefits' => $benefits,
     'pk_filters' => $filters,
-    'pk_tiles' => ['label' => 'Work grid', 'section' => 'Gallery', 'title' => 'cats', 'sort' => 20, 'add' => false, 'remove' => false,
-        'fields' => ['img' => ['Image', 'image'], 'cats' => ['Filter categories (keys, space separated)']]],
+    'pk_tiles' => ['label' => 'Work grid (one card per position; each tab has its own picture)', 'section' => 'Gallery', 'title' => 'img', 'sort' => 20, 'add' => false, 'remove' => false,
+        'fields' => ['img' => ['Picture on the "All" tab', 'image'], 'rollout' => ['Picture on the "Packaging Rollout" tab', 'image'], 'beauty' => ['Picture on the "Beauty & Skincare" tab', 'image'],
+            'food' => ['Picture on the "Food & Beverage" tab', 'image'], 'appliance' => ['Picture on the "Appliance & Electronics" tab', 'image']]],
     'pk_stats' => ['label' => 'Statistics', 'section' => 'Numbers', 'kind' => 'groups', 'group' => 'Row', 'title' => 2, 'sort' => 30, 'add' => false, 'remove' => false,
         'fields' => [0 => ['Number'], 1 => ['Suffix (e.g. +)'], 2 => ['Label', 'html']]],
     'pk_why' => $whyBg,
@@ -203,6 +197,9 @@ return [
     'mf_lose' => ['label' => '"Where manufacturers lose ground" cards', 'section' => 'Where Manufacturers Lose Ground', 'title' => 'title', 'sort' => 30, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image']]],
     'mf_services' => ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'text' => ['Description', 'textarea']]],
+    'svc_sections' => ['label' => 'Service groups', 'section' => 'Service Groups', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
+        'fields' => ['tab' => ['Name in the tab bar'], 'tag' => ['Small coloured label'], 'title' => ['Heading'], 'text' => ['Description', 'textarea'], 'btn' => ['Button text'], 'href' => ['Button link', 'url'], 'img' => ['Banner picture', 'image'],
+            'items' => ['Services (one per line; add  | page-address  to link one)', 'lines']]],
     'mf_offers' => $offer,
     'mf_faqs' => $faq,
 ];

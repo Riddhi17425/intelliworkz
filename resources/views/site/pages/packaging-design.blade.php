@@ -58,12 +58,12 @@ $vc = 'assets/icons/video/';        // shared icons
                                 <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
-                        <label class="field"><span>{!! $T('hero.9') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
-                        <label class="field"><span>{!! $T('hero.10') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
+                        <label class="field"><span>{!! $T('hero.9') !!}</span><input type="text" name="subject" placeholder="{{ $G('form.2', 'Enter your subject') }}"></label>
+                        <label class="field"><span>{!! $T('hero.10') !!}</span><textarea name="message" rows="1" placeholder="{{ $G('form.3', 'Tell us about your requirements') }}"></textarea></label>
                     </div>
                     <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                     <button type="submit" class="btn btn--cta btn--block">{!! $T('hero.11') !!}</button>
-                    <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
+                    <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">{{ $G('form.1', 'We respect your privacy. Your information is safe with us.') }}</p>
                 </form>
             </div>
         </div>

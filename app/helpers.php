@@ -33,6 +33,9 @@ if (!function_exists('asset_url')) {
 if (!function_exists('btn')) {
     function btn(string $label, string $class = '', ?string $icon = null, string $href = '#'): void
     {
+        if (trim((string) $href) === '' || trim((string) $href) === '#') {
+            $href = 'contact-us.php';   // a button always leads somewhere
+        }
         echo '<a href="' . e($href ?: '#') . '" class="btn ' . e($class) . '">' . $label;
         if ($icon) {
             echo '<img src="assets/icons/' . e($icon) . '" width="24" height="24" alt="">';
@@ -117,5 +120,20 @@ if (!function_exists('map_link')) {
             $href = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($query);
         }
         return '<a class="addr-link" href="' . e($href) . '" target="_blank" rel="noopener">' . $html . '</a>';
+    }
+}
+
+if (!function_exists('tool_icon')) {
+    /**
+     * App icon in the "tools" strips. Uses the complete 72px icon (tile, border and logo in one SVG, named *-full.svg)
+     * when one exists; otherwise the logo is drawn on a tile of the given colour, as before.
+     */
+    function tool_icon(string $base, string $file, ?string $bg = null): string
+    {
+        $full = preg_replace('/\.svg$/', '-full.svg', $file);
+        if ($full !== $file && is_file(public_path($base . $full))) {
+            return '<img class="tool-icon" src="' . e($base . $full) . '" width="72" height="72" alt="">';
+        }
+        return '<span class="mg-tool__icon" style="background: ' . e((string) $bg) . '"><img src="' . e(iu($base, $file)) . '" alt=""></span>';
     }
 }

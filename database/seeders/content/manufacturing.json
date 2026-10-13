@@ -40,7 +40,7 @@
             "key": "hero.3",
             "label": "Paragraph: Home / Industries / Manufacturing",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Industries</a> / <span>Manufacturing</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"industries\">Industries</a> / <span>Manufacturing</span>",
             "sort": 3
         },
         {
@@ -67,7 +67,7 @@
             "key": "hero.7",
             "label": "Button link: Start a Project",
             "type": "url",
-            "value": "#",
+            "value": "contact-us.php",
             "sort": 6
         },
         {
@@ -85,7 +85,7 @@
             "key": "hero.9",
             "label": "Button link: Explore Our Services",
             "type": "url",
-            "value": "#",
+            "value": "services.php",
             "sort": 8
         },
         {
@@ -220,7 +220,7 @@
             "key": "who-we-support.4",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
+            "value": "contact-us.php",
             "sort": 23
         },
         {
@@ -269,13 +269,22 @@
             "sort": 28
         },
         {
+            "section": "what-we-bring-cta",
+            "section_label": "What We Bring + Cta",
+            "key": "what-we-bring-cta.1.url",
+            "label": "Button link: Start a Conversation",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 29
+        },
+        {
             "section": "faqs",
             "section_label": "Faqs",
             "key": "faqs.1",
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 29
+            "sort": 30
         }
     ],
     "lists": [

@@ -30,7 +30,7 @@
             "key": "hero.2",
             "label": "Paragraph: Home / Services / Animation / 3D Modeling and…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Animation</a> / <span>3D Modeling and Rendering</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-5\">Animation</a> / <span>3D Modeling and Rendering</span>",
             "sort": 2
         },
         {
@@ -187,13 +187,22 @@
             "sort": 19
         },
         {
+            "section": "360-viewer-selected-work",
+            "section_label": "360 Viewer + Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 20
+        },
+        {
             "section": "stats",
             "section_label": "Stats",
             "key": "stats.1",
             "label": "Image (why-corner.png)",
             "type": "image",
             "value": "assets/images/3d/why-corner.png",
-            "sort": 20
+            "sort": 21
         },
         {
             "section": "why-intelliworkz",
@@ -202,7 +211,7 @@
             "label": "Heading: Why Intelliworkz",
             "type": "text",
             "value": "Why Intelliworkz",
-            "sort": 21
+            "sort": 22
         },
         {
             "section": "why-intelliworkz",
@@ -211,7 +220,7 @@
             "label": "Paragraph: The value of a render is simple: people belie…",
             "type": "textarea",
             "value": "The value of a render is simple: people believe what they can see. A photorealistic image of a product lets a customer picture owning it, lets a stakeholder sign off on it with confidence, and lets your marketing and sales teams start work long before the product reaches a shelf.",
-            "sort": 22
+            "sort": 23
         },
         {
             "section": "why-intelliworkz",
@@ -220,7 +229,7 @@
             "label": "Paragraph: Our team is involved in the entire workflow: …",
             "type": "textarea",
             "value": "Our team is involved in the entire workflow: setting up the model, all the way through to lighting the final image and finishing rendering; we provide a final result suited to its end purpose. For example, a pure studio shot for an online product directory would require very different lighting, composition, and finishing to a studio or scene designed for an advertising creative or a technical render suitable for a stakeholder.",
-            "sort": 23
+            "sort": 24
         },
         {
             "section": "why-intelliworkz",
@@ -229,7 +238,7 @@
             "label": "Paragraph: Because everything is produced by our own tea…",
             "type": "textarea",
             "value": "Because everything is produced by our own team, your designs never leave our hands, which matters when you are rendering a product that has not yet launched. You get consistent quality across every image, and a team that already understands your product by the second project.",
-            "sort": 24
+            "sort": 25
         },
         {
             "section": "why-intelliworkz",
@@ -237,8 +246,8 @@
             "key": "why-intelliworkz.6",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 25
+            "value": "contact-us.php",
+            "sort": 26
         },
         {
             "section": "why-intelliworkz",
@@ -247,7 +256,16 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 26
+            "sort": 27
+        },
+        {
+            "section": "why-intelliworkz",
+            "section_label": "Why Intelliworkz",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 28
         },
         {
             "section": "tools-strip",
@@ -256,7 +274,7 @@
             "label": "Image (tools-bg-687972.png)",
             "type": "image",
             "value": "assets/images/3d/tools-bg-687972.png",
-            "sort": 27
+            "sort": 29
         },
         {
             "section": "tools-strip",
@@ -265,7 +283,7 @@
             "label": "Image: STP, FBX, STL and OBJ file ic… (file-formats.png)",
             "type": "image",
             "value": "assets/images/3d/file-formats.png",
-            "sort": 28
+            "sort": 30
         },
         {
             "section": "services-workflow",
@@ -274,7 +292,7 @@
             "label": "Heading: The Renders We Produce",
             "type": "text",
             "value": "The Renders We Produce",
-            "sort": 29
+            "sort": 31
         },
         {
             "section": "services-workflow",
@@ -283,7 +301,7 @@
             "label": "Paragraph: Our 3d product rendering services cover the v…",
             "type": "textarea",
             "value": "Our 3d product rendering services cover the visuals a business needs to sell, present and plan, from a single hero product shot to a full set of images for a catalogue, an online store or a campaign. Some clients send a finished 3D model ready to render; others send a CAD file or a set of drawings for us to model first. Either way, the finished images are built to match how and where you will use them.",
-            "sort": 30
+            "sort": 32
         },
         {
             "section": "services-workflow",
@@ -291,8 +309,8 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 31
+            "value": "contact-us.php",
+            "sort": 33
         },
         {
             "section": "services-workflow",
@@ -301,7 +319,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 32
+            "sort": 34
         },
         {
             "section": "services-workflow",
@@ -310,7 +328,7 @@
             "label": "Image: 3D rendering services overview (services.png)",
             "type": "image",
             "value": "assets/images/3d/services.png",
-            "sort": 33
+            "sort": 35
         },
         {
             "section": "dark-showcase-shared",
@@ -319,7 +337,7 @@
             "label": "Heading: What Our 3D Modeling and Rendering …",
             "type": "text",
             "value": "What Our 3D Modeling and Rendering Services Cover",
-            "sort": 34
+            "sort": 36
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -328,7 +346,7 @@
             "label": "Heading: what we offer",
             "type": "text",
             "value": "what we offer",
-            "sort": 35
+            "sort": 37
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -337,7 +355,7 @@
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
             "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
-            "sort": 36
+            "sort": 38
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -346,7 +364,7 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
-            "sort": 37
+            "sort": 39
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -355,7 +373,16 @@
             "label": "Button text: Let’s Talk",
             "type": "text",
             "value": "Let’s Talk",
-            "sort": 38
+            "sort": 40
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 41
         },
         {
             "section": "faqs",
@@ -364,7 +391,7 @@
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 39
+            "sort": 42
         }
     ],
     "lists": [

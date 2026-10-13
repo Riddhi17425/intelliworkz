@@ -39,10 +39,13 @@ $vc = 'assets/icons/video/';         // shared icons
                                 <span>{!! $T('hero.5') !!}</span>
                             </div>
                         </div>
+                        <?php if ($T('hero.11')): ?>
+                        <div class="ve-hero__cta"><?php btn($T('hero.11'), 'btn--cta', 'arrow-link.svg', $T('hero.12', '#enquiry')); ?></div>
+                        <?php endif; ?>
                     </div>
                 </div>
 
-                <form class="lead-form" action="{{ route('inquiries.store') }}" method="post" data-inquiry-form novalidate>
+                <form class="lead-form" id="enquiry" action="{{ route('inquiries.store') }}" method="post" data-inquiry-form novalidate>
 @csrf
 <input type="hidden" name="source" value="{{ $page->slug }}">
 <input type="text" name="website" value="" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true">
@@ -58,12 +61,12 @@ $vc = 'assets/icons/video/';         // shared icons
                                 <?php endforeach; ?>
                             </div>
                         <?php endforeach; ?>
-                        <label class="field"><span>{!! $T('hero.8') !!}</span><input type="text" name="subject" placeholder="Enter your subject"></label>
-                        <label class="field"><span>{!! $T('hero.9') !!}</span><textarea name="message" rows="1" placeholder="Tell us about your requirements"></textarea></label>
+                        <label class="field"><span>{!! $T('hero.8') !!}</span><input type="text" name="subject" placeholder="{{ $G('form.2', 'Enter your subject') }}"></label>
+                        <label class="field"><span>{!! $T('hero.9') !!}</span><textarea name="message" rows="1" placeholder="{{ $G('form.3', 'Tell us about your requirements') }}"></textarea></label>
                     </div>
                     <p class="form-status" data-form-status role="status" aria-live="polite"></p>
                     <button type="submit" class="btn btn--cta btn--block">{!! $T('hero.10') !!}</button>
-                    <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">We respect your privacy. Your information is safe with us.</p>
+                    <p class="lead-form__privacy"><img src="<?= $vc ?>lock.svg" width="14" height="14" alt="">{{ $T('hero.13') ?: $G('form.1', 'We respect your privacy. Your information is safe with us.') }}</p>
                 </form>
             </div>
         </div>

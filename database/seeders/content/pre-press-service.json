@@ -24,7 +24,7 @@
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Branding & Creative / Pre-P…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"#\">Services</a> / <a href=\"#\">Branding &amp; Creative</a> / <span>Pre-Press Service</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>Pre-Press Service</span>",
             "sort": 1
         },
         {
@@ -136,13 +136,22 @@
             "sort": 13
         },
         {
+            "section": "selected-work",
+            "section_label": "Selected Work",
+            "key": "filter-tabs.1",
+            "label": "Filter tabs under the heading (All / categories)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 14
+        },
+        {
             "section": "stats",
             "section_label": "Stats",
             "key": "stats.1",
             "label": "Image (stats.png)",
             "type": "image",
             "value": "assets/images/prepress/stats.png",
-            "sort": 14
+            "sort": 15
         },
         {
             "section": "what-you-get",
@@ -151,7 +160,7 @@
             "label": "Heading: What You Get From Our Pre-Press Services Beyo…",
             "type": "text",
             "value": "What You Get From Our Pre-Press Services Beyond File Preparation",
-            "sort": 15
+            "sort": 16
         },
         {
             "section": "what-you-get",
@@ -160,7 +169,7 @@
             "label": "Paragraph: Pre-production & Color Management is Not Just…",
             "type": "textarea",
             "value": "Pre-production &amp; Color Management is Not Just a Case of Exporting the PDF. Artwork preparation for print covers a wide range of activities that ensure your finished printed product matches your design aspirations accurately. Quality control ensures every artwork is screened for color profile, the images have been supplied with the required resolution, any necessary bleed has been set correctly, fonts used are all embedded or outlined, copy and positioning are perfectly consistent, and it is 100% production ready to ensure there are no reprinting, lost production time, or poor print results.",
-            "sort": 16
+            "sort": 17
         },
         {
             "section": "what-you-get",
@@ -169,7 +178,7 @@
             "label": "Paragraph: The whole process must culminate in file inte…",
             "type": "textarea",
             "value": "The whole process must culminate in file integrity, and at Intelliworkz, we adhere to a very rigorous pre-press &amp; color management procedure before every file goes into production; we're in communication with the designer, printer, and production team daily.",
-            "sort": 17
+            "sort": 18
         },
         {
             "section": "what-you-get",
@@ -178,7 +187,7 @@
             "label": "Paragraph: Having trusted pre-press companies that can s…",
             "type": "textarea",
             "value": "Having trusted pre-press companies that can support all our graphic needs is a must, a team of specialists that take files from brief through to litho and digital production consistently throughout all.",
-            "sort": 18
+            "sort": 19
         },
         {
             "section": "what-you-get",
@@ -186,8 +195,8 @@
             "key": "what-you-get.6",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 19
+            "value": "contact-us.php",
+            "sort": 20
         },
         {
             "section": "what-you-get",
@@ -196,7 +205,16 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 20
+            "sort": 21
+        },
+        {
+            "section": "what-you-get",
+            "section_label": "What You Get",
+            "key": "card-numbers.1",
+            "label": "Numbers on the cards (01, 02 …)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
         },
         {
             "section": "tools-strip",
@@ -205,7 +223,7 @@
             "label": "Image (tools-bg.png)",
             "type": "image",
             "value": "assets/images/seo/tools-bg.png",
-            "sort": 21
+            "sort": 23
         },
         {
             "section": "services-workflow",
@@ -214,7 +232,7 @@
             "label": "Heading: Comprehensive Pre-Press Services for Commerci…",
             "type": "text",
             "value": "Comprehensive Pre-Press Services for Commercial and Packaging Printing",
-            "sort": 22
+            "sort": 24
         },
         {
             "section": "services-workflow",
@@ -223,7 +241,7 @@
             "label": "Paragraph: Get every print project prepared for producti…",
             "type": "textarea",
             "value": "Get every print project prepared for production before we start, no matter if your project is in packaging printing, in printing labels, in marketing collateral printing, in producing brochures printing, or in wide-format print graphics. Our digital pre-press services ensure every potential print production problem is prevented or caught before the first page is sent for print, every.single.print job, to the very last page.",
-            "sort": 23
+            "sort": 25
         },
         {
             "section": "services-workflow",
@@ -231,8 +249,8 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "#",
-            "sort": 24
+            "value": "contact-us.php",
+            "sort": 26
         },
         {
             "section": "services-workflow",
@@ -241,7 +259,7 @@
             "label": "Button text: Enquire Now",
             "type": "text",
             "value": "Enquire Now",
-            "sort": 25
+            "sort": 27
         },
         {
             "section": "services-workflow",
@@ -250,7 +268,7 @@
             "label": "Image: Pre-press services overview (services.png)",
             "type": "image",
             "value": "assets/images/prepress/services.png",
-            "sort": 26
+            "sort": 28
         },
         {
             "section": "dark-showcase-shared",
@@ -259,7 +277,7 @@
             "label": "Heading: What Our Pre-Press Services Cover",
             "type": "text",
             "value": "What Our Pre-Press Services Cover",
-            "sort": 27
+            "sort": 29
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -268,7 +286,7 @@
             "label": "Heading: What we offer",
             "type": "text",
             "value": "What we offer",
-            "sort": 28
+            "sort": 30
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -277,7 +295,7 @@
             "label": "Paragraph: We design brochures, company profiles, sales …",
             "type": "textarea",
             "value": "We design brochures, company profiles, sales presentations, proposals, product catalogues and digital marketing materials. From a single brochure to a complete suite of branded collateral, every piece follows a consistent design process tailored to its format and purpose.",
-            "sort": 29
+            "sort": 31
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -286,7 +304,7 @@
             "label": "Heading: Book a Free Consultation",
             "type": "text",
             "value": "Book a Free Consultation",
-            "sort": 30
+            "sort": 32
         },
         {
             "section": "what-we-offer-cta-engagement",
@@ -295,7 +313,16 @@
             "label": "Button text: Let’s Talk",
             "type": "text",
             "value": "Let’s Talk",
-            "sort": 31
+            "sort": 33
+        },
+        {
+            "section": "what-we-offer-cta-engagement",
+            "section_label": "What We Offer + Cta + Engagement",
+            "key": "what-we-offer-cta-engagement.1.url",
+            "label": "Button link: Let’s Talk",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 34
         },
         {
             "section": "faqs",
@@ -304,7 +331,7 @@
             "label": "Heading: FAQs",
             "type": "text",
             "value": "FAQs",
-            "sort": 32
+            "sort": 35
         }
     ],
     "lists": [

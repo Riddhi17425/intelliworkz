@@ -77,7 +77,7 @@
             "key": "hero.8",
             "label": "Button link: Explore Our Services",
             "type": "url",
-            "value": "#",
+            "value": "services.php",
             "sort": 7
         },
         {

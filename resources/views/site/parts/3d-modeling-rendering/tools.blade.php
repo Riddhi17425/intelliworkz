@@ -14,7 +14,7 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
                 <?php $is_ps = $t[0] === 'tool-photoshop.svg'; ?>
                 <li class="ve-tool <?= $t[0] === 'tool-3dsmax.png' || $is_ps ? '' : 've-tool--mark' ?> <?= $t[0] === 'tool-blender.svg' ? 'td-tool--lg' : '' ?>">
                     <?php if ($is_ps): ?>
-                        <span class="td-tool__tile"><img src="<?= iu($tc, $t[0]) ?>" alt=""></span>
+                        <?= tool_icon($tc, $t[0], '#001834') ?>
                     <?php else: ?>
                         <img src="<?= iu((str_ends_with($t[0], '.svg') ? $tc : $ti), $t[0]) ?>" alt="">
                     <?php endif; ?>

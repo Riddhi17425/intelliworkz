@@ -20,7 +20,7 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <?php foreach ($td_benefit_cards as $c): ?>
                 <article class="td-benefit <?= $c['raised'] ? 'is-raised' : '' ?>" style="--c: <?= $c['color'] ?? $c['ring'] ?>">
                     <span class="td-benefit__deco"></span>
-                    <span class="td-benefit__no" style="color: <?= $c['noc'] ?>66"><?= $c['no'] ?></span>
+                    <?php if ($T('card-numbers.1', '1') !== '0'): ?><span class="td-benefit__no" style="color: <?= $c['noc'] ?>66"><?= $c['no'] ?></span><?php endif; ?>
                     <span class="td-benefit__icon" style="background: <?= $c['ring'] ?>"><img src="<?= iu($tc, $c['icon']) ?>" alt=""></span>
                     <div class="td-benefit__copy">
                         <h3><?= $c['title'] ?></h3>

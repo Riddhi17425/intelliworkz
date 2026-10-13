@@ -1,0 +1,276 @@
+{
+    "page": {
+        "slug": "services",
+        "config": {
+            "title": "Our Services | Intelliworkz",
+            "body_class": "page-services",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/magazine.css",
+                "assets/css/services.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Background image",
+            "type": "image",
+            "value": "assets/images/hero-bg.png",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Paragraph: Home / Services",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <span>Services</span>",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading",
+            "type": "text",
+            "value": "Explore Our Services",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Paragraph under the heading",
+            "type": "textarea",
+            "value": "Creative, digital and technology capabilities, brought together under one roof to help your business grow.",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "First button text",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Second button text",
+            "type": "text",
+            "value": "Talk to Our Team",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Second button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Words at the right edge",
+            "type": "html",
+            "value": "Ideas<br>Design<br>Technology<br>Growth",
+            "sort": 9
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.1",
+            "label": "Small heading",
+            "type": "text",
+            "value": "Have a project in mind?",
+            "sort": 11
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Let's build it together.",
+            "sort": 12
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.3",
+            "label": "First button text",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 13
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.4",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 14
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.5",
+            "label": "Second button text",
+            "type": "text",
+            "value": "Discuss Your Requirements",
+            "sort": 15
+        },
+        {
+            "section": "cta",
+            "section_label": "Call to action",
+            "key": "cta.6",
+            "label": "Second button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 16
+        }
+    ],
+    "lists": [
+        {
+            "key": "svc_sections",
+            "scope": "services",
+            "items": [
+                {
+                    "no": "01",
+                    "btn": "Explore Services",
+                    "href": "contact-us.php",
+                    "tab": "Branding & Creative",
+                    "tag": "Branding & Creative",
+                    "title": "Build a brand people remember.",
+                    "text": "From brand foundations to digital experiences, we create identities and communication systems that connect with your audience and support your business goals.",
+                    "img": "assets/images/collaterals/hero.png",
+                    "c": "var(--c-blue)",
+                    "ico": "icon-briefcase.svg",
+                    "cols": 2,
+                    "layout": "rows",
+                    "items": [
+                        "Logo Design | logo-design",
+                        "Brand Identity & Design",
+                        "Marketing & Sales Collaterals | marketing-sales-collaterals.php",
+                        "Packaging Design | packaging-design.php",
+                        "Campaign Concepts & Ad Creatives",
+                        "Corporate Communication",
+                        "Visual Identity Systems",
+                        "PPT Design | ppt-design.php",
+                        "Advertising Services",
+                        "UI/UX Design"
+                    ]
+                },
+                {
+                    "no": "02",
+                    "btn": "Explore Services",
+                    "href": "contact-us.php",
+                    "tab": "Digital Marketing & Growth",
+                    "tag": "Digital Marketing & Growth",
+                    "title": "Turn visibility into growth.",
+                    "text": "Data-driven digital marketing to help you reach the right audience, generate demand and grow your business online.",
+                    "img": "assets/images/outsource-marketing.png",
+                    "c": "var(--c-red)",
+                    "ico": "card-chart.svg",
+                    "cols": 2,
+                    "layout": "rows",
+                    "items": [
+                        "Digital Marketing",
+                        "SEO Services | seo-services.php",
+                        "AEO Services",
+                        "GEO Services"
+                    ]
+                },
+                {
+                    "no": "03",
+                    "btn": "Explore Services",
+                    "href": "contact-us.php",
+                    "tab": "Print & Publication",
+                    "tag": "Print & Publication",
+                    "title": "Precision in every publication.",
+                    "text": "Print-ready artwork, publishing and editorial production for high-quality business and academic communication.",
+                    "img": "assets/images/outsource-creative.png",
+                    "c": "var(--c-purple)",
+                    "ico": "card-clipboard.svg",
+                    "cols": 4,
+                    "layout": "cards",
+                    "items": [
+                        "Pre-Press Services | pre-press-service.php",
+                        "Magazine Design | magazine-design.php",
+                        "Academic & Technical Publishing Support",
+                        "Multilingual Publishing & Localization",
+                        "Product Catalog",
+                        "InDesign Services",
+                        "Newsletter Design"
+                    ]
+                },
+                {
+                    "no": "04",
+                    "btn": "Explore Services",
+                    "href": "contact-us.php",
+                    "tab": "Post-Production",
+                    "tag": "Post-Production",
+                    "title": "Make every visual count.",
+                    "text": "Refine footage, imagery and motion assets for polished, production-ready communication.",
+                    "img": "assets/images/video/pf-base-19393f.png",
+                    "c": "var(--c-yellow)",
+                    "ico": "card-check.svg",
+                    "cols": 3,
+                    "layout": "cards",
+                    "items": [
+                        "Video Editing | video-editing.php",
+                        "Image Editing",
+                        "Motion Graphics",
+                        "Explainer Videos",
+                        "Product Video",
+                        "Social Media Reels"
+                    ]
+                },
+                {
+                    "no": "05",
+                    "btn": "Explore Services",
+                    "href": "contact-us.php",
+                    "tab": "Animation",
+                    "tag": "Animation",
+                    "title": "Bring ideas to life.",
+                    "text": "Create engaging motion-led experiences, product demonstrations and 3D visuals for every platform.",
+                    "img": "assets/images/3d/hero-floor.png",
+                    "c": "var(--c-green)",
+                    "ico": "icon-globe.svg",
+                    "cols": 3,
+                    "layout": "cards",
+                    "items": [
+                        "Product Demo Videos",
+                        "Corporate Videos & Shoots",
+                        "Presentation Videos",
+                        "3D Modelling & 3D Rendering | 3d-modeling-rendering.php",
+                        "3D Visualization (Product / Architectural / Industrial)",
+                        "3D Animation"
+                    ]
+                }
+            ]
+        }
+    ]
+}

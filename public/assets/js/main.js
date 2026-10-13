@@ -45,9 +45,55 @@
         play();
 
         /* Figma shows slide 3 active on load */
-        var start = Math.min(2, dots.length - 1);
+        var start = slider.hasAttribute('data-start') ? parseInt(slider.getAttribute('data-start'), 10) || 0 : Math.min(2, dots.length - 1);
         track.scrollLeft = (max() / (dots.length - 1)) * start;
         setActive(start);
+    });
+
+    /* Home services: the row shows as many cards as fit, the rest slide in (auto-advance + clickable dots) */
+    document.querySelectorAll('[data-cards-slider]').forEach(function (slider) {
+        var track = slider.querySelector('[data-cards-track]');
+        var dotsWrap = slider.querySelector('[data-cards-dots]');
+        var cards = track ? track.children : [];
+        if (!track || !dotsWrap || cards.length < 2) return;
+
+        var dots = [], count = 0, paused = false, timer = null;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var max = function () { return Math.max(0, track.scrollWidth - track.clientWidth); };
+        var left = function (i) { return count > 1 ? (max() / (count - 1)) * i : 0; };
+        var current = function () { return count > 1 && max() > 0 ? Math.round((track.scrollLeft / max()) * (count - 1)) : 0; };
+        var mark = function (i) { dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); }); };
+        var go = function (i) { track.scrollTo({ left: left(i), behavior: 'smooth' }); mark(i); };
+
+        /* one dot per position the row can rest at: cards that do not fit = extra positions */
+        var build = function () {
+            var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            var visible = Math.max(1, Math.floor((track.clientWidth + gap + 1) / (cards[0].offsetWidth + gap)));
+            count = max() > 2 ? Math.min(cards.length - visible + 1, cards.length) : 1;
+            dotsWrap.innerHTML = '';
+            dots = [];
+            dotsWrap.hidden = count < 2;
+            for (var i = 0; i < count; i++) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'dots__dot';
+                b.setAttribute('aria-label', 'Show services group ' + (i + 1));
+                (function (n) { b.addEventListener('click', function () { go(n); }); })(i);
+                dotsWrap.appendChild(b);
+                dots.push(b);
+            }
+            mark(current());
+        };
+
+        track.addEventListener('scroll', function () { mark(current()); }, { passive: true });
+        window.addEventListener('resize', build);
+
+        var next = function () { if (!paused && !document.hidden && count > 1) go((current() + 1) % count); };
+        ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (ev) { slider.addEventListener(ev, function () { paused = true; }); });
+        ['mouseleave', 'focusout', 'touchend'].forEach(function (ev) { slider.addEventListener(ev, function () { paused = false; }); });
+        if (!reduce) timer = setInterval(next, parseInt(slider.getAttribute('data-autoplay'), 10) || 4500);
+
+        build();
     });
 
     /* Products: tabs switch the DataNote / Formezy / Docezy panel */
@@ -764,7 +810,7 @@
     });
 })();
 
-/* Packaging page: filter tabs for the masonry grid (tiles carry a space-separated data-cats list) */
+/* Packaging page: every filter tab swaps the picture in each card of the grid (cards carry data-img-<tab key>) */
 (function () {
     'use strict';
 
@@ -772,20 +818,28 @@
     var grid = document.querySelector('[data-pk-grid]');
     if (!tabsWrap || !grid) return;
     var tabs = tabsWrap.querySelectorAll('.filter-tab');
-    var tiles = grid.querySelectorAll('.pk-tile');
+    var imgs = grid.querySelectorAll('.pk-tile img');
+
+    // load every tab's pictures up front so switching is instant
+    imgs.forEach(function (img) {
+        Array.prototype.forEach.call(img.attributes, function (a) {
+            if (a.name.indexOf('data-img-') === 0) { new Image().src = a.value; }
+        });
+    });
 
     tabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
             var key = tab.getAttribute('data-filter');
             tabs.forEach(function (t) { t.classList.toggle('is-active', t === tab); });
-            tiles.forEach(function (tile) {
-                var cats = (tile.getAttribute('data-cats') || '').split(' ');
-                tile.hidden = key !== 'all' && cats.indexOf(key) === -1;
+            imgs.forEach(function (img) {
+                var src = img.getAttribute('data-img-' + key);
+                if (!src || img.getAttribute('src') === src) return;
+                img.classList.add('is-swapping');
+                setTimeout(function () { img.setAttribute('src', src); img.classList.remove('is-swapping'); }, 180);
             });
         });
     });
 })();
-
 /* Contact page: INDIA / USA / DUBAI office selector */
 (function () {
     'use strict';
@@ -933,74 +987,4 @@
     });
 
     sync();
-})();
-
-/* Products: "Key Capabilities" chips open a modal with the capability, its description and an enquiry link. */
-(function () {
-    'use strict';
-
-    var grids = document.querySelectorAll('.feature-grid');
-    if (!grids.length) return;
-
-    var modal = document.createElement('div');
-    modal.className = 'cap-modal';
-    modal.setAttribute('hidden', '');
-    modal.innerHTML =
-        '<div class="cap-modal__backdrop" data-cap-close></div>' +
-        '<div class="cap-modal__box" role="dialog" aria-modal="true" aria-labelledby="capModalTitle" tabindex="-1">' +
-            '<button type="button" class="cap-modal__x" aria-label="Close" data-cap-close>&times;</button>' +
-            '<p class="cap-modal__eyebrow"></p>' +
-            '<h3 class="cap-modal__title" id="capModalTitle"></h3>' +
-            '<p class="cap-modal__text"></p>' +
-            '<a class="cap-modal__link" href="contact-us.php"></a>' +
-        '</div>';
-    document.body.appendChild(modal);
-
-    var box = modal.querySelector('.cap-modal__box');
-    var eyebrow = modal.querySelector('.cap-modal__eyebrow');
-    var title = modal.querySelector('.cap-modal__title');
-    var text = modal.querySelector('.cap-modal__text');
-    var link = modal.querySelector('.cap-modal__link');
-    var opener = null;
-
-    var close = function () {
-        modal.setAttribute('hidden', '');
-        document.documentElement.classList.remove('cap-modal-open');
-        if (opener) { opener.setAttribute('aria-expanded', 'false'); opener.focus(); opener = null; }
-    };
-
-    var open = function (btn) {
-        var item = btn.closest('.feature-item');
-        var product = btn.closest('.product');
-        var name = product ? product.querySelector('.products__name') : null;
-        var src = item.querySelector('.feature-panel__inner p');
-        var cta = item.querySelector('.feature-panel__link');
-
-        eyebrow.textContent = name ? name.textContent.trim() : '';
-        title.textContent = btn.querySelector('span').textContent.trim();
-        text.textContent = src ? src.textContent.trim() : '';
-        if (cta) {
-            link.textContent = cta.textContent.trim();
-            link.setAttribute('href', cta.getAttribute('href') || 'contact-us.php');
-            link.hidden = false;
-        } else {
-            link.hidden = true;
-        }
-
-        opener = btn;
-        btn.setAttribute('aria-expanded', 'true');
-        modal.removeAttribute('hidden');
-        document.documentElement.classList.add('cap-modal-open');
-        box.focus({ preventScroll: true });
-    };
-
-    modal.addEventListener('click', function (e) { if (e.target.closest('[data-cap-close]')) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hasAttribute('hidden')) close(); });
-
-    grids.forEach(function (grid) {
-        grid.querySelectorAll('.feature').forEach(function (btn) {
-            btn.setAttribute('aria-haspopup', 'dialog');
-            btn.addEventListener('click', function () { open(btn); });
-        });
-    });
 })();

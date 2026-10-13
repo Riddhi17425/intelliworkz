@@ -13,11 +13,20 @@
         {
             "section": "engagement-model",
             "section_label": "Engagement Model",
+            "key": "engagement-model.1.url",
+            "label": "Button link: Let’s Collaborate",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 2
+        },
+        {
+            "section": "engagement-model",
+            "section_label": "Engagement Model",
             "key": "engagement-model.2",
             "label": "Heading: Engagement Model",
             "type": "text",
             "value": "Engagement Model",
-            "sort": 2
+            "sort": 3
         },
         {
             "section": "engagement-model",
@@ -25,8 +34,8 @@
             "key": "engagement-model.3",
             "label": "Paragraph: Our 100% in-house team offers different engag…",
             "type": "textarea",
-            "value": "Our 100% in-house team offers different engagement models to fit your business needs. We do not further outsource or engage freelance teams to execute our orders, which ensures client confidentiality. We make sure the same or similarly skilled resources work on your orders every time, so you get smooth and consistent delivery that meets your quality and turnaround commitments. How you work with us depends on what you need.",
-            "sort": 3
+            "value": "Our 100% in-house team offers different engagement models to fit your business needs. We do not further outsource or engage freelance teams to execute our orders, which ensures client confidentiality. We ensure the same or similarly skilled resources work on your orders every time, so you get smooth, consistent delivery that meets your quality and turnaround commitments. How you work with us depends on what you need.",
+            "sort": 4
         },
         {
             "section": "engagement-model",
@@ -34,8 +43,8 @@
             "key": "engagement-model.4",
             "label": "Heading: Flexible hourLy pricing",
             "type": "text",
-            "value": "Flexible hourLy pricing",
-            "sort": 4
+            "value": "Transparent Project &amp; Flexible Pricing",
+            "sort": 5
         },
         {
             "section": "engagement-model",
@@ -44,7 +53,7 @@
             "label": "Paragraph: Terms & conditions apply · Minimum 5-hour boo…",
             "type": "text",
             "value": "Terms &amp; conditions apply · Minimum 5-hour booking",
-            "sort": 5
+            "sort": 6
         }
     ],
     "lists": [

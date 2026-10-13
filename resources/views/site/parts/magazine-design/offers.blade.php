@@ -17,7 +17,7 @@ $vc = 'assets/icons/video/';       // icons shared with the video page
                         <article class="offer-card" data-i="<?= $k ?>" style="background: <?= $o['bg'] ?>">
                             <div class="offer-card__top">
                                 <span class="offer-card__no" style="color: <?= $o['noc'] ?>"><?= $o['no'] ?></span>
-                                <a href="#" aria-label="<?= $o['title'] ?>"><img src="<?= iu($vc, $o['arrow']) ?>" width="48" height="48" alt=""></a>
+                                <a href="<?= e(!empty($o['href']) ? $o['href'] : 'contact-us.php') ?>" aria-label="<?= $o['title'] ?>"><img src="<?= iu($vc, $o['arrow']) ?>" width="48" height="48" alt=""></a>
                             </div>
                             <div class="offer-card__body">
                                 <h3><?= $o['title'] ?></h3>
@@ -36,7 +36,7 @@ $vc = 'assets/icons/video/';       // icons shared with the video page
         <section class="cta-band">
             <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
             <h2 class="cta-title">{!! $T('what-we-offer-cta-engagement.4') !!}</h2>
-            <?php btn($T('what-we-offer-cta-engagement.1'), 'btn--cta', 'arrow-cta.svg'); ?>
+            <?php btn($T('what-we-offer-cta-engagement.1'), 'btn--cta', 'arrow-cta.svg', $T('what-we-offer-cta-engagement.1.url', 'contact-us.php')); ?>
         </section>
 
         @include('site.sections.engagement')

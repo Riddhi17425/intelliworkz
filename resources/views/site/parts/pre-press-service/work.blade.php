@@ -20,11 +20,13 @@ $vc = 'assets/icons/video/';          // shared icons
                     <button type="button" class="round-arrow" aria-label="Next" data-examples-next><img src="<?= $vc ?>slider-arrow-right.svg" width="52" height="52" alt=""></button>
                 </div>
             </div>
+            <?php if ($T('filter-tabs.1', '1') !== '0'): ?>
             <div class="filter-tabs">
                 <?php foreach ($pp_filters as $key => $label): ?>
                     <button type="button" class="filter-tab <?= $key === 'all' ? 'is-active' : '' ?>" data-filter="<?= $key ?>"><?= $label ?></button>
                 <?php endforeach; ?>
             </div>
+            <?php endif; ?>
         </div>
         <div class="mg-viewport">
             <div class="mg-strip" data-examples-track>

@@ -270,6 +270,10 @@ class ContentController extends Controller
             return null;
         }
 
+        if ($field->type === 'toggle') {
+            return $raw === '0' ? '0' : '1';
+        }
+
         if ($field->type === 'url') {
             $url = trim($raw);
             if ($url !== '' && !Html::safeUrl($url)) {

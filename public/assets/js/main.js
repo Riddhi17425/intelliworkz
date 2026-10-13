@@ -924,49 +924,72 @@
     sync();
 })();
 
-/* Products: "Key Capabilities" chips open a short description, one at a time per product.
-   The desktop stage has a fixed 740px canvas, so it grows to fit whatever is open (and shrinks back). */
+/* Products: "Key Capabilities" chips open a modal with the capability, its description and an enquiry link. */
 (function () {
     'use strict';
 
-    var fit = function (stage) {
-        if (!stage) return;
-        var info = stage.querySelector('.product.is-active .products__info');
-        if (!info) return;
-        stage.style.height = '';                       // back to the CSS height, then grow only if needed
-        if (getComputedStyle(stage).display === 'grid') return;   // stacked (tablet/phone) layout sizes itself
-        var need = info.offsetTop + info.offsetHeight + 60;
-        if (need > stage.offsetHeight) stage.style.height = need + 'px';
-    };
-    var fitSoon = function (stage) {
-        fit(stage);
-        setTimeout(function () { fit(stage); }, 420);   // again once the open/close animation has finished
+    var grids = document.querySelectorAll('.feature-grid');
+    if (!grids.length) return;
+
+    var modal = document.createElement('div');
+    modal.className = 'cap-modal';
+    modal.setAttribute('hidden', '');
+    modal.innerHTML =
+        '<div class="cap-modal__backdrop" data-cap-close></div>' +
+        '<div class="cap-modal__box" role="dialog" aria-modal="true" aria-labelledby="capModalTitle" tabindex="-1">' +
+            '<button type="button" class="cap-modal__x" aria-label="Close" data-cap-close>&times;</button>' +
+            '<p class="cap-modal__eyebrow"></p>' +
+            '<h3 class="cap-modal__title" id="capModalTitle"></h3>' +
+            '<p class="cap-modal__text"></p>' +
+            '<a class="cap-modal__link" href="contact-us.php"></a>' +
+        '</div>';
+    document.body.appendChild(modal);
+
+    var box = modal.querySelector('.cap-modal__box');
+    var eyebrow = modal.querySelector('.cap-modal__eyebrow');
+    var title = modal.querySelector('.cap-modal__title');
+    var text = modal.querySelector('.cap-modal__text');
+    var link = modal.querySelector('.cap-modal__link');
+    var opener = null;
+
+    var close = function () {
+        modal.setAttribute('hidden', '');
+        document.documentElement.classList.remove('cap-modal-open');
+        if (opener) { opener.setAttribute('aria-expanded', 'false'); opener.focus(); opener = null; }
     };
 
-    document.querySelectorAll('.feature-grid').forEach(function (grid) {
-        var stage = grid.closest('[data-products]');
-        var items = grid.querySelectorAll('.feature-item');
-        items.forEach(function (item) {
-            var btn = item.querySelector('.feature');
-            btn.addEventListener('click', function () {
-                var open = !item.classList.contains('is-open');
-                items.forEach(function (o) {
-                    o.classList.remove('is-open');
-                    o.querySelector('.feature').setAttribute('aria-expanded', 'false');
-                });
-                if (open) {
-                    item.classList.add('is-open');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-                fitSoon(stage);
-            });
-        });
-    });
+    var open = function (btn) {
+        var item = btn.closest('.feature-item');
+        var product = btn.closest('.product');
+        var name = product ? product.querySelector('.products__name') : null;
+        var src = item.querySelector('.feature-panel__inner p');
+        var cta = item.querySelector('.feature-panel__link');
 
-    document.querySelectorAll('[data-products]').forEach(function (stage) {
-        stage.querySelectorAll('.tab').forEach(function (tab) {
-            tab.addEventListener('click', function () { setTimeout(function () { fitSoon(stage); }, 0); });
+        eyebrow.textContent = name ? name.textContent.trim() : '';
+        title.textContent = btn.querySelector('span').textContent.trim();
+        text.textContent = src ? src.textContent.trim() : '';
+        if (cta) {
+            link.textContent = cta.textContent.trim();
+            link.setAttribute('href', cta.getAttribute('href') || 'contact-us.php');
+            link.hidden = false;
+        } else {
+            link.hidden = true;
+        }
+
+        opener = btn;
+        btn.setAttribute('aria-expanded', 'true');
+        modal.removeAttribute('hidden');
+        document.documentElement.classList.add('cap-modal-open');
+        box.focus({ preventScroll: true });
+    };
+
+    modal.addEventListener('click', function (e) { if (e.target.closest('[data-cap-close]')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hasAttribute('hidden')) close(); });
+
+    grids.forEach(function (grid) {
+        grid.querySelectorAll('.feature').forEach(function (btn) {
+            btn.setAttribute('aria-haspopup', 'dialog');
+            btn.addEventListener('click', function () { open(btn); });
         });
-        window.addEventListener('resize', function () { fit(stage); });
     });
 })();

@@ -16,9 +16,10 @@ use DOMNode;
 class Html
 {
     private const INLINE = ['br' => [], 'strong' => [], 'b' => [], 'em' => [], 'i' => [], 'u' => [], 'small' => [], 'sup' => [], 'sub' => [],
-        'span' => ['class'], 'a' => ['href', 'target', 'rel']];
+        'span' => ['class'], 'a' => ['href', 'target', 'rel'],
+        'ul' => [], 'ol' => [], 'li' => []];
 
-    private const RICH = ['p' => [], 'h2' => [], 'h3' => [], 'h4' => [], 'ul' => [], 'ol' => [], 'li' => [], 'blockquote' => [], 'hr' => [],
+    private const RICH = ['p' => [], 'h2' => [], 'h3' => [], 'h4' => [], 'blockquote' => [], 'hr' => [],
         'img' => ['src', 'alt'], 'figure' => [], 'figcaption' => [], 'table' => [], 'thead' => [], 'tbody' => [], 'tr' => [], 'th' => [], 'td' => []];
 
     /** Does the string contain at least one HTML tag (as opposed to a bare "<" in prose)? */
@@ -34,7 +35,7 @@ class Html
         if ($value === '') {
             return '';
         }
-        return self::hasTags($value) ? self::sanitize($value, self::INLINE) : e($value);
+        return self::hasTags($value) ? self::sanitize($value, self::INLINE, true) : e($value);
     }
 
     /** Editor input -> stored fragment, for long-form rich text. */
@@ -58,7 +59,7 @@ class Html
         return trim(preg_replace('/\s+/u', ' ', $text));
     }
 
-    private static function sanitize(string $html, array $allowed): string
+    private static function sanitize(string $html, array $allowed, bool $styleLists = false): string
     {
         $doc = new DOMDocument('1.0', 'UTF-8');
         $prev = libxml_use_internal_errors(true);
@@ -70,7 +71,7 @@ class Html
         if (!$root) {
             return e(strip_tags($html));
         }
-        self::walk($root, $allowed);
+        self::walk($root, $allowed, $styleLists);
 
         $out = '';
         foreach (iterator_to_array($root->childNodes) as $child) {
@@ -79,7 +80,7 @@ class Html
         return trim($out);
     }
 
-    private static function walk(DOMNode $node, array $allowed): void
+    private static function walk(DOMNode $node, array $allowed, bool $styleLists = false): void
     {
         foreach (iterator_to_array($node->childNodes) as $child) {
             if ($child instanceof DOMElement) {
@@ -90,7 +91,7 @@ class Html
                 }
                 if (!array_key_exists($tag, $allowed)) {
                     // unknown tag: keep its text, drop the tag itself
-                    self::walk($child, $allowed);
+                    self::walk($child, $allowed, $styleLists);
                     while ($child->firstChild) {
                         $node->insertBefore($child->firstChild, $child);
                     }
@@ -107,10 +108,13 @@ class Html
                         $child->removeAttribute($attr->name);
                     }
                 }
+                if ($styleLists && ($tag === 'ul' || $tag === 'ol')) {
+                    $child->setAttribute('class', 'rt');     // bullets/numbers: the site CSS resets list styles globally
+                }
                 if ($tag === 'a' && $child->getAttribute('target') === '_blank') {
                     $child->setAttribute('rel', 'noopener noreferrer');
                 }
-                self::walk($child, $allowed);
+                self::walk($child, $allowed, $styleLists);
             } elseif ($child->nodeType === XML_COMMENT_NODE || $child->nodeType === XML_PI_NODE) {
                 $node->removeChild($child);
             }

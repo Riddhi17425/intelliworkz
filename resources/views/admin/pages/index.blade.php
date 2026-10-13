@@ -48,13 +48,14 @@
                     <tr>
                         <td>
                             <a class="row-title" href="{{ route('admin.pages.edit', $p) }}">{{ $p->title }}</a>
-                            <div class="small text-muted">@if($p->is_system)<i class="bi bi-lock-fill me-1" title="Original website page"></i>Website page @else <i class="bi bi-file-text me-1"></i>Custom page @endif</div>
+                            <div class="small text-muted">@if($p->is_system)<i class="bi bi-lock-fill me-1" title="Original website page"></i>Website page @elseif($p->hasEditor())<i class="bi bi-files me-1"></i>Copy of design: {{ $p->viewKey() }} @else <i class="bi bi-file-text me-1"></i>Custom page @endif</div>
                         </td>
                         <td class="d-none d-md-table-cell small"><a class="text-muted" target="_blank" rel="noopener" href="{{ $p->url() }}">/{{ $p->slug === 'index' ? '' : $p->slug . ($p->is_system ? '.php' : '') }}</a></td>
                         <td><x-admin.badge :status="$p->status"/></td>
                         <td class="small text-muted d-none d-lg-table-cell">{{ $p->updated_at?->diffForHumans() }}</td>
                         <td class="text-end text-nowrap">
-                            @if($p->is_system)<a class="btn btn-sm btn-primary" href="{{ route('admin.pages.content', $p) }}"><i class="bi bi-pencil-square me-1"></i>Edit content</a>@endif
+                            @if($p->hasEditor())<a class="btn btn-sm btn-primary" href="{{ route('admin.pages.content', $p) }}"><i class="bi bi-pencil-square me-1"></i>Edit content</a>@endif
+                            @if($p->hasEditor() && $p->slug !== 'index')<a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.pages.create', ['from' => $p->slug]) }}" title="New page with the same design"><i class="bi bi-files"></i></a>@endif
                             <a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.pages.edit', $p) }}" title="SEO & settings"><i class="bi bi-gear"></i></a>
                             <a class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener" href="{{ $p->url() }}" title="View"><i class="bi bi-eye"></i></a>
                             @unless($p->slug === 'index' && $p->isPublished())

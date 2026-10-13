@@ -60,3 +60,62 @@ if (!function_exists('ab_pt')) {
         return [round($cx + $r * cos($a), 1), round($cy + $r * sin($a), 1)];
     }
 }
+
+if (!function_exists('contact_html')) {
+    /**
+     * Turns phone numbers into tel: links and e-mail addresses into mailto: links inside already-sanitised HTML.
+     * Text that is already inside a link is left alone.
+     */
+    function contact_html(?string $html): string
+    {
+        $html = (string) $html;
+        if ($html === '') {
+            return '';
+        }
+
+        $parts = preg_split('/(<[^>]*>)/', $html, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+        $inLink = 0;
+        foreach ($parts as $i => $part) {
+            if ($part[0] === '<') {
+                if (preg_match('/^<a[\s>]/i', $part)) {
+                    $inLink++;
+                } elseif (preg_match('/^<\/a\s*>/i', $part)) {
+                    $inLink = max(0, $inLink - 1);
+                }
+                continue;
+            }
+            if ($inLink) {
+                continue;
+            }
+            $part = preg_replace_callback('/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/', function ($m) {
+                return '<a href="mailto:' . e($m[0]) . '">' . e($m[0]) . '</a>';
+            }, $part);
+            $parts[$i] = preg_replace_callback('/(?<![\w@.\/-])\+?\d[\d\s().-]{5,}\d(?![\w])/', function ($m) {
+                $digits = preg_match_all('/\d/', $m[0]);
+                if ($digits < 7 || $digits > 15) {
+                    return $m[0];
+                }
+                $tel = (str_starts_with($m[0], '+') ? '+' : '') . preg_replace('/\D/', '', $m[0]);
+                return '<a href="tel:' . $tel . '">' . $m[0] . '</a>';
+            }, $part);
+        }
+
+        return implode('', $parts);
+    }
+}
+
+if (!function_exists('map_link')) {
+    /** Wraps an address in a link that opens it in Google Maps (or in $href when one is given). */
+    function map_link(?string $html, ?string $href = null): string
+    {
+        $html = (string) $html;
+        if (trim(strip_tags($html)) === '') {
+            return $html;
+        }
+        if (!$href || !preg_match('#^https?://#i', $href)) {
+            $query = trim(preg_replace('/\s+/', ' ', html_entity_decode(strip_tags(str_replace(['<br>', '<br/>', '<br />'], ' ', $html)), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+            $href = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($query);
+        }
+        return '<a class="addr-link" href="' . e($href) . '" target="_blank" rel="noopener">' . $html . '</a>';
+    }
+}

@@ -25,7 +25,7 @@ class ContentController extends Controller
 {
     public function editPage(Page $page): View
     {
-        abort_unless($page->is_system, 404);
+        abort_unless($page->hasEditor(), 404);
 
         return view('admin.content.edit', [
             'title' => $page->title . ' — content',
@@ -35,13 +35,27 @@ class ContentController extends Controller
             'sections' => $this->sections($page->slug),
             'intro' => 'Change the text, pictures and lists on this page. Colours, spacing and layout are fixed, so the design cannot be broken here.',
             'seoUrl' => route('admin.pages.edit', $page),
+            'toggles' => $page->sectionToggles(),
+            'page' => $page,
         ]);
     }
 
     public function updatePage(Request $request, Page $page): RedirectResponse
     {
-        abort_unless($page->is_system, 404);
+        abort_unless($page->hasEditor(), 404);
         $changed = $this->save($request, $page->slug);
+
+        // section switches: anything not ticked is hidden (only when the form carried the switches)
+        $toggles = array_keys($page->sectionToggles());
+        if ($toggles && $request->boolean('has_section_switches')) {
+            $visible = array_intersect($toggles, array_keys((array) $request->input('show_sections', [])));
+            $hidden = array_values(array_diff($toggles, $visible));
+            if (($page->hidden_sections ?? []) !== $hidden) {
+                $page->hidden_sections = $hidden ?: null;
+                $page->save();
+                $changed++;
+            }
+        }
         $page->forceFill(['updated_by' => $request->user()->id])->touch();
         ActivityLog::record('updated', "Edited content of “{$page->title}” ({$changed} changes)", $page);
 

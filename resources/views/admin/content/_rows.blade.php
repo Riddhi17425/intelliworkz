@@ -13,9 +13,11 @@
             <label class="form-label" for="{{ $fid }}">{{ $def['label'] }}@if($def['type'] === 'html')<span class="adm-type">Formatted</span>@endif</label>
             @switch($def['type'])
                 @case('textarea')
+                    @include('admin.content._fmt')
                     <textarea id="{{ $fid }}" class="form-control" rows="3" name="{{ $name }}">{{ \App\Support\Html::forInput(is_string($val) ? $val : '') }}</textarea>
                     @break
                 @case('html')
+                    @include('admin.content._fmt')
                     <textarea id="{{ $fid }}" class="form-control" rows="2" name="{{ $name }}">{{ \App\Support\Html::forInput(is_string($val) ? $val : '') }}</textarea>
                     @break
                 @case('lines')

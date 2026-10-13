@@ -25,7 +25,7 @@
                                     <h3 class="h-card h-card--white">{!! $G('dark-showcase.3') !!}</h3>
                                     <p>{!! $G('dark-showcase.4') !!}</p>
                                 </div>
-                                <a href="#" class="text-link<?= !empty($c['filled']) ? ' text-link--filled' : '' ?>">View Case Study<img src="assets/icons/arrow-link.svg" width="24" height="24" alt=""></a>
+                                <a href="#" class="text-link text-link--filled">View Case Study<img src="assets/icons/arrow-link.svg" width="24" height="24" alt=""></a>
                             </div>
                         </div>
                     </article>

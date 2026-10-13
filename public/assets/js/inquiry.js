@@ -1,17 +1,50 @@
-/* Enquiry / contact forms: send with fetch(), show the result under the form, fall back to a normal POST without JS. */
+/* Enquiry / contact forms: send with fetch(), show validation errors and the result as toasts, fall back to a normal POST without JS. */
 (function () {
     'use strict';
 
+    var FIELDS = ['name', 'email', 'phone', 'company', 'subject', 'message'];
+
+    var stack = function () {
+        var el = document.querySelector('.iw-toasts');
+        if (!el) {
+            el = document.createElement('div');
+            el.className = 'iw-toasts';
+            el.setAttribute('aria-live', 'polite');
+            document.body.appendChild(el);
+        }
+        return el;
+    };
+
+    var toast = function (text, ok) {
+        if (!text) return;
+        var t = document.createElement('div');
+        t.className = 'iw-toast ' + (ok ? 'is-ok' : 'is-error');
+        t.setAttribute('role', ok ? 'status' : 'alert');
+        var msg = document.createElement('span');
+        msg.textContent = text;
+        var close = document.createElement('button');
+        close.type = 'button';
+        close.setAttribute('aria-label', 'Close');
+        close.innerHTML = '&times;';
+        t.appendChild(msg);
+        t.appendChild(close);
+
+        var host = stack();
+        while (host.children.length >= 4) host.removeChild(host.firstChild);
+        host.appendChild(t);
+
+        var gone = function () {
+            t.classList.add('is-leaving');
+            setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 250);
+        };
+        close.addEventListener('click', gone);
+        setTimeout(gone, ok ? 5000 : 6500);
+    };
+
     document.querySelectorAll('form[data-inquiry-form]').forEach(function (form) {
-        var status = form.querySelector('[data-form-status]');
         var button = form.querySelector('button[type=submit]');
         var original = button ? button.innerHTML : '';
 
-        var say = function (text, ok) {
-            if (!status) return;
-            status.textContent = text;
-            status.className = 'form-status ' + (ok ? 'is-ok' : 'is-error');
-        };
         var mark = function (name, bad) {
             var input = form.querySelector('[name="' + name + '"]');
             if (input) {
@@ -22,8 +55,7 @@
         form.addEventListener('submit', function (e) {
             if (!window.fetch || !window.FormData) return;     // plain POST fallback
             e.preventDefault();
-            ['name', 'email', 'phone', 'company', 'subject', 'message'].forEach(function (n) { mark(n, false); });
-            say('', true);
+            FIELDS.forEach(function (n) { mark(n, false); });
 
             button.disabled = true;
             button.textContent = 'Sending…';
@@ -38,18 +70,26 @@
             }).then(function (r) {
                 if (r.status === 200 && r.body.ok) {
                     form.reset();
-                    say(r.body.message || 'Thank you! Your message has been sent.', true);
+                    toast(r.body.message || 'Thank you! Your message has been sent.', true);
                 } else if (r.status === 422 && r.body.errors) {
-                    var first = null;
-                    Object.keys(r.body.errors).forEach(function (k) { mark(k, true); first = first || r.body.errors[k][0]; });
-                    say(first || 'Please check the form and try again.', false);
+                    // one toast per field that needs attention, in the order of the form
+                    var shown = 0;
+                    FIELDS.concat(Object.keys(r.body.errors)).forEach(function (k, i, all) {
+                        if (all.indexOf(k) !== i || !r.body.errors[k]) return;
+                        mark(k, true);
+                        toast(r.body.errors[k][0], false);
+                        shown++;
+                    });
+                    if (!shown) toast('Please check the form and try again.', false);
+                    var bad = form.querySelector('[aria-invalid="true"]');
+                    if (bad && bad.focus) bad.focus({ preventScroll: true });
                 } else if (r.status === 429) {
-                    say('Too many messages in a short time. Please wait a minute and try again.', false);
+                    toast('Too many messages in a short time. Please wait a minute and try again.', false);
                 } else {
-                    say('Sorry, something went wrong. Please try again in a moment.', false);
+                    toast('Sorry, something went wrong. Please try again in a moment.', false);
                 }
             }).catch(function () {
-                say('Could not reach the server. Please check your connection and try again.', false);
+                toast('Could not reach the server. Please check your connection and try again.', false);
             }).then(function () {
                 button.disabled = false;
                 button.innerHTML = original;

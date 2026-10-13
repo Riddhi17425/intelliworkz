@@ -89,11 +89,11 @@ $vc = 'assets/icons/video/';      // shared icons
                         <hr class="ct-office__rule">
                         <div class="ct-office__cols">
                             <?php foreach ($o['blocks'] as $row): foreach ($row as $b): ?>
-                                <div class="ct-office__block"><span class="ct-office__label"><?= $b[0] ?></span><p><?= $b[1] ?></p></div>
+                                <div class="ct-office__block"><span class="ct-office__label"><?= $b[0] ?></span><p><?= map_link($b[1], $o['map'] ?? null) ?></p></div>
                             <?php endforeach; endforeach; ?>
                             <div class="ct-office__block ct-office__block--contact">
-                                <div><span class="ct-office__label">{!! $T('offices-dark.3') !!}</span><p><?= $o['phone'] ?></p></div>
-                                <div><span class="ct-office__label">{!! $T('offices-dark.4') !!}</span><p><?= $o['email'] ?></p></div>
+                                <div><span class="ct-office__label">{!! $T('offices-dark.3') !!}</span><p><?= contact_html($o['phone']) ?></p></div>
+                                <div><span class="ct-office__label">{!! $T('offices-dark.4') !!}</span><p><?= contact_html($o['email']) ?></p></div>
                             </div>
                         </div>
                         <div class="ct-office__actions">
@@ -104,7 +104,7 @@ $vc = 'assets/icons/video/';      // shared icons
                             <hr class="ct-office__rule">
                             <div class="ct-office__cols">
                                 <?php foreach ($o['blocks2'] as $b): ?>
-                                    <div class="ct-office__block"><span class="ct-office__label"><?= $b[0] ?></span><p><?= $b[1] ?></p></div>
+                                    <div class="ct-office__block"><span class="ct-office__label"><?= $b[0] ?></span><p><?= map_link($b[1]) ?></p></div>
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>

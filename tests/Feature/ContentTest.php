@@ -175,6 +175,27 @@ class ContentTest extends CmsTestCase
         return ContentList::where('scope', '3d-modeling-rendering')->where('key', 'td_faqs')->firstOrFail();
     }
 
+    public function test_formatted_answer_with_a_list_is_saved_and_shown_with_bullets(): void
+    {
+        $this->actingAs($this->editor());
+        $url = '/admin/pages/3d-modeling-rendering/content';
+        $list = $this->faqList();
+
+        $data = $this->formData($url);
+        $rows = $data['lists'][$list->id]['items'];
+        $k = array_key_first(array_filter($rows, fn ($key) => is_int($key), ARRAY_FILTER_USE_KEY));
+        $data['lists'][$list->id]['items'][$k]['1'] = 'We cover:<ul><li>Modeling</li><li><strong>Rendering</strong></li></ul><script>alert(1)</script>';
+        $this->put($url, $data)->assertSessionHas('success');
+
+        $stored = $list->fresh()->items[$k][1];
+        $this->assertStringContainsString('<ul class="rt"><li>Modeling</li><li><strong>Rendering</strong></li></ul>', $stored);
+        $this->assertStringNotContainsString('script', $stored);
+
+        auth()->logout();
+        $this->get('/3d-modeling-rendering.php')->assertSee('<ul class="rt"><li>Modeling</li>', false);
+        $this->actingAs($this->editor())->get($url)->assertOk()->assertSee('data-fmt-act="ul"', false);
+    }
+
     public function test_list_rows_can_be_added_edited_reordered_and_removed(): void
     {
         $this->actingAs($this->editor());

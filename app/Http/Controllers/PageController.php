@@ -23,7 +23,7 @@ class PageController extends Controller
         $preview = !$page->isPublished();
         abort_if($preview && !$request->user(), 404);
 
-        $view = $page->is_system ? 'site.pages.' . $page->slug : 'site.generic';
+        $view = $page->hasEditor() ? 'site.pages.' . $page->viewKey() : 'site.generic';
         abort_unless(view()->exists($view), 404);
 
         return response()->view($view, $this->data($page, $preview));
@@ -36,7 +36,7 @@ class PageController extends Controller
         $globals = $content->fields('global');
         $settings = SiteSetting::map();
         $menus = SiteMenus::get();
-        $cfg = config('site_pages.' . $page->slug, [
+        $cfg = config('site_pages.' . ($page->viewKey() ?? 'generic'), [
             'body_class' => 'page-generic', 'extra_css' => ['assets/css/generic.css'], 'no_zoom' => true,
             'show_prefooter' => true, 'footer_class' => '', 'phone_icon' => null,
         ]);
@@ -56,6 +56,7 @@ class PageController extends Controller
             'footerMenu' => $menus['footer'],
             // $T('hero.1') = this page's copy, $G('footer.1') = copy shared by every page
             'T' => fn (string $key, string $default = '') => $fields[$key] ?? $default,
+            'show' => fn (string $section) => $page->showsSection($section),
             'G' => fn (string $key, string $default = '') => $globals[$key] ?? $default,
             'meta' => [
                 'title' => $title,

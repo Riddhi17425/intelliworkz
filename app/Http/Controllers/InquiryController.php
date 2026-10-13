@@ -29,7 +29,13 @@ class InquiryController extends Controller
             'name' => ['required', 'string', 'min:2', 'max:120'],
             'company' => ['nullable', 'string', 'max:160'],
             'email' => ['required', 'email:rfc', 'max:190'],
-            'phone' => ['nullable', 'string', 'max:40', 'regex:/^[0-9+\-\s().]{6,40}$/'],
+            'phone' => ['required', 'string', 'max:40', 'regex:/^[0-9+\-\s().]{6,40}$/', function ($attr, $value, $fail) {
+                // a real number has 7–15 digits (international format); "------" or "((((((" is not a number
+                $digits = preg_match_all('/\d/', (string) $value);
+                if ($digits < 7 || $digits > 15) {
+                    $fail('Please enter a valid contact number (7 to 15 digits).');
+                }
+            }],
             'subject' => ['nullable', 'string', 'max:200'],
             'message' => ['nullable', 'string', 'max:3000'],
             'source' => ['nullable', 'string', 'max:120', 'regex:/^[a-z0-9-]*$/'],
@@ -37,6 +43,7 @@ class InquiryController extends Controller
             'name.required' => 'Please enter your name.',
             'email.required' => 'Please enter your e-mail address.',
             'email.email' => 'That e-mail address does not look right.',
+            'phone.required' => 'Please enter your contact number.',
             'phone.regex' => 'Please enter a valid phone number (digits, +, spaces and dashes only).',
         ]);
 
@@ -45,7 +52,7 @@ class InquiryController extends Controller
             'name' => $this->plain($data['name']),
             'company' => $this->plain($data['company'] ?? null),
             'email' => $data['email'],
-            'phone' => $this->plain($data['phone'] ?? null),
+            'phone' => $this->plain($data['phone']),
             'subject' => $this->plain($data['subject'] ?? null),
             'message' => $this->plain($data['message'] ?? null, true),
             'source' => $data['source'] ?? null,

@@ -51,6 +51,22 @@ class Media
         return is_string($path) && str_starts_with($path, 'uploads/');
     }
 
+    /** Copy an uploaded file so two pages never share (and later delete) the same file. Original assets are shared as they are. */
+    public static function duplicate(?string $path): ?string
+    {
+        if (!self::isUpload($path)) {
+            return $path;
+        }
+        $from = substr($path, strlen("uploads/"));
+        $disk = Storage::disk(self::DISK);
+        if (!$disk->exists($from)) {
+            return $path;
+        }
+        $to = dirname($from) . "/" . pathinfo($from, PATHINFO_FILENAME) . "-" . Str::lower(Str::random(4)) . "." . pathinfo($from, PATHINFO_EXTENSION);
+        $disk->copy($from, $to);
+        return "uploads/" . $to;
+    }
+
     /** Remove a previously uploaded file. Original site assets ("assets/...") are never deleted. */
     public static function delete(?string $path): void
     {

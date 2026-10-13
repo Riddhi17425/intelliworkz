@@ -16,7 +16,7 @@ $industry_text = $T('shared-copy.1');
             <h1 class="h1">{!! $T('hero.4') !!}</h1>
             <p class="hero__text">{!! $T('hero.5') !!}</p>
             <div class="hero__actions">
-                <?php btn($T('hero.2')); ?>
+                <?php btn($T('hero.2'), '', null, 'contact-us.php'); ?>
                 <?php btn($T('hero.3'), 'btn--stroke'); ?>
             </div>
         </div>
@@ -49,7 +49,7 @@ $industry_text = $T('shared-copy.1');
                 <p>{!! $T('domain-expertise.5') !!}</p>
                 <p>{!! $T('domain-expertise.6') !!}</p>
             </div>
-            <div><?php btn($T('domain-expertise.1')); ?></div>
+            <div><?php btn($T('domain-expertise.1'), '', null, 'about-us.php'); ?></div>
         </div>
     </section>
 
@@ -87,7 +87,7 @@ $industry_text = $T('shared-copy.1');
     <section class="cta-band">
         <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
         <h2 class="cta-title">{!! $T('cta-band.2') !!}</h2>
-        <?php btn($T('cta-band.1'), 'btn--cta', 'arrow-cta.svg'); ?>
+        <?php btn($T('cta-band.1'), 'btn--cta', 'arrow-cta.svg', 'contact-us.php'); ?>
     </section>
 
     <!-- ============ OUTSOURCING ============ -->

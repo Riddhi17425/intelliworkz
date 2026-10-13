@@ -13,8 +13,9 @@
         @elseif($f->type === 'url')
             <input id="fld_{{ $id }}" type="text" name="fields[{{ $id }}]" value="{{ $val }}" maxlength="500" placeholder="https://… or contact-us.php or #" class="form-control @if($err) is-invalid @endif">
         @else
+            @include('admin.content._fmt')
             <textarea id="fld_{{ $id }}" name="fields[{{ $id }}]" rows="{{ $f->type === 'html' ? 3 : 4 }}" class="form-control @if($err) is-invalid @endif">{{ $val }}</textarea>
-            @if($f->type === 'html')<div class="form-text">Formatting allowed: <code>&lt;br&gt;</code> line break, <code>&lt;strong&gt;</code> bold, <code>&lt;em&gt;</code> italic, <code>&lt;a href="…"&gt;</code> link.</div>@endif
+            @if($f->type === 'html')<div class="form-text">Use the buttons above, or type tags: <code>&lt;strong&gt;</code> bold, <code>&lt;em&gt;</code> italic, <code>&lt;a href="…"&gt;</code> link, <code>&lt;ul&gt;&lt;li&gt;</code> list, <code>&lt;br&gt;</code> line break.</div>@endif
         @endif
         @if($err)<div class="invalid-feedback d-block">{{ $err }}</div>@endif
     @endif

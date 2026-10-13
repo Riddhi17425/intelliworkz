@@ -7,6 +7,7 @@ use App\Models\ActivityLog;
 use App\Models\Page;
 use App\Support\Html;
 use App\Support\Media;
+use App\Support\PageCloner;
 use App\Support\Search;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -39,15 +40,25 @@ class PageController extends Controller
         return view('admin.pages.index', ['pages' => $pages, 'sort' => $sort, 'dir' => $dir]);
     }
 
-    public function create(): View
+    public function create(Request $request): View
     {
         $page = new Page(['status' => Page::STATUS_DRAFT]);
-        return view('admin.pages.form', ['page' => $page]);
+        return view('admin.pages.form', ['page' => $page, 'bases' => $this->bases(), 'base' => $request->query('from')]);
     }
 
     public function store(Request $request): RedirectResponse
     {
-        $data = $request->validate($this->rules());
+        $data = $request->validate($this->rules() + ['base' => ['nullable', Rule::in($this->bases()->pluck('slug')->all())]]);
+
+        if (!empty($data['base'])) {
+            // same design as an existing page, with a private copy of its texts, lists and pictures
+            $source = Page::where('slug', $data['base'])->firstOrFail();
+            $page = app(PageCloner::class)->clone($source, $data['slug'], Html::plain($data['title']));
+            $this->fillPage($request, $page, $data);
+            $page->save();
+            ActivityLog::record('created', "Created page “{$page->title}” as a copy of “{$source->title}”", $page);
+            return redirect()->route('admin.pages.content', $page)->with('success', 'The page was created with the same design. Now change its texts and pictures.');
+        }
 
         $page = new Page();
         $page->slug = $data['slug'];
@@ -74,6 +85,9 @@ class PageController extends Controller
             return back()->withInput()->withErrors(['status' => 'The home page has to stay published.']);
         }
         if (!$page->is_system && isset($data['slug'])) {
+            if ($page->hasEditor() && $data['slug'] !== $page->slug) {
+                app(PageCloner::class)->rename($page->slug, $data['slug']);   // its texts/lists are stored under the address
+            }
             $page->slug = $data['slug'];
         }
         $this->fillPage($request, $page, $data);
@@ -105,6 +119,9 @@ class PageController extends Controller
         Media::delete($page->featured_image);
         Media::delete($page->og_image);
         $title = $page->title;
+        if ($page->hasEditor()) {
+            app(PageCloner::class)->purge($page->slug);
+        }
         $page->forceDelete();               // really gone, so the same web address can be used again (slug is unique)
 
         ActivityLog::record('deleted', "Deleted page “{$title}”");
@@ -112,6 +129,12 @@ class PageController extends Controller
     }
 
     /* ------------------------------------------------------------------ */
+
+    /** Pages whose design can be copied into a new page (everything with its own layout except the home page). */
+    private function bases()
+    {
+        return Page::orderBy('sort')->orderBy('id')->get()->filter(fn (Page $p) => $p->hasEditor() && $p->slug !== 'index')->values();
+    }
 
     private function rules(?Page $page = null): array
     {
@@ -145,7 +168,7 @@ class PageController extends Controller
             'meta_keywords' => isset($data['meta_keywords']) ? Html::plain($data['meta_keywords']) : null,
             'status' => $data['status'],
         ]);
-        if (!$page->is_system) {
+        if (!$page->is_system && !$page->hasEditor()) {
             $page->content = Html::rich($data['content'] ?? '');
         }
         if ($page->isPublished() && !$page->published_at) {

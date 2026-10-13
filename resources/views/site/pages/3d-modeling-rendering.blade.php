@@ -77,6 +77,7 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
          Exploded View button all inside ONE 1920x920 scene (node 6:179), overlaid on the same
          grid-floor photo, not stacked as separate blocks. Every left/top below is that node's
          exact coordinate. -->
+    @if($show('viewer'))
     <section class="td-viewer">
         <img class="td-viewer__bg" src="{{ $T('360-viewer-selected-work.1') }}" alt="">
         <img class="td-viewer__texture" src="{{ $T('360-viewer-selected-work.2') }}" alt="">
@@ -152,8 +153,10 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <button type="button" class="round-arrow" aria-label="Next" data-gallery-next><img src="<?= $vc ?>slider-arrow-right.svg" width="52" height="52" alt=""></button>
         </div>
     </section>
+    @endif
 
     <!-- ============ STATS ============ -->
+    @if($show('stats'))
     <section class="container ve-stats td-stats">
         <img class="td-stats__bg" src="{{ $T('stats.1') }}" alt="">
         <div class="ve-stats__content ve-stats__content--center">
@@ -171,8 +174,10 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <?php endforeach; ?>
         </div>
     </section>
+    @endif
 
     <!-- ============ WHY INTELLIWORKZ ============ -->
+    @if($show('why'))
     <section class="container ve-why">
         <div class="ve-split">
             <h2 class="h2">{!! $T('why-intelliworkz.1') !!}</h2>
@@ -198,8 +203,10 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <?php endforeach; ?>
         </div>
     </section>
+    @endif
 
     <!-- ============ TOOLS STRIP ============ -->
+    @if($show('tools'))
     <section class="ve-tools td-tools">
         <img class="ve-tools__bg" src="{{ $T('tools-strip.1') }}" alt="">
         <ul class="ve-tools__row">
@@ -223,8 +230,10 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <li class="ve-tools__divider"></li> <!-- Figma ends the row with a trailing divider -->
         </ul>
     </section>
+    @endif
 
     <!-- ============ SERVICES + WORKFLOW ============ -->
+    @if($show('services'))
     <section class="ve-services-flow">
         <div class="container ve-services">
             <div class="ve-split ve-split--center">
@@ -267,15 +276,19 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <?php endforeach; ?>
         </div>
     </section>
+    @endif
 
     <!-- ============ DARK SHOWCASE (shared) ============ -->
+    @if($show('showcase'))
     @php
 $showcase_title = $T('dark-showcase-shared.1');
 @endphp
     @include('site.sections.showcase')
+    @endif
 
     <!-- ============ WHAT WE OFFER + CTA + ENGAGEMENT ============ -->
     <div class="ve-offer-engagement">
+    @if($show('offers'))
         <section class="ve-offers">
             <div class="ve-offers__head">
                 <h2 class="h2 h2--center">{!! $T('what-we-offer-cta-engagement.2') !!}</h2>
@@ -302,17 +315,23 @@ $showcase_title = $T('dark-showcase-shared.1');
                 <?php foreach ($td_offers as $o): ?><button type="button" class="dots__dot" aria-label="Show <?= $o['title'] ?>"></button><?php endforeach; ?>
             </div>
         </section>
+    @endif
 
+    @if($show('cta'))
         <section class="cta-band">
             <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
             <h2 class="cta-title">{!! $T('what-we-offer-cta-engagement.4') !!}</h2>
             <?php btn($T('what-we-offer-cta-engagement.1'), 'btn--cta', 'arrow-cta.svg'); ?>
         </section>
+    @endif
 
+    @if($show('engagement'))
         @include('site.sections.engagement')
+    @endif
     </div>
 
     <!-- ============ FAQs ============ -->
+    @if($show('faq'))
     <section class="container ve-faq">
         <h2 class="h2 h2--center">{!! $T('faqs.1') !!}</h2>
         <div class="acc acc--faq" data-accordion>
@@ -327,6 +346,7 @@ $showcase_title = $T('dark-showcase-shared.1');
             <?php endforeach; ?>
         </div>
     </section>
+    @endif
 
 </main>
 

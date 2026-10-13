@@ -41,6 +41,21 @@ class InquiryTest extends CmsTestCase
         $this->assertSame(0, ContactInquiry::count());
     }
 
+    public function test_contact_number_is_required_and_must_look_like_a_number(): void
+    {
+        $this->postJson('/inquiries', $this->payload(['phone' => '']))
+            ->assertStatus(422)->assertJsonValidationErrors(['phone'])
+            ->assertJsonPath('errors.phone.0', 'Please enter your contact number.');
+        foreach (['------', '123', '+91 98765 43210 12345 6789', 'abc12345'] as $bad) {
+            $this->postJson('/inquiries', $this->payload(['phone' => $bad]))->assertStatus(422)->assertJsonValidationErrors(['phone']);
+        }
+        \Illuminate\Support\Facades\Cache::flush();   // the form is rate-limited (5 per minute)
+        foreach (['+91 98765 43210', '9876543210', '(022) 2345-6789'] as $good) {
+            $this->postJson('/inquiries', $this->payload(['phone' => $good]))->assertOk();
+        }
+        $this->assertSame(3, ContactInquiry::count());
+    }
+
     public function test_html_in_the_message_is_stripped_before_saving(): void
     {
         $this->postJson('/inquiries', $this->payload(['name' => '<script>alert(1)</script>Eve', 'message' => "Hi <b>there</b><img src=x onerror=alert(1)>\nSecond line"]))->assertOk();

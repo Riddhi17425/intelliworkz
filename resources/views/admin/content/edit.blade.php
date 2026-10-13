@@ -12,6 +12,24 @@
 <form method="post" action="{{ $action }}" enctype="multipart/form-data" data-content-form data-dirty-guard data-once>
     @csrf @method('PUT')
 
+    @if(!empty($toggles))
+        <div class="adm-card mb-3" id="sectionSwitches">
+            <div class="adm-card__head"><h2>Sections shown on this page</h2><span class="ms-auto small text-muted">Untick a section to hide it on the website. Its text is kept.</span></div>
+            <div class="adm-card__body">
+                <input type="hidden" name="has_section_switches" value="1">
+                <div class="row g-2">
+                    <div class="col-sm-6 col-lg-4"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked disabled id="sw_hero"><label class="form-check-label" for="sw_hero">Hero (always shown)</label></div></div>
+                    @foreach($toggles as $key => $label)
+                        <div class="col-sm-6 col-lg-4"><div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" name="show_sections[{{ $key }}]" value="1" id="sw_{{ $key }}" @checked(old('has_section_switches') ? old("show_sections.$key") : $page->showsSection($key))>
+                            <label class="form-check-label" for="sw_{{ $key }}">{{ $label }}</label>
+                        </div></div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
+
     <nav class="adm-tabs" id="sectionTabs" aria-label="Sections">
         @foreach($sections as $s)<a href="#sec-{{ $s['id'] }}" data-spy="sec-{{ $s['id'] }}">{{ $s['name'] }}</a>@endforeach
     </nav>

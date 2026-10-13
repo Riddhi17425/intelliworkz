@@ -21,6 +21,20 @@ class HtmlTest extends TestCase
         $this->assertStringContainsString('<a href="https://example.com"', Html::clean('<a href="https://example.com">x</a>'));
     }
 
+    public function test_lists_are_kept_in_copy_and_get_the_site_list_class(): void
+    {
+        $out = Html::clean('Why us:<ul><li>Fast</li><li><b>Safe</b></li></ul>');
+        $this->assertSame('Why us:<ul class="rt"><li>Fast</li><li><b>Safe</b></li></ul>', $out);
+        $this->assertStringContainsString('<ol class="rt"><li>One</li></ol>', Html::clean('<ol><li>One</li></ol>'));
+        // attributes on lists are still stripped, scripts inside still die
+        $bad = Html::clean('<ul onclick="x()" style="color:red"><li>a<script>alert(1)</script></li></ul>');
+        $this->assertStringNotContainsString('onclick', $bad);
+        $this->assertStringNotContainsString('script', $bad);
+        $this->assertStringNotContainsString('style', $bad);
+        // long-form page text keeps its own list markup (no class added)
+        $this->assertSame('<ul><li>x</li></ul>', Html::rich('<ul><li>x</li></ul>'));
+    }
+
     #[DataProvider('attacks')]
     public function test_attacks_are_neutralised(string $input, string $forbidden): void
     {

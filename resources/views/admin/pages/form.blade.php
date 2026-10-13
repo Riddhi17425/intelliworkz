@@ -5,7 +5,7 @@
 @section('content')
 <x-admin.head :title="$editing ? $page->title : 'New page'" :crumbs="['Pages' => route('admin.pages.index'), ($editing ? 'Settings & SEO' : 'New page') => null]">
     <x-slot:actions>
-        @if($editing && $page->is_system)<a href="{{ route('admin.pages.content', $page) }}" class="btn btn-primary"><i class="bi bi-pencil-square me-1"></i> Edit page content</a>@endif
+        @if($editing && $page->hasEditor())<a href="{{ route('admin.pages.content', $page) }}" class="btn btn-primary"><i class="bi bi-pencil-square me-1"></i> Edit page content</a>@endif
         @if($editing)<a href="{{ $page->url() }}" target="_blank" rel="noopener" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-up-right me-1"></i> View</a>@endif
     </x-slot:actions>
 </x-admin.head>
@@ -17,6 +17,18 @@
             <div class="adm-card mb-3">
                 <div class="adm-card__head"><h2>{{ $page->is_system ? 'Page details' : 'Content' }}</h2></div>
                 <div class="adm-card__body">
+                    @if(!$editing && isset($bases) && $bases->isNotEmpty())
+                        <div class="mb-3">
+                            <label class="form-label" for="f_base">Design</label>
+                            <select id="f_base" name="base" class="form-select" data-base-select>
+                                <option value="">Simple text page (title, text, picture)</option>
+                                @foreach($bases as $b)
+                                    <option value="{{ $b->slug }}" @selected(old('base', $base ?? null) === $b->slug)>Same design as “{{ $b->title }}”</option>
+                                @endforeach
+                            </select>
+                            <div class="form-text">Choosing a design copies all of that page's sections, texts, lists and pictures into the new page. You then change them in <em>Edit page content</em>; the original page is never touched.</div>
+                        </div>
+                    @endif
                     <x-admin.field name="title" label="Page title" :value="$page->title" :required="true" placeholder="e.g. Careers" :attrs="['maxlength' => 160]" />
                     @unless($page->is_system)
                         <div class="mb-3">
@@ -28,8 +40,16 @@
                             @error('slug')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
                             <div class="form-text">Lower-case letters, numbers and hyphens only. @if($editing)<strong>Changing it breaks existing links to this page.</strong>@endif</div>
                         </div>
-                        <x-admin.field name="content" type="rich" label="Page content" :value="$page->content" />
-                        <x-admin.image name="featured_image" label="Featured image" :current="$page->featured_image" help="Shown at the top of the page. PNG, JPG, WebP or GIF up to 5 MB." />
+                        @if($page->hasEditor())
+                            <div class="alert alert-light border small mb-0"><i class="bi bi-info-circle me-1"></i>
+                                This page uses a designed layout. Its texts, pictures, lists and sections are edited with <a href="{{ route('admin.pages.content', $page) }}"><strong>Edit page content</strong></a>.
+                            </div>
+                        @else
+                            <div data-generic-fields>
+                                <x-admin.field name="content" type="rich" label="Page content" :value="$page->content" />
+                                <x-admin.image name="featured_image" label="Featured image" :current="$page->featured_image" help="Shown at the top of the page. PNG, JPG, WebP or GIF up to 5 MB." />
+                            </div>
+                        @endif
                     @else
                         <div class="alert alert-light border small mb-0"><i class="bi bi-info-circle me-1"></i>
                             This is one of the original website pages. Its texts, pictures and lists are edited with <a href="{{ route('admin.pages.content', $page) }}"><strong>Edit page content</strong></a>.
@@ -80,3 +100,14 @@
     </div>
 </form>
 @endsection
+
+@push('scripts')
+<script>
+    (function () {
+        var sel = document.querySelector('[data-base-select]'), box = document.querySelector('[data-generic-fields]');
+        if (!sel || !box) return;
+        var sync = function () { box.style.display = sel.value ? 'none' : ''; };
+        sel.addEventListener('change', sync); sync();
+    })();
+</script>
+@endpush

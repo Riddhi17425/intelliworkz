@@ -25,6 +25,7 @@ class Page extends Model
     {
         return [
             'is_system' => 'boolean',
+            'hidden_sections' => 'array',
             'published_at' => 'datetime',
         ];
     }
@@ -40,6 +41,32 @@ class Page extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    /** Name of the design (Blade view in site/pages) this page is drawn with; null for a plain text page. */
+    public function viewKey(): ?string
+    {
+        if ($this->is_system) {
+            return $this->slug;
+        }
+        return $this->template && $this->template !== 'generic' ? $this->template : null;
+    }
+
+    /** True when the page has a designed layout with its own texts/lists to edit (original pages and copies of them). */
+    public function hasEditor(): bool
+    {
+        return $this->viewKey() !== null;
+    }
+
+    /** Sections of this page's design that can be switched on/off: key => label. */
+    public function sectionToggles(): array
+    {
+        return config('page_sections.' . $this->viewKey(), []);
+    }
+
+    public function showsSection(string $key): bool
+    {
+        return !in_array($key, $this->hidden_sections ?? [], true);
     }
 
     public function editor(): BelongsTo

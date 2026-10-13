@@ -67,12 +67,12 @@
                             <img src="<?= iu('assets/icons/', $o['flag'] ?? '') ?>" width="70" height="70" alt="">
                             <div class="office__info">
                                 <h3>{!! $o['name'] ?? '' !!}</h3>
-                                <p>{!! $o['address'] ?? '' !!}</p>
+                                <p>{!! map_link($o['address'] ?? '') !!}</p>
                             </div>
                         </div>
                         <div class="office__phone">
                             <img src="assets/icons/{{ $phoneIcon }}" width="40" height="40" alt="">
-                            <span>{!! $o['phone'] ?? '' !!}</span>
+                            <span>{!! contact_html($o['phone'] ?? '') !!}</span>
                         </div>
                     </div>
                 </article>

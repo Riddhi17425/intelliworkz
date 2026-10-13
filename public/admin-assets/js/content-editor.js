@@ -84,9 +84,62 @@
                 if (!en.isIntersecting) return;
                 tabs.forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-spy') === en.target.id); });
                 var active = document.querySelector('[data-spy].active');
-                if (active && active.scrollIntoView) active.scrollIntoView({ block: 'nearest', inline: 'center' });
+                // scroll only the tab strip sideways; scrollIntoView() would drag the whole page back up to the strip
+                var strip = active && active.parentElement;
+                if (strip && strip.scrollWidth > strip.clientWidth) {
+                    strip.scrollTo({ left: active.offsetLeft - (strip.clientWidth - active.offsetWidth) / 2, behavior: 'smooth' });
+                }
             });
-        }, { rootMargin: '-90px 0px -65% 0px' });
+        }, { rootMargin: '-160px 0px -60% 0px' });
         document.querySelectorAll('.adm-fieldgroup').forEach(function (s) { spy.observe(s); });
     }
+
+    // formatting toolbar above paragraph boxes (works for rows added later too: one delegated listener)
+    document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-fmt-act]');
+        if (!btn) return;
+        var bar = btn.closest('.adm-fmt');
+        var ta = bar && bar.nextElementSibling;
+        if (!ta || ta.tagName !== 'TEXTAREA') return;
+        e.preventDefault();
+
+        var start = ta.selectionStart, end = ta.selectionEnd;
+        var sel = ta.value.slice(start, end);
+        var out, cursorFrom, cursorTo;
+        var wrap = function (open, close, fallback) {
+            var inner = sel || fallback;
+            out = open + inner + close;
+            cursorFrom = start + open.length;
+            cursorTo = cursorFrom + inner.length;
+        };
+
+        switch (btn.getAttribute('data-fmt-act')) {
+            case 'strong': wrap('<strong>', '</strong>', 'bold text'); break;
+            case 'em': wrap('<em>', '</em>', 'italic text'); break;
+            case 'link':
+                var url = window.prompt('Link address (https://…, mailto:, tel: or a page like contact-us.php)', 'https://');
+                if (!url || url === 'https://') return;
+                wrap('<a href="' + url.replace(/"/g, '&quot;') + '">', '</a>', 'link text');
+                break;
+            case 'ul':
+            case 'ol':
+                var tag = btn.getAttribute('data-fmt-act');
+                var lines = (sel || 'List item').split(/\n+/).map(function (l) { return l.trim(); }).filter(Boolean);
+                out = '<' + tag + '>\n' + lines.map(function (l) { return '<li>' + l + '</li>'; }).join('\n') + '\n</' + tag + '>';
+                cursorFrom = start; cursorTo = start + out.length;
+                break;
+            case 'br': out = '<br>'; cursorFrom = cursorTo = start + out.length; break;
+            case 'clear':
+                if (sel) { out = sel.replace(/<[^>]*>/g, ''); }
+                else { ta.value = ta.value.replace(/<[^>]*>/g, ''); ta.dispatchEvent(new Event('input', { bubbles: true })); ta.focus(); return; }
+                cursorFrom = start; cursorTo = start + out.length;
+                break;
+            default: return;
+        }
+
+        ta.value = ta.value.slice(0, start) + out + ta.value.slice(end);
+        ta.focus();
+        ta.setSelectionRange(cursorFrom, cursorTo);
+        ta.dispatchEvent(new Event('input', { bubbles: true }));   // live titles + unsaved-changes guard
+    });
 })();

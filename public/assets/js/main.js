@@ -166,27 +166,38 @@
         requestAnimationFrame(step);
     };
 
-    counters.forEach(function (el) {
-        /* lock the final width so the layout doesn't jump while digits change */
-        el.style.display = 'inline-block';
-        el.style.minWidth = el.offsetWidth + 'px';
-        if (!reduce) el.textContent = '0';
-    });
-    if (reduce) return;
-
-    if (!('IntersectionObserver' in window)) {
-        counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
-        return;
-    }
-
-    var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            io.unobserve(entry.target);
-            run(entry.target);
+    var start = function () {
+        /* lock the final width so the layout doesn't jump while digits change. It is measured only once the web fonts are
+           ready (a width taken with the fallback font is wrong later), always left-aligned, and measured on the final number */
+        counters.forEach(function (el) {
+            el.style.display = 'inline-block';
+            el.style.textAlign = 'left';
+            el.style.minWidth = '';
+            el.style.minWidth = el.getBoundingClientRect().width + 'px';
+            if (!reduce) el.textContent = '0';
         });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { io.observe(el); });
+        if (reduce) return;
+
+        if (!('IntersectionObserver' in window)) {
+            counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
+            return;
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                io.unobserve(entry.target);
+                run(entry.target);
+            });
+        }, { threshold: 0.4 });
+        counters.forEach(function (el) { io.observe(el); });
+    };
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(start, start);
+    } else {
+        start();
+    }
 })();
 
 /* Showcase slider: centred active card, dots, autoplay, swipe/drag and click-a-side-card */

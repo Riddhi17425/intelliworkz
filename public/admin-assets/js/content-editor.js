@@ -142,4 +142,44 @@
         ta.setSelectionRange(cursorFrom, cursorTo);
         ta.dispatchEvent(new Event('input', { bubbles: true }));   // live titles + unsaved-changes guard
     });
+
+    // "Sections on this page": move rows up/down, grey out hidden ones, remove an added section
+    var layoutList = document.querySelector('[data-layout-list]');
+    if (layoutList) {
+        var reindex = function () {
+            layoutList.querySelectorAll('[data-layout-row]').forEach(function (row, i) {
+                row.querySelectorAll('input[name^="layout["]').forEach(function (input) {
+                    input.name = input.name.replace(/^layout\[\d+\]/, 'layout[' + i + ']');
+                });
+            });
+        };
+        layoutList.addEventListener('click', function (e) {
+            var move = e.target.closest('[data-layout-move]');
+            if (move) {
+                var row = move.closest('[data-layout-row]');
+                var dir = parseInt(move.getAttribute('data-layout-move'), 10);
+                var other = dir < 0 ? row.previousElementSibling : row.nextElementSibling;
+                if (!other || !other.hasAttribute('data-layout-row')) return;     // the hero row stays first
+                if (dir < 0) layoutList.insertBefore(row, other); else layoutList.insertBefore(other, row);
+                reindex();
+                row.classList.add('is-moved');
+                setTimeout(function () { row.classList.remove('is-moved'); }, 600);
+                var form = layoutList.closest('form');
+                if (form) form.dispatchEvent(new Event('input', { bubbles: true }));    // unsaved-changes guard
+                return;
+            }
+            var rm = e.target.closest('[data-remove-section]');
+            if (rm) {
+                var f = document.getElementById('removeSectionForm');
+                if (!f) return;
+                f.action = rm.getAttribute('data-remove-section');
+                f.setAttribute('data-confirm', '“' + rm.getAttribute('data-remove-name') + '” and the text you wrote in it will be deleted from this page. This cannot be undone.');
+                f.requestSubmit ? f.requestSubmit() : f.submit();
+            }
+        });
+        layoutList.addEventListener('change', function (e) {
+            var sw = e.target.closest('[data-layout-show]');
+            if (sw) sw.closest('[data-layout-row]').classList.toggle('is-off', !sw.checked);
+        });
+    }
 })();

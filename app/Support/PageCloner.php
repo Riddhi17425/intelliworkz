@@ -20,7 +20,7 @@ class PageCloner
             $page->slug = $slug;
             $page->template = $source->viewKey();
             $page->is_system = false;
-            $page->hidden_sections = $source->hidden_sections;
+            $page->layout = $source->layout;
             $page->sort = (int) Page::max('sort') + 1;
             $page->save();
 
@@ -40,11 +40,46 @@ class PageCloner
             }
             Content::forget($slug);
 
+            // sections copied in from other designs keep a private copy of their content under the new address
+            foreach (SectionPlan::layout($source) as $item) {
+                if ($item['tpl']) {
+                    $this->copyScope(SectionPlan::scope($source, $item), $slug . '~' . $item['id']);
+                }
+            }
+
             return $page;
         });
     }
 
-    /** Removes the content (and uploaded pictures) of a page that is being deleted. */
+    private function copyScope(string $from, string $to): void
+    {
+        foreach (ContentField::where('scope', $from)->orderBy('id')->get() as $f) {
+            $copy = $f->replicate();
+            $copy->scope = $to;
+            if ($f->type === 'image') {
+                $copy->value = Media::duplicate($f->value);
+            }
+            $copy->save();
+        }
+        foreach (ContentList::where('scope', $from)->orderBy('id')->get() as $l) {
+            $copy = $l->replicate();
+            $copy->scope = $to;
+            $copy->items = $this->duplicateUploads($l->items ?? []);
+            $copy->save();
+        }
+        Content::forget($to);
+    }
+
+    /** Removes the content (and uploaded pictures) of a page that is being deleted, including its copied-in sections. */
+    public function purgePage(Page $page): void
+    {
+        foreach (SectionPlan::extraScopes($page) as $scope) {
+            $this->purge($scope);
+        }
+        $this->purge($page->slug);
+    }
+
+    /** Removes the content (and uploaded pictures) of one scope. */
     public function purge(string $scope): void
     {
         foreach (ContentField::where('scope', $scope)->where('type', 'image')->get() as $f) {
@@ -58,7 +93,15 @@ class PageCloner
         Content::forget($scope);
     }
 
-    /** The address of a page changed: its content follows it. */
+    /** The address of a page changed: its content (and that of its copied-in sections) follows it. */
+    public function renamePage(Page $page, string $to): void
+    {
+        foreach (SectionPlan::extraScopes($page) as $id => $scope) {
+            $this->rename($scope, $to . '~' . $id);
+        }
+        $this->rename($page->slug, $to);
+    }
+
     public function rename(string $from, string $to): void
     {
         ContentField::where('scope', $from)->update(['scope' => $to]);

@@ -47,7 +47,15 @@ class PageController extends Controller
 
         $lists = array_merge($content->lists('global'), $content->lists($page->slug));
 
-        return $lists + [
+        // service designs are drawn section by section (order, visibility and copied-in sections come from the admin)
+        $sections = [];
+        if ($page->hasSections()) {
+            $built = \App\Support\SectionPlan::plan($page, $content);
+            $sections = ['sectionPlan' => $built['plan'], 'mainExtra' => $built['main']];
+            $cfg['extra_css'] = array_values(array_unique(array_merge($cfg['extra_css'] ?? [], $built['css'])));
+        }
+
+        return $lists + $sections + [
             'page' => $page,
             'cfg' => $cfg,
             'preview' => $preview,
@@ -56,7 +64,6 @@ class PageController extends Controller
             'footerMenu' => $menus['footer'],
             // $T('hero.1') = this page's copy, $G('footer.1') = copy shared by every page
             'T' => fn (string $key, string $default = '') => $fields[$key] ?? $default,
-            'show' => fn (string $section) => $page->showsSection($section),
             'G' => fn (string $key, string $default = '') => $globals[$key] ?? $default,
             'meta' => [
                 'title' => $title,

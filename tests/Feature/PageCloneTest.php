@@ -57,37 +57,11 @@ class PageCloneTest extends CmsTestCase
         $admin = $this->admin();
         $field = ContentField::where('scope', '2d-animation')->where('key', 'faqs.1')->firstOrFail();
 
-        $this->actingAs($admin)->get('/admin/pages/2d-animation/content')->assertOk()->assertSee('Sections shown on this page');
+        $this->actingAs($admin)->get('/admin/pages/2d-animation/content')->assertOk()->assertSee('Sections on this page');
         $this->actingAs($admin)->put('/admin/pages/2d-animation/content', ['fields' => [$field->id => 'My own FAQ title']])->assertRedirect();
 
         $this->assertSame('My own FAQ title', $field->fresh()->value);
         $this->assertNotSame('My own FAQ title', ContentField::where('scope', '3d-modeling-rendering')->where('key', 'faqs.1')->value('value'));
-    }
-
-    public function test_sections_can_be_hidden_per_page(): void
-    {
-        $page = $this->clonePage();
-        $admin = $this->admin();
-        $this->get('/2d-animation')->assertSee('ve-faq')->assertSee('td-tools');
-
-        // only "stats" and "why" stay ticked → every other switchable section is hidden
-        $this->actingAs($admin)->put('/admin/pages/2d-animation/content', [
-            'has_section_switches' => 1, 'show_sections' => ['stats' => 1, 'why' => 1],
-        ])->assertRedirect();
-
-        $page->refresh();
-        $this->assertContains('faq', $page->hidden_sections);
-        $this->assertNotContains('stats', $page->hidden_sections);
-        auth()->logout();
-        $this->get('/2d-animation')->assertOk()->assertDontSee('ve-faq')->assertDontSee('td-tools')->assertSee('ve-stats');
-
-        // the original page is unaffected
-        $this->get('/3d-modeling-rendering.php')->assertSee('ve-faq');
-
-        // switching everything back on
-        $all = array_fill_keys(array_keys(config('page_sections.3d-modeling-rendering')), 1);
-        $this->actingAs($admin)->put('/admin/pages/2d-animation/content', ['has_section_switches' => 1, 'show_sections' => $all])->assertRedirect();
-        $this->assertEmpty($page->fresh()->hidden_sections);
     }
 
     public function test_changing_the_address_keeps_the_content(): void

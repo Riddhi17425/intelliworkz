@@ -12,22 +12,8 @@
 <form method="post" action="{{ $action }}" enctype="multipart/form-data" data-content-form data-dirty-guard data-once>
     @csrf @method('PUT')
 
-    @if(!empty($toggles))
-        <div class="adm-card mb-3" id="sectionSwitches">
-            <div class="adm-card__head"><h2>Sections shown on this page</h2><span class="ms-auto small text-muted">Untick a section to hide it on the website. Its text is kept.</span></div>
-            <div class="adm-card__body">
-                <input type="hidden" name="has_section_switches" value="1">
-                <div class="row g-2">
-                    <div class="col-sm-6 col-lg-4"><div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked disabled id="sw_hero"><label class="form-check-label" for="sw_hero">Hero (always shown)</label></div></div>
-                    @foreach($toggles as $key => $label)
-                        <div class="col-sm-6 col-lg-4"><div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" name="show_sections[{{ $key }}]" value="1" id="sw_{{ $key }}" @checked(old('has_section_switches') ? old("show_sections.$key") : $page->showsSection($key))>
-                            <label class="form-check-label" for="sw_{{ $key }}">{{ $label }}</label>
-                        </div></div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
+    @if(!empty($layout))
+        @include('admin.content._layout')
     @endif
 
     <nav class="adm-tabs" id="sectionTabs" aria-label="Sections">
@@ -63,6 +49,12 @@
         <span class="small text-muted ms-auto d-none d-md-inline">Changes go live as soon as you save.</span>
     </div>
 </form>
+
+@if(!empty($layout))
+    {{-- outside the big form (forms cannot nest); the selects and the button above point here with form="addSectionForm" --}}
+    <form id="addSectionForm" method="post" action="{{ route('admin.pages.sections.add', $page) }}">@csrf</form>
+    <form id="removeSectionForm" method="post" action="" data-confirm="" data-confirm-title="Remove this section?" data-confirm-ok="Yes, remove">@csrf @method('DELETE')</form>
+@endif
 @endsection
 
 @push('scripts')

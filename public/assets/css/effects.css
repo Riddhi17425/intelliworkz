@@ -191,3 +191,7 @@ ul.rt { list-style: disc; }
 ol.rt { list-style: decimal; }
 ul.rt li, ol.rt li { display: list-item; margin: 0 0 4px; padding: 0; }
 ul.rt li::before, ol.rt li::before { content: none; }
+
+/* ---------- Counters: digits keep a constant width and always start at the left edge ---------- */
+[data-count] { font-variant-numeric: tabular-nums; text-align: left; }
+.metric__value { justify-content: flex-start; }

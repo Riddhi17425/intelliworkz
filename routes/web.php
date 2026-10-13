@@ -34,6 +34,8 @@ Route::prefix('admin')->name('admin.')->middleware('admin.guard')->group(functio
         Route::delete('pages/{page}', [Admin\PageController::class, 'destroy'])->middleware('can:delete-content')->name('pages.destroy');
         Route::get('pages/{page}/content', [Admin\ContentController::class, 'editPage'])->name('pages.content');
         Route::put('pages/{page}/content', [Admin\ContentController::class, 'updatePage'])->name('pages.content.update');
+        Route::post('pages/{page}/sections', [Admin\ContentController::class, 'addSection'])->name('pages.sections.add');
+        Route::delete('pages/{page}/sections/{id}', [Admin\ContentController::class, 'removeSection'])->where('id', '[a-z0-9-]+')->name('pages.sections.remove');
 
         // Header / footer / sections shared by every page
         Route::get('shared', [Admin\ContentController::class, 'editShared'])->name('shared.edit');

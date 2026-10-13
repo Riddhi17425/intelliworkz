@@ -232,3 +232,15 @@ tr.is-unread .row-title { font-weight: 700; }
 .adm-fmt button { display: grid; place-items: center; width: 30px; height: 28px; font-size: 1.05rem; color: #3d4559; background: none; border: 0; border-radius: .45rem; }
 .adm-fmt button:hover { color: var(--adm-brand); background: #fdf1f2; }
 .adm-fmt + textarea { border-top-left-radius: 0; border-top-right-radius: 0; }
+
+/* ---------- "Sections on this page" panel ---------- */
+.adm-layout { display: flex; flex-direction: column; gap: .4rem; margin: 0 0 1.1rem; padding: 0; list-style: none; }
+.adm-layout__row { display: flex; align-items: center; gap: .6rem; padding: .45rem .7rem; background: #fafbfe; border: 1px solid var(--bs-border-color); border-radius: .7rem; transition: background .3s, opacity .2s; }
+.adm-layout__row.is-fixed { color: var(--adm-muted); background: #f3f4f9; }
+.adm-layout__row.is-off { opacity: .55; }
+.adm-layout__row.is-off .adm-layout__name { text-decoration: line-through; }
+.adm-layout__row.is-moved { background: #fdf1f2; }
+.adm-layout__tools { display: flex; gap: .15rem; min-width: 64px; color: var(--adm-muted); }
+.adm-layout__tools .btn { padding: .15rem .45rem; }
+.adm-layout__name { font-weight: 600; color: #1d2236; }
+.adm-layout__add { padding-top: 1rem; border-top: 1px dashed var(--bs-border-color); }

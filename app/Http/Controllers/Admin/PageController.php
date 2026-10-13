@@ -86,7 +86,7 @@ class PageController extends Controller
         }
         if (!$page->is_system && isset($data['slug'])) {
             if ($page->hasEditor() && $data['slug'] !== $page->slug) {
-                app(PageCloner::class)->rename($page->slug, $data['slug']);   // its texts/lists are stored under the address
+                app(PageCloner::class)->renamePage($page, $data['slug']);   // its texts/lists are stored under the address
             }
             $page->slug = $data['slug'];
         }
@@ -120,7 +120,7 @@ class PageController extends Controller
         Media::delete($page->og_image);
         $title = $page->title;
         if ($page->hasEditor()) {
-            app(PageCloner::class)->purge($page->slug);
+            app(PageCloner::class)->purgePage($page);
         }
         $page->forceDelete();               // really gone, so the same web address can be used again (slug is unique)
 

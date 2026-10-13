@@ -66,5 +66,6 @@
 <script src="{{ asset_url('assets/js/main.js') }}"></script>
 <script src="{{ asset_url('assets/js/effects.js') }}" defer></script>
 <script src="{{ asset_url('assets/js/inquiry.js') }}" defer></script>
+@stack('scripts')
 </body>
 </html>

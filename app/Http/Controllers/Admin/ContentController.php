@@ -11,12 +11,14 @@ use App\Models\Page;
 use App\Support\Content;
 use App\Support\Html;
 use App\Support\Media;
+use App\Support\SectionPlan;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
@@ -32,28 +34,51 @@ class ContentController extends Controller
             'crumbs' => ['Pages' => route('admin.pages.index'), $page->title => route('admin.pages.edit', $page), 'Content' => null],
             'action' => route('admin.pages.content.update', $page),
             'viewUrl' => $page->url(),
-            'sections' => $this->sections($page->slug),
+            'sections' => $this->pageSections($page),
             'intro' => 'Change the text, pictures and lists on this page. Colours, spacing and layout are fixed, so the design cannot be broken here.',
             'seoUrl' => route('admin.pages.edit', $page),
-            'toggles' => $page->sectionToggles(),
             'page' => $page,
+            'layout' => $page->hasSections() ? $this->layoutRows($page) : null,
+            'designs' => $page->hasSections() ? SectionPlan::designs() : [],
+            'sectionLabels' => SectionPlan::LABELS,
         ]);
+    }
+
+    /** Add a section of another design (a private copy of its content) to the page. */
+    public function addSection(Request $request, Page $page): RedirectResponse
+    {
+        abort_unless($page->hasSections(), 404);
+        $data = $request->validate([
+            'tpl' => ['required', Rule::in(array_keys(SectionPlan::designs()))],
+            'key' => ['required', Rule::in(SectionPlan::KEYS)],
+        ]);
+        $item = SectionPlan::add($page, $data['tpl'], $data['key']);
+        $design = SectionPlan::designs()[$data['tpl']] ?? $data['tpl'];
+        ActivityLog::record('updated', "Added section “" . SectionPlan::label($item['key']) . "” from “{$design}” to “{$page->title}”", $page);
+
+        return redirect()->to(route('admin.pages.content', $page) . '#sec-' . Str::slug($item['id'] . '-' . SectionPlan::label($item['key'])))
+            ->with('success', 'The section was added at the end of the page. Move it where you want it, edit its text, then save.');
+    }
+
+    public function removeSection(Page $page, string $id): RedirectResponse
+    {
+        abort_unless($page->hasSections(), 404);
+        abort_unless(SectionPlan::remove($page, $id), 404);
+        ActivityLog::record('updated', "Removed an added section from “{$page->title}”", $page);
+
+        return redirect()->to(route('admin.pages.content', $page) . '#layoutCard')->with('success', 'The section was removed from the page.');
     }
 
     public function updatePage(Request $request, Page $page): RedirectResponse
     {
         abort_unless($page->hasEditor(), 404);
         $changed = $this->save($request, $page->slug);
-
-        // section switches: anything not ticked is hidden (only when the form carried the switches)
-        $toggles = array_keys($page->sectionToggles());
-        if ($toggles && $request->boolean('has_section_switches')) {
-            $visible = array_intersect($toggles, array_keys((array) $request->input('show_sections', [])));
-            $hidden = array_values(array_diff($toggles, $visible));
-            if (($page->hidden_sections ?? []) !== $hidden) {
-                $page->hidden_sections = $hidden ?: null;
-                $page->save();
-                $changed++;
+        if ($page->hasSections()) {
+            foreach (SectionPlan::extraScopes($page) as $scope) {
+                $changed += $this->save($request, $scope);
+            }
+            if ($request->boolean('has_layout_form')) {
+                $changed += $this->saveLayout($request, $page);
             }
         }
         $page->forceFill(['updated_by' => $request->user()->id])->touch();
@@ -86,15 +111,70 @@ class ContentController extends Controller
     /* ------------------------------------------------------------------ building the form */
 
     /** @return list<array{name:string,id:string,fields:\Illuminate\Support\Collection,lists:list<array{model:ContentList,schema:ListSchema}>}> */
-    private function sections(string $scope): array
+    /** Own sections of a page, followed by the sections copied in from other designs. */
+    private function pageSections(Page $page): array
+    {
+        $out = $this->sections($page->slug);
+        if (!$page->hasSections()) {
+            return $out;
+        }
+        $designs = SectionPlan::designs();
+        foreach (SectionPlan::layout($page) as $item) {
+            if ($item['tpl']) {
+                $badge = SectionPlan::label($item['key']) . ' · added from ' . ($designs[$item['tpl']] ?? $item['tpl']);
+                $out = array_merge($out, $this->sections(SectionPlan::scope($page, $item), $item['id'] . '-', $badge));
+            }
+        }
+        return $out;
+    }
+
+    /** Rows of the "Sections on this page" panel. */
+    private function layoutRows(Page $page): array
+    {
+        $designs = SectionPlan::designs();
+        return array_map(fn (array $i) => $i + [
+            'label' => SectionPlan::label($i['key']),
+            'design' => $i['tpl'] ? ($designs[$i['tpl']] ?? $i['tpl']) : null,
+            'removeUrl' => $i['tpl'] ? route('admin.pages.sections.remove', [$page, $i['id']]) : null,
+        ], SectionPlan::layout($page));
+    }
+
+    private function saveLayout(Request $request, Page $page): int
+    {
+        $current = [];
+        foreach (SectionPlan::layout($page) as $item) {
+            $current[$item['id']] = $item;
+        }
+        $new = [];
+        foreach ((array) $request->input('layout', []) as $row) {
+            $id = is_array($row) ? ($row['id'] ?? null) : null;
+            if (!$id || !isset($current[$id]) || isset($new[$id])) {
+                continue;
+            }
+            $new[$id] = ['id' => $id, 'key' => $current[$id]['key'], 'tpl' => $current[$id]['tpl'], 'hidden' => empty($row['show'])];
+        }
+        foreach ($current as $id => $item) {          // anything the form did not mention stays, at the end
+            $new[$id] ??= $item;
+        }
+        $new = array_values($new);
+
+        if ($new === SectionPlan::layout($page)) {
+            return 0;
+        }
+        $page->layout = $new === SectionPlan::defaultLayout() ? null : $new;
+        $page->save();
+        return 1;
+    }
+
+    private function sections(string $scope, string $idPrefix = '', ?string $badge = null): array
     {
         $fields = ContentField::where('scope', $scope)->orderBy('sort')->get();
         $lists = ContentList::where('scope', $scope)->orderBy('sort')->orderBy('id')->get();
 
         $out = [];
-        $sectionFor = function (string $name) use (&$out) {
-            $id = Str::slug($name) ?: 'section';
-            return $out[$id] ??= ['name' => $name, 'id' => $id, 'fields' => collect(), 'lists' => []];
+        $sectionFor = function (string $name) use (&$out, $idPrefix, $badge) {
+            $id = Str::slug($idPrefix . $name) ?: 'section';
+            return $out[$id] ??= ['name' => $name . ($badge ? " — {$badge}" : ''), 'id' => $id, 'fields' => collect(), 'lists' => []];
         };
 
         foreach ($fields->groupBy('section') as $name => $group) {

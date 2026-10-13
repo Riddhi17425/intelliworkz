@@ -25,7 +25,7 @@ class Page extends Model
     {
         return [
             'is_system' => 'boolean',
-            'hidden_sections' => 'array',
+            'layout' => 'array',
             'published_at' => 'datetime',
         ];
     }
@@ -58,15 +58,10 @@ class Page extends Model
         return $this->viewKey() !== null;
     }
 
-    /** Sections of this page's design that can be switched on/off: key => label. */
-    public function sectionToggles(): array
+    /** True when the page is drawn from sections the admin can hide, reorder and mix with other designs. */
+    public function hasSections(): bool
     {
-        return config('page_sections.' . $this->viewKey(), []);
-    }
-
-    public function showsSection(string $key): bool
-    {
-        return !in_array($key, $this->hidden_sections ?? [], true);
+        return \App\Support\SectionPlan::supports($this->viewKey());
     }
 
     public function editor(): BelongsTo

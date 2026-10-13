@@ -22,7 +22,7 @@ return array (
     array (
       0 => 'assets/css/about.css',
     ),
-    'no_zoom' => true,
+    'no_zoom' => false,
     'show_prefooter' => false,
     'footer_class' => 'site-footer--service',
     'phone_icon' => 'video/icon-phone-outline.svg',

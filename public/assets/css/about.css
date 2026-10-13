@@ -67,11 +67,11 @@
 .page-about .footer-brand__about img { max-width: 100%; height: auto; }
 .page-about .office__info p { width: auto; }
 
-@media (max-width: 1500px) {
+@media (max-width: 1199px) {
     .page-about .subnav__list { gap: 16px; }
     .page-about .subnav__btn { font-size: 15px; white-space: nowrap; }
 }
-@media (max-width: 1480px) {   /* the 4-column footer needs ~1450px; stack it earlier than the rest */
+@media (max-width: 1199px) {   /* below 1200 the layout is fluid (no zoom-fit); the 4-column footer stacks */
     .page-about .site-footer__top { flex-direction: column; gap: 40px; }
     .page-about .footer-brand { width: 100%; }
     .page-about .footer-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }

@@ -53,7 +53,9 @@ class MessagePagesTest extends CmsTestCase
         // the greeting is shown once; a later visit has no name (and never echoes markup)
         $this->get('/thank-you')->assertOk()->assertSee('Thank you!', false)->assertDontSee('Asha');
         $this->post('/inquiries', ['name' => '<b>Eve</b><script>x</script>', 'email' => 'e@example.com', 'phone' => '+91 98765 43210']);
-        $this->get('/thank-you')->assertDontSee('<script>', false);
+        $html = $this->get('/thank-you')->assertOk()->getContent();
+        $this->assertStringNotContainsString('<b>Eve</b>', $html);       // markup in the name is never echoed (the page has its own, legitimate script tags)
+        $this->assertStringNotContainsString('<script>x</script>', $html);
     }
 
     public function test_a_failed_validation_does_not_go_to_the_thank_you_page(): void

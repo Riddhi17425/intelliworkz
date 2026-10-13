@@ -467,3 +467,9 @@
     .ppt-scene > img.ppt-scene__main { position: static; left: auto; top: auto; width: 100%; height: auto; max-width: 100%; object-fit: contain; }
     .ppt-tools .seo-tools__grid, .pp-tools .seo-tools__grid { top: auto; }
 }
+
+/* Touch screens: the carousel dots are 10px wide - give each one a 44px tap area without changing how it looks */
+@media (pointer: coarse) {
+    .dots__dot { position: relative; }
+    .dots__dot::after { content: ""; position: absolute; inset: -17px -10px; }
+}

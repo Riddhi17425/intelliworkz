@@ -83,7 +83,7 @@ class PageController extends Controller
         $settings = SiteSetting::map();
         $menus = SiteMenus::get();
         $cfg = config('site_pages.' . ($page->viewKey() ?? 'generic'), [
-            'body_class' => 'page-generic', 'extra_css' => ['assets/css/generic.css'], 'no_zoom' => true,
+            'body_class' => 'page-generic', 'extra_css' => ['assets/css/generic.css'], 'no_zoom' => false,
             'show_prefooter' => true, 'footer_class' => '', 'phone_icon' => null,
         ]);
 

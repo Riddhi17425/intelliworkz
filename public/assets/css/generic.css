@@ -98,3 +98,7 @@
     .page-generic .footer-links .v-line { display: none; }
     .page-generic .footer-col { width: auto; }
 }
+
+/* The header keeps a 16px gap between top bar and menu strip (original design, dark behind it). These pages have a white
+   page background, so the gap needs the same black behind it as on the dark pages. */
+.page-generic .site-header { background: var(--c-black); }

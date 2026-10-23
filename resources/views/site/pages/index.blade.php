@@ -85,6 +85,7 @@ $industry_text = $T('shared-copy.1');
                 <?php endforeach; ?>
             </div>
             <div class="dots" data-cards-dots></div>
+        </div>
     </section>
 
     <!-- ============ CTA BAND ============ -->
@@ -243,34 +244,24 @@ $industry_text = $T('shared-copy.1');
 
     <!-- ============ PROCESS ============ -->
     <section class="process">
-        <span class="process__rule process__rule--1"></span>
-        <span class="process__rule process__rule--2"></span>
         <?php section_head($T('process.1'), $T('process.2'), 'process__head'); ?>
 
-        <?php foreach ([1 => $process_row_1, 2 => $process_row_2] as $rowNo => $row): ?>
-            <div class="process__row process__row--<?= $rowNo ?>">
-                <?php foreach ($row as $p): ?>
-                    <article class="process-card" style="--c: <?= $p['color'] ?>">
-                        <div class="process-card__bg" style="background: <?= $p['fade'] ?>, url('<?= iu('assets/images/', $p['img']) ?>') center / cover no-repeat"></div>
-                        <span class="process-card__flag"><?= $p['no'] ?></span>
-                        <div class="process-card__body">
-                            <div class="process-card__title">
-                                <span class="process-card__icon" style="background: <?= $p['tint'] ?>"><img src="<?= iu('assets/icons/', $p['icon']) ?>" width="21" height="21" alt=""></span>
-                                <h3 class="h-card h-card--dark"><?= $p['title'] ?></h3>
-                            </div>
-                            <p><?= $p['text'] ?></p>
-                        </div>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-        <?php endforeach; ?>
-
-        <img class="process__flow process__flow--loop" src="assets/icons/connector-loop.svg" alt="">
-        <img class="process__flow process__flow--a" src="assets/icons/flow-arrow-a.svg" alt="">
-        <img class="process__flow process__flow--b" src="assets/icons/flow-arrow-b.svg" alt="">
-        <img class="process__flow process__flow--c" src="assets/icons/flow-arrow-c.svg" alt="">
-        <img class="process__flow process__flow--d" src="assets/icons/flow-arrow-d.svg" alt="">
-        <img class="process__flow process__flow--e" src="assets/icons/flow-arrow-e.svg" alt="">
+        <div class="process__flow">
+            <?php foreach ([1 => $process_row_1, 2 => $process_row_2] as $rowNo => $row): ?>
+                <?php if ($rowNo === 2): ?><span class="process__arrow process__arrow--turn" aria-hidden="true"></span><?php endif; ?>
+                <div class="process__row process__row--<?= $rowNo ?>">
+                    <?php foreach ($row as $i => $p): ?>
+                        <?php if ($i): ?><span class="process__arrow" aria-hidden="true"></span><?php endif; ?>
+                        <article class="process-card" style="--c: <?= $p['color'] ?? 'var(--c-teal)' ?>; --bg: <?= $p['bg'] ?? '#F3F8FA' ?>">
+                            <span class="process-card__no"><?= $p['no'] ?></span>
+                            <h3 class="h-card process-card__title"><?= $p['title'] ?></h3>
+                            <p class="small process-card__text"><?= $p['text'] ?></p>
+                            <?php if (!empty($p['img'])): ?><img class="process-card__img" src="<?= iu('assets/images/', $p['img']) ?>" alt=""><?php endif; ?>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </section>
 
     @php

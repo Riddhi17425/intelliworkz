@@ -38,7 +38,7 @@
             "key": "hero.3",
             "label": "Main heading (last line is red)",
             "type": "html",
-            "value": "Creative Minds.<br>Technology<br><em>At Scale.</em>",
+            "value": "Your Extended Team for<br>Creative, Digital &amp;<br>Production Outsourcing",
             "sort": 3
         },
         {
@@ -47,7 +47,7 @@
             "key": "hero.4",
             "label": "Paragraph under the heading",
             "type": "textarea",
-            "value": "We are a global creative and technology partner helping businesses design, communicate and grow through integrated solutions.",
+            "value": "At Intelliworkz, we bring together creative talent, technical expertise and production capabilities to help businesses deliver more, scale faster and operate efficiently.",
             "sort": 4
         },
         {
@@ -92,7 +92,7 @@
             "key": "hero.9",
             "label": "Words at the right edge",
             "type": "html",
-            "value": "Ideas<br>People<br>Technology<br>Growth",
+            "value": "Creative<br>Digital<br>Production<br>Scale",
             "sort": 9
         },
         {
@@ -101,7 +101,7 @@
             "key": "who.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Who We Are",
+            "value": "About Intelliworkz",
             "sort": 10
         },
         {
@@ -110,7 +110,7 @@
             "key": "who.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "A Global Team<br><em>With a Shared Vision.</em>",
+            "value": "Built for Scale.<br>Designed for<br>Partnership.",
             "sort": 11
         },
         {
@@ -119,7 +119,7 @@
             "key": "who.3",
             "label": "First paragraph",
             "type": "textarea",
-            "value": "Intelliworkz is a creative and technology outsourcing company that helps businesses across the world with branding, digital marketing, publishing, post-production, animation and engineering support.",
+            "value": "We are a creative, digital and production services company building a strong global outsourcing practice for businesses that need reliable execution, consistent quality and the capacity to handle work at scale.<br><br>From creative design and video post-production to publishing, pre-press and print production, we help organisations streamline workflows, manage high-volume projects and extend their delivery capabilities without the cost and complexity of building larger in-house teams.<br><br>Our approach combines skilled professionals, structured workflows, quality-focused delivery and flexible engagement models to make outsourcing a seamless extension of your business.",
             "sort": 12
         },
         {
@@ -128,7 +128,7 @@
             "key": "who.4",
             "label": "Second paragraph",
             "type": "textarea",
-            "value": "We combine domain expertise, skilled professionals and streamlined processes to deliver high-quality work, on time and at scale.",
+            "value": "We believe outsourcing is more than delegating tasks. It is about building a dependable partnership that strengthens your operations and supports long-term growth.<br><br>Whether you need a dedicated team working alongside your organisation or a managed services partner to handle recurring production requirements, Intelliworkz offers the flexibility to adapt to your business needs.<br><br>We work with agencies, publishers, brands, production companies and enterprises that require dependable execution across large volumes of creative and production work. Our focus is on building lasting relationships through transparent communication, predictable delivery and the ability to scale with demand.",
             "sort": 13
         },
         {
@@ -191,7 +191,7 @@
             "key": "purpose.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Our Purpose",
+            "value": "Our Vision",
             "sort": 20
         },
         {
@@ -200,7 +200,7 @@
             "key": "purpose.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "Creating Meaningful<br><em>Impact for Businesses.</em>",
+            "value": "A Dependable Partner<br>of Choice.",
             "sort": 21
         },
         {
@@ -209,7 +209,7 @@
             "key": "purpose.3",
             "label": "Paragraph",
             "type": "textarea",
-            "value": "We help brands and organisations communicate better, engage their audience and achieve their business goals through creative design, digital growth and technology-driven solutions.",
+            "value": "We endeavor to be a dependable partner of choice which provides creative, digital and production services, known for dependable delivery, scalable capabilities and enduring client partnerships.<br><br>We aim to help businesses across international markets achieve more by connecting them with the right talent, efficient production systems and flexible delivery models.",
             "sort": 22
         },
         {
@@ -236,7 +236,7 @@
             "key": "approach.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Our Approach",
+            "value": "Our Capabilities",
             "sort": 25
         },
         {
@@ -245,7 +245,7 @@
             "key": "approach.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "One Partner.<br><em>Multiple Capabilities.</em>",
+            "value": "Creative, Video &amp;<br>Production Expertise.",
             "sort": 26
         },
         {
@@ -254,7 +254,7 @@
             "key": "approach.3",
             "label": "Paragraph",
             "type": "textarea",
-            "value": "Whether you need a new brand, a website, marketing support, publishing services or a dedicated team, we bring the right people, process and technology together to deliver end-to-end solutions.",
+            "value": "<strong>Creative Design &amp; Digital Production:</strong> From brand communication and marketing collateral to digital assets and campaign adaptations, we support businesses with consistent, high-quality creative output across channels and formats.<br><br><strong>Video Production &amp; Post-Production:</strong> We help production houses, agencies and brands manage editing backlogs, recurring video requirements and demanding delivery schedules through scalable post-production support.<br><br><strong>Publishing, Pre-press &amp; Print Production:</strong> We support publishers, content owners and print service providers with document production, layout and typesetting, artwork adaptation, pre-press preparation and print-ready file delivery.<br><br><strong>Industry-Focused Creative Support:</strong> We support manufacturing businesses with product catalogues and technical collateral; financial services with reports, presentations and investor communications; healthcare with educational and promotional materials; and real estate with project brochures, sales presentations and marketing assets.",
             "sort": 27
         },
         {
@@ -281,7 +281,7 @@
             "key": "approach.6",
             "label": "Centre of the diagram",
             "type": "html",
-            "value": "Your<br>Business<br>Growth",
+            "value": "Your<br>Capability,<br>Extended.",
             "sort": 30
         },
         {
@@ -290,7 +290,7 @@
             "key": "team.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Our Team",
+            "value": "Why Intelliworkz",
             "sort": 31
         },
         {
@@ -299,7 +299,7 @@
             "key": "team.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "People Behind<br><em>The Progress.</em>",
+            "value": "A Team Built Around<br>Your Business.",
             "sort": 32
         },
         {
@@ -308,7 +308,7 @@
             "key": "team.3",
             "label": "Paragraph",
             "type": "textarea",
-            "value": "Our strength lies in our people. A team of designers, marketers, editors, animators, developers and engineers working together towards a common goal — helping you succeed.",
+            "value": "<strong>Integrated Capabilities:</strong> Creative, video, digital and production expertise within one operating environment.<br><br><strong>Scalable Delivery:</strong> The ability to expand capacity and capabilities as your requirements evolve.<br><br><strong>Transparent Engagements:</strong> Clear commercial terms and a practical approach to revisions, requests and ongoing support.<br><br><strong>Process-Driven Execution:</strong> Workflows built around quality, consistency, turnaround times and accountability.<br><br><strong>Long-Term Partnership:</strong> A team that works to understand your business, adapt to your requirements and contribute to your operational goals.",
             "sort": 33
         },
         {
@@ -317,7 +317,7 @@
             "key": "team.4",
             "label": "Button text",
             "type": "text",
-            "value": "Life at Intelliworkz",
+            "value": "Explore Our Services",
             "sort": 34
         },
         {
@@ -326,7 +326,7 @@
             "key": "team.5",
             "label": "Button link",
             "type": "url",
-            "value": "contact-us.php",
+            "value": "services.php",
             "sort": 35
         },
         {
@@ -362,7 +362,7 @@
             "key": "why.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Why Businesses Choose Us",
+            "value": "Our Delivery Model",
             "sort": 39
         },
         {
@@ -371,7 +371,7 @@
             "key": "why.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "A Partner You<br><em>Can Rely On.</em>",
+            "value": "A Delivery Model<br>That Works for You.",
             "sort": 40
         },
         {
@@ -380,7 +380,7 @@
             "key": "why.3",
             "label": "Text at the right",
             "type": "textarea",
-            "value": "Businesses across industries work with us for our expertise, flexibility and commitment to quality.",
+            "value": "Every business has different production demands. Our outsourcing models are designed to accommodate them.",
             "sort": 41
         },
         {
@@ -389,7 +389,7 @@
             "key": "cta.1",
             "label": "Small heading",
             "type": "text",
-            "value": "Let's Build Together",
+            "value": "Our Commitment",
             "sort": 42
         },
         {
@@ -398,7 +398,7 @@
             "key": "cta.2",
             "label": "Heading (last line is red)",
             "type": "html",
-            "value": "Ready to Discuss<br><em>Your Requirements?</em>",
+            "value": "Intelliworkz —<br>Your Capability, Extended.",
             "sort": 43
         },
         {
@@ -481,18 +481,18 @@
             "items": [
                 {
                     "icon": "icon-briefcase.svg",
-                    "title": "Creative Excellence",
-                    "text": "Ideas that connect and inspire."
+                    "title": "Quality & Efficiency",
+                    "text": "Measurable value through quality and efficiency."
                 },
                 {
                     "icon": "icon-clock.svg",
-                    "title": "Reliable Delivery",
-                    "text": "Consistent quality at every stage."
+                    "title": "Flexibility",
+                    "text": "A partner capable of handling complexity and managing volume."
                 },
                 {
                     "icon": "icon-users.svg",
-                    "title": "Long-Term Partnerships",
-                    "text": "Your growth is our focus."
+                    "title": "Trust",
+                    "text": "Growing alongside you as we expand into global markets."
                 }
             ]
         },
@@ -501,27 +501,27 @@
             "scope": "about-us",
             "items": [
                 {
-                    "label": "Strategy",
+                    "label": "Creative Design",
                     "icon": "icon-briefcase.svg"
                 },
                 {
-                    "label": "Marketing",
+                    "label": "Digital Production",
                     "icon": "icon-send.svg"
                 },
                 {
-                    "label": "Support",
+                    "label": "Video Production",
                     "icon": "icon-users.svg"
                 },
                 {
-                    "label": "Production",
+                    "label": "Post-Production",
                     "icon": "icon-clock.svg"
                 },
                 {
-                    "label": "Technology",
+                    "label": "Publishing",
                     "icon": "icon-globe.svg"
                 },
                 {
-                    "label": "Creative",
+                    "label": "Pre-press & Print",
                     "icon": "icon-plus-box.svg"
                 }
             ]
@@ -532,23 +532,23 @@
             "items": [
                 {
                     "icon": "icon-users.svg",
-                    "title": "In-House Team",
-                    "text": "Skilled professionals across multiple domains."
+                    "title": "Dedicated Teams",
+                    "text": "Skilled professionals aligned with your workflows, brand guidelines and ongoing requirements."
                 },
                 {
                     "icon": "icon-briefcase.svg",
-                    "title": "Domain Expertise",
-                    "text": "Industry-specific experience and insights."
+                    "title": "Managed Services",
+                    "text": "End-to-end management of defined production activities, with structured processes and quality checks."
                 },
                 {
                     "icon": "icon-globe.svg",
-                    "title": "Scalable Support",
-                    "text": "From single projects to dedicated teams."
+                    "title": "Scalable Capacity",
+                    "text": "The flexibility to manage recurring assignments, large-volume deliverables and fluctuations in workload."
                 },
                 {
                     "icon": "icon-clock.svg",
-                    "title": "Consistent Quality",
-                    "text": "Proven processes and reliable delivery."
+                    "title": "Consistent Quality & Delivery",
+                    "text": "Standardised workflows, review mechanisms and clear communication to support dependable output."
                 }
             ]
         }

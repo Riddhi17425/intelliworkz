@@ -127,13 +127,12 @@
     .products__info { position: static; width: auto; padding-inline: var(--pad); gap: 28px; }
     .feature-grid { grid-template-columns: 1fr 1fr; }
 
-    .process { width: 100%; height: auto; display: flex; flex-direction: column; gap: 24px; padding-inline: var(--pad); }
-    .process__head { position: static; transform: none; width: auto; }
-    .process__rule, .process__flow { display: none; }
-    .process__row { position: static; flex-direction: column; align-items: stretch; gap: 20px; }
-    .process-card { width: 100%; height: auto; min-height: 250px; }
-    .process-card__bg { left: 0; top: 0; width: 100%; height: 100%; opacity: .3; }
-    .process-card__body { max-width: 100%; }
+    .process { width: 100%; padding-inline: var(--pad); gap: 24px; }
+    .process__flow { gap: 20px; }
+    .process__row, .process__row--2 { flex-direction: column; align-items: stretch; gap: 20px; }
+    .process__row::before, .process__row::after, .process__arrow { display: none; }
+    .process-card { flex: none; width: 100%; min-height: 0; }
+    .process-card__img { height: auto; max-height: 260px; margin-bottom: 0; }
 
     .showcase { height: auto; padding: 56px 0 40px; }
     .showcase__content { position: relative; top: auto; }
@@ -247,8 +246,15 @@
     .lead-form__row { flex-direction: column; }
     .lead-form { padding: 20px; }
     .hero__actions .btn, .ve-hero .btn { width: 100%; }
-    .metric { flex-basis: 100%; }
-    .metrics { padding: 24px 20px; }
+    /* metrics: compact 2-column tiles (icon on top), last odd tile spans full width */
+    .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 16px; }
+    .metric { flex-basis: auto; min-width: 0; flex-direction: column; justify-content: center; gap: 10px; padding: 18px 8px; text-align: center; background: var(--c-light-bg); border-radius: 10px; }
+    .metrics--dark .metric { background: var(--c-dark-gray); }
+    .metric:last-of-type:nth-of-type(odd) { grid-column: 1 / -1; }
+    .metric__icon { width: 44px; height: 44px; }
+    .metric__body { align-items: center; gap: 2px; }
+    .metrics .metric__value { justify-content: center; gap: 4px; font-size: 32px; }
+    .metric__label { font-size: 14px; line-height: 20px; }
     .ve-stat { width: 100%; }
     .domain-card__body { padding: 20px; }
     .outsource-card { padding: 24px 20px; }

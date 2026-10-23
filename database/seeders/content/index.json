@@ -794,33 +794,27 @@
             "items": [
                 {
                     "no": "01",
-                    "color": "var(--c-pink)",
-                    "tint": "#FAEBEB",
-                    "icon": "card-search.svg",
-                    "title": "Understand",
-                    "img": "process-1.png",
-                    "fade": "linear-gradient(-90deg, rgba(255,255,255,0) 41%, #fff 100%)",
-                    "text": "We look at your requirement, business objective, audience, existing systems, and expected outcome."
+                    "color": "#53A2BC",
+                    "bg": "#F3F8FA",
+                    "title": "Discovery",
+                    "img": "process/process-discovery.png",
+                    "text": "We review your requirements, in line with your business objective, target audience, existing workflow, and expected outcome."
                 },
                 {
                     "no": "02",
-                    "color": "var(--c-yellow)",
-                    "tint": "#FCF7E0",
-                    "icon": "card-clipboard.svg",
-                    "title": "Plan",
-                    "img": "process-2.png",
-                    "fade": "linear-gradient(-90deg, rgba(255,255,255,0) 30%, #fff 50%)",
-                    "text": "We determine the right approach, capabilities, resources, technology, and delivery structure."
+                    "color": "#CF6CB9",
+                    "bg": "#FAEFEF",
+                    "title": "Scope",
+                    "img": "process/process-scope.png",
+                    "text": "We define the scope of work, determine the right approach, capabilities, resources, technology, and delivery structure."
                 },
                 {
                     "no": "03",
-                    "color": "var(--c-green)",
-                    "tint": "#E5F7F0",
-                    "icon": "card-users.svg",
-                    "title": "Assign",
-                    "img": "process-3.png",
-                    "fade": "linear-gradient(270deg, rgba(255,255,255,0) 30%, #fff 63%)",
-                    "text": "The right in-house specialists are brought into the engagement based on the work involved."
+                    "color": "#C9AC61",
+                    "bg": "#FAF6EF",
+                    "title": "Kick-off",
+                    "img": "process/process-kickoff.png",
+                    "text": "The kick-off meeting helps us to align with timelines and quality expectations. We formulate our internal QC document to ensure every project passes through stringent QC before it reaches you."
                 }
             ]
         },
@@ -829,34 +823,20 @@
             "scope": "index",
             "items": [
                 {
-                    "no": "06",
-                    "color": "var(--c-teal)",
-                    "tint": "#EDF5F7",
-                    "icon": "card-chart.svg",
-                    "title": "Scale",
-                    "img": "process-4.png",
-                    "fade": "linear-gradient(-90deg, rgba(255,255,255,0) 39%, #fff 65%)",
-                    "text": "If your requirements grow, the team or scope can grow with them through an engagement model suited to your needs."
-                },
-                {
                     "no": "05",
-                    "color": "var(--c-violet)",
-                    "tint": "#F2E8FA",
-                    "icon": "card-check.svg",
-                    "title": "Review",
-                    "img": "process-3.png",
-                    "fade": "linear-gradient(-90deg, rgba(255,255,255,0) 41%, #fff 100%)",
-                    "text": "Work is reviewed, feedback is incorporated, and the solution is refined before completion."
+                    "color": "#7F68CE",
+                    "bg": "#FAEFFA",
+                    "title": "Scale",
+                    "img": "process/process-scale.png",
+                    "text": "As your business grows and you have a need to scale the operations we will ensure that the right resources are in place that cater to your growing needs. Additionally we have tailored our engagement models that are suited to your needs."
                 },
                 {
                     "no": "04",
-                    "color": "var(--c-gold)",
-                    "tint": "#FAF7EF",
-                    "icon": "card-code.svg",
+                    "color": "#59B38D",
+                    "bg": "#ECF9F3",
                     "title": "Execute",
-                    "img": "process-6.png",
-                    "fade": "linear-gradient(-90deg, rgba(255,255,255,0) 34%, #fff 67%)",
-                    "text": "The team works on the agreed scope while maintaining communication, quality, and delivery commitments."
+                    "img": "process/process-execute.png",
+                    "text": "We identify the right skill set within our team and provide specific training to ensure that we deliver consistent output as per the agreed SLA’s. Our team continues to work as per the defined workflow. The project management team will ensure that projects are delivered as per SLA."
                 }
             ]
         },

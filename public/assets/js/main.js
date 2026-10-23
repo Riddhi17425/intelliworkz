@@ -60,8 +60,16 @@
         var dots = [], count = 0, paused = false, timer = null;
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var max = function () { return Math.max(0, track.scrollWidth - track.clientWidth); };
-        var left = function (i) { return count > 1 ? (max() / (count - 1)) * i : 0; };
-        var current = function () { return count > 1 && max() > 0 ? Math.round((track.scrollLeft / max()) * (count - 1)) : 0; };
+        /* resting position i = the left edge of card i (the last one is clamped to the end of the row) */
+        var left = function (i) { return count > 1 ? Math.min(max(), cards[i].offsetLeft - cards[0].offsetLeft) : 0; };
+        var current = function () {
+            var best = 0, dist = Infinity;
+            for (var i = 0; i < count; i++) {
+                var d = Math.abs(track.scrollLeft - left(i));
+                if (d < dist) { dist = d; best = i; }
+            }
+            return best;
+        };
         var mark = function (i) { dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); }); };
         var go = function (i) { track.scrollTo({ left: left(i), behavior: 'smooth' }); mark(i); };
 
@@ -90,7 +98,11 @@
 
         var next = function () { if (!paused && !document.hidden && count > 1) go((current() + 1) % count); };
         ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (ev) { slider.addEventListener(ev, function () { paused = true; }); });
-        ['mouseleave', 'focusout', 'touchend'].forEach(function (ev) { slider.addEventListener(ev, function () { paused = false; }); });
+        ['mouseleave', 'focusout'].forEach(function (ev) { slider.addEventListener(ev, function () { paused = false; }); });
+        /* after a swipe, hold auto-advance for a few seconds so it does not fight the finger-flick momentum */
+        var resume = null;
+        ['touchend', 'touchcancel'].forEach(function (ev) { slider.addEventListener(ev, function () { clearTimeout(resume); resume = setTimeout(function () { paused = false; }, 5000); }); });
+        slider.addEventListener('touchstart', function () { clearTimeout(resume); });
         if (!reduce) timer = setInterval(next, parseInt(slider.getAttribute('data-autoplay'), 10) || 4500);
 
         build();
@@ -126,6 +138,28 @@
 /* Header: sub-nav dropdowns + slide-out menu */
 (function () {
     'use strict';
+
+    /* Sticky subnav – pins to the top of the viewport once the page scrolls past it */
+    var subnav = document.querySelector('.subnav');
+    if (subnav) {
+        var stickAt = 0;
+        var measure = function () {
+            subnav.classList.remove('is-stuck');
+            stickAt = subnav.getBoundingClientRect().top + window.pageYOffset;
+            subnav.parentNode.style.removeProperty('--subnav-h');
+            onScroll();
+        };
+        var onScroll = function () {
+            var stuck = window.pageYOffset > stickAt;
+            if (stuck === subnav.classList.contains('is-stuck')) return;
+            if (stuck) subnav.parentNode.style.setProperty('--subnav-h', subnav.offsetHeight + 'px');
+            subnav.classList.toggle('is-stuck', stuck);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', measure);
+        window.addEventListener('load', measure);
+        measure();
+    }
 
     /* Dropdowns – open on hover (desktop) and on click/tap; close on outside click or Esc */
     var items = document.querySelectorAll('[data-subnav] .subnav__item');

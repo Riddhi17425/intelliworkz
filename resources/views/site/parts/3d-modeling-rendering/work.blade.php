@@ -72,7 +72,7 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <p class="td-viewer__panel-sub">{!! $T('360-viewer-selected-work.6') !!}</p>
             <p class="td-viewer__panel-text">{!! $T('360-viewer-selected-work.7') !!}</p>
         </div>
-        <button type="button" class="td-viewer__btn" data-explode-toggle aria-pressed="false">
+        <button type="button" class="td-viewer__btn" data-explode-toggle aria-pressed="false" data-label-exploded="{{ strip_tags($T('360-viewer-selected-work.8')) }}" data-label-assembled="{{ strip_tags($T('360-viewer-selected-work.9')) }}" data-label-loading="{{ strip_tags($T('360-viewer-selected-work.10')) }}">
             <span data-explode-label>{!! $T('360-viewer-selected-work.8') !!}</span>
             <span class="td-viewer__btn-icon"><img src="<?= $tc ?>exploded-view.svg" width="20" height="20" alt=""></span>
         </button>

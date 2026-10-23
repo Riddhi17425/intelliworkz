@@ -802,7 +802,7 @@
             viewer.classList.toggle('is-exploded', on);
             toggleBtn.setAttribute('aria-pressed', String(on));
             toggleBtn.disabled = true;
-            if (label) label.textContent = on ? 'Loading…' : 'Loading…';
+            if (label) label.textContent = toggleBtn.getAttribute('data-label-loading') || 'Loading…';
             var src = viewer.getAttribute(on ? 'data-src-exploded' : 'data-src-normal');
             var orbit = viewer.cameraOrbit; // keep whatever angle the visitor left it at
             var settle = function () {
@@ -812,7 +812,7 @@
                 viewer.cameraOrbit = orbit;
                 viewer.jumpCameraToGoal && viewer.jumpCameraToGoal();
                 toggleBtn.disabled = false;
-                if (label) label.textContent = on ? 'Assembled View' : 'Exploded View';
+                if (label) label.textContent = on ? (toggleBtn.getAttribute('data-label-assembled') || 'Assembled View') : (toggleBtn.getAttribute('data-label-exploded') || 'Exploded View');
             };
             /* Failsafe: a big .glb on a slow connection (or a load/error event that never fires)
                shouldn't leave the button stuck on "Loading…" forever. */

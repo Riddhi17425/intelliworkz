@@ -181,9 +181,27 @@
             "section": "360-viewer-selected-work",
             "section_label": "360 Viewer + Selected Work",
             "key": "360-viewer-selected-work.8",
-            "label": "Text: Exploded View",
+            "label": "Text: Exploded View (button label in the assembled state)",
             "type": "text",
             "value": "Exploded View",
+            "sort": 19
+        },
+        {
+            "section": "360-viewer-selected-work",
+            "section_label": "360 Viewer + Selected Work",
+            "key": "360-viewer-selected-work.9",
+            "label": "Text: Assembled View (button label after exploding)",
+            "type": "text",
+            "value": "Assembled View",
+            "sort": 19
+        },
+        {
+            "section": "360-viewer-selected-work",
+            "section_label": "360 Viewer + Selected Work",
+            "key": "360-viewer-selected-work.10",
+            "label": "Text: Loading… (button label while the model loads)",
+            "type": "text",
+            "value": "Loading…",
             "sort": 19
         },
         {

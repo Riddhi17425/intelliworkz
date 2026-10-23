@@ -15,6 +15,9 @@ html { scroll-behavior: smooth; }
 /* ---------- Hero ---------- */
 .svc .ve-hero::after { display: none; }
 .svc-hero { height: 700px; }
+/* the header (and its dropdowns) must sit above the tab bar that overlaps the hero; the empty part of the content box lets clicks through to the tabs */
+.svc-hero .ve-hero__content { z-index: 10; pointer-events: none; }
+.svc-hero .ve-hero__content > * { pointer-events: auto; }
 .svc-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
 .svc-hero::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, .55) 38%, rgba(0, 0, 0, 0) 65%); }
 .svc-hero__copy { display: flex; flex-direction: column; gap: 32px; padding-top: 16px; }

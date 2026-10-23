@@ -50,7 +50,7 @@ html { scroll-behavior: smooth; }
     transition: transform .5s var(--fx-ease), box-shadow .5s var(--fx-ease), border-color .3s;
 }
 @media (hover: hover) {
-    .domain-card:hover, .process-card:hover, .outsource-card:hover, .model:hover, .post:hover, .pillar:hover, .office:hover,
+    .domain-card:hover, .process-card:hover, .outsource-card:hover, .model:hover, .pillar:hover, .office:hover,
     .seo-why__card:hover, .mg-why__card:hover, .td-benefit:hover, .cl-why__card:hover, .pk-why__card:hover, .pp-why__card:hover, .mf-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(17, 17, 17, .14); }
     .reason:hover { transform: translateY(-8px); border-color: var(--c-red); box-shadow: 0 20px 46px rgba(196, 32, 48, .24); }
     .acc--faq .acc-item:hover { border-color: #c4c4c9; box-shadow: 0 10px 24px rgba(0, 0, 0, .07); }
@@ -64,10 +64,9 @@ html { scroll-behavior: smooth; }
 @media (hover: hover) {
     .industry:hover img, .mg-tile:hover img, .cl-tile:hover img, .pk-tile:hover img, .showcase-card:hover .showcase-card__img, .pillar:hover .pillar__img,
     .cl-why__card:hover .cl-why__bg, .pk-why__card:hover .pk-why__bg, .process-card:hover .process-card__bg, .model:hover .model__img, .pp-step:hover img { transform: scale(1.06); }
-    .post:hover .post__img { box-shadow: 0 20px 44px rgba(0, 0, 0, .2); }
     .pk-tile:hover { box-shadow: 0 22px 46px rgba(0, 0, 0, .16); }
 }
-.post__img { transition: box-shadow .5s var(--fx-ease); }
+@media (hover: hover) { .post:hover { transform: translateY(-6px); } }   /* lift only, no box-shadow */
 .offer-card__img { transition: transform .8s var(--fx-ease); }
 .offer-card:hover .offer-card__img { transform: translateY(-8px) scale(1.03); }
 .wstep__art, .seo-step__art, .pk-step__art, .metric__icon, .step > img { transition: transform .5s var(--fx-ease); }

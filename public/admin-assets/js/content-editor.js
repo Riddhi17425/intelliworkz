@@ -16,7 +16,19 @@
         });
         var count = list.querySelector('[data-count]');
         if (count) count.textContent = list.querySelectorAll(':scope > [data-items] > .adm-item').length;
+        syncMax(list);
     };
+
+    // a list whose section has room for only so many items: the Add button stops at the limit
+    var syncMax = function (list) {
+        var max = parseInt(list.getAttribute('data-max') || '0', 10);
+        var btn = list.querySelector('[data-act="add-item"]');
+        if (!max || !btn) return;
+        var full = list.querySelectorAll(':scope > [data-items] > .adm-item').length >= max;
+        btn.disabled = full;
+        btn.title = full ? 'This section has room for ' + max + ' items. Remove one to add another.' : '';
+    };
+    form.querySelectorAll('[data-list][data-max]').forEach(syncMax);
 
     var fromTemplate = function (tpl, token) {
         var wrap = document.createElement('div');
@@ -75,6 +87,74 @@
         var title = src.closest('[data-item]').querySelector('[data-title]');
         if (title) title.textContent = src.value.trim() || 'New item';
     });
+
+    // sections open and close like a dropdown; which ones are open is remembered for this page while the tab stays open
+    var sections = Array.prototype.slice.call(form.querySelectorAll('[data-section]'));
+    if (sections.length) {
+        form.classList.add('has-sections');
+        var storeKey = 'adm-open-sections:' + location.pathname;
+        var remember = function () {
+            try {
+                var open = sections.filter(function (s) { return s.classList.contains('is-open'); }).map(function (s) { return s.id; });
+                sessionStorage.setItem(storeKey, JSON.stringify(open));
+            } catch (err) { /* private mode: just forget */ }
+        };
+        var setOpen = function (section, open) {
+            section.classList.toggle('is-open', open);
+            var head = section.querySelector('[data-section-toggle]');
+            if (head) head.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        var byId = function (id) { return sections.filter(function (s) { return s.id === id; })[0]; };
+
+        var saved = null;
+        try { saved = JSON.parse(sessionStorage.getItem(storeKey) || 'null'); } catch (err) { saved = null; }
+        var openIds = Array.isArray(saved) ? saved.filter(byId) : [];
+        // a section with an error, or the one named in the address (#sec-portfolio), must be open
+        sections.forEach(function (s) { if (s.querySelector('.is-invalid, .invalid-feedback')) openIds.push(s.id); });
+        if (location.hash && byId(location.hash.slice(1))) openIds.push(location.hash.slice(1));
+        if (!openIds.length) openIds.push(sections[0].id);       // first visit: only the first section is open
+        sections.forEach(function (s) { setOpen(s, openIds.indexOf(s.id) !== -1); });
+
+        var toggleHead = function (head) {
+            var section = head.closest('[data-section]');
+            setOpen(section, !section.classList.contains('is-open'));
+            remember();
+        };
+        form.addEventListener('click', function (e) {
+            var head = e.target.closest('[data-section-toggle]');
+            if (head && form.contains(head)) toggleHead(head);
+        });
+        form.addEventListener('keydown', function (e) {
+            var head = e.target.closest('[data-section-toggle]');
+            if (head && e.target === head && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleHead(head); }
+        });
+        document.querySelectorAll('[data-sections-all]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var open = btn.getAttribute('data-sections-all') === 'open';
+                sections.forEach(function (s) { setOpen(s, open); });
+                remember();
+            });
+        });
+
+        // the tabs above jump to a section and open it
+        var goTo = function (id) {
+            var s = byId(id);
+            if (!s) return false;
+            setOpen(s, true);
+            remember();
+            s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return true;
+        };
+        document.querySelectorAll('#sectionTabs a[href^="#sec-"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                if (goTo(a.getAttribute('href').slice(1))) { e.preventDefault(); history.replaceState(null, '', a.getAttribute('href')); }
+            });
+        });
+        window.addEventListener('hashchange', function () { goTo(location.hash.slice(1)); });
+        if (location.hash && byId(location.hash.slice(1))) {
+            setTimeout(function () { byId(location.hash.slice(1)).scrollIntoView({ block: 'start' }); }, 50);
+        }
+    }
 
     // section tabs highlight as you scroll
     var tabs = document.querySelectorAll('[data-spy]');

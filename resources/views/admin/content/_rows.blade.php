@@ -2,13 +2,30 @@
 @foreach($defs as $key => $def)
     @php
         $name = $prefix . '[' . $key . ']';
+        // PHP drops a field called "a[b]__file" (text after the last bracket), so the suffix goes inside the brackets
+        $fileName = $prefix . '[' . $key . '__file]';
+        $removeName = $prefix . '[' . $key . '__remove]';
         $val = is_array($item) ? ($item[$key] ?? null) : null;
         $fid = 'r_' . preg_replace('/[^a-z0-9_]/i', '_', $name);
         $isTitle = isset($titleKey) && (string) $titleKey === (string) $key;
     @endphp
     <div class="mb-3">
         @if($def['type'] === 'image')
-            <x-admin.image :name="$name . '__file'" :remove-name="$name . '__remove'" :current="is_string($val) ? $val : null" :label="$def['label']" :compact="true" />
+            <x-admin.image :name="$fileName" :remove-name="$removeName" :current="is_string($val) ? $val : null" :label="$def['label']" :compact="true" />
+        @elseif($def['type'] === 'video')
+            @php $isUpload = \App\Support\Media::isUpload(is_string($val) ? $val : null); @endphp
+            <label class="form-label" for="{{ $fid }}">{{ $def['label'] }}<span class="adm-type">Video</span></label>
+            <input id="{{ $fid }}" type="text" class="form-control" name="{{ $name }}" value="{{ $isUpload ? '' : \App\Support\Html::forInput(is_string($val) ? $val : '') }}" maxlength="500" placeholder="YouTube / Vimeo link, or https://… /video.mp4">
+            <div class="form-text mb-2">Paste a YouTube or Vimeo link here, <strong>or</strong> upload a video file below.</div>
+            <input type="file" class="form-control form-control-sm" name="{{ $fileName }}" accept="video/*,.mp4,.m4v,.mov,.webm,.ogv">
+            <div class="form-text">MP4, WebM, MOV or OGG, up to {{ \App\Support\Media::VIDEO_MAX_KB / 1024 }} MB. A new upload replaces the current file; a link replaces an uploaded file.</div>
+            @if($isUpload)
+                <div class="small mt-2"><i class="bi bi-film me-1"></i>Current file: <a href="{{ asset($val) }}" target="_blank" rel="noopener">{{ basename($val) }}</a></div>
+                <div class="form-check mt-1 small">
+                    <input class="form-check-input" type="checkbox" name="{{ $removeName }}" value="1" id="rm_{{ $fid }}">
+                    <label class="form-check-label" for="rm_{{ $fid }}">Remove this video file</label>
+                </div>
+            @endif
         @else
             <label class="form-label" for="{{ $fid }}">{{ $def['label'] }}@if($def['type'] === 'html')<span class="adm-type">Formatted</span>@endif</label>
             @switch($def['type'])

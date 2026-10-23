@@ -1,3 +1,16 @@
+# Room for uploading portfolio videos from the admin panel (video up to 100 MB + the rest of the form).
+# Only works where PHP runs as an Apache module; on other hosts raise the same two values in cPanel > MultiPHP INI Editor.
+<IfModule mod_php.c>
+    php_value upload_max_filesize 100M
+    php_value post_max_size 110M
+    php_value max_input_time 300
+</IfModule>
+<IfModule mod_php8.c>
+    php_value upload_max_filesize 100M
+    php_value post_max_size 110M
+    php_value max_input_time 300
+</IfModule>
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

@@ -22,9 +22,20 @@
 
     @error('content')<div class="alert alert-danger">{{ $message }}</div>@enderror
 
+    @if(count($sections) > 1)
+        <div class="adm-sections-bar">
+            <span class="small text-muted">{{ count($sections) }} sections. Click a section to open it.</span>
+            <div class="ms-auto d-flex gap-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-sections-all="open"><i class="bi bi-arrows-expand me-1"></i> Open all</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-sections-all="close"><i class="bi bi-arrows-collapse me-1"></i> Close all</button>
+            </div>
+        </div>
+    @endif
+
     @foreach($sections as $s)
-        <section class="adm-card adm-fieldgroup mb-4" id="sec-{{ $s['id'] }}">
-            <div class="adm-card__head">
+        <section class="adm-card adm-fieldgroup adm-section mb-3" id="sec-{{ $s['id'] }}" data-section>
+            <div class="adm-card__head adm-section__head" data-section-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="secbody-{{ $s['id'] }}">
+                <i class="bi bi-chevron-right adm-section__chev"></i>
                 <h2>{{ $s['name'] }}</h2>
                 <span class="ms-auto text-muted small">
                     @if($s['fields']->count()){{ $s['fields']->count() }} {{ \Illuminate\Support\Str::plural('field', $s['fields']->count()) }}@endif
@@ -32,7 +43,7 @@
                     @if(count($s['lists'])){{ count($s['lists']) }} {{ \Illuminate\Support\Str::plural('list', count($s['lists'])) }}@endif
                 </span>
             </div>
-            <div class="adm-card__body">
+            <div class="adm-card__body" id="secbody-{{ $s['id'] }}">
                 @foreach($s['fields'] as $f)
                     @include('admin.content._field', ['f' => $f])
                 @endforeach

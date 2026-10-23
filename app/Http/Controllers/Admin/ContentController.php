@@ -114,7 +114,7 @@ class ContentController extends Controller
     /** Own sections of a page, followed by the sections copied in from other designs. */
     private function pageSections(Page $page): array
     {
-        $out = $this->sections($page->slug);
+        $out = $this->sections($page->slug, '', null, $page->viewKey());
         if (!$page->hasSections()) {
             return $out;
         }
@@ -122,7 +122,7 @@ class ContentController extends Controller
         foreach (SectionPlan::layout($page) as $item) {
             if ($item['tpl']) {
                 $badge = SectionPlan::label($item['key']) . ' · added from ' . ($designs[$item['tpl']] ?? $item['tpl']);
-                $out = array_merge($out, $this->sections(SectionPlan::scope($page, $item), $item['id'] . '-', $badge));
+                $out = array_merge($out, $this->sections(SectionPlan::scope($page, $item), $item['id'] . '-', $badge, $item['tpl']));
             }
         }
         return $out;
@@ -166,10 +166,19 @@ class ContentController extends Controller
         return 1;
     }
 
-    private function sections(string $scope, string $idPrefix = '', ?string $badge = null): array
+    /**
+     * The sections of the editor for one scope. Texts are grouped by their section; each list joins the section of the
+     * website it is part of (config/content_sections.php), so one visual section is edited in one place.
+     *
+     * @param ?string $design the design (template) the scope belongs to, for design specific placement
+     */
+    private function sections(string $scope, string $idPrefix = '', ?string $badge = null, ?string $design = null): array
     {
         $fields = ContentField::where('scope', $scope)->orderBy('sort')->get();
         $lists = ContentList::where('scope', $scope)->orderBy('sort')->orderBy('id')->get();
+        $merge = (array) config('content_sections.merge', []);
+        $join = array_merge((array) config('content_sections.join', []), (array) config("content_sections.per.{$design}", []));
+        $place = (array) config("content_sections.place.{$design}", []);
 
         $out = [];
         $sectionFor = function (string $name) use (&$out, $idPrefix, $badge) {
@@ -177,22 +186,52 @@ class ContentController extends Controller
             return $out[$id] ??= ['name' => $name . ($badge ? " — {$badge}" : ''), 'id' => $id, 'fields' => collect(), 'lists' => []];
         };
 
+        $fieldSections = [];
         foreach ($fields->groupBy('section') as $name => $group) {
-            $section = $sectionFor((string) $name);
-            $out[$section['id']]['fields'] = $group->values();
+            $name = $merge[$name] ?? (string) $name;
+            $section = $sectionFor($name);
+            $out[$section['id']]['fields'] = $out[$section['id']]['fields']->concat($group)->values();
+            $fieldSections[$name] = true;
         }
+
+        $after = [];                                  // section id => id of the section it must follow
         foreach ($lists as $list) {
             $schema = ListSchema::make($list->key, $list->items ?? []);
             if ($schema->hidden()) {
                 continue;
             }
-            $section = $sectionFor((string) ($list->section ?: 'Lists'));
+            $label = (string) ($list->section ?: 'Lists');
+            $label = $merge[$label] ?? $label;
+            $target = $label;
+            foreach ($join[$label] ?? [] as $candidate) {
+                if (isset($fieldSections[$candidate])) {
+                    $target = $candidate;
+                    break;
+                }
+            }
+            if ($target === $label && !isset($fieldSections[$label]) && isset($place[$label])) {
+                $target = $place[$label]['name'];
+                $after[Str::slug($idPrefix . $target)] = Str::slug($idPrefix . $place[$label]['after']);
+            }
+            $section = $sectionFor($target);
             $out[$section['id']]['lists'][] = ['model' => $list, 'schema' => $schema];
         }
 
-        return array_values(array_filter($out, fn ($s) => $s['fields']->isNotEmpty() || $s['lists']));
-    }
+        $out = array_values(array_filter($out, fn ($s) => $s['fields']->isNotEmpty() || $s['lists']));
 
+        foreach ($after as $id => $follows) {         // a section made only of lists goes right after the section it follows on the website
+            $from = array_search($id, array_column($out, 'id'), true);
+            $to = array_search($follows, array_column($out, 'id'), true);
+            if ($from === false || $to === false) {
+                continue;
+            }
+            $moved = array_splice($out, $from, 1);
+            $to = array_search($follows, array_column($out, 'id'), true);
+            array_splice($out, $to + 1, 0, $moved);
+        }
+
+        return $out;
+    }
     /* ------------------------------------------------------------------ saving */
 
     private function save(Request $request, string $scope): int

@@ -23,7 +23,7 @@ $faq = ['label' => 'Questions & answers', 'section' => 'FAQs', 'title' => 0, 'so
 $offer = ['label' => '"What we offer" cards', 'section' => 'What We Offer', 'title' => 'title', 'sort' => 80, 'add' => false, 'remove' => false,
     'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image'], 'href' => ['Link of the arrow (page address)', 'url']]];
 $services = ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'points' => ['Points (one per line)', 'lines']]];
-$benefits = ['label' => 'Benefit chips under the intro', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5];
+$benefits = ['label' => 'Benefit chips under the intro', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5, 'max' => 4];   // two rows of two; a third row runs into the picture strip below
 $statsPair = ['label' => 'Statistic', 'section' => 'Numbers', 'title' => 1, 'sort' => 30, 'add' => false, 'remove' => false, 'fields' => [0 => ['Number'], 1 => ['Label']]];
 $metricsTriple = ['label' => 'Dark number strip', 'section' => 'Numbers', 'title' => 2, 'sort' => 30, 'add' => false, 'remove' => false, 'fields' => [1 => ['Number'], 2 => ['Label']]];
 $toolsPlain = ['label' => 'Tools', 'section' => 'Tools', 'title' => 1, 'sort' => 50, 'fields' => [0 => ['Logo', 'image'], 1 => ['Tool name'], 2 => ['Tagline (e.g. Edit | Assemble)']]];
@@ -92,11 +92,11 @@ return [
     've_benefits' => $benefits,
     've_filters' => $filters,
     've_cards' => ['label' => 'Portfolio videos', 'section' => 'Portfolio', 'title' => 'title', 'sort' => 20,
-        'fields' => ['title' => ['Title'], 'meta' => ['Categories shown under the title', 'html'], 'cats' => ['Filter categories (keys, space separated)'], 'video' => ['Video file or link', 'url']]],
+        'fields' => ['title' => ['Title'], 'meta' => ['Categories shown under the title', 'html'], 'cats' => ['Filter categories (keys, space separated)'], 'video' => ['Video (YouTube / Vimeo link or an uploaded file)', 'video']]],
     've_stats_top' => $statsPair, 've_stats_bottom' => $statsPair,
     've_pillars' => ['label' => 'Feature cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea'], 'img' => ['Background picture', 'image']]],
-    've_tools' => $toolsPlain,
+    've_tools' => array_merge($toolsPlain, ['max' => 10]),   // two rows of tools fit above the artwork
     've_services' => $services,
     've_workflow' => $workflowTuple,
     've_offers' => $offer,
@@ -109,7 +109,7 @@ return [
     'mg_why' => $why,
     'mg_tools' => $toolsColour,
     'mg_services' => $services,
-    'mg_flow' => ['label' => 'Workflow steps', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
+    'mg_flow' => ['label' => 'Workflow steps', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
     'mg_offers' => $offer,
     'mg_faqs' => $faq,
 
@@ -119,7 +119,7 @@ return [
     'td_gallery' => $gallery,
     'td_stats_top' => $statsPair, 'td_stats_bottom' => $statsPair,
     'td_benefit_cards' => $why,
-    'td_tools' => $toolsPlain,
+    'td_tools' => array_merge($toolsPlain, ['max' => 5]),    // one row only: the artwork starts right below it
     'td_tool_formats_label' => ['label' => 'Formats label', 'section' => 'Tools', 'kind' => 'strings', 'add' => false, 'remove' => false, 'sort' => 51],
     'td_services' => $services,
     'td_workflow' => $workflow,
@@ -161,9 +161,9 @@ return [
     'pk_stats' => ['label' => 'Statistics', 'section' => 'Numbers', 'kind' => 'groups', 'group' => 'Row', 'title' => 2, 'sort' => 30, 'add' => false, 'remove' => false,
         'fields' => [0 => ['Number'], 1 => ['Suffix (e.g. +)'], 2 => ['Label', 'html']]],
     'pk_why' => $whyBg,
-    'pk_tools' => $toolsColour,
+    'pk_tools' => array_merge($toolsColour, ['max' => 4]),  // one row only: the artwork starts right below it
     'pk_services' => $services,
-    'pk_flow' => $workflow,
+    'pk_flow' => array_merge($workflow, ['add' => false, 'remove' => false]),   // five steps at fixed positions
     'pk_offers' => $offer,
     'pk_faqs' => $faq,
 

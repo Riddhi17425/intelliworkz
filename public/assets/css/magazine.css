@@ -39,7 +39,8 @@
 
 /* ---------- Tools strip ---------- */
 .mg-tools { width: 1920px; max-width: 100%; padding: 32px 64px; border-block: 1px solid var(--c-border-gray); }
-.mg-tools__row { display: flex; justify-content: space-between; align-items: center; }
+.mg-tools__row { display: flex; flex-wrap: wrap; gap: 28px 24px; justify-content: space-between; align-items: center; }   /* many tools wrap onto more rows */
+.mg-tools__row.is-wrapped { justify-content: center; }
 .mg-tool { display: flex; align-items: center; gap: 20px; }
 .mg-tool__icon { display: grid; place-items: center; flex: none; width: 72px; height: 72px; border-radius: 10px; }
 .mg-tool__icon img { max-width: none; }

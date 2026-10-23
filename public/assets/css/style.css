@@ -134,8 +134,7 @@ hr { border: 0; }
 .text-link { display: inline-flex; align-items: center; gap: 10px; padding: 0 6px 6px; color: var(--c-white); box-shadow: inset 0 -1px 0 var(--c-white); font-weight: 500; font-size: 18px; line-height: 30px; transition: background-color .25s, padding .25s; }
 .text-link img { transition: transform .25s; }
 .text-link:hover img { transform: translate(3px, -3px); }
-.text-link--filled { padding: 0 24px 6px; background: var(--c-red); }
-.text-link--filled:hover { background: #a91a28; }
+.text-link--filled { padding: 0 24px 6px; }   /* the "View Case Study" link in the dark showcase: no red fill, just the white text and underline */
 
 .tag { display: inline-flex; padding: 6px 24px; border-radius: 100px; color: var(--c-white); font-size: 18px; line-height: 26px; }
 

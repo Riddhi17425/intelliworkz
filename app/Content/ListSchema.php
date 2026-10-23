@@ -63,6 +63,12 @@ class ListSchema
         return in_array($this->kind(), ['strings', 'rows'], true) && ($this->meta['add'] ?? true);
     }
 
+    /** The most items the design of the section has room for (null = no limit). Only new rows are held back; existing ones stay. */
+    public function maxItems(): ?int
+    {
+        return isset($this->meta['max']) ? (int) $this->meta['max'] : null;
+    }
+
     public function canRemove(): bool
     {
         return in_array($this->kind(), ['strings', 'rows'], true) && ($this->meta['remove'] ?? true);
@@ -132,6 +138,10 @@ class ListSchema
                 $out[] = $clean;
             }
         }
+        // the section has room for only so many; a list that is already longer keeps the length it has
+        if ($this->maxItems() !== null) {
+            $out = array_slice($out, 0, max($this->maxItems(), count($this->items)));
+        }
         // a fixed-length list keeps its original length
         if (!$this->canAdd() && !$this->canRemove()) {
             foreach ($this->items as $i => $orig) {
@@ -189,6 +199,9 @@ class ListSchema
             $hasOrig = $orig !== '' && ctype_digit((string) $orig) && isset($this->items[(int) $orig]);
             if (!$hasOrig && (!$this->canAdd() || $fixed)) {
                 continue;                       // new rows are not allowed for this list
+            }
+            if (!$hasOrig && $this->maxItems() !== null && count($out) >= $this->maxItems()) {
+                continue;                       // the section has no room for more items
             }
             if (!$hasOrig && ((string) $n === '__N__' || !preg_match('/^[A-Za-z0-9]+$/', (string) $n))) {
                 continue;                       // the hidden "add row" prototype (key __N__) is never a real row
@@ -276,6 +289,38 @@ class ListSchema
                     return '';
                 }
                 return is_string($current) ? $current : '';
+
+            case 'video':
+                // either an uploaded file (stored in uploads/videos) or a link (YouTube, Vimeo or a direct .mp4 address)
+                $old = is_string($current) ? $current : '';
+                if ($file instanceof UploadedFile) {
+                    if (!$file->isValid()) {
+                        throw ValidationException::withMessages(['content' => $def['label'] . ': the video could not be uploaded. It is probably bigger than the server allows (' . ini_get('upload_max_filesize') . '). Use a smaller file or a YouTube link.']);
+                    }
+                    if (Media::videoExtension($file) === null) {
+                        throw ValidationException::withMessages(['content' => $def['label'] . ': “' . $file->getClientOriginalName() . '” is not a video this page can play (it was detected as ' . ($file->getMimeType() ?: 'unknown') . '). Upload an MP4, WebM or MOV file, or paste a YouTube link.']);
+                    }
+                    if ($file->getSize() > Media::VIDEO_MAX_KB * 1024) {
+                        throw ValidationException::withMessages(['content' => $def['label'] . ': “' . $file->getClientOriginalName() . '” is ' . round($file->getSize() / 1048576) . ' MB, the limit is ' . (Media::VIDEO_MAX_KB / 1024) . ' MB. Use a smaller file or a YouTube link.']);
+                    }
+                    Media::delete($old);
+                    return Media::storeVideo($file);
+                }
+                if (!empty($row[$key . '__remove'])) {
+                    Media::delete($old);
+                    return '';
+                }
+                $link = trim((string) $value);
+                if ($link === '') {
+                    return Media::isUpload($old) ? $old : '';   // an uploaded file stays until it is replaced or removed
+                }
+                if (!Html::safeUrl($link)) {
+                    return $old;
+                }
+                if ($link !== $old) {
+                    Media::delete($old);                       // a link replaces the uploaded file
+                }
+                return mb_substr($link, 0, 500);
 
             case 'url':
                 $url = trim((string) $value);

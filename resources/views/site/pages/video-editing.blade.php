@@ -77,10 +77,13 @@ $vc = 'assets/icons/video/';    // page icons
 <!-- Video popup -->
 <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
     <div class="video-modal__backdrop" data-video-close></div>
+    <button type="button" class="video-modal__nav video-modal__nav--prev" aria-label="Previous video" data-video-nav="-1" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="video-modal__nav video-modal__nav--next" aria-label="Next video" data-video-nav="1" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="video-modal__box">
         <button type="button" class="video-modal__close" aria-label="Close video" data-video-close>&times;</button>
         <div class="video-modal__title"></div>
         <div class="video-modal__stage"></div>
+        <div class="video-modal__count" aria-live="polite"></div>
     </div>
 </div>
 

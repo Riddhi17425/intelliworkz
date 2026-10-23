@@ -269,12 +269,12 @@
     .ve-tools, .pk-tools, .mg-tools, .seo-tools { width: 100%; height: auto; padding: 44px var(--pad); }
     .ve-tools::after, .td-tools::after, .ppt-tools::after, .pp-tools::after, .seo-tools::after { display: none; }
     .ve-tools .ve-tools__bg, .pk-tools .pk-tools__photo, .seo-tools .seo-tools__photo { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45; }
-    .ve-tools__row, .pk-tools__row { position: relative; left: auto; top: auto; width: auto; flex-direction: column; align-items: flex-start; gap: 24px; }
+    .ve-tools__row, .pk-tools__row { position: relative; left: auto; top: auto; width: auto; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: 24px; padding: 0; }
     .ve-tools__divider, .pk-tools__divider, .mg-tools__divider { display: none; }
     .seo-tools__grid { position: relative; left: auto; top: auto; flex-direction: column; gap: 28px; }
     .seo-tools__col { width: auto; }
     .mg-tools { border-block: 1px solid var(--c-border-gray); }
-    .mg-tools__row { flex-wrap: wrap; justify-content: flex-start; gap: 24px 36px; }
+    .mg-tools__row, .mg-tools__row.is-wrapped { flex-wrap: wrap; justify-content: flex-start; gap: 24px 36px; }
 
     /* ---- selected-work scenes (SEO / 3D / PPT) ---- */
     .seo-pf, .cl-pf { width: 100%; }

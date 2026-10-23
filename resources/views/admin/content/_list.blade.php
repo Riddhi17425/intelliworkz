@@ -5,10 +5,10 @@
     $defs = $schema->fields();
     $count = count($items);
 @endphp
-<div class="adm-fieldrow" data-list data-kind="{{ $kind }}" id="list-{{ $list->id }}">
+<div class="adm-fieldrow" data-list data-kind="{{ $kind }}" id="list-{{ $list->id }}" @if($schema->maxItems()) data-max="{{ $schema->maxItems() }}" @endif>
     <input type="hidden" name="{{ $base }}[present]" value="1">
     <div class="d-flex align-items-center gap-2 mb-2">
-        <label class="form-label mb-0">{{ $schema->label() }}<span class="adm-type">List · <span data-count>{{ $count }}</span></span></label>
+        <label class="form-label mb-0">{{ $schema->label() }}<span class="adm-type">List · <span data-count>{{ $count }}</span>@if($schema->maxItems()) / {{ $schema->maxItems() }} max @endif</span></label>
         @if($schema->canAdd())
             <button type="button" class="btn btn-sm btn-outline-primary ms-auto" data-act="add-item"><i class="bi bi-plus-lg me-1"></i> Add item</button>
         @endif

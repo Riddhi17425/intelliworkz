@@ -419,47 +419,88 @@
     /* Video popup */
     var modal = document.getElementById('video-modal');
     if (!modal) return;
+    var box = modal.querySelector('.video-modal__box');
     var stage = modal.querySelector('.video-modal__stage');
     var titleEl = modal.querySelector('.video-modal__title');
     var lastFocus = null;
 
     var embedUrl = function (url) {
-        var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]{6,})/);
+        var m = url.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/);
         if (m) return 'https://www.youtube.com/embed/' + m[1] + '?autoplay=1&rel=0';
         m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
         if (m) return 'https://player.vimeo.com/video/' + m[1] + '?autoplay=1';
         return null;
     };
 
-    var open = function (card) {
+    var countEl = modal.querySelector('.video-modal__count');
+    var navBtns = modal.querySelectorAll('[data-video-nav]');
+    var current = null;
+
+    /* the videos the visitor can step through: the cards currently shown (respecting the filter tab), in the order on screen */
+    var playable = function () {
+        return Array.prototype.filter.call(track.children, function (c) { return !c.hidden && c.getAttribute('data-video'); });
+    };
+
+    /* put one card's video into the player (used for the first open and for previous / next) */
+    var show = function (card) {
         var src = card.getAttribute('data-video');
-        if (!src) return;
-        lastFocus = document.activeElement;
+        if (!src) return false;
+        current = card;
         titleEl.textContent = card.getAttribute('data-title') || '';
+        var list = playable(), at = list.indexOf(card);
+        var many = list.length > 1 && at > -1;
+        navBtns.forEach(function (b) { b.hidden = !many; });
+        countEl.textContent = many ? (at + 1) + ' / ' + list.length : '';
         stage.innerHTML = '';
 
         var embed = embedUrl(src), el;
+        box.classList.remove('video-modal__box--portrait');
+        stage.classList.remove('is-loading');
         if (embed) {
             el = document.createElement('iframe');
             el.src = embed;
             el.allow = 'autoplay; fullscreen; picture-in-picture';
             el.allowFullscreen = true;
+            if (/youtube(?:-nocookie)?\.com\/shorts\//.test(src)) box.classList.add('video-modal__box--portrait');   /* a YouTube Short is vertical */
         } else {
             el = document.createElement('video');
             el.src = src;
             el.controls = true;
             el.autoplay = true;
             el.playsInline = true;
+            /* a reel (taller than wide) gets a tall player; the video stays hidden until its size is known so the box does not jump */
+            stage.classList.add('is-loading');
+            var ready = function () { stage.classList.remove('is-loading'); };
+            el.addEventListener('loadedmetadata', function () {
+                if (el.videoHeight > el.videoWidth) box.classList.add('video-modal__box--portrait');
+                ready();
+            });
+            el.addEventListener('error', ready);
+            setTimeout(ready, 2500);                 /* never leave the player hidden if the size cannot be read */
         }
         stage.appendChild(el);
+        return true;
+    };
+
+    var open = function (card) {
+        lastFocus = document.activeElement;
+        if (!show(card)) return;
         modal.hidden = false;
         document.body.classList.add('modal-open');
         modal.querySelector('.video-modal__close').focus();
     };
 
+    /* previous (-1) / next (1) video, endlessly */
+    var step = function (dir) {
+        var list = playable(), at = list.indexOf(current);
+        if (modal.hidden || list.length < 2 || at < 0) return;
+        show(list[(at + dir + list.length) % list.length]);
+    };
+
     var close = function () {
         if (modal.hidden) return;
         stage.innerHTML = '';                 /* removing the player stops playback */
+        current = null;
         modal.hidden = true;
         document.body.classList.remove('modal-open');
         if (lastFocus) lastFocus.focus();
@@ -470,7 +511,13 @@
         if (media) open(media.closest('.pf-card'));
     });
     modal.querySelectorAll('[data-video-close]').forEach(function (el) { el.addEventListener('click', close); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    navBtns.forEach(function (b) { b.addEventListener('click', function () { step(parseInt(b.getAttribute('data-video-nav'), 10)); }); });
+    document.addEventListener('keydown', function (e) {
+        if (modal.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowRight') step(1);
+        else if (e.key === 'ArrowLeft') step(-1);
+    });
 })();
 
 /* "What we offer" slider: cards rotate endlessly, dots show which card leads, autoplay pauses on hover */
@@ -987,4 +1034,35 @@
     });
 
     sync();
+})();
+
+/* Tools strips (video, 3D, magazine, collateral, packaging): when the tools wrap onto a second row, the divider in front of
+   the tool that starts a row is hidden and a wrapped row is centred */
+(function () {
+    'use strict';
+
+    var rows = document.querySelectorAll('.ve-tools__row, .mg-tools__row, .pk-tools__row');
+    if (!rows.length) return;
+
+    var isDivider = function (el) { return /__divider/.test(el.className); };
+
+    var fix = function (row) {
+        var tools = Array.prototype.filter.call(row.children, function (c) { return !isDivider(c); });
+        var wrapped = false;
+        for (var i = 1; i < tools.length; i++) {
+            var before = tools[i].previousElementSibling;
+            var divider = before && isDivider(before) ? before : null;
+            if (divider) divider.style.visibility = '';                           /* measure with every divider in place */
+            var startsRow = tools[i].offsetTop - tools[i - 1].offsetTop > 40;
+            if (startsRow) wrapped = true;
+            if (divider && startsRow) divider.style.visibility = 'hidden';
+        }
+        row.classList.toggle('is-wrapped', wrapped);
+    };
+    var fixAll = function () { Array.prototype.forEach.call(rows, fix); };
+
+    fixAll();
+    window.addEventListener('resize', fixAll);
+    window.addEventListener('load', fixAll);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fixAll);
 })();

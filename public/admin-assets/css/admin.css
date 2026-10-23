@@ -155,6 +155,15 @@ tr.is-unread .row-title { font-weight: 700; }
 .adm-tabs a:hover, .adm-tabs button:hover { color: var(--adm-brand); background: #fdf1f2; }
 .adm-tabs a.active, .adm-tabs button.active { color: #fff; background: var(--adm-brand); }
 .adm-fieldgroup { scroll-margin-top: 160px; }
+/* sections of the content editor open and close like a dropdown (only once the script is running, so nothing is hidden without it) */
+.adm-sections-bar { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
+.adm-section__head { cursor: pointer; user-select: none; }
+.adm-section__head:hover { background: #fafbfe; border-radius: 1rem 1rem 0 0; }
+.adm-section__head:focus-visible { outline: 2px solid var(--adm-brand); outline-offset: -2px; }
+.adm-section__chev { flex: none; color: var(--adm-muted); transition: transform .2s; }
+.adm-section.is-open .adm-section__chev { transform: rotate(90deg); }
+.has-sections .adm-section:not(.is-open) .adm-card__body { display: none; }
+.has-sections .adm-section:not(.is-open) .adm-card__head { border-bottom: 0; border-radius: 1rem; }
 .adm-fieldrow { margin-bottom: 1.1rem; }
 .adm-fieldrow:last-child { margin-bottom: 0; }
 .adm-fieldrow textarea { min-height: 100px; }

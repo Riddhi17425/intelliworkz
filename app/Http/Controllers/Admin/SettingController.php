@@ -31,7 +31,7 @@ class SettingController extends Controller
         $rules = [];
         foreach ($rows as $key => $row) {
             $rules["s.{$key}"] = match ($row->type) {
-                'image' => Media::rule(in_array($key, self::SVG_OK, true)),
+                'image' => Media::rule(true),
                 'email' => ['nullable', 'email:rfc', 'max:190'],
                 'url' => ['nullable', 'string', 'max:300', 'regex:/^(#|https?:\/\/.+)$/i'],
                 'textarea' => ['nullable', 'string', 'max:2000'],

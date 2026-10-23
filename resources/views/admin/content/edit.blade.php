@@ -16,6 +16,15 @@
         @include('admin.content._layout')
     @endif
 
+    <div class="adm-search" data-content-search>
+        <i class="bi bi-search"></i>
+        <input type="search" class="form-control" placeholder="Search this page and jump to it: a field name or any text… (press / to focus)" aria-label="Search this page" autocomplete="off">
+        <span class="adm-search__count small text-muted" aria-live="polite"></span>
+        <button type="button" class="btn btn-sm btn-light" data-search-prev hidden title="Previous match (Shift+Enter)"><i class="bi bi-chevron-up"></i></button>
+        <button type="button" class="btn btn-sm btn-light" data-search-next hidden title="Next match (Enter)"><i class="bi bi-chevron-down"></i></button>
+        <button type="button" class="btn btn-sm btn-light" data-search-clear hidden>Clear</button>
+    </div>
+
     <nav class="adm-tabs" id="sectionTabs" aria-label="Sections">
         @foreach($sections as $s)<a href="#sec-{{ $s['id'] }}" data-spy="sec-{{ $s['id'] }}">{{ $s['name'] }}</a>@endforeach
     </nav>
@@ -32,8 +41,12 @@
         </div>
     @endif
 
+    @if(collect($sections)->contains('off', true))
+        <div class="alert alert-warning small"><i class="bi bi-eye-slash me-1"></i> Sections marked <strong>switched off on the website</strong> are hidden on the live page (see &ldquo;Sections on this page&rdquo; above). Changing them has no effect until you switch them on. Edit the section of the same name that is shown instead.</div>
+    @endif
+
     @foreach($sections as $s)
-        <section class="adm-card adm-fieldgroup adm-section mb-3" id="sec-{{ $s['id'] }}" data-section>
+        <section class="adm-card adm-fieldgroup adm-section mb-3 {{ !empty($s['off']) ? 'is-switched-off' : '' }}" id="sec-{{ $s['id'] }}" data-section>
             <div class="adm-card__head adm-section__head" data-section-toggle role="button" tabindex="0" aria-expanded="false" aria-controls="secbody-{{ $s['id'] }}">
                 <i class="bi bi-chevron-right adm-section__chev"></i>
                 <h2>{{ $s['name'] }}</h2>
@@ -70,4 +83,5 @@
 
 @push('scripts')
     <script src="{{ asset('admin-assets/js/content-editor.js') }}?v={{ filemtime(public_path('admin-assets/js/content-editor.js')) }}"></script>
+    <script src="{{ asset('admin-assets/js/content-search.js') }}?v={{ filemtime(public_path('admin-assets/js/content-search.js')) }}"></script>
 @endpush

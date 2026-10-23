@@ -20,7 +20,7 @@
 */
 
 $faq = ['label' => 'Questions & answers', 'section' => 'FAQs', 'title' => 0, 'sort' => 90, 'fields' => [0 => ['Question'], 1 => ['Answer', 'textarea']]];
-$offer = ['label' => '"What we offer" cards', 'section' => 'What We Offer', 'title' => 'title', 'sort' => 80, 'add' => false, 'remove' => false,
+$offer = ['label' => '"What we offer" cards', 'section' => 'What We Offer', 'title' => 'title', 'sort' => 80,
     'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image'], 'href' => ['Link of the arrow (page address)', 'url']]];
 $services = ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'points' => ['Points (one per line)', 'lines']]];
 $benefits = ['label' => 'Benefit chips under the intro', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5, 'max' => 4];   // two rows of two; a third row runs into the picture strip below
@@ -62,7 +62,11 @@ return [
     'outsourcing_cards' => ['label' => 'Outsourcing cards', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 31, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Title'], 'lead' => ['Introduction', 'textarea'], 'items' => ['Bullet points (one per line)', 'lines'], 'text' => ['Text', 'textarea'], 'img' => ['Picture', 'image']]],
     'industries' => ['label' => 'Industry cards', 'section' => 'Industries', 'title' => 'title', 'sort' => 40,
-        'fields' => ['title' => ['Industry'], 'text' => ['Hover text', 'textarea'], 'img' => ['Photo', 'image']]],
+        'fields' => ['title' => ['Industry'], 'text' => ['Hover text', 'textarea'], 'img' => ['Photo', 'image'],
+            'img2' => ['Popup slideshow: 2nd picture (optional)', 'image'], 'img3' => ['Popup slideshow: 3rd picture (optional)', 'image'],
+            'img4' => ['Popup slideshow: 4th picture (optional)', 'image'], 'img5' => ['Popup slideshow: 5th picture (optional)', 'image'],
+            'popup_title' => ['Popup heading (optional, default: industry name)'], 'popup_text' => ['Popup description text (optional)', 'textarea'],
+            'video' => ['Popup video (optional: YouTube / Vimeo link or an uploaded file)', 'video']]],
     'reasons' => ['label' => 'Reasons to choose us', 'section' => 'Why Intelliworkz', 'title' => 0, 'sort' => 50, 'add' => false, 'remove' => false, 'fields' => [0 => ['Heading'], 1 => ['Description', 'textarea']]],
     'products_data' => ['label' => 'Products', 'section' => 'Products', 'title' => 'name', 'sort' => 60, 'add' => false, 'remove' => false,
         'fields' => ['name' => ['Product name'], 'tag' => ['Tagline'], 'text' => ['Description', 'textarea'], 'img' => ['Screenshot', 'image'],
@@ -202,4 +206,21 @@ return [
             'items' => ['Services (one per line; add  | page-address  to link one)', 'lines']]],
     'mf_offers' => $offer,
     'mf_faqs' => $faq,
+
+    // ---------- case study ----------
+    'cs_profile' => ['label' => 'Client box (hero)', 'section' => 'Hero', 'title' => 'title', 'sort' => 6, 'add' => false, 'remove' => false,
+        'fields' => ['title' => ['Label'], 'text' => ['Value', 'textarea']]],
+    'cs_stats' => ['label' => 'Headline numbers', 'section' => 'Numbers', 'title' => 'text', 'sort' => 10, 'add' => false, 'remove' => false,
+        'fields' => ['title' => ['Number'], 'text' => ['Label']]],
+    'cs_highlights' => ['label' => 'Key highlights', 'section' => '01 Industry Overview', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
+        'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
+    'cs_challenges' => ['label' => 'Challenges', 'section' => '02 The Challenge', 'title' => 'title', 'sort' => 30, 'max' => 6,
+        'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
+    'cs_approach' => ['label' => 'Approach steps', 'section' => '03 The Approach', 'title' => 'title', 'sort' => 40, 'max' => 8,
+        'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
+    'cs_results' => ['label' => 'Outcomes', 'section' => '04 Results & Brand Outcomes', 'title' => 'title', 'sort' => 50, 'add' => false, 'remove' => false,
+        'fields' => ['title' => ['Word'], 'text' => ['Description', 'textarea']]],
+    'cs_services' => ['label' => 'Services delivered', 'section' => '06 Services Delivered', 'title' => 'title', 'sort' => 60, 'max' => 12,
+        'fields' => ['title' => ['Service'], 'text' => ['Short description']]],
+    'cs_capabilities' => ['label' => 'Capabilities applied', 'section' => '06 Services Delivered', 'kind' => 'strings', 'sort' => 70, 'max' => 10],
 ];

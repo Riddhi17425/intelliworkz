@@ -145,7 +145,7 @@ class PageController extends Controller
             'meta_description' => ['nullable', 'string', 'max:300'],
             'meta_keywords' => ['nullable', 'string', 'max:300'],
             'og_image' => Media::rule(false),
-            'featured_image' => Media::rule(false),
+            'featured_image' => Media::rule(true),
             'content' => ['nullable', 'string', 'max:200000'],
         ];
 

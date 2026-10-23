@@ -50,8 +50,8 @@
 .mg-tools__divider { flex: none; width: 1px; height: 58px; background: var(--c-border-gray); }
 
 /* ---------- Services accordion (variant) ---------- */
-.acc--mag .acc-points { width: 458px; }
-.mg-services__img { flex: none; width: 681px; height: 692px; object-fit: cover; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+.acc--mag .acc-points { width: 100%; }
+.mg-services__img { flex: none; width: 681px; align-self: flex-start; position: sticky; top: 120px; height: auto; object-fit: contain; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
 
 /* ---------- Workflow infographic ---------- */
 .mg-workflow { position: relative; width: 1771px; max-width: 100%; height: 678px; flex: none; }

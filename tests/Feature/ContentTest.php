@@ -284,4 +284,9 @@ class ContentTest extends CmsTestCase
         $this->actingAs($this->admin())->post('/admin/pages', ['title' => 'Plain', 'slug' => 'plain', 'status' => 'published']);
         $this->get('/admin/pages/plain/content')->assertNotFound();
     }
+    public function test_content_editor_has_a_search_box_for_the_page(): void
+    {
+        $this->actingAs($this->editor())->get('/admin/pages/about-us/content')->assertOk()
+            ->assertSee('data-content-search', false)->assertSee('admin-assets/js/content-search.js', false);
+    }
 }

@@ -4,9 +4,9 @@
         "template": "marketing-sales-collaterals",
         "is_system": false,
         "config": {
-            "title": "Logo Design Services | Intelliworkz"
+            "title": "Logo Design Services | Custom Brand Logos | Intelliworkz"
         },
-        "meta_description": "Custom logo design from Intelliworkz: original concepts that work at every size, delivered as a complete set of vector and image files for print and digital."
+        "meta_description": "Get custom logo design services with logo versions and files for print and digital use. Work with the Intelliworkz in-house design team."
     },
     "fields": [
         {
@@ -51,7 +51,7 @@
             "key": "hero.5",
             "label": "Text: Experienced designers creating consistent, hi…",
             "type": "textarea",
-            "value": "Your logo is developed by our in-house team, with scope, feedback rounds and file delivery agreed before work begins.",
+            "value": "Our design team ideates and develops your logo as per the design brief in line with the agreed scope of work.",
             "sort": 5
         },
         {
@@ -60,7 +60,7 @@
             "key": "hero.6",
             "label": "Heading: Let’s Bring Your Presentation to Life.",
             "type": "text",
-            "value": "Let's Talk About Your Logo",
+            "value": "Let's Connect For Your Logo",
             "sort": 6
         },
         {
@@ -69,7 +69,7 @@
             "key": "hero.7",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your logo requirements. Our team will review your brief and contact you about the next steps.",
+            "value": "Share your business offerings and your visual ideation, rest we take care",
             "sort": 7
         },
         {
@@ -141,7 +141,7 @@
             "key": "selected-work.2",
             "label": "Paragraph: Our collateral design work supports businesse…",
             "type": "textarea",
-            "value": "Explore logo design work created for different brand personalities, industries and applications. The gallery should show how each identity is shaped for recognition, readability and practical use across print and digital touchpoints.",
+            "value": "Explore logo and brand identity work is developed for diverse industries and business needs. Each design is built for recognition, consistency, and bulk production supported by clear guidelines and production-ready vector files for seamless application across corporate stationery, print, digital platforms, and other brand touchpoints",
             "sort": 15
         },
         {
@@ -168,7 +168,7 @@
             "key": "why-intelliworkz.2",
             "label": "Paragraph: We handle your collateral as one connected wh…",
             "type": "textarea",
-            "value": "Many logo projects finish with one image file and nothing more. This is fine up to the point you need your logo reversed out in white or in a single colour, or the logo scaled down to an app icon, and at that point a flat graphic isn’t good enough.",
+            "value": "A strong brand identity starts with a well-designed logo and a clearly defined set of brand guidelines that ensure consistency across every application. At Intelliworkz, we support the process from logo development and brand guideline creation to preparing production-ready vector files in formats such as AI, EPS, SVG, and print-ready PDF. These scalable, adaptable assets enable corporate branding agencies to reproduce logos accurately across business cards, letterheads, envelopes, corporate stationery, signage, merchandise, and other branded materials. Whether you’re building a brand from the ground up or need reliable artwork production support for multiple corporate clients, we help ensure every asset is consistent, versatile, and ready for use across print and digital applications.",
             "sort": 18
         },
         {
@@ -177,7 +177,7 @@
             "key": "why-intelliworkz.3",
             "label": "Paragraph: We bring that consistency by treating your br…",
             "type": "textarea",
-            "value": "Each logo we send comes with the versions a working brand uses: a hero locked-up logo, horizontal, icon-only mark and a one-colour version for those limited print or budget occasions. And because we offer more than just a logo, as a full-service brand company, we also extend your logo across your entire brand, including business cards and websites - everything. This is the difference between a quick graphic and considered brand logo design that holds together across every application.",
+            "value": "",
             "sort": 19
         },
         {
@@ -258,7 +258,7 @@
             "key": "services-workflow.6",
             "label": "Heading above the process steps (empty = none)",
             "type": "text",
-            "value": "",
+            "value": "Our Process",
             "sort": 28
         },
         {
@@ -398,24 +398,48 @@
             "scope": "logo-design",
             "items": [
                 {
-                    "img": "strip-a.png",
+                    "img": "assets/images/logo-design/selected-work/work-1.webp",
                     "cats": "wordmarks"
                 },
                 {
-                    "img": "strip-b.png",
-                    "cats": "lettermarks"
+                    "img": "assets/images/logo-design/selected-work/work-2.webp",
+                    "cats": "wordmarks"
                 },
                 {
-                    "img": "strip-a.png",
-                    "cats": "symbol"
-                },
-                {
-                    "img": "strip-b.png",
+                    "img": "assets/images/logo-design/selected-work/work-3.webp",
                     "cats": "combination"
                 },
                 {
-                    "img": "strip-a.png",
-                    "cats": "redesign"
+                    "img": "assets/images/logo-design/selected-work/work-4.webp",
+                    "cats": "combination"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-5.webp",
+                    "cats": "wordmarks"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-6.webp",
+                    "cats": "wordmarks"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-7.webp",
+                    "cats": "combination"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-8.webp",
+                    "cats": "combination"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-9.webp",
+                    "cats": "combination"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-10.webp",
+                    "cats": "wordmarks"
+                },
+                {
+                    "img": "assets/images/logo-design/selected-work/work-11.webp",
+                    "cats": "combination"
                 }
             ]
         },
@@ -466,8 +490,8 @@
                     "tab": "tab-1.svg",
                     "icon": "why-1.svg",
                     "bg": "why-bg-1.png",
-                    "title": "In-House Design Team",
-                    "text": "Your project is handled by our in-house design team, helping keep communication, quality checks and delivery coordinated."
+                    "title": "Dedicated In-House Designers",
+                    "text": "Our skilled in-house team develops comprehensive brand guidelines and produces high volumes of accurate, production-ready vector artwork. Proficient in Adobe Illustrator, Photoshop, and CorelDRAW, our team delivers scalable design assets that maintain brand consistency across corporate stationery, print production, and diverse branding applications."
                 },
                 {
                     "c": "var(--c-red)",
@@ -476,8 +500,8 @@
                     "tab": "tab-2.svg",
                     "icon": "why-2.svg",
                     "bg": "why-bg-2.png",
-                    "title": "Consistent Design Support",
-                    "text": "Work with a team that understands your brief and can support related brand assets when your requirements grow."
+                    "title": "Original Design Concepts",
+                    "text": "We create original logo concepts based on your business identity, target audience, brand values and design requirements."
                 },
                 {
                     "c": "#141717",
@@ -487,7 +511,7 @@
                     "icon": "why-3.svg",
                     "bg": "why-bg-3.png",
                     "title": "Confidential File Handling",
-                    "text": "Your logo concepts, business information and working files are handled within the agreed project workflow."
+                    "text": "Your business information, logo concepts and working files are handled carefully within the agreed project workflow."
                 },
                 {
                     "c": "var(--c-olive)",
@@ -497,7 +521,7 @@
                     "icon": "why-4.svg",
                     "bg": "why-bg-4.png",
                     "title": "Clear Scope and Pricing",
-                    "text": "Deliverables, revision rounds, timelines and project pricing are agreed before design work begins."
+                    "text": "Project deliverables, revision rounds, timelines and pricing are agreed upon before design work begins."
                 }
             ]
         },
@@ -506,25 +530,25 @@
             "scope": "logo-design",
             "items": [
                 [
-                    "tool-illustrator.svg",
+                    "assets/images/logo-design/tool-illustrator.svg",
                     "#330000",
                     "Adobe Illustrator",
                     "Illustrate | Create"
                 ],
                 [
-                    "tool-photoshop.svg",
+                    "assets/images/logo-design/tool-photoshop.svg",
                     "#001834",
                     "Adobe Photoshop",
                     "Edit | Retouch"
                 ],
                 [
-                    "tool-indesign.svg",
+                    "assets/images/logo-design/tool-indesign.svg",
                     "#54001A",
                     "Adobe InDesign",
                     "Layout | Publish"
                 ],
                 [
-                    "tool-coreldraw.svg",
+                    "assets/images/logo-design/tool-coreldraw.svg",
                     "#0E3B2A",
                     "CorelDRAW",
                     "Vector | Design"
@@ -540,21 +564,21 @@
                     "points": [
                         "<strong>Wordmarks:</strong> Where the business name itself forms the logo, as with Google.",
                         "<strong>Lettermarks:</strong> Built from initials for longer company names.",
-                        "<strong>Pictorial &amp; Icon Marks:</strong> A single recognisable symbol representing your identity.",
-                        "<strong>Abstract Marks:</strong> A custom shape that represents the brand personality.",
-                        "<strong>Mascot Logos:</strong> A character that gives the brand a distinct, approachable face.",
-                        "<strong>Combination Marks:</strong> A name and symbol designed to work together seamlessly."
+                        "<strong>Pictorial &amp; Icon Marks:</strong> A single recognisable symbol.",
+                        "<strong>Abstract Marks:</strong> A custom shape that represents the brand.",
+                        "<strong>Mascot Logos:</strong> A character that gives the brand a face.",
+                        "<strong>Combination Marks:</strong> A name and symbol designed to work together."
                     ],
                     "open": true
                 },
                 {
                     "title": "What You Receive",
                     "points": [
-                        "<strong>A choice of initial concepts</strong> to review and evaluate.",
+                        "<strong>A choice of initial concepts</strong> to review.",
                         "<strong>Primary, horizontal, stacked and single-colour versions</strong> for every placement.",
                         "<strong>Every format you need:</strong> AI, EPS, SVG, PDF, PNG and JPG.",
-                        "<strong>Colour codes for print and digital</strong> (CMYK, RGB, HEX, Pantone®) so the logo stays consistent across media.",
-                        "<strong>A short usage guide</strong> explaining clear space, minimum sizing and how to apply the logo correctly."
+                        "<strong>Colour codes for print and digital,</strong> so the logo stays consistent across media.",
+                        "<strong>A short usage guide</strong> explaining how to apply the logo correctly."
                     ]
                 }
             ]

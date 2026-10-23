@@ -1,4 +1,4 @@
-@props(['name', 'label', 'current' => null, 'help' => null, 'removable' => true, 'compact' => false, 'accept' => 'image/png,image/jpeg,image/webp,image/gif', 'removeName' => null, 'dark' => false])
+@props(['name', 'label', 'current' => null, 'help' => null, 'removable' => true, 'compact' => false, 'accept' => 'image/png,image/jpeg,image/webp,image/gif,image/svg+xml', 'removeName' => null, 'dark' => false])
 @php
     $id = 'img_' . preg_replace('/[^a-z0-9_]/i', '_', $name);
     $errKey = preg_replace('/\[(\w+)\]/', '.$1', $name);

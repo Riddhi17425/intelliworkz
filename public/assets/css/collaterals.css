@@ -44,9 +44,9 @@
 .cl-services__head { gap: 16px; }
 .cl-services__title { flex: none; width: 789.3px; text-align: center; }
 .ve-split--center > .cl-services__title { flex: none; width: 789.3px; }
-.cl-services__img { flex: none; width: 750px; max-width: 45%; align-self: stretch; overflow: hidden; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
-.cl-services__img img { width: 100%; height: 100%; object-fit: cover; }
-.cl .acc--services .acc-points { width: 450px; max-width: 100%; }
+.cl-services__img { flex: none; width: 750px; max-width: 45%; align-self: flex-start; position: sticky; top: 120px; overflow: hidden; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+.cl-services__img img { display: block; width: 100%; height: auto; }
+.cl .acc--services .acc-points { width: 100%; max-width: 100%; }
 
 /* ---------- Workflow: 6-step timeline on a 1824x392 canvas ---------- */
 .cl-flow { position: relative; flex: none; width: 1824px; max-width: 100%; height: 392.18px; }
@@ -87,3 +87,9 @@
 @media (max-width: 640px) {
     .cl-related__grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- Logo Design page: its own hero photo ---------- */
+.cl--logo-design .cl-hero__art { background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0) 65%), url("../images/logo-design/hero.webp") center / cover no-repeat; }
+/* its tools photo is drawn at the strip's own 1920x500 size */
+.cl--logo-design .ve-tools__bg { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+.cl--logo-design .ve-tools::after { display: none; }

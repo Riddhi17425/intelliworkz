@@ -176,6 +176,14 @@ $industry_text = $T('shared-copy.1');
                 <?php foreach ($industries as $ind): ?>
                     <article class="industry <?= empty($ind['img']) ? 'industry--plain' : '' ?> <?= (strlen($ind['title']) > 20) ? 'industry--two-line' : '' ?>" tabindex="0">
                         <?php if (!empty($ind['img'])): ?><img src="<?= iu('assets/images/', $ind['img']) ?>" alt="<?= $ind['title'] ?>"><?php endif; ?>
+                        <?php
+                        $media = [];
+                        foreach (['img', 'img2', 'img3', 'img4', 'img5'] as $k) {
+                            if (!empty($ind[$k])) { $media[] = ['type' => 'image', 'src' => iu('assets/images/', $ind[$k])]; }
+                        }
+                        if (!empty($ind['video'])) { $media[] = ['type' => 'video', 'src' => $ind['video']]; }
+                        ?>
+                        <?php if ($media): ?><button type="button" class="industry__play" data-lightbox="<?= e(json_encode($media, JSON_UNESCAPED_SLASHES)) ?>" data-title="<?= e(strip_tags(!empty($ind['popup_title']) ? $ind['popup_title'] : $ind['title'])) ?>" data-text="<?= e(strip_tags($ind['popup_text'] ?? '')) ?>" aria-label="View gallery: <?= e(strip_tags($ind['title'])) ?>"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg></button><?php endif; ?>
                         <h3 class="industry__title <?= !empty($ind['font']) ? 'is-alt' : '' ?>"><?= $ind['title'] ?></h3>
                         <p class="industry__text"><?= $ind['text'] ?? $industry_text ?></p>
                     </article>
@@ -293,4 +301,8 @@ $industry_text = $T('shared-copy.1');
 </main>
 
 
+
+@push('scripts')
+<script src="{{ asset_url('assets/js/lightbox.js') }}" defer></script>
+@endpush
 @endsection

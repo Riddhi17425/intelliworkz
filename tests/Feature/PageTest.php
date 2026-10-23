@@ -15,7 +15,7 @@ class PageTest extends CmsTestCase
 
     public function test_all_original_pages_are_published_and_render(): void
     {
-        $this->assertSame(13, Page::where('is_system', true)->count());
+        $this->assertSame(14, Page::where('is_system', true)->count());
         foreach (Page::where('is_system', true)->get() as $page) {
             $url = $page->slug === 'index' ? '/' : "/{$page->slug}.php";
             $this->get($url)->assertOk()->assertSee('<title>', false);

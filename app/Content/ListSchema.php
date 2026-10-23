@@ -389,7 +389,7 @@ class ListSchema
 
     private function assertImage(UploadedFile $file, string $label): void
     {
-        $v = Validator::make(['f' => $file], ['f' => Media::rule(false)], [], ['f' => $label]);
+        $v = Validator::make(['f' => $file], ['f' => Media::rule(true)], [], ['f' => $label]);
         if ($v->fails()) {
             throw ValidationException::withMessages(['content' => $v->errors()->first('f')]);
         }

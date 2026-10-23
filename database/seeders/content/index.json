@@ -36,7 +36,7 @@
             "key": "hero.4",
             "label": "Main heading: Technology, Creative & Digital Capabilities B…",
             "type": "text",
-            "value": "Technology, Creative &amp; Digital Capabilities Built Around Your Business",
+            "value": "Technology, Creative &amp; Digital Capabilities Built For Your Business",
             "sort": 3
         },
         {
@@ -45,7 +45,7 @@
             "key": "hero.5",
             "label": "Paragraph: In the ever-changing global landscape, compan…",
             "type": "textarea",
-            "value": "In the ever-changing global landscape, companies today need more than individual service providers. They need partners with the right resources, domain expertise, and the latest technology who can deliver consistently. At Intelliworkz, we provide offshore solutions to deliver creative and digital marketing services that operate as an extended team under one roof.",
+            "value": "In the ever-changing global landscape, companies today need more than individual service providers. They need partners with the right resources, domain expertise, scalable state of the art infrastructure and the latest technology to deliver consistently. At Intelliworkz, we provide offshore solutions to deliver <strong>creative and digital</strong> marketing services that operate as an extended team under one roof.",
             "sort": 4
         },
         {
@@ -108,7 +108,7 @@
             "key": "domain-expertise.3",
             "label": "Paragraph: Your business may need a new brand, a website…",
             "type": "textarea",
-            "value": "Your business may need a new brand, a website, a mobile application, ongoing digital marketing, or a team to manage technology requirements. These needs may sit in different domains, but they often need to work towards the same business objective.",
+            "value": "Intelliworkz brings together <strong>brand development</strong>, <strong>creative design</strong>, digital marketing, technology, and outsourcing capabilities, backed by teams with expertise across the domains they work in.",
             "sort": 11
         },
         {
@@ -117,7 +117,7 @@
             "key": "domain-expertise.4",
             "label": "Paragraph: Intelliworkz brings together brand developmen…",
             "type": "textarea",
-            "value": "Intelliworkz brings together brand development, creative design, digital marketing, technology, and outsourcing capabilities, backed by teams with expertise across the domains they work in. This allows us to understand not only what needs to be delivered but also the business context, audience, workflows, and objectives behind the requirement.",
+            "value": "This allows us to understand not only what needs to be delivered but also the business context, audience, workflows, and objectives behind the requirement.",
             "sort": 12
         },
         {
@@ -144,7 +144,7 @@
             "key": "domain-expertise.1",
             "label": "Button text: About us",
             "type": "text",
-            "value": "About us",
+            "value": "About Intelliworkz",
             "sort": 15
         },
         {
@@ -243,7 +243,7 @@
             "key": "outsourcing.4",
             "label": "Paragraph: Intelliworkz provides IT outsourcing services…",
             "type": "textarea",
-            "value": "Intelliworkz provides IT outsourcing services, creative service outsourcing, and engineering service outsourcing through 100% in-house teams. You can outsource a specific function, a complete project or build a dedicated team around your ongoing requirements.",
+            "value": "Intelliworkz provides <strong>IT outsourcing services</strong>, creative service outsourcing, and engineering service outsourcing through 100% in-house teams. You can outsource a specific function, a complete project or build a dedicated team around your ongoing requirements.",
             "sort": 26
         },
         {
@@ -315,7 +315,7 @@
             "key": "outsourcing.12",
             "label": "Paragraph: Build a team around your specific requirement…",
             "type": "textarea",
-            "value": "Build a team around your specific requirements with dedicated resources, project management, and the flexibility to scale as your workload changes. The team can work alongside your existing employees, follow your processes, and collaborate within your preferred working structure.",
+            "value": "For agencies and businesses that need additional delivery capacity, our teams can work behind your brand or as an offshore extension of your organization while maintaining confidentiality and consistent delivery.",
             "sort": 34
         },
         {
@@ -423,7 +423,7 @@
             "key": "insights.2",
             "label": "Heading: Insights & Intelligence",
             "type": "text",
-            "value": "Insights &amp; Intelligence",
+            "value": "Ideas, Insights &amp; What's Happening at Intelliworkz",
             "sort": 46
         },
         {
@@ -473,82 +473,65 @@
             "scope": "index",
             "items": [
                 {
-                    "title": "Branding & Creative",
+                    "title": "Brand & Creative",
                     "color": "var(--c-blue)",
-                    "intro": "From brand foundations to digital experiences, we create identities and communication systems that connect with your audience.",
+                    "intro": "From defining how your brand looks and communicates to creating the visual and digital assets that represent it, our creative teams work across the brand lifecycle.",
                     "items": [
-                        "Logo Design",
-                        "Brand Identity & Design",
-                        "Marketing & Sales Collaterals | marketing-sales-collaterals.php",
-                        "Packaging Design | packaging-design.php",
-                        "Campaign Concepts & Ad Creatives",
-                        "Corporate Communication",
-                        "Visual Identity Systems",
-                        "PPT Design | ppt-design.php",
-                        "Advertising Services",
-                        "UI/UX Design"
+                        "Brand Development | brand-identity-and-design.php",
+                        "Creative Design",
+                        "Graphic Design",
+                        "UI/UX Design",
+                        "Video & Animation | video-editing.php",
+                        "3D Visualization | 3d-modeling-rendering.php"
                     ],
-                    "cta": "Explore Branding & Creative",
+                    "cta": "Explore Brand & Creative Services",
                     "href": "services.php#svc-1"
                 },
                 {
-                    "title": "Digital Marketing & Growth",
+                    "title": "Digital Marketing",
                     "color": "var(--c-orange)",
-                    "intro": "Data-driven digital marketing to help you reach the right audience, generate demand and grow your business online.",
+                    "intro": "We help businesses build visibility, reach the right audiences, and create a consistent digital presence through strategy and ongoing execution.",
                     "items": [
-                        "Digital Marketing",
-                        "SEO Services | seo-services.php",
-                        "AEO Services",
-                        "GEO Services"
+                        "SEO | seo-services.php",
+                        "Social Media Marketing",
+                        "Content Marketing",
+                        "Performance Marketing",
+                        "Digital Marketing"
                     ],
-                    "cta": "Explore Digital Marketing",
+                    "cta": "Explore Digital Marketing Services",
                     "href": "services.php#svc-2"
                 },
                 {
-                    "title": "Print & Publication",
-                    "color": "var(--c-purple)",
-                    "intro": "Print-ready artwork, publishing and editorial production for high-quality business and academic communication.",
-                    "items": [
-                        "Pre-Press Services | pre-press-service.php",
-                        "Magazine Design | magazine-design.php",
-                        "Academic & Technical Publishing Support",
-                        "Multilingual Publishing & Localization",
-                        "Product Catalog",
-                        "InDesign Services",
-                        "Newsletter Design"
-                    ],
-                    "cta": "Explore Print & Publication",
-                    "href": "services.php#svc-3"
-                },
-                {
-                    "title": "Post-Production",
+                    "title": "Technology",
                     "color": "var(--c-charcoal)",
-                    "intro": "Refine footage, imagery and motion assets for polished, production-ready communication.",
+                    "intro": "From websites and mobile applications to business software and integrated platforms, we build technology around the way your business works.",
                     "items": [
-                        "Video Editing | video-editing.php",
-                        "Image Editing",
-                        "Motion Graphics",
-                        "Explainer Videos",
-                        "Product Video",
-                        "Social Media Reels"
+                        "Website Design & Development",
+                        "Mobile App Development",
+                        "Custom Software Development",
+                        "CRM & ERP Development",
+                        "API & System Integration",
+                        "Portal Development",
+                        "eCommerce Development",
+                        "Maintenance & Support"
                     ],
-                    "cta": "Explore Post-Production",
-                    "href": "services.php#svc-4"
+                    "cta": "Explore Technology Services",
+                    "href": "services.php"
                 },
                 {
-                    "title": "Animation",
-                    "color": "var(--c-olive)",
-                    "intro": "Create engaging motion-led experiences, product demonstrations and 3D visuals for every platform.",
+                    "title": "Publishing & Production",
+                    "color": "var(--c-purple)",
+                    "intro": "We support businesses that need structured, accurate, and production-ready content across publishing and document workflows.",
                     "items": [
-                        "Product Demo Videos",
-                        "Corporate Videos & Shoots",
-                        "Presentation Videos",
-                        "3D Modelling & 3D Rendering | 3d-modeling-rendering.php",
-                        "3D Visualization (Product / Architectural / Industrial)",
-                        "3D Animation"
+                        "InDesign Services",
+                        "DTP",
+                        "Pre-Press | pre-press-service.php",
+                        "Magazine & Newsletter Design | magazine-design.php",
+                        "Scientific Journal",
+                        "Product Catalogue Design"
                     ],
-                    "cta": "Explore Animation",
-                    "href": "services.php#svc-5"
+                    "cta": "Explore Publishing & Production Services",
+                    "href": "services.php#svc-3"
                 }
             ]
         },
@@ -588,12 +571,12 @@
                     "class": "is-creative",
                     "lead": "Extend your creative capacity with professionals working across:",
                     "items": [
-                        "Brand Development",
-                        "Creative Design",
                         "Graphic Design",
                         "UI/UX Design",
-                        "Video & Animation",
-                        "3D Visualization"
+                        "Video Editing",
+                        "3D Visualization & Animation",
+                        "Branding & Creative Production",
+                        "Publishing & Pre-Press"
                     ],
                     "img": "outsource-creative.png"
                 },
@@ -641,42 +624,52 @@
             "scope": "index",
             "items": [
                 {
-                    "title": "B2B Services",
+                    "title": "Publication, Pre-press & Print Production",
                     "img": null,
-                    "font": "alt"
+                    "font": "alt",
+                    "text": "Creative artwork, publication design, typesetting, layout adaptation, and pre-press production, packaging artwork for publishers, printers, and print service providers managing high-volume production and tight deadlines."
+                },
+                {
+                    "title": "Video Production & Post-production",
+                    "img": null,
+                    "font": "alt",
+                    "text": "Professional video editing, colour grading, motion graphics, animation, for brands, agencies, and production houses that need consistent quality, faster turnaround, and scalable post-production support."
                 },
                 {
                     "title": "Manufacturing",
-                    "img": "ind-manufacturing.png"
+                    "img": "ind-manufacturing.png",
+                    "text": "Marketing and Sales collaterals like Product catalogues, technical brochures, product visualizations, packaging design and solution, corporate presentations, industrial photography and product videos that help manufacturers communicate complex products and strengthen their brand presence."
                 },
                 {
-                    "title": "Industrial & Engineering",
-                    "img": "ind-industrial.png"
-                },
-                {
-                    "title": "Retail & eCommerce",
-                    "img": "ind-retail.png"
+                    "title": "Finance",
+                    "img": null,
+                    "font": "alt",
+                    "text": "Brand communication, Monthly factsheets, Investment Insights, monthly investment bulletin, investor reports, Presentation design and adaptation, infographics, digital campaign creatives, and social media content that simplify complex information and build credibility with customers and stakeholders."
                 },
                 {
                     "title": "Healthcare",
-                    "img": "ind-healthcare.png"
-                },
-                {
-                    "title": "Education",
-                    "img": "ind-education.png"
+                    "img": "ind-healthcare.png",
+                    "img2": "ind-education.png",
+                    "img3": "ind-retail.png",
+                    "video": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+                    "popup_text": "Digital health, patient communication and compliant creative for healthcare brands.",
+                    "text": "Healthcare brochures, medical and product illustrations, patient education materials, presentation design, clinic and hospital communication, digital campaign creatives, SEO and healthcare videos that make information clear, accessible, and engaging."
                 },
                 {
                     "title": "Real Estate",
-                    "img": "ind-realestate.png"
+                    "img": "ind-realestate.png",
+                    "text": "Property brochures, video post-production, architectural visualizations, 3D walkthrough, floor-plan graphics, virtual tours and digital campaign creatives that showcase developments and support property marketing and sales."
                 },
                 {
-                    "title": "Logistics & Distribution",
-                    "img": "ind-logistics.png"
-                },
-                {
-                    "title": "Startups & SaaS",
+                    "title": "Digital Marketing",
                     "img": null,
-                    "font": "alt"
+                    "font": "alt",
+                    "text": "Bulk production of Product imagery, eCommerce graphics, product catalogue design, packaging, marketplace creatives, promotional campaigns, and short-form videos that help global digital marketing firms manage their schedule without needing to scale up. And brands create compelling product experiences across digital and retail channels."
+                },
+                {
+                    "title": "Education",
+                    "img": "ind-education.png",
+                    "text": "SEO, Social media creatives, Creative communication, and technology solutions for education-focused organizations."
                 }
             ]
         },
@@ -690,23 +683,23 @@
                 ],
                 [
                     "Domain Expertise",
-                    "Our teams bring specialized knowledge across creative, digital, technology, publishing, and business applications, allowing requirements to be understood."
+                    "Our teams bring domain knowledge across creative, digital, post-production, publishing, and business applications that allows us to understand your requirements, engage and provide tailored solutions."
                 ],
                 [
                     "Multiple Capabilities",
-                    "Brand, creative, digital, technology, and outsourcing capabilities work together seamlessly under one roof."
+                    "We provide an array of services under Creative service that includes Graphic design, Digital, Post production support, Animation, Publishing and many more all under one roof."
                 ],
                 [
-                    "One Partner",
-                    "You can bring different requirements to the same team instead of coordinating multiple vendors for connected work."
+                    "One-Stop-Solution",
+                    "We act as a one stop solution for all creative and design support for our clients. This saves time of coordinating multiple vendors for similar tasks or workflows."
                 ],
                 [
                     "Built to Scale",
-                    "Your requirement can start with one project or a small team. As the workload grows, the engagement can grow with it."
+                    "Your requirement may start with one project or a small team, however as your business grows and there is a dire need to scale, you need to look no further. We can scale-up in short notice with relevant skill sets, which will ensure you continue to grow your business."
                 ],
                 [
                     "Consistent Delivery",
-                    "Dedicated resources, project management, and established processes help maintain consistency across ongoing engagements."
+                    "Our QA process coupled with tailored resources, project management, and well defined workflows help maintain consistency across ongoing engagements."
                 ]
             ]
         },
@@ -740,48 +733,44 @@
                 },
                 {
                     "name": "Formezy",
-                    "tag": "Smart Online Form Builder",
-                    "text": "Formezy helps businesses create, publish, and manage online forms without writing code. Collect responses, route submissions to the right teams, and keep every enquiry, registration, and feedback in one place.",
+                    "tag": "Create, Automate & Improve Business Processes",
+                    "text": "Formezy is designed to help businesses create and manage processes more efficiently, bringing form building, data analytics, and integrations together in a user-friendly environment. Its applications extend across areas such as procurement, CRM, production, inventory, and quality control.",
                     "features": [
                         [
-                            "Drag & Drop Builder",
-                            "Build and publish online forms visually, with no code required."
+                            "Form Building",
+                            ""
                         ],
                         [
-                            "Response Tracking",
-                            "Every enquiry, registration and feedback response is collected and tracked in one place."
-                        ],
-                        [
-                            "Workflow Rules",
-                            "Route submissions to the right teams automatically as they come in."
+                            "Data Analytics",
+                            ""
                         ],
                         [
                             "Integrations",
-                            "Connect Formezy with the tools your teams already use, so responses flow where they are needed."
+                            ""
                         ]
                     ],
                     "img": "datanote-2df198.png"
                 },
                 {
                     "name": "Docezy",
-                    "tag": "Document Management Made Simple",
-                    "text": "Docezy brings your documents into one secure workspace. Store, organise, share, and track files with version control and role-based access, so teams always work on the latest version.",
+                    "tag": "Organize, Store & Share Documents Securely",
+                    "text": "Docezy helps businesses organize, store, and share files through a secure, user-friendly platform. It combines fast uploads and downloads, collaboration, powerful search and retrieval, and security features to make document management easier to handle.",
                     "features": [
                         [
+                            "File Organization",
+                            ""
+                        ],
+                        [
                             "Secure Storage",
-                            "Keep all your documents together in one secure workspace."
+                            ""
                         ],
                         [
-                            "Version Control",
-                            "Track every change so teams always work on the latest version."
+                            "Collaboration",
+                            ""
                         ],
                         [
-                            "Access Roles",
-                            "Control who can view, edit or share each file with role-based access."
-                        ],
-                        [
-                            "Smart Search",
-                            "Find the file you need quickly across everything you have stored."
+                            "Search & Retrieval",
+                            ""
                         ]
                     ],
                     "img": "datanote-2df198.png"
@@ -814,7 +803,7 @@
                     "bg": "#FAF6EF",
                     "title": "Kick-off",
                     "img": "process/process-kickoff.png",
-                    "text": "The kick-off meeting helps us to align with timelines and quality expectations. We formulate our internal QC document to ensure every project passes through stringent QC before it reaches you."
+                    "text": "We identify the right skill set within our team and provide specific training to ensure that we deliver consistent output as per the agreed SLA’s. The kick-off meeting helps us to align with timelines and quality expectations. We formulate our internal QC document to ensure every project passes through stringent QC before it reaches you."
                 }
             ]
         },
@@ -836,7 +825,7 @@
                     "bg": "#ECF9F3",
                     "title": "Execute",
                     "img": "process/process-execute.png",
-                    "text": "We identify the right skill set within our team and provide specific training to ensure that we deliver consistent output as per the agreed SLA’s. Our team continues to work as per the defined workflow. The project management team will ensure that projects are delivered as per SLA."
+                    "text": "Our team continues to work as per the defined workflow. The project management team will ensure that projects are delivered as per SLA."
                 }
             ]
         },

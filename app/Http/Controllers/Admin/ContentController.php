@@ -118,6 +118,7 @@ class ContentController extends Controller
         if (!$page->hasSections()) {
             return $out;
         }
+        $out = $this->flagSwitchedOff($page, $out);
         $designs = SectionPlan::designs();
         foreach (SectionPlan::layout($page) as $item) {
             if ($item['tpl']) {
@@ -126,6 +127,59 @@ class ContentController extends Controller
             }
         }
         return $out;
+    }
+
+    /**
+     * Marks the editor sections that only belong to a part of the page that is switched off (layout: Show = off), so
+     * nobody edits the hidden copy (e.g. its "Selected Work") while the website shows another one. A section is flagged
+     * when every text and list in it is printed only by switched-off parts of the page's own design.
+     */
+    private function flagSwitchedOff(Page $page, array $sections): array
+    {
+        $own = $page->viewKey();
+        $offFields = $offLists = $onFields = $onLists = [];
+        $usedLists = [];                              // lists some part of the design prints; others are left over from the page it was copied from
+        foreach (SectionPlan::KEYS as $key) {
+            $file = resource_path("views/site/parts/{$own}/{$key}.blade.php");
+            if (is_file($file)) {
+                preg_match_all('/\$([A-Za-z_][A-Za-z0-9_]*)/', (string) file_get_contents($file), $u);
+                $usedLists = array_merge($usedLists, $u[1]);
+            }
+        }
+        foreach (SectionPlan::layout($page) as $item) {
+            if ($item['tpl']) {
+                continue;
+            }
+            $file = resource_path("views/site/parts/{$own}/{$item['key']}.blade.php");
+            $source = is_file($file) ? (string) file_get_contents($file) : '';
+            preg_match_all('/\$T\(\s*[\'"]([^\'"]+)[\'"]/', $source, $f);
+            preg_match_all('/\$([A-Za-z_][A-Za-z0-9_]*)/', $source, $l);
+            if ($item['hidden']) {
+                $offFields = array_merge($offFields, $f[1]);
+                $offLists = array_merge($offLists, $l[1]);
+            } else {
+                $onFields = array_merge($onFields, $f[1]);
+                $onLists = array_merge($onLists, $l[1]);
+            }
+        }
+        $offFields = array_diff($offFields, $onFields);
+        $offLists = array_diff($offLists, $onLists);
+
+        foreach ($sections as $i => $sec) {
+            $keys = $sec['fields']->pluck('key')->all();
+            $lists = array_map(fn ($l) => $l['model']->key, $sec['lists']);
+            if (!$keys && !$lists) {
+                continue;
+            }
+            $lists = array_values(array_intersect($lists, $usedLists));
+            $allOff = !array_diff($keys, $offFields) && !array_diff($lists, $offLists);
+            $someOff = array_intersect($keys, $offFields) || array_intersect($lists, $offLists);
+            if ($allOff && $someOff) {
+                $sections[$i]['name'] .= ' — switched off on the website';
+                $sections[$i]['off'] = true;
+            }
+        }
+        return $sections;
     }
 
     /** Rows of the "Sections on this page" panel. */
@@ -284,7 +338,7 @@ class ContentController extends Controller
         if ($field->type === 'image') {
             $file = $request->file("images.{$id}");
             if ($file instanceof UploadedFile && $file->isValid()) {
-                $v = Validator::make(['f' => $file], ['f' => Media::rule(false)], [], ['f' => $field->label]);
+                $v = Validator::make(['f' => $file], ['f' => Media::rule(true)], [], ['f' => $field->label]);
                 if ($v->fails()) {
                     throw ValidationException::withMessages(["images.{$id}" => $v->errors()->first('f')]);
                 }

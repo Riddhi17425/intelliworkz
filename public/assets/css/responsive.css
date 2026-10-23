@@ -189,6 +189,7 @@
     .acc--services .acc-title { font-size: 20px; line-height: 28px; }
     .acc--services .acc-points, .ve .acc--services .acc-points, .cl .acc--services .acc-points, .acc--mag .acc-points { width: auto; max-width: 100%; }
     .ve-services__img, .mg-services__img, .td-services__img, .cl-services__img, .seo-services__img, .pk-services__img { width: 100%; max-width: 100%; height: auto; aspect-ratio: 4 / 3; }
+    .cl-services__img, .ve-services__img, .mg-services__img, .td-services__img, .seo-services__img { position: static; }
     .acc-icons { width: 36px; height: 36px; }
     .acc-icon { width: 36px; height: 36px; }
 

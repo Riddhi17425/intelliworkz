@@ -3,7 +3,7 @@
     <div class="adm-item__head" data-act="toggle">
         <span class="adm-item__no" data-no>{{ is_int($index) ? $index + 1 : '+' }}</span>
         <span class="adm-item__title" data-title>{{ !empty($fresh) ? 'New item' : $schema->itemTitle($item, $index) }}</span>
-        <div class="adm-item__tools" onclick="event.stopPropagation()">
+        <div class="adm-item__tools">
             @if($schema->canReorder())
                 <button type="button" class="btn btn-sm btn-light" data-act="up" title="Move up"><i class="bi bi-arrow-up"></i></button>
                 <button type="button" class="btn btn-sm btn-light" data-act="down" title="Move down"><i class="bi bi-arrow-down"></i></button>

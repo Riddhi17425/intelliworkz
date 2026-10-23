@@ -8,7 +8,7 @@ $mc = 'assets/icons/magazine/';      // shared with the magazine page (metric + 
 $vi = 'assets/images/video/';        // shared with the video page (offer art)
 $vc = 'assets/icons/video/';         // shared icons
 @endphp
-<main class="page ve cl{{ !empty($mainExtra) ? ' ' . $mainExtra : '' }}">
+<main class="page ve cl cl--{{ $page->slug }}{{ !empty($mainExtra) ? ' ' . $mainExtra : '' }}">
 
     <!-- ============ HERO ============ -->
     <section class="ve-hero ve-hero--plain">

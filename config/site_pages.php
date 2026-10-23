@@ -8,6 +8,7 @@ return array (
     'body_class' => '',
     'extra_css' => 
     array (
+      0 => 'assets/css/lightbox.css',
     ),
     'no_zoom' => false,
     'show_prefooter' => true,
@@ -189,6 +190,20 @@ return array (
       0 => 'assets/css/video.css',
       1 => 'assets/css/magazine.css',
       2 => 'assets/css/services.css',
+    ),
+    'no_zoom' => false,
+    'show_prefooter' => false,
+    'footer_class' => 'site-footer--service',
+    'phone_icon' => 'video/icon-phone-outline.svg',
+  ),
+  'case-study' =>
+  array (
+    'title' => 'Case Study: Unified Conglomerate Brand | Intelliworkz',
+    'body_class' => 'page-case-study',
+    'extra_css' =>
+    array (
+      0 => 'assets/css/video.css',
+      1 => 'assets/css/case-study.css',
     ),
     'no_zoom' => false,
     'show_prefooter' => false,

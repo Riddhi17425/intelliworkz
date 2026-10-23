@@ -52,7 +52,7 @@
         ['.ve-tool, .mg-tool, .seo-tool, .acc--faq .acc-item, .acc--services .acc-item, .ve-faq > .h2', 'fx-up'],
         ['.ct-form__copy > *, .ct-dark__head > *, .mf-buyers__copy > *, .mf-support__body > *, .mf-dark__head > *, .expertise__media, .pk-pf__head > *, .seo-pf__head > *, .cl-pf__head > *, .ve-portfolio__head > *', 'fx-up'],
         ['.expertise__content > *, .mf-buyers__img, .ct-card, .ct-offices, .ct-dark__map, .seo-pf__panel, .td-viewer__panel', 'fx-up'],
-        ['.ve-services__img, .mg-services__img, .td-services__img, .cl-services__img, .seo-services__img, .pk-services__img, .mf-dark__shot, .seo-pf__main, .ppt-scene__main', 'fx-zoom']
+        ['.ve-services__img, .mg-services__img, .td-services__img, .seo-services__img, .pk-services__img, .mf-dark__shot, .seo-pf__main, .ppt-scene__main', 'fx-zoom']
     ];
     var directional = { '.expertise__media': 'fx-left', '.expertise__content > *': 'fx-right', '.mf-buyers__img': 'fx-right', '.ct-card': 'fx-right', '.ct-offices': 'fx-right', '.ct-form__copy > *': 'fx-left' };
     var skipInside = '[data-showcase], .offer-viewport, [data-slider], .mg-viewport, [data-examples], .pf-cards, .seo-gallery, .td-gallery, .ppt-gallery, .menu-drawer, .video-modal, .site-footer, .products__stage, .ve-hero, .hero';

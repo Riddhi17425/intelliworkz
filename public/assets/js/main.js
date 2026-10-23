@@ -141,7 +141,7 @@
 
     /* Sticky subnav – pins to the top of the viewport once the page scrolls past it */
     var subnav = document.querySelector('.subnav');
-    if (subnav) {
+    if (subnav && false) {   // sticky behaviour switched off: the menu bar scrolls away with the page
         var stickAt = 0;
         var measure = function () {
             subnav.classList.remove('is-stuck');
@@ -627,19 +627,25 @@
         return first.offsetWidth + gap();
     };
 
+    /* dir > 0: the strip slides left and the first tile goes to the end. dir < 0: the last tile is put in front
+       (strip shifted, no animation) and the strip then slides back to the right. Tiles hidden by a filter are
+       skipped, so an arrow never "does nothing" because it moved an invisible tile. */
     var forward = function (dir) {
         if (busy) return;
+        var tiles = Array.prototype.filter.call(track.children, function (t) { return !t.hidden; });
+        if (tiles.length < 2) return;
         busy = true;
         var step = stepPx();
-        track.classList.add('is-sliding');
+        var moved = dir > 0 ? tiles[0] : tiles[tiles.length - 1];
 
         if (dir > 0) {
+            track.classList.add('is-sliding');
             track.style.transform = 'translateX(' + (-step) + 'px)';
         } else {
-            var last = track.lastElementChild;
-            track.insertBefore(last, track.firstElementChild);
+            track.classList.remove('is-sliding');
+            track.insertBefore(moved, track.firstElementChild);
             track.style.transform = 'translateX(' + (-step) + 'px)';
-            void track.offsetWidth;
+            void track.offsetWidth;                       // apply the shifted start position before animating
             track.classList.add('is-sliding');
             track.style.transform = 'translateX(0)';
         }
@@ -650,7 +656,7 @@
             finished = true;
             track.removeEventListener('transitionend', done);
             track.classList.remove('is-sliding');
-            if (dir > 0) track.appendChild(track.firstElementChild);
+            if (dir > 0) track.appendChild(moved);
             track.style.transform = 'translateX(0)';
             busy = false;
         };

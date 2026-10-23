@@ -79,7 +79,7 @@
 
 /* ---------- Services accordion image (page has no magazine.css, so this needs its own width rule
    — without it the unconstrained <img> forces the accordion column down to a sliver) ---------- */
-.td-services__img { flex: none; align-self: stretch; width: 746px; max-width: 40%; object-fit: cover; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+.td-services__img { flex: none; align-self: flex-start; position: sticky; top: 120px; width: 746px; max-width: 40%; height: auto; object-fit: contain; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
 
 /* ---------- Workflow: single row of 5 steps (not the circular ring layout) ---------- */
 .td-workflow { display: flex; align-self: stretch; gap: 60px; width: 1800px; max-width: 100%; }

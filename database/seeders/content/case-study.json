@@ -1,0 +1,519 @@
+{
+    "page": {
+        "slug": "case-study",
+        "meta_description": "How Intelliworkz built one cohesive identity, corporate website and consistent content for a UAE-based diversified business group.",
+        "config": {
+            "title": "Case Study: Unified Conglomerate Brand | Intelliworkz",
+            "body_class": "page-case-study",
+            "extra_css": [
+                "assets/css/video.css",
+                "assets/css/case-study.css"
+            ],
+            "no_zoom": false,
+            "show_prefooter": false,
+            "footer_class": "site-footer--service",
+            "phone_icon": "video/icon-phone-outline.svg"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Image (background pattern)",
+            "type": "image",
+            "value": "assets/icons/showcase-bg.svg",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Paragraph: breadcrumb",
+            "type": "html",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Case Studies</a> / <span>Unified Conglomerate Brand</span>",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Small label above the heading",
+            "type": "text",
+            "value": "Case Study | Diversified Conglomerate | Brand & Digital",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Main heading",
+            "type": "text",
+            "value": "Building a Unified Conglomerate Brand Through Strategy, Branding & Digital",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Intro paragraph",
+            "type": "textarea",
+            "value": "How a cohesive identity, corporate website and consistent content helped a UAE-based diversified business group communicate its scale, diversity, values and vision.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Button text: Start a Project",
+            "type": "text",
+            "value": "Start a Project",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Button link: Start a Project",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "Button text: Our Services",
+            "type": "text",
+            "value": "Our Services",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "Button link: Our Services",
+            "type": "url",
+            "value": "services.php",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Heading of the client box",
+            "type": "text",
+            "value": "Client at a glance",
+            "sort": 10
+        },
+        {
+            "section": "overview",
+            "section_label": "01 Industry Overview",
+            "key": "overview.1",
+            "label": "Number",
+            "type": "text",
+            "value": "01",
+            "sort": 11
+        },
+        {
+            "section": "overview",
+            "section_label": "01 Industry Overview",
+            "key": "overview.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "Industry Overview",
+            "sort": 12
+        },
+        {
+            "section": "overview",
+            "section_label": "01 Industry Overview",
+            "key": "overview.3",
+            "label": "Paragraph",
+            "type": "textarea",
+            "value": "A diversified UAE-based business conglomerate with interests across multiple industries and a growing network of businesses. With a diverse portfolio spanning services, the group needed a unified digital presence that could communicate its scale, diversity, values and vision while maintaining a consistent identity across every business vertical.",
+            "sort": 13
+        },
+        {
+            "section": "overview",
+            "section_label": "01 Industry Overview",
+            "key": "overview.4",
+            "label": "Heading of the highlights list",
+            "type": "text",
+            "value": "Key highlights",
+            "sort": 14
+        },
+        {
+            "section": "challenge",
+            "section_label": "02 The Challenge",
+            "key": "challenge.1",
+            "label": "Number",
+            "type": "text",
+            "value": "02",
+            "sort": 15
+        },
+        {
+            "section": "challenge",
+            "section_label": "02 The Challenge",
+            "key": "challenge.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "The Challenge",
+            "sort": 16
+        },
+        {
+            "section": "challenge",
+            "section_label": "02 The Challenge",
+            "key": "challenge.3",
+            "label": "Intro line",
+            "type": "text",
+            "value": "Presenting many businesses as one group exposed five core barriers.",
+            "sort": 17
+        },
+        {
+            "section": "approach",
+            "section_label": "03 The Approach",
+            "key": "approach.1",
+            "label": "Number",
+            "type": "text",
+            "value": "03",
+            "sort": 18
+        },
+        {
+            "section": "approach",
+            "section_label": "03 The Approach",
+            "key": "approach.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "The Intelliworkz Approach",
+            "sort": 19
+        },
+        {
+            "section": "approach",
+            "section_label": "03 The Approach",
+            "key": "approach.3",
+            "label": "Intro line",
+            "type": "text",
+            "value": "We brought every business under one brand, so the group's scale and vision came through in every touchpoint.",
+            "sort": 20
+        },
+        {
+            "section": "results",
+            "section_label": "04 Results & Brand Outcomes",
+            "key": "results.1",
+            "label": "Number",
+            "type": "text",
+            "value": "04",
+            "sort": 21
+        },
+        {
+            "section": "results",
+            "section_label": "04 Results & Brand Outcomes",
+            "key": "results.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "Results & Brand Outcomes",
+            "sort": 22
+        },
+        {
+            "section": "results",
+            "section_label": "04 Results & Brand Outcomes",
+            "key": "results.3",
+            "label": "Intro line",
+            "type": "text",
+            "value": "What the programme delivered for the group.",
+            "sort": 23
+        },
+        {
+            "section": "impact",
+            "section_label": "05 The Impact",
+            "key": "impact.1",
+            "label": "Number",
+            "type": "text",
+            "value": "05",
+            "sort": 24
+        },
+        {
+            "section": "impact",
+            "section_label": "05 The Impact",
+            "key": "impact.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "The Impact",
+            "sort": 25
+        },
+        {
+            "section": "impact",
+            "section_label": "05 The Impact",
+            "key": "impact.3",
+            "label": "Impact statement",
+            "type": "textarea",
+            "value": "A unified brand and digital presence designed to communicate the group's scale, vision and diverse portfolio, bringing diverse businesses into focus.",
+            "sort": 26
+        },
+        {
+            "section": "services",
+            "section_label": "06 Services Delivered",
+            "key": "services.1",
+            "label": "Number",
+            "type": "text",
+            "value": "06",
+            "sort": 27
+        },
+        {
+            "section": "services",
+            "section_label": "06 Services Delivered",
+            "key": "services.2",
+            "label": "Section heading",
+            "type": "text",
+            "value": "Services Delivered",
+            "sort": 28
+        },
+        {
+            "section": "services",
+            "section_label": "06 Services Delivered",
+            "key": "services.3",
+            "label": "Heading of the capabilities strip",
+            "type": "text",
+            "value": "Capabilities applied",
+            "sort": 29
+        },
+        {
+            "section": "cta",
+            "section_label": "Call To Action",
+            "key": "cta.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Want One Brand Across Every Business?",
+            "sort": 30
+        },
+        {
+            "section": "cta",
+            "section_label": "Call To Action",
+            "key": "cta.2",
+            "label": "Paragraph",
+            "type": "text",
+            "value": "Tell us about your group and we will map out the identity, website and content it needs.",
+            "sort": 31
+        },
+        {
+            "section": "cta",
+            "section_label": "Call To Action",
+            "key": "cta.3",
+            "label": "Button text",
+            "type": "text",
+            "value": "Start a Conversation",
+            "sort": 32
+        },
+        {
+            "section": "cta",
+            "section_label": "Call To Action",
+            "key": "cta.4",
+            "label": "Button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 33
+        }
+    ],
+    "lists": [
+        {
+            "key": "cs_profile",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Client profile",
+                    "text": "UAE-based diversified business conglomerate with a growing network of businesses"
+                },
+                {
+                    "title": "Industries served",
+                    "text": "Diversified business conglomerate & investment group"
+                },
+                {
+                    "title": "Market reach",
+                    "text": "Stakeholders, partners and customers across multiple verticals"
+                }
+            ]
+        },
+        {
+            "key": "cs_stats",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "10",
+                    "text": "Services delivered"
+                },
+                {
+                    "title": "6",
+                    "text": "Approach initiatives executed"
+                },
+                {
+                    "title": "5",
+                    "text": "Core challenges addressed"
+                },
+                {
+                    "title": "1",
+                    "text": "Unified identity across every business vertical"
+                }
+            ]
+        },
+        {
+            "key": "cs_highlights",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Unified identity",
+                    "text": "One cohesive visual identity for the entire group."
+                },
+                {
+                    "title": "Corporate website",
+                    "text": "A modern website showcasing its diverse businesses."
+                },
+                {
+                    "title": "Clear structure",
+                    "text": "Content structured to communicate multiple industry verticals clearly."
+                },
+                {
+                    "title": "Consistent voice",
+                    "text": "Corporate presentations and social media aligned with the brand identity."
+                }
+            ]
+        },
+        {
+            "key": "cs_challenges",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Fragmented experience",
+                    "text": "Diverse business verticals lacked a unified brand experience."
+                },
+                {
+                    "title": "Corporate positioning",
+                    "text": "The group needed stronger corporate positioning."
+                },
+                {
+                    "title": "Complex offerings",
+                    "text": "Complex offerings required clearer digital communication."
+                },
+                {
+                    "title": "Inconsistent communication",
+                    "text": "Communication was inconsistent across marketing touchpoints."
+                },
+                {
+                    "title": "Limited storytelling",
+                    "text": "Limited social presence and brand storytelling."
+                }
+            ]
+        },
+        {
+            "key": "cs_approach",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Visual identity",
+                    "text": "Developed a cohesive visual identity for the group."
+                },
+                {
+                    "title": "Corporate website",
+                    "text": "Designed a modern corporate website showcasing its diverse businesses."
+                },
+                {
+                    "title": "Content structure",
+                    "text": "Structured content to clearly communicate multiple industry verticals."
+                },
+                {
+                    "title": "Corporate presentations",
+                    "text": "Created corporate presentations aligned with the brand identity."
+                },
+                {
+                    "title": "Social media",
+                    "text": "Established a consistent social media presence and content direction."
+                },
+                {
+                    "title": "Unified experience",
+                    "text": "Built a unified brand experience across digital and corporate touchpoints."
+                }
+            ]
+        },
+        {
+            "key": "cs_results",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Unified",
+                    "text": "One identity across every business vertical"
+                },
+                {
+                    "title": "Clear",
+                    "text": "Multiple industries communicated clearly online"
+                },
+                {
+                    "title": "Consistent",
+                    "text": "Aligned digital and corporate touchpoints"
+                },
+                {
+                    "title": "Focused",
+                    "text": "Diverse businesses brought into one clear story"
+                }
+            ]
+        },
+        {
+            "key": "cs_services",
+            "scope": "case-study",
+            "items": [
+                {
+                    "title": "Branding & Visual Identity",
+                    "text": "One cohesive group identity"
+                },
+                {
+                    "title": "Graphic Design & Marketing Collaterals",
+                    "text": "Corporate presentations and materials"
+                },
+                {
+                    "title": "Website Design & Development",
+                    "text": "Modern corporate website"
+                },
+                {
+                    "title": "Social Media Management",
+                    "text": "Consistent content direction"
+                },
+                {
+                    "title": "3D Product Texturing & Rendering",
+                    "text": "Product visuals"
+                },
+                {
+                    "title": "Lead Generation Strategy",
+                    "text": "Structured enquiry generation"
+                },
+                {
+                    "title": "SEO & Organic Visibility",
+                    "text": "Search presence for the group"
+                },
+                {
+                    "title": "Exhibition & Expo Support",
+                    "text": "Event materials"
+                },
+                {
+                    "title": "Product Photography",
+                    "text": "Professional product imagery"
+                },
+                {
+                    "title": "Product Explanation Videos",
+                    "text": "Clear product storytelling"
+                }
+            ]
+        },
+        {
+            "key": "cs_capabilities",
+            "scope": "case-study",
+            "items": [
+                "Corporate branding",
+                "Visual identity",
+                "Website experience",
+                "Content structure",
+                "Corporate presentations",
+                "Social media",
+                "SEO",
+                "Photo & video"
+            ]
+        }
+    ]
+}

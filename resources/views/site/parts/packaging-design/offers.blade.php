@@ -17,7 +17,7 @@ $vc = 'assets/icons/video/';        // shared icons
                     <?php foreach ($pk_offers as $k => $o): ?>
                         <article class="offer-card" data-i="<?= $k ?>" style="background: <?= $o['bg'] ?>">
                             <div class="offer-card__top">
-                                <span class="offer-card__no" style="color: <?= $o['noc'] ?>"><?= $o['no'] ?></span>
+                                <span class="offer-card__no" style="color: <?= $o['noc'] ?>"><?= sprintf('%02d', $k + 1) ?></span>
                                 <a href="<?= e(!empty($o['href']) ? $o['href'] : 'contact-us.php') ?>" aria-label="<?= $o['title'] ?>"><img src="<?= iu($vc, $o['arrow']) ?>" width="48" height="48" alt=""></a>
                             </div>
                             <div class="offer-card__body">

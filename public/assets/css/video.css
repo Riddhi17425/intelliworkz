@@ -137,10 +137,10 @@
 .acc-item.is-open .acc-icon--open { opacity: 1; transform: none; }
 .acc--services .acc-head:hover .acc-title { color: var(--c-red); }
 .acc--services .acc-points { padding-top: 24px; }
-.acc--services .acc-points { width: 450px; gap: 18px; }
+.acc--services .acc-points { width: 100%; gap: 18px; }
 .acc--services .acc-points li { color: var(--c-ink); font-weight: 400; gap: 12px; line-height: 26px; }
 .acc--services .is-static .acc-head { cursor: default; }
-.ve-services__img { flex: none; width: 900px; align-self: stretch; height: auto; object-fit: cover; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
+.ve-services__img { flex: none; width: 900px; align-self: flex-start; position: sticky; top: 120px; height: auto; object-fit: contain; border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); }
 
 /* generic accordion panel behaviour */
 /* Grid-row trick (not a measured max-height) so the animation never clips content that reflows
@@ -180,6 +180,7 @@
 .offer-cards { display: flex; align-items: center; gap: 40px; }
 .offer-cards.is-sliding { transition: transform .6s cubic-bezier(.22, .8, .24, 1); }
 .offer-card { position: relative; flex: none; width: calc((100% - 80px) / 3); height: 530px; padding: 48px 40px; overflow: hidden; display: flex; flex-direction: column; gap: 24px; border-radius: 10px; }
+.offer-card { background: #E8E8E8 !important; }
 .offer-card__top { display: flex; justify-content: space-between; align-items: center; }
 .offer-card__no { font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; }
 .offer-card__top a { transition: transform .25s; }

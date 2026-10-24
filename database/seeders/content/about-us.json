@@ -155,7 +155,7 @@
             "key": "who.7",
             "label": "Big picture",
             "type": "image",
-            "value": "assets/images/process-4.png",
+            "value": "assets/images/about/who-we-are-1.webp",
             "sort": 16
         },
         {
@@ -164,7 +164,7 @@
             "key": "who.8",
             "label": "Small picture",
             "type": "image",
-            "value": "assets/images/ind-realestate.png",
+            "value": "assets/images/about/who-we-are-2.webp",
             "sort": 17
         },
         {
@@ -227,7 +227,7 @@
             "key": "purpose.5",
             "label": "Picture bottom right (shown in black and white)",
             "type": "image",
-            "value": "assets/images/process-3.png",
+            "value": "assets/images/about/our-purpose-2.webp",
             "sort": 24
         },
         {
@@ -335,7 +335,7 @@
             "key": "team.6",
             "label": "Big picture",
             "type": "image",
-            "value": "assets/images/process-1.png",
+            "value": "assets/images/about/our-team-1.webp",
             "sort": 36
         },
         {
@@ -344,7 +344,7 @@
             "key": "team.7",
             "label": "Picture top right",
             "type": "image",
-            "value": "assets/images/process-6.png",
+            "value": "assets/images/about/our-team-2.webp",
             "sort": 37
         },
         {
@@ -353,7 +353,7 @@
             "key": "team.8",
             "label": "Picture bottom right",
             "type": "image",
-            "value": "assets/images/contact/hero.png",
+            "value": "assets/images/about/our-team-3.webp",
             "sort": 38
         },
         {

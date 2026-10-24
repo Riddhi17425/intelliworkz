@@ -38,7 +38,7 @@
                             @php $name = 's[' . $s->key . ']'; @endphp
                             @if($s->type === 'image')
                                 <x-admin.image :name="$name" :label="$s->label" :current="$s->value" :help="$s->help" :remove-name="'remove_' . $s->key" :dark="$s->key === 'logo_header'"
-                                    :accept="in_array($s->key, ['logo_header', 'logo_footer', 'iso_image']) ? 'image/svg+xml,image/png,image/jpeg,image/webp' : 'image/png,image/jpeg,image/webp,image/gif,image/svg+xml'"/>
+                                    :accept="$s->key === 'favicon' ? 'image/png,image/jpeg,image/webp,image/gif' : 'image/svg+xml,image/png,image/jpeg,image/webp,image/gif'"/>
                             @else
                                 <x-admin.field :name="$name" :label="$s->label" :type="$s->type === 'textarea' ? 'textarea' : ($s->type === 'email' ? 'email' : ($s->type === 'url' ? 'text' : 'text'))" :value="$s->value" :help="$s->help" :rows="4"/>
                             @endif

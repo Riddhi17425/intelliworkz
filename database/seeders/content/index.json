@@ -473,65 +473,80 @@
             "scope": "index",
             "items": [
                 {
-                    "title": "Brand & Creative",
+                    "title": "Branding & Creative",
                     "color": "var(--c-blue)",
-                    "intro": "From defining how your brand looks and communicates to creating the visual and digital assets that represent it, our creative teams work across the brand lifecycle.",
+                    "intro": "From brand foundations to digital experiences, we create identities and communication systems that connect with your audience.",
                     "items": [
-                        "Brand Development | brand-identity-and-design.php",
-                        "Creative Design",
-                        "Graphic Design",
-                        "UI/UX Design",
-                        "Video & Animation | video-editing.php",
-                        "3D Visualization | 3d-modeling-rendering.php"
+                        "Logo Design | logo-design.php",
+                        "Brand Identity & Design | brand-identity-and-design.php",
+                        "Marketing and Sales Collaterals | marketing-sales-collaterals.php",
+                        "Packaging Design | packaging-design.php",
+                        "Campaign Concepts & Ad Creatives",
+                        "Corporate Communication",
+                        "PPT Design | ppt-design.php",
+                        "Advertising Services",
+                        "UI/UX Design"
                     ],
-                    "cta": "Explore Brand & Creative Services",
+                    "cta": "Explore Branding & Creative",
                     "href": "services.php#svc-1"
                 },
                 {
-                    "title": "Digital Marketing",
+                    "title": "Digital Marketing & Growth",
                     "color": "var(--c-orange)",
-                    "intro": "We help businesses build visibility, reach the right audiences, and create a consistent digital presence through strategy and ongoing execution.",
+                    "intro": "Data-driven digital marketing to help you reach the right audience, generate demand and grow your business online.",
                     "items": [
-                        "SEO | seo-services.php",
-                        "Social Media Marketing",
+                        "Digital Marketing",
+                        "SEO Services | seo-services.php",
+                        "AEO Services",
+                        "GEO Services",
                         "Content Marketing",
-                        "Performance Marketing",
-                        "Digital Marketing"
+                        "Lead Generation Campaigns"
                     ],
-                    "cta": "Explore Digital Marketing Services",
+                    "cta": "Explore Digital Marketing",
                     "href": "services.php#svc-2"
                 },
                 {
-                    "title": "Technology",
-                    "color": "var(--c-charcoal)",
-                    "intro": "From websites and mobile applications to business software and integrated platforms, we build technology around the way your business works.",
+                    "title": "Print & Publication",
+                    "color": "var(--c-purple)",
+                    "intro": "Print-ready artwork, publishing and editorial production for high-quality business and academic communication.",
                     "items": [
-                        "Website Design & Development",
-                        "Mobile App Development",
-                        "Custom Software Development",
-                        "CRM & ERP Development",
-                        "API & System Integration",
-                        "Portal Development",
-                        "eCommerce Development",
-                        "Maintenance & Support"
+                        "Pre-Press Services | pre-press-service.php",
+                        "Magazine Design | magazine-design.php",
+                        "Academic and Technical Publishing Support",
+                        "Multilingual Publishing and Localization",
+                        "Product Catalog",
+                        "InDesign Services",
+                        "Newsletter Design"
                     ],
-                    "cta": "Explore Technology Services",
-                    "href": "services.php"
+                    "cta": "Explore Print & Publication",
+                    "href": "services.php#svc-3"
                 },
                 {
-                    "title": "Publishing & Production",
-                    "color": "var(--c-purple)",
-                    "intro": "We support businesses that need structured, accurate, and production-ready content across publishing and document workflows.",
+                    "title": "Post-Production",
+                    "color": "var(--c-charcoal)",
+                    "intro": "Refine footage, imagery and motion assets for polished, production-ready communication.",
                     "items": [
-                        "InDesign Services",
-                        "DTP",
-                        "Pre-Press | pre-press-service.php",
-                        "Magazine & Newsletter Design | magazine-design.php",
-                        "Scientific Journal",
-                        "Product Catalogue Design"
+                        "Video Editing | video-editing.php",
+                        "Motion Graphics",
+                        "Explainer Videos",
+                        "Product Video"
                     ],
-                    "cta": "Explore Publishing & Production Services",
-                    "href": "services.php#svc-3"
+                    "cta": "Explore Post-Production",
+                    "href": "services.php#svc-4"
+                },
+                {
+                    "title": "Animation",
+                    "color": "var(--c-olive)",
+                    "intro": "Create engaging motion-led experiences, product demonstrations and 3D visuals for every platform.",
+                    "items": [
+                        "Corporate Videos & Shoots",
+                        "Presentation Videos",
+                        "3D Modelling & 3D Rendering | 3d-modeling-rendering.php",
+                        "3D Visualization (Product / Architectural / Industrial)",
+                        "3D Animation"
+                    ],
+                    "cta": "Explore Animation",
+                    "href": "services.php#svc-5"
                 }
             ]
         },
@@ -540,22 +555,22 @@
             "scope": "index",
             "items": [
                 {
-                    "img": "step-1.svg",
+                    "img": "assets/images/home/step-define-the-need.svg",
                     "title": "Define the Need",
                     "text": "Project, capability or team requirement defined upfront."
                 },
                 {
-                    "img": "step-2.svg",
+                    "img": "assets/images/home/step-match-the-expertise.svg",
                     "title": "Match the Expertise",
                     "text": "We align the right creative or technical resources."
                 },
                 {
-                    "img": "step-3.svg",
+                    "img": "assets/images/home/step-integrate-with-your-team.svg",
                     "title": "Integrate With Your Team",
                     "text": "Our specialists fit into your tools and processes."
                 },
                 {
-                    "img": "step-4.svg",
+                    "img": "assets/images/home/step-scale-when-required.svg",
                     "title": "Scale When Required",
                     "text": "Increase or reduce capacity as requirements change."
                 }
@@ -625,30 +640,27 @@
             "items": [
                 {
                     "title": "Publication, Pre-press & Print Production",
-                    "img": null,
-                    "font": "alt",
+                    "img": "assets/images/home/ind-publication.webp",
                     "text": "Creative artwork, publication design, typesetting, layout adaptation, and pre-press production, packaging artwork for publishers, printers, and print service providers managing high-volume production and tight deadlines."
                 },
                 {
                     "title": "Video Production & Post-production",
-                    "img": null,
-                    "font": "alt",
+                    "img": "assets/images/home/ind-video.webp",
                     "text": "Professional video editing, colour grading, motion graphics, animation, for brands, agencies, and production houses that need consistent quality, faster turnaround, and scalable post-production support."
                 },
                 {
                     "title": "Manufacturing",
-                    "img": "ind-manufacturing.png",
+                    "img": "assets/images/home/ind-manufacturing.webp",
                     "text": "Marketing and Sales collaterals like Product catalogues, technical brochures, product visualizations, packaging design and solution, corporate presentations, industrial photography and product videos that help manufacturers communicate complex products and strengthen their brand presence."
                 },
                 {
                     "title": "Finance",
-                    "img": null,
-                    "font": "alt",
+                    "img": "assets/images/home/ind-finance.webp",
                     "text": "Brand communication, Monthly factsheets, Investment Insights, monthly investment bulletin, investor reports, Presentation design and adaptation, infographics, digital campaign creatives, and social media content that simplify complex information and build credibility with customers and stakeholders."
                 },
                 {
                     "title": "Healthcare",
-                    "img": "ind-healthcare.png",
+                    "img": "assets/images/home/ind-healthcare.webp",
                     "img2": "ind-education.png",
                     "img3": "ind-retail.png",
                     "video": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
@@ -657,18 +669,17 @@
                 },
                 {
                     "title": "Real Estate",
-                    "img": "ind-realestate.png",
+                    "img": "assets/images/home/ind-real-estate.webp",
                     "text": "Property brochures, video post-production, architectural visualizations, 3D walkthrough, floor-plan graphics, virtual tours and digital campaign creatives that showcase developments and support property marketing and sales."
                 },
                 {
                     "title": "Digital Marketing",
-                    "img": null,
-                    "font": "alt",
+                    "img": "assets/images/home/ind-digital-marketing.webp",
                     "text": "Bulk production of Product imagery, eCommerce graphics, product catalogue design, packaging, marketplace creatives, promotional campaigns, and short-form videos that help global digital marketing firms manage their schedule without needing to scale up. And brands create compelling product experiences across digital and retail channels."
                 },
                 {
                     "title": "Education",
-                    "img": "ind-education.png",
+                    "img": "assets/images/home/ind-education.webp",
                     "text": "SEO, Social media creatives, Creative communication, and technology solutions for education-focused organizations."
                 }
             ]
@@ -729,7 +740,7 @@
                             "Access key business information and tasks from your mobile device, wherever your team works."
                         ]
                     ],
-                    "img": "datanote-2df198.png"
+                    "img": "assets/images/home/datanote.webp"
                 },
                 {
                     "name": "Formezy",
@@ -749,7 +760,7 @@
                             ""
                         ]
                     ],
-                    "img": "datanote-2df198.png"
+                    "img": "assets/images/home/formezy.webp"
                 },
                 {
                     "name": "Docezy",
@@ -773,7 +784,7 @@
                             ""
                         ]
                     ],
-                    "img": "datanote-2df198.png"
+                    "img": "assets/images/home/docezy.webp"
                 }
             ]
         },

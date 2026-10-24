@@ -12,7 +12,9 @@ use App\Support\Search;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
+use RuntimeException;
 
 class PageController extends Controller
 {
@@ -178,8 +180,13 @@ class PageController extends Controller
 
         foreach (['featured_image', 'og_image'] as $col) {
             if ($file = $request->file($col)) {
+                try {
+                    $path = Media::store($file, 'pages');
+                } catch (RuntimeException $e) {
+                    throw ValidationException::withMessages([$col => $e->getMessage()]);
+                }
                 Media::delete($page->{$col});
-                $page->{$col} = Media::store($file, 'pages');
+                $page->{$col} = $path;
             } elseif ($request->boolean("remove_{$col}")) {
                 Media::delete($page->{$col});
                 $page->{$col} = null;

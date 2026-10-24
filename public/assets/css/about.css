@@ -92,8 +92,8 @@
 .ab-hero::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, .7) 34%, rgba(0, 0, 0, 0) 66%); }
 .ab-hero__top { position: relative; z-index: 5; }
 .ab-hero__grid { position: relative; z-index: 2; padding-block: clamp(28px, 3.4vw, 60px) clamp(64px, 7vw, 124px); }
-.ab-crumb { margin-bottom: clamp(28px, 3.6vw, 64px); font-size: 16px; line-height: 24px; color: #D2D3D2; }
-.ab-crumb a { color: var(--c-red); }
+.ab-crumb { margin-bottom: clamp(28px, 3.6vw, 64px); font-size: 18px; line-height: 26px; color: #D2D3D2; }   /* same as the breadcrumb on the service pages */
+.ab-crumb a { color: inherit; }
 .ab-crumb a:hover { color: var(--c-white); }
 .ab-crumb span { color: var(--c-white); }
 .ab-hero__title { margin-bottom: 22px; font-family: var(--font-display); font-weight: 500; font-size: clamp(36px, 3.7vw, 72px); line-height: 1.04; letter-spacing: -.02em; color: var(--c-light-bg); }
@@ -219,4 +219,65 @@
 @media (prefers-reduced-motion: reduce) {
     .ab *, .ab *::before, .ab *::after { transition-duration: .01ms !important; transition-delay: 0s !important; }
     .ab-js [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* Who we are: heading sits higher and closer to the text; the picture grid starts level with the heading */
+.ab-who { padding-top: clamp(48px, 5vw, 88px); }
+.ab-who .ab-split { align-items: start; }
+.ab-who .ab-title { margin-bottom: 12px; }
+
+/* dark stat card: bigger icon and number, softer label */
+.ab-statcard { gap: 10px; padding: 20px; background: radial-gradient(circle at 50% 0%, #20202c 0%, var(--c-near-black) 70%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.ab-statcard .metric__icon { width: 56px; height: 56px; }
+.ab-statcard .metric__icon img { width: 26px; height: 26px; }
+.ab-statcard strong { font-size: clamp(30px, 2.8vw, 46px); letter-spacing: -.01em; }
+.ab-statcard span:last-child { font-size: 15px; line-height: 22px; letter-spacing: .02em; color: rgba(255, 255, 255, .72); }
+
+/* numbers strip: same white card with dividers as the other pages */
+.ab > section.ab-metrics { width: var(--container); max-width: 100%; margin: clamp(28px, 3.4vw, 56px) auto; }
+@media (max-width: 1199px) { .ab > section.ab-metrics { width: calc(100% - 2 * var(--pad, 24px)); } }
+
+/* purpose: the dark idea tile gets a soft glow, a ring around the bulb and a red accent */
+.ab-purpose__idea { position: relative; overflow: hidden; background: radial-gradient(circle at 50% 38%, #2a2230 0%, var(--c-near-black) 68%); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.ab-purpose__idea::before { content: ""; position: absolute; width: 112px; height: 112px; border-radius: 50%; border: 1px solid rgba(196, 32, 48, .65); background: radial-gradient(circle, rgba(196, 32, 48, .22) 0%, rgba(196, 32, 48, 0) 70%); box-shadow: 0 0 40px rgba(196, 32, 48, .35); }
+.ab-purpose__idea::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--c-red); }
+.ab-purpose__idea svg { position: relative; width: 52px; height: 52px; color: #fff; filter: drop-shadow(0 0 8px rgba(255, 255, 255, .35)); }
+
+/* approach diagram: labels fit inside their pills, and the diagram sits closer to the text */
+.ab-orbit__node text { font-size: 18px; }
+@media (min-width: 1101px) { .ab-approach .ab-split { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(12px, 1.6vw, 28px); } }
+
+/* Who we are: heading and the two intro paragraphs run across the top of the section */
+.ab-who__intro { margin-bottom: clamp(40px, 4.4vw, 80px); }
+.ab-who__lead { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 72px); }
+.ab-who__lead .ab-p { max-width: none; }
+.ab-who .ab-title { margin-bottom: 16px; }
+@media (max-width: 900px) { .ab-who__lead { grid-template-columns: minmax(0, 1fr); } }
+
+/* call-to-action band: the same navy band with grid lines as on the other pages */
+.ab > section.ab-cta-band { width: 100%; }
+.ab-cta-band .ab-cta__btns { flex-wrap: nowrap; align-items: center; gap: 20px; }
+@media (max-width: 1199px) {
+    .ab-cta-band { height: auto; flex-direction: column; align-items: flex-start; gap: 24px; padding: 36px var(--pad, 24px); }
+    .ab-cta-band .ab-cta__btns { flex-wrap: wrap; }
+}
+
+/* Who we are intro: centred stack, heading first and the two paragraphs under it */
+.ab-who__intro { text-align: center; }
+.ab-who__lead { display: block; max-width: none; }
+.ab-who__lead .ab-p { max-width: none; margin-inline: auto; }
+.ab-who__lead .ab-p:last-child { margin-bottom: 0; }
+.ab-who__intro .ab-title { max-width: none; }
+
+/* Who we are, lower half: text fills its column so there is no empty band between it and the pictures */
+@media (min-width: 1101px) { .ab-who .ab-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(56px, 7vw, 120px); } }
+@media (max-width: 1100px) { .ab-who .ab-split { gap: 32px; } }
+.ab-who .ab-copy .ab-p { max-width: none; }
+.ab-who__lead .ab-p { max-width: 60em; }   /* intro paragraph wraps onto two centred lines */
+
+/* phones: enlarge the approach diagram so the labels stay readable (the empty margin of the drawing is cropped) */
+@media (max-width: 640px) {
+    .ab-orbit { overflow: hidden; }
+    .ab-orbit svg { width: 132%; max-width: none; margin-left: -16%; }
+    .ab-orbit__node text { font-size: 19px; }
 }

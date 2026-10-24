@@ -20,7 +20,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&family=Inter+Tight:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&family=Inter+Tight:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     @unless($cfg['no_zoom'] ?? false)
     <script>
     /* Desktop scaling: these pages are built on a 1920px canvas. From 1200px to 1919px the whole canvas is scaled

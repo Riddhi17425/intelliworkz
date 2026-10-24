@@ -159,7 +159,7 @@ class PageTest extends CmsTestCase
         $this->actingAs($this->admin());
         $before = Page::where('is_system', false)->count();
         $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('shell.php', 5, 'application/x-php')]))->assertSessionHasErrors('featured_image');
-        $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('evil.svg', 5, 'image/svg+xml')]))->assertSessionHasErrors('featured_image');   // svg not allowed for pages
+        $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->createWithContent('evil.svg', 'this is not xml')]))->assertSessionHasErrors('featured_image');   // unreadable svg
         $this->post('/admin/pages', $this->newPage(['featured_image' => UploadedFile::fake()->create('big.png', 6000, 'image/png')]))->assertSessionHasErrors('featured_image');       // > 5 MB
         $this->assertSame($before, Page::where('is_system', false)->count());
     }

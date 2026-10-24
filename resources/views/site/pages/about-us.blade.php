@@ -28,8 +28,8 @@ foreach ($ab_nodes as $i => $nd) {
                 <h1 class="ab-hero__title" data-reveal>{!! $T('hero.3') !!}</h1>
                 <p class="ab-hero__lead" data-reveal style="--d:1">{!! $T('hero.4') !!}</p>
                 <div class="ab-hero__btns" data-reveal style="--d:2">
-                    <?php btn($T('hero.5'), 'btn--cta', 'arrow-link.svg', $T('hero.6', '#')); ?>
-                    <?php btn($T('hero.7'), 'btn--cta btn--ghost', 'arrow-link.svg', $T('hero.8', '#')); ?>
+                    <?php btn($T('hero.5'), 'btn--cta', null, $T('hero.6', '#')); ?>
+                    <?php btn($T('hero.7'), 'btn--cta btn--ghost', null, $T('hero.8', '#')); ?>
                 </div>
             </div>
             <p class="ab-hero__words" aria-hidden="true">{!! $T('hero.9') !!}</p>
@@ -37,40 +37,55 @@ foreach ($ab_nodes as $i => $nd) {
     </section>
 
     <!-- ============ 02 WHO WE ARE ============ -->
+    @php
+        // the first paragraph of who.3 sits under the heading across the full width; the rest stays beside the pictures
+        $whoParas = array_values(array_filter(array_map('trim', preg_split('#(?:<br\s*/?>\s*){2,}#i', (string) $T('who.3')))));
+        $whoTop = array_slice($whoParas, 0, 1);
+        $whoRest = array_slice($whoParas, 1);
+    @endphp
     <section class="ab-section ab-who">
-        <div class="ab-wrap ab-split">
-            <div class="ab-copy">
-                <p class="ab-eyebrow" data-reveal>{!! $T('who.1') !!}</p>
-                <h2 class="ab-title" data-reveal style="--d:1">{!! $T('who.2') !!}</h2>
-                <p class="ab-p" data-reveal style="--d:2">{!! $T('who.3') !!}</p>
-                <p class="ab-p" data-reveal style="--d:3">{!! $T('who.4') !!}</p>
-                <div data-reveal style="--d:4"><?php btn($T('who.5'), 'btn--cta', 'arrow-link.svg', $T('who.6', '#')); ?></div>
+        <div class="ab-wrap">
+            <div class="ab-who__intro">
+                <h2 class="ab-title" data-reveal style="--d:1">{!! preg_replace('#<br\s*/?>#i', ' ', (string) $T('who.2')) !!}</h2>
+                <div class="ab-who__lead">
+                    @foreach($whoTop as $i => $para)
+                        <p class="ab-p" data-reveal style="--d:{{ $i + 2 }}">{!! $para !!}</p>
+                    @endforeach
+                </div>
             </div>
-            <div class="ab-who__pics" data-reveal style="--d:2">
-                <img class="ab-pic ab-who__big" src="<?= iu($ai, $T('who.7')) ?>" alt="The Intelliworkz team at work" loading="lazy">
-                <img class="ab-pic ab-who__small" src="<?= iu($ai, $T('who.8')) ?>" alt="" loading="lazy">
-                <div class="ab-statcard">
-                    <span class="metric__icon"><img src="<?= $ac ?>icon-globe.svg" width="24" height="24" alt=""></span>
-                    <strong>{!! $T('who.9') !!}</strong>
-                    <span>{!! $T('who.10') !!}</span>
+            <div class="ab-split">
+                <div class="ab-copy">
+                    @foreach($whoRest as $para)
+                        <p class="ab-p" data-reveal style="--d:2">{!! $para !!}</p>
+                    @endforeach
+                    <p class="ab-p" data-reveal style="--d:3">{!! $T('who.4') !!}</p>
+                    <div data-reveal style="--d:4"><?php btn($T('who.5'), 'btn--cta', null, $T('who.6', '#')); ?></div>
+                </div>
+                <div class="ab-who__pics" data-reveal style="--d:2">
+                    <img class="ab-pic ab-who__big" src="<?= iu($ai, $T('who.7')) ?>" alt="The Intelliworkz team at work" loading="lazy">
+                    <img class="ab-pic ab-who__small" src="<?= iu($ai, $T('who.8')) ?>" alt="" loading="lazy">
+                    <div class="ab-statcard">
+                        <span class="metric__icon"><img src="<?= $ac ?>icon-globe.svg" width="24" height="24" alt=""></span>
+                        <strong>{!! $T('who.9') !!}</strong>
+                        <span>{!! $T('who.10') !!}</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============ 03 NUMBERS ============ -->
-    <section class="ab-stats">
-        <div class="ab-wrap">
-            <dl class="ab-stats__row">
-                <?php foreach ($ab_metrics as $m): ?>
-                    <div class="ab-stat" data-reveal>
-                        <span class="metric__icon"><img src="<?= iu($ac, $m['icon']) ?>" width="24" height="24" alt=""></span>
-                        <dt><span data-count="<?= $m['value'] ?>"><?= $m['value'] ?></span> +</dt>
-                        <dd><?= $m['label'] ?></dd>
-                    </div>
-                <?php endforeach; ?>
-            </dl>
-        </div>
+    <section class="container metrics ab-metrics">
+        <?php foreach ($ab_metrics as $i => $m): ?>
+            <?php if ($i): ?><span class="metrics__divider"></span><?php endif; ?>
+            <div class="metric">
+                <span class="metric__icon"><img src="<?= iu($ac, $m['icon']) ?>" width="24" height="24" alt=""></span>
+                <div class="metric__body">
+                    <div class="metric__value"><span data-count="<?= $m['value'] ?>"><?= $m['value'] ?></span><span>+</span></div>
+                    <span class="metric__label"><?= $m['label'] ?></span>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </section>
 
     <!-- ============ 04 OUR PURPOSE ============ -->
@@ -84,7 +99,6 @@ foreach ($ab_nodes as $i => $nd) {
                 <span class="ab-zoom ab-purpose__wide"><img class="ab-pic" src="<?= iu($ai, $T('purpose.5')) ?>" alt="" loading="lazy"></span>
             </div>
             <div class="ab-copy">
-                <p class="ab-eyebrow" data-reveal>{!! $T('purpose.1') !!}</p>
                 <h2 class="ab-title" data-reveal style="--d:1">{!! $T('purpose.2') !!}</h2>
                 <p class="ab-p" data-reveal style="--d:2">{!! $T('purpose.3') !!}</p>
                 <ul class="ab-points">
@@ -104,10 +118,9 @@ foreach ($ab_nodes as $i => $nd) {
     <section class="ab-section ab-approach">
         <div class="ab-wrap ab-split">
             <div class="ab-copy">
-                <p class="ab-eyebrow" data-reveal>{!! $T('approach.1') !!}</p>
                 <h2 class="ab-title ab-title--light" data-reveal style="--d:1">{!! $T('approach.2') !!}</h2>
                 <p class="ab-p ab-p--light" data-reveal style="--d:2">{!! $T('approach.3') !!}</p>
-                <div data-reveal style="--d:3"><?php btn($T('approach.4'), 'btn--cta', 'arrow-link.svg', $T('approach.5', '#')); ?></div>
+                <div data-reveal style="--d:3"><?php btn($T('approach.4'), 'btn--cta', null, $T('approach.5', '#')); ?></div>
             </div>
             <div class="ab-orbit" data-reveal style="--d:2">
                 <svg viewBox="0 0 820 640" role="img" aria-label="Your business growth at the centre, connected to <?= e(implode(', ', array_column($nodes, 'label'))) ?>">
@@ -121,10 +134,10 @@ foreach ($ab_nodes as $i => $nd) {
                     <?php endforeach; ?>
                     <?php foreach ($nodes as $n): ?>
                         <g class="ab-orbit__node">
-                            <rect x="<?= $n['x'] - 96 ?>" y="<?= $n['y'] - 29 ?>" width="192" height="58" rx="29"/>
-                            <circle cx="<?= $n['x'] - 62 ?>" cy="<?= $n['y'] ?>" r="20"/>
-                            <image href="<?= $ac . $n['icon'] ?>" x="<?= $n['x'] - 73 ?>" y="<?= $n['y'] - 11 ?>" width="22" height="22"/>
-                            <text x="<?= $n['x'] - 32 ?>" y="<?= $n['y'] + 6 ?>"><?= $n['label'] ?></text>
+                            <rect x="<?= $n['x'] - 122 ?>" y="<?= $n['y'] - 29 ?>" width="244" height="58" rx="29"/>
+                            <circle cx="<?= $n['x'] - 92 ?>" cy="<?= $n['y'] ?>" r="20"/>
+                            <image href="<?= $ac . $n['icon'] ?>" x="<?= $n['x'] - 103 ?>" y="<?= $n['y'] - 11 ?>" width="22" height="22"/>
+                            <text x="<?= $n['x'] - 64 ?>" y="<?= $n['y'] + 6 ?>"><?= $n['label'] ?></text>
                         </g>
                     <?php endforeach; ?>
                 </svg>
@@ -136,10 +149,9 @@ foreach ($ab_nodes as $i => $nd) {
     <section class="ab-section ab-team" id="team">
         <div class="ab-wrap ab-split">
             <div class="ab-copy">
-                <p class="ab-eyebrow" data-reveal>{!! $T('team.1') !!}</p>
                 <h2 class="ab-title" data-reveal style="--d:1">{!! $T('team.2') !!}</h2>
                 <p class="ab-p" data-reveal style="--d:2">{!! $T('team.3') !!}</p>
-                <div data-reveal style="--d:3"><?php btn($T('team.4'), 'btn--cta', 'arrow-link.svg', $T('team.5', '#')); ?></div>
+                <div data-reveal style="--d:3"><?php btn($T('team.4'), 'btn--cta', null, $T('team.5', '#')); ?></div>
             </div>
             <div class="ab-team__pics" data-reveal style="--d:2">
                 <img class="ab-pic ab-team__big" src="<?= iu($ai, $T('team.6')) ?>" alt="" loading="lazy">
@@ -154,7 +166,6 @@ foreach ($ab_nodes as $i => $nd) {
         <div class="ab-wrap">
             <div class="ab-why__head">
                 <div>
-                    <p class="ab-eyebrow" data-reveal>{!! $T('why.1') !!}</p>
                     <h2 class="ab-title" data-reveal style="--d:1">{!! $T('why.2') !!}</h2>
                 </div>
                 <p class="ab-p" data-reveal style="--d:2">{!! $T('why.3') !!}</p>
@@ -174,21 +185,12 @@ foreach ($ab_nodes as $i => $nd) {
     </section>
 
     <!-- ============ 08 CALL TO ACTION ============ -->
-    <section class="ab-cta">
-        <svg class="ab-cta__swoosh" viewBox="0 0 700 260" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M-20,230 C140,250 260,160 420,120 C520,95 620,70 720,10"/>
-            <path d="M-20,200 C130,215 250,140 410,100 C510,76 610,52 720,-8"/>
-            <path d="M-20,258 C150,270 280,190 440,150 C540,124 640,100 720,40"/>
-        </svg>
-        <div class="ab-wrap ab-cta__inner">
-            <div class="ab-cta__copy">
-                <p class="ab-eyebrow" data-reveal>{!! $T('cta.1') !!}</p>
-                <h2 class="ab-title ab-title--light" data-reveal style="--d:1">{!! $T('cta.2') !!}</h2>
-            </div>
-            <div class="ab-cta__btns" data-reveal style="--d:2">
-                <?php btn($T('cta.3'), 'btn--cta', 'arrow-link.svg', $T('cta.4', '#')); ?>
-                <?php btn($T('cta.5'), 'btn--cta btn--ghost', 'arrow-link.svg', $T('cta.6', '#')); ?>
-            </div>
+    <section class="cta-band ab-cta-band">
+        <img class="cta-band__grid" src="assets/icons/grid-lines.svg" alt="">
+        <h2 class="cta-title">{!! $T('cta.2') !!}</h2>
+        <div class="ab-cta__btns">
+            <?php btn($T('cta.3'), 'btn--cta', 'arrow-cta.svg', $T('cta.4', '#')); ?>
+            <?php btn($T('cta.5'), 'btn--cta btn--ghost', null, $T('cta.6', '#')); ?>
         </div>
     </section>
 

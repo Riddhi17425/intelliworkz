@@ -37,14 +37,18 @@
                     <img src="{{ $settings['iso_image'] ?? 'assets/icons/iso.svg' }}" width="78" height="80" alt="ISO 27001">
                     <p>{!! $G('footer.7') !!}</p>
                 </div>
+                @include('site.partials.footer-col', ['col' => $column('company')])
             </div>
 
             <div class="footer-links">
+                {{-- Industries column hidden for now: restore these two lines to show it again
                 @include('site.partials.footer-col', ['col' => $column('industries')])
                 <span class="v-line"></span>
-                @include('site.partials.footer-col', ['col' => $column('company')])
-                <span class="v-line"></span>
-                @include('site.partials.footer-col', ['col' => $column('services')])
+                --}}
+                @foreach([1, 2, 3, 4, 5] as $n)
+                    @if($n > 1)<span class="v-line"></span>@endif
+                    @include('site.partials.footer-col', ['col' => $column('cat-' . $n)])
+                @endforeach
             </div>
         </div>
 

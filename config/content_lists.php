@@ -55,7 +55,7 @@ return [
 
     // ---------- home page ----------
     'metrics' => ['label' => 'Number strip', 'section' => 'Hero', 'title' => 'label', 'sort' => 10, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
-    'domains' => ['label' => 'Service cards', 'section' => 'Services', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
+    'domains' => ['label' => 'Service cards', 'section' => 'Services', 'title' => 'title', 'sort' => 20,
         'fields' => ['title' => ['Card title'], 'intro' => ['Introduction', 'textarea'], 'items' => ['Links (one per line; add  | page-address  to link one)', 'lines'], 'cta' => ['Button text'], 'href' => ['Button link', 'url']]],
     'outsourcing_steps' => ['label' => '4-step engagement process', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 30, 'add' => false, 'remove' => false,
         'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],

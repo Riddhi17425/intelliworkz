@@ -168,6 +168,9 @@ class Media
 
     public static function sanitizeSvg(string $svg): string
     {
+        if (trim($svg) === '') {
+            throw new RuntimeException('That SVG file is empty.');
+        }
         if (stripos($svg, '<!ENTITY') !== false || stripos($svg, '<!DOCTYPE') !== false) {
             throw new RuntimeException('That SVG file contains unsupported declarations.');
         }

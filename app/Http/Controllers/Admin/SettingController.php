@@ -15,7 +15,7 @@ use RuntimeException;
 class SettingController extends Controller
 {
     /** Settings that may carry an SVG (logos/badges); the favicon and share image stay raster. */
-    private const SVG_OK = ['logo_header', 'logo_footer', 'iso_image'];
+    private const NO_SVG = ['favicon'];   // browsers do not all accept an SVG favicon
 
     public function edit(): View
     {
@@ -31,7 +31,7 @@ class SettingController extends Controller
         $rules = [];
         foreach ($rows as $key => $row) {
             $rules["s.{$key}"] = match ($row->type) {
-                'image' => Media::rule(true),
+                'image' => Media::rule(!in_array($key, self::NO_SVG, true)),
                 'email' => ['nullable', 'email:rfc', 'max:190'],
                 'url' => ['nullable', 'string', 'max:300', 'regex:/^(#|https?:\/\/.+)$/i'],
                 'textarea' => ['nullable', 'string', 'max:2000'],

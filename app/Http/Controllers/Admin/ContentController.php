@@ -21,6 +21,7 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
+use RuntimeException;
 
 /** Edits the copy, images and lists of one page (scope = its slug) or of the shared header/footer (scope "global"). */
 class ContentController extends Controller
@@ -342,8 +343,13 @@ class ContentController extends Controller
                 if ($v->fails()) {
                     throw ValidationException::withMessages(["images.{$id}" => $v->errors()->first('f')]);
                 }
+                try {
+                    $path = Media::store($file, 'images');
+                } catch (RuntimeException $e) {
+                    throw ValidationException::withMessages(["images.{$id}" => $e->getMessage()]);
+                }
                 Media::delete($field->value);
-                return Media::store($file, 'images');
+                return $path;
             }
             if ($request->boolean("remove_images.{$id}")) {
                 Media::delete($field->value);

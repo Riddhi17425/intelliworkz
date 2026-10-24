@@ -203,16 +203,8 @@
                         "url": "about-us.php"
                     },
                     {
-                        "label": "Privacy Policy",
-                        "url": "privacy-policy"
-                    },
-                    {
-                        "label": "Terms of Use",
-                        "url": "terms-of-use"
-                    },
-                    {
-                        "label": "Cookies",
-                        "url": "cookies"
+                        "label": "Contact Us",
+                        "url": "contact-us.php"
                     }
                 ]
             },
@@ -257,6 +249,160 @@
                     {
                         "label": "Cookies",
                         "url": "cookies"
+                    }
+                ]
+            },
+            {
+                "handle": "cat-1",
+                "title": "Branding & Creative",
+                "items": [
+                    {
+                        "label": "Logo Design",
+                        "url": "logo-design.php"
+                    },
+                    {
+                        "label": "Brand Identity & Design",
+                        "url": "brand-identity-and-design.php"
+                    },
+                    {
+                        "label": "Marketing and Sales Collaterals",
+                        "url": "marketing-sales-collaterals.php"
+                    },
+                    {
+                        "label": "Packaging Design",
+                        "url": "packaging-design.php"
+                    },
+                    {
+                        "label": "Campaign Concepts & Ad Creatives",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "Corporate Communication",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "PPT Design",
+                        "url": "ppt-design.php"
+                    },
+                    {
+                        "label": "Advertising Services",
+                        "url": "services.php#svc-1"
+                    },
+                    {
+                        "label": "UI/UX Design",
+                        "url": "services.php#svc-1"
+                    }
+                ]
+            },
+            {
+                "handle": "cat-2",
+                "title": "Digital Marketing & Growth",
+                "items": [
+                    {
+                        "label": "Digital Marketing",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "SEO Services",
+                        "url": "seo-services.php"
+                    },
+                    {
+                        "label": "AEO Services",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "GEO Services",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Content Marketing",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Lead Generation Campaigns",
+                        "url": "services.php#svc-2"
+                    }
+                ]
+            },
+            {
+                "handle": "cat-3",
+                "title": "Print & Publication",
+                "items": [
+                    {
+                        "label": "Pre-Press Services",
+                        "url": "pre-press-service.php"
+                    },
+                    {
+                        "label": "Magazine Design",
+                        "url": "magazine-design.php"
+                    },
+                    {
+                        "label": "Academic and Technical Publishing Support",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "Multilingual Publishing and Localization",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "Product Catalog",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "InDesign Services",
+                        "url": "services.php#svc-3"
+                    },
+                    {
+                        "label": "Newsletter Design",
+                        "url": "services.php#svc-3"
+                    }
+                ]
+            },
+            {
+                "handle": "cat-4",
+                "title": "Post-Production",
+                "items": [
+                    {
+                        "label": "Video Editing",
+                        "url": "video-editing.php"
+                    },
+                    {
+                        "label": "Motion Graphics",
+                        "url": "services.php#svc-4"
+                    },
+                    {
+                        "label": "Explainer Videos",
+                        "url": "services.php#svc-4"
+                    },
+                    {
+                        "label": "Product Video",
+                        "url": "services.php#svc-4"
+                    }
+                ]
+            },
+            {
+                "handle": "cat-5",
+                "title": "Animation",
+                "items": [
+                    {
+                        "label": "Corporate Videos & Shoots",
+                        "url": "services.php#svc-5"
+                    },
+                    {
+                        "label": "Presentation Videos",
+                        "url": "services.php#svc-5"
+                    },
+                    {
+                        "label": "3D Modelling & 3D Rendering",
+                        "url": "3d-modeling-rendering.php"
+                    },
+                    {
+                        "label": "3D Visualization (Product / Architectural / Industrial)",
+                        "url": "services.php#svc-5"
+                    },
+                    {
+                        "label": "3D Animation",
+                        "url": "services.php#svc-5"
                     }
                 ]
             }

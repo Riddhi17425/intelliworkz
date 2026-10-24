@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use RuntimeException;
 
 /**
  * Describes how one repeatable list (see config/content_lists.php) is edited, and turns the submitted form back
@@ -281,8 +282,13 @@ class ListSchema
             case 'image':
                 if ($file instanceof UploadedFile && $file->isValid()) {
                     $this->assertImage($file, $def['label']);
+                    try {
+                        $path = Media::store($file, 'images');
+                    } catch (RuntimeException $e) {
+                        throw ValidationException::withMessages(['content' => $def['label'] . ': ' . $e->getMessage()]);
+                    }
                     Media::delete(is_string($current) ? $current : null);
-                    return Media::store($file, 'images');
+                    return $path;
                 }
                 if (!empty($row[$key . '__remove'])) {
                     Media::delete(is_string($current) ? $current : null);

@@ -12,7 +12,7 @@ $vc = 'assets/icons/video/';        // shared icons
                 <h2 class="h2">{!! $T('selected-work.1') !!}</h2>
                 <p>{!! $T('selected-work.2') !!}</p>
             </div>
-            <?php if ($T('filter-tabs.1', '1') !== '0'): ?>
+            <?php if ($T('filter-tabs.1', '1') !== '0' && !empty($pk_filters)): ?>
             <div class="filter-tabs" data-pk-tabs>
                 <?php foreach ($pk_filters as $key => $label): ?>
                     <button type="button" class="filter-tab <?= $key === 'all' ? 'is-active' : '' ?>" data-filter="<?= $key ?>"><?= $label ?></button>

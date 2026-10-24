@@ -73,3 +73,21 @@
 /* picture swap when a filter tab is chosen */
 .pk-tile img { transition: opacity .18s ease; }
 .pk-tile img.is-swapping { opacity: 0; }
+
+/* Logo Design reuses this strip with a full-width photo, so its tools sit at the top, centred across the width */
+@media (min-width: 1200px) {
+    .pk-tools:has(.pk-tools__photo[src*="logo-design"]) .pk-tools__row { left: 0; top: 14px; width: 100%; box-sizing: border-box; padding: 0 40px; justify-content: center; gap: 28px 64px; }
+}
+
+/* Logo Design's statistics picture is 870x400, the exact height of the card: show it whole instead of cropping it to the packaging size */
+.pk-stats:has(.pk-stats__bg[src*="logo-design"]) .pk-stats__bg { left: 0; top: 0; width: auto; height: 100%; max-width: 870px; object-fit: contain; }
+.pk-stats:has(.pk-stats__bg[src*="logo-design"])::after { top: 0; width: 870px; max-width: 100%; height: 100%; }
+
+/* Logo Design's tool photo is 1920x500, the exact size of the strip: show it as is instead of the enlarged packaging crop */
+.pk-tools:has(.pk-tools__photo[src*="logo-design"]) .pk-tools__photo { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* "Why" cards grow with their text instead of cutting it off (all cards in a row stay the same height) */
+@media (min-width: 641px) {
+    .pk-why__card { height: auto; min-height: 464px; padding-bottom: 28px; }
+    .pk-why__content { position: relative; top: auto; left: auto; margin-top: 229px; }
+}

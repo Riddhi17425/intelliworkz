@@ -21,6 +21,15 @@
         {
             "section": "hero",
             "section_label": "Hero",
+            "key": "hero.image",
+            "label": "Hero background picture",
+            "type": "image",
+            "value": "assets/images/collaterals/hero.png",
+            "sort": 0
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Branding & Creative / Marke…",
             "type": "html",

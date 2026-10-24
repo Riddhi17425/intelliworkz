@@ -37,7 +37,9 @@
                     <img src="{{ $settings['iso_image'] ?? 'assets/icons/iso.svg' }}" width="78" height="80" alt="ISO 27001">
                     <p>{!! $G('footer.7') !!}</p>
                 </div>
+                {{-- Quick Links column hidden for now: restore this line to show it again
                 @include('site.partials.footer-col', ['col' => $column('company')])
+                --}}
             </div>
 
             <div class="footer-links">

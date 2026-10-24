@@ -50,6 +50,22 @@ class SectionPlan
         return array_intersect_key($titles, self::MAIN_CLASS);
     }
 
+    /**
+     * Pages a section can be copied from: the original designs and every page built on one of them (e.g. a page the
+     * editor made and filled in). Group label => [slug => title].
+     */
+    public static function sources(): array
+    {
+        $designs = self::designs();
+        $own = [];
+        foreach (Page::where('is_system', false)->orderBy('title')->get() as $p) {
+            if ($p->hasSections()) {
+                $own[$p->slug] = $p->title . ' (' . ($designs[$p->viewKey()] ?? $p->viewKey()) . ' design)';
+            }
+        }
+        return array_filter(['Original page designs' => $designs, 'Your pages' => $own]);
+    }
+
     public static function label(string $key): string
     {
         return self::LABELS[$key] ?? Str::headline($key);
@@ -140,11 +156,23 @@ class SectionPlan
 
     /* ------------------------------------------------------------------ editing the layout */
 
-    /** Copy section $key of design $tpl into the page (content taken from the original page of that design). */
-    public static function add(Page $page, string $tpl, string $key): array
+    /**
+     * Copy section $key of page $source into the page: its look (design) and its current text, pictures and lists.
+     * When the source shows that section more than once, the first visible one is taken.
+     */
+    public static function add(Page $page, Page $source, string $key): array
     {
+        $tpl = $source->viewKey();
+        $from = $source->slug;
+        $candidates = array_values(array_filter(self::layout($source), fn ($i) => $i['key'] === $key));
+        usort($candidates, fn ($a, $b) => $a['hidden'] <=> $b['hidden']);
+        if ($candidates) {
+            $tpl = $candidates[0]['tpl'] ?: $source->viewKey();
+            $from = self::scope($source, $candidates[0]);
+        }
+
         $item = ['id' => $key . '-' . Str::lower(Str::random(4)), 'key' => $key, 'tpl' => $tpl, 'hidden' => false];
-        self::copyContent($tpl, $key, self::scope($page, $item));
+        self::copyContent($from, $key, self::scope($page, $item), $tpl);
 
         $layout = self::layout($page);
         $layout[] = $item;
@@ -181,7 +209,12 @@ class SectionPlan
         preg_match_all('/\$([A-Za-z_][A-Za-z0-9_]*)/', $source, $m);
         $listKeys = ContentList::where('scope', $fromScope)->whereIn('key', array_unique($m[1]))->pluck('key')->all();
 
-        foreach (ContentField::where('scope', $fromScope)->whereIn('key', $fieldKeys)->orderBy('id')->get() as $f) {
+        foreach (ContentField::where('scope', $fromScope)->where(function ($q) use ($fieldKeys) {
+            $q->whereIn('key', $fieldKeys);
+            foreach ($fieldKeys as $k) {
+                $q->orWhere('key', 'like', str_replace(['%', '_'], ['\%', '\_'], $k) . '~%');   // paragraphs added in the admin travel with their field
+            }
+        })->orderBy('id')->get() as $f) {
             $copy = $f->replicate();
             $copy->scope = $toScope;
             if ($f->type === 'image') {

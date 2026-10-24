@@ -851,8 +851,18 @@
                 var cats = (tile.getAttribute('data-cats') || '').split(' ');
                 tile.hidden = key !== 'all' && cats.indexOf(key) === -1;
             });
+            var firstShown = tiles.filter(function (t) { return !t.hidden; })[0];
+            if (firstShown) feature(firstShown);
         });
     });
+
+    /* PPT page: the featured slide is shown on the laptop screen */
+    var screen = section.querySelector('.ppt-scene__screen');
+    var feature = function (tile) {
+        tiles.forEach(function (t) { t.classList.toggle('is-featured', t === tile); });
+        var img = tile.querySelector('img');
+        if (screen && img) { screen.src = img.currentSrc || img.src; screen.hidden = false; }
+    };
 
     var busy = false;
     var slide = function (dir) {
@@ -891,9 +901,7 @@
     section.querySelectorAll('[data-gallery-next]').forEach(function (b) { b.addEventListener('click', function () { slide(1); }); });
 
     tiles.forEach(function (tile) {
-        tile.addEventListener('click', function () {
-            tiles.forEach(function (t) { t.classList.toggle('is-featured', t === tile); });
-        });
+        tile.addEventListener('click', function () { feature(tile); });
     });
 })();
 
@@ -1078,10 +1086,44 @@
 
 /* Tools strips (video, 3D, magazine, collateral, packaging): when the tools wrap onto a second row, the divider in front of
    the tool that starts a row is hidden and a wrapped row is centred */
+/* Light tools strip: with more than 5 tools it scrolls on its own, endless and seamless (the set is repeated once, the strip moves by exactly one set) */
 (function () {
     'use strict';
 
-    var rows = document.querySelectorAll('.ve-tools__row, .mg-tools__row, .pk-tools__row');
+    var MAX = 5;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    Array.prototype.forEach.call(document.querySelectorAll('.mg-tools__row'), function (row) {
+        var tools = Array.prototype.filter.call(row.children, function (c) { return /mg-tool$|mg-tool /.test(c.className); });
+        if (tools.length <= MAX || reduce) return;
+
+        var originals = Array.prototype.slice.call(row.children);
+        var join = document.createElement('li');
+        join.className = 'mg-tools__divider';
+        row.appendChild(join);
+        originals.forEach(function (el) {
+            var c = el.cloneNode(true);
+            c.setAttribute('aria-hidden', 'true');
+            row.appendChild(c);
+        });
+        row.parentNode.classList.add('is-marquee');
+        row.classList.add('is-marquee');
+
+        var measure = function () {
+            var shift = join.offsetLeft + join.offsetWidth + (parseFloat(getComputedStyle(row).columnGap) || 0);
+            row.style.setProperty('--mg-shift', shift + 'px');
+            row.style.setProperty('--mg-time', Math.max(20, Math.round(shift / 60)) + 's');   /* ~60px per second */
+        };
+        measure();
+        window.addEventListener('load', measure);
+        window.addEventListener('resize', measure);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    });
+})();
+
+(function () {
+    'use strict';
+
+    var rows = document.querySelectorAll('.ve-tools__row, .mg-tools__row:not(.is-marquee), .pk-tools__row');
     if (!rows.length) return;
 
     var isDivider = function (el) { return /__divider/.test(el.className); };

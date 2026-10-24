@@ -22,11 +22,12 @@ $vc = 'assets/icons/video/';    // page icons
                                 <span class="acc-title"><?= $s['title'] ?></span>
                                 <span class="acc-icons"><img class="acc-icon acc-icon--closed" src="<?= $vc ?>acc-icon-2.svg" width="42" height="42" alt=""><img class="acc-icon acc-icon--open" src="<?= $vc ?>acc-icon-1.svg" width="42" height="42" alt=""></span>
                             </button>
-                            <?php if ($s['points']): ?>
+                            <?php if (!empty($s['points']) || !empty($s['para'])): ?>
                                 <div class="acc-panel"><div class="acc-panel__inner">
-                                    <ul class="dot-list dot-list--plain acc-points">
+                                    <?php if (!empty($s['para']) && empty($s['points'])): ?><p class="acc-para"><?= $s['para'] ?></p><?php endif; ?>
+                                    <?php if (!empty($s['points'])): ?><ul class="dot-list dot-list--plain acc-points">
                                         <?php foreach ($s['points'] as $pt): ?><li><?= $pt ?></li><?php endforeach; ?>
-                                    </ul>
+                                    </ul><?php endif; ?>
                                 </div></div>
                             <?php endif; ?>
                         </div>

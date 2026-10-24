@@ -17,6 +17,15 @@
     },
     "fields": [
         {
+            "section": "numbers",
+            "section_label": "Numbers",
+            "key": "numbers.1",
+            "label": "Small label above the numbers",
+            "type": "text",
+            "value": "Project Snapshot",
+            "sort": 9
+        },
+        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.1",
@@ -141,6 +150,15 @@
             "type": "text",
             "value": "Key highlights",
             "sort": 14
+        },
+        {
+            "section": "overview",
+            "section_label": "01 Industry Overview",
+            "key": "overview.5",
+            "label": "Picture next to the introduction",
+            "type": "image",
+            "value": "assets/images/case-study/overview.png",
+            "sort": 15
         },
         {
             "section": "challenge",

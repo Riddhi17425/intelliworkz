@@ -61,7 +61,7 @@ class ListSchema
 
     public function canAdd(): bool
     {
-        return in_array($this->kind(), ['strings', 'rows'], true) && ($this->meta['add'] ?? true);
+        return ($this->meta['add'] ?? true) === true;
     }
 
     /** The most items the design of the section has room for (null = no limit). Only new rows are held back; existing ones stay. */
@@ -72,12 +72,12 @@ class ListSchema
 
     public function canRemove(): bool
     {
-        return in_array($this->kind(), ['strings', 'rows'], true) && ($this->meta['remove'] ?? true);
+        return ($this->meta['remove'] ?? true) === true;
     }
 
     public function canReorder(): bool
     {
-        return in_array($this->kind(), ['strings', 'rows'], true) && ($this->meta['reorder'] ?? $this->canAdd());
+        return ($this->meta['reorder'] ?? $this->canAdd()) === true;
     }
 
     public function groupLabel(): string
@@ -101,9 +101,13 @@ class ListSchema
     }
 
     /** A new row starts as a copy of the last one, with every editable value cleared (hidden design values stay). */
-    public function blank(): array
+    public function blank(?array $like = null): array
     {
-        $template = is_array(Arr::last($this->items)) ? Arr::last($this->items) : [];
+        $last = $like ?? Arr::last($this->items);
+        if ($like === null && $this->kind() === 'groups') {
+            $last = is_array($last) ? Arr::last($last) : null;     // a new tool copies the last tool of the last column
+        }
+        $template = is_array($last) ? $last : [];
         foreach ($this->fields() as $key => $def) {
             $template[$key] = in_array($def['type'], ['lines', 'repeater'], true) ? [] : '';
         }
@@ -156,29 +160,110 @@ class ListSchema
     private function applyMap(array $post): array
     {
         $out = [];
+        foreach ((array) ($post['map'] ?? []) as $key => $v) {
+            if (!array_key_exists($key, $this->items)) {
+                continue;
+            }
+            $clean = is_string($v) ? $this->text($v, $this->items[$key]) : '';
+            $out[$key] = $clean !== '' ? $clean : $this->items[$key];
+        }
+        if ($this->canAdd()) {
+            foreach ((array) ($post['new'] ?? []) as $n => $v) {
+                $clean = is_string($v) && (string) $n !== '__N__' ? $this->text($v, '') : '';
+                if ($clean !== '') {
+                    $out[$this->newKey($clean, $out)] = $clean;
+                }
+            }
+        }
+        return $this->keepUnremovable($out);
+    }
+
+    /** Rows the editor may not delete come back (at their old place in the order when possible). */
+    private function keepUnremovable(array $out): array
+    {
         foreach ($this->items as $key => $orig) {
-            $v = $post['map'][$key] ?? null;
-            $clean = is_string($v) ? $this->text($v, $orig) : '';
-            $out[$key] = $clean !== '' ? $clean : $orig;
+            if (!array_key_exists($key, $out) && !$this->canRemove()) {
+                $out = $this->insertAt($out, $key, $orig);
+            }
         }
         return $out;
+    }
+
+    private function insertAt(array $out, int|string $key, mixed $value): array
+    {
+        $pos = (int) array_search($key, array_keys($this->items), true);
+        return array_slice($out, 0, $pos, true) + [$key => $value] + array_slice($out, $pos, null, true);
+    }
+
+    /** A unique key for a new map entry, made from its name ("Food & Drink" -> food-drink). */
+    private function newKey(string $name, array $taken): string
+    {
+        $base = Str::slug(Html::plain($name)) ?: 'item';
+        $key = $base;
+        for ($i = 2; array_key_exists($key, $taken) || array_key_exists($key, $this->items); $i++) {
+            $key = $base . '-' . $i;
+        }
+        return $key;
     }
 
     private function applyMapRows(array $post, array $files): array
     {
-        $out = $this->items;
-        foreach ($this->items as $key => $orig) {
-            $out[$key] = $this->fillRow($orig, (array) ($post['map'][$key] ?? []), (array) ($files['map'][$key] ?? []));
+        $out = [];
+        foreach ((array) ($post['map'] ?? []) as $key => $row) {
+            if (array_key_exists($key, $this->items) && is_array($row)) {
+                $out[$key] = $this->fillRow($this->items[$key], $row, (array) ($files['map'][$key] ?? []));
+            }
         }
-        return $out;
+        if ($this->canAdd()) {
+            foreach ((array) ($post['new'] ?? []) as $n => $row) {
+                if (!is_array($row) || (string) $n === '__N__') {
+                    continue;
+                }
+                $filled = $this->fillRow($this->blank(), $row, (array) ($files['new'][$n] ?? []));
+                if (!$this->isBlank($filled)) {
+                    $name = Html::plain((string) ($filled[$this->meta['title'] ?? ''] ?? ''));
+                    $out[$this->newKey($name !== '' ? $name : 'office', $out)] = $filled;
+                }
+            }
+        }
+        return $this->keepUnremovable($out);
     }
 
     private function applyGroups(array $post, array $files): array
     {
-        $out = $this->items;
-        foreach ($this->items as $g => $rows) {
-            foreach ($rows as $r => $orig) {
-                $out[$g][$r] = $this->fillRow($orig, (array) ($post['groups'][$g][$r] ?? []), (array) ($files['groups'][$g][$r] ?? []));
+        if (!$this->canAdd() && !$this->canRemove()) {
+            $out = $this->items;
+            foreach ($this->items as $g => $rows) {
+                foreach ($rows as $r => $orig) {
+                    $out[$g][$r] = $this->fillRow($orig, (array) ($post['groups'][$g][$r] ?? []), (array) ($files['groups'][$g][$r] ?? []));
+                }
+            }
+            return $out;
+        }
+
+        $out = [];
+        foreach ((array) ($post['groups'] ?? []) as $g => $rows) {
+            if (!is_array($rows) || (string) $g === '__G__') {
+                continue;
+            }
+            $column = [];
+            foreach ($rows as $r => $row) {
+                if (!is_array($row) || (string) $r === '__M__') {
+                    continue;
+                }
+                [$og, $or] = array_pad(explode('.', (string) ($row['_orig'] ?? ''), 2), 2, '');
+                $orig = ctype_digit($og) && ctype_digit($or) ? ($this->items[(int) $og][(int) $or] ?? null) : null;
+                if ($orig === null && !$this->canAdd()) {
+                    continue;
+                }
+                $filled = $this->fillRow($orig ?? $this->blank(Arr::last($column) ?: null), $row, (array) ($files['groups'][$g][$r] ?? []));
+                if ($orig === null && $this->isBlank($filled)) {
+                    continue;                       // "Add" was clicked but nothing was typed
+                }
+                $column[] = $filled;
+            }
+            if ($column) {
+                $out[] = $column;
             }
         }
         return $out;

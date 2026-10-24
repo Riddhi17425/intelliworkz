@@ -36,9 +36,13 @@
         <div class="adm-layout__add">
             <strong class="small">Add a section from another page</strong>
             <div class="d-flex flex-wrap gap-2 mt-2">
-                <select class="form-select" name="tpl" form="addSectionForm" aria-label="Page design" style="max-width: 300px" required>
-                    <option value="">Page design…</option>
-                    @foreach($designs as $slug => $title)<option value="{{ $slug }}">{{ $title }}</option>@endforeach
+                <select class="form-select" name="tpl" form="addSectionForm" aria-label="Page" style="max-width: 360px" required>
+                    <option value="">Page…</option>
+                    @foreach($designs as $group => $options)
+                        <optgroup label="{{ $group }}">
+                            @foreach($options as $slug => $title)<option value="{{ $slug }}">{{ $title }}</option>@endforeach
+                        </optgroup>
+                    @endforeach
                 </select>
                 <select class="form-select" name="key" form="addSectionForm" aria-label="Section" style="max-width: 320px" required>
                     <option value="">Section…</option>
@@ -46,7 +50,7 @@
                 </select>
                 <button type="submit" class="btn btn-outline-primary" form="addSectionForm"><i class="bi bi-plus-lg me-1"></i> Add section</button>
             </div>
-            <div class="form-text">The new section gets a copy of that page's text, pictures and lists, so you can change them for this page only. It keeps the look of the page it comes from.</div>
+            <div class="form-text">The new section gets a copy of that page's current text, pictures and lists (also from pages you made yourself), so you can change them for this page only. It keeps the look of the page it comes from.</div>
         </div>
     </div>
 </div>

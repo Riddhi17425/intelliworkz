@@ -45,7 +45,7 @@
 .seo-metrics { padding: 32px 120px; }
 
 /* ---------- Why cards ---------- */
-.seo-why { display: flex; gap: 24px; height: 323px; }
+.seo-why { display: flex; gap: 24px; min-height: 323px; }
 .seo-why__card { flex: 1; display: flex; flex-direction: column; }
 .seo-why__head { display: flex; justify-content: space-between; align-items: center; height: 100px; padding: 24px; background: var(--c); border-radius: 10px 10px 0 0; }
 .seo-why__icon { display: grid; place-items: center; flex: none; width: 64px; height: 64px; background: var(--c-white); border-radius: 32px; }
@@ -62,7 +62,7 @@
 .seo-tools__col { display: flex; flex-direction: column; gap: 32px; width: 297px; }
 .seo-tools__rule { height: 1px; border: 0; border-radius: 1000px; background: var(--c-divider-gray); }
 .seo-tool { display: flex; align-items: center; gap: 20px; }
-.seo-tool img { flex: none; width: 72px; height: 72px; border-radius: 10px; }
+.seo-tool img { flex: none; width: auto; min-width: 72px; max-width: 128px; height: 72px; object-fit: contain; border-radius: 10px; }
 .seo-tool div { display: flex; flex-direction: column; gap: 8px; }
 .seo-tool strong { font-weight: 600; font-size: 18px; line-height: normal; color: var(--c-white); }
 .seo-tool span { font-size: 16px; line-height: 24px; color: var(--c-off-white); }

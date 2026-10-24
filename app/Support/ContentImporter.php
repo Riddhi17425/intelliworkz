@@ -233,7 +233,7 @@ class ContentImporter
             ['Enquiry forms', 'form.2', 'Subject box hint', 'text', 'Enter your subject'],
             ['Enquiry forms', 'form.3', 'Message box hint', 'text', 'Tell us about your requirements'],
             ['Case study cards', 'showcase.1', 'Button text', 'text', 'View Case Study'],
-            ['Case study cards', 'showcase.2', 'Button link', 'url', 'contact-us.php'],
+            ['Case study cards', 'showcase.2', 'Button link', 'url', 'case-study.php'],
             ['Contact page offices', 'contact.1', 'Map button text', 'text', 'View on Map ↗'],
             ['Contact page offices', 'contact.2', 'Call button text', 'text', 'Call Office →'],
             ['Pages made in the admin', 'page.1', 'Breadcrumb: first word', 'text', 'Home'],

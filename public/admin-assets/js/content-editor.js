@@ -73,7 +73,11 @@
             var rep = t.closest('[data-repeater]');
             var rows = rep.querySelector('[data-rows]');
             var subTpl = rep.querySelector('template[data-sub-template]');
-            rows.appendChild(fromTemplate(subTpl, '__M__'));
+            var subNode = fromTemplate(subTpl, '__M__');
+            rows.appendChild(subNode);
+            if (window.AdminUI) window.AdminUI.initImages(subNode);
+            var firstSub = subNode.querySelector('input[type=text], textarea');
+            if (firstSub) firstSub.focus();
         } else if (act === 'remove-sub') {
             t.closest('[data-sub]').remove();
             form.dispatchEvent(new Event('input', { bubbles: true }));
@@ -155,6 +159,19 @@
             setTimeout(function () { byId(location.hash.slice(1)).scrollIntoView({ block: 'start' }); }, 50);
         }
     }
+
+    // after Save the page reloads: put the editor back where they were working instead of at the top
+    var scrollKey = 'adm-scroll:' + location.pathname;
+    form.addEventListener('submit', function () {
+        try { sessionStorage.setItem(scrollKey, String(window.pageYOffset || document.documentElement.scrollTop)); } catch (err) { /* ignore */ }
+    });
+    try {
+        var savedY = sessionStorage.getItem(scrollKey);
+        if (savedY !== null) {
+            sessionStorage.removeItem(scrollKey);
+            setTimeout(function () { window.scrollTo({ top: parseInt(savedY, 10) || 0, behavior: 'instant' }); }, 120);   // after the #sec- jump above
+        }
+    } catch (err) { /* ignore */ }
 
     // section tabs highlight as you scroll
     var tabs = document.querySelectorAll('[data-spy]');
@@ -262,4 +279,55 @@
             if (sw) sw.closest('[data-layout-row]').classList.toggle('is-off', !sw.checked);
         });
     }
+})();
+
+/* Fields: hide / show any text or picture, delete added paragraphs, add paragraphs (saved with the form). */
+(function () {
+    'use strict';
+
+    var form = document.querySelector('[data-content-form]');
+    if (!form) return;
+
+    var changed = function () { form.dispatchEvent(new Event('input', { bubbles: true })); };
+
+    form.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-fld-act]');
+        if (!btn || !form.contains(btn)) return;
+        var act = btn.getAttribute('data-fld-act');
+        var row = btn.closest('[data-field]');
+
+        if (act === 'hide' && row) {
+            var input = row.querySelector('[data-fld-hidden]');
+            var off = input.value !== '1';
+            input.value = off ? '1' : '0';
+            row.classList.toggle('is-off', off);
+            btn.querySelector('span').textContent = off ? 'Show' : 'Hide';
+            btn.querySelector('i').className = 'bi ' + (off ? 'bi-eye' : 'bi-eye-slash');
+            changed();
+        } else if ((act === 'delete' || act === 'undo') && row) {
+            var del = act === 'delete';
+            row.querySelector('[data-fld-delete]').value = del ? '1' : '0';
+            row.classList.toggle('is-deleting', del);
+            row.querySelector('[data-fld-act="delete"]').classList.toggle('d-none', del);
+            row.querySelector('[data-fld-act="undo"]').classList.toggle('d-none', !del);
+            changed();
+        } else if (act === 'add') {
+            var box = btn.closest('[data-fld-add-box]');
+            var wrap = document.createElement('div');
+            wrap.className = 'adm-newfield';
+            var field = box.getAttribute('data-kind') === 'text'
+                ? '<input type="text" maxlength="500" class="form-control" placeholder="Write the new line…">'
+                : '<textarea rows="3" class="form-control" placeholder="Write the new paragraph… (you can use &lt;strong&gt;, &lt;em&gt;, &lt;a href&gt;)"></textarea>';
+            wrap.innerHTML = '<span class="adm-newfield__tag">New</span>' + field +
+                '<button type="button" class="adm-fieldtool text-danger" data-fld-act="remove-new" title="Remove"><i class="bi bi-x-lg"></i></button>';
+            var control = wrap.querySelector('input, textarea');
+            control.name = 'new_fields[' + box.getAttribute('data-base') + '][]';
+            box.insertBefore(wrap, btn);
+            control.focus();
+            changed();
+        } else if (act === 'remove-new') {
+            btn.closest('.adm-newfield').remove();
+            changed();
+        }
+    });
 })();

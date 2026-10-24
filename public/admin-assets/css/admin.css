@@ -268,3 +268,24 @@ tr.is-unread .row-title { font-weight: 700; }
 /* a section whose part of the website page is switched off */
 .adm-section.is-switched-off { border-style: dashed; opacity: .75; }
 .adm-section.is-switched-off .adm-section__head h2 { color: #6c757d; }
+
+/* Fields: hide / delete / add controls */
+.adm-field { position: relative; }
+.adm-fieldtools { position: absolute; top: -2px; right: 0; display: flex; gap: .4rem; z-index: 2; }
+.adm-fieldtool { display: inline-flex; align-items: center; gap: .3rem; padding: .15rem .5rem; font-size: .78rem; font-weight: 600; line-height: 1.3; color: #6b7080; background: #f4f5fa; border: 1px solid #e3e5ee; border-radius: 999px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.adm-fieldtool:hover { color: #1a1c2c; background: #fff; border-color: #c9ccd9; }
+.adm-fieldtool.text-danger:hover { color: #b3202e !important; border-color: #e8b6bb; background: #fff5f6; }
+.adm-field__flag { display: none; margin: -.2rem 0 .4rem; font-size: .8rem; font-weight: 600; }
+.adm-field.is-off .adm-field__flag, .adm-field.is-deleting .adm-field__flag { display: block; }
+.adm-field.is-off .adm-field__flag { color: #8a6d00; }
+.adm-field.is-off .adm-field__off { display: inline; }
+.adm-field.is-deleting .adm-field__off { display: none; }
+.adm-field.is-deleting .adm-field__del { display: inline !important; color: #b3202e; }
+.adm-field.is-off > :not(.adm-fieldtools):not(.adm-field__flag) { opacity: .45; }
+.adm-field.is-deleting > :not(.adm-fieldtools):not(.adm-field__flag) { opacity: .35; text-decoration: line-through; pointer-events: none; }
+.adm-field.is-extra { margin-left: 1rem; padding-left: .9rem; border-left: 3px solid #c9ccd9; }
+.adm-fieldadd { display: flex; flex-direction: column; gap: .6rem; margin-top: .6rem; }
+.adm-fieldadd > .btn { align-self: flex-start; }
+.adm-newfield { position: relative; display: flex; align-items: flex-start; gap: .5rem; padding: .6rem; background: #fbfbfe; border: 1px dashed #c9ccd9; border-radius: .6rem; }
+.adm-newfield .form-control { flex: 1; }
+.adm-newfield__tag { flex: none; margin-top: .45rem; padding: .05rem .45rem; font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #fff; background: #282762; border-radius: 999px; }

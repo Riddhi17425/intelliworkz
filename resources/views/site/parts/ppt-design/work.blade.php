@@ -15,12 +15,8 @@ $vc = 'assets/icons/video/';         // shared icons
                     <h2 class="h2">{!! $T('selected-work.5') !!}</h2>
                     <p>{!! $T('selected-work.6') !!}</p>
                 </div>
-                <div class="round-arrows">
-                    <button type="button" class="round-arrow" aria-label="Previous" data-gallery-prev><img src="<?= $vc ?>slider-arrow-left.svg" width="52" height="52" alt=""></button>
-                    <button type="button" class="round-arrow" aria-label="Next" data-gallery-next><img src="<?= $vc ?>slider-arrow-right.svg" width="52" height="52" alt=""></button>
-                </div>
             </div>
-            <?php if ($T('filter-tabs.1', '1') !== '0'): ?>
+            <?php if ($T('filter-tabs.1', '1') !== '0' && !empty($ppt_filters)): ?>
             <div class="filter-tabs">
                 <?php foreach ($ppt_filters as $key => $label): ?>
                     <button type="button" class="filter-tab <?= $key === 'all' ? 'is-active' : '' ?>" data-filter="<?= $key ?>"><?= $label ?></button>
@@ -34,13 +30,14 @@ $vc = 'assets/icons/video/';         // shared icons
             <img class="ppt-scene__layer ppt-scene__layer--left" src="{{ $T('selected-work.2') }}" alt="">
             <img class="ppt-scene__layer ppt-scene__layer--right" src="{{ $T('selected-work.3') }}" alt="">
             <img class="ppt-scene__main" src="{{ $T('selected-work.4') }}" alt="Presentation design examples">
+            <img class="ppt-scene__screen" src="<?= iu($ti, $ppt_thumbs[0]['img'] ?? '') ?>" alt="">
 
             <div class="ppt-gallery">
                 <button type="button" class="round-arrow" aria-label="Previous" data-gallery-prev><img src="<?= $vc ?>slider-arrow-left.svg" width="52" height="52" alt=""></button>
                 <div class="ppt-gallery__viewport" data-gallery>
                     <div class="ppt-gallery__track" data-gallery-track>
                         <?php foreach ($ppt_thumbs as $i => $g): ?>
-                            <button type="button" class="ppt-gallery__tile <?= $i === 2 ? 'is-featured' : '' ?>" data-cats="<?= $g['cats'] ?>"><img src="<?= iu($ti, $g['img']) ?>" alt="Presentation example <?= $i + 1 ?>"></button>
+                            <button type="button" class="ppt-gallery__tile <?= $i === 0 ? 'is-featured' : '' ?>" data-cats="<?= $g['cats'] ?>"><img src="<?= iu($ti, $g['img']) ?>" alt="Presentation example <?= $i + 1 ?>"></button>
                         <?php endforeach; ?>
                     </div>
                 </div>

@@ -40,7 +40,7 @@ class ContentController extends Controller
             'seoUrl' => route('admin.pages.edit', $page),
             'page' => $page,
             'layout' => $page->hasSections() ? $this->layoutRows($page) : null,
-            'designs' => $page->hasSections() ? SectionPlan::designs() : [],
+            'designs' => $page->hasSections() ? SectionPlan::sources() : [],
             'sectionLabels' => SectionPlan::LABELS,
         ]);
     }
@@ -50,12 +50,12 @@ class ContentController extends Controller
     {
         abort_unless($page->hasSections(), 404);
         $data = $request->validate([
-            'tpl' => ['required', Rule::in(array_keys(SectionPlan::designs()))],
+            'tpl' => ['required', Rule::in(array_merge(...array_map('array_keys', array_values(SectionPlan::sources()))))],
             'key' => ['required', Rule::in(SectionPlan::KEYS)],
         ]);
-        $item = SectionPlan::add($page, $data['tpl'], $data['key']);
-        $design = SectionPlan::designs()[$data['tpl']] ?? $data['tpl'];
-        ActivityLog::record('updated', "Added section “" . SectionPlan::label($item['key']) . "” from “{$design}” to “{$page->title}”", $page);
+        $source = Page::where('slug', $data['tpl'])->firstOrFail();
+        $item = SectionPlan::add($page, $source, $data['key']);
+        ActivityLog::record('updated', "Added section “" . SectionPlan::label($item['key']) . "” from “{$source->title}” to “{$page->title}”", $page);
 
         return redirect()->to(route('admin.pages.content', $page) . '#sec-' . Str::slug($item['id'] . '-' . SectionPlan::label($item['key'])))
             ->with('success', 'The section was added at the end of the page. Move it where you want it, edit its text, then save.');
@@ -148,14 +148,12 @@ class ContentController extends Controller
             }
         }
         foreach (SectionPlan::layout($page) as $item) {
-            if ($item['tpl']) {
-                continue;
-            }
+            // a part replaced by a section copied from another design no longer prints this page's own copy of it
             $file = resource_path("views/site/parts/{$own}/{$item['key']}.blade.php");
             $source = is_file($file) ? (string) file_get_contents($file) : '';
             preg_match_all('/\$T\(\s*[\'"]([^\'"]+)[\'"]/', $source, $f);
             preg_match_all('/\$([A-Za-z_][A-Za-z0-9_]*)/', $source, $l);
-            if ($item['hidden']) {
+            if ($item['hidden'] || $item['tpl']) {
                 $offFields = array_merge($offFields, $f[1]);
                 $offLists = array_merge($offLists, $l[1]);
             } else {
@@ -229,7 +227,7 @@ class ContentController extends Controller
      */
     private function sections(string $scope, string $idPrefix = '', ?string $badge = null, ?string $design = null): array
     {
-        $fields = ContentField::where('scope', $scope)->orderBy('sort')->get();
+        $fields = ContentField::where('scope', $scope)->orderBy('sort')->orderBy('id')->get();
         $lists = ContentList::where('scope', $scope)->orderBy('sort')->orderBy('id')->get();
         $merge = (array) config('content_sections.merge', []);
         $join = array_merge((array) config('content_sections.join', []), (array) config("content_sections.per.{$design}", []));
@@ -296,6 +294,9 @@ class ContentController extends Controller
             'fields.*' => ['nullable', 'string', 'max:20000'],
             'images' => ['nullable', 'array'],
             'lists' => ['nullable', 'array'],
+            'hidden' => ['nullable', 'array'],
+            'new_fields' => ['nullable', 'array'],
+            'delete_fields' => ['nullable', 'array'],
         ]);
 
         $changed = 0;
@@ -309,6 +310,8 @@ class ContentController extends Controller
                     $changed++;
                 }
             }
+
+            $changed += $this->saveFieldExtras($request, $scope);
 
             foreach (ContentList::where('scope', $scope)->get() as $list) {
                 if (!$request->has("lists.{$list->id}")) {
@@ -331,6 +334,57 @@ class ContentController extends Controller
         return $changed;
     }
 
+    /**
+     * Switching fields off, deleting extra paragraphs and adding new ones. Every field can be switched off (the text is
+     * kept, the website shows nothing); only the extra paragraphs added in the admin ("<field>~<n>") are really deleted.
+     */
+    private function saveFieldExtras(Request $request, string $scope): int
+    {
+        $changed = 0;
+        $fields = ContentField::where('scope', $scope)->get()->keyBy('id');
+
+        foreach ((array) $request->input('hidden', []) as $id => $flag) {
+            $field = $fields[(int) $id] ?? null;
+            $hide = (string) $flag === '1';
+            if ($field && (bool) $field->hidden !== $hide) {
+                $field->hidden = $hide;
+                $field->save();
+                $changed++;
+            }
+        }
+
+        foreach ((array) $request->input('delete_fields', []) as $id => $flag) {
+            $field = $fields[(int) $id] ?? null;
+            if ($field && (string) $flag === '1' && str_contains($field->key, '~')) {
+                $field->delete();
+                $changed++;
+            }
+        }
+
+        foreach ((array) $request->input('new_fields', []) as $baseId => $values) {
+            $base = $fields[(int) $baseId] ?? null;
+            if (!$base || str_contains($base->key, '~') || !in_array($base->type, ['text', 'textarea', 'html'], true)) {
+                continue;
+            }
+            foreach ((array) $values as $value) {
+                $clean = Html::clean((string) $value);
+                if (trim(strip_tags($clean)) === '') {
+                    continue;
+                }
+                $next = 1 + (int) ContentField::where('scope', $scope)->where('key', 'like', $base->key . '~%')->get(['key'])
+                    ->map(fn ($f) => (int) substr($f->key, strlen($base->key) + 1))->max();
+                $row = new ContentField();
+                $row->forceFill([
+                    'scope' => $scope, 'section' => $base->section, 'key' => $base->key . '~' . $next,
+                    'label' => 'Added after “' . Str::limit(strip_tags($base->label), 40) . '”',
+                    'type' => $base->type, 'value' => $clean, 'sort' => $base->sort, 'hidden' => false,
+                ])->save();
+                $changed++;
+            }
+        }
+
+        return $changed;
+    }
     /** New stored value for one field, or null when it was not on the form. */
     private function fieldValue(Request $request, ContentField $field): ?string
     {

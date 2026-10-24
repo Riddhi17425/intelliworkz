@@ -14,7 +14,9 @@
 .ppt-scene__bg { left: 0; top: -80.29px; width: 1920px; height: 1080.57px; object-fit: cover; }
 .ppt-scene__layer--left { left: 108.68px; top: 235.2px; width: 318.25px; height: 181.97px; object-fit: contain; }
 .ppt-scene__layer--right { left: 1482.51px; top: 417.17px; width: 230.82px; height: 198.23px; object-fit: cover; }
-.ppt-scene__main { left: 417px; top: 0; width: 1086px; height: 724px; object-fit: cover; }
+.ppt-scene__screen { left: 642px; top: 28px; width: 637px; height: 425px; object-fit: contain; background: #0b0b0b; }
+.ppt-scene__screen[hidden] { display: none; }
+.ppt-scene__main { left: 482px; top: 20px; width: 956px; height: 637px; object-fit: contain; }
 
 .ppt-gallery { position: absolute; z-index: 2; left: 166.66px; top: 766px; display: flex; align-items: center; gap: 60px; }
 .ppt-gallery__viewport { width: 1306.7px; max-width: 1306.7px; overflow: hidden; }
@@ -32,6 +34,6 @@
 /* ---------- Tools strip: wider photo, grid sits lower ---------- */
 .ppt-tools .seo-tools__photo, .ppt-tools::after { left: -105px; top: -95px; width: 2025px; height: 776px; }
 .ppt-tools::after { background: none; }
-.ppt-tools .seo-tools__grid { top: 145.5px; }
+.ppt-tools .seo-tools__grid { top: 100px; }
 
 .ppt .ve-hero__copy { padding-top: 0; }

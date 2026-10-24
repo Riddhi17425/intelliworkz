@@ -11,6 +11,7 @@ $vc = 'assets/icons/video/';       // icons shared with the video page
 
     <!-- ============ HERO ============ -->
     <section class="ve-hero ve-hero--plain">
+        @if($T('hero.image'))<img class="ve-hero__photo" src="{{ iu('assets/images/', $T('hero.image')) }}" alt="">@endif
         <img class="ve-hero__pattern" src="assets/icons/showcase-bg.svg" alt="">
 
         <div class="ve-hero__content">

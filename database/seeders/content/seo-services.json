@@ -18,6 +18,15 @@
         {
             "section": "hero",
             "section_label": "Hero",
+            "key": "hero.image",
+            "label": "Hero background picture (optional)",
+            "type": "image",
+            "value": "",
+            "sort": 0
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Digital Marketing & Growth …",
             "type": "html",

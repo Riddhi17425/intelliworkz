@@ -22,20 +22,20 @@
 $faq = ['label' => 'Questions & answers', 'section' => 'FAQs', 'title' => 0, 'sort' => 90, 'fields' => [0 => ['Question'], 1 => ['Answer', 'textarea']]];
 $offer = ['label' => '"What we offer" cards', 'section' => 'What We Offer', 'title' => 'title', 'sort' => 80,
     'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image'], 'href' => ['Link of the arrow (page address)', 'url']]];
-$services = ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'points' => ['Points (one per line)', 'lines']]];
+$services = ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'para' => ['Paragraph (optional, shown above the points)', 'textarea'], 'points' => ['Points (one per line, optional)', 'lines']]];
 $benefits = ['label' => 'Benefit chips under the intro', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5, 'max' => 4];   // two rows of two; a third row runs into the picture strip below
-$statsPair = ['label' => 'Statistic', 'section' => 'Numbers', 'title' => 1, 'sort' => 30, 'add' => false, 'remove' => false, 'fields' => [0 => ['Number'], 1 => ['Label']]];
-$metricsTriple = ['label' => 'Dark number strip', 'section' => 'Numbers', 'title' => 2, 'sort' => 30, 'add' => false, 'remove' => false, 'fields' => [1 => ['Number'], 2 => ['Label']]];
+$statsPair = ['label' => 'Statistic', 'section' => 'Numbers', 'title' => 1, 'sort' => 30, 'fields' => [0 => ['Number'], 1 => ['Label']]];
+$metricsTriple = ['label' => 'Dark number strip', 'section' => 'Numbers', 'title' => 2, 'sort' => 30, 'fields' => [1 => ['Number'], 2 => ['Label']]];
 $toolsPlain = ['label' => 'Tools', 'section' => 'Tools', 'title' => 1, 'sort' => 50, 'fields' => [0 => ['Logo', 'image'], 1 => ['Tool name'], 2 => ['Tagline (e.g. Edit | Assemble)']]];
 $toolsColour = ['label' => 'Tools', 'section' => 'Tools', 'title' => 2, 'sort' => 50, 'fields' => [0 => ['Logo', 'image'], 2 => ['Tool name'], 3 => ['Tagline (e.g. Layout | Publish)']]];
-$toolsNested = ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 1, 'sort' => 50, 'add' => false, 'remove' => false,
+$toolsNested = ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 1, 'sort' => 50,
     'fields' => [0 => ['Logo', 'image'], 1 => ['Tool name'], 2 => ['Tagline']]];
 $gallery = ['label' => 'Gallery images', 'section' => 'Gallery', 'title' => 'cats', 'sort' => 20,
     'fields' => ['img' => ['Image', 'image'], 'cats' => ['Filter categories (keys, space separated)', 'text', 'help' => 'Must match the filter tabs above, e.g. "strategy leads".']]];
-$filters = ['label' => 'Filter tab names', 'section' => 'Gallery', 'kind' => 'map', 'sort' => 19, 'add' => false, 'remove' => false];
-$why = ['label' => '"Why Intelliworkz" cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40, 'add' => false, 'remove' => false,
+$filters = ['label' => 'Filter tab names', 'section' => 'Gallery', 'kind' => 'map', 'sort' => 19];
+$why = ['label' => '"Why Intelliworkz" cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40,
     'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]];
-$whyBg = ['label' => '"Why Intelliworkz" cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40, 'add' => false, 'remove' => false,
+$whyBg = ['label' => '"Why Intelliworkz" cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40,
     'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea'], 'bg' => ['Background picture', 'image']]];
 $workflow = ['label' => 'Process steps', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image']]];
 $workflowTuple = ['label' => 'Process steps', 'section' => 'Process', 'title' => 9, 'sort' => 70, 'add' => false, 'remove' => false,
@@ -47,19 +47,19 @@ return [
         'fields' => ['name' => ['Country / office'], 'address' => ['Address', 'html'], 'phone' => ['Phone number(s)'], 'flag' => ['Flag', 'image'], 'map' => ['Map picture', 'image']]],
     've_form_fields' => ['label' => 'Enquiry form fields', 'section' => 'Enquiry form', 'title' => 0, 'sort' => 2, 'add' => false, 'remove' => false, 'reorder' => false,
         'fields' => [0 => ['Field label'], 1 => ['Placeholder']]],
-    'showcase_cards' => ['label' => 'Dark showcase slides', 'section' => 'Dark Showcase', 'title' => 'tag', 'sort' => 3, 'add' => false, 'remove' => false,
+    'showcase_cards' => ['label' => 'Dark showcase slides', 'section' => 'Dark Showcase', 'title' => 'tag', 'sort' => 3,
         'fields' => ['img' => ['Picture', 'image'], 'tag' => ['Tag'], 'title' => ['Heading (leave empty for the shared one)'], 'text' => ['Text (leave empty for the shared one)', 'textarea'], 'href' => ['Button link (page address)', 'url'],
             'stats' => ['Three numbers', 'repeater', 'fields' => [0 => ['Number'], 1 => ['Label']]]]],
-    'engagement_models' => ['label' => 'Engagement models', 'section' => 'Engagement Model', 'title' => 'title', 'sort' => 4, 'add' => false, 'remove' => false,
+    'engagement_models' => ['label' => 'Engagement models', 'section' => 'Engagement Model', 'title' => 'title', 'sort' => 4,
         'fields' => ['title' => ['Title', 'html'], 'tag' => ['Tag', 'html'], 'img' => ['Picture', 'image'], 'bullets' => ['Points (one per line)', 'lines']]],
 
     // ---------- home page ----------
-    'metrics' => ['label' => 'Number strip', 'section' => 'Hero', 'title' => 'label', 'sort' => 10, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
+    'metrics' => ['label' => 'Number strip', 'section' => 'Hero', 'title' => 'label', 'sort' => 10, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
     'domains' => ['label' => 'Service cards', 'section' => 'Services', 'title' => 'title', 'sort' => 20,
         'fields' => ['title' => ['Card title'], 'intro' => ['Introduction', 'textarea'], 'items' => ['Links (one per line; add  | page-address  to link one)', 'lines'], 'cta' => ['Button text'], 'href' => ['Button link', 'url']]],
-    'outsourcing_steps' => ['label' => '4-step engagement process', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 30, 'add' => false, 'remove' => false,
+    'outsourcing_steps' => ['label' => '4-step engagement process', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 30,
         'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
-    'outsourcing_cards' => ['label' => 'Outsourcing cards', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 31, 'add' => false, 'remove' => false,
+    'outsourcing_cards' => ['label' => 'Outsourcing cards', 'section' => 'Outsourcing', 'title' => 'title', 'sort' => 31,
         'fields' => ['title' => ['Title'], 'lead' => ['Introduction', 'textarea'], 'items' => ['Bullet points (one per line)', 'lines'], 'text' => ['Text', 'textarea'], 'img' => ['Picture', 'image']]],
     'industries' => ['label' => 'Industry cards', 'section' => 'Industries', 'title' => 'title', 'sort' => 40,
         'fields' => ['title' => ['Industry'], 'text' => ['Hover text', 'textarea'], 'img' => ['Photo', 'image'],
@@ -67,24 +67,24 @@ return [
             'img4' => ['Popup slideshow: 4th picture (optional)', 'image'], 'img5' => ['Popup slideshow: 5th picture (optional)', 'image'],
             'popup_title' => ['Popup heading (optional, default: industry name)'], 'popup_text' => ['Popup description text (optional)', 'textarea'],
             'video' => ['Popup video (optional: YouTube / Vimeo link or an uploaded file)', 'video']]],
-    'reasons' => ['label' => 'Reasons to choose us', 'section' => 'Why Intelliworkz', 'title' => 0, 'sort' => 50, 'add' => false, 'remove' => false, 'fields' => [0 => ['Heading'], 1 => ['Description', 'textarea']]],
-    'products_data' => ['label' => 'Products', 'section' => 'Products', 'title' => 'name', 'sort' => 60, 'add' => false, 'remove' => false,
+    'reasons' => ['label' => 'Reasons to choose us', 'section' => 'Why Intelliworkz', 'title' => 0, 'sort' => 50, 'fields' => [0 => ['Heading'], 1 => ['Description', 'textarea']]],
+    'products_data' => ['label' => 'Products', 'section' => 'Products', 'title' => 'name', 'sort' => 60,
         'fields' => ['name' => ['Product name'], 'tag' => ['Tagline'], 'text' => ['Description', 'textarea'], 'img' => ['Screenshot', 'image'],
             'features' => ['Key capabilities', 'repeater', 'fields' => [0 => ['Capability'], 1 => ['What it means', 'textarea']]]]],
-    'process_row_1' => ['label' => 'Process cards (top row)', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'add' => false, 'remove' => false,
+    'process_row_1' => ['label' => 'Process cards (top row)', 'section' => 'Process', 'title' => 'title', 'sort' => 70,
         'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Photo', 'image']]],
-    'process_row_2' => ['label' => 'Process cards (bottom row)', 'section' => 'Process', 'title' => 'title', 'sort' => 71, 'add' => false, 'remove' => false,
+    'process_row_2' => ['label' => 'Process cards (bottom row)', 'section' => 'Process', 'title' => 'title', 'sort' => 71,
         'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Photo', 'image']]],
     'blog_posts' => ['label' => 'Insight posts', 'section' => 'Insights', 'title' => 'title', 'sort' => 80,
         'fields' => ['img' => ['Image', 'image'], 'date' => ['Date'], 'title' => ['Title'], 'href' => ['Read More link (page address)', 'url']]],
 
     // ---------- about ----------
-    'ab_metrics' => ['label' => 'Number strip', 'section' => 'Numbers', 'title' => 'label', 'sort' => 5, 'add' => false, 'remove' => false, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
-    'ab_purpose' => ['label' => 'Purpose points', 'section' => '04 Our Purpose', 'title' => 'title', 'sort' => 10, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
+    'ab_metrics' => ['label' => 'Number strip', 'section' => 'Numbers', 'title' => 'label', 'sort' => 5, 'fields' => ['value' => ['Number'], 'label' => ['Label']]],
+    'ab_purpose' => ['label' => 'Purpose points', 'section' => '04 Our Purpose', 'title' => 'title', 'sort' => 10, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
     'ab_nodes' => ['label' => 'Capability circles around the centre', 'section' => '05 Our Approach', 'title' => 'label', 'sort' => 12, 'add' => false, 'remove' => false, 'fields' => ['label' => ['Name']]],
-    'ab_reasons' => ['label' => 'Reasons to choose us', 'section' => '07 Why Choose Us', 'title' => 'title', 'sort' => 16, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
+    'ab_reasons' => ['label' => 'Reasons to choose us', 'section' => '07 Why Choose Us', 'title' => 'title', 'sort' => 16, 'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
     // ---------- contact ----------
-    'ct_offices' => ['label' => 'Office details (tabs)', 'section' => 'Offices', 'kind' => 'maprows', 'title' => 'country', 'sort' => 10, 'add' => false, 'remove' => false,
+    'ct_offices' => ['label' => 'Office details (tabs)', 'section' => 'Offices', 'kind' => 'maprows', 'title' => 'country', 'sort' => 10,
         'fields' => ['tab' => ['Tab label'], 'country' => ['Country'], 'city' => ['City / region'], 'phone' => ['Phone number(s)'], 'email' => ['E-mail'], 'call' => ['Phone number for the "Call" button (digits only)'],
             'map' => ['Google Maps link', 'url'],
             'blocks' => ['Main address', 'repeater', 'wrap' => true, 'fields' => [0 => ['Label'], 1 => ['Address', 'textarea']]],
@@ -98,7 +98,7 @@ return [
     've_cards' => ['label' => 'Portfolio videos', 'section' => 'Portfolio', 'title' => 'title', 'sort' => 20,
         'fields' => ['title' => ['Title'], 'meta' => ['Categories shown under the title', 'html'], 'cats' => ['Filter categories (keys, space separated)'], 'video' => ['Video (YouTube / Vimeo link or an uploaded file)', 'video']]],
     've_stats_top' => $statsPair, 've_stats_bottom' => $statsPair,
-    've_pillars' => ['label' => 'Feature cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40, 'add' => false, 'remove' => false,
+    've_pillars' => ['label' => 'Feature cards', 'section' => 'Why Intelliworkz', 'title' => 'title', 'sort' => 40,
         'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea'], 'img' => ['Background picture', 'image']]],
     've_tools' => array_merge($toolsPlain, ['max' => 10]),   // two rows of tools fit above the artwork
     've_services' => $services,
@@ -108,7 +108,7 @@ return [
 
     // ---------- magazine ----------
     'mg_benefits' => $benefits,
-    'mg_examples' => ['label' => 'Example strip', 'section' => 'Our Examples', 'title' => 'type', 'sort' => 20, 'add' => false, 'remove' => false, 'fields' => ['img' => ['Picture', 'image']]],
+    'mg_examples' => ['label' => 'Example strip', 'section' => 'Our Examples', 'title' => 'type', 'sort' => 20, 'fields' => ['img' => ['Picture', 'image']]],
     'mg_metrics' => $metricsTriple,
     'mg_why' => $why,
     'mg_tools' => $toolsColour,
@@ -162,7 +162,7 @@ return [
     'pk_tiles' => ['label' => 'Work grid (one card per position; each tab has its own picture)', 'section' => 'Gallery', 'title' => 'img', 'sort' => 20, 'add' => false, 'remove' => false,
         'fields' => ['img' => ['Picture on the "All" tab', 'image'], 'rollout' => ['Picture on the "Packaging Rollout" tab', 'image'], 'beauty' => ['Picture on the "Beauty & Skincare" tab', 'image'],
             'food' => ['Picture on the "Food & Beverage" tab', 'image'], 'appliance' => ['Picture on the "Appliance & Electronics" tab', 'image']]],
-    'pk_stats' => ['label' => 'Statistics', 'section' => 'Numbers', 'kind' => 'groups', 'group' => 'Row', 'title' => 2, 'sort' => 30, 'add' => false, 'remove' => false,
+    'pk_stats' => ['label' => 'Statistics', 'section' => 'Numbers', 'kind' => 'groups', 'group' => 'Row', 'title' => 2, 'sort' => 30,
         'fields' => [0 => ['Number'], 1 => ['Suffix (e.g. +)'], 2 => ['Label', 'html']]],
     'pk_why' => $whyBg,
     'pk_tools' => array_merge($toolsColour, ['max' => 4]),  // one row only: the artwork starts right below it
@@ -177,7 +177,7 @@ return [
     'ppt_thumbs' => $gallery,
     'ppt_stats_top' => $statsPair, 'ppt_stats_bottom' => $statsPair,
     'ppt_why' => $why,
-    'ppt_tools' => ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 3, 'sort' => 50, 'add' => false, 'remove' => false,
+    'ppt_tools' => ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 3, 'sort' => 50,
         'fields' => [1 => ['Logo', 'image'], 3 => ['Tool name'], 4 => ['Tagline']]],
     'ppt_services' => $services,
     'ppt_workflow' => $workflowTuple,
@@ -190,35 +190,35 @@ return [
     'pp_strip' => $gallery,
     'pp_stats_top' => $statsPair, 'pp_stats_bottom' => $statsPair,
     'pp_why' => $why,
-    'pp_tools' => ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 3, 'sort' => 50, 'add' => false, 'remove' => false,
+    'pp_tools' => ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 3, 'sort' => 50,
         'fields' => [1 => ['Logo', 'image'], 3 => ['Tool name'], 4 => ['Tagline']]],
     'pp_services' => $services,
-    'pp_flow' => ['label' => 'Process cards', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'add' => false, 'remove' => false, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
+    'pp_flow' => ['label' => 'Process cards', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
     'pp_offers' => $offer,
     'pp_faqs' => $faq,
 
     // ---------- manufacturing ----------
-    'mf_lose' => ['label' => '"Where manufacturers lose ground" cards', 'section' => 'Where Manufacturers Lose Ground', 'title' => 'title', 'sort' => 30, 'add' => false, 'remove' => false,
+    'mf_lose' => ['label' => '"Where manufacturers lose ground" cards', 'section' => 'Where Manufacturers Lose Ground', 'title' => 'title', 'sort' => 30,
         'fields' => ['title' => ['Title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image']]],
     'mf_services' => ['label' => 'Services accordion', 'section' => 'Services', 'title' => 'title', 'sort' => 60, 'fields' => ['title' => ['Service name'], 'text' => ['Description', 'textarea']]],
-    'svc_sections' => ['label' => 'Service groups', 'section' => 'Service Groups', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
+    'svc_sections' => ['label' => 'Service groups', 'section' => 'Service Groups', 'title' => 'title', 'sort' => 20,
         'fields' => ['tab' => ['Name in the tab bar'], 'tag' => ['Small coloured label'], 'title' => ['Heading'], 'text' => ['Description', 'textarea'], 'btn' => ['Button text'], 'href' => ['Button link', 'url'], 'img' => ['Banner picture', 'image'],
             'items' => ['Services (one per line; add  | page-address  to link one)', 'lines']]],
     'mf_offers' => $offer,
     'mf_faqs' => $faq,
 
     // ---------- case study ----------
-    'cs_profile' => ['label' => 'Client box (hero)', 'section' => 'Hero', 'title' => 'title', 'sort' => 6, 'add' => false, 'remove' => false,
+    'cs_profile' => ['label' => 'Client box (hero)', 'section' => 'Hero', 'title' => 'title', 'sort' => 6,
         'fields' => ['title' => ['Label'], 'text' => ['Value', 'textarea']]],
-    'cs_stats' => ['label' => 'Headline numbers', 'section' => 'Numbers', 'title' => 'text', 'sort' => 10, 'add' => false, 'remove' => false,
+    'cs_stats' => ['label' => 'Headline numbers', 'section' => 'Numbers', 'title' => 'text', 'sort' => 10,
         'fields' => ['title' => ['Number'], 'text' => ['Label']]],
-    'cs_highlights' => ['label' => 'Key highlights', 'section' => '01 Industry Overview', 'title' => 'title', 'sort' => 20, 'add' => false, 'remove' => false,
+    'cs_highlights' => ['label' => 'Key highlights', 'section' => '01 Industry Overview', 'title' => 'title', 'sort' => 20,
         'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
     'cs_challenges' => ['label' => 'Challenges', 'section' => '02 The Challenge', 'title' => 'title', 'sort' => 30, 'max' => 6,
         'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
     'cs_approach' => ['label' => 'Approach steps', 'section' => '03 The Approach', 'title' => 'title', 'sort' => 40, 'max' => 8,
         'fields' => ['title' => ['Heading'], 'text' => ['Description', 'textarea']]],
-    'cs_results' => ['label' => 'Outcomes', 'section' => '04 Results & Brand Outcomes', 'title' => 'title', 'sort' => 50, 'add' => false, 'remove' => false,
+    'cs_results' => ['label' => 'Outcomes', 'section' => '04 Results & Brand Outcomes', 'title' => 'title', 'sort' => 50,
         'fields' => ['title' => ['Word'], 'text' => ['Description', 'textarea']]],
     'cs_services' => ['label' => 'Services delivered', 'section' => '06 Services Delivered', 'title' => 'title', 'sort' => 60, 'max' => 12,
         'fields' => ['title' => ['Service'], 'text' => ['Short description']]],

@@ -25,7 +25,7 @@
 .metrics--dark .metric__label { font-weight: 500; line-height: 30px; color: var(--c-border-gray); }
 
 /* ---------- Why cards ---------- */
-.mg-why { display: flex; gap: 24px; height: 252px; }
+.mg-why { display: flex; gap: 24px; min-height: 252px; }
 .mg-why__card { flex: 1; display: flex; flex-direction: column; border-radius: 12px; }
 .mg-why__card.has-shadow { box-shadow: 0 4px 16px rgba(0, 0, 0, .1); border-radius: 16px; }
 .mg-why__head { display: flex; justify-content: space-between; align-items: center; height: 100px; padding: 24px; background: var(--c); border-radius: 10px 10px 0 0; }
@@ -42,12 +42,18 @@
 .mg-tools__row { display: flex; flex-wrap: wrap; gap: 28px 24px; justify-content: space-between; align-items: center; }   /* many tools wrap onto more rows */
 .mg-tools__row.is-wrapped { justify-content: center; }
 .mg-tool { display: flex; align-items: center; gap: 20px; }
-.mg-tool__icon { display: grid; place-items: center; flex: none; width: 72px; height: 72px; border-radius: 10px; }
+.mg-tool__icon { display: grid; place-items: center; flex: none; width: auto; min-width: 72px; height: 72px; border-radius: 10px; }   /* a wider logo (e.g. PowerPoint + Slides) widens its tile instead of running over the text */
 .mg-tool__icon img { max-width: none; }
 .mg-tool div { display: flex; flex-direction: column; gap: 8px; }
 .mg-tool strong { font-weight: 600; font-size: 18px; line-height: normal; color: #111827; }
 .mg-tool span { font-size: 16px; line-height: 24px; color: var(--c-dark-gray); }
 .mg-tools__divider { flex: none; width: 1px; height: 58px; background: var(--c-border-gray); }
+/* more than 5 tools: the strip scrolls by itself (set up in main.js), pauses on hover */
+.mg-tools.is-marquee { overflow: hidden; }
+.mg-tools__row.is-marquee { flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 24px; animation: mg-tools-scroll var(--mg-time, 30s) linear infinite; }
+.mg-tools__row.is-marquee .mg-tool { flex: none; }
+.mg-tools.is-marquee:hover .mg-tools__row { animation-play-state: paused; }
+@keyframes mg-tools-scroll { to { transform: translateX(calc(var(--mg-shift, 0px) * -1)); } }
 
 /* ---------- Services accordion (variant) ---------- */
 .acc--mag .acc-points { width: 100%; }
@@ -63,3 +69,5 @@
 .mg-flow h3 { font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); }
 .mg-flow p { font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
 .mg-flow[style*="center"] h3 { margin-inline: auto; }
+/* full-colour tool logos supplied as photos (SEO page): fit them into the 72px tile */
+.mg-tool__icon img[src*="assets/images/"] { width: 48px; height: 48px; object-fit: contain; }

@@ -12,7 +12,7 @@ $vc = 'assets/icons/video/';         // shared icons
 
     <!-- ============ HERO ============ -->
     <section class="ve-hero ve-hero--plain">
-        <div class="cl-hero__art" role="img" aria-label=""></div>
+        <div class="cl-hero__art" role="img" aria-label=""@if($T('hero.image')) style="background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0) 65%), url('{{ iu('assets/images/', $T('hero.image')) }}') center / cover no-repeat"@endif></div>
         <img class="ve-hero__pattern" src="assets/icons/showcase-bg.svg" alt="">
 
         <div class="ve-hero__content">

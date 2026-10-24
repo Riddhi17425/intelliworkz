@@ -282,6 +282,8 @@
     .seo-tools__col { width: auto; }
     .mg-tools { border-block: 1px solid var(--c-border-gray); }
     .mg-tools__row, .mg-tools__row.is-wrapped { flex-wrap: wrap; justify-content: flex-start; gap: 24px 36px; }
+    .mg-tools__row.is-marquee { flex-wrap: nowrap; gap: 24px; }
+    .mg-tools__row.is-marquee .mg-tools__divider { display: block; }
 
     /* ---- selected-work scenes (SEO / 3D / PPT) ---- */
     .seo-pf, .cl-pf { width: 100%; }

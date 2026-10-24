@@ -94,6 +94,31 @@ class PageLayoutTest extends CmsTestCase
         $this->assertSame(1, substr_count($this->get('/jadav')->getContent(), 'class="container ve-faq"'));
     }
 
+    public function test_a_section_can_be_copied_from_a_page_the_editor_made(): void
+    {
+        $source = $this->clonePage('2d-animation', '2D Animation', '3d-modeling-rendering');
+        $faqs = ContentList::where('scope', '2d-animation')->where('key', 'td_faqs')->firstOrFail();
+        $items = $faqs->items;
+        $items[0][0] = 'Our own question?';
+        $faqs->items = $items;
+        $faqs->save();
+
+        $page = $this->clonePage('jadav', 'Jadav', 'packaging-design');
+        $this->actingAs($this->admin())->get('/admin/pages/jadav/content')->assertOk()
+            ->assertSee('Your pages')->assertSee('2D Animation (3D Modeling and Rendering design)');
+
+        $this->post('/admin/pages/jadav/sections', ['tpl' => '2d-animation', 'key' => 'faq'])->assertRedirect()->assertSessionHas('success');
+        $item = collect($page->fresh()->layout)->firstWhere('tpl', '3d-modeling-rendering');
+        $this->assertSame('faq', $item['key']);
+        $copy = ContentList::where('scope', 'jadav~' . $item['id'])->where('key', 'td_faqs')->firstOrFail();
+        $this->assertSame('Our own question?', $copy->items[0][0]);      // the text of the page it came from, not the original design's
+
+        auth()->logout();
+        $this->get('/jadav')->assertOk()->assertSee('Our own question?');
+        $this->assertSame($items, $faqs->fresh()->items);                // the source page is unchanged
+        $this->assertSame($source->layout, $source->fresh()->layout);
+    }
+
     public function test_every_section_of_every_design_can_be_added_to_a_page(): void
     {
         $this->clonePage('mixer', 'Mixer', 'video-editing');

@@ -53,55 +53,50 @@ $accents = ['var(--c-red)', 'var(--c-navy)', 'var(--c-teal)', 'var(--c-green)', 
                 @endforeach
             </div>
         </div>
-        <svg class="cs-snapshot__art" viewBox="0 0 1800 150" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-            <defs>
-                <linearGradient id="csRed" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d6283b"/><stop offset=".55" stop-color="#f3b9bf"/><stop offset="1" stop-color="#f4f4f6"/></linearGradient>
-                <linearGradient id="csSlab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ececf0"/><stop offset=".45" stop-color="#8d8d96"/><stop offset="1" stop-color="#26262c"/></linearGradient>
-                <linearGradient id="csDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4a52"/><stop offset="1" stop-color="#0c0c10"/></linearGradient>
-                <filter id="csGlow" x="-5%" y="-40%" width="110%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
-            </defs>
-            <path d="M0,104 C200,70 420,78 640,118 L640,150 L0,150 Z" fill="url(#csRed)"/>
-            <path d="M0,104 C200,70 420,78 640,118" fill="none" stroke="#e23a4c" stroke-width="3"/>
-            <path d="M0,128 C220,104 430,110 660,140 L660,150 L0,150 Z" fill="#fff" opacity=".55"/>
-            <g>
-                <path d="M520,150 L700,86 Q720,78 756,78 L930,80 Q958,81 958,110 L958,150 Z" fill="url(#csSlab)"/>
-                <path d="M700,86 Q720,78 756,78 L930,80 Q958,81 958,110" fill="none" stroke="#8a56d6" stroke-width="5" filter="url(#csGlow)" opacity=".8"/>
-                <path d="M700,86 Q720,78 756,78 L930,80 Q958,81 958,110" fill="none" stroke="#b891f0" stroke-width="2.5"/>
-            </g>
-            <g>
-                <path d="M880,150 L1040,92 Q1060,84 1096,84 L1260,86 Q1290,87 1290,116 L1290,150 Z" fill="url(#csSlab)"/>
-                <path d="M1040,92 Q1060,84 1096,84 L1260,86 Q1290,87 1290,116" fill="none" stroke="#3b8be8" stroke-width="5" filter="url(#csGlow)" opacity=".8"/>
-                <path d="M1040,92 Q1060,84 1096,84 L1260,86 Q1290,87 1290,116" fill="none" stroke="#7cb4f5" stroke-width="2.5"/>
-            </g>
-            <g>
-                <path d="M1230,150 L1390,98 Q1410,90 1446,90 L1600,92 Q1630,93 1630,120 L1630,150 Z" fill="url(#csSlab)"/>
-                <path d="M1390,98 Q1410,90 1446,90 L1600,92 Q1630,93 1630,120" fill="none" stroke="#7bbf3a" stroke-width="5" filter="url(#csGlow)" opacity=".8"/>
-                <path d="M1390,98 Q1410,90 1446,90 L1600,92 Q1630,93 1630,120" fill="none" stroke="#a6dc6a" stroke-width="2.5"/>
-            </g>
-            <path d="M1560,150 L1700,70 Q1730,56 1770,58 L1800,60 L1800,150 Z" fill="url(#csDark)"/>
-            <path d="M1700,70 Q1730,56 1770,58 L1800,60" fill="none" stroke="#6a6a74" stroke-width="2.5"/>
-        </svg>
+        @if($T('numbers.2'))
+            <div class="container"><figure class="cs-snapshot__photo"><img src="{{ iu('assets/images/', $T('numbers.2')) }}" alt="" loading="lazy"></figure></div>
+        @endif
+        @unless($T('numbers.2'))<img class="cs-snapshot__art" src="assets/images/case-study/snapshot-art.png" alt="" aria-hidden="true">@endunless
     </section>
 
     <!-- ============ 01 INDUSTRY OVERVIEW ============ -->
+    @php
+        // heading: the last word is drawn lighter (only for plain-text headings)
+        $ovTitle = trim($T('overview.2'));
+        if ($ovTitle !== '' && strip_tags($ovTitle) === $ovTitle && str_contains($ovTitle, ' ')) {
+            $words = explode(' ', $ovTitle);
+            $lastWord = array_pop($words);
+            $ovTitle = implode(' ', $words) . ' <span>' . $lastWord . '</span>';
+        }
+        $hlTones = ['#E0263A', '#3B2FBF', '#1E88E5', '#5BAF2E'];
+        $hlIcons = [
+            '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/>',
+            '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+            '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+            '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/>',
+        ];
+    @endphp
     <section class="container cs-overview">
         <div class="cs-overview__top">
+            <div class="cs-overview__copy">
+                <h2 class="h2 cs-overview__title">{!! $ovTitle !!}</h2>
+                <p>{!! $T('overview.3') !!}</p>
+            </div>
             @if($T('overview.5'))
                 <figure class="cs-overview__pic"><img src="{{ iu('assets/images/', $T('overview.5')) }}" alt="" loading="lazy"></figure>
             @endif
-            <div class="cs-overview__copy">
-                <h2 class="h2">{!! $T('overview.2') !!}</h2>
-                <p>{!! $T('overview.3') !!}</p>
-            </div>
         </div>
         <div class="cs-highlights">
-            <h3 class="cs-highlights__title">{!! $T('overview.4') !!}</h3>
+            <span class="cs-eyebrow">{!! $T('overview.4') !!}</span>
             <ul>
                 @foreach($cs_highlights as $h)
-                    <li style="--c: {{ $accents[$loop->index % count($accents)] }}">
-                        <span class="cs-hl__badge" aria-hidden="true"></span>
-                        <strong>{!! $h['title'] !!}</strong>
-                        <span class="cs-hl__text">{!! $h['text'] !!}</span>
+                    <li style="--c: {{ $hlTones[$loop->index % count($hlTones)] }}">
+                        <span class="cs-hl__tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{!! $hlIcons[$loop->index % count($hlIcons)] !!}</svg></span>
+                        <div class="cs-hl__body">
+                            <span class="cs-hl__line" aria-hidden="true"></span>
+                            <strong>{!! $h['title'] !!}</strong>
+                            <span class="cs-hl__text">{!! $h['text'] !!}</span>
+                        </div>
                     </li>
                 @endforeach
             </ul>
@@ -109,20 +104,43 @@ $accents = ['var(--c-red)', 'var(--c-navy)', 'var(--c-teal)', 'var(--c-green)', 
     </section>
 
     <!-- ============ 02 THE CHALLENGE ============ -->
-    <section class="container cs-challenge">
-        <header class="cs-head">
-            <h2 class="h2">{!! $T('challenge.2') !!}</h2>
+    @php
+        $chIcons = [
+            '<path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
+            '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+            '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/>',
+            '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/>',
+            '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/>',
+        ];
+    @endphp
+    @php
+        $chTitle = trim($T('challenge.2'));
+        if ($chTitle !== '' && strip_tags($chTitle) === $chTitle && str_contains($chTitle, ' ')) {
+            $w = explode(' ', $chTitle); $last = array_pop($w);
+            $chTitle = implode(' ', $w) . ' <span>' . $last . '</span>';
+        }
+        $chIcons = [
+            '<path d="M14 3h7v7"/><path d="M10 14 21 3"/><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
+            '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+            '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/>',
+            '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/>',
+            '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M15 9a4 4 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/>',
+        ];
+    @endphp
+    <section class="container cs-split">
+        <header class="cs-split__intro">
+            <h2 class="h2">{!! $chTitle !!}</h2>
             <p>{!! $T('challenge.3') !!}</p>
         </header>
-        <div class="cs-cards">
+        <ol class="cs-split__grid">
             @foreach($cs_challenges as $c)
-                <article class="cs-card" style="--c: {{ $accents[$loop->index % count($accents)] }}">
-                    <span class="cs-card__no">{{ sprintf('%02d', $loop->iteration) }}</span>
+                <li class="cs-split__item" style="--c: {{ $accents[$loop->index % count($accents)] }}">
+                    <span class="cs-split__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{!! $chIcons[$loop->index % count($chIcons)] !!}</svg></span>
                     <h3>{!! $c['title'] !!}</h3>
                     <p>{!! $c['text'] !!}</p>
-                </article>
+                </li>
             @endforeach
-        </div>
+        </ol>
     </section>
 
     <!-- ============ 03 THE APPROACH (dark) ============ -->
@@ -147,14 +165,25 @@ $accents = ['var(--c-red)', 'var(--c-navy)', 'var(--c-teal)', 'var(--c-green)', 
     </section>
 
     <!-- ============ 04 RESULTS ============ -->
+    @php
+        $tones = ['#C42030', '#282762', '#2A9D8F', '#D99A00'];
+        // simple line icons, one per card (repeat after four)
+        $icons = [
+            '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 4.5 9-4.5"/>',
+            '<circle cx="12" cy="12" r="3"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>',
+            '<path d="M21 12a9 9 0 0 1-15.4 6.4L3 16"/><path d="M3 12a9 9 0 0 1 15.4-6.4L21 8"/><path d="M21 3v5h-5"/><path d="M3 21v-5h5"/>',
+            '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+        ];
+    @endphp
     <section class="container cs-results">
-        <header class="cs-head">
+        <header class="cs-head cs-results__head">
             <h2 class="h2">{!! $T('results.2') !!}</h2>
             <p>{!! $T('results.3') !!}</p>
         </header>
         <div class="cs-outcomes">
             @foreach($cs_results as $r)
-                <article class="cs-outcome" style="--c: {{ $accents[$loop->index % count($accents)] }}">
+                <article class="cs-outcome" style="--c: {{ $tones[$loop->index % count($tones)] }}">
+                    <span class="cs-outcome__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icons[$loop->index % count($icons)] !!}</svg></span>
                     <h3>{!! $r['title'] !!}</h3>
                     <p>{!! $r['text'] !!}</p>
                 </article>
@@ -164,8 +193,11 @@ $accents = ['var(--c-red)', 'var(--c-navy)', 'var(--c-teal)', 'var(--c-green)', 
 
     <!-- ============ 05 THE IMPACT ============ -->
     <section class="container cs-impact">
-        <h2 class="cs-impact__label">{!! $T('impact.2') !!}</h2>
-        <blockquote>{!! $T('impact.3') !!}</blockquote>
+        <div class="cs-impact__side">
+            <svg class="cs-impact__mark" viewBox="0 0 48 40" fill="currentColor" aria-hidden="true"><path d="M0 40V24C0 10.7 6.3 2.7 18.9 0l2.6 5.2C14.3 7.6 10.7 12.1 10.4 18.9H20V40H0Zm28 0V24C28 10.7 34.3 2.7 46.9 0l2.6 5.2c-7.2 2.4-10.8 6.9-11.1 13.7H48V40H28Z"/></svg>
+            <h2 class="cs-impact__label">{!! $T('impact.2') !!}</h2>
+        </div>
+        <blockquote class="cs-impact__quote">{!! $T('impact.3') !!}</blockquote>
     </section>
 
     <!-- ============ 06 SERVICES DELIVERED ============ -->

@@ -123,8 +123,16 @@ class ContentController extends Controller
         $designs = SectionPlan::designs();
         foreach (SectionPlan::layout($page) as $item) {
             if ($item['tpl']) {
-                $badge = SectionPlan::label($item['key']) . ' · added from ' . ($designs[$item['tpl']] ?? $item['tpl']);
-                $out = array_merge($out, $this->sections(SectionPlan::scope($page, $item), $item['id'] . '-', $badge, $item['tpl']));
+                $out = array_merge($out, $this->sections(SectionPlan::scope($page, $item), $item['id'] . '-', null, $item['tpl']));
+            }
+        }
+        // short names; a section added a second time gets "(2)", "(3)" so the tabs stay distinguishable
+        $seen = [];
+        foreach ($out as $i => $sec) {
+            $n = $sec['name'];
+            $seen[$n] = ($seen[$n] ?? 0) + 1;
+            if ($seen[$n] > 1) {
+                $out[$i]['name'] = $n . ' (' . $seen[$n] . ')';
             }
         }
         return $out;
@@ -174,7 +182,7 @@ class ContentController extends Controller
             $allOff = !array_diff($keys, $offFields) && !array_diff($lists, $offLists);
             $someOff = array_intersect($keys, $offFields) || array_intersect($lists, $offLists);
             if ($allOff && $someOff) {
-                $sections[$i]['name'] .= ' — switched off on the website';
+                $sections[$i]['name'] .= ' (off)';
                 $sections[$i]['off'] = true;
             }
         }

@@ -1,5 +1,5 @@
 {{-- One named card of a keyed list (e.g. an office tab on the Contact page). --}}
-<div class="adm-item is-open" data-item>
+<div class="adm-item {{ !empty($fresh) ? 'is-open' : '' }}" data-item>
     <div class="adm-item__head" data-act="toggle">
         <span class="adm-item__no"><i class="bi bi-geo-alt"></i></span>
         <span class="adm-item__title">{{ $title }}</span>

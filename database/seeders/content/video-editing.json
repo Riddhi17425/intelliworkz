@@ -38,7 +38,7 @@
             "key": "hero.3",
             "label": "Paragraph: Home / Services / Brand & Creative / Video Ed…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Brand &amp; Creative</a> / <span>Video Editing</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-4\">Post-Production</a> / <span>Video Editing</span>",
             "sort": 3
         },
         {
@@ -47,7 +47,7 @@
             "key": "hero.4",
             "label": "Main heading: Video Editing Services",
             "type": "text",
-            "value": "Video Editing Services",
+            "value": "Video Editing Services That Earn Attention",
             "sort": 4
         },
         {
@@ -65,7 +65,7 @@
             "key": "hero.6",
             "label": "Bold label: Dedicated Project Manager",
             "type": "text",
-            "value": "Dedicated Project Manager",
+            "value": "Dedicated In-House Team",
             "sort": 6
         },
         {
@@ -74,7 +74,7 @@
             "key": "hero.7",
             "label": "Text: One point of contact throughout the project.",
             "type": "text",
-            "value": "One point of contact throughout the project.",
+            "value": "Our in-house team coordinates video editing, feedback and final delivery through a clear project workflow.",
             "sort": 7
         },
         {
@@ -83,7 +83,7 @@
             "key": "hero.8",
             "label": "Heading: Let's bring your magazine to life.",
             "type": "text",
-            "value": "Let's bring your magazine to life.",
+            "value": "Lets Discuss Video Editing",
             "sort": 8
         },
         {
@@ -92,7 +92,7 @@
             "key": "hero.9",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Share a brief description and our team will contact you to discuss scope, deliverables and next steps.",
             "sort": 9
         },
         {
@@ -128,7 +128,7 @@
             "key": "portfolio.3",
             "label": "Heading: Selected Video Editing Work",
             "type": "text",
-            "value": "Selected Video Editing Work",
+            "value": "Our Work",
             "sort": 13
         },
         {
@@ -137,7 +137,7 @@
             "key": "portfolio.4",
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
-            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "value": "Explore approved video editing examples across relevant formats and applications.",
             "sort": 14
         },
         {
@@ -200,7 +200,7 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "Why Intelliworkz",
+            "value": "What You Get From Our Professional Video Editing Services That a Freelancer Cannot Offer",
             "sort": 21
         },
         {
@@ -209,7 +209,7 @@
             "key": "why-intelliworkz.2",
             "label": "Paragraph: Most design problems in publishing are not cr…",
             "type": "textarea",
-            "value": "Most design problems in publishing are not creative problems. They are production problems: inconsistent output, missed deadlines, each issue that needs re-briefing, and source files that nobody can edit. We work differently. The same team handles your publication across every issue. Your grid, your typography, your cover format, and your brand rules are documented and followed from the first issue onward.",
+            "value": "We work differently because your account is managed by a team instead of one person. When your workload increases, we assign more editors instead of extending your deadline. If one editor is on leave, another team member continues the work using the same project files and instructions.",
             "sort": 22
         },
         {
@@ -290,7 +290,7 @@
             "key": "dark-showcase-shared.1",
             "label": "Heading: What Our Video Editing Services Cov…",
             "type": "text",
-            "value": "What Our Video Editing Services Cover",
+            "value": "Selected Video Editing Case Studies",
             "sort": 31
         },
         {
@@ -299,7 +299,7 @@
             "key": "what-we-offer-cta-engagement.3",
             "label": "Heading: what we offer",
             "type": "text",
-            "value": "what we offer",
+            "value": "What We Offer",
             "sort": 32
         },
         {
@@ -308,7 +308,7 @@
             "key": "what-we-offer-cta-engagement.4",
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
-            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "value": "Explore related Intelliworkz services that support your wider business needs.",
             "sort": 33
         },
         {
@@ -326,7 +326,7 @@
             "key": "what-we-offer-cta-engagement.5",
             "label": "Heading: Book a Free Consultation",
             "type": "html",
-            "value": "Book a Free <br>Consultation",
+            "value": "Let&#039;s Discuss Your Video Editing",
             "sort": 35
         },
         {
@@ -335,7 +335,7 @@
             "key": "what-we-offer-cta-engagement.2",
             "label": "Button text: Let’s Talk",
             "type": "text",
-            "value": "Let’s Talk",
+            "value": "Start a Project",
             "sort": 36
         },
         {
@@ -362,10 +362,10 @@
             "key": "ve_benefits",
             "scope": "video-editing",
             "items": [
-                "100% In-House Editing Team",
-                "Turnaround Confirmed Upfront",
-                "Same / Similar Editors Across Projects",
-                "Multi-Format & Multi-Platform Delivery"
+                "Corporate Event Videos",
+                "Corporate Films",
+                "Social Media Reels",
+                "YouTube Videos"
             ]
         },
         {
@@ -402,13 +402,10 @@
             "key": "ve_filters",
             "scope": "video-editing",
             "items": {
-                "all": "All",
-                "brand-films": "Brand Films",
-                "commercials": "Commercials",
-                "product-videos": "Product Videos",
-                "events": "Events",
-                "social": "Social",
-                "training": "Training"
+                "all": "All Work",
+                "editing": "Editing and Assembly",
+                "finishing": "Finishing and Post",
+                "delivery": "Delivery and Localisation"
             }
         },
         {
@@ -418,30 +415,30 @@
                 {
                     "title": "Brand Film",
                     "meta": "Brand Films&nbsp; /&nbsp; Commercials",
-                    "cats": "brand-films commercials",
+                    "cats": "editing",
                     "overlay": null,
-                    "video": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                    "video": "uploads/videos/2026/10/hiring-video-new-trfkwnwb.mp4"
                 },
                 {
                     "title": "Product Video",
                     "meta": "Product Videos&nbsp; /&nbsp; Social",
-                    "cats": "product-videos social",
+                    "cats": "finishing",
                     "overlay": "pf-overlay-1.png",
                     "video": "https://www.w3schools.com/html/mov_bbb.mp4"
                 },
                 {
                     "title": "Commercial",
                     "meta": "Commercials&nbsp; /&nbsp; Brand Films",
-                    "cats": "commercials brand-films",
+                    "cats": "delivery",
                     "overlay": "pf-overlay-2.png",
                     "video": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
                 },
                 {
                     "title": "Event Film",
                     "meta": "Events&nbsp; /&nbsp; Social",
-                    "cats": "events social",
+                    "cats": "editing finishing",
                     "overlay": "pf-overlay-3.png",
-                    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+                    "video": "https://www.youtube.com/shorts/AEICMeqa1B8"
                 }
             ]
         },
@@ -491,8 +488,8 @@
                     "ring": "#7FB5C8",
                     "bg": "#EDF4FA",
                     "x": 116.58,
-                    "title": "In-house editing team",
-                    "text": "All video editing work is handled entirely in-house. No freelancers, no subcontracting."
+                    "title": "Dedicated In-House Video Editors",
+                    "text": "A dedicated editing team maintains accountability, continuity, and quality control throughout the project, reducing the risks associated with fragmented freelance support"
                 },
                 {
                     "img": "feature-2-19c91a.png",
@@ -500,8 +497,8 @@
                     "ring": "var(--c-red)",
                     "bg": "#FFFFFF",
                     "x": 116.58,
-                    "title": "Dedicated project team",
-                    "text": "The same team works on your project from start to finish. Your standards and feedback are carried forward."
+                    "title": "Story-Driven Video Editing",
+                    "text": "We transform raw footage into engaging videos through precise sequencing, pacing, graphics, and sound, aligned with your brand, message, and audience."
                 },
                 {
                     "img": "feature-3.png",
@@ -509,8 +506,8 @@
                     "ring": "#2D2D2D",
                     "bg": "linear-gradient(135deg, #EDF2FC 0%, #FFFFFF 100%), #F5F5F5",
                     "x": 56,
-                    "title": "Secure your content",
-                    "text": "Your footage, files and unpublished material are handled under strict security protocols."
+                    "title": "Confidential Footage Handling",
+                    "text": "Raw footage, recordings, personal data, and unpublished edits are handled securely and returned or deleted in accordance with agreed terms."
                 },
                 {
                     "img": "feature-4-68b7aa.png",
@@ -518,8 +515,8 @@
                     "ring": "#6B8F3E",
                     "bg": "#FEFEFE",
                     "x": 77.82,
-                    "title": "Transparent pricing",
-                    "text": "All video editing work is quoted clearly in advance. No hidden costs, no surprises."
+                    "title": "Clear Scope and Pricing",
+                    "text": "Footage duration, deliverables, revision limits, timelines, and pricing are agreed upon before work begins, ensuring clarity and predictable project delivery"
                 }
             ]
         },
@@ -530,17 +527,17 @@
                 [
                     "tool-premiere.png",
                     "Adobe Premiere Pro",
-                    "Edit | Assemble"
+                    "Cut | Sequence"
                 ],
                 [
                     "tool-aftereffects.png",
                     "Adobe After Effects",
-                    "Animate | Composite"
+                    "Animate | Enhance"
                 ],
                 [
                     "tool-finalcut.png",
                     "Final Cut Pro",
-                    "Edit | Deliver"
+                    "Edit | Export"
                 ],
                 [
                     "tool-davinci.png",
@@ -555,7 +552,7 @@
                 [
                     "tool-frameio-1658d8.png",
                     "Frame.io",
-                    "Review | Approve"
+                    ""
                 ]
             ]
         },
@@ -570,9 +567,8 @@
                     "points": [
                         "Footage review, take selection, and story structure",
                         "Multi-camera synchronisation",
-                        "Rough Cut",
                         "Pacing, sequencing, and narrative construction",
-                        "Audio Sync"
+                        "Versioning for different durations and placements"
                     ]
                 },
                 {
@@ -580,25 +576,21 @@
                     "icon": "acc-icon-2.svg",
                     "open": false,
                     "points": [
-                        "Colour grading",
-                        "Audio cleanup and sound design",
-                        "Motion graphics and VFX",
-                        "Subtitling and captions",
-                        "Platform-specific exports"
+                        "Colour correction and professional colour grading",
+                        "Audio cleanup, noise reduction, sound design, and mixing",
+                        "Music integration and voiceover placement",
+                        "Motion graphics, titles, lower-thirds, and visual effects"
                     ]
                 },
                 {
-                    "title": "Digital Magazine Design",
+                    "title": "Delivery and Localisation",
                     "icon": "acc-icon-3.svg",
                     "open": false,
                     "points": [
-                        "Corporate brand films",
-                        "Commercials",
-                        "Product videos",
-                        "Documentaries",
-                        "Training content",
-                        "Event coverage",
-                        "Short-form social content"
+                        "Subtitling, captions, and multilingual translation",
+                        "Platform-specific exports in the required aspect ratios",
+                        "4K and higher-resolution workflows",
+                        "Delivery in the formats set out in your technical specification"
                     ]
                 }
             ]
@@ -617,7 +609,7 @@
                     69.84,
                     103.41,
                     124.16,
-                    "Brief and Goal",
+                    "Brief and goal",
                     "We start by agreeing on what the video is for, who it is for, and where it will be shown. Everything after this follows from it."
                 ],
                 [
@@ -630,7 +622,7 @@
                     91.91,
                     100,
                     102.09,
-                    "Footage Review",
+                    "Footage review",
                     "We go through all your raw footage, pick the best material, and plan the edit before we start."
                 ],
                 [
@@ -643,7 +635,7 @@
                     99.4,
                     112.88,
                     94.6,
-                    "First Cut",
+                    "First cut",
                     "We put together the first version so you can see the structure and pacing early."
                 ],
                 [
@@ -669,8 +661,8 @@
                     83.32,
                     130.48,
                     110.68,
-                    "Final Delivery",
-                    "We export the video in every resolution and aspect ratio you need, ready for each platform."
+                    "Your review",
+                    "You share your feedback, and we make the changes for as many rounds as you need."
                 ],
                 [
                     "06",
@@ -682,8 +674,8 @@
                     74.4,
                     100,
                     119.6,
-                    "Your Review",
-                    "You share your feedback, and we make the changes for as many rounds as you need."
+                    "Final delivery",
+                    "We export the video in every resolution and aspect ratio you need, ready for each platform."
                 ]
             ]
         },
@@ -702,7 +694,7 @@
                     "y": 277,
                     "w": 457,
                     "h": 341,
-                    "text": "From animated logos and lower thirds to full-sequence motion design, we create graphics that bring energy, clarity, and brand consistency to every frame."
+                    "text": "We create animated typography, illustrations and graphic sequences that make messages more engaging while maintaining your brand's visual style."
                 },
                 {
                     "no": "02",
@@ -715,7 +707,7 @@
                     "y": 265,
                     "w": 486,
                     "h": 372,
-                    "text": "We distil complex ideas into clear, engaging narratives using a mix of live action, animation, and motion graphics tailored to your audience and platform."
+                    "text": "We turn products, services and complex ideas into understandable video stories through scripting, storyboards, visual design and animation."
                 },
                 {
                     "no": "03",
@@ -728,20 +720,20 @@
                     "y": 265,
                     "w": 505,
                     "h": 343,
-                    "text": "Showcase your product with polished visuals, precise pacing, and platform-ready edits designed to drive engagement and conversion across every channel."
+                    "text": "We create product-focused videos that demonstrate features, benefits and real-world use, helping audiences understand what the product does and why it matters."
                 },
                 {
                     "no": "04",
                     "noc": "#D9D3A0",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
-                    "title": "Event Films",
+                    "title": "Social Media Reels",
                     "arrow": "offer-arrow-1.svg",
                     "img": "pf-overlay-3.png",
                     "x": 45,
                     "y": 265,
                     "w": 486,
                     "h": 372,
-                    "text": "Complete coverage of conferences, launches and live events, edited into highlight reels, recaps and social-ready clips."
+                    "text": "We edit short-form videos with purposeful pacing, captions and platform-appropriate formats that keep your message clear and visually consistent."
                 }
             ]
         },
@@ -755,23 +747,23 @@
                 ],
                 [
                     "What are the different types of video editing?",
-                    "Corporate brand films, commercials, product videos, documentaries, training content, event coverage and short-form social content."
+                    "Brand films, commercials, product videos, explainer videos, documentaries, events, and social content - we create content across a range of formats and lengths."
                 ],
                 [
                     "What video editing software do you use?",
-                    "Adobe Premiere Pro, Adobe After Effects, Final Cut Pro, DaVinci Resolve, Adobe Audition and Frame.io."
+                    "Adobe Premiere Pro, After Effects, Final Cut Pro, DaVinci Resolve and Frame.io, supported by AI-assisted tools."
                 ],
                 [
                     "How long does the editing process take?",
-                    "Turnaround is confirmed upfront, based on the length and complexity of the video and the delivery date you have agreed on."
+                    "It depends on the amount of footage and the complexity of the edit, but a delivery date is always guaranteed before work starts."
                 ],
                 [
                     "What is included in video post-production services?",
-                    "Finishing work is part of the scope rather than quoted separately: colour grading, sound, motion graphics, subtitling and final exports."
+                    "All post-shoot work, that is, the editing, colour, audio, motion graphics, subtitles, revisions, and final delivery files."
                 ],
                 [
                     "How do you handle feedback, revisions, and creative direction?",
-                    "You share your feedback, and we make the changes for as many rounds as you need."
+                    "You provide feedback at every stage, the content follows your style guide, and we agree on the number of revision rounds in advance."
                 ]
             ]
         }

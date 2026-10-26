@@ -1,10 +1,12 @@
 {{-- "Sections on this page": show / hide, order, sections copied in from other designs. Posted with the content form. --}}
-<div class="adm-card mb-3" id="layoutCard">
-    <div class="adm-card__head">
+<div class="adm-card mb-3 adm-collapsible" id="layoutCard">
+    <div class="adm-card__head adm-collapsible__head" data-layout-toggle role="button" tabindex="0" aria-expanded="true" aria-controls="layoutBody">
+        <i class="bi bi-chevron-right adm-section__chev"></i>
         <h2>Sections on this page</h2>
-        <span class="ms-auto small text-muted">Switch a section off to hide it on the website (its text is kept), move it up or down, or add a section from another page.</span>
+        <span class="ms-auto small text-muted">{{ count($layout) + 1 }} sections · {{ collect($layout)->where('hidden', true)->count() }} hidden · show, hide, reorder or add</span>
     </div>
-    <div class="adm-card__body">
+    <div class="adm-card__body" id="layoutBody">
+        <p class="small text-muted mb-3">Switch a section off to hide it on the website (its text is kept), move it up or down, or add a section from another page.</p>
         <input type="hidden" name="has_layout_form" value="1">
         <ul class="adm-layout" data-layout-list>
             <li class="adm-layout__row is-fixed">

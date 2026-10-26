@@ -44,7 +44,7 @@
     <div class="col-lg-7">
         <div class="adm-card h-100">
             <div class="adm-card__head"><h2>Inquiries — last 14 days</h2><span class="ms-auto text-muted">{{ $trend->sum('count') }} received</span></div>
-            <div class="adm-card__body">
+            <div class="adm-card__body adm-chart">
                 <div class="adm-bars" role="img" aria-label="Inquiries per day">
                     @foreach($trend as $d)
                         <div data-v="{{ $d['count'] }}" style="height: {{ max(3, round($d['count'] / $trendMax * 100)) }}%" data-tip="{{ $d['label'] }} · {{ $d['count'] }}"></div>
@@ -56,8 +56,14 @@
     </div>
     <div class="col-lg-5">
         <div class="adm-card h-100">
-            <div class="adm-card__head"><h2>Quick actions</h2></div>
-            <div class="adm-card__body d-grid gap-2">
+            <div class="adm-card__head"><h2>Continue editing</h2><a class="ms-auto" href="{{ route('admin.pages.index') }}">All pages</a></div>
+            <ul class="adm-recent">
+                @foreach($recentPages as $rp)
+                    <li><a href="{{ $rp->hasEditor() ? route('admin.pages.content', $rp) : route('admin.pages.edit', $rp) }}"><i class="bi bi-file-earmark-text"></i><span>{{ $rp->title }}</span><small>{{ $rp->updated_at?->diffForHumans() }}</small></a></li>
+                @endforeach
+            </ul>
+            <div class="adm-card__head border-top"><h2>Quick actions</h2></div>
+            <div class="adm-quick">
                 <a class="btn btn-light text-start" href="{{ route('admin.pages.edit', 'index') }}"><i class="bi bi-house-door me-2 text-danger"></i> Edit the homepage</a>
                 <a class="btn btn-light text-start" href="{{ route('admin.menu.index') }}"><i class="bi bi-diagram-3 me-2 text-danger"></i> Add or reorder services</a>
                 <a class="btn btn-light text-start" href="{{ route('admin.shared.edit') }}"><i class="bi bi-layout-text-window-reverse me-2 text-danger"></i> Update header, footer &amp; offices</a>

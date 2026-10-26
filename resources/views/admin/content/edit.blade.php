@@ -16,6 +16,7 @@
         @include('admin.content._layout')
     @endif
 
+    <div class="adm-editbar">
     <div class="adm-search" data-content-search>
         <i class="bi bi-search"></i>
         <input type="search" class="form-control" placeholder="Search this page and jump to it: a field name or any text… (press / to focus)" aria-label="Search this page" autocomplete="off">
@@ -28,6 +29,7 @@
     <nav class="adm-tabs" id="sectionTabs" aria-label="Sections">
         @foreach($sections as $s)<a href="#sec-{{ $s['id'] }}" data-spy="sec-{{ $s['id'] }}">{{ $s['name'] }}</a>@endforeach
     </nav>
+    </div>
 
     @error('content')<div class="alert alert-danger">{{ $message }}</div>@enderror
 
@@ -42,7 +44,7 @@
     @endif
 
     @if(collect($sections)->contains('off', true))
-        <div class="alert alert-warning small"><i class="bi bi-eye-slash me-1"></i> Sections marked <strong>switched off on the website</strong> are hidden on the live page (see &ldquo;Sections on this page&rdquo; above). Changing them has no effect until you switch them on. Edit the section of the same name that is shown instead.</div>
+        <div class="alert alert-warning small"><i class="bi bi-eye-slash me-1"></i> Sections marked <strong>(off)</strong> are hidden on the live page (see &ldquo;Sections on this page&rdquo; above). Changing them has no effect until you switch them on. Edit the section of the same name that is shown instead.</div>
     @endif
 
     @foreach($sections as $s)

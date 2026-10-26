@@ -30,7 +30,7 @@
             "key": "hero.2",
             "label": "Paragraph: Home / Services / Animation / 3D Modeling and…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-5\">Animation</a> / <span>3D Modeling and Rendering</span>",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-5\">Animation</a> / <span>3D Modelling &amp; 3D Rendering</span>",
             "sort": 2
         },
         {
@@ -39,7 +39,7 @@
             "key": "hero.3",
             "label": "Main heading: 3D Modeling and Rendering",
             "type": "text",
-            "value": "3D Modeling and Rendering",
+            "value": "3D Modelling & 3D Rendering Services",
             "sort": 3
         },
         {
@@ -48,7 +48,7 @@
             "key": "hero.4",
             "label": "Paragraph: 3D modeling and rendering turn an idea, sketc…",
             "type": "textarea",
-            "value": "3D modeling and rendering turn an idea, sketch, or design file into a precise digital model and photorealistic visuals. This lets you explore form, materials, finishes, lighting, and variations before anything is manufactured or built. You can refine a product, visualize a space, present concepts for approval, and create marketing imagery without producing a physical prototype. For businesses that need to develop, sell, or approve something before it exists, this transforms an abstract idea into something clear and convincing.",
+            "value": "3D rendering turns a model or a design file into a photorealistic image, so you can show a product, a space, or a concept as if it were already built and photographed. It removes the wait between having a design and being able to show it. You can market a product before it is manufactured, show a client the finished result before you commit to materials or tooling, and present variations without producing a single physical sample. For any business that has to sell or approve something before it exists, that is the difference between describing an idea and showing it. Our 3d rendering services give you exactly that: accurate, high-quality visuals produced directly from your designs.",
             "sort": 4
         },
         {
@@ -57,7 +57,7 @@
             "key": "hero.5",
             "label": "Bold label: Dedicated in-house 3D team",
             "type": "text",
-            "value": "Dedicated in-house 3D team",
+            "value": "Dedicated In-House Team",
             "sort": 5
         },
         {
@@ -66,7 +66,7 @@
             "key": "hero.6",
             "label": "Text: Focused on accuracy, realism & on-time delive…",
             "type": "text",
-            "value": "Focused on accuracy, realism &amp; on-time delivery.",
+            "value": "Our in-house team coordinates 3d modelling & 3d rendering, feedback and final delivery through a clear project workflow.",
             "sort": 6
         },
         {
@@ -75,7 +75,7 @@
             "key": "hero.7",
             "label": "Heading: Let's bring your 3D vision to life.",
             "type": "text",
-            "value": "Let's bring your 3D vision to life.",
+            "value": "Let&#039;s Discuss Your 3D Modelling &amp; 3D Rendering",
             "sort": 7
         },
         {
@@ -84,7 +84,7 @@
             "key": "hero.8",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Share a brief description of your requirements and our team will contact you to discuss scope, deliverables and next steps.",
             "sort": 8
         },
         {
@@ -138,7 +138,7 @@
             "key": "360-viewer-selected-work.3",
             "label": "Heading: Selected 3D Modeling and Rendering Work",
             "type": "text",
-            "value": "Selected 3D Modeling and Rendering Work",
+            "value": "Selected 3D Modelling & 3D Rendering Work",
             "sort": 14
         },
         {
@@ -228,7 +228,7 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "Why Intelliworkz",
+            "value": "Market Your Product Before It Reaches the Shelf",
             "sort": 22
         },
         {
@@ -255,7 +255,7 @@
             "key": "why-intelliworkz.4",
             "label": "Paragraph: Because everything is produced by our own tea…",
             "type": "textarea",
-            "value": "Because everything is produced by our own team, your designs never leave our hands, which matters when you are rendering a product that has not yet launched. You get consistent quality across every image, and a team that already understands your product by the second project.",
+            "value": "",
             "sort": 25
         },
         {
@@ -273,7 +273,7 @@
             "key": "why-intelliworkz.5",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "Enquire Now",
+            "value": "Request a Quote",
             "sort": 27
         },
         {
@@ -354,7 +354,7 @@
             "key": "dark-showcase-shared.1",
             "label": "Heading: What Our 3D Modeling and Rendering …",
             "type": "text",
-            "value": "What Our 3D Modeling and Rendering Services Cover",
+            "value": "Selected 3D Modelling & 3D Rendering Case Studies",
             "sort": 36
         },
         {
@@ -363,7 +363,7 @@
             "key": "what-we-offer-cta-engagement.2",
             "label": "Heading: what we offer",
             "type": "text",
-            "value": "what we offer",
+            "value": "What We Offer",
             "sort": 37
         },
         {
@@ -372,7 +372,7 @@
             "key": "what-we-offer-cta-engagement.3",
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
-            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "value": "Explore related Intelliworkz services that support your wider business needs.",
             "sort": 38
         },
         {
@@ -381,7 +381,7 @@
             "key": "what-we-offer-cta-engagement.4",
             "label": "Heading: Book a Free Consultation",
             "type": "text",
-            "value": "Book a Free Consultation",
+            "value": "Show It Before You Build It",
             "sort": 39
         },
         {
@@ -417,22 +417,20 @@
             "key": "td_benefits",
             "scope": "3d-modeling-rendering",
             "items": [
-                "Precision-Driven 3D Modeling",
-                "Photorealistic Rendering",
-                "Production-Ready 3D Assets",
-                "Flexible 3D Workflows"
+                "3D Product Modelling",
+                "Photorealistic Product Rendering",
+                "CAD-Based 3D Visuals",
+                "Multiple Angles & Finishes"
             ]
         },
         {
             "key": "td_filters",
             "scope": "3d-modeling-rendering",
             "items": {
-                "all": "All",
-                "wireframe": "Wireframe",
-                "material": "Material Study",
-                "detail": "Detail View",
-                "360": "360° View",
-                "exploded": "Exploded View"
+                "all": "All Work",
+                "product": "Product Rendering",
+                "commercial": "Commercial and Marketing",
+                "architectural": "Architectural and Interior"
             }
         },
         {
@@ -441,47 +439,47 @@
             "items": [
                 {
                     "img": "gallery-1.png",
-                    "cats": "detail"
+                    "cats": "product"
                 },
                 {
                     "img": "gallery-2.png",
-                    "cats": "wireframe detail"
+                    "cats": "commercial"
                 },
                 {
                     "img": "gallery-3.png",
-                    "cats": "wireframe"
+                    "cats": "architectural"
                 },
                 {
                     "img": "gallery-4.png",
-                    "cats": "material"
+                    "cats": "product commercial"
                 },
                 {
                     "img": "gallery-5.png",
-                    "cats": "material detail"
+                    "cats": "commercial architectural"
                 },
                 {
                     "img": "gallery-featured-4b403a.png",
-                    "cats": "360 exploded"
+                    "cats": "product architectural"
                 },
                 {
                     "img": "gallery-6.png",
-                    "cats": "material"
+                    "cats": "product"
                 },
                 {
                     "img": "gallery-7.png",
-                    "cats": "detail"
+                    "cats": "commercial"
                 },
                 {
                     "img": "gallery-8.png",
-                    "cats": "material"
+                    "cats": "architectural"
                 },
                 {
                     "img": "gallery-9.png",
-                    "cats": "exploded"
+                    "cats": "product commercial"
                 },
                 {
                     "img": "gallery-10.png",
-                    "cats": "exploded detail"
+                    "cats": "commercial architectural"
                 }
             ]
         },
@@ -530,8 +528,8 @@
                     "noc": "#7FB5C8",
                     "icon": "benefit-1.svg",
                     "ring": "var(--c-teal)",
-                    "title": "In-house 3D Team",
-                    "text": "All 3D modeling and rendering work is handled by our in-house team for consistent quality, control, and communication.",
+                    "title": "In-House 3D Modelling Team",
+                    "text": "Every project follows a defined workflow covering reference review, 3D modelling, rendering, revisions, and final asset delivery",
                     "raised": false
                 },
                 {
@@ -539,8 +537,8 @@
                     "noc": "var(--c-red)",
                     "icon": "benefit-2.svg",
                     "ring": "var(--c-red)",
-                    "title": "Dedicated project team",
-                    "text": "The same 3D artist or team works on your project from start to finish, carrying your materials, lighting, and quality standards forward without re-briefing.",
+                    "title": "Accurate 3D Modelling and Rendering",
+                    "text": "Client-provided references, specifications, and CAD files are translated into detailed 3D models and high-quality renders that meet project requirements",
                     "raised": true
                 },
                 {
@@ -548,8 +546,8 @@
                     "noc": "#2D2D2D",
                     "icon": "benefit-3.svg",
                     "ring": "var(--c-near-black)",
-                    "title": "Data security",
-                    "text": "Your content, files, and unpublished material are handled under strict security, kept within our team and never shared outside.",
+                    "title": "Confidential Technical File Handling",
+                    "text": "CAD drawings, product specifications, and reference models are managed securely throughout the agreed production process.",
                     "raised": false
                 },
                 {
@@ -557,8 +555,8 @@
                     "noc": "#6B8F3E",
                     "icon": "benefit-4.svg",
                     "ring": "var(--c-green)",
-                    "title": "Transparent pricing",
-                    "text": "All design work produced entirely in-house: no freelancers, no subcontracting.",
+                    "title": "Clear Scope and Pricing",
+                    "text": "All shared assets like CAD drawings and 3D models to OBJ files and product references, are stored securely in our internal storage with controlled access and returned upon project completion",
                     "raised": false
                 }
             ]
@@ -570,12 +568,12 @@
                 [
                     "tool-vray.svg",
                     "V-Ray and Corona",
-                    "Realistic Rendering"
+                    "Model | Render"
                 ],
                 [
                     "tool-blender.svg",
                     "Blender and Cycles",
-                    "Creative Flexibility"
+                    "Model | Render"
                 ],
                 [
                     "tool-3dsmax.png",
@@ -614,17 +612,19 @@
                 {
                     "title": "Commercial and Marketing",
                     "points": [
-                        "Hero shots and campaign imagery built around your brand",
-                        "Consistent visuals across product ranges",
-                        "Assets sized and formatted for every channel"
+                        "Renders for advertising, social and campaign use",
+                        "Packaging and label visualisation before print",
+                        "Product configurators and full variant sets",
+                        "Images prepared and sized for both print and digital"
                     ]
                 },
                 {
                     "title": "Architectural and Interior",
                     "points": [
-                        "Interior and exterior visualisations for approval and marketing",
-                        "Material and lighting studies for a space",
-                        "Walkthrough-ready scenes for presentations"
+                        "Exterior and interior visualisation",
+                        "Furniture, fixture and fitting rendering",
+                        "Space and layout visualisation for planning and sales",
+                        "Walkthrough animation, where movement is needed"
                     ]
                 }
             ]
@@ -637,35 +637,35 @@
                     "no": "01",
                     "color": "var(--c-yellow)",
                     "img": "step-1-160f4f.png",
-                    "title": "Your files.",
+                    "title": "Your files",
                     "text": "You send a 3D model, a CAD file, or drawings. If you only have drawings, we build the model first. If the model is ready, we move straight to the scene, and we confirm how the images will be used."
                 },
                 {
                     "no": "02",
                     "color": "var(--c-pink)",
                     "img": "step-2-51cdb9.png",
-                    "title": "Materials and lighting.",
+                    "title": "Materials and lighting",
                     "text": "We apply accurate materials, colours and finishes to match the real product, then light the scene to suit the setting you want, from a clean studio background to a real-world environment."
                 },
                 {
                     "no": "03",
                     "color": "var(--c-green)",
                     "img": "step-3.png",
-                    "title": "Draft render.",
+                    "title": "Draft render",
                     "text": "You see a first version at working quality, so you can check the angle, materials and composition before we commit to the final output. Catching a change here saves time later."
                 },
                 {
                     "no": "04",
                     "color": "var(--c-gold)",
                     "img": "step-4-293cbb.png",
-                    "title": "Review and adjust.",
+                    "title": "Review and adjust",
                     "text": "You give feedback on the draft, and we refine the materials, lighting, and framing within the agreed rounds. Changes at this stage are quick and inexpensive to make."
                 },
                 {
                     "no": "05",
                     "color": "var(--c-teal)",
                     "img": "step-5-3348cf.png",
-                    "title": "Final delivery.",
+                    "title": "Final delivery",
                     "text": "We render at full resolution, finish each image in post-production, and deliver the files in the sizes and formats you need for print, web, eCommerce, or presentation."
                 }
             ]
@@ -678,53 +678,53 @@
                     "no": "01",
                     "noc": "#D1C7E6",
                     "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
-                    "title": "Product Demo Videos",
+                    "title": "Corporate Videos &amp; Shoots",
                     "img": "offer-1-625569.png",
                     "x": 58,
                     "y": 277,
                     "w": 457,
                     "h": 341,
                     "arrow": "offer-arrow-1.svg",
-                    "text": "Show how your product works through clear demonstrations created with accurate 3D models and rendered scenes."
+                    "text": "We plan and produce corporate films, interviews and brand videos through scripting, filming and editing, aligned with the story your organisation needs to tell."
                 },
                 {
                     "no": "02",
                     "noc": "#EAD3C4",
                     "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
-                    "title": "3D Animation",
+                    "title": "Presentation Videos",
                     "img": "offer-2-56586a.png",
                     "x": 45,
                     "y": 265,
                     "w": 486,
                     "h": 372,
                     "arrow": "offer-arrow-2.svg",
-                    "text": "Bring products, mechanisms and concepts to life with animated sequences that explain movement, assembly and function."
+                    "text": "We transform presentations into paced videos with motion design, narration and visual transitions, making key information easy to follow without a live presenter."
                 },
                 {
                     "no": "03",
                     "noc": "#A2DDDD",
                     "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
-                    "title": "Visual merchandise",
+                    "title": "3D Visualization (Product / Architectural / Industrial)",
                     "img": "offer-3-56586b.png",
                     "x": 34,
                     "y": 265,
                     "w": 505,
                     "h": 343,
                     "arrow": "offer-arrow-3.svg",
-                    "text": "Create polished retail and campaign visuals that present products across displays, environments and promotional formats."
+                    "text": "We develop realistic product, architectural and industrial visuals using accurate modelling, lighting and materials to communicate concepts before physical production."
                 },
                 {
                     "no": "04",
                     "noc": "#D9D3A0",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
-                    "title": "Technical Renders",
+                    "title": "3D Animation",
                     "img": "offer-1-625569.png",
                     "x": 58,
                     "y": 277,
                     "w": 457,
                     "h": 341,
                     "arrow": "offer-arrow-1.svg",
-                    "text": "Precise technical visuals for stakeholders and manufacturing partners, built directly from your CAD data."
+                    "text": "We animate 3D objects, environments and processes to demonstrate movement, assembly and functionality in a clear, visually engaging format."
                 }
             ]
         },
@@ -738,23 +738,23 @@
                 ],
                 [
                     "Is 3D rendering difficult?",
-                    "The process itself takes specialist software and an experienced team, but for you it is straightforward: you send a model or drawings, review a draft, and give feedback within the agreed rounds."
+                    "The software isn’t easy, and achieving photorealism requires quite a bit of work and skill, mostly involving lighting, materials, etc where a lot of renders often fall or rise. It is not something most businesses do in-house, which is why they work with a rendering team rather than buying and learning the software themselves."
                 ],
                 [
                     "Will AI replace 3D rendering?",
-                    "AI tools can speed up parts of the process, but accurate materials, lighting, and finishing for a specific product or brand still need an experienced in-house team to get right."
+                    "AI can speed up some of the work; it is helpful for early concepts and early visual ideas, but to show the authentic product and match with your brand accurately requires a physical model, proper materials, and judgement.AI cannot provide a real picture guarantee yet for accurately portraying the real model product."
                 ],
                 [
                     "What software is best for 3D rendering?",
-                    "We work with V-Ray and Corona for realistic rendering, Blender and Cycles for creative flexibility, and 3ds Max for precision modelling, chosen to suit each project."
+                    "They’re varied depending on the job, but the professional standards are V-Ray and Corona for photorealism and Blender and 3ds Max for the Modelling/scene setup, and like with anything, it is much more to do with the person using the software than the software they are using to be able to get excellent results from the same engine."
                 ],
                 [
                     "Why should you use 3D rendering for your business?",
-                    "A photorealistic image lets a customer picture owning the product, lets a stakeholder sign off with confidence, and lets your marketing and sales teams start work before the product reaches a shelf."
+                    "Because it lets you show and sell something before it exists. Market the product before it has been made; show alternatives in colour & finishes without using real samples; clearly show to your customer or client exactly what to expect and attractively; reduce turnaround time of decisions; achieve pre-sales; and avoid the high cost of making changes once a product has been made."
                 ],
                 [
                     "What is included in your 3D rendering services?",
-                    "Model preparation, materials and lighting, a draft render for review, refinement within the agreed rounds, and final delivery in the sizes and formats you need."
+                    "Model preparation or modelling from your drawings, material and lighting setup, a draft render for your review, revisions within the agreed rounds, and final high-resolution images finished in post-production. As one of the more flexible 3d rendering companies, we deliver in the formats and sizes you need for print, web, eCommerce, or presentation."
                 ]
             ]
         },

@@ -116,7 +116,6 @@
         // a section with an error, or the one named in the address (#sec-portfolio), must be open
         sections.forEach(function (s) { if (s.querySelector('.is-invalid, .invalid-feedback')) openIds.push(s.id); });
         if (location.hash && byId(location.hash.slice(1))) openIds.push(location.hash.slice(1));
-        if (!openIds.length) openIds.push(sections[0].id);       // first visit: only the first section is open
         sections.forEach(function (s) { setOpen(s, openIds.indexOf(s.id) !== -1); });
 
         var toggleHead = function (head) {
@@ -172,6 +171,23 @@
             setTimeout(function () { window.scrollTo({ top: parseInt(savedY, 10) || 0, behavior: 'instant' }); }, 120);   // after the #sec- jump above
         }
     } catch (err) { /* ignore */ }
+
+    // "Sections on this page" stays closed until needed (open after add/remove, on errors, or when asked for in the address)
+    var layoutCard = document.getElementById('layoutCard');
+    if (layoutCard) {
+        var layoutHead = layoutCard.querySelector('[data-layout-toggle]');
+        var setLayout = function (open) {
+            layoutCard.classList.toggle('is-collapsed', !open);
+            if (layoutHead) layoutHead.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+        setLayout(location.hash === '#layoutCard' || !!layoutCard.querySelector('.is-invalid, .invalid-feedback'));
+        if (layoutHead) {
+            layoutHead.addEventListener('click', function () { setLayout(layoutCard.classList.contains('is-collapsed')); });
+            layoutHead.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLayout(layoutCard.classList.contains('is-collapsed')); }
+            });
+        }
+    }
 
     // section tabs highlight as you scroll
     var tabs = document.querySelectorAll('[data-spy]');

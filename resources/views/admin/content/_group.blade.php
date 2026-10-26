@@ -3,7 +3,7 @@
     $isNew = $g === null;
     $last = \Illuminate\Support\Arr::last($rows);
 @endphp
-<div class="adm-item is-open" data-item>
+<div class="adm-item {{ $g === null ? 'is-open' : '' }}" data-item>
     <div class="adm-item__head" data-act="toggle">
         <span class="adm-item__no" data-no>{{ $isNew ? '+' : $g + 1 }}</span>
         <span class="adm-item__title">{{ $isNew ? 'New ' . strtolower($schema->groupLabel()) : $schema->groupLabel() . ' ' . ($g + 1) }}</span>

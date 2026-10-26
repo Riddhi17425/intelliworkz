@@ -26,6 +26,15 @@
             "sort": 9
         },
         {
+            "section": "numbers",
+            "section_label": "Numbers",
+            "key": "numbers.2",
+            "label": "Wide picture under the numbers (optional)",
+            "type": "image",
+            "value": "",
+            "sort": 10
+        },
+        {
             "section": "hero",
             "section_label": "Hero",
             "key": "hero.1",

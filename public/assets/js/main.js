@@ -46,6 +46,7 @@
 
         /* Figma shows slide 3 active on load */
         var start = slider.hasAttribute('data-start') ? parseInt(slider.getAttribute('data-start'), 10) || 0 : Math.min(2, dots.length - 1);
+        if (window.matchMedia('(max-width: 640px)').matches) start = 0;     /* phones: begin with the first card, not a half-hidden one */
         track.scrollLeft = (max() / (dots.length - 1)) * start;
         setActive(start);
     });
@@ -1094,8 +1095,22 @@
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     Array.prototype.forEach.call(document.querySelectorAll('.mg-tools__row'), function (row) {
         var tools = Array.prototype.filter.call(row.children, function (c) { return /mg-tool$|mg-tool /.test(c.className); });
-        if (tools.length <= MAX || reduce) return;
-
+        if (reduce || tools.length < 2) return;
+        /* scroll when there are more than MAX tools, or when the tools no longer fit on one line */
+        var wraps = function () { return tools[tools.length - 1].offsetTop - tools[0].offsetTop > 40; };
+        var start = function () { setup(); };
+        var setup;
+        if (tools.length <= MAX && !wraps()) {
+            var recheck = function () { if (!row.classList.contains('is-marquee') && wraps()) start(); };
+            window.addEventListener('load', recheck);
+            window.addEventListener('resize', recheck);
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(recheck);
+            setup = marquee;
+            return;
+        }
+        marquee();
+        return;
+        function marquee() {
         var originals = Array.prototype.slice.call(row.children);
         var join = document.createElement('li');
         join.className = 'mg-tools__divider';
@@ -1117,6 +1132,7 @@
         window.addEventListener('load', measure);
         window.addEventListener('resize', measure);
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+        }
     });
 })();
 
@@ -1147,4 +1163,38 @@
     window.addEventListener('resize', fixAll);
     window.addEventListener('load', fixAll);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fixAll);
+})();
+
+/* Phone footer: each service column folds open / closed (the list stays visible without JavaScript) */
+(function () {
+    'use strict';
+
+    var mq = window.matchMedia('(max-width: 640px)');
+    document.documentElement.classList.add('js');
+    document.querySelectorAll('.footer-links .footer-col').forEach(function (col) {
+        var title = col.querySelector('.footer-col__title');
+        if (!title) return;
+        var sync = function () {
+            if (mq.matches) {
+                title.setAttribute('role', 'button');
+                title.setAttribute('tabindex', '0');
+                title.setAttribute('aria-expanded', String(col.classList.contains('is-open')));
+            } else {
+                title.removeAttribute('role');
+                title.removeAttribute('tabindex');
+                title.removeAttribute('aria-expanded');
+            }
+        };
+        var toggle = function () {
+            if (!mq.matches) return;
+            col.classList.toggle('is-open');
+            sync();
+        };
+        title.addEventListener('click', toggle);
+        title.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+        sync();
+        if (mq.addEventListener) mq.addEventListener('change', sync);
+    });
 })();

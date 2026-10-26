@@ -44,7 +44,7 @@ class DashboardController extends Controller
             'trend' => $trend,
             'trendMax' => max(1, $trend->max('count')),
             'recentInquiries' => ContactInquiry::latest()->limit(6)->get(),
-            'activity' => ActivityLog::with('user')->latest('id')->limit(8)->get(),
+            'activity' => ActivityLog::with('user')->whereNotIn('action', ['login', 'logout'])->latest('id')->limit(8)->get(),
             'recentPages' => Page::latest('updated_at')->limit(5)->get(),
         ]);
     }

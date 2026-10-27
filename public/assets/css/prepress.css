@@ -43,3 +43,7 @@
 .pp-step img { position: absolute; left: 59.33px; width: 461.33px; height: 346px; max-width: none; object-fit: cover; }
 
 .pp .ve-hero__copy { padding-top: 0; }
+
+/* the 870x400 statistics pictures: shown whole, left aligned and not mirrored, fading into the black on the right */
+.pp-stats__bg[src$="statistics.webp"] { left: 0; top: 0; width: 870px; height: 100%; max-width: none; object-fit: cover; object-position: left center; transform: none; }
+.pp-stats:has(.pp-stats__bg[src$="statistics.webp"])::after { top: 0; width: 870px; height: 100%; background: linear-gradient(-90deg, #000 0%, rgba(0, 0, 0, 0) 23%); }

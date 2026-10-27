@@ -8,7 +8,7 @@ $vc = 'assets/icons/video/';    // page icons
             <h2 class="h2">{!! $T('why-intelliworkz.1') !!}</h2>
             <div class="ve-split__side">
                 <p>{!! $T('why-intelliworkz.2') !!} </p>
-                <div><a href="{{ $T('why-intelliworkz.4') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.3') !!}</a></div>
+                @if(trim(strip_tags($T('why-intelliworkz.3'))) !== '')<div><a href="{{ $T('why-intelliworkz.4') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.3') !!}</a></div>@endif
             </div>
         </div>
         <div class="pillars">

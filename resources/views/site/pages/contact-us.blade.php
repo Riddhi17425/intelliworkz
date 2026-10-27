@@ -71,11 +71,14 @@ $vc = 'assets/icons/video/';      // shared icons
                 <p>{!! $T('offices-dark.2') !!}</p>
             </div>
 
+            <div class="ct-dark__mapbox">
             <img class="ct-dark__map" src="<?= $nc ?>world-map.svg" alt="">
             <?php foreach ($ct_pins as $p): ?>
-                <span class="ct-pin" style="left: <?= $p[1] ?>px; top: <?= $p[2] ?>px"></span>
-                <span class="ct-pin__label" style="left: <?= $p[3] ?>px; top: <?= $p[4] ?>px"><?= $p[0] ?></span>
+                <?php /* % of the 830x415 map (used on a phone, where the map is scaled to the screen) */ $mx = ($p[1] - 60) / 830 * 100; $my = ($p[2] - 406.35) / 415.15 * 100; $lx = ($p[3] - 60) / 830 * 100; $ly = ($p[4] - 406.35) / 415.15 * 100; ?>
+                <span class="ct-pin" style="left: <?= $p[1] ?>px; top: <?= $p[2] ?>px; --x: <?= round($mx, 2) ?>%; --y: <?= round($my, 2) ?>%"></span>
+                <span class="ct-pin__label" style="left: <?= $p[3] ?>px; top: <?= $p[4] ?>px; --x: <?= round($lx, 2) ?>%; --y: <?= round($ly, 2) ?>%"><?= $p[0] ?></span>
             <?php endforeach; ?>
+            </div>
 
             <div class="ct-offices" data-offices>
                 <div class="ct-offices__tabs">

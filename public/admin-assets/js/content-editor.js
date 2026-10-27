@@ -317,8 +317,9 @@
             var off = input.value !== '1';
             input.value = off ? '1' : '0';
             row.classList.toggle('is-off', off);
-            btn.querySelector('span').textContent = off ? 'Show' : 'Hide';
-            btn.querySelector('i').className = 'bi ' + (off ? 'bi-eye' : 'bi-eye-slash');
+            var isBtn = btn.hasAttribute('data-is-btn');
+            btn.querySelector('span').textContent = off ? (isBtn ? 'Bring button back' : 'Show') : (isBtn ? 'Remove button' : 'Hide');
+            btn.querySelector('i').className = 'bi ' + (off ? 'bi-arrow-counterclockwise' : (isBtn ? 'bi-trash3' : 'bi-eye-slash'));
             changed();
         } else if ((act === 'delete' || act === 'undo') && row) {
             var del = act === 'delete';

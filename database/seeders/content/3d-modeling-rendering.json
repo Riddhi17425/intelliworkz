@@ -345,7 +345,7 @@
             "key": "services-workflow.1",
             "label": "Image: 3D rendering services overview (services.png)",
             "type": "image",
-            "value": "assets/images/3d/services.png",
+            "value": "assets/images/3d-modelling/services.webp",
             "sort": 35
         },
         {
@@ -566,22 +566,22 @@
             "scope": "3d-modeling-rendering",
             "items": [
                 [
-                    "tool-vray.svg",
+                    "assets/images/3d-modelling/tools/v-ray-and-corona.webp",
                     "V-Ray and Corona",
                     "Model | Render"
                 ],
                 [
-                    "tool-blender.svg",
+                    "assets/images/3d-modelling/tools/blender.webp",
                     "Blender and Cycles",
                     "Model | Render"
                 ],
                 [
-                    "tool-3dsmax.png",
+                    "assets/images/3d-modelling/tools/autodesk-3ds-max.webp",
                     "3ds Max",
                     "Precision Modelling"
                 ],
                 [
-                    "tool-photoshop.svg",
+                    "assets/images/3d-modelling/tools/photoshop.webp",
                     "Adobe Photoshop",
                     "Post Production"
                 ]
@@ -676,10 +676,10 @@
             "items": [
                 {
                     "no": "01",
-                    "noc": "#D1C7E6",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
                     "title": "Corporate Videos &amp; Shoots",
-                    "img": "offer-1-625569.png",
+                    "img": "assets/images/offers/corporate-videos-and-shoots.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
@@ -689,10 +689,10 @@
                 },
                 {
                     "no": "02",
-                    "noc": "#EAD3C4",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
                     "title": "Presentation Videos",
-                    "img": "offer-2-56586a.png",
+                    "img": "assets/images/offers/presentation-videos.webp",
                     "x": 45,
                     "y": 265,
                     "w": 486,
@@ -702,10 +702,10 @@
                 },
                 {
                     "no": "03",
-                    "noc": "#A2DDDD",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
-                    "title": "3D Visualization (Product / Architectural / Industrial)",
-                    "img": "offer-3-56586b.png",
+                    "title": "3D Visualization",
+                    "img": "assets/images/offers/3d-visualization.webp",
                     "x": 34,
                     "y": 265,
                     "w": 505,
@@ -715,10 +715,10 @@
                 },
                 {
                     "no": "04",
-                    "noc": "#D9D3A0",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
                     "title": "3D Animation",
-                    "img": "offer-1-625569.png",
+                    "img": "assets/images/offers/3d-animation.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,

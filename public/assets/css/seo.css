@@ -70,7 +70,7 @@
 /* ---------- Services accordion + image ---------- */
 /* Figma: header row is centred with a 16px gap; the H2 is a fixed 552.81px, centred text; the text column fills the rest */
 .seo .seo-services__head { gap: 16px; }
-.seo .ve-split--center > .seo-services__title { flex: none; width: 552.81px; text-align: center; }
+.seo .ve-split--center > .seo-services__title { flex: none; width: 820px; text-align: left; }
 .seo-services__img { position: sticky; top: 120px; align-self: flex-start; flex: none; width: 809px; max-width: 45%; background: var(--c-white); border: 1px solid var(--c-divider-gray); border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, .1); overflow: hidden; }
 .seo-services__img img { display: block; width: 100%; height: auto; }
 .seo .acc--services .acc-points { width: 100%; max-width: 100%; }
@@ -91,3 +91,6 @@
 
 /* glyph-on-tile icons (assets/icons/magazine) keep their own small size inside the 72px tile */
 .seo-tool .mg-tool__icon img { width: auto; height: auto; border-radius: 0; }
+
+/* process pictures keep their own proportions: each one is fitted inside the 300px frame instead of being stretched to a fixed size */
+.seo-step__art img { left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; object-fit: contain; object-position: center bottom; }

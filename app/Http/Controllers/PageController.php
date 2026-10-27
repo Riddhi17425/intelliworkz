@@ -24,6 +24,11 @@ class PageController extends Controller
         abort_if($preview && !$request->user(), 404);
 
         $view = $page->hasEditor() ? 'site.pages.' . $page->viewKey() : 'site.generic';
+        if (!$page->hasEditor() && $page->slug === 'blog') {
+            $view = 'site.blog-list';      // the blog page lists every published blog post
+        } elseif ($page->isBlog()) {
+            $view = 'site.blog-post';
+        }
         abort_unless(view()->exists($view), 404);
 
         return response()->view($view, $this->data($page, $preview));
@@ -89,7 +94,7 @@ class PageController extends Controller
 
         $title = $page->metaTitle();
         $description = $page->meta_description ?: ($settings['seo_description'] ?? null);
-        $image = Media::url($page->og_image ?: ($settings['seo_image'] ?? null));
+        $image = Media::url($page->og_image ?: ($page->isBlog() ? $page->featured_image : null) ?: ($settings['seo_image'] ?? null));
 
         $lists = array_merge($content->lists('global'), $content->lists($page->slug));
 

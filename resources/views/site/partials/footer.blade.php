@@ -47,10 +47,18 @@
                 @include('site.partials.footer-col', ['col' => $column('industries')])
                 <span class="v-line"></span>
                 --}}
-                @foreach([1, 2, 3, 4, 5] as $n)
-                    @if($n > 1)<span class="v-line"></span>@endif
+                {{-- Quick Links, the three service categories, then Post-Production and Animation together (edit in Admin > Menu) --}}
+                @include('site.partials.footer-col', ['col' => $column('company')])
+                @foreach([1, 2, 3] as $n)
+                    <span class="v-line"></span>
                     @include('site.partials.footer-col', ['col' => $column('cat-' . $n)])
                 @endforeach
+                @php
+                    $pa = collect([$column('cat-4'), $column('cat-5')])->filter();
+                    $paCol = $pa->isNotEmpty() ? (object) ['title' => $pa->pluck('title')->implode(' & '), 'items' => $pa->flatMap(fn ($g) => $g->items)] : null;
+                @endphp
+                <span class="v-line"></span>
+                @include('site.partials.footer-col', ['col' => $paCol])
             </div>
         </div>
 

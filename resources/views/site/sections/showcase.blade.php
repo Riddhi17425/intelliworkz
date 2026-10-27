@@ -17,7 +17,8 @@
                                 <?php $stats = !empty($c['stats']) ? array_values($c['stats']) : array_fill(0, 3, [18, $G('dark-showcase.2')]); ?>
                                 <?php foreach ($stats as $i => $st): ?>
                                     <?php if ($i): ?><span class="showcase-stats__line"></span><?php endif; ?>
-                                    <div class="showcase-stat"><span class="showcase-stat__value"><span data-count="<?= (int) ($st[0] ?? 0) ?>"><?= (int) ($st[0] ?? 0) ?></span>+</span><span class="showcase-stat__label"><?= $st[1] ?? '' ?></span></div>
+                                    <?php $sv = trim((string) ($st[0] ?? 0)); $plain = is_numeric($sv); ?>
+                                    <div class="showcase-stat"><span class="showcase-stat__value"><span data-count="<?= $plain ? (int) $sv : e($sv) ?>"><?= $plain ? (int) $sv : e($sv) ?></span></span><span class="showcase-stat__label"><?= $st[1] ?? '' ?></span></div>
                                 <?php endforeach; ?>
                             </div>
                             <hr class="h-line h-line--light">

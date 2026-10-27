@@ -146,6 +146,9 @@ class PageController extends Controller
             'meta_title' => ['nullable', 'string', 'max:160'],
             'meta_description' => ['nullable', 'string', 'max:300'],
             'meta_keywords' => ['nullable', 'string', 'max:300'],
+            'category' => ['nullable', 'string', 'max:80'],
+            'is_blog' => ['nullable', 'boolean'],
+            'published_on' => ['nullable', 'date'],
             'og_image' => Media::rule(false),
             'featured_image' => Media::rule(true),
             'content' => ['nullable', 'string', 'max:200000'],
@@ -171,7 +174,12 @@ class PageController extends Controller
             'status' => $data['status'],
         ]);
         if (!$page->is_system && !$page->hasEditor()) {
+            $page->template = $request->boolean('is_blog') ? 'blog-post' : 'generic';
+            $page->category = isset($data['category']) && $data['category'] !== '' ? Html::plain($data['category']) : null;
             $page->content = Html::rich($data['content'] ?? '');
+        }
+        if (!$page->is_system && !empty($data['published_on'])) {
+            $page->published_at = \Illuminate\Support\Carbon::parse($data['published_on'])->setTime(9, 0);
         }
         if ($page->isPublished() && !$page->published_at) {
             $page->published_at = now();

@@ -65,6 +65,7 @@ return array (
     array (
       0 => 'assets/css/video.css',
       1 => 'assets/css/magazine.css',
+      2 => 'assets/css/collaterals.css',
     ),
     'no_zoom' => false,
     'show_prefooter' => false,

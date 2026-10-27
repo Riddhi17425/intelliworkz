@@ -44,25 +44,246 @@
             "scope": "global",
             "items": [
                 {
-                    "img": "showcase-1-f932ad.png",
-                    "tag": "Lifestyle & Travel",
+                    "img": "assets/images/case-study/case-study.webp",
+                    "tag": "Diversified Conglomerate",
                     "tag_color": "var(--c-purple)",
-                    "filled": true
+                    "title": "Building a Unified Conglomerate Brand Through Strategy, Branding &amp; Digital",
+                    "text": "How a cohesive identity, corporate website and consistent content helped a UAE-based diversified business group communicate its scale, diversity, values and vision.",
+                    "href": "case-study",
+                    "stats": [
+                        [
+                            "10",
+                            "Services delivered"
+                        ],
+                        [
+                            "6",
+                            "Approach initiatives executed"
+                        ],
+                        [
+                            "5",
+                            "Core challenges addressed"
+                        ]
+                    ]
                 },
                 {
-                    "img": "showcase-2.png",
-                    "tag": "Lifestyle & Travel",
-                    "tag_color": "var(--c-purple)"
+                    "img": "assets/images/case-study/case-study-fintech.webp",
+                    "tag": "Fintech",
+                    "tag_color": "var(--c-teal)",
+                    "title": "Simplifying Lending Through Strategic Communication",
+                    "text": "How a complete brand communication ecosystem turned complex financial workflows into clear, compelling messaging for a commercial-lending fintech platform.",
+                    "href": "case-study-fintech",
+                    "stats": [
+                        [
+                            "5",
+                            "Customer segments with tailored messaging"
+                        ],
+                        [
+                            "6",
+                            "Services delivered"
+                        ],
+                        [
+                            "3",
+                            "Content formats: podcasts, reels & explainer videos"
+                        ]
+                    ]
                 },
                 {
-                    "img": "showcase-3.png",
-                    "tag": "Lifestyle & Travel",
-                    "tag_color": "var(--c-teal)"
+                    "img": "assets/images/case-study/case-study-industrial-engineering.webp",
+                    "tag": "Industrial Engineering",
+                    "tag_color": "var(--c-red)",
+                    "title": "Building a Global Digital Identity for an Industrial Engineering Leader",
+                    "text": "How an integrated brand, website, 3D visualisation, SEO and marketing ecosystem helped a UAE-based expansion joint manufacturer communicate its engineering expertise and generate business enquiries.",
+                    "href": "case-study-industrial-engineering",
+                    "stats": [
+                        [
+                            "40+",
+                            "Keywords ranking on Google's first page"
+                        ],
+                        [
+                            "10×",
+                            "Increase in website traffic"
+                        ],
+                        [
+                            "150+",
+                            "Leads generated in 6 months"
+                        ]
+                    ]
                 },
                 {
-                    "img": "showcase-1-f932ad.png",
-                    "tag": "Lifestyle & Travel",
-                    "tag_color": "var(--c-purple)"
+                    "img": "assets/images/case-study/case-study-industrial-filtration.webp",
+                    "tag": "Industrial Filtration",
+                    "tag_color": "var(--c-olive)",
+                    "title": "From Filtration Expertise to Digital Leadership",
+                    "text": "How a modern website, SEO, product photography and educational video helped an industrial filtration manufacturer turn search visibility into domestic and international enquiries.",
+                    "href": "case-study-industrial-filtration",
+                    "stats": [
+                        [
+                            "15+",
+                            "Keywords ranking on Google's first page"
+                        ],
+                        [
+                            "5×",
+                            "Increase in website traffic"
+                        ],
+                        [
+                            "400+",
+                            "Leads generated annually"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-industrial-machinery.webp",
+                    "tag": "Industrial Machinery",
+                    "tag_color": "var(--c-purple)",
+                    "title": "Digital Growth Strategy for Industrial Manufacturing",
+                    "text": "How an integrated brand, website, SEO, content and digital marketing ecosystem helped a specialist industrial machinery manufacturer strengthen its global presence and generate business enquiries.",
+                    "href": "case-study-industrial-machinery",
+                    "stats": [
+                        [
+                            "50+",
+                            "Keywords ranking on Google's first page"
+                        ],
+                        [
+                            "10×",
+                            "Increase in website traffic"
+                        ],
+                        [
+                            "700+",
+                            "Leads generated in 9 months"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-marine-industrial.webp",
+                    "tag": "Marine & Industrial Solutions",
+                    "tag_color": "var(--c-teal)",
+                    "title": "Creating a Digital Identity for a Marine &amp; Industrial Solutions Brand",
+                    "text": "How a refined brand, modern website, marketing collateral and SEO helped a global supplier of marine and industrial engineering products present 51,000+ SKUs and build visibility across international markets.",
+                    "href": "case-study-marine-industrial",
+                    "stats": [
+                        [
+                            "90+",
+                            "Keywords ranking on Google's first page"
+                        ],
+                        [
+                            "10×",
+                            "Increase in website traffic"
+                        ],
+                        [
+                            "550+",
+                            "Leads generated in 6 months"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-rainwear.webp",
+                    "tag": "Rainwear & Apparel",
+                    "tag_color": "var(--c-red)",
+                    "title": "Expanding a Rainwear Brand Across Every Channel",
+                    "text": "How an integrated e-commerce, social, influencer, performance and outdoor marketing ecosystem helped a premium rainwear and winterwear manufacturer connect online commerce with offline market visibility.",
+                    "href": "case-study-rainwear",
+                    "stats": [
+                        [
+                            "18+",
+                            "States targeted through regional advertising"
+                        ],
+                        [
+                            "20K+",
+                            "B2B leads generated through performance marketing"
+                        ],
+                        [
+                            "100+",
+                            "Outdoor branding sites executed across key markets"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-renewable-energy.webp",
+                    "tag": "Renewable Energy",
+                    "tag_color": "var(--c-olive)",
+                    "title": "Shaping the Future of Renewable Energy Through Strategy, Branding &amp; Digital",
+                    "text": "How a new brand identity, website, marketing collateral and social presence helped a solar module manufacturer position itself as a trusted, future-focused renewable energy brand.",
+                    "href": "case-study-renewable-energy",
+                    "stats": [
+                        [
+                            "7",
+                            "Services delivered"
+                        ],
+                        [
+                            "10",
+                            "Brand touchpoints designed"
+                        ],
+                        [
+                            "6",
+                            "Core challenges addressed"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-skincare.webp",
+                    "tag": "Skincare & Beauty",
+                    "tag_color": "var(--c-purple)",
+                    "title": "From Zero to 6-Figure Sales in 2 Months",
+                    "text": "Building a skincare brand from launch to market momentum through social, influencer, marketplace and outdoor marketing.",
+                    "href": "case-study-skincare",
+                    "stats": [
+                        [
+                            "6-Figure",
+                            "Sales within 2 months of launch"
+                        ],
+                        [
+                            "4",
+                            "Channels: social, influencer, marketplace & offline"
+                        ],
+                        [
+                            "7",
+                            "Services delivered"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-solar.webp",
+                    "tag": "Solar Energy",
+                    "tag_color": "var(--c-teal)",
+                    "title": "Growth Story of a Solar Brand Through Performance Marketing &amp; Digital Transformation",
+                    "text": "How a brand built from zero, a lead-focused website, SEO and Meta campaigns helped a rooftop solar company grow from a ₹2 Crore to an ₹80+ Crore turnover.",
+                    "href": "case-study-solar",
+                    "stats": [
+                        [
+                            "₹80+ Cr",
+                            "Turnover in 2026, up from ₹2 Cr in 2020"
+                        ],
+                        [
+                            "20K+",
+                            "Qualified leads generated"
+                        ],
+                        [
+                            "₹25+ Cr",
+                            "Business generated through digital marketing"
+                        ]
+                    ]
+                },
+                {
+                    "img": "assets/images/case-study/case-study-steel-pipes.webp",
+                    "tag": "Stainless Steel Pipes & Tubes",
+                    "tag_color": "var(--c-red)",
+                    "title": "Seamlessly Building a Stronger Digital Flow",
+                    "text": "Turning manufacturing expertise into a digital experience built to be found: how a website, brochure, process videos and SEO helped a stainless steel pipe and tube manufacturer win relevant B2B enquiries.",
+                    "href": "case-study-steel-pipes",
+                    "stats": [
+                        [
+                            "20+",
+                            "Keywords ranking on Google's first page"
+                        ],
+                        [
+                            "10×",
+                            "Increase in website traffic"
+                        ],
+                        [
+                            "50+",
+                            "Leads generated annually"
+                        ]
+                    ]
                 }
             ]
         }

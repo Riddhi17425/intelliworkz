@@ -4,11 +4,11 @@
    ========================================================================== */
 
 /* ---------- Hero ---------- */
-.ve-hero { position: relative; width: 100%; min-height: 920px; padding-bottom: 40px; overflow: hidden; background: var(--c-black); }   /* grows when the hero text is longer than the design */
-.ve-hero__bg { position: absolute; left: -3.73px; top: -50.9px; width: 1927.47px; height: 1075.8px; max-width: none; }
-.ve-hero::after { content: ""; position: absolute; left: -3.73px; top: -50.9px; width: 1927.47px; height: 1075.8px; background: linear-gradient(152deg, #0D0E10 0%, rgba(13, 14, 16, 0) 73%); }
+.ve-hero { position: relative; width: 100%; min-height: 920px; padding-bottom: 170px; overflow: hidden; background: var(--c-black); }   /* grows when the hero text is longer than the design */
+.ve-hero__bg { position: absolute; left: -3.73px; top: auto; bottom: -104.9px; width: 1927.47px; height: 1075.8px; max-width: none; }
+.ve-hero::after { content: ""; position: absolute; left: -3.73px; top: auto; bottom: -104.9px; width: 1927.47px; height: 1075.8px; background: linear-gradient(152deg, #0D0E10 0%, rgba(13, 14, 16, 0) 73%); }
 .ve-hero__pattern { position: absolute; left: 533px; top: 443px; width: 904px; height: 953px; max-width: none; opacity: .3; }
-.ve-hero__floor { position: absolute; z-index: 1; left: -23.2px; top: 754px; width: 1213.34px; height: 214.08px; max-width: none; }
+.ve-hero__floor { position: absolute; z-index: 1; left: -23.2px; top: auto; bottom: -48.1px; width: 1213.34px; height: 214.08px; max-width: none; }
 .ve-hero__content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; }
 .ve-hero__cols { display: flex; justify-content: space-between; align-items: center; }
 .ve-hero__copy { display: flex; flex-direction: column; gap: 40px; align-self: flex-start; padding-top: 14px; }
@@ -80,8 +80,8 @@
 .ve-stats img { position: absolute; max-width: none; }
 .ve-stats__bg1 { left: 1060.05px; top: 91.95px; width: 772.47px; height: 585.41px; object-fit: cover; opacity: .2; }
 .ve-stats__bg2 { left: 1294px; top: -72.25px; width: 506px; height: 272.75px; object-fit: cover; opacity: .3; }
-.ve-stats__bg3 { position: absolute; left: 0; top: -5.54px; width: 730.43px; height: 411.08px; }
-.ve-stats__bg3 img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ve-stats__bg3 { position: absolute; left: 0; top: 0; width: 870px; height: 400px; }   /* matches the 870x400 statistics pictures, so nothing is cropped */
+.ve-stats__bg3 img { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left center; }
 .ve-stats__bg3::after { content: ""; position: absolute; inset: 0; background: linear-gradient(-90deg, #000 0%, rgba(0, 0, 0, 0) 23%); }
 .ve-stats__content { position: absolute; left: 850px; top: 55.5px; display: flex; flex-direction: column; gap: 24px; }
 .ve-stats__row { display: flex; align-items: center; gap: 40px; }
@@ -94,16 +94,18 @@
 /* ---------- Why ---------- */
 .ve-why { display: flex; flex-direction: column; gap: 40px; }
 .ve-split { display: flex; justify-content: center; gap: 80px; align-self: stretch; }
-.ve-split > .h2 { flex: none; width: 451px; }
+.ve-split > .h2 { flex: none; width: 720px; max-width: 45%; }
 .ve-split--center > .h2 { width: auto; flex: 1; }
-.ve-split__side { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+.ve-split__side { flex: 1; max-width: 880px; display: flex; flex-direction: column; gap: 24px; }   /* paragraph column kept to a comfortable reading width */
+.ve-split { justify-content: flex-start; }
+.ve-split__side p:empty { display: none; }   /* an empty paragraph field no longer leaves a gap */
 .ve-split__side p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-body-gray); }
 .btn--enquire { height: 56px; padding: 16px 48px; line-height: 30px; }
 .pillars { display: flex; gap: 16px; }
-.pillar { position: relative; flex: 1; height: 250px; overflow: hidden; border: 1px solid #E2E8F0; border-radius: 10px; }
-.pillar__img { position: absolute; top: 0; width: 470.23px; height: 262.45px; max-width: none; object-fit: cover; }
-.pillar__content { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 20px 12px 20px 20px; }
-.pillar__icon { display: grid; place-items: center; width: 64px; height: 64px; background: var(--c-white); border: 1px solid; border-radius: 32px; }
+.pillar { position: relative; flex: 1; height: 280px; overflow: hidden; border: 1px solid #E2E8F0; border-radius: 10px; }
+.pillar__img { position: absolute; top: 0; width: 470.23px; height: 100%; max-width: none; object-fit: cover; }
+.pillar__content { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-start; gap: 18px; padding: 20px 12px 20px 20px; }
+.pillar__icon { flex: none; display: grid; place-items: center; width: 64px; height: 64px; background: var(--c-white); border: 1px solid; border-radius: 32px; }
 .pillar__text { display: flex; flex-direction: column; gap: 12px; }
 .pillar__text h3 { font-weight: 700; font-size: 16px; line-height: 22px; color: #1A1A1A; }
 .pillar__text p { width: 238px; font-size: 15px; line-height: 22px; color: var(--c-body-gray); }
@@ -112,7 +114,7 @@
 .ve-tools { position: relative; width: 1920px; max-width: 100%; height: 500px; overflow: hidden; background: var(--c-white); }
 .ve-tools__bg { position: absolute; left: -20px; top: -193.34px; width: 1960px; height: 1103.09px; max-width: none; }
 .ve-tools::after { content: ""; position: absolute; left: -20px; top: -193.34px; width: 1960px; height: 1103.09px; background: linear-gradient(180deg, rgba(255, 255, 255, .2) 18%, rgba(255, 255, 255, 0) 38%); }
-.ve-tools__row { position: absolute; z-index: 1; left: 0; top: 61px; width: 100%; box-sizing: border-box; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px 24px; }   /* more than six tools wrap onto a second row instead of being squeezed */
+.ve-tools__row { position: absolute; z-index: 1; left: 0; top: 61px; width: 100%; box-sizing: border-box; padding: 0 24px; display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 28px 24px; }   /* more than six tools wrap onto a second row instead of being squeezed */
 .ve-tool { display: flex; align-items: center; gap: 20px; }
 .ve-tool img { flex: none; width: auto; min-width: 72px; max-width: 128px; height: 72px; object-fit: contain; border-radius: 14px; }
 .ve-tool:last-child img { object-fit: contain; }
@@ -153,17 +155,17 @@
 .acc-item.is-open > .acc-panel { grid-template-rows: 1fr; opacity: 1; }
 .acc-head { cursor: pointer; }
 
-.workflow { width: 1824px; max-width: 100%; height: 466.55px; }
-.workflow__inner { position: relative; height: 100%; }
+.workflow { width: 1824px; max-width: 100%; min-height: 466.55px; }
+.workflow__inner { position: relative; display: flex; align-items: flex-start; gap: 74px; padding: 0 0 20px 37px; }   /* steps flow in a row, so long titles or copy make the block taller instead of overflowing */
 .workflow__line { position: absolute; top: 220px; width: 304px; height: 1px; }
-.wstep { position: absolute; top: 0; width: 230px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.wstep { position: relative; left: auto !important; flex: none; top: 0; width: 230px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .wstep__art { position: relative; width: 194px; height: 194px; }
 .wstep__ring { position: absolute; inset: 0; width: 194px; height: 194px; max-width: none; }
 .wstep__no { position: absolute; top: 14px; height: 60px; font-family: var(--font-display); font-weight: 500; font-size: 48px; line-height: 60px; color: var(--c); }
-.wstep__img { position: absolute; max-width: none; object-fit: cover; }
+.wstep__img { position: absolute; max-width: none; object-fit: contain; left: 37px !important; top: 76px !important; width: 120px !important; height: 114px !important; }   /* every step icon the same size, centred in its ring */
 .wstep__body { display: flex; flex-direction: column; align-items: center; gap: 7px; align-self: stretch; }
 .wstep__copy { display: flex; flex-direction: column; align-items: center; gap: 28px; align-self: stretch; }
-.wstep__copy h3 { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 161px; font-weight: 500; font-size: 24px; line-height: normal; color: var(--c-near-black); text-align: center; white-space: nowrap; }
+.wstep__copy h3 { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 6px; width: 230px; min-height: 68px; font-weight: 500; font-size: 22px; line-height: 28px; color: var(--c-near-black); text-align: center; white-space: normal; }
 .wstep__copy h3 span { width: 34px; height: 3px; border-radius: 100px; background: var(--c); }
 .wstep__copy p { width: 230px; text-align: center; font-size: 16px; line-height: 24px; color: var(--c-body-gray); }
 .workflow__next { position: absolute; top: 205.5px; width: 30px; height: 30px; }
@@ -243,8 +245,26 @@
 body.modal-open { overflow: hidden; }
 
 /* optional hero picture (admin: Hero > Hero background picture) on the plain hero layouts */
-.ve-hero__photo { position: absolute; z-index: 0; left: 0; top: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; opacity: .45; pointer-events: none; }
+.ve-hero__photo { position: absolute; z-index: 0; left: 580px; top: 410px; width: 733px; height: 550px; max-width: none; object-fit: cover; opacity: .95; pointer-events: none; }   /* same placement as the Collaterals hero art: the 589x419 artwork sits whole behind the text, not stretched over the page */
 
 /* optional paragraph above the bullet points of an accordion item */
 .acc--services .acc-para { margin: 0 0 18px; width: 100%; font-weight: 400; font-size: 18px; line-height: 28px; color: var(--c-ink); }
 .acc--services .acc-para + .acc-points { padding-top: 0; }
+
+/* statistics bar: one picture only (the one on the left); the extra faint pictures on the right are not shown */
+.ve-stats__bg1, .ve-stats__bg2, .ppt-stats__layer, .pk-stats__lines { display: none !important; }
+
+/* the tools-strip pictures are 1920x500 like the strip itself: shown whole instead of the oversized crop */
+.ve-tools__bg[src$="tools-bg.webp"] { left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+.ve-tools:has(.ve-tools__bg[src$="tools-bg.webp"])::after { left: 0; top: 0; width: 100%; height: 100%; }
+
+/* Tools strip: the tools always stay on one line; when there are too many for the width the line scrolls by itself, endlessly */
+.ve-tools__row .ve-tool { flex: none; }
+.ve-tools.is-marquee .ve-tools__row { justify-content: flex-start; width: max-content; padding: 0; gap: 24px; animation: ve-tools-scroll var(--ve-time, 30s) linear infinite; }
+.ve-tools.is-marquee .ve-tools__row:hover { animation-play-state: paused; }
+@keyframes ve-tools-scroll { to { transform: translateX(calc(var(--ve-shift, 0px) * -1)); } }
+
+/* dark showcase on the video pages: the decorative pictures stay behind the cards, and the cards are solid so no picture shows through them */
+.showcase__decor { z-index: 0; }
+.showcase__content { z-index: 1; }
+.showcase .showcase-card { background: #050506; }

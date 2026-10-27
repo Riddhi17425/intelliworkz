@@ -280,3 +280,48 @@
     .ab-orbit svg { width: 132%; max-width: none; margin-left: -16%; }
     .ab-orbit__node text { font-size: 19px; }
 }
+
+/* Our Commitment: a dark band with the heading on the left and the two paragraphs on the right */
+.ab-commit { padding-block: 0; }
+.ab-commit__box { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(24px, 4vw, 72px); align-items: center; padding: clamp(28px, 4vw, 56px) var(--gx, clamp(20px, 4vw, 60px)); max-width: none; background: linear-gradient(135deg, #0b0b12 0%, #1b1b3a 100%); border-radius: 0; }
+.ab-commit__box .ab-title { margin-bottom: 0; color: var(--c-white); }
+.ab-commit__box .ab-eyebrow { color: var(--c-white); }
+.ab-commit__copy { padding-left: clamp(16px, 2vw, 28px); border-left: 3px solid var(--c-red); }
+.ab-commit__copy .ab-p { max-width: none; color: var(--c-border-gray); }
+.ab-commit__copy .ab-p:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .ab-commit__box { grid-template-columns: minmax(0, 1fr); } }
+.ab-commit .ab-eyebrow::before { display: none; }
+
+/* "idea" tile: it keeps moving on its own – the ring breathes and sends out ripples, the bulb glows and floats, the bottom line sweeps */
+.ab-purpose__idea::before { animation: ab-idea-ring 3.2s ease-in-out infinite; }
+.ab-purpose__idea svg { animation: ab-idea-bulb 3.2s ease-in-out infinite; }
+.ab-purpose__idea::after { background: linear-gradient(90deg, rgba(196, 32, 48, .25) 0%, var(--c-red) 50%, rgba(196, 32, 48, .25) 100%); background-size: 200% 100%; animation: ab-idea-line 2.8s linear infinite; }
+@keyframes ab-idea-ring {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(196, 32, 48, .35), 0 0 0 0 rgba(196, 32, 48, .45); }
+    50% { transform: scale(1.08); box-shadow: 0 0 56px rgba(196, 32, 48, .55), 0 0 0 34px rgba(196, 32, 48, 0); }
+}
+@keyframes ab-idea-bulb {
+    0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 6px rgba(255, 255, 255, .25)); }
+    50% { transform: translateY(-4px) scale(1.07); filter: drop-shadow(0 0 16px rgba(255, 255, 255, .8)); }
+}
+@keyframes ab-idea-line { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .ab-purpose__idea::before, .ab-purpose__idea svg, .ab-purpose__idea::after { animation: none; } }
+
+/* capability diagram: the dotted ring turns, light runs along the red links, the centre pulses and the pills float one after another */
+.ab-orbit__ring { transform-box: fill-box; transform-origin: center; animation: ab-orbit-spin 60s linear infinite; }
+.ab-orbit__link { stroke-dasharray: 5 9; animation: ab-orbit-flow 1.4s linear infinite; }
+.ab-orbit__core { transform-box: fill-box; transform-origin: center; animation: ab-orbit-core 3.4s ease-in-out infinite; }
+.ab-orbit__node { transform-box: fill-box; transform-origin: center; animation: ab-orbit-float 4.2s ease-in-out infinite; cursor: default; }
+.ab-orbit__node:nth-of-type(2) { animation-delay: -.7s; }
+.ab-orbit__node:nth-of-type(3) { animation-delay: -1.4s; }
+.ab-orbit__node:nth-of-type(4) { animation-delay: -2.1s; }
+.ab-orbit__node:nth-of-type(5) { animation-delay: -2.8s; }
+.ab-orbit__node:nth-of-type(6) { animation-delay: -3.5s; }
+.ab-orbit__node rect, .ab-orbit__node circle { transition: stroke .3s, fill .3s; }
+.ab-orbit__node:hover rect { stroke: var(--c-red); fill: #1a0d10; }
+.ab-orbit__node:hover circle { fill: var(--c-red); }
+@keyframes ab-orbit-spin { to { transform: rotate(360deg); } }
+@keyframes ab-orbit-flow { to { stroke-dashoffset: -28; } }
+@keyframes ab-orbit-core { 0%, 100% { stroke: #2F323C; transform: scale(1); } 50% { stroke: var(--c-red); transform: scale(1.04); } }
+@keyframes ab-orbit-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .ab-orbit__ring, .ab-orbit__link, .ab-orbit__core, .ab-orbit__node { animation: none; } }

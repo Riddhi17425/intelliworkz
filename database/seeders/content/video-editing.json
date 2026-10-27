@@ -191,7 +191,7 @@
             "key": "stats.3",
             "label": "Image (stats-bg-3.png)",
             "type": "image",
-            "value": "assets/images/video/stats-bg-3.png",
+            "value": "assets/images/video-editing/statistics.webp",
             "sort": 20
         },
         {
@@ -236,7 +236,7 @@
             "key": "editing-tools.1",
             "label": "Image (tools-bg-63eb73.png)",
             "type": "image",
-            "value": "assets/images/video/tools-bg-63eb73.png",
+            "value": "assets/images/video-editing/tools-bg.webp",
             "sort": 25
         },
         {
@@ -281,7 +281,7 @@
             "key": "services-workflow.1",
             "label": "Image: Video editing services overvi… (services.png)",
             "type": "image",
-            "value": "assets/images/video/services.png",
+            "value": "assets/images/video-editing/services.webp",
             "sort": 30
         },
         {
@@ -403,9 +403,12 @@
             "scope": "video-editing",
             "items": {
                 "all": "All Work",
-                "editing": "Editing and Assembly",
-                "finishing": "Finishing and Post",
-                "delivery": "Delivery and Localisation"
+                "explainer": "Explainer Videos",
+                "motion": "Motion Graphics",
+                "product": "Product Videos",
+                "social": "Social Media",
+                "corporate": "Corporate Videos",
+                "presentation": "Presentation Videos"
             }
         },
         {
@@ -415,30 +418,185 @@
                 {
                     "title": "Brand Film",
                     "meta": "Brand Films&nbsp; /&nbsp; Commercials",
-                    "cats": "editing",
+                    "cats": "corporate",
                     "overlay": null,
                     "video": "uploads/videos/2026/10/hiring-video-new-trfkwnwb.mp4"
                 },
                 {
+                    "title": "Explainer Video",
+                    "meta": "Explainer Videos&nbsp; /&nbsp; Brand Storytelling",
+                    "cats": "explainer",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/ev1.mp4",
+                    "poster": "assets/images/video/posters/ev1.webp"
+                },
+                {
+                    "title": "Explainer Video",
+                    "meta": "Explainer Videos&nbsp; /&nbsp; Brand Storytelling",
+                    "cats": "explainer",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/ev2.mp4",
+                    "poster": "assets/images/video/posters/ev2.webp"
+                },
+                {
+                    "title": "Motion Graphics",
+                    "meta": "Motion Graphics&nbsp; /&nbsp; 2D &amp; 3D Animation",
+                    "cats": "motion",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/mg1.mp4",
+                    "poster": "assets/images/video/posters/mg1.webp"
+                },
+                {
+                    "title": "Motion Graphics",
+                    "meta": "Motion Graphics&nbsp; /&nbsp; 2D &amp; 3D Animation",
+                    "cats": "motion",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/mg2.mp4",
+                    "poster": "assets/images/video/posters/mg2.webp"
+                },
+                {
+                    "title": "Motion Graphics",
+                    "meta": "Motion Graphics&nbsp; /&nbsp; 2D &amp; 3D Animation",
+                    "cats": "motion",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/mg3.mp4",
+                    "poster": "assets/images/video/posters/mg3.webp"
+                },
+                {
                     "title": "Product Video",
-                    "meta": "Product Videos&nbsp; /&nbsp; Social",
-                    "cats": "finishing",
-                    "overlay": "pf-overlay-1.png",
-                    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv1.mp4",
+                    "poster": "assets/images/video/posters/pv1.webp"
                 },
                 {
-                    "title": "Commercial",
-                    "meta": "Commercials&nbsp; /&nbsp; Brand Films",
-                    "cats": "delivery",
-                    "overlay": "pf-overlay-2.png",
-                    "video": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                    "title": "Product Video",
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv2.mp4",
+                    "poster": "assets/images/video/posters/pv2.webp"
                 },
                 {
-                    "title": "Event Film",
-                    "meta": "Events&nbsp; /&nbsp; Social",
-                    "cats": "editing finishing",
-                    "overlay": "pf-overlay-3.png",
-                    "video": "https://www.youtube.com/shorts/AEICMeqa1B8"
+                    "title": "Product Video",
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv3.mp4",
+                    "poster": "assets/images/video/posters/pv3.webp"
+                },
+                {
+                    "title": "Product Video",
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv4.mp4",
+                    "poster": "assets/images/video/posters/pv4.webp"
+                },
+                {
+                    "title": "Product Video",
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv6.mp4",
+                    "poster": "assets/images/video/posters/pv6.webp"
+                },
+                {
+                    "title": "Product Video",
+                    "meta": "Product Videos&nbsp; /&nbsp; Launch &amp; Promotion",
+                    "cats": "product",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/pv7.mp4",
+                    "poster": "assets/images/video/posters/pv7.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm1.mp4",
+                    "poster": "assets/images/video/posters/sm1.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm2.mp4",
+                    "poster": "assets/images/video/posters/sm2.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm3.mp4",
+                    "poster": "assets/images/video/posters/sm3.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm4.mp4",
+                    "poster": "assets/images/video/posters/sm4.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm5.mp4",
+                    "poster": "assets/images/video/posters/sm5.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm6.mp4",
+                    "poster": "assets/images/video/posters/sm6.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm7.mp4",
+                    "poster": "assets/images/video/posters/sm7.webp"
+                },
+                {
+                    "title": "Social Media Video",
+                    "meta": "Social Media&nbsp; /&nbsp; Reels &amp; Short-Form",
+                    "cats": "social",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/sm8.mp4",
+                    "poster": "assets/images/video/posters/sm8.webp"
+                },
+                {
+                    "title": "Corporate Video",
+                    "meta": "Corporate Videos&nbsp; /&nbsp; Brand &amp; Company",
+                    "cats": "corporate",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/cv1.webm",
+                    "poster": "assets/images/video/posters/cv1.webp"
+                },
+                {
+                    "title": "Corporate Video",
+                    "meta": "Corporate Videos&nbsp; /&nbsp; Brand &amp; Company",
+                    "cats": "corporate",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/cv2.webm",
+                    "poster": "assets/images/video/posters/cv2.webp"
+                },
+                {
+                    "title": "Presentation Video",
+                    "meta": "Presentation Videos&nbsp; /&nbsp; Animated Slides",
+                    "cats": "presentation",
+                    "overlay": null,
+                    "video": "uploads/videos/2026/10/ve/ppv.webm",
+                    "poster": "assets/images/video/posters/ppv.webp"
                 }
             ]
         },
@@ -525,32 +683,32 @@
             "scope": "video-editing",
             "items": [
                 [
-                    "tool-premiere.png",
+                    "assets/images/video-editing/tools/premiere-pro.webp",
                     "Adobe Premiere Pro",
                     "Cut | Sequence"
                 ],
                 [
-                    "tool-aftereffects.png",
+                    "assets/images/video-editing/tools/after-effects.webp",
                     "Adobe After Effects",
                     "Animate | Enhance"
                 ],
                 [
-                    "tool-finalcut.png",
+                    "assets/images/video-editing/tools/final-cut-pro.webp",
                     "Final Cut Pro",
                     "Edit | Export"
                 ],
                 [
-                    "tool-davinci.png",
+                    "assets/images/video-editing/tools/davinci-resolve.webp",
                     "DaVinci Resolve",
                     "Grade | Finish"
                 ],
                 [
-                    "tool-audition.png",
+                    "assets/images/video-editing/tools/audition.webp",
                     "Adobe Audition",
                     "Clean | Mix"
                 ],
                 [
-                    "tool-frameio-1658d8.png",
+                    "assets/images/video-editing/tools/frame-io.webp",
                     "Frame.io",
                     ""
                 ]
@@ -685,11 +843,11 @@
             "items": [
                 {
                     "no": "01",
-                    "noc": "#D1C7E6",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
                     "title": "Motion Graphics",
                     "arrow": "offer-arrow-1.svg",
-                    "img": "offer-1-625569.png",
+                    "img": "assets/images/offers/motion-graphics.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
@@ -698,11 +856,11 @@
                 },
                 {
                     "no": "02",
-                    "noc": "#EAD3C4",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
                     "title": "Explainer Videos",
                     "arrow": "offer-arrow-2.svg",
-                    "img": "offer-2-56586a.png",
+                    "img": "assets/images/offers/explainer-videos.webp",
                     "x": 45,
                     "y": 265,
                     "w": 486,
@@ -711,11 +869,11 @@
                 },
                 {
                     "no": "03",
-                    "noc": "#A2DDDD",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
                     "title": "Product Video",
                     "arrow": "offer-arrow-3.svg",
-                    "img": "offer-3-56586b.png",
+                    "img": "assets/images/offers/product-video.webp",
                     "x": 34,
                     "y": 265,
                     "w": 505,
@@ -724,7 +882,7 @@
                 },
                 {
                     "no": "04",
-                    "noc": "#D9D3A0",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
                     "title": "Social Media Reels",
                     "arrow": "offer-arrow-1.svg",

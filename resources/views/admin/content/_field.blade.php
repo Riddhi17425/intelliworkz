@@ -5,6 +5,7 @@
     $extra = str_contains($f->key, '~');                              // a paragraph added in the admin: can really be deleted
     $canAdd = !$extra && in_array($f->type, ['text', 'textarea', 'html'], true);
     $hidden = (bool) $f->hidden;
+    $isBtn = $f->type === 'text' && preg_match('/button/i', $f->label);   // a button: "Hide" reads as "Remove button"
     $tools = $f->type !== 'toggle';                                   // a Show / hide field already is the switch
 @endphp
 <div class="adm-fieldrow adm-field {{ $extra ? 'is-extra' : '' }} {{ $hidden ? 'is-off' : '' }}" data-field>
@@ -16,7 +17,7 @@
             <button type="button" class="adm-fieldtool d-none" data-fld-act="undo" title="Keep it"><i class="bi bi-arrow-counterclockwise"></i> Undo delete</button>
         @else
             <input type="hidden" name="hidden[{{ $id }}]" value="{{ $hidden ? 1 : 0 }}" data-fld-hidden>
-            <button type="button" class="adm-fieldtool" data-fld-act="hide" title="Hide this on the website (the text is kept)"><i class="bi {{ $hidden ? 'bi-eye' : 'bi-eye-slash' }}"></i> <span>{{ $hidden ? 'Show' : 'Hide' }}</span></button>
+            <button type="button" class="adm-fieldtool" data-fld-act="hide" @if($isBtn) data-is-btn @endif title="{{ $isBtn ? 'Remove this button from the website (the text is kept, you can bring it back)' : 'Hide this on the website (the text is kept)' }}"><i class="bi {{ $hidden ? 'bi-arrow-counterclockwise' : ($isBtn ? 'bi-trash3' : 'bi-eye-slash') }}"></i> <span>{{ $hidden ? ($isBtn ? 'Bring button back' : 'Show') : ($isBtn ? 'Remove button' : 'Hide') }}</span></button>
         @endif
     </div>
     @endif

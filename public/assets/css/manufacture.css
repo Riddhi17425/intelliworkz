@@ -19,6 +19,7 @@
 .mf-btn--red:hover { background: #a81a28; }
 .mf-btn--ghost { box-shadow: inset 0 0 0 1px var(--c-white); }
 .mf-btn--ghost:hover { background: var(--c-white); color: var(--c-black); }
+.mf-btn--ghost:hover img { filter: invert(1); }
 
 /* ---------- Page body ---------- */
 .mf-body { display: flex; flex-direction: column; align-items: center; gap: 120px; width: 100%; }

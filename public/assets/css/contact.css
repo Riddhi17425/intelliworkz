@@ -69,3 +69,7 @@
 .ct-office__btn--red:hover { background: #a81a28; }
 .ct-office__note { display: flex; justify-content: space-between; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .09); }
 .ct-office__note span { font-weight: 600; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #686A6F; }
+
+/* on a large screen the pins keep their pixel positions inside the dark block; the wrapper only matters on a phone */
+.ct-dark__mapbox { display: contents; }
+@media (max-width: 1199px) { .ct-dark__mapbox { display: block; position: relative; width: 100%; } }

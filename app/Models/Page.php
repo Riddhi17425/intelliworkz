@@ -17,7 +17,7 @@ class Page extends Model
 
     /** slug, template and is_system are set by the importer / controller explicitly, never from a request */
     protected $fillable = [
-        'title', 'meta_title', 'meta_description', 'meta_keywords', 'og_image',
+        'title', 'meta_title', 'meta_description', 'meta_keywords', 'category', 'og_image',
         'featured_image', 'content', 'status', 'published_at', 'sort',
     ];
 
@@ -49,13 +49,19 @@ class Page extends Model
         if ($this->is_system) {
             return $this->slug;
         }
-        return $this->template && $this->template !== 'generic' ? $this->template : null;
+        return $this->template && !in_array($this->template, ['generic', 'blog-post'], true) ? $this->template : null;
     }
 
     /** True when the page has a designed layout with its own texts/lists to edit (original pages and copies of them). */
     public function hasEditor(): bool
     {
         return $this->viewKey() !== null;
+    }
+
+    /** A blog post: a plain admin page drawn with the blog layout and listed on the blog page. */
+    public function isBlog(): bool
+    {
+        return $this->template === 'blog-post';
     }
 
     /** True when the page is drawn from sections the admin can hide, reorder and mix with other designs. */

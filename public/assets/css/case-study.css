@@ -21,6 +21,7 @@
 .cs-btn--red:hover { background: #a81a28; }
 .cs-btn--ghost { box-shadow: inset 0 0 0 1px var(--c-white); }
 .cs-btn--ghost:hover { background: var(--c-white); color: var(--c-black); }
+.cs-btn--ghost:hover img { filter: invert(1); }
 
 .cs-client { flex: none; width: 600px; padding: 36px; display: flex; flex-direction: column; gap: 24px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .12); border-radius: 8px; box-shadow: 0 0 24px rgba(187, 187, 187, .18); backdrop-filter: blur(6px); }
 .cs-client__title { font-weight: 500; font-size: 22px; line-height: 28px; color: var(--c-white); }
@@ -446,3 +447,12 @@ img.cs-snapshot__art { -webkit-mask-image: linear-gradient(180deg, transparent 0
     .cs-split__item h3 { font-size: 18px; line-height: 25px; }
     .cs-split__item p { font-size: 14px; line-height: 22px; }
 }
+
+/* tablet / phone polish */
+@media (max-width: 900px) { .cs-overview__top { gap: 40px; } .cs-overview__pic { margin-bottom: 14px; } }
+@media (max-width: 1199px) { .cs-approach .why__grid > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .cs-approach .why__grid > :last-child:nth-child(odd) { grid-column: auto; } }
+
+/* Project Snapshot figures: the later 96px rule was overriding the small-screen sizes, so the numbers overlapped – smaller figures on tablet and phone, never wider than their column */
+@media (max-width: 1199px) { .cs-snap strong { font-size: clamp(44px, 7vw, 64px); line-height: 1.1; overflow-wrap: anywhere; } }
+@media (max-width: 640px) { .cs-snap { padding: 4px 14px; } .cs-snap strong { font-size: clamp(30px, 10vw, 40px); line-height: 1.15; } .cs-snap span { font-size: 15px; line-height: 21px; } }

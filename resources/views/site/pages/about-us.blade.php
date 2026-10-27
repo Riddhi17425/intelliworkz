@@ -161,6 +161,22 @@ foreach ($ab_nodes as $i => $nd) {
         </div>
     </section>
 
+    <!-- ============ 08 OUR COMMITMENT ============ -->
+    @if(trim(strip_tags($T('commit.2'))) !== '')
+    <section class="ab-section ab-commit">
+        <div class="ab-wrap ab-commit__box" data-reveal>
+            <div class="ab-commit__head">
+                <span class="ab-eyebrow">{!! $T('commit.1') !!}</span>
+                <h2 class="ab-title">{!! $T('commit.2') !!}</h2>
+            </div>
+            <div class="ab-commit__copy">
+                <p class="ab-p">{!! $T('commit.3') !!}</p>
+                <p class="ab-p">{!! $T('commit.4') !!}</p>
+            </div>
+        </div>
+    </section>
+    @endif
+
     <!-- ============ 07 WHY BUSINESSES CHOOSE US ============ -->
     <section class="ab-section ab-why">
         <div class="ab-wrap">

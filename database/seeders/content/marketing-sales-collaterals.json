@@ -24,7 +24,7 @@
             "key": "hero.image",
             "label": "Hero background picture",
             "type": "image",
-            "value": "assets/images/collaterals/hero.png",
+            "value": "assets/images/collaterals/hero.webp",
             "sort": 0
         },
         {
@@ -51,7 +51,7 @@
             "key": "hero.3",
             "label": "Paragraph: Marketing and sales collateral is the set of …",
             "type": "textarea",
-            "value": "Marketing and sales collateral is the set of materials your team uses to explain, promote, and sell what you do: brochures, presentations, proposals, product sheets, case studies, and more. When these are designed well and all look part of the same brand, they make your business look credible and make your team's job easier. We design that full range of material, built on your brand and ready to use across print and screen.",
+            "value": "Marketing and sales collateral is the set of materials your team uses to explain, promote, and sell what you do: brochures, presentations, proposals, product sheets, case studies, and more. A well designed brochure aligned with brand guidelines not only impresses but also builds credibility for your business. We design that full range of collaterals that is aligned with your brand and ready to use across print and digital media.",
             "sort": 3
         },
         {
@@ -60,7 +60,7 @@
             "key": "hero.4",
             "label": "Bold label: Dedicated In-House Design Team",
             "type": "text",
-            "value": "Dedicated In-House Design Team",
+            "value": "Dedicated In-House Team",
             "sort": 4
         },
         {
@@ -69,7 +69,7 @@
             "key": "hero.5",
             "label": "Text: Experienced designers creating consistent, hi…",
             "type": "textarea",
-            "value": "Experienced designers creating consistent, high-quality marketing and sales collateral with reliable turnaround.",
+            "value": "Our in-house team coordinates marketing and sales collaterals, feedback and final delivery through a clear project workflow.",
             "sort": 5
         },
         {
@@ -78,7 +78,7 @@
             "key": "hero.6",
             "label": "Heading: Let’s Bring Your Presentation to Life.",
             "type": "text",
-            "value": "Let’s Bring Your Presentation to Life.",
+            "value": "Connect to design your next Collateral",
             "sort": 6
         },
         {
@@ -87,7 +87,7 @@
             "key": "hero.7",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Tell us more about your product or service, to design informative and visually appealing brochure",
             "sort": 7
         },
         {
@@ -123,7 +123,7 @@
             "key": "hero.11",
             "label": "Hero button text (the button under the \"dedicated team\" line)",
             "type": "text",
-            "value": "Get Started",
+            "value": "",
             "sort": 11
         },
         {
@@ -132,7 +132,7 @@
             "key": "hero.12",
             "label": "Hero button link (#enquiry scrolls to the form)",
             "type": "url",
-            "value": "#enquiry",
+            "value": "",
             "sort": 12
         },
         {
@@ -150,7 +150,7 @@
             "key": "selected-work.1",
             "label": "Heading: Selected Marketing & Sales Collateral Work",
             "type": "text",
-            "value": "Selected Collateral Design Work",
+            "value": "Selected Marketing and Sales collaterals Work",
             "sort": 14
         },
         {
@@ -159,7 +159,7 @@
             "key": "selected-work.2",
             "label": "Paragraph: Our collateral design work supports businesse…",
             "type": "textarea",
-            "value": "Explore marketing and sales collateral created for different industries, target audiences and sales environments. The gallery shows how each design maintains visual consistency, readability and impact across print and digital mediums.",
+            "value": "Explore approved marketing and sales collaterals examples across relevant formats and applications.",
             "sort": 15
         },
         {
@@ -267,7 +267,7 @@
             "key": "services-workflow.1",
             "label": "Image: Marketing and sales collatera… (services.png)",
             "type": "image",
-            "value": "assets/images/collaterals/services.png",
+            "value": "assets/images/collaterals/services.webp",
             "sort": 27
         },
         {
@@ -384,7 +384,7 @@
             "key": "faqs.1",
             "label": "Heading: FAQs",
             "type": "text",
-            "value": "Frequently Asked Questions About Marketing and Sales Collateral Design",
+            "value": "FAQs",
             "sort": 40
         }
     ],
@@ -402,36 +402,55 @@
         {
             "key": "cl_filters",
             "scope": "marketing-sales-collaterals",
-            "items": {
-                "all": "All",
-                "brochures": "Brochures &amp; Catalogues",
-                "sales": "Sales Collateral",
-                "digital": "Digital Marketing Materials"
-            }
+            "items": []
         },
         {
             "key": "cl_strip",
             "scope": "marketing-sales-collaterals",
             "items": [
                 {
-                    "img": "strip-a.png",
+                    "img": "assets/images/collaterals/work/work-01.webp",
                     "cats": "brochures"
                 },
                 {
-                    "img": "strip-b.png",
+                    "img": "assets/images/collaterals/work/work-02.webp",
                     "cats": "sales"
                 },
                 {
-                    "img": "strip-a.png",
+                    "img": "assets/images/collaterals/work/work-03.webp",
                     "cats": "digital"
                 },
                 {
-                    "img": "strip-b.png",
+                    "img": "assets/images/collaterals/work/work-04.webp",
                     "cats": "brochures sales"
                 },
                 {
-                    "img": "strip-a.png",
+                    "img": "assets/images/collaterals/work/work-05.webp",
                     "cats": "sales digital"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-06.webp",
+                    "cats": "brochures"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-07.webp",
+                    "cats": "sales"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-08.webp",
+                    "cats": "digital"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-09.webp",
+                    "cats": "brochures digital"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-10.webp",
+                    "cats": "sales"
+                },
+                {
+                    "img": "assets/images/collaterals/work/work-11.webp",
+                    "cats": "brochures sales"
                 }
             ]
         },
@@ -751,11 +770,6 @@
                 {
                     "title": "Corporate Communication",
                     "text": "We help shape how your business communicates with employees, customers, investors and the public. Strategy, messaging and supporting materials keep communication clear and consistent across audiences.",
-                    "href": "services.php#svc-1"
-                },
-                {
-                    "title": "Visual Identity Systems",
-                    "text": "We unify colour, typography, imagery and graphic language into a system that works across websites, packaging, presentations and ads. Clear usage rules help keep the identity consistent as the business grows.",
                     "href": "services.php#svc-1"
                 },
                 {

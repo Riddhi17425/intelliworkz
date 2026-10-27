@@ -52,7 +52,7 @@
 .mg-tools.is-marquee { overflow: hidden; }
 .mg-tools__row.is-marquee { flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 24px; animation: mg-tools-scroll var(--mg-time, 30s) linear infinite; }
 .mg-tools__row.is-marquee .mg-tool { flex: none; }
-.mg-tools.is-marquee:hover .mg-tools__row { animation-play-state: paused; }
+.mg-tools.is-marquee .mg-tools__row:hover { animation-play-state: paused; }
 @keyframes mg-tools-scroll { to { transform: translateX(calc(var(--mg-shift, 0px) * -1)); } }
 
 /* ---------- Services accordion (variant) ---------- */
@@ -71,3 +71,12 @@
 .mg-flow[style*="center"] h3 { margin-inline: auto; }
 /* full-colour tool logos supplied as photos (SEO page): fit them into the 72px tile */
 .mg-tool__icon img[src*="assets/images/"] { width: 48px; height: 48px; object-fit: contain; }
+
+/* Our Examples: endless, smooth loop (CSS only), pauses while the pointer is over it */
+.mg-viewport--loop { cursor: default; }
+.mg-strip--loop { width: max-content; gap: 0; animation: mg-loop 48s linear infinite; will-change: transform; }
+.mg-strip--loop .mg-tile { margin-right: 40px; }
+.mg-viewport--loop:hover .mg-strip--loop { animation-play-state: paused; }
+@keyframes mg-loop { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .mg-strip--loop { animation: none; } }
+.mg-strip--tiles .cl-tile { flex: none; margin-right: 40px; }

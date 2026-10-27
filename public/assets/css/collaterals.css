@@ -5,7 +5,7 @@
 
 /* ---------- Hero: photo sits at the bottom centre, under the pattern ---------- */
 /* Figma shows the book fading from solid black at the top to clear at the bottom (sampled from a render of the node) */
-.cl-hero__art { position: absolute; left: 580.34px; top: 410px; width: 733.33px; height: 550px; opacity: .5; background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0) 65%), url("../images/collaterals/hero.png") center / cover no-repeat; }
+.cl-hero__art { position: absolute; left: 580.34px; top: 410px; width: 733.33px; height: 550px; opacity: .95; background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, 0) 65%), url("../images/collaterals/hero.png") center / cover no-repeat; }
 /* Figma's copy block starts 14px higher than the video page's */
 .cl .ve-hero__copy { padding-top: 0; }
 

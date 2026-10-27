@@ -32,7 +32,7 @@
 .ppt-stats__layer { left: 1486px; top: 80px; width: 314px; height: 320px; opacity: .12; }
 
 /* ---------- Tools strip: wider photo, grid sits lower ---------- */
-.ppt-tools .seo-tools__photo, .ppt-tools::after { left: -105px; top: -95px; width: 2025px; height: 776px; }
+.ppt-tools .seo-tools__photo, .ppt-tools::after { left: 1000px; top: 0; width: 920px; height: 500px; }   /* the strip pictures are 920x500 with their own dark fade on the left, so they sit on the right and never run under the tool names */
 .ppt-tools::after { background: none; }
 .ppt-tools .seo-tools__grid { top: 100px; }
 

@@ -15,7 +15,7 @@
             "key": "hero.1",
             "label": "Paragraph: Home / Services / Branding & Creative / Marke…",
             "type": "html",
-            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>Logo Design Services</span>",
+            "value": "uploads/images/2026/10/hero-section-image-huuvymg2.webp",
             "sort": 1
         },
         {
@@ -24,7 +24,7 @@
             "key": "hero.2",
             "label": "Main heading: Marketing & Sales Collaterals",
             "type": "html",
-            "value": "Logo Design<br>Services",
+            "value": "<a href=\"index.php\">Home</a> / <a href=\"services.php\">Services</a> / <a href=\"services.php#svc-1\">Branding &amp; Creative</a> / <span>Logo Design Services</span>",
             "sort": 2
         },
         {
@@ -33,7 +33,7 @@
             "key": "hero.3",
             "label": "Paragraph: Marketing and sales collateral is the set of …",
             "type": "textarea",
-            "value": "Your logo is usually the very first impression a potential customer makes of your brand, and the way a customer interacts with your brand on your shopfront needs to reflect their interaction with a small icon on an app. We design logos that hold their clarity at any size and in any colour, and we deliver them as a complete set of files rather than a single image that cannot be resized.",
+            "value": "Logo Design Services",
             "sort": 3
         },
         {
@@ -42,7 +42,7 @@
             "key": "hero.4",
             "label": "Bold label: Dedicated In-House Design Team",
             "type": "text",
-            "value": "Dedicated In-House Design Team",
+            "value": "Your logo is usually the very first impression a potential customer makes of your brand, and the way a customer interacts with your brand on your shopfront needs to reflect their interaction with a small icon on an app. We design logos that hold their clarity at any size and in any colour, and we deliver them as a complete set of files rather than a single image that cannot be resized.",
             "sort": 4
         },
         {
@@ -51,7 +51,7 @@
             "key": "hero.5",
             "label": "Text: Experienced designers creating consistent, hi…",
             "type": "textarea",
-            "value": "Our design team ideates and develops your logo as per the design brief in line with the agreed scope of work.",
+            "value": "Dedicated In-House Design Team",
             "sort": 5
         },
         {
@@ -60,7 +60,7 @@
             "key": "hero.6",
             "label": "Heading: Let’s Bring Your Presentation to Life.",
             "type": "text",
-            "value": "Let's Connect For Your Logo",
+            "value": "Our design team ideates and develops your logo as per the design brief in line with the agreed scope of work.",
             "sort": 6
         },
         {
@@ -69,7 +69,7 @@
             "key": "hero.7",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Share your business offerings and your visual ideation, rest we take care",
+            "value": "Let's Connect For Your Logo",
             "sort": 7
         },
         {
@@ -78,7 +78,7 @@
             "key": "hero.8",
             "label": "Text: Subject",
             "type": "text",
-            "value": "Subject",
+            "value": "Share your business offerings and your visual ideation, rest we take care",
             "sort": 8
         },
         {
@@ -87,7 +87,7 @@
             "key": "hero.9",
             "label": "Text: Your Message",
             "type": "text",
-            "value": "Your Message",
+            "value": "Subject",
             "sort": 9
         },
         {
@@ -96,7 +96,7 @@
             "key": "hero.10",
             "label": "Button text: Start a Project",
             "type": "text",
-            "value": "Start a Project",
+            "value": "Your Message",
             "sort": 10
         },
         {
@@ -105,7 +105,7 @@
             "key": "hero.11",
             "label": "Hero button text (the button under the \"dedicated team\" line)",
             "type": "text",
-            "value": "Get Your Logo Designed",
+            "value": "Start a Project",
             "sort": 11
         },
         {
@@ -159,7 +159,7 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "We Design More Than a Graphic",
+            "value": "Why Intelliworkz",
             "sort": 17
         },
         {
@@ -168,7 +168,7 @@
             "key": "why-intelliworkz.2",
             "label": "Paragraph: We handle your collateral as one connected wh…",
             "type": "textarea",
-            "value": "A strong brand identity starts with a well-designed logo and a clearly defined set of brand guidelines that ensure consistency across every application. At Intelliworkz, we support the process from logo development and brand guideline creation to preparing production-ready vector files in formats such as AI, EPS, SVG, and print-ready PDF. These scalable, adaptable assets enable corporate branding agencies to reproduce logos accurately across business cards, letterheads, envelopes, corporate stationery, signage, merchandise, and other branded materials. Whether you’re building a brand from the ground up or need reliable artwork production support for multiple corporate clients, we help ensure every asset is consistent, versatile, and ready for use across print and digital applications.",
+            "value": "Good packaging design will never be considered good unless it works well during production. Every piece of artwork must be technically correct and prepared for the approval process, pre-press, and printing without delay.",
             "sort": 18
         },
         {
@@ -177,7 +177,7 @@
             "key": "why-intelliworkz.3",
             "label": "Paragraph: We bring that consistency by treating your br…",
             "type": "textarea",
-            "value": "",
+            "value": "As one of the established packaging design agencies, we are aware of both the creative and technical aspects of packaging. Artworks will be designed and edited, packaging will be launched, and print-ready files will be created.",
             "sort": 19
         },
         {
@@ -186,7 +186,7 @@
             "key": "why-intelliworkz.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "contact-us.php",
+            "value": "Enquire Now",
             "sort": 20
         },
         {
@@ -195,7 +195,7 @@
             "key": "why-intelliworkz.4",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "Get a Free Logo Consultation",
+            "value": "We work with our clients and the Printers to ensure consistent and timely delivery for their SKU rollout.",
             "sort": 21
         },
         {
@@ -231,7 +231,7 @@
             "key": "services-workflow.5",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "contact-us.php",
+            "value": "See Which Logo Type Fits Your Business",
             "sort": 25
         },
         {
@@ -240,7 +240,7 @@
             "key": "services-workflow.4",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "See Which Logo Type Fits Your Business",
+            "value": "",
             "sort": 26
         },
         {
@@ -249,7 +249,7 @@
             "key": "services-workflow.1",
             "label": "Image: Marketing and sales collatera… (services.png)",
             "type": "image",
-            "value": "assets/images/collaterals/services.png",
+            "value": "assets/images/logo-design/services.webp",
             "sort": 27
         },
         {
@@ -258,7 +258,7 @@
             "key": "services-workflow.6",
             "label": "Heading above the process steps (empty = none)",
             "type": "text",
-            "value": "Our Process",
+            "value": "contact-us.php",
             "sort": 28
         },
         {

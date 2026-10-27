@@ -33,19 +33,39 @@
         <button type="button" class="menu-drawer__close" aria-label="Close menu" data-menu-close>&times;</button>
     </div>
     <div class="menu-drawer__grid">
-        @foreach(['services', 'industries', 'products', 'company', 'insights'] as $handle)
+        {{-- Industries column hidden for now: add 'industries' back after 'services' to show it again --}}
+        @foreach(['services', 'products', 'company', 'insights'] as $handle)
             @php $col = $footerMenu[$handle] ?? null; @endphp
             @if($col)
                 <div class="menu-drawer__col">
                     <h3>{{ $col->title }}</h3>
                     <ul>
                         @foreach($col->items as $item)
+                        @php $sub = $handle === 'services' ? ($footerMenu['cat-' . ($loop->iteration)] ?? null) : null; @endphp
+                            @if($sub && $sub->items->count())
+                            <li class="has-sub">
+                                <a href="{{ $item->href() }}" data-sub-toggle aria-expanded="false">{{ $item->label }}</a>
+                                <ul class="menu-drawer__sub">
+                                    @foreach($sub->items as $si)<li><a href="{{ $si->href() }}">{{ $si->label }}</a></li>@endforeach
+                                    <li class="menu-drawer__all"><a href="{{ $item->href() }}">View all {{ $item->label }} &rarr;</a></li>
+                                </ul>
+                            </li>
+                            @else
                             <li><a href="{{ $item->href() }}"@if($item->new_tab) target="_blank" rel="noopener"@endif>{{ $item->label }}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>
             @endif
         @endforeach
     </div>
-    <div class="menu-drawer__bottom"><?php btn($G('header.4'), 'btn--cta', null, $G('header.3', '#')); ?></div>
+    <div class="menu-drawer__bottom">
+        <?php btn($G('header.4'), 'btn--cta', null, $G('header.3', '#')); ?>
+        <div class="menu-drawer__social">
+            <span>Follow us</span>
+            @foreach(['facebook' => 'Facebook', 'instagram' => 'Instagram', 'linkedin' => 'LinkedIn'] as $k => $label)
+                @if(!empty($settings['social_' . $k]))<a href="{{ $settings['social_' . $k] }}" target="_blank" rel="noopener">{{ $label }}</a>@endif
+            @endforeach
+        </div>
+    </div>
 </aside>

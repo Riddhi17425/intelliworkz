@@ -13,7 +13,7 @@ $vc = 'assets/icons/video/';   // shared icons
                     <p>{!! $T('services-workflow.3') !!}</p>
                     <p>{!! $T('services-workflow.4') !!}</p>
                     <p>{!! $T('services-workflow.5') !!}</p>
-                    <div><a href="{{ $T('services-workflow.7') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.6') !!}</a></div>
+                    @if(trim(strip_tags($T('services-workflow.6'))) !== '')<div><a href="{{ $T('services-workflow.7') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.6') !!}</a></div>@endif
                 </div>
             </div>
 
@@ -27,7 +27,7 @@ $vc = 'assets/icons/video/';   // shared icons
                                 <span class="acc-icons"><img class="acc-icon acc-icon--closed" src="<?= $vc ?>acc-icon-2.svg" width="42" height="42" alt=""><img class="acc-icon acc-icon--open" src="<?= $vc ?>acc-icon-1.svg" width="42" height="42" alt=""></span>
                             </button>
                             <div class="acc-panel"><div class="acc-panel__inner">
-                                <?php if (!empty($s['para']) && empty($s['points'])): ?><p class="acc-para"><?= $s['para'] ?></p><?php endif; ?>
+                                <?php if (!empty($s['para'])): ?><p class="acc-para"><?= $s['para'] ?></p><?php endif; ?>
                                 <?php if (!empty($s['points'])): ?><ul class="dot-list dot-list--plain acc-points">
                                     <?php foreach ($s['points'] as $pt): ?><li><?= $pt ?></li><?php endforeach; ?>
                                 </ul><?php endif; ?>

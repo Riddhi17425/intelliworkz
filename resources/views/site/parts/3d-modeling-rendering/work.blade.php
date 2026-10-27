@@ -10,6 +10,21 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 @endpush
 @endonce
+@php
+// 3D models shown in the viewer (files in public/assets/models/3d). Only the first has an exploded ("-open") version.
+$td_default = 5;   // the model (and tile) that is selected when the page opens: Eliza Cabinet
+$td_models = [
+    ['name' => 'Expansion Joint',        'src' => 'expansion-joint.glb',        'open' => 'expansion-joint-open.glb', 'poster' => null],
+    ['name' => 'Gimbal Assembly',        'src' => 'gimbal.glb',                 'open' => null, 'poster' => 'models/model-1.webp'],
+    ['name' => 'Membrane',               'src' => 'membrane.glb',               'open' => null, 'poster' => 'models/model-2.webp'],
+    ['name' => 'Single Expansion Joint', 'src' => 'single-expansion-joint.glb', 'open' => null, 'poster' => 'models/model-3.webp'],
+    ['name' => 'RO Membrane',            'src' => 'ro-membrane.glb',            'open' => null, 'poster' => 'models/model-4.webp'],
+    ['name' => 'Eliza Cabinet',          'src' => 'eliza-cabinet.glb',          'open' => null, 'poster' => 'models/model-5.webp'],
+    ['name' => 'Boost Pump 100 GPD',     'src' => 'zuanli-100-gpd.glb',         'open' => null, 'poster' => 'models/model-6.webp'],
+    ['name' => 'Solar Panel',            'src' => 'solar-panel.glb',            'open' => null, 'poster' => 'models/model-7.webp'],
+];
+$td_def = $td_models[$td_default];
+@endphp
     <!-- ============ 360 VIEWER + SELECTED WORK ============ -->
     <!-- Figma keeps the heading, filter tabs, gallery strip, the "Flexibel" panel and the
          Exploded View button all inside ONE 1920x920 scene (node 6:179), overlaid on the same
@@ -40,8 +55,8 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
                  file, not a camera trick. -->
             <model-viewer
                 class="td-rings__product"
-                src="<?= $tm ?>expansion-joint.glb"
-                poster="<?= $ti ?>product.png"
+                src="<?= $tm . $td_def['src'] ?>"
+                poster="<?= $ti . ($td_def['poster'] ?: 'product.png') ?>"
                 alt="Belt type fabric expansion joint — 3D model"
                 camera-controls
                 disable-pan
@@ -51,14 +66,14 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
                 exposure="1.2"
                 auto-rotate
                 rotation-per-second="18deg"
-                camera-orbit="25deg 75deg 85%"
+                camera-orbit="25deg 75deg 120%"
                 field-of-view="30deg"
-                min-camera-orbit="auto 55deg auto"
-                max-camera-orbit="auto 100deg auto"
+                min-camera-orbit="auto 0deg auto"
+                max-camera-orbit="auto 180deg auto"
                 min-field-of-view="20deg"
                 max-field-of-view="45deg"
-                data-src-normal="<?= $tm ?>expansion-joint.glb"
-                data-src-exploded="<?= $tm ?>expansion-joint-open.glb"
+                data-src-normal="<?= $tm . $td_def['src'] ?>"
+                data-src-exploded="<?= $td_def['open'] ? $tm . $td_def['open'] : '' ?>"
                 reveal="auto"
             ></model-viewer>
             <img class="td-rings__cursor" src="<?= $tc ?>rotate-cursor.svg" alt="">
@@ -67,12 +82,14 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <strong>360°</strong><span>{!! $T('360-viewer-selected-work.4') !!}</span>
         </div>
 
+        @if(trim(strip_tags($T('360-viewer-selected-work.5') . $T('360-viewer-selected-work.6') . $T('360-viewer-selected-work.7'))) !== '')
         <div class="td-viewer__panel">
             <h3>{!! $T('360-viewer-selected-work.5') !!}</h3> <!-- kept exactly as written in Figma; looks like a typo for "Flexible" -->
             <p class="td-viewer__panel-sub">{!! $T('360-viewer-selected-work.6') !!}</p>
             <p class="td-viewer__panel-text">{!! $T('360-viewer-selected-work.7') !!}</p>
         </div>
-        <button type="button" class="td-viewer__btn" data-explode-toggle aria-pressed="false" data-label-exploded="{{ strip_tags($T('360-viewer-selected-work.8')) }}" data-label-assembled="{{ strip_tags($T('360-viewer-selected-work.9')) }}" data-label-loading="{{ strip_tags($T('360-viewer-selected-work.10')) }}">
+        @endif
+        <button type="button" class="td-viewer__btn" @if(!$td_def['open']) style="display:none" @endif data-explode-toggle aria-pressed="false" data-label-exploded="{{ strip_tags($T('360-viewer-selected-work.8')) }}" data-label-assembled="{{ strip_tags($T('360-viewer-selected-work.9')) }}" data-label-loading="{{ strip_tags($T('360-viewer-selected-work.10')) }}">
             <span data-explode-label>{!! $T('360-viewer-selected-work.8') !!}</span>
             <span class="td-viewer__btn-icon"><img src="<?= $tc ?>exploded-view.svg" width="20" height="20" alt=""></span>
         </button>
@@ -82,7 +99,7 @@ $tm = 'assets/models/3d/';    // 3D model files (.glb)
             <div class="td-gallery__viewport" data-gallery>
                 <div class="td-gallery__track" data-gallery-track>
                     <?php foreach ($td_gallery as $i => $g): ?>
-                        <button type="button" class="td-gallery__tile <?= $i === 5 ? 'is-featured' : '' ?>" data-cats="<?= $g['cats'] ?>">
+                        <button type="button" class="td-gallery__tile <?= $i === $td_default ? 'is-featured' : '' ?>" data-cats="<?= $g['cats'] ?>" <?php $tm_ = $td_models[$i % count($td_models)]; ?>data-model-src="<?= $tm . $tm_['src'] ?>" data-model-open="<?= $tm_['open'] ? $tm . $tm_['open'] : '' ?>" data-model-name="<?= e($tm_['name']) ?>" data-model-poster="<?= $tm_['poster'] ? $ti . $tm_['poster'] : $ti . 'product.png' ?>">
                             <img src="<?= iu($ti, $g['img']) ?>" alt="3D render example">
                             <span class="td-gallery__badge"><?= sprintf('%02d', $i + 1) ?></span>
                         </button>

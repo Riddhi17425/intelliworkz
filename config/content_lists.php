@@ -193,7 +193,7 @@ return [
     'pp_tools' => ['label' => 'Tools', 'section' => 'Tools', 'kind' => 'groups', 'group' => 'Column', 'title' => 3, 'sort' => 50,
         'fields' => [1 => ['Logo', 'image'], 3 => ['Tool name'], 4 => ['Tagline']]],
     'pp_services' => $services,
-    'pp_flow' => ['label' => 'Process cards', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea']]],
+    'pp_flow' => ['label' => 'Process cards', 'section' => 'Process', 'title' => 'title', 'sort' => 70, 'fields' => ['title' => ['Step title'], 'text' => ['Description', 'textarea'], 'img' => ['Picture', 'image']]],
     'pp_offers' => $offer,
     'pp_faqs' => $faq,
 

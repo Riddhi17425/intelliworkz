@@ -15,7 +15,7 @@ $vc = 'assets/icons/video/';          // shared icons
                 <p>{!! $T('what-you-get.2') !!}</p>
                 <p>{!! $T('what-you-get.3') !!}</p>
                 <p>{!! $T('what-you-get.4') !!}</p>
-                <div><a href="{{ $T('what-you-get.6') ?: '#' }}" class="btn btn--enquire">{!! $T('what-you-get.5') !!}</a></div>
+                @if(trim(strip_tags($T('what-you-get.5'))) !== '')<div><a href="{{ $T('what-you-get.6') ?: '#' }}" class="btn btn--enquire">{!! $T('what-you-get.5') !!}</a></div>@endif
             </div>
         </div>
         <div class="pp-why">

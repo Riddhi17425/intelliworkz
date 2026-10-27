@@ -280,6 +280,7 @@ $industry_text = $T('shared-copy.1');
     @include('site.sections.engagement')
 
     <!-- ============ INSIGHTS ============ -->
+    @if(trim(strip_tags($T('insights.2'))) !== '')
     <section class="container insights">
         <h2 class="h2 h2--center">{!! $T('insights.2') !!}</h2>
         <div class="insights__row">
@@ -297,6 +298,7 @@ $industry_text = $T('shared-copy.1');
             <?php endforeach; ?>
         </div>
     </section>
+    @endif
 
 </main>
 

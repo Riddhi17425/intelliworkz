@@ -233,16 +233,25 @@
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
 
+    /* "₹80+ Cr", "10×", "40+", "#1": the number part counts up, any text around it stays as written; text with no number is just shown */
+    var parts = function (el) {
+        var raw = el.getAttribute('data-count');
+        var m = /^([^0-9]*)([0-9][0-9.,]*)([sS]*)$/.exec(raw);
+        return m ? { pre: m[1], num: parseFloat(m[2].replace(/,/g, '')), post: m[3], raw: raw } : { raw: raw };
+    };
+
     var run = function (el) {
-        var target = parseFloat(el.getAttribute('data-count'));
+        var t = parts(el);
+        if (t.num === undefined) { el.textContent = t.raw; return; }
         var duration = parseInt(el.getAttribute('data-duration'), 10) || 2000;
         var start = null;
 
         var step = function (now) {
             if (start === null) start = now;
             var p = Math.min((now - start) / duration, 1);
-            el.textContent = Math.round(target * easeOut(p));
+            el.textContent = t.pre + Math.round(t.num * easeOut(p)) + t.post;
             if (p < 1) requestAnimationFrame(step);
+            else el.textContent = t.raw;
         };
         requestAnimationFrame(step);
     };
@@ -255,7 +264,7 @@
             el.style.textAlign = 'left';
             el.style.minWidth = '';
             el.style.minWidth = el.getBoundingClientRect().width + 'px';
-            if (!reduce) el.textContent = '0';
+            if (!reduce) { var t0 = parts(el); el.textContent = t0.num === undefined ? t0.raw : t0.pre + '0' + t0.post; }
         });
         if (reduce) return;
 
@@ -411,8 +420,14 @@
             Array.prototype.forEach.call(track.children, function (card) {
                 card.hidden = !(key === 'all' || card.getAttribute('data-cats').split(' ').indexOf(key) > -1);
             });
+            syncArrows();
         });
     });
+
+    /* Prev/next arrows only make sense when more than 4 cards are showing */
+    var arrows = prev ? prev.parentNode : null;
+    var syncArrows = function () { if (arrows) arrows.style.display = cards().length <= 4 ? 'none' : ''; };
+    syncArrows();
 
     /* Endless slider: animate the row by one card, then re-order the DOM so it can go on forever */
     var slide = function (dir) {
@@ -898,8 +913,9 @@
         track.addEventListener('transitionend', done);
         setTimeout(done, 600);
     };
-    section.querySelectorAll('[data-gallery-prev]').forEach(function (b) { b.addEventListener('click', function () { slide(-1); }); });
-    section.querySelectorAll('[data-gallery-next]').forEach(function (b) { b.addEventListener('click', function () { slide(1); }); });
+    var step1 = function (dir) { if (screen) { var vis = tiles.filter(function (t) { return !t.hidden; }); var at = vis.findIndex(function (t) { return t.classList.contains('is-featured'); }); if (vis.length) feature(vis[(at + dir + vis.length) % vis.length]); } slide(dir); };
+    section.querySelectorAll('[data-gallery-prev]').forEach(function (b) { b.addEventListener('click', function () { step1(-1); }); });
+    section.querySelectorAll('[data-gallery-next]').forEach(function (b) { b.addEventListener('click', function () { step1(1); }); });
 
     tiles.forEach(function (tile) {
         tile.addEventListener('click', function () { feature(tile); });
@@ -1196,5 +1212,132 @@
         });
         sync();
         if (mq.addEventListener) mq.addEventListener('change', sync);
+    });
+})();
+
+/* Video cards: show each video's real length (mm:ss) once the browser has read its metadata */
+(function () {
+    document.querySelectorAll('.pf-card[data-video]').forEach(function (card) {
+        var src = card.getAttribute('data-video') || '';
+        var tag = card.querySelector('[data-duration]');
+        if (!tag || /youtube|youtu\.be|vimeo/i.test(src)) return;   /* embeds expose no length */
+        var v = document.createElement('video');
+        v.preload = 'metadata';
+        v.muted = true;
+        v.addEventListener('loadedmetadata', function () {
+            var s = Math.round(v.duration);
+            if (!isFinite(s) || s <= 0) return;
+            var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), r = s % 60;
+            var two = function (n) { return (n < 10 ? '0' : '') + n; };
+            tag.textContent = (h ? h + ':' + two(m) : two(m)) + ':' + two(r);
+            tag.hidden = false;
+            v.removeAttribute('src'); v.load();
+        });
+        v.src = src;
+    });
+})();
+
+/* Video tools strip: one line only; if the tools are wider than the strip, repeat them once and scroll endlessly */
+(function () {
+    'use strict';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    Array.prototype.forEach.call(document.querySelectorAll('.ve-tools'), function (sec) {
+        var row = sec.querySelector('.ve-tools__row');
+        if (!row || reduce || row.children.length < 2) return;
+        var started = false;
+        var start = function () {
+            if (started) return;
+            if (getComputedStyle(row).flexDirection === 'column') return;   /* phone: the tools are stacked, nothing to scroll */
+            var gap = parseFloat(getComputedStyle(row).columnGap) || 24;
+            var total = 0;
+            Array.prototype.forEach.call(row.children, function (c) { total += c.offsetWidth + gap; });
+            if (total - gap <= row.clientWidth - 48) return;        /* fits: stays centred and still */
+            started = true;
+            var originals = Array.prototype.slice.call(row.children);
+            var join = document.createElement('li');
+            join.className = 've-tools__divider';
+            row.appendChild(join);
+            originals.forEach(function (el) { var c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); row.appendChild(c); });
+            sec.classList.add('is-marquee');
+            var measure = function () {
+                var shift = join.offsetLeft + join.offsetWidth + (parseFloat(getComputedStyle(row).columnGap) || 24);
+                row.style.setProperty('--ve-shift', shift + 'px');
+                row.style.setProperty('--ve-time', Math.max(20, Math.round(shift / 60)) + 's');
+            };
+            measure();
+            window.addEventListener('resize', measure);
+        };
+        start();
+        window.addEventListener('load', start);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(start);
+    });
+})();
+
+/* 3D page: clicking a tile in the gallery strip loads that tile's model in the viewer; only models with an "-open" file keep the Exploded View button. */
+(function () {
+    'use strict';
+    var section = document.querySelector('.td-viewer');
+    var viewer = section && section.querySelector('.td-rings__product');
+    var strip = document.querySelector('.td-gallery');
+    if (!viewer || !strip) return;
+    var btn = section.querySelector('[data-explode-toggle]');
+    strip.addEventListener('click', function (e) {
+        var tile = e.target.closest ? e.target.closest('.td-gallery__tile[data-model-src]') : null;
+        if (!tile) return;
+        var src = tile.getAttribute('data-model-src'), open = tile.getAttribute('data-model-open');
+        if (viewer.getAttribute('data-src-normal') === src && !viewer.classList.contains('is-exploded')) return;
+        var poster = tile.getAttribute('data-model-poster'); if (poster) viewer.setAttribute('poster', poster); else viewer.removeAttribute('poster');
+        viewer.classList.remove('is-exploded');
+        viewer.setAttribute('data-src-normal', src);
+        viewer.setAttribute('data-src-exploded', open || '');
+        viewer.setAttribute('alt', (tile.getAttribute('data-model-name') || '3D model') + ' — 3D model');
+        viewer.src = src;
+        if (btn) {
+            btn.style.display = open ? '' : 'none';
+            btn.setAttribute('aria-pressed', 'false');
+            var l = btn.querySelector('[data-explode-label]');
+            if (l) l.textContent = btn.getAttribute('data-label-exploded') || 'Exploded View';
+        }
+    });
+})();
+
+/* Phone: dots under the delivery-model cards (.models) that follow the swipe and jump to a card when tapped. Hidden above 640px by CSS. */
+(function () {
+    'use strict';
+    var row = document.querySelector('.models');
+    if (!row || row.children.length < 2) return;
+    var cards = Array.prototype.slice.call(row.children);
+    var wrap = document.createElement('div');
+    wrap.className = 'models-dots';
+    var dots = cards.map(function (c, i) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'models-dots__dot'; b.setAttribute('aria-label', 'Show model ' + (i + 1));
+        b.addEventListener('click', function () { row.scrollTo({ left: c.offsetLeft - row.offsetLeft, behavior: 'smooth' }); });
+        wrap.appendChild(b); return b;
+    });
+    row.parentNode.insertBefore(wrap, row.nextSibling);
+    var sync = function () {
+        var best = 0, min = Infinity;
+        cards.forEach(function (c, i) { var d = Math.abs((c.offsetLeft - row.offsetLeft) - row.scrollLeft); if (d < min) { min = d; best = i; } });
+        dots.forEach(function (d, i) { d.classList.toggle('is-on', i === best); });
+    };
+    row.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+})();
+
+
+/* Slide-out menu: tapping a service category opens / closes its own links (one delegated handler, works for taps and clicks) */
+(function () {
+    'use strict';
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('.menu-drawer [data-sub-toggle]') : null;
+        if (!a) return;
+        e.preventDefault();
+        var li = a.parentNode, open = !li.classList.contains('is-open');
+        Array.prototype.forEach.call(li.parentNode.querySelectorAll('li.has-sub.is-open'), function (x) { x.classList.remove('is-open'); x.firstElementChild.setAttribute('aria-expanded', 'false'); });
+        li.classList.toggle('is-open', open);
+        a.setAttribute('aria-expanded', String(open));
+        if (open && li.scrollIntoView) setTimeout(function () { li.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, 60);
     });
 })();

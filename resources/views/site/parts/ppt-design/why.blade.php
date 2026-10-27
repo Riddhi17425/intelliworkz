@@ -15,7 +15,7 @@ $vc = 'assets/icons/video/';         // shared icons
                 <p>{!! $T('why-intelliworkz.2') !!}</p>
                 <p>{!! $T('why-intelliworkz.3') !!}</p>
                 <p>{!! $T('why-intelliworkz.4') !!}</p>
-                <div><a href="{{ $T('why-intelliworkz.6') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.5') !!}</a></div>
+                @if(trim(strip_tags($T('why-intelliworkz.5'))) !== '')<div><a href="{{ $T('why-intelliworkz.6') ?: '#' }}" class="btn btn--enquire">{!! $T('why-intelliworkz.5') !!}</a></div>@endif
             </div>
         </div>
         <div class="pp-why">

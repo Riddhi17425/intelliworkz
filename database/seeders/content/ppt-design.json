@@ -25,7 +25,7 @@
             "key": "hero.1",
             "label": "Image (hero.png)",
             "type": "image",
-            "value": "assets/images/ppt/hero.png",
+            "value": "assets/images/ppt/hero.webp",
             "sort": 1
         },
         {
@@ -52,7 +52,7 @@
             "key": "hero.4",
             "label": "Paragraph: A presentation is often where your idea first…",
             "type": "textarea",
-            "value": "A presentation is often where your idea first meets an investor, a client or your own team. When the slides are cluttered or hard to follow, the message weakens before you have finished speaking, no matter how strong the idea behind it is. A good deck does the opposite: it holds attention, makes each point land, and gives you the confidence to present. We design presentations that carry your message clearly, so your slides support what you are saying instead of competing with it.",
+            "value": "A business presentation is often the first to represent your company to your clients, investors and stakeholders. This makes it very important to have a professionally designed presentation that enables you to communicate effectively to your audience. However the biggest challenge is the lack of time you have on hand and that most of the presentations are needed at the very last moment or closer to the deadline. This is where we step in to support our clients by providing timely and creative presentation design services.",
             "sort": 4
         },
         {
@@ -61,7 +61,7 @@
             "key": "hero.5",
             "label": "Bold label: Dedicated In-House Design Team",
             "type": "text",
-            "value": "Dedicated In-House Design Team",
+            "value": "Dedicated In-House Team",
             "sort": 5
         },
         {
@@ -70,7 +70,7 @@
             "key": "hero.6",
             "label": "Text: Professional presentation designers deliverin…",
             "type": "text",
-            "value": "Professional presentation designers delivering brand-consistent, high-quality slides with reliable turnaround.",
+            "value": "Our in-house team coordinates ppt design, feedback and final delivery through a clear project workflow.",
             "sort": 6
         },
         {
@@ -79,7 +79,7 @@
             "key": "hero.7",
             "label": "Heading: Let’s Bring Your Presentation to Life.",
             "type": "text",
-            "value": "Let’s Bring Your Presentation to Life.",
+            "value": "Let’s Transform Your Ideas into Powerful Presentations",
             "sort": 7
         },
         {
@@ -88,7 +88,7 @@
             "key": "hero.8",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Share your ideas and core messaging and we will transfer it into engaging presentations.",
             "sort": 8
         },
         {
@@ -124,7 +124,7 @@
             "key": "selected-work.5",
             "label": "Heading: Selected PPT Design Work",
             "type": "text",
-            "value": "Selected PPT Design Work",
+            "value": "Selected PPT design Work",
             "sort": 12
         },
         {
@@ -133,7 +133,7 @@
             "key": "selected-work.6",
             "label": "Paragraph: Our presentation design work supports busines…",
             "type": "textarea",
-            "value": "Our presentation design work supports businesses, startups, corporate teams and marketing agencies with investor pitch decks, sales presentations, company profiles, business reports and custom PowerPoint templates. Every presentation is designed to communicate clearly, maintain brand consistency and deliver a professional visual experience.",
+            "value": "Explore approved ppt design examples across relevant formats and applications.",
             "sort": 13
         },
         {
@@ -169,7 +169,7 @@
             "key": "selected-work.4",
             "label": "Image: Presentation design examples (scene-main.png)",
             "type": "image",
-            "value": "assets/images/ppt/scene-main.png",
+            "value": "assets/images/ppt/laptop-blank.png",
             "sort": 17
         },
         {
@@ -196,7 +196,7 @@
             "key": "stats.2",
             "label": "Image (stats.png)",
             "type": "image",
-            "value": "assets/images/prepress/stats.png",
+            "value": "assets/images/ppt/statistics.webp",
             "sort": 20
         },
         {
@@ -205,7 +205,7 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "Why Intelliworkz",
+            "value": "A Clear Message Matters More Than a Full Slide",
             "sort": 21
         },
         {
@@ -214,7 +214,7 @@
             "key": "why-intelliworkz.2",
             "label": "Paragraph: Most presentations fail for the same reason: …",
             "type": "textarea",
-            "value": "Most presentations fail for the same reason: there is too much on every slide, and no clear point for the audience to follow. The information is all there, but it is buried under long bullet lists, dense text, and charts that are hard to read. The audience ends up reading the slide instead of listening to you. We fix this by designing around your message first, then making each slide simple to read and simple to present from.",
+            "value": "Most presentations fail to impress primarily because the presentation is not in line with the brand guideline or it is too cluttered or because it is not simply presentable.  Our experience of working in multiple domains ranging from Manufacturing &amp; Engineering, Education , B2B services enables us to understand what our clients expect and deliver the output that is aligned with their expectations.",
             "sort": 22
         },
         {
@@ -223,7 +223,7 @@
             "key": "why-intelliworkz.3",
             "label": "Paragraph: We start with your content and your goal, whe…",
             "type": "textarea",
-            "value": "We start with your content and your goal, whether that is winning an investment, closing a sale, or bringing a team together. We then put the story in a clear order, cut each slide down to the one point it needs to make, and design it to match your brand. Dense data becomes simple charts, heavy text becomes short and clear lines, and the deck is easy for an audience to follow.",
+            "value": "We start with a discovery call to understand your communication goal with the presentation and request for the draft content that will go into the presentation. We arrange this information in a storyboard fashion to help you understand the flow of the presentation and continue to work on the design. We collaborate with our clients to ensure they have first hand information of how the design is shaping up and know how the final design will look like.",
             "sort": 23
         },
         {
@@ -232,7 +232,7 @@
             "key": "why-intelliworkz.4",
             "label": "Paragraph: As a branding partner, we also make sure your…",
             "type": "textarea",
-            "value": "As a branding partner, we also make sure your presentation matches the rest of your business. The colours, fonts and style follow your brand, so every deck looks like it belongs to your company.",
+            "value": "",
             "sort": 24
         },
         {
@@ -250,7 +250,7 @@
             "key": "why-intelliworkz.5",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "Enquire Now",
+            "value": "Request a Quote",
             "sort": 26
         },
         {
@@ -268,7 +268,7 @@
             "key": "tools-strip.1",
             "label": "Image (tools-bg.png)",
             "type": "image",
-            "value": "assets/images/ppt/tools-bg.png",
+            "value": "assets/images/ppt/tools-bg.webp",
             "sort": 28
         },
         {
@@ -313,7 +313,7 @@
             "key": "services-workflow.1",
             "label": "Image: PPT design services overview (services.png)",
             "type": "image",
-            "value": "assets/images/ppt/services.png",
+            "value": "assets/images/ppt/services.webp",
             "sort": 33
         },
         {
@@ -322,7 +322,7 @@
             "key": "dark-showcase-shared.1",
             "label": "Heading: What Our PPT Design Services Cover",
             "type": "text",
-            "value": "What Our PPT Design Services Cover",
+            "value": "Selected PPT design Case Studies",
             "sort": 34
         },
         {
@@ -331,7 +331,7 @@
             "key": "what-we-offer-cta-engagement.2",
             "label": "Heading: what we offer",
             "type": "text",
-            "value": "what we offer",
+            "value": "What We Offer",
             "sort": 35
         },
         {
@@ -340,7 +340,7 @@
             "key": "what-we-offer-cta-engagement.3",
             "label": "Paragraph: Lorem ipsum dolor sit amet consectetur. Portt…",
             "type": "textarea",
-            "value": "Lorem ipsum dolor sit amet consectetur. Porttitor egestas leo viverra nec consequat nunc sit cum pretium. Enim iaculis malesuada pharetra risus mattis. Convallis faucibus malesuada vitae pellentesque viverra sagittis. Sed vestibulum volutpat lacus a malesuada lorem dolor sagittis. Suspendisse vitae turpis a magna. Varius a sed a hac hendrerit.",
+            "value": "Explore related Intelliworkz services that support your wider business needs.",
             "sort": 36
         },
         {
@@ -349,7 +349,7 @@
             "key": "what-we-offer-cta-engagement.4",
             "label": "Heading: Book a Free Consultation",
             "type": "text",
-            "value": "Book a Free Consultation",
+            "value": "Let’s Discuss Your PPT design",
             "sort": 37
         },
         {
@@ -385,48 +385,56 @@
             "key": "ppt_benefits",
             "scope": "ppt-design",
             "items": [
-                "Custom PowerPoint Slide Design",
-                "Brand-Aligned Presentations",
-                "Clear Charts & Data Visualisation",
-                "Fully Editable Presentation Files"
+                "Corporate Presentation Design",
+                "Sales & Pitch Decks",
+                "Editable Presentation Templates",
+                "Data Visualization & Infographics"
             ]
         },
         {
             "key": "ppt_filters",
             "scope": "ppt-design",
-            "items": {
-                "all": "All",
-                "corporate": "Corporate Presentations",
-                "investor": "Investor Pitch Decks",
-                "sales": "Sales Presentations",
-                "reports": "Business Reports",
-                "templates": "PowerPoint Templates",
-                "training": "Training Presentations"
-            }
+            "items": []
         },
         {
             "key": "ppt_thumbs",
             "scope": "ppt-design",
             "items": [
                 {
-                    "img": "thumb-1.png",
-                    "cats": "corporate investor"
+                    "img": "assets/images/ppt/work/work-1.webp",
+                    "cats": "investor business"
                 },
                 {
-                    "img": "thumb-2.png",
-                    "cats": "sales reports"
+                    "img": "assets/images/ppt/work/work-2.webp",
+                    "cats": "templates business"
                 },
                 {
-                    "img": "thumb-3.png",
-                    "cats": "investor sales corporate"
+                    "img": "assets/images/ppt/work/work-3.webp",
+                    "cats": "investor"
                 },
                 {
-                    "img": "thumb-4.png",
-                    "cats": "templates training"
+                    "img": "assets/images/ppt/work/work-4.webp",
+                    "cats": "templates"
                 },
                 {
-                    "img": "thumb-5.png",
-                    "cats": "reports training"
+                    "img": "assets/images/ppt/work/work-5.webp",
+                    "cats": "business"
+                },
+                {
+                    "img": "assets/images/ppt/work/work-6.webp",
+                    "cats": "investor templates"
+                },
+                {
+                    "img": "assets/images/ppt/work/work-7.webp",
+                    "cats": "business"
+                },
+                {
+                    "img": "assets/images/ppt/work/work-8.webp",
+                    "cats": "templates"
+                },
+                {
+                    "img": "assets/images/ppt/work/work-9.webp",
+                    "cats": "investor business"
                 }
             ]
         },
@@ -475,32 +483,32 @@
                     "tint": "#B5DEEB",
                     "no": "01",
                     "icon": "why-1.svg",
-                    "title": "In-House Design Team",
-                    "text": "Every presentation is designed by our in-house team, with no freelancers or subcontracting."
+                    "title": "In-House Presentation Designers",
+                    "text": "Our in-house team manages slide design, visual consistency, review rounds and presentation file delivery."
                 },
                 {
                     "c": "var(--c-red)",
                     "tint": "#FFD5D9",
                     "no": "02",
                     "icon": "why-2.svg",
-                    "title": "Dedicated Presentation Team",
-                    "text": "The same or similarly skilled designers work across your presentations, maintaining your brand style without repeated briefing."
+                    "title": "Story-Led Presentation Design",
+                    "text": "We structure your content into clear slides, visual hierarchy and charts that support the message."
                 },
                 {
                     "c": "#141717",
                     "tint": "#666666",
                     "no": "03",
                     "icon": "why-3.svg",
-                    "title": "Data Security & Confidentiality",
-                    "text": "Your presentation content, financial information and unpublished business material stay confidential within our in-house team."
+                    "title": "Confidential Presentation Handling",
+                    "text": "Your business figures, draft presentations and internal messages are handled within the agreed project workflow."
                 },
                 {
                     "c": "var(--c-olive)",
                     "tint": "#8DAC65",
                     "no": "04",
                     "icon": "why-4.svg",
-                    "title": "Flexible & Transparent Pricing",
-                    "text": "Choose an engagement model that suits your presentation requirements, with the scope and pricing agreed before work begins."
+                    "title": "Clear Scope and Pricing",
+                    "text": "Slide counts, design scope, review rounds, deadlines and pricing are agreed before design begins."
                 }
             ]
         },
@@ -510,32 +518,32 @@
             "items": [
                 [
                     [
-                        "svg",
-                        "tool-powerpoint.svg",
+                        "png",
+                        "assets/images/ppt/tools/powerpoint.webp",
                         null,
                         "Microsoft PowerPoint",
                         "Design | Present"
                     ],
                     [
-                        "mag",
-                        "tool-illustrator.svg",
-                        "#330000",
-                        "Adobe Illustrator",
-                        "Illustrate | Refine"
+                        "png",
+                        "assets/images/ppt/tools/google-slides.webp",
+                        null,
+                        "Google Slides",
+                        "Build | Collaborate"
                     ]
                 ],
                 [
                     [
                         "png",
-                        "tool-slides.png",
+                        "assets/images/ppt/tools/illustrator.webp",
                         null,
-                        "Google Slides",
-                        "Collaborate | Present"
+                        "Adobe Illustrator",
+                        "Illustrate | Simplify"
                     ],
                     [
-                        "mag",
-                        "tool-photoshop.svg",
-                        "#001834",
+                        "png",
+                        "assets/images/ppt/tools/photoshop.webp",
+                        null,
                         "Adobe Photoshop",
                         "Edit | Enhance"
                     ]
@@ -543,10 +551,10 @@
                 [
                     [
                         "png",
-                        "tool-keynote.png",
+                        "assets/images/ppt/tools/keynote.webp",
                         null,
                         "Apple Keynote",
-                        "Create | Showcase"
+                        ""
                     ]
                 ]
             ]
@@ -568,17 +576,19 @@
                 {
                     "title": "Investor and Corporate",
                     "points": [
-                        "Investor pitch decks",
-                        "Business reports",
-                        "Corporate presentations"
+                        "Investor and fundraising pitch decks",
+                        "Board and management presentations",
+                        "Annual and financial review decks",
+                        "Conference and keynote presentations"
                     ]
                 },
                 {
                     "title": "Templates and Internal",
                     "points": [
-                        "Custom PowerPoint templates",
-                        "Internal and training decks",
-                        "Rebuilds of old or rough decks"
+                        "Custom PowerPoint design templates your team can reuse",
+                        "Training and onboarding decks",
+                        "Internal and town-hall presentations",
+                        "Report and data-heavy presentations"
                     ]
                 }
             ]
@@ -673,55 +683,110 @@
             "items": [
                 {
                     "no": "01",
-                    "noc": "#D1C7E6",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
-                    "title": "Marketing & Sales Collaterals",
-                    "img": "offer-1-625569.png",
+                    "title": "Logo Design",
+                    "img": "assets/images/offers/logo-design.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
                     "h": 341,
                     "arrow": "offer-arrow-1.svg",
-                    "text": "Professionally designed marketing materials and sales presentations that communicate your message clearly and strengthen your brand."
+                    "text": "We create original, scalable logos with practical variations and editable files, helping your identity remain clear across print, digital and real-world applications."
                 },
                 {
                     "no": "02",
-                    "noc": "#EAD3C4",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
-                    "title": "Corporate Communication",
-                    "img": "offer-2-56586a.png",
+                    "title": "Brand Identity &amp; Design",
+                    "img": "assets/images/offers/brand-identity-and-design.webp",
                     "x": 45,
                     "y": 265,
                     "w": 486,
                     "h": 372,
                     "arrow": "offer-arrow-2.svg",
-                    "text": "Consistent, brand-aligned communication materials that help businesses share information effectively with internal and external audiences."
+                    "text": "We bring logos, colours, typography, imagery and brand language together into one consistent system for print, screen and everyday touchpoints."
                 },
                 {
                     "no": "03",
-                    "noc": "#A2DDDD",
+                    "noc": "#C4C4CE",
+                    "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
+                    "title": "Marketing and Sales Collaterals",
+                    "img": "assets/images/offers/marketing-and-sales-collaterals.webp",
+                    "x": 45,
+                    "y": 265,
+                    "w": 486,
+                    "h": 372,
+                    "arrow": "offer-arrow-2.svg",
+                    "text": "We design brochures, presentations, proposals, product sheets and case studies that keep sales and marketing materials clear and on-brand."
+                },
+                {
+                    "no": "04",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
-                    "title": "Advertising Services",
-                    "img": "offer-3-56586b.png",
+                    "title": "Packaging Design",
+                    "img": "assets/images/offers/packaging-design.webp",
                     "x": 34,
                     "y": 265,
                     "w": 505,
                     "h": 343,
                     "arrow": "offer-arrow-3.svg",
-                    "text": "Creative advertising materials designed to capture attention, communicate your brand message and support your marketing campaigns."
+                    "text": "We develop and adapt packaging artwork for new launches, redesigns and multi-SKU rollouts, with production requirements in mind."
                 },
                 {
-                    "no": "04",
-                    "noc": "#D9D3A0",
+                    "no": "05",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
-                    "title": "Pitch Deck Design",
-                    "img": "offer-1-625569.png",
+                    "title": "Campaign Concepts &amp; Ad Creatives",
+                    "img": "assets/images/offers/campaign-concepts-and-ad-creatives.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
                     "h": 341,
                     "arrow": "offer-arrow-1.svg",
-                    "text": "Investor-ready pitch decks that tell your story in a clear order, one point per slide."
+                    "text": "We shape the campaign idea, then carry it across banners, video and social creative so every format feels connected."
+                },
+                {
+                    "no": "06",
+                    "noc": "#C4C4CE",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Corporate Communication",
+                    "img": "assets/images/offers/corporate-communication.webp",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "We align communication for employees, customers, investors and the public through clear strategy, messaging and supporting materials.",
+                    "href": ""
+                },
+                {
+                    "no": "08",
+                    "noc": "#C4C4CE",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "Advertising Services",
+                    "img": "assets/images/offers/advertising-services.webp",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "We connect advertising strategy, creative, media and reporting so campaigns work toward a shared goal across platforms.",
+                    "href": ""
+                },
+                {
+                    "no": "09",
+                    "noc": "#C4C4CE",
+                    "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
+                    "title": "UI/UX Design",
+                    "img": "assets/images/offers/uiux-design.webp",
+                    "x": 58,
+                    "y": 277,
+                    "w": 457,
+                    "h": 341,
+                    "arrow": "offer-arrow-1.svg",
+                    "text": "We design digital experiences around user needs and business goals, from research and user flows to interfaces and prototypes.",
+                    "href": ""
                 }
             ]
         },
@@ -735,23 +800,23 @@
                 ],
                 [
                     "In which file formats do you deliver the presentation?",
-                    "We hand over fully editable files, ready to present. We work in Microsoft PowerPoint, Google Slides and Apple Keynote, and can also deliver a reusable template."
+                    "Usually PowerPoint (PPTX), Google Slides or Keynote, whichever you present in, plus PDF for sharing. All files are fully editable, so your team can update them later without coming back to us."
                 ],
                 [
                     "Is it safe to outsource confidential presentation content?",
-                    "Yes. Your presentation content, financial information and unpublished business material stay confidential within our in-house team, with no freelancers or subcontracting."
+                    "Yes. Every presentation is handled by our in-house team under confidentiality agreements, and we do not pass work to freelancers or outside teams. Your content, financials, and business information stay within our team."
                 ],
                 [
                     "What types of PowerPoint presentations do you design?",
-                    "Sales and pitch presentations, company profiles and capability decks, product and service presentations, proposal and tender decks, investor decks, business reports, and templates for internal use."
+                    "Pitch and investor decks, sales and corporate presentations, company profiles, board and management decks, training material and conference keynotes. If it needs to inform or persuade an audience, we design it."
                 ],
                 [
                     "Can I outsource PowerPoint design to your team?",
-                    "Yes. You can hand us raw content, a rough draft, a Word document, or an old deck that needs rebuilding, and we turn it into a finished, professional presentation."
+                    "Yes. Businesses outsource PowerPoint design to us to save time and get a professional, consistent result. Our team works in your preferred shift, so delivery stays reliable wherever you are based."
                 ],
                 [
                     "Do you design pitch decks and investor presentations?",
-                    "Yes. We design high-stakes pitches that have to win in one meeting: the story in a clear order, each slide cut down to the one point it needs to make, and the design matched to your brand."
+                    "Yes, and this is some of our most requested work. We structure the story, present your numbers clearly, and design a deck that holds an investor's attention, so your idea comes across as clearly as it deserves to."
                 ]
             ]
         },

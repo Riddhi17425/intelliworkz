@@ -181,8 +181,8 @@
     .round-arrow img { width: 100%; height: 100%; }
 
     .ve-split { flex-direction: column; gap: 24px; }
-    .ve-split > .h2, .ve-split--center > .h2 { width: auto; }
-    body .ve .ve-split > .h2, body .ve .ve-split--center > .h2 { width: auto; text-align: left; flex: none; }
+    .ve-split > .h2, .ve-split--center > .h2 { width: auto; max-width: none; }
+    body .ve .ve-split > .h2, body .ve .ve-split--center > .h2 { width: auto; max-width: none; text-align: left; flex: none; }
 
     .ve-services__content { flex-direction: column; gap: 32px; }
     .acc--services { gap: 22px; }
@@ -248,8 +248,8 @@
     .lead-form { padding: 20px; }
     .hero__actions .btn, .ve-hero .btn { width: 100%; }
     /* metrics: compact 2-column tiles (icon on top), last odd tile spans full width */
-    .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 16px; }
-    .metric { flex-basis: auto; min-width: 0; flex-direction: column; justify-content: center; gap: 10px; padding: 18px 8px; text-align: center; background: var(--c-light-bg); border-radius: 10px; }
+    .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 16px; grid-auto-rows: 1fr; align-items: stretch; }
+    .metric { height: auto; align-self: stretch; flex-basis: auto; min-width: 0; flex-direction: column; justify-content: center; gap: 10px; padding: 18px 8px; text-align: center; background: var(--c-light-bg); border-radius: 10px; }
     .metrics--dark .metric { background: var(--c-dark-gray); }
     .metric:last-of-type:nth-of-type(odd) { grid-column: 1 / -1; }
     .metric__icon { width: 44px; height: 44px; }
@@ -258,6 +258,8 @@
     .metric__label { font-size: 14px; line-height: 20px; }
     .ve-stat { width: 100%; }
     .domain-card__body { padding: 20px; }
+    .domain-grid { gap: 12px; }
+    .domain-card { flex: 0 0 100%; }   /* one full-width card at a time on a phone: no empty strip on the right */
     .outsource-card { padding: 24px 20px; }
     .showcase-card { width: 88vw; }
     .acc--faq .acc-panel p { padding-left: 16px; }
@@ -375,7 +377,8 @@
     .mg-tile { width: min(300px, 70vw); height: min(300px, 70vw); }
 
     /* ---- contact ---- */
-    .ct-hero__photo { left: auto; right: -30%; top: auto; bottom: 0; width: 130%; height: auto; opacity: .35; }
+    .ct-hero__photo { left: 0; right: auto; top: 0; bottom: auto; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; opacity: .3; }   /* the picture sits behind the text instead of hanging below the buttons */
+    .ct-hero { min-height: 0; padding-bottom: 48px; }
     .ct-hero::before { left: 0; top: 0; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0,0,0,.2), #000 85%); }
     .ct-hero__text, .ct-hero__text .h1, .mf-hero__text, .mf-hero__text .h1 { width: auto; max-width: 100%; }
     .ct-body { gap: var(--sec); }
@@ -385,8 +388,11 @@
     .ct-card { width: 100%; padding: 24px; }
     .ct-dark { width: 100%; height: auto; display: flex; flex-direction: column; gap: 32px; padding: 56px var(--pad); }
     .ct-dark__head { position: static; width: auto; max-width: 100%; }
-    .ct-dark__map { position: relative; left: auto; top: auto; width: 100%; height: auto; }
-    .ct-pin, .ct-pin__label { display: none; }
+    .ct-dark__map { position: relative; left: auto; top: auto; width: 100%; height: auto; display: block; }
+    .ct-dark__mapbox { position: relative; width: 100%; }
+    .ct-pin, .ct-pin__label { display: block; }
+    .ct-pin { left: var(--x) !important; top: var(--y) !important; width: 10px; height: 10px; margin: -5px 0 0 -5px; box-shadow: 0 0 0 4px rgba(196, 32, 48, .28); }
+    .ct-pin__label { left: var(--x) !important; top: var(--y) !important; font-size: 13px; line-height: 1; transform: translateY(-50%); white-space: nowrap; }
     .ct-offices { position: static; width: 100%; }
     .ct-offices__tab { font-size: 16px; }
     .ct-office { padding: 24px 20px; gap: 22px; }
@@ -435,7 +441,7 @@
         display: block; content: ""; position: absolute; inset: 0; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, .55);
     }
     .ve-tools .ve-tools__bg, .pk-tools .pk-tools__photo { opacity: 1; }
-    .pk-tools::before { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(0, 0, 0, .5); }
+    .pk-tools::before { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(0, 0, 0, .9); }
     .pk-tools__row, .ve-tools__row, .seo-tools__grid { z-index: 1; }
     .seo-tools .seo-tools__photo { display: none; }
     .seo-tools::after, .ppt-tools::after, .pp-tools::after { display: none; }
@@ -506,7 +512,7 @@
     /* engagement models and blog posts: swipe sideways instead of a very tall stack */
     .models, .insights__row { display: flex; flex-direction: row; align-items: stretch; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); margin-inline: calc(var(--pad) * -1); padding: 0 var(--pad) 14px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .models::-webkit-scrollbar, .insights__row::-webkit-scrollbar { display: none; }
-    .models > .model, .insights__row > .post { flex: 0 0 86%; width: auto; scroll-snap-align: start; }
+    .models > .model, .insights__row > .post { flex: 0 0 100%; width: auto; scroll-snap-align: start; }
 
     /* process steps: two per row with smaller artwork */
     .workflow__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 12px; }
@@ -559,3 +565,153 @@
     .office__phone > span a { font-size: 16px; line-height: 22px; font-weight: 500; color: var(--c-near-black); white-space: nowrap; }
 }
 .office__phone a { white-space: nowrap; }
+
+/* dots under the swipeable delivery-model cards (phone only) */
+.models-dots { display: none; }
+@media (max-width: 640px) {
+    .models-dots { display: flex; justify-content: center; gap: 6px; margin-top: -8px; }
+    .models-dots__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: #D5D5DB; cursor: pointer; transition: background-color .2s, width .2s; }
+    .models-dots__dot.is-on { width: 26px; border-radius: 6px; background: var(--c-red); }
+}
+
+/* phone: the work strips are swiped, so the round prev / next arrows above them are hidden */
+@media (max-width: 640px) { .round-arrows { display: none !important; } }
+
+/* phone: the statistics bar becomes a tidy 2-column grid of centred tiles instead of one long left-aligned list */
+@media (max-width: 640px) {
+    .ve-stats { padding: 20px 16px; border-radius: 12px; }
+    .ve-stats__content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; }
+    .ve-stats__row { display: contents; }
+    .ve-stat { width: auto; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 18px 8px; text-align: center; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .1); border-radius: 10px; }
+    .ve-stat:last-child:nth-child(odd) { grid-column: auto; }
+    .ve-stat__value { justify-content: center; font-size: 32px; line-height: 40px; }
+    .ve-stat__label { font-size: 14px; line-height: 20px; text-align: center; }
+}
+@media (max-width: 1199px) { .ve-split { justify-content: flex-start; } .ve-split__side { max-width: none; } }
+
+/* phone: dark case-study slider card – the three headline figures fit the card (smaller figures, equal columns, wrapping labels) */
+@media (max-width: 640px) {
+    .showcase-stats { gap: 8px; align-items: stretch; justify-content: space-between; min-height: 0; }
+    .showcase-stat { flex: 1 1 0; min-width: 0; }
+    .showcase-stat__value { max-width: 100%; font-size: 21px; line-height: 28px; height: auto; white-space: normal; overflow-wrap: anywhere; text-align: center; }
+    .showcase-stat__label { font-size: 12.5px; line-height: 17px; }
+    .showcase-stats__line { height: auto; align-self: stretch; margin-top: 0; }
+    .showcase-card__text h3 { font-size: 20px; line-height: 27px; }
+    .showcase-card__text p { font-size: 14.5px; line-height: 22px; }
+    .showcase-card__body { gap: 18px; padding: 18px 16px 22px; }
+    .showcase-card__text .text-link { align-self: stretch; justify-content: center; }
+}
+
+/* phone: the background picture of the tools strip is only a faint texture, so the tool names stay readable */
+@media (max-width: 640px) {
+    .pk-tools .pk-tools__photo { opacity: .22 !important; filter: grayscale(.4); }
+    .pk-tools { background: #000; }
+    .pk-tools .seo-tool strong, .pk-tools .seo-tool span { text-shadow: 0 1px 6px rgba(0, 0, 0, .9); }
+}
+
+/* phone: process steps – the artwork fits its column, the number is not cut, titles and copy line up */
+@media (max-width: 640px) {
+    .workflow__inner { padding: 8px 0 0; row-gap: 36px; }
+    .wstep { width: auto; min-width: 0; align-items: center; }
+    .wstep__art { zoom: .6; margin-top: 6px; }
+    .wstep__body { width: 100%; }
+    .wstep__copy h3 { width: auto; min-height: 0; justify-content: flex-start; font-size: 16px; line-height: 21px; }
+    .wstep__copy p { width: auto; max-width: 100%; text-align: center; font-size: 13.5px; line-height: 19px; }
+}
+
+/* phone: the dot + line that connects each process step to the line above is not shown */
+@media (max-width: 640px) { .wstep__body > img { display: none; } .wstep__body { gap: 0; } }
+
+/* phone: the swipeable delivery-model row only moves sideways; it can no longer bob up and down while the page is scrolled */
+@media (max-width: 640px) {
+    .models, .insights__row { overflow-y: hidden; overscroll-behavior-x: contain; touch-action: pan-x pan-y; }
+    .models > .model { transform: none !important; transition: none; align-self: flex-start; }
+}
+
+/* phone: filter tabs sit on one swipeable line (no wrapping pills of different widths) */
+@media (max-width: 640px) {
+    .filter-tabs { flex-wrap: nowrap; gap: 8px; overflow-x: auto; margin-inline: 0; padding: 2px 0 8px; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .filter-tab { flex: none; white-space: nowrap; padding: 9px 16px; font-size: 13px; line-height: 18px; scroll-snap-align: start; }
+}
+
+/* phone: the picture at the top of each "why" card fades fully into the white card, so no hard edge or line shows under it */
+@media (max-width: 1199px) {
+    .pk-why__bg { width: 100% !important; height: 266px; -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%); mask-image: linear-gradient(to bottom, #000 45%, transparent 100%); }
+    .pk-why__card::after { display: none; }
+}
+
+/* phone: the category tag on the dark case-study cards is smaller */
+@media (max-width: 640px) {
+    .showcase-card .tag { left: 14px; top: 14px; padding: 5px 14px; font-size: 13px; line-height: 18px; border-radius: 100px; }
+}
+
+/* phone: the presentation slider – small arrows at the sides, several slides in a row, the chosen one framed in red */
+@media (max-width: 640px) {
+    .ppt-gallery { display: flex; align-items: center; gap: 6px; width: 100%; }
+    .ppt-gallery > .round-arrow { flex: none; width: 36px; height: 36px; }
+    .ppt-gallery > .round-arrow img { width: 36px; height: 36px; }
+    .ppt-gallery__viewport { flex: 1; min-width: 0; overflow: hidden; }
+    .ppt-gallery__track { gap: 8px; align-items: center; }
+    .ppt-gallery__tile { width: 78px; height: 44px; opacity: .55; }
+    .ppt-gallery__tile.is-featured { width: 104px; height: 58px; opacity: 1; border: 2px solid var(--c-red); }
+}
+
+/* phone: every "what we offer" card in the slider is as tall as the tallest one, with the picture at the bottom */
+@media (max-width: 640px) {
+    .offer-cards { align-items: stretch; }
+    .offer-card { min-height: 0; height: auto; }
+    .offer-card__img { margin-top: auto; max-height: 240px; }
+}
+
+/* phone: video cards fill the width (no cut-off on the right), the film frame, play button and time scale with the card */
+@media (max-width: 640px) {
+    .pf-cards { gap: 16px; }
+    .pf-card { width: 100%; }
+    .pf-media { height: auto; aspect-ratio: 417 / 233; }
+    .pf-media__base { width: 100%; height: 100%; object-fit: fill; }
+    .pf-media__overlay { left: .63%; top: 10.9%; width: 98.6%; height: 78.8%; }
+    .pf-media__play { left: 50%; top: 50%; width: 64px; height: 64px; transform: translate(-50%, -50%); }
+    .pf-media__play img { width: 100%; height: 100%; }
+    .pf-card:hover .pf-media__play { transform: translate(-50%, -50%) scale(1.1); }
+    .pf-media__time { left: auto; right: 10px; top: auto; bottom: 14%; padding: 3px 12px; font-size: 12px; }
+}
+
+/* phone: the video pop-up's close button sits on the title line, inside the screen, so it is never cut off at the top */
+@media (max-width: 640px) {
+    .video-modal__close { top: -6px; right: 0; width: 38px; height: 38px; font-size: 26px; line-height: 34px; background: rgba(0, 0, 0, .55); z-index: 3; }
+    .video-modal__title { padding-right: 48px; min-height: 28px; }
+    .video-modal__box--portrait { width: min(92vw, calc((100vh - 190px) * 9 / 16)); }
+}
+
+/* phone: the pictures behind the "why" cards are not shown – plain cards only */
+@media (max-width: 640px) {
+    .pillar__img, .pk-why__bg, .mg-why__bg, .cl-why__bg, .pp-why__bg, .seo-why__bg { display: none !important; }
+    .pk-why__card::after { display: none; }
+}
+
+/* phone: the tools list keeps a left margin instead of touching the screen edge */
+@media (max-width: 640px) {
+    .ve-tools__row, .ve-tools.is-marquee .ve-tools__row { padding-left: 18px !important; padding-right: 18px !important; box-sizing: border-box; }
+}
+
+/* phone: the 3D model strip – small tiles in one swipeable line, the chosen model slightly bigger with a red frame */
+@media (max-width: 640px) {
+    .td-gallery { display: block; width: 100%; }
+    .td-gallery__viewport { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 6px 2px 8px; }
+    .td-gallery__viewport::-webkit-scrollbar { display: none; }
+    .td-gallery__track { width: max-content; min-width: 100%; justify-content: flex-start; gap: 8px; transform: none !important; }
+    .td-gallery__tile { width: 72px; height: 54px; margin-top: 0; opacity: .6; scroll-snap-align: center; }
+    .td-gallery__tile.is-featured { width: 96px; height: 72px; margin-top: 0; opacity: 1; border: 2px solid var(--c-red); }
+    .td-gallery__badge { padding: 6px 6px; font-size: 11px; }
+}
+
+/* phone: the 3D tools list is a plain stacked list – side padding, nothing cut off, the file-format picture fits the width */
+@media (max-width: 640px) {
+    .td-tools { overflow: hidden; }
+    .td-tools .ve-tools__row { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+    .td-tools .ve-tool { width: 100%; min-width: 0; }
+    .td-tools .td-tool-formats { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .td-tools .td-tool-formats__img { width: 100%; max-width: 260px; height: auto; }
+    .td-tools .ve-tools__divider { display: none; }
+}

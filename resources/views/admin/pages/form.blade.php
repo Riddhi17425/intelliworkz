@@ -46,6 +46,16 @@
                             </div>
                         @else
                             <div data-generic-fields>
+                                <div class="adm-field-group border rounded p-3 mb-3">
+                                    <div class="form-check mb-2">
+                                        <input type="hidden" name="is_blog" value="0">
+                                        <input class="form-check-input" type="checkbox" id="f_is_blog" name="is_blog" value="1" @checked(old('is_blog', $page->isBlog()))>
+                                        <label class="form-check-label fw-semibold" for="f_is_blog">This is a blog post</label>
+                                    </div>
+                                    <div class="form-text mb-2">Blog posts appear on the <a href="{{ url('blog') }}" target="_blank">Blog</a> page (newest first) and use the article layout. The publish date is the date the page was first published; the short description below is the summary on the blog card.</div>
+                                    <div class="mb-3"><label class="form-label" for="f_pub_on">Published on</label><input id="f_pub_on" type="date" name="published_on" class="form-control" value="{{ old("published_on", optional($page->published_at)->format("Y-m-d")) }}"><div class="form-text">Shown on the blog card and used to sort posts (newest first).</div></div>
+                                    <x-admin.field name="category" label="Blog category" :value="$page->category" help="Small label on the blog card, e.g. ERP, Branding, Digital Marketing." />
+                                </div>
                                 <x-admin.field name="content" type="rich" label="Page content" :value="$page->content" />
                                 <x-admin.image name="featured_image" label="Featured image" :current="$page->featured_image" help="Shown at the top of the page. PNG, JPG, WebP or GIF up to 5 MB." />
                             </div>

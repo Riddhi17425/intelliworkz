@@ -9,7 +9,7 @@ $vc = 'assets/icons/video/';    // page icons
                 <h2 class="h2">{!! $T('services-workflow.2') !!}</h2>
                 <div class="ve-split__side">
                     <p>{!! $T('services-workflow.3') !!}</p>
-                    <div><a href="{{ $T('services-workflow.5') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.4') !!}</a></div>
+                    @if(trim(strip_tags($T('services-workflow.4'))) !== '')<div><a href="{{ $T('services-workflow.5') ?: '#' }}" class="btn btn--enquire">{!! $T('services-workflow.4') !!}</a></div>@endif
                 </div>
             </div>
 
@@ -24,7 +24,7 @@ $vc = 'assets/icons/video/';    // page icons
                             </button>
                             <?php if (!empty($s['points']) || !empty($s['para'])): ?>
                                 <div class="acc-panel"><div class="acc-panel__inner">
-                                    <?php if (!empty($s['para']) && empty($s['points'])): ?><p class="acc-para"><?= $s['para'] ?></p><?php endif; ?>
+                                    <?php if (!empty($s['para'])): ?><p class="acc-para"><?= $s['para'] ?></p><?php endif; ?>
                                     <?php if (!empty($s['points'])): ?><ul class="dot-list dot-list--plain acc-points">
                                         <?php foreach ($s['points'] as $pt): ?><li><?= $pt ?></li><?php endforeach; ?>
                                     </ul><?php endif; ?>

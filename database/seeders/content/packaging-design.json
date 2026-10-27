@@ -24,7 +24,7 @@
             "key": "hero.1",
             "label": "Image (hero.png)",
             "type": "image",
-            "value": "assets/images/packaging/hero.png",
+            "value": "assets/images/packaging/hero.webp",
             "sort": 1
         },
         {
@@ -51,7 +51,7 @@
             "key": "hero.4",
             "label": "Paragraph: Successful packaging goes beyond creative des…",
             "type": "textarea",
-            "value": "Successful packaging goes beyond creative design. It requires artwork that is carefully adapted, technically accurate, and prepared for production, ensuring a smooth transition from concept to press. As a trusted packaging design company, we support that process from start to finish. Our packaging design services, Packaging Rollout, and Pre-Press services help brands and packaging printers manage packaging artwork across the entire production cycle. Whether it’s a new product launch or package redesign, multi-SKU graphics conversion or preflighting for printing, we will help ensure your projects stay true and on time. Using our creativity and understanding of production, we can help you streamline your process and save revisions along the way.",
+            "value": "Successful packaging goes beyond creative design. It requires artwork that is carefully adapted, technically accurate, and prepared for production, ensuring a smooth transition from concept to press.",
             "sort": 4
         },
         {
@@ -60,7 +60,7 @@
             "key": "hero.5",
             "label": "Bold label: Dedicated In-House Packaging Team",
             "type": "text",
-            "value": "Dedicated In-House Packaging Team",
+            "value": "Dedicated In-House Team",
             "sort": 5
         },
         {
@@ -69,7 +69,7 @@
             "key": "hero.6",
             "label": "Text: Creative and technical expertise focused on a…",
             "type": "text",
-            "value": "Creative and technical expertise focused on accurate artwork, consistent branding and timely delivery.",
+            "value": "Our internal production process enables us to deliver error free output seamlessly",
             "sort": 6
         },
         {
@@ -78,7 +78,7 @@
             "key": "hero.7",
             "label": "Heading: Let’s Bring Your Packaging Vision to Life.",
             "type": "text",
-            "value": "Let’s Bring Your Packaging Vision to Life.",
+            "value": "Let&#039;s Discuss Your Packaging design Need",
             "sort": 7
         },
         {
@@ -87,7 +87,7 @@
             "key": "hero.8",
             "label": "Paragraph: Tell us about your project.",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Connect with our Team",
             "sort": 8
         },
         {
@@ -132,7 +132,7 @@
             "key": "selected-work.2",
             "label": "Paragraph: Explore packaging design, artwork adaptation …",
             "type": "textarea",
-            "value": "Explore packaging design, artwork adaptation and production-ready packaging solutions created for brands and packaging printers. Our work covers custom boxes, product labels, packaging concepts, multi-SKU rollouts and artwork localisation, combining creative thinking with technical accuracy to maintain brand consistency across packaging formats.",
+            "value": "Explore approved packaging design examples across relevant formats and applications.",
             "sort": 13
         },
         {
@@ -168,7 +168,7 @@
             "key": "stats.1",
             "label": "Image (stats.png)",
             "type": "image",
-            "value": "assets/images/packaging/stats.png",
+            "value": "assets/images/packaging/statistics.webp",
             "sort": 17
         },
         {
@@ -177,7 +177,7 @@
             "key": "why-intelliworkz.1",
             "label": "Heading: Why Intelliworkz",
             "type": "text",
-            "value": "Why Intelliworkz",
+            "value": "Creative Design Backed by Production Precision",
             "sort": 18
         },
         {
@@ -186,7 +186,7 @@
             "key": "why-intelliworkz.2",
             "label": "Paragraph: Good packaging design will never be considere…",
             "type": "textarea",
-            "value": "Good packaging design will never be considered good unless it works well during production. Every piece of artwork must be technically correct and prepared for the approval process, pre-press, and printing without delay.",
+            "value": "Effective packaging design goes beyond aesthetics. Every artwork file must match technical specifications and be production-ready for approvals, pre-press, and printing, ensuring a smooth workflow and avoiding costly delays.",
             "sort": 19
         },
         {
@@ -195,7 +195,7 @@
             "key": "why-intelliworkz.3",
             "label": "Paragraph: As one of the established packaging design ag…",
             "type": "textarea",
-            "value": "As one of the established packaging design agencies, we are aware of both the creative and technical aspects of packaging. Artworks will be designed and edited, packaging will be launched, and print-ready files will be created.",
+            "value": "We combine creative packaging design expertise with technical production knowledge to manage the entire artwork process—from design development and revisions to packaging adaptations and print-ready file preparation, ensuring every asset is accurate, consistent, and ready for production.",
             "sort": 20
         },
         {
@@ -204,7 +204,7 @@
             "key": "why-intelliworkz.4",
             "label": "Paragraph: We work with our clients and the Printers to …",
             "type": "text",
-            "value": "We work with our clients and the Printers to ensure consistent and timely delivery for their SKU rollout.",
+            "value": "",
             "sort": 21
         },
         {
@@ -213,7 +213,7 @@
             "key": "why-intelliworkz.6",
             "label": "Button link: Enquire Now",
             "type": "url",
-            "value": "contact-us.php",
+            "value": "",
             "sort": 22
         },
         {
@@ -222,7 +222,7 @@
             "key": "why-intelliworkz.5",
             "label": "Button text: Enquire Now",
             "type": "text",
-            "value": "Enquire Now",
+            "value": "",
             "sort": 23
         },
         {
@@ -240,7 +240,7 @@
             "key": "tools-strip.1",
             "label": "Image (tools-bg.png)",
             "type": "image",
-            "value": "assets/images/packaging/tools-bg.png",
+            "value": "assets/images/packaging/tools-bg.webp",
             "sort": 25
         },
         {
@@ -294,7 +294,7 @@
             "key": "services-workflow.1",
             "label": "Image: Packaging design services ove… (services.png)",
             "type": "image",
-            "value": "assets/images/packaging/services.png",
+            "value": "assets/images/packaging/services.webp",
             "sort": 31
         },
         {
@@ -384,10 +384,10 @@
             "key": "pk_benefits",
             "scope": "packaging-design",
             "items": [
-                "Creative & Production-Ready Design",
-                "Accurate Packaging Artwork",
-                "Multi-SKU Packaging Rollouts",
-                "Flexible Engagement Models"
+                "Packaging Design",
+                "Packaging Rollout",
+                "3D Product Packaging",
+                "Packaging Artwork"
             ]
         },
         {
@@ -406,76 +406,76 @@
             "scope": "packaging-design",
             "items": [
                 {
-                    "img": "tile-a.png",
+                    "img": "assets/images/packaging/work/beauty-4.webp",
                     "x": 0,
                     "y": 0,
                     "w": 570,
                     "h": 685,
                     "ih": 615,
-                    "rollout": "tile-b.png",
-                    "beauty": "tile-c.png",
-                    "food": "tile-d.png",
-                    "appliance": "tile-e.png"
+                    "rollout": "assets/images/packaging/work/rollout-4.webp",
+                    "beauty": "assets/images/packaging/work/beauty-4.webp",
+                    "food": "assets/images/packaging/work/food-4.webp",
+                    "appliance": "assets/images/packaging/work/appliance-4.webp"
                 },
                 {
-                    "img": "tile-b.png",
+                    "img": "assets/images/packaging/work/food-5.webp",
                     "x": 585,
                     "y": 0,
                     "w": 600,
                     "h": 335,
                     "ih": 258,
-                    "rollout": "tile-c.png",
-                    "beauty": "tile-d.png",
-                    "food": "tile-e.png",
-                    "appliance": "tile-f.png"
+                    "rollout": "assets/images/packaging/work/rollout-5.webp",
+                    "beauty": "assets/images/packaging/work/beauty-5.webp",
+                    "food": "assets/images/packaging/work/food-5.webp",
+                    "appliance": "assets/images/packaging/work/appliance-5.webp"
                 },
                 {
-                    "img": "tile-c.png",
+                    "img": "assets/images/packaging/work/appliance-6.webp",
                     "x": 1200,
                     "y": 0,
                     "w": 600,
                     "h": 335,
                     "ih": 258,
-                    "rollout": "tile-d.png",
-                    "beauty": "tile-e.png",
-                    "food": "tile-f.png",
-                    "appliance": "tile-a.png"
+                    "rollout": "assets/images/packaging/work/rollout-6.webp",
+                    "beauty": "assets/images/packaging/work/beauty-6.webp",
+                    "food": "assets/images/packaging/work/food-6.webp",
+                    "appliance": "assets/images/packaging/work/appliance-6.webp"
                 },
                 {
-                    "img": "tile-d.png",
+                    "img": "assets/images/packaging/work/rollout-1.webp",
                     "x": 585,
                     "y": 350,
                     "w": 395,
                     "h": 335,
                     "ih": 258,
-                    "rollout": "tile-e.png",
-                    "beauty": "tile-f.png",
-                    "food": "tile-a.png",
-                    "appliance": "tile-b.png"
+                    "rollout": "assets/images/packaging/work/rollout-1.webp",
+                    "beauty": "assets/images/packaging/work/beauty-1.webp",
+                    "food": "assets/images/packaging/work/food-1.webp",
+                    "appliance": "assets/images/packaging/work/appliance-1.webp"
                 },
                 {
-                    "img": "tile-e.png",
+                    "img": "assets/images/packaging/work/beauty-2.webp",
                     "x": 995,
                     "y": 350,
                     "w": 395,
                     "h": 335,
                     "ih": 258,
-                    "rollout": "tile-f.png",
-                    "beauty": "tile-a.png",
-                    "food": "tile-b.png",
-                    "appliance": "tile-c.png"
+                    "rollout": "assets/images/packaging/work/rollout-2.webp",
+                    "beauty": "assets/images/packaging/work/beauty-2.webp",
+                    "food": "assets/images/packaging/work/food-2.webp",
+                    "appliance": "assets/images/packaging/work/appliance-2.webp"
                 },
                 {
-                    "img": "tile-f.png",
+                    "img": "assets/images/packaging/work/food-3.webp",
                     "x": 1405,
                     "y": 350,
                     "w": 395,
                     "h": 335,
                     "ih": 258,
-                    "rollout": "tile-a.png",
-                    "beauty": "tile-b.png",
-                    "food": "tile-c.png",
-                    "appliance": "tile-d.png"
+                    "rollout": "assets/images/packaging/work/rollout-3.webp",
+                    "beauty": "assets/images/packaging/work/beauty-3.webp",
+                    "food": "assets/images/packaging/work/food-3.webp",
+                    "appliance": "assets/images/packaging/work/appliance-3.webp"
                 }
             ]
         },
@@ -528,32 +528,32 @@
                     "no": "01",
                     "icon": "why-1.svg",
                     "bg": "why-bg-1.png",
-                    "title": "In-House Design Team",
-                    "text": "Every marketing and sales collateral piece is designed by our in-house team, with no freelancers or subcontracting."
+                    "title": "In-House Packaging Designers",
+                    "text": "Our in-house team coordinates packaging concepts, artwork development, quality checks and files for production."
                 },
                 {
                     "c": "#E31E36",
                     "no": "02",
                     "icon": "why-2.svg",
                     "bg": "why-bg-2.png",
-                    "title": "Dedicated Design Team",
-                    "text": "The skilled designers work across your marketing materials, maintaining brand consistency without repeated briefing."
+                    "title": "Production-Ready Packaging Design",
+                    "text": "We develop packaging concepts with layouts, dielines and print requirements aligned to your product and production needs."
                 },
                 {
                     "c": "#141717",
                     "no": "03",
                     "icon": "why-3.svg",
                     "bg": "why-bg-3.png",
-                    "title": "Data Security & Confidentiality",
-                    "text": "Your marketing plans, sales materials and confidential business information are handled securely within our in-house team."
+                    "title": "Confidential Artwork Handling",
+                    "text": "Product specifications, packaging concepts, artwork and supplied dielines are handled within the agreed workflow."
                 },
                 {
                     "c": "var(--c-olive)",
                     "no": "04",
                     "icon": "why-4.svg",
                     "bg": "why-bg-4.png",
-                    "title": "Flexible & Transparent Pricing",
-                    "text": "Choose an engagement model that suits your design requirements, with the scope and pricing agreed before work begins."
+                    "title": "Clear Scope and Pricing",
+                    "text": "Packaging formats, artwork deliverables, review rounds, deadlines and pricing are agreed before work begins."
                 }
             ]
         },
@@ -562,22 +562,22 @@
             "scope": "packaging-design",
             "items": [
                 [
-                    "tool-indesign.svg",
+                    "uploads/images/2026/10/adobe-illustrator-6ttngtil.svg",
                     "#54001A",
-                    "Adobe InDesign",
-                    "Layout | Publish"
-                ],
-                [
-                    "tool-illustrator.svg",
-                    "#330000",
                     "Adobe Illustrator",
-                    "Illustrate | Create"
+                    "Design | Dieline"
                 ],
                 [
-                    "tool-photoshop.svg",
-                    "#001834",
+                    "uploads/images/2026/10/adobe-photoshop-0jukwxqi.svg",
+                    "#330000",
                     "Adobe Photoshop",
-                    "Edit | Retouch"
+                    "Mockup | Retouch"
+                ],
+                [
+                    "uploads/images/2026/10/adobe-indesign-y0aeenhx.svg",
+                    "#001834",
+                    "Adobe InDesign",
+                    "Layout | Prepare"
                 ]
             ]
         },
@@ -670,10 +670,10 @@
             "items": [
                 {
                     "no": "01",
-                    "noc": "#D1C7E6",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #EAE2F3 0%, #FBF8FF 100%)",
                     "title": "Brand Identity & Design",
-                    "img": "offer-1-625569.png",
+                    "img": "assets/images/offers/brand-identity-and-design.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
@@ -683,10 +683,10 @@
                 },
                 {
                     "no": "02",
-                    "noc": "#EAD3C4",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #FBE7DB 0%, #FFFDFD 100%)",
                     "title": "Marketing & Sales Collaterals",
-                    "img": "offer-2-56586a.png",
+                    "img": "assets/images/offers/marketing-and-sales-collaterals.webp",
                     "x": 45,
                     "y": 265,
                     "w": 486,
@@ -696,10 +696,10 @@
                 },
                 {
                     "no": "03",
-                    "noc": "#A2DDDD",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #C5E3E3 0%, #F0FAFB 100%)",
                     "title": "Corporate Communication",
-                    "img": "offer-3-56586b.png",
+                    "img": "assets/images/offers/corporate-communication.webp",
                     "x": 34,
                     "y": 265,
                     "w": 505,
@@ -709,10 +709,10 @@
                 },
                 {
                     "no": "04",
-                    "noc": "#D9D3A0",
+                    "noc": "#C4C4CE",
                     "bg": "linear-gradient(-42deg, #F5F1C4 0%, #FFFEF8 100%)",
                     "title": "Pre-Press Services",
-                    "img": "offer-1-625569.png",
+                    "img": "assets/images/offers/pre-press-services.webp",
                     "x": 58,
                     "y": 277,
                     "w": 457,
@@ -732,23 +732,23 @@
                 ],
                 [
                     "How do I choose the right packaging design company?",
-                    "Look for a team that understands both the creative and the technical side of packaging: one that designs the artwork, adapts it across SKUs, and prepares print-ready files, working with you and your printers for consistent, on-time delivery."
+                    "Select a design company that specializes in design and printing services. This partner will ensure the successful design of your packaging as well as update the artwork, and at the same time keep all packaging designs consistent."
                 ],
                 [
                     "Do you offer custom box packaging design for unique product shapes?",
-                    "Yes. Our packaging design services include custom box packaging design, packaging concepts, and product mockups and 3D visualizations so you can see the result before production."
+                    "Yes, because we customize unique box packaging design as per your product needs, packaging needs, and your branding. No matter what kind of box packaging you need for your product, be it unique or regular, we will develop it for you."
                 ],
                 [
                     "What makes a luxury packaging design agency different from a standard one?",
-                    "Technical accuracy and consistency. Luxury packaging depends on precise artwork, brand identity integration and production-ready files that hold up through approval, pre-press and printing without delay."
+                    "Luxury packaging design requires careful thought not only for content but also for the design itself. In terms of colour, typography, finishing, and layout – every element of luxury packaging design needs consideration."
                 ],
                 [
                     "Do you provide product label design along with packaging design?",
-                    "Yes. Product label design is part of our packaging design services, alongside custom packaging, packaging rollout and pre-press."
+                    "Yes, we provide label design as part of our packaging design solutions. We ensure that the label fits well within the packaging while remaining clear and consistent in terms of content."
                 ],
                 [
                     "Can you redesign our existing packaging instead of starting from scratch?",
-                    "Yes. We handle package redesigns as well as new product launches, adapting approved artwork across multiple SKUs, variants, languages and packaging formats."
+                    "Yes, we can update your current packaging to make it look better, function better, or improve branding without needing to create a completely new design for you. We make sure that your packaging is still production-ready after updating it."
                 ]
             ]
         },

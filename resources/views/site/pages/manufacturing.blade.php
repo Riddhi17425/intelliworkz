@@ -88,7 +88,7 @@ $vc = 'assets/icons/video/';         // shared icons
             <h2 class="h2">{!! $T('who-we-support.1') !!}</h2>
             <div class="mf-support__body">
                 <p>{!! $T('who-we-support.2') !!}</p>
-                <div><a href="{{ $T('who-we-support.4') ?: '#' }}" class="btn btn--enquire">{!! $T('who-we-support.3') !!}</a></div>
+                @if(trim(strip_tags($T('who-we-support.3'))) !== '')<div><a href="{{ $T('who-we-support.4') ?: '#' }}" class="btn btn--enquire">{!! $T('who-we-support.3') !!}</a></div>@endif
             </div>
         </section>
 

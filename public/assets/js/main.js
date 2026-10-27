@@ -2,39 +2,54 @@
 (function () {
     'use strict';
 
-    /* Industries slider: pagination dots scroll the card track (4 "slides") */
+    /* Industries slider: one pagination dot per card position; clicking a dot scrolls the track to that card */
     document.querySelectorAll('[data-slider]').forEach(function (slider) {
         var track = slider.querySelector('[data-slider-track]');
-        var dots = slider.querySelectorAll('.dots__dot');
-        if (!track || !dots.length) return;
+        var dotsWrap = slider.querySelector('[data-slider-dots]');
+        if (!track || !dotsWrap) return;
 
-        var max = function () { return track.scrollWidth - track.clientWidth; };
-        var setActive = function (i) {
-            dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); });
+        var max = function () { return Math.max(0, track.scrollWidth - track.clientWidth); };
+        var stepW = function () {
+            var a = track.children[0], b = track.children[1];
+            return a && b ? b.offsetLeft - a.offsetLeft : (a ? a.offsetWidth : 1);
         };
+        var positions = [], dots = [];
         var current = function () {
-            return max() > 0 ? Math.round((track.scrollLeft / max()) * (dots.length - 1)) : 0;
+            var best = 0, d = Infinity;
+            positions.forEach(function (p, i) { var x = Math.abs(track.scrollLeft - p); if (x < d) { d = x; best = i; } });
+            return best;
         };
-
-        dots.forEach(function (dot, i) {
-            dot.addEventListener('click', function () {
-                track.scrollTo({ left: (max() / (dots.length - 1)) * i, behavior: 'smooth' });
-                setActive(i);
+        var setActive = function (i) { dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); }); };
+        var goTo = function (i) { track.scrollTo({ left: positions[i], behavior: 'smooth' }); setActive(i); };
+        var build = function () {
+            var m = max(), s = stepW(), n = m > 0 ? Math.ceil(m / s - 0.05) + 1 : 1;
+            positions = []; for (var i = 0; i < n; i++) positions.push(Math.min(i * s, m));
+            dotsWrap.innerHTML = '';
+            dots = positions.map(function (p, i) {
+                var b = document.createElement('button');
+                b.type = 'button'; b.className = 'dots__dot'; b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                b.addEventListener('click', function () { goTo(i); });
+                dotsWrap.appendChild(b); return b;
             });
-        });
+            dotsWrap.style.display = n > 1 ? '' : 'none';
+            setActive(current());
+        };
+        build();
+        window.addEventListener('resize', build);
         track.addEventListener('scroll', function () { setActive(current()); }, { passive: true });
 
-        /* Autoplay: advance one "slide" every few seconds, loop at the end; pauses on hover/focus/touch */
+        /* Autoplay: advance one card every few seconds, loop at the end; pauses on hover/focus/touch */
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var delay = parseInt(slider.getAttribute('data-autoplay'), 10) || 3500;
         var timer = null, paused = false;
         var next = function () {
             if (paused || document.hidden) return;
             var i = current() + 1;
-            if (i >= dots.length) i = 0;
-            track.scrollTo({ left: (max() / (dots.length - 1)) * i, behavior: 'smooth' });
+            if (i >= positions.length) i = 0;
+            goTo(i);
         };
-        var play = function () { stop(); if (!reduce) timer = setInterval(next, delay); };
+        var isPhone = window.matchMedia('(max-width: 640px)').matches;   /* phones: swipe only, no auto-advance */
+        var play = function () { stop(); if (!reduce && !isPhone && positions.length > 1) timer = setInterval(next, delay); };
         var stop = function () { clearInterval(timer); timer = null; };
         ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (ev) {
             slider.addEventListener(ev, function () { paused = true; });
@@ -44,11 +59,22 @@
         });
         play();
 
-        /* Figma shows slide 3 active on load */
-        var start = slider.hasAttribute('data-start') ? parseInt(slider.getAttribute('data-start'), 10) || 0 : Math.min(2, dots.length - 1);
-        if (window.matchMedia('(max-width: 640px)').matches) start = 0;     /* phones: begin with the first card, not a half-hidden one */
-        track.scrollLeft = (max() / (dots.length - 1)) * start;
-        setActive(start);
+        /* start on the first card */
+        track.scrollLeft = 0;
+        setActive(0);
+    });
+
+    /* Industries cards: on touch screens a tap opens the card text (there is no hover); tapping another card or outside closes it */
+    document.querySelectorAll('.industry').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('.industry__play')) return;
+            var open = !card.classList.contains('is-open');
+            document.querySelectorAll('.industry.is-open').forEach(function (c) { c.classList.remove('is-open'); });
+            if (open) card.classList.add('is-open');
+        });
+    });
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.industry')) document.querySelectorAll('.industry.is-open').forEach(function (c) { c.classList.remove('is-open'); });
     });
 
     /* Home services: the row shows as many cards as fit, the rest slide in (auto-advance + clickable dots) */

@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* ---------- Hero ---------- */
-.ve-hero { position: relative; width: 100%; min-height: 920px; padding-bottom: 170px; overflow: hidden; background: var(--c-black); }   /* grows when the hero text is longer than the design */
+.ve-hero { position: relative; width: 100%; min-height: 920px; padding-bottom: 40px; overflow: hidden; background: var(--c-black); }   /* grows when the hero text is longer than the design */
 .ve-hero__bg { position: absolute; left: -3.73px; top: auto; bottom: -104.9px; width: 1927.47px; height: 1075.8px; max-width: none; }
 .ve-hero::after { content: ""; position: absolute; left: -3.73px; top: auto; bottom: -104.9px; width: 1927.47px; height: 1075.8px; background: linear-gradient(152deg, #0D0E10 0%, rgba(13, 14, 16, 0) 73%); }
 .ve-hero__pattern { position: absolute; left: 533px; top: 443px; width: 904px; height: 953px; max-width: none; opacity: .3; }
@@ -268,3 +268,6 @@ body.modal-open { overflow: hidden; }
 .showcase__decor { z-index: 0; }
 .showcase__content { z-index: 1; }
 .showcase .showcase-card { background: #050506; }
+
+/* only the video pages (which have the film strip at the bottom of the hero) need the extra room under the text; other hero sections end right after their content */
+.ve-hero:has(.ve-hero__floor) { padding-bottom: 170px; }

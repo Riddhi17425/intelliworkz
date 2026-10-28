@@ -92,6 +92,10 @@ class PageController extends Controller
             'show_prefooter' => true, 'footer_class' => '', 'phone_icon' => null,
         ]);
 
+        if ($page->isBlog() || (!$page->hasEditor() && $page->slug === 'blog')) {
+            $cfg['extra_css'][] = 'assets/css/blog.css';     // the blog page and every blog post share one stylesheet
+        }
+
         $title = $page->metaTitle();
         $description = $page->meta_description ?: ($settings['seo_description'] ?? null);
         $image = Media::url($page->og_image ?: ($page->isBlog() ? $page->featured_image : null) ?: ($settings['seo_image'] ?? null));

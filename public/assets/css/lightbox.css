@@ -59,3 +59,13 @@ body.modal-open { overflow: hidden; }
 
 .lb__text { max-width: 900px; margin: 0 auto; text-align: center; font-weight: 500; font-size: 17px; line-height: 26px; color: rgba(255, 255, 255, .85); }
 .lb__text[hidden] { display: none; }
+
+/* ---------- Jump to the previous / next card (e.g. industry) from inside the popup ---------- */
+.lb__grp { display: inline-flex; align-items: center; gap: 6px; flex: none; max-width: 210px; height: 40px; padding: 0 14px; color: var(--c-white); font-size: 14px; line-height: 1; border: 1px solid rgba(255, 255, 255, .35); border-radius: 100px; transition: background-color .2s, border-color .2s; }
+.lb__grp span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb__grp:hover, .lb__grp:focus-visible { background: var(--c-red); border-color: var(--c-red); }
+.lb__grp[hidden] { display: none; }
+@media (max-width: 700px) {
+    .lb__grp { width: 40px; padding: 0; justify-content: center; }
+    .lb__grp span { display: none; }
+}

@@ -181,9 +181,15 @@ $industry_text = $T('shared-copy.1');
                         foreach (['img', 'img2', 'img3', 'img4', 'img5'] as $k) {
                             if (!empty($ind[$k])) { $media[] = ['type' => 'image', 'src' => iu('assets/images/', $ind[$k])]; }
                         }
-                        if (!empty($ind['video'])) { $media[] = ['type' => 'video', 'src' => $ind['video']]; }
+                        if (!empty($ind['video'])) { $media[] = ['type' => 'video', 'src' => \App\Support\Media::url($ind['video'])]; }
+                        foreach ((array) ($ind['videos'] ?? []) as $r) {
+                            $r = is_array($r) ? $r : [$r];
+                            if (!empty($r[0])) {
+                                $media[] = ['type' => 'video', 'src' => \App\Support\Media::url($r[0]), 'title' => strip_tags($r[1] ?? ''), 'text' => strip_tags($r[2] ?? '')];
+                            }
+                        }
                         ?>
-                        <?php if ($media): ?><button type="button" class="industry__play" data-lightbox="<?= e(json_encode($media, JSON_UNESCAPED_SLASHES)) ?>" data-title="<?= e(strip_tags(!empty($ind['popup_title']) ? $ind['popup_title'] : $ind['title'])) ?>" data-text="<?= e(strip_tags($ind['popup_text'] ?? '')) ?>" aria-label="View gallery: <?= e(strip_tags($ind['title'])) ?>"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg></button><?php endif; ?>
+                        <?php if ($media): ?><button type="button" class="industry__play" data-lightbox-group="industries" data-lightbox="<?= e(json_encode($media, JSON_UNESCAPED_SLASHES)) ?>" data-title="<?= e(strip_tags(!empty($ind['popup_title']) ? $ind['popup_title'] : $ind['title'])) ?>" data-text="<?= e(strip_tags($ind['popup_text'] ?? '')) ?>" aria-label="View gallery: <?= e(strip_tags($ind['title'])) ?>"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg></button><?php endif; ?>
                         <h3 class="industry__title <?= !empty($ind['font']) ? 'is-alt' : '' ?>"><?= $ind['title'] ?></h3>
                         <p class="industry__text"><?= $ind['text'] ?? $industry_text ?></p>
                     </article>
@@ -280,7 +286,30 @@ $industry_text = $T('shared-copy.1');
     @include('site.sections.engagement')
 
     <!-- ============ INSIGHTS ============ -->
-    @if(trim(strip_tags($T('insights.2'))) !== '')
+    @php
+        // the newest published blog posts; the typed "Insight posts" list is only used while there are none
+        $latestPosts = \App\Models\Page::published()->where('template', 'blog-post')->orderByDesc('published_at')->orderByDesc('id')->limit(3)->get();
+    @endphp
+    @if($latestPosts->isNotEmpty())
+    <section class="container insights">
+        <h2 class="h2 h2--center">{!! trim(strip_tags($T('insights.2'))) !== '' ? $T('insights.2') : 'Latest insights' !!}</h2>
+        <div class="insights__row">
+            @foreach($latestPosts as $post)
+                <article class="post">
+                    <a href="{{ $post->url() }}" tabindex="-1" aria-hidden="true"><img class="post__img" style="object-position:left center" src="{{ \App\Support\Media::url($post->featured_image) }}" alt=""></a>
+                    <div class="post__body">
+                        <span class="small small--dark">{{ optional($post->published_at)->format('F Y') }}</span>
+                        <div class="post__text">
+                            <h3 class="post__title"><a href="{{ $post->url() }}">{{ $post->title }}</a></h3>
+                            <div><?php btn($T('insights.1', 'Read More'), 'btn--cta', null, $post->url()); ?></div>
+                        </div>
+                    </div>
+                </article>
+            @endforeach
+        </div>
+        <div><?php btn('View all articles', 'btn--cta', null, 'blog'); ?></div>
+    </section>
+    @elseif(trim(strip_tags($T('insights.2'))) !== '')
     <section class="container insights">
         <h2 class="h2 h2--center">{!! $T('insights.2') !!}</h2>
         <div class="insights__row">

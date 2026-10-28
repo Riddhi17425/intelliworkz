@@ -7,7 +7,8 @@
 
     var DELAY = 4500;
     var root, stage, textEl, thumbs, titleEl, countEl, bar, playBtn, prevBtn, nextBtn;
-    var items = [], at = 0, timer = null, playing = true, hover = false, lastFocus = null;
+    var cardText = '', items = [], at = 0, timer = null, playing = true, hover = false, lastFocus = null;
+    var groupEls = [], groupAt = -1, grpPrev, grpNext;   /* cards that belong to the same group (e.g. the industry cards): the popup can jump from one card to the next */
 
     var youtube = function (u) {
         var m = u.match(/(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{6,})/);
@@ -29,6 +30,8 @@
             '<div class="lb__backdrop" data-lb-close></div>' +
             '<div class="lb__box">' +
                 '<div class="lb__top"><span class="lb__title"></span><span class="lb__count" aria-live="polite"></span>' +
+                    '<button type="button" class="lb__grp lb__grp--prev" hidden><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span></button>' +
+                    '<button type="button" class="lb__grp lb__grp--next" hidden><span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' +
                     '<button type="button" class="lb__btn lb__play" aria-label="Pause slideshow"></button>' +
                     '<button type="button" class="lb__btn lb__close" aria-label="Close" data-lb-close>&times;</button></div>' +
                 '<div class="lb__main">' +
@@ -51,6 +54,10 @@
         playBtn = root.querySelector('.lb__play');
         prevBtn = root.querySelector('.lb__nav--prev');
         nextBtn = root.querySelector('.lb__nav--next');
+        grpPrev = root.querySelector('.lb__grp--prev');
+        grpNext = root.querySelector('.lb__grp--next');
+        grpPrev.addEventListener('click', function () { goGroup(-1); });
+        grpNext.addEventListener('click', function () { goGroup(1); });
 
         root.querySelectorAll('[data-lb-close]').forEach(function (el) { el.addEventListener('click', close); });
         prevBtn.addEventListener('click', function () { go(at - 1); });
@@ -136,6 +143,11 @@
         el.className = 'lb__media is-' + it.type;
         stage.appendChild(el);
 
+        /* a video can carry its own title / description; otherwise the card's text stays */
+        var cap = it.title || it.text ? [it.title, it.text].filter(Boolean).join(' — ') : cardText;
+        textEl.textContent = cap;
+        textEl.hidden = !cap;
+
         countEl.textContent = items.length > 1 ? (at + 1) + ' / ' + items.length : '';
         prevBtn.hidden = nextBtn.hidden = items.length < 2;
         thumbs.hidden = items.length < 2;
@@ -148,16 +160,42 @@
         render();
     };
 
-    var open = function (list, title, from, text) {
+    /* read the pictures / videos of a card element */
+    var listOf = function (el) {
+        var l;
+        try { l = JSON.parse(el.getAttribute('data-lightbox')); } catch (err) { return []; }
+        return (l || []).filter(function (it) { return it && it.src; });
+    };
+
+    var goGroup = function (d) {
+        var n = groupEls.length;
+        if (n < 2) return;
+        var el = groupEls[(groupAt + d + n) % n], list = listOf(el);
+        if (list.length) open(list, el.getAttribute('data-title'), el, el.getAttribute('data-text'), true);
+    };
+
+    var open = function (list, title, from, text, keepFocus) {
         if (!root) build();
+        var grp = from && from.getAttribute ? from.getAttribute('data-lightbox-group') : null;
+        groupEls = grp ? [].filter.call(document.querySelectorAll('[data-lightbox-group="' + grp + '"]'), function (el) { return listOf(el).length; }) : [];
+        groupAt = groupEls.indexOf(from);
+        if (groupAt < 0) groupEls = [];
+        var showGrp = groupEls.length > 1;
+        grpPrev.hidden = grpNext.hidden = !showGrp;
+        if (showGrp) {
+            var nm = function (d) { var e = groupEls[(groupAt + d + groupEls.length) % groupEls.length]; return e.getAttribute('data-title') || ''; };
+            grpPrev.querySelector('span').textContent = nm(-1);
+            grpNext.querySelector('span').textContent = nm(1);
+            grpPrev.setAttribute('aria-label', 'Previous: ' + nm(-1));
+            grpNext.setAttribute('aria-label', 'Next: ' + nm(1));
+        }
         items = list;
         at = 0;
         playing = true;
         hover = false;
-        lastFocus = from || null;
+        if (!keepFocus) lastFocus = from || null;
         titleEl.textContent = title || '';
-        textEl.textContent = text || '';
-        textEl.hidden = !text;
+        cardText = text || '';
         thumbs.innerHTML = '';
         items.forEach(function (it, i) {
             var b = document.createElement('button');
@@ -185,9 +223,7 @@
     document.addEventListener('click', function (e) {
         var t = e.target.closest ? e.target.closest('[data-lightbox]') : null;
         if (!t) return;
-        var list;
-        try { list = JSON.parse(t.getAttribute('data-lightbox')); } catch (err) { return; }
-        list = (list || []).filter(function (it) { return it && it.src; });
+        var list = listOf(t);
         if (!list.length) return;
         e.preventDefault();
         e.stopPropagation();

@@ -347,7 +347,8 @@ class ListSchema
             if (!array_key_exists($key, $input) && !isset($files[$key . '__file']) && empty($input[$key . '__remove'])) {
                 continue;     // field was not on the form: keep it
             }
-            $value = $this->cast($def, $input[$key] ?? null, $input, $files[$key . '__file'] ?? null, $base[$key] ?? null, (string) $key);
+            $file = $def['type'] === 'repeater' ? (array) ($files[$key] ?? []) : ($files[$key . '__file'] ?? null);
+            $value = $this->cast($def, $input[$key] ?? null, $input, $file, $base[$key] ?? null, (string) $key);
             if (!array_key_exists($key, $base) && ($value === '' || $value === [])) {
                 continue;     // an optional value this row never had stays absent
             }
@@ -422,7 +423,7 @@ class ListSchema
                 return array_values(array_filter(array_map(fn ($l) => $this->text((string) $l, $current), $lines), fn ($l) => $l !== ''));
 
             case 'repeater':
-                return $this->castRepeater($def, (array) $value, $current);
+                return $this->castRepeater($def, (array) $value, $current, is_array($file) ? $file : []);
 
             case 'html':
             case 'textarea':
@@ -451,18 +452,24 @@ class ListSchema
         return Html::clean($posted);
     }
 
-    private function castRepeater(array $def, array $rows, mixed $current = null): array
+    private function castRepeater(array $def, array $rows, mixed $current = null, array $files = []): array
     {
         $out = [];
         $positional = array_filter(array_keys($def['fields']), 'is_int') === array_keys($def['fields']);
-        foreach ($rows as $row) {
-            if (!is_array($row)) {
+        $stored = array_filter(Arr::flatten((array) $current), 'is_string');   // a posted "keep" value must be one of these
+        foreach ($rows as $m => $row) {
+            if (!is_array($row) || (string) $m === '__M__') {
                 continue;
             }
             $item = [];
             $empty = true;
             foreach ($def['fields'] as $k => $sub) {
-                $v = $this->cast($sub, $row[$k] ?? '', $row, null, $current, (string) $k);
+                if ($sub['type'] === 'video') {
+                    $keep = (string) ($row[$k . '__keep'] ?? '');
+                    $v = $this->cast($sub, $row[$k] ?? '', $row, $files[$m][$k . '__file'] ?? null, in_array($keep, $stored, true) ? $keep : '', (string) $k);
+                } else {
+                    $v = $this->cast($sub, $row[$k] ?? '', $row, null, $current, (string) $k);
+                }
                 $item[$k] = $v;
                 $empty = $empty && ($v === '' || $v === []);
             }
@@ -474,6 +481,13 @@ class ListSchema
                 $item = array_values($item);
             }
             $out[] = !empty($def['wrap']) ? [$item] : $item;
+        }
+        // uploaded files of rows that were removed go away with them
+        $kept = Arr::flatten($out);
+        foreach ($stored as $path) {
+            if (Media::isUpload($path) && !in_array($path, $kept, true)) {
+                Media::delete($path);
+            }
         }
         return $out;
     }

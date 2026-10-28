@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#282762">
+    <meta name="msapplication-navbutton-color" content="#282762">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>{{ $meta['title'] }}</title>
     @if($meta['description'])<meta name="description" content="{{ $meta['description'] }}">@endif
     @if($meta['keywords'])<meta name="keywords" content="{{ $meta['keywords'] }}">@endif

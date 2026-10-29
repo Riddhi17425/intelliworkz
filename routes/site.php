@@ -18,5 +18,6 @@ Route::post('/inquiries', [InquiryController::class, 'store'])->middleware('thro
 Route::get('/thank-you', [PageController::class, 'thanks'])->name('thanks');
 Route::get('/', [PageController::class, 'show'])->defaults('slug', 'index')->name('home');
 Route::get('/index.php', [PageController::class, 'show'])->defaults('slug', 'index');
+Route::get('/blog/{slug}', [PageController::class, 'post'])->where('slug', '[a-z0-9][a-z0-9-]*')->name('blog.post');
 Route::get('/{slug}.php', [PageController::class, 'show'])->where('slug', '[a-z0-9][a-z0-9-]*');
 Route::get('/{slug}', [PageController::class, 'show'])->where('slug', '[a-z0-9][a-z0-9-]*')->name('page');

@@ -1,0 +1,8 @@
+{{-- Share buttons for a blog post. $url = the post address, $title = its title. --}}
+@php($u = urlencode($url))
+<div class="bx-share">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $u }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.4 8.6H2.2V21h3.2V8.6zM3.8 3a1.9 1.9 0 100 3.8 1.9 1.9 0 000-3.8zM21.8 14.4c0-3.4-1.8-5.9-4.7-5.9-1.4 0-2.6.8-3.2 1.8V8.6h-3.1V21h3.2v-6.4c0-1.7.8-2.8 2.2-2.8s2 1 2 2.7V21h3.2l.4-6.6z"/></svg></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $u }}" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8V13.5h2.5V21h3z"/></svg></a>
+    <a href="https://twitter.com/intent/tweet?url={{ $u }}&text={{ urlencode($title) }}" target="_blank" rel="noopener" aria-label="Share on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.8-6.3L5.4 21H2.3l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.3 4.7H5.5l11.2 14.5z"/></svg></a>
+    <button type="button" data-bx-copy data-url="{{ $url }}" aria-label="Copy link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><em>Link copied</em></button>
+</div>

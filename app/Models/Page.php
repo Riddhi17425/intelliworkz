@@ -91,6 +91,9 @@ class Page extends Model
         if ($this->slug === 'index') {
             return url('/');
         }
+        if ($this->isBlog()) {
+            return url('blog/' . $this->slug);
+        }
         return url($this->is_system ? $this->slug . '.php' : $this->slug);
     }
 

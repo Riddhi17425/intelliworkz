@@ -14,10 +14,29 @@ use Illuminate\Http\Response;
 /** Renders the public pages from the database; the markup itself lives in resources/views/site. */
 class PageController extends Controller
 {
-    public function show(Request $request, string $slug = 'index'): Response
+    /** admin pages drawn as a legal document (contents list + readable text) */
+    public const LEGAL_PAGES = ['privacy-policy', 'terms-of-use', 'cookies'];
+
+    /** a blog post is addressed as /blog/{slug}; its old address straight under the site root forwards there */
+    public function post(Request $request, string $slug): Response
+    {
+        $page = Page::where('slug', $slug)->where('template', 'blog-post')->first();
+        abort_if(!$page, 404);
+        return $this->render($request, $page);
+    }
+
+    public function show(Request $request, string $slug = 'index'): Response|\Illuminate\Http\RedirectResponse
     {
         $page = Page::where('slug', $slug)->first();
         abort_if(!$page, 404);
+        if ($page->isBlog()) {
+            return redirect($page->url(), 301);
+        }
+        return $this->render($request, $page);
+    }
+
+    private function render(Request $request, Page $page): Response
+    {
 
         // signed-in admins may look at drafts; everybody else gets a 404 until the page is published
         $preview = !$page->isPublished();
@@ -28,6 +47,8 @@ class PageController extends Controller
             $view = 'site.blog-list';      // the blog page lists every published blog post
         } elseif ($page->isBlog()) {
             $view = 'site.blog-post';
+        } elseif (!$page->hasEditor() && in_array($page->slug, self::LEGAL_PAGES, true)) {
+            $view = 'site.legal';          // privacy policy, terms of use and cookies share one document layout
         }
         abort_unless(view()->exists($view), 404);
 
@@ -93,7 +114,10 @@ class PageController extends Controller
         ]);
 
         if ($page->isBlog() || (!$page->hasEditor() && $page->slug === 'blog')) {
-            $cfg['extra_css'][] = 'assets/css/blog.css';     // the blog page and every blog post share one stylesheet
+            // the blog page and every blog post share one stylesheet; the hero is built like the other inner pages
+            array_push($cfg['extra_css'], 'assets/css/video.css', 'assets/css/manufacture.css', 'assets/css/contact.css', 'assets/css/blog.css');
+        } elseif (!$page->hasEditor() && in_array($page->slug, self::LEGAL_PAGES, true)) {
+            $cfg['extra_css'][] = 'assets/css/legal.css';
         }
 
         $title = $page->metaTitle();
@@ -112,6 +136,8 @@ class PageController extends Controller
 
         return $lists + $sections + [
             'page' => $page,
+            // the site links its own files relative to the root (assets/css/..., contact-us.php), so a page one folder deeper needs a base address
+            'baseHref' => $page->isBlog() ? url('/') . '/' : null,
             'cfg' => $cfg,
             'preview' => $preview,
             'settings' => $settings,

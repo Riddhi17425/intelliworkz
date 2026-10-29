@@ -4,8 +4,8 @@
    ========================================================================== */
 
 /* ---------- Hero floor art (this page has no camera photo, just a soft floor glow) ---------- */
-.td .ve-hero::after { display: none; }
-.td .ve-hero__floor { left: 442px; top: 681px; width: 382px; height: 318px; opacity: .2; }
+.page-3d .td .ve-hero::after { display: none; }
+.page-3d .td .ve-hero__floor { left: 442px; top: 681px; width: 382px; height: 318px; opacity: .2; }
 
 /* ---------- 360 viewer + Selected Work: ONE overlaid scene (pixel-exact to Figma node 6:179) ----------
    Every left/top here is that node's own coordinate — nothing is guessed or auto-centred. */

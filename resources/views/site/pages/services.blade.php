@@ -7,7 +7,7 @@ $ic = url('assets/icons') . '/';
 $rowIcons = ['card-clipboard.svg', 'card-check.svg', 'card-search.svg', 'card-users.svg', 'card-chart.svg', 'card-code.svg', 'icon-briefcase.svg', 'icon-globe.svg', 'icon-send.svg', 'icon-users.svg'];
 $parse = function ($line) {
     [$label, $href] = array_pad(array_map('trim', explode('|', (string) $line, 2)), 2, '');
-    return [$label, $href !== '' ? $href : 'contact-us.php'];
+    return [$label, service_href($label, $href)];   // no typed link: the service page of the same name, else the contact page
 };
 @endphp
 <main class="page ve svc">

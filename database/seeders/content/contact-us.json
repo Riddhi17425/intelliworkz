@@ -120,18 +120,18 @@
             "section": "form",
             "section_label": "Form",
             "key": "form.4",
-            "label": "Heading: Let’s Bring Your Packaging Vision to Life.",
+            "label": "Form heading: Send Us Your Requirement.",
             "type": "text",
-            "value": "Let’s Bring Your Packaging Vision to Life.",
+            "value": "Send Us Your Requirement.",
             "sort": 12
         },
         {
             "section": "form",
             "section_label": "Form",
             "key": "form.5",
-            "label": "Paragraph: Tell us about your project.",
+            "label": "Form paragraph: Share a few details…",
             "type": "text",
-            "value": "Tell us about your project.",
+            "value": "Share a few details about your project and our team will get back to you shortly.",
             "sort": 13
         },
         {

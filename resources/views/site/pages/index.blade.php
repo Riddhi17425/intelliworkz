@@ -293,10 +293,10 @@ $industry_text = $T('shared-copy.1');
     @if($latestPosts->isNotEmpty())
     <section class="container insights">
         <h2 class="h2 h2--center">{!! trim(strip_tags($T('insights.2'))) !== '' ? $T('insights.2') : 'Latest insights' !!}</h2>
-        <div class="insights__row">
+        <div class="insights__row" style="justify-content:center">
             @foreach($latestPosts as $post)
                 <article class="post">
-                    <a href="{{ $post->url() }}" tabindex="-1" aria-hidden="true"><img class="post__img" style="object-position:left center" src="{{ \App\Support\Media::url($post->featured_image) }}" alt=""></a>
+                    <a href="{{ $post->url() }}" tabindex="-1" aria-hidden="true"><img class="post__img" style="width:100%;height:auto;aspect-ratio:16/10;object-position:center" src="{{ \App\Support\Media::url($post->featured_image) }}" alt=""></a>
                     <div class="post__body">
                         <span class="small small--dark">{{ optional($post->published_at)->format('F Y') }}</span>
                         <div class="post__text">
@@ -307,7 +307,6 @@ $industry_text = $T('shared-copy.1');
                 </article>
             @endforeach
         </div>
-        <div><?php btn('View all articles', 'btn--cta', null, 'blog'); ?></div>
     </section>
     @elseif(trim(strip_tags($T('insights.2'))) !== '')
     <section class="container insights">

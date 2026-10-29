@@ -719,7 +719,7 @@
 /* Touch devices: no hover, so a tap opens the Industries card text (same look as hover) and a small hint says so */
 .industry.is-open::before { opacity: 1; }
 .industry.is-open.industry--plain::after { opacity: 0; }
-.industry.is-open .industry__text { max-height: 260px; margin-top: 12px; opacity: 1; transform: none; }
+.industry.is-open .industry__text { max-height: 310px; margin-top: 12px; opacity: 1; transform: none; }
 @media (hover: none) {
     .industry__title::after { content: "Tap to read more"; display: block; margin-top: 4px; font-family: var(--font-body, inherit); font-weight: 400; font-size: 12px; line-height: 16px; color: rgba(255, 255, 255, .7); transition: opacity .3s ease; }
     .industry.is-open .industry__title::after { opacity: 0; height: 0; margin: 0; overflow: hidden; }

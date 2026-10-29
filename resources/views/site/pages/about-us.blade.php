@@ -32,7 +32,6 @@ foreach ($ab_nodes as $i => $nd) {
                     <?php btn($T('hero.7'), 'btn--cta btn--ghost', null, $T('hero.8', '#')); ?>
                 </div>
             </div>
-            <p class="ab-hero__words" aria-hidden="true">{!! $T('hero.9') !!}</p>
         </div>
     </section>
 

@@ -426,8 +426,8 @@
 
     var tabsWrap = document.querySelector('[data-filter-tabs]');
     var track = document.querySelector('[data-pf-track]');
-    if (!tabsWrap || !track) return;
-    var tabs = tabsWrap.querySelectorAll('.filter-tab');
+    if (!track) return;                       /* the filter tabs are optional: a page can hide them and still needs the player and the arrows */
+    var tabs = tabsWrap ? tabsWrap.querySelectorAll('.filter-tab') : [];
     var prev = document.querySelector('[data-pf-prev]');
     var next = document.querySelector('[data-pf-next]');
     var busy = false;
@@ -603,6 +603,7 @@
     var wrap = document.querySelector('[data-offers]');
     if (!wrap) return;
     var track = wrap.querySelector('[data-offers-track]');
+    var dotsBox = document.querySelector('[data-offers-dots]');
     var dots = document.querySelectorAll('[data-offers-dots] .dots__dot');
     var n = track.children.length;
     var busy = false, paused = false;
@@ -613,6 +614,14 @@
         var gap = parseFloat(getComputedStyle(track).columnGap) || 40;
         return track.children[0].offsetWidth + gap;
     };
+    /* when every card is already on screen (3 on desktop, 2 on tablet, 1 on mobile) there is nothing to slide to: no dots, no autoplay */
+    var allShown = function () {
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 40;
+        return n <= Math.max(1, Math.round((wrap.clientWidth + gap) / stepPx()));
+    };
+    var sync = function () { if (dotsBox) dotsBox.style.display = allShown() ? 'none' : ''; };
+    window.addEventListener('resize', sync);
+    sync();
     var mark = function (i) { dots.forEach(function (d, k) { d.classList.toggle('is-active', k === i); }); };
 
     /* move the row forward by k cards, then re-order the DOM so it can go on forever */
@@ -638,13 +647,49 @@
         setTimeout(done, 800);
     };
 
+    /* move the row back by k cards: the last k cards are put in front (row shifted, no animation), then it slides back to the right */
+    var backward = function (k) {
+        if (busy || k < 1) return;
+        busy = true;
+        mark(((lead() - k) % n + n) % n);
+        var first = track.children[0];
+        Array.prototype.slice.call(track.children, n - k).forEach(function (c) { track.insertBefore(c, first); });
+        track.classList.remove('is-sliding');
+        track.style.transform = 'translateX(' + (-k * stepPx()) + 'px)';
+        void track.offsetWidth;
+        track.classList.add('is-sliding');
+        track.style.transform = 'translateX(0)';
+
+        var finished = false;
+        var done = function () {
+            if (finished) return;
+            finished = true;
+            track.removeEventListener('transitionend', done);
+            track.classList.remove('is-sliding');
+            busy = false;
+        };
+        track.addEventListener('transitionend', done);
+        setTimeout(done, 800);
+    };
+
+    /* a dot to the right of the leading card slides forward, a dot to its left slides back the same way */
     dots.forEach(function (dot, i) {
-        dot.addEventListener('click', function () { forward((i - lead() + n) % n); });
+        dot.addEventListener('click', function () {
+            var d = i - lead();
+            if (d > 0) forward(d); else if (d < 0) backward(-d);
+        });
     });
 
     mark(lead());
     if (!reduce) {
-        setInterval(function () { if (!paused && !document.hidden) forward(1); }, 4000);
+        /* autoplay goes forward to the last card and then comes back the same way to the first, and so on */
+        var dir = 1;
+        setInterval(function () {
+            if (paused || document.hidden || allShown()) return;
+            if (dir > 0 && lead() >= n - 1) dir = -1;
+            else if (dir < 0 && lead() <= 0) dir = 1;
+            if (dir > 0) forward(1); else backward(1);
+        }, 4000);
     }
     wrap.addEventListener('mouseenter', function () { paused = true; });
     wrap.addEventListener('mouseleave', function () { paused = false; });

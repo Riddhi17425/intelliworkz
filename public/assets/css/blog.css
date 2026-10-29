@@ -251,3 +251,12 @@ a.bx-cat:hover { background: var(--bx-red); color: var(--c-white); }
     .bx-ihero--long .ct-hero__text .h1 { font-size: 26px; line-height: 36px; }
     .bx-ihero__meta { font-size: 14px; }
 }
+
+/* ---------- logo badge: a soft pulse ring and a gentle float, the logo turns when hovered ---------- */
+.bx-avatar { position: relative; animation: bx-float 4.5s ease-in-out infinite; }
+.bx-avatar::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(196, 32, 48, .55); animation: bx-pulse 2.6s ease-out infinite; pointer-events: none; }
+.bx-avatar img { transition: transform .7s cubic-bezier(.22, .8, .24, 1); }
+.bx-avatar:hover img { transform: rotate(360deg); }
+@keyframes bx-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes bx-pulse { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.55); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .bx-avatar, .bx-avatar::after { animation: none; } }

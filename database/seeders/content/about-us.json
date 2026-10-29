@@ -425,7 +425,7 @@
             "key": "cta.5",
             "label": "Second button text",
             "type": "text",
-            "value": "Talk to Our Team",
+            "value": "Explore Our Services",
             "sort": 46
         },
         {
@@ -434,7 +434,7 @@
             "key": "cta.6",
             "label": "Second button link",
             "type": "url",
-            "value": "contact-us.php",
+            "value": "services.php",
             "sort": 47
         }
     ],

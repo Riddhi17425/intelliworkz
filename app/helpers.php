@@ -137,3 +137,42 @@ if (!function_exists('tool_icon')) {
         return '<span class="mg-tool__icon" style="background: ' . e((string) $bg) . '"><img src="' . e(iu($base, $file)) . '" alt=""></span>';
     }
 }
+
+if (!function_exists('service_href')) {
+    /**
+     * Link of a service card (arrow buttons, "Explore" cards): the address typed for it, otherwise the service page
+     * with the same name in the header menu, otherwise the contact page.
+     */
+    function service_href(?string $title, ?string $href = null): string
+    {
+        $href = trim((string) $href);
+        if ($href !== '') {
+            return $href;
+        }
+
+        static $links = null;
+        $norm = fn (string $t) => preg_replace('/[^a-z0-9]+/', '', str_replace('&', 'and', mb_strtolower(html_entity_decode(strip_tags($t)))));
+        if ($links === null) {
+            $links = [];
+            foreach (\App\Support\SiteMenus::get()['header'] as $group) {
+                foreach ($group->items as $item) {
+                    $to = $item->href();
+                    if ($to !== '#' && $to !== '') {
+                        $links[$norm((string) $item->label)] ??= $to;
+                    }
+                }
+            }
+        }
+
+        $name = $norm((string) $title);
+        if (isset($links[$name])) {
+            return $links[$name];
+        }
+        foreach ($links as $key => $to) {   // "3D Visualization (Product / Architectural)" belongs to the page "3D Visualization"
+            if (strlen($key) >= 10 && str_starts_with($name, $key)) {
+                return $to;
+            }
+        }
+        return 'contact-us.php';
+    }
+}

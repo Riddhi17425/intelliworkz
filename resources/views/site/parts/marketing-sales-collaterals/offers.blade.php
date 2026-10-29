@@ -11,7 +11,7 @@
                         <h3><?= $o['title'] ?></h3>
                         <p><?= $o['text'] ?></p>
                         <?php if ($T('what-we-offer-cta-engagement.7')): ?>
-                            <a class="cl-related__link" href="<?= e(!empty($o['href']) ? $o['href'] : 'services.php') ?>"><?= $T('what-we-offer-cta-engagement.7') ?><span class="cl-related__arrow" aria-hidden="true"></span></a>
+                            <a class="cl-related__link" href="<?= e(!empty($o['href']) ? $o['href'] : service_href($o['title'] ?? '', '') !== 'contact-us.php' ? service_href($o['title'] ?? '', '') : 'services.php') ?>"><?= $T('what-we-offer-cta-engagement.7') ?><span class="cl-related__arrow" aria-hidden="true"></span></a>
                         <?php endif; ?>
                     </article>
                 <?php endforeach; ?>

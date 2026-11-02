@@ -279,8 +279,9 @@ $industry_text = $T('shared-copy.1');
     </section>
 
     @php
-
-@endphp
+        $showcase_title = $T('showcase.1') ?: null;
+        $showcase_lead = $T('showcase.2') ?: null;
+    @endphp
     @include('site.sections.showcase')
 
     @include('site.sections.engagement')

@@ -1391,9 +1391,15 @@
         var best = 0, min = Infinity;
         cards.forEach(function (c, i) { var d = Math.abs((c.offsetLeft - row.offsetLeft) - row.scrollLeft); if (d < min) { min = d; best = i; } });
         dots.forEach(function (d, i) { d.classList.toggle('is-on', i === best); });
+        /* the row is as high as the card on screen, so a shorter card leaves no empty space under it */
+        if (window.matchMedia('(max-width: 640px)').matches) {
+            row.style.transition = 'height .25s ease';
+            row.style.height = (cards[best].offsetHeight + parseFloat(getComputedStyle(row).paddingBottom || 0)) + 'px';
+        } else { row.style.height = ''; row.style.transition = ''; }
     };
     row.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
     window.addEventListener('resize', sync);
+    window.addEventListener('load', sync);   // card heights change once images and fonts are in
     sync();
 })();
 

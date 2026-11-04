@@ -255,6 +255,7 @@
     .metric__icon { width: 44px; height: 44px; }
     .metric__body { align-items: center; gap: 2px; }
     .metrics .metric__value { justify-content: center; gap: 4px; font-size: 32px; }
+    .metrics .metric__value [data-count] { min-width: 0 !important; text-align: center; }   /* the width locked by the counter script is too wide on a phone: it pushed the + away from the number */
     .metric__label { font-size: 14px; line-height: 20px; }
     .ve-stat { width: 100%; }
     .domain-card__body { padding: 20px; }

@@ -149,6 +149,7 @@ html { scroll-behavior: smooth; }
 .ct-card .form-status.is-ok { color: #138a5b; }
 .ct-card .form-status.is-error { color: #C42030; }
 [data-inquiry-form] [aria-invalid="true"] { border-color: #C42030 !important; box-shadow: 0 0 0 3px rgba(196, 32, 48, .2) !important; }
+.iw-field-error { display: block; margin-top: 6px; font: 500 13px/18px Inter, sans-serif; color: #ff4d5e; }
 .iw-toasts { position: fixed; z-index: 99999; top: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; width: min(400px, calc(100vw - 32px)); pointer-events: none; }
 .iw-toast { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px 14px 18px; font: 500 15px/22px Inter, sans-serif; color: #fff; background: #138a5b; border-radius: 12px; box-shadow: 0 16px 40px rgba(0, 0, 0, .35); pointer-events: auto; animation: iw-toast-in .3s ease; transition: opacity .25s, transform .25s; }
 .iw-toast.is-error { background: #C42030; }

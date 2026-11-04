@@ -86,28 +86,30 @@ class Media
         return is_string($path) && str_starts_with($path, 'uploads/');
     }
 
-    /** Copy an uploaded file so two pages never share (and later delete) the same file. Original assets are shared as they are. */
+    /** Pages share one stored file (copying a page or a section never copies the upload again); the file is removed only when nothing uses it any more. */
     public static function duplicate(?string $path): ?string
     {
-        if (!self::isUpload($path)) {
-            return $path;
-        }
-        $from = substr($path, strlen("uploads/"));
-        $disk = Storage::disk(self::DISK);
-        if (!$disk->exists($from)) {
-            return $path;
-        }
-        $to = dirname($from) . "/" . pathinfo($from, PATHINFO_FILENAME) . "-" . Str::lower(Str::random(4)) . "." . pathinfo($from, PATHINFO_EXTENSION);
-        $disk->copy($from, $to);
-        return "uploads/" . $to;
+        return $path;
     }
 
-    /** Remove a previously uploaded file. Original site assets ("assets/...") are never deleted. */
+    /** Remove a previously uploaded file, unless another page or list still points to it. Original site assets ("assets/...") are never deleted. */
     public static function delete(?string $path): void
     {
-        if (self::isUpload($path)) {
+        if (self::isUpload($path) && !self::inUse($path)) {
             Storage::disk(self::DISK)->delete(substr($path, strlen('uploads/')));
         }
+    }
+
+    /** True while the path is still stored in any page content, content field or list. */
+    private static function inUse(string $path): bool
+    {
+        $like = fn (string $s) => '%' . str_replace(['\\', '%', '_'], ['\\\\', '\\%', '\\_'], $s) . '%';
+        $plain = $like($path);
+        $escaped = $like(str_replace('/', '\\/', $path));   // lists store paths as JSON, with escaped slashes
+        $db = \Illuminate\Support\Facades\DB::class;
+        return $db::table('content_fields')->where('value', 'like', $plain)->exists()
+            || $db::table('content_lists')->where(fn ($q) => $q->where('items', 'like', $plain)->orWhere('items', 'like', $escaped))->exists()
+            || $db::table('pages')->where(fn ($q) => $q->where('content', 'like', $plain)->orWhere('featured_image', $path)->orWhere('og_image', $path))->exists();
     }
 
     /** Absolute URL for admin previews. */

@@ -1,4 +1,4 @@
-/* Enquiry / contact forms: send with fetch(), show validation errors and the result as toasts, fall back to a normal POST without JS. */
+/* Enquiry / contact forms: send with fetch(), show validation errors under each field, the result as a toast, fall back to a normal POST without JS. */
 (function () {
     'use strict';
 
@@ -45,12 +45,24 @@
         var button = form.querySelector('button[type=submit]');
         var original = button ? button.innerHTML : '';
 
-        var mark = function (name, bad) {
+        var mark = function (name, bad, text) {
             var input = form.querySelector('[name="' + name + '"]');
-            if (input) {
-                if (bad) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
-            }
+            if (!input) return;
+            var note = input.parentNode.querySelector('.iw-field-error[data-for="' + name + '"]');
+            if (note) note.parentNode.removeChild(note);
+            if (!bad) { input.removeAttribute('aria-invalid'); return; }
+            input.setAttribute('aria-invalid', 'true');
+            note = document.createElement('small');
+            note.className = 'iw-field-error';
+            note.setAttribute('data-for', name);
+            note.setAttribute('role', 'alert');
+            note.textContent = text;
+            input.insertAdjacentElement('afterend', note);
         };
+
+        form.addEventListener('input', function (e) {
+            if (e.target && e.target.name && e.target.getAttribute('aria-invalid')) mark(e.target.name, false);
+        });
 
         form.addEventListener('submit', function (e) {
             if (!window.fetch || !window.FormData) return;     // plain POST fallback
@@ -76,12 +88,12 @@
                     }
                     toast(r.body.message || 'Thank you! Your message has been sent.', true);
                 } else if (r.status === 422 && r.body.errors) {
-                    // one toast per field that needs attention, in the order of the form
+                    // the message appears under the field that needs attention
                     var shown = 0;
                     FIELDS.concat(Object.keys(r.body.errors)).forEach(function (k, i, all) {
                         if (all.indexOf(k) !== i || !r.body.errors[k]) return;
-                        mark(k, true);
-                        toast(r.body.errors[k][0], false);
+                        if (!form.querySelector('[name="' + k + '"]')) { toast(r.body.errors[k][0], false); shown++; return; }
+                        mark(k, true, r.body.errors[k][0]);
                         shown++;
                     });
                     if (!shown) toast('Please check the form and try again.', false);

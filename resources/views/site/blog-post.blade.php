@@ -54,17 +54,6 @@
         'heroLong' => true,
     ])
 
-    <div class="bx-byline"><div class="bx-wrap">
-        <div class="bx-who">
-            <span class="bx-avatar" aria-hidden="true"><img src="{{ $settings['favicon'] ?? 'assets/images/favicon.png' }}" alt=""></span>
-            <span><strong>{{ $company }} Business Solutions</strong><em>Creative, digital &amp; technology services</em></span>
-        </div>
-    </div></div>
-
-    @if($cover)
-        <figure class="bx-cover"><div class="bx-wrap"><img src="{{ $cover }}" alt="{{ $page->title }}"></div></figure>
-    @endif
-
     <!-- ============ ARTICLE ============ -->
     <section class="bx-pbody">
         <div class="bx-wrap bx-pbody__grid{{ count($toc) > 1 ? '' : ' bx-pbody__grid--solo' }}">

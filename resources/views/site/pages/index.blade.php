@@ -178,9 +178,7 @@ $industry_text = $T('shared-copy.1');
                         <?php if (!empty($ind['img'])): ?><img src="<?= iu('assets/images/', $ind['img']) ?>" alt="<?= $ind['title'] ?>"><?php endif; ?>
                         <?php
                         $media = [];
-                        foreach (['img', 'img2', 'img3', 'img4', 'img5'] as $k) {
-                            if (!empty($ind[$k])) { $media[] = ['type' => 'image', 'src' => iu('assets/images/', $ind[$k])]; }
-                        }
+                        // the popup plays videos only: a card without a video has no play button
                         if (!empty($ind['video'])) { $media[] = ['type' => 'video', 'src' => \App\Support\Media::url($ind['video'])]; }
                         foreach ((array) ($ind['videos'] ?? []) as $r) {
                             $r = is_array($r) ? $r : [$r];

@@ -150,7 +150,7 @@
 
         countEl.textContent = items.length > 1 ? (at + 1) + ' / ' + items.length : '';
         prevBtn.hidden = nextBtn.hidden = items.length < 2;
-        thumbs.hidden = items.length < 2;
+        thumbs.hidden = true;   /* the popup plays videos only: no row of thumbnails under it (use the arrows) */
         Array.prototype.forEach.call(thumbs.children, function (t, i) { t.classList.toggle('is-active', i === at); });
         schedule();
     };

@@ -85,7 +85,7 @@ class Page extends Model
         return $this->status === self::STATUS_PUBLISHED;
     }
 
-    /** Public URL. System pages keep their original *.php address so every existing link still works. */
+    /** Public URL. Clean address without .php (the old *.php addresses redirect here). */
     public function url(): string
     {
         if ($this->slug === 'index') {
@@ -94,7 +94,7 @@ class Page extends Model
         if ($this->isBlog()) {
             return url('blog/' . $this->slug);
         }
-        return url($this->is_system ? $this->slug . '.php' : $this->slug);
+        return url($this->slug);
     }
 
     public function metaTitle(): string

@@ -1,0 +1,25 @@
+# Safety net for hosts where the whole project folder is the web root (the address then shows /public/index.php/...).
+# The right set-up is to point the domain at the "public" folder (then this file is never read).
+# Until then this file sends every request to /public, hides the application's private files and
+# forwards old addresses such as /public/index.php/blog to the clean one (/blog).
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. old addresses that Google already knows: /public/index.php/blog  ->  /blog   (only for real browser requests, so no loop)
+    RewriteCond %{THE_REQUEST} \s/+public/index\.php(/[^\s?]*)?(\?[^\s]*)?\s [NC]
+    RewriteRule ^public/index\.php/?(.*)$ /$1 [R=301,L,NE]
+    RewriteCond %{THE_REQUEST} \s/+public/
+    RewriteRule ^public/(.*)$ /$1 [R=301,L,NE]
+
+    # 2. private files and folders are never served
+    RewriteRule ^(\.env|\.git|vendor|storage|bootstrap|app|config|database|routes|tests|deploy|docs|tools|resources|node_modules)(/|$) - [F,L]
+    RewriteRule ^(composer\.(json|lock)|package(-lock)?\.json|artisan|phpunit\.xml|README\.md|vite\.config\.js|\.env\.example|\.editorconfig|\.gitignore|\.gitattributes|\.zip)$ - [F,L]
+    RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+    # 3. everything else is served from /public
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+Options -Indexes

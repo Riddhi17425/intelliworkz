@@ -17,10 +17,10 @@ class PageTest extends CmsTestCase
     {
         $this->assertSame(14, Page::where('is_system', true)->count());
         foreach (Page::where('is_system', true)->get() as $page) {
-            $url = $page->slug === 'index' ? '/' : "/{$page->slug}.php";
+            $url = $page->slug === 'index' ? '/' : "/{$page->slug}";
             $this->get($url)->assertOk()->assertSee('<title>', false);
         }
-        $this->get('/index.php')->assertOk();
+        $this->get('/index.php')->assertRedirect('/');
         $this->get('/about-us')->assertOk();       // clean URL works too
         $this->get('/does-not-exist.php')->assertNotFound();
     }
@@ -36,7 +36,7 @@ class PageTest extends CmsTestCase
         // a draft is invisible to visitors but previewable by a signed-in admin
         auth()->logout();
         $this->get('/our-process')->assertNotFound();
-        $this->get('/our-process.php')->assertNotFound();
+        $this->get('/our-process')->assertNotFound();
         $this->actingAs($admin)->get('/our-process')->assertOk()->assertSee('Draft preview')->assertSee('noindex', false);
 
         // publish -> public, with SEO tags
@@ -95,7 +95,7 @@ class PageTest extends CmsTestCase
         $this->assertSame('draft', Page::where('slug', 'seo-services')->value('status'));
         $this->assertNull(Page::where('slug', 'renamed')->first());
         auth()->logout();
-        $this->get('/seo-services.php')->assertNotFound();
+        $this->get('/seo-services')->assertNotFound();
     }
 
     public function test_seo_fields_reach_the_public_page(): void
@@ -105,7 +105,7 @@ class PageTest extends CmsTestCase
             'meta_title' => 'Custom About Title', 'meta_description' => 'A custom description.', 'meta_keywords' => 'design, print',
         ])->assertRedirect();
         auth()->logout();
-        $this->get('/about-us.php')->assertOk()
+        $this->get('/about-us')->assertOk()
             ->assertSee('<title>Custom About Title</title>', false)
             ->assertSee('content="A custom description."', false)
             ->assertSee('content="design, print"', false)

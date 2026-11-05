@@ -17,7 +17,7 @@ class MessagePagesTest extends CmsTestCase
                 ->assertSee('noindex', false);
         }
         // links to real pages are suggested
-        $this->get('/nothing-here')->assertSee('Maybe you were looking for')->assertSee('.php"', false);
+        $this->get('/nothing-here')->assertSee('Maybe you were looking for')->assertSee('href="/', false);
     }
 
     public function test_drafts_look_like_missing_pages_to_visitors(): void
@@ -61,6 +61,6 @@ class MessagePagesTest extends CmsTestCase
     public function test_a_failed_validation_does_not_go_to_the_thank_you_page(): void
     {
         $this->postJson('/inquiries', ['name' => '', 'email' => 'bad'])->assertStatus(422)->assertJsonMissing(['redirect' => route('thanks')]);
-        $this->from('/contact-us.php')->post('/inquiries', ['name' => '', 'email' => 'bad'])->assertRedirect('/contact-us.php');
+        $this->from('/contact-us')->post('/inquiries', ['name' => '', 'email' => 'bad'])->assertRedirect('/contact-us');
     }
 }

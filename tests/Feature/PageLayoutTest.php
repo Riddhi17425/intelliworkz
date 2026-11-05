@@ -45,7 +45,7 @@ class PageLayoutTest extends CmsTestCase
         $this->assertEqualsCanonicalizing(['faq', 'tools'], $hidden);
         auth()->logout();
         $this->get('/2d-animation')->assertOk()->assertDontSee('ve-faq')->assertDontSee('td-tools')->assertSee('ve-stats');
-        $this->get('/3d-modeling-rendering.php')->assertSee('ve-faq');          // the original page is unaffected
+        $this->get('/3d-modeling-rendering')->assertSee('ve-faq');          // the original page is unaffected
 
         // move FAQs to the top of the sections, everything shown again
         $order = ['faq' => true] + array_fill_keys(SectionPlan::KEYS, true);

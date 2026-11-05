@@ -35,7 +35,7 @@ class SettingUserTest extends CmsTestCase
         ]))->assertRedirect()->assertSessionHas('success');
         auth()->logout();
 
-        foreach (['/', '/about-us.php', '/contact-us.php'] as $url) {
+        foreach (['/', '/about-us', '/contact-us'] as $url) {
             $this->get($url)->assertOk()
                 ->assertSee('Copyright © 2030 Acme. All rights reserved.')
                 ->assertSee('First line about us.<br />', false)
@@ -51,8 +51,8 @@ class SettingUserTest extends CmsTestCase
         SiteSetting::where('key', 'seo_description')->update(['value' => 'Default one.']);
         SiteSetting::flush();
         \App\Models\Page::where('slug', 'about-us')->update(['meta_description' => 'Own description.']);
-        $this->get('/about-us.php')->assertSee('content="Own description."', false)->assertDontSee('Default one.');
-        $this->get('/contact-us.php')->assertSee('content="Default one."', false);
+        $this->get('/about-us')->assertSee('content="Own description."', false)->assertDontSee('Default one.');
+        $this->get('/contact-us')->assertSee('content="Default one."', false);
     }
 
     public function test_empty_social_link_hides_the_icon(): void
@@ -81,7 +81,7 @@ class SettingUserTest extends CmsTestCase
         $this->assertStringContainsString('<rect', $stored);
 
         auth()->logout();
-        $this->get('/')->assertSee('src="' . $logo . '"', false)->assertSee('href="' . $fav . '"', false);
+        $this->get('/')->assertSee('src="/' . $logo . '"', false)->assertSee('href="/' . $fav . '"', false);
 
         // remove -> falls back to the original asset in the templates
         $this->actingAs($this->admin())->put('/admin/settings', $this->settingsPayload() + ['remove_logo_header' => 1])->assertSessionHasNoErrors();

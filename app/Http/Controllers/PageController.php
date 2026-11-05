@@ -29,7 +29,8 @@ class PageController extends Controller
     {
         $page = Page::where('slug', $slug)->first();
         abort_if(!$page, 404);
-        if ($page->isBlog()) {
+        // blog posts live under /blog/, and the old "something.php" addresses forward to the clean one
+        if ($page->isBlog() || str_ends_with($request->path(), '.php')) {
             return redirect($page->url(), 301);
         }
         return $this->render($request, $page);
@@ -52,7 +53,7 @@ class PageController extends Controller
         }
         abort_unless(view()->exists($view), 404);
 
-        return response()->view($view, $this->data($page, $preview));
+        return $this->rooted($request, response()->view($view, $this->data($page, $preview)));
     }
 
     /** Friendly 404 in the site design (called from the exception handler in bootstrap/app.php). */
@@ -68,7 +69,7 @@ class PageController extends Controller
         $data['meta']['robots'] = 'noindex, nofollow';
         $data['meta']['canonical'] = url('/');
 
-        return response()->view('site.message', $data + ['kind' => '404', 'name' => null, 'links' => $this->suggestions()], 404);
+        return $this->rooted($request, response()->view('site.message', $data + ['kind' => '404', 'name' => null, 'links' => $this->suggestions()], 404));
     }
 
     /** Shown after an enquiry has been sent (the form redirects here). */
@@ -82,8 +83,14 @@ class PageController extends Controller
         $name = Html::plain((string) $request->session()->get('inquiry_name', ''));
         $first = $name !== '' ? \Illuminate\Support\Str::before($name, ' ') : null;
 
-        return response()->view('site.message', $data + ['kind' => 'thanks', 'name' => $first ? \Illuminate\Support\Str::limit($first, 40, '') : null, 'links' => $this->suggestions()])
-            ->header('Cache-Control', 'no-store');
+        return $this->rooted($request, response()->view('site.message', $data + ['kind' => 'thanks', 'name' => $first ? \Illuminate\Support\Str::limit($first, 40, '') : null, 'links' => $this->suggestions()])
+            ->header('Cache-Control', 'no-store'));
+    }
+
+    /** make every site-root link ("assets/…", "contact-us.php") absolute, so no page depends on how deep its address is */
+    private function rooted(Request $request, Response $response): Response
+    {
+        return \App\Support\RootUrls::fix($response, $request->getBasePath());
     }
 
     private function messagePage(string $title): Page
@@ -136,8 +143,8 @@ class PageController extends Controller
 
         return $lists + $sections + [
             'page' => $page,
-            // the site links its own files relative to the root (assets/css/..., contact-us.php), so a page one folder deeper needs a base address
-            'baseHref' => $page->isBlog() ? url('/') . '/' : null,
+            // no <base> tag: every link is made root-based by RootUrls, so "#section" links stay on the page
+            'baseHref' => null,
             'cfg' => $cfg,
             'preview' => $preview,
             'settings' => $settings,

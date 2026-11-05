@@ -28,7 +28,9 @@
             <a class="adm-nav {{ $nav('admin.dashboard') }}" href="{{ route('admin.dashboard') }}"><i class="bi bi-grid-1x2"></i> Dashboard</a>
 
             <div class="adm-side__label">Website content</div>
-            <a class="adm-nav {{ $nav('admin.pages.*') }}" href="{{ route('admin.pages.index') }}"><i class="bi bi-file-earmark-richtext"></i> Pages</a>
+            @php $inBlog = request()->routeIs('admin.pages.*') && (request('type') === 'blog' || request('blog') || (request()->route('page') instanceof \App\Models\Page && request()->route('page')->isBlog())); @endphp
+            <a class="adm-nav {{ request()->routeIs('admin.pages.*') && !$inBlog ? 'active' : '' }}" href="{{ route('admin.pages.index') }}"><i class="bi bi-file-earmark-richtext"></i> Pages</a>
+            <a class="adm-nav {{ $inBlog ? 'active' : '' }}" href="{{ route('admin.pages.index', ['type' => 'blog']) }}"><i class="bi bi-journal-richtext"></i> Blog posts</a>
             <a class="adm-nav {{ $nav('admin.menu.*') }}" href="{{ route('admin.menu.index') }}"><i class="bi bi-diagram-3"></i> Services &amp; menus</a>
             <a class="adm-nav {{ $nav('admin.shared.*') }}" href="{{ route('admin.shared.edit') }}"><i class="bi bi-layout-text-window-reverse"></i> Header, footer &amp; shared</a>
 

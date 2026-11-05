@@ -47,7 +47,7 @@ class PageCloneTest extends CmsTestCase
         \App\Support\Content::forget('2d-animation');
 
         $this->get('/2d-animation')->assertSee('Questions about 2D animation');
-        $this->get('/3d-modeling-rendering.php')->assertDontSee('Questions about 2D animation');
+        $this->get('/3d-modeling-rendering')->assertDontSee('Questions about 2D animation');
         $this->assertNotSame('Questions about 2D animation', ContentField::where('scope', '3d-modeling-rendering')->where('key', 'faqs.1')->value('value'));
     }
 
@@ -88,7 +88,7 @@ class PageCloneTest extends CmsTestCase
         $this->assertSame(0, ContentField::where('scope', '2d-animation')->count());
         $this->assertSame(0, ContentList::where('scope', '2d-animation')->count());
         $this->assertSame($before, ContentField::where('scope', '3d-modeling-rendering')->count());
-        $this->get('/3d-modeling-rendering.php')->assertOk();
+        $this->get('/3d-modeling-rendering')->assertOk();
     }
 
     public function test_only_pages_with_their_own_design_can_be_a_base(): void

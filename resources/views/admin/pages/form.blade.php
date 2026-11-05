@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 @php $editing = $page->exists; @endphp
-@section('title', $editing ? $page->title : 'New page')
+@section('title', $editing ? $page->title : ($page->isBlog() ? 'New blog post' : 'New page'))
 
 @section('content')
-<x-admin.head :title="$editing ? $page->title : 'New page'" :crumbs="['Pages' => route('admin.pages.index'), ($editing ? 'Settings & SEO' : 'New page') => null]">
+<x-admin.head :title="$editing ? $page->title : ($page->isBlog() ? 'New blog post' : 'New page')" :crumbs="$page->isBlog() ? ['Blog posts' => route('admin.pages.index', ['type' => 'blog']), ($editing ? 'Settings & SEO' : 'New blog post') => null] : ['Pages' => route('admin.pages.index'), ($editing ? 'Settings & SEO' : 'New page') => null]">
     <x-slot:actions>
         @if($editing && $page->hasEditor())<a href="{{ route('admin.pages.content', $page) }}" class="btn btn-primary"><i class="bi bi-pencil-square me-1"></i> Edit page content</a>@endif
         @if($editing)<a href="{{ $page->url() }}" target="_blank" rel="noopener" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-up-right me-1"></i> View</a>@endif
@@ -63,7 +63,7 @@
                     @else
                         <div class="alert alert-light border small mb-0"><i class="bi bi-info-circle me-1"></i>
                             This is one of the original website pages. Its texts, pictures and lists are edited with <a href="{{ route('admin.pages.content', $page) }}"><strong>Edit page content</strong></a>.
-                            The address (<code>{{ $page->slug === 'index' ? '/' : '/' . $page->slug . '.php' }}</code>) is fixed so existing links keep working.
+                            The address (<code>{{ $page->slug === 'index' ? '/' : '/' . $page->slug }}</code>) is fixed so existing links keep working.
                         </div>
                     @endunless
                 </div>

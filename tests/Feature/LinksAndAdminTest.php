@@ -12,7 +12,7 @@ class LinksAndAdminTest extends CmsTestCase
     {
         $checked = [];
         foreach (Page::published()->get() as $page) {
-            $html = $this->get($page->slug === 'index' ? '/' : '/' . $page->slug . ($page->is_system ? '.php' : ''))->assertOk()->getContent();
+            $html = $this->get($page->slug === 'index' ? '/' : '/' . $page->slug)->assertOk()->getContent();
             preg_match_all('/<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)<\/a>/is', $html, $m, PREG_SET_ORDER);
             foreach ($m as [$tag, $href, $inner]) {
                 $href = html_entity_decode($href);
@@ -28,7 +28,7 @@ class LinksAndAdminTest extends CmsTestCase
                     continue;
                 }
                 $checked[$path] = true;
-                $this->get($path)->assertSuccessful();
+                $this->assertTrue($this->get($path)->isSuccessful(), "Broken link {$path} on {$page->slug}");
             }
         }
         $this->assertNotEmpty($checked);
@@ -51,26 +51,26 @@ class LinksAndAdminTest extends CmsTestCase
 
     public function test_the_card_numbers_can_be_switched_off_per_page_in_the_admin(): void
     {
-        $this->get('/pre-press-service.php')->assertSee('pp-why__no', false);
-        $this->get('/packaging-design.php')->assertSee('pk-why__no', false);
+        $this->get('/pre-press-service')->assertSee('pp-why__no', false);
+        $this->get('/packaging-design')->assertSee('pk-why__no', false);
 
         $field = \App\Models\ContentField::where('scope', 'pre-press-service')->where('key', 'card-numbers.1')->firstOrFail();
         $this->actingAs($this->editor())->put('/admin/pages/pre-press-service/content', ['fields' => [$field->id => '0']])->assertSessionHasNoErrors();
         auth()->logout();
 
-        $this->get('/pre-press-service.php')->assertOk()->assertDontSee('pp-why__no', false);
-        $this->get('/packaging-design.php')->assertSee('pk-why__no', false);           // other pages keep their numbers
+        $this->get('/pre-press-service')->assertOk()->assertDontSee('pp-why__no', false);
+        $this->get('/packaging-design')->assertSee('pk-why__no', false);           // other pages keep their numbers
     }
 
     public function test_the_filter_tabs_can_be_switched_off_per_page_in_the_admin(): void
     {
-        $this->get('/pre-press-service.php')->assertSee('class="filter-tabs"', false);
+        $this->get('/pre-press-service')->assertSee('class="filter-tabs"', false);
 
         $field = \App\Models\ContentField::where('scope', 'pre-press-service')->where('key', 'filter-tabs.1')->firstOrFail();
         $this->actingAs($this->editor())->put('/admin/pages/pre-press-service/content', ['fields' => [$field->id => '0']])->assertSessionHasNoErrors();
         auth()->logout();
 
-        $this->get('/pre-press-service.php')->assertOk()->assertDontSee('class="filter-tabs"', false);
-        $this->get('/seo-services.php')->assertSee('class="filter-tabs"', false);      // other pages keep their tabs
+        $this->get('/pre-press-service')->assertOk()->assertDontSee('class="filter-tabs"', false);
+        $this->get('/seo-services')->assertSee('class="filter-tabs"', false);      // other pages keep their tabs
     }
 }

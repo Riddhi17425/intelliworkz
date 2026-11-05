@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Pages')
+@section('title', request('type') === 'blog' ? 'Blog posts' : 'Pages')
 
 @php
     $sortLink = function (string $col, string $label) use ($sort, $dir) {
@@ -11,8 +11,14 @@
 @endphp
 
 @section('content')
-<x-admin.head title="Pages" subtitle="Every page of the website. Edit its content, SEO and whether visitors can see it.">
-    <x-slot:actions><a href="{{ route('admin.pages.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> New page</a></x-slot:actions>
+<x-admin.head :title="request('type') === 'blog' ? 'Blog posts' : 'Pages'" :subtitle="request('type') === 'blog' ? 'Every article on the Blog page. Add a post, change its text, picture, category and date, or hide it. New posts appear on the Blog page and the home page by themselves.' : 'Every page of the website. Edit its content, SEO and whether visitors can see it.'">
+    <x-slot:actions>
+        @if(request('type') === 'blog')
+            <a href="{{ route('admin.pages.create', ['blog' => 1]) }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> New blog post</a>
+        @else
+            <a href="{{ route('admin.pages.create') }}" class="btn btn-primary"><i class="bi bi-plus-lg me-1"></i> New page</a>
+        @endif
+    </x-slot:actions>
 </x-admin.head>
 
 @php
@@ -34,6 +40,7 @@
             <option value="">All pages</option>
             <option value="system" @selected(request('type') === 'system')>Website pages</option>
             <option value="custom" @selected(request('type') === 'custom')>Pages I created</option>
+            <option value="blog" @selected(request('type') === 'blog')>Blog posts</option>
         </select>
         <button class="btn btn-sm btn-primary">Filter</button>
         @if(request()->hasAny(['q', 'status', 'type']))<a class="btn btn-sm btn-light" href="{{ route('admin.pages.index') }}">Reset</a>@endif
@@ -58,7 +65,7 @@
                             <a class="row-title" href="{{ route('admin.pages.edit', $p) }}">{{ $p->title }}</a>
                             <div class="small text-muted">@if($p->is_system)Website page @elseif($p->hasEditor())<i class="bi bi-files me-1"></i>Copy of design: {{ $p->viewKey() }} @else <i class="bi bi-file-text me-1"></i>Custom page @endif</div>
                         </td>
-                        <td class="d-none d-md-table-cell small"><a class="text-muted" target="_blank" rel="noopener" href="{{ $p->url() }}">/{{ $p->slug === 'index' ? '' : $p->slug . ($p->is_system ? '.php' : '') }}</a></td>
+                        <td class="d-none d-md-table-cell small"><a class="text-muted" target="_blank" rel="noopener" href="{{ $p->url() }}">/{{ $p->slug === 'index' ? '' : $p->slug }}</a></td>
                         <td><x-admin.badge :status="$p->status"/></td>
                         <td class="small text-muted d-none d-lg-table-cell">{{ $p->updated_at?->diffForHumans() }}</td>
                         <td class="text-end text-nowrap">

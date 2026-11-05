@@ -20,6 +20,7 @@
     @if($meta['image'])<meta property="og:image" content="{{ $meta['image'] }}">@endif
     @include('site.partials.seo')
 
+    @if(empty($settings['favicon']) || $settings['favicon'] === 'assets/images/favicon.png')<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96.png">@endif
     <link rel="icon" type="image/png" sizes="100x100" href="{{ $settings['favicon'] ?? 'assets/images/favicon.png' }}">
     <link rel="apple-touch-icon" href="{{ $settings['favicon'] ?? 'assets/images/favicon.png' }}">
 

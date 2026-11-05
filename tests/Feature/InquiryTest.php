@@ -29,7 +29,7 @@ class InquiryTest extends CmsTestCase
 
     public function test_inquiry_without_javascript_redirects_to_the_thank_you_page(): void
     {
-        $this->from('/contact-us.php')->post('/inquiries', $this->payload())->assertRedirect(route('thanks'));
+        $this->from('/contact-us')->post('/inquiries', $this->payload())->assertRedirect(route('thanks'));
         $this->get('/thank-you')->assertOk()->assertSee('Thank you');
     }
 
@@ -100,7 +100,7 @@ class InquiryTest extends CmsTestCase
     public function test_every_public_form_posts_to_the_inquiry_endpoint_with_csrf_and_honeypot(): void
     {
         foreach (['video-editing', 'contact-us', 'seo-services', 'ppt-design'] as $slug) {
-            $this->get("/{$slug}.php")->assertOk()
+            $this->get("/{$slug}")->assertOk()
                 ->assertSee('/inquiries" method="post" data-inquiry-form', false)->assertSee('name="_token"', false)
                 ->assertSee('name="website"', false)->assertSee('name="email"', false);
         }

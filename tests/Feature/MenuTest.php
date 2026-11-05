@@ -55,7 +55,7 @@ class MenuTest extends CmsTestCase
         auth()->logout();
         fwrite(STDERR, "
 ");
-        $this->get('/')->assertSee('href="' . url('/case-studies') . '"', false);   // clean address for pages made in the admin
+        $this->get('/')->assertSee('href="/case-studies"', false);   // clean address for pages made in the admin
 
         // taking the page offline must immediately stop the menu pointing at it
         $this->actingAs($admin)->patch("/admin/pages/{$page->slug}/status");

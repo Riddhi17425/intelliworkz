@@ -36,7 +36,9 @@ class PageController extends Controller
             ->when(in_array($request->query('status'), array_keys(Page::STATUSES), true), fn ($q) => $q->where('status', $request->query('status')))
             ->when($request->query('type') === 'system', fn ($q) => $q->where('is_system', true))
             ->when($request->query('type') === 'custom', fn ($q) => $q->where('is_system', false))
-            ->orderBy($sort, $dir)->orderBy('id')
+            ->when($request->query('type') === 'blog', fn ($q) => $q->where('template', 'blog-post'))
+            ->when($request->query('type') === 'blog' && !$request->filled('sort'), fn ($q) => $q->orderByDesc('published_at'), fn ($q) => $q->orderBy($sort, $dir))
+            ->orderBy('id')
             ->paginate(15)->withQueryString();
 
         return view('admin.pages.index', ['pages' => $pages, 'sort' => $sort, 'dir' => $dir]);
@@ -45,7 +47,10 @@ class PageController extends Controller
     public function create(Request $request): View
     {
         $page = new Page(['status' => Page::STATUS_DRAFT]);
-        return view('admin.pages.form', ['page' => $page, 'bases' => $this->bases(), 'base' => $request->query('from')]);
+        if ($request->boolean('blog')) {
+            $page->template = 'blog-post';   // "New blog post": same form, the blog box is already ticked
+        }
+        return view('admin.pages.form', ['page' => $page, 'bases' => $request->boolean('blog') ? collect() : $this->bases(), 'base' => $request->query('from')]);
     }
 
     public function store(Request $request): RedirectResponse

@@ -94,13 +94,13 @@ class ContentTest extends CmsTestCase
     public function test_editing_a_field_changes_the_live_page_immediately(): void
     {
         $field = ContentField::where('scope', 'about-us')->where('type', 'text')->orderBy('sort')->firstOrFail();
-        $this->get('/about-us.php')->assertOk();     // prime any cache
+        $this->get('/about-us')->assertOk();     // prime any cache
 
         $this->actingAs($this->editor())->put('/admin/pages/about-us/content', ['fields' => [$field->id => 'Brand New Heading']])
             ->assertSessionHas('success');
         auth()->logout();
 
-        $this->get('/about-us.php')->assertOk()->assertSee('Brand New Heading');
+        $this->get('/about-us')->assertOk()->assertSee('Brand New Heading');
         $this->assertSame('Brand New Heading', $field->fresh()->value);
     }
 
@@ -109,16 +109,16 @@ class ContentTest extends CmsTestCase
         $field = ContentField::where('scope', 'about-us')->where('type', 'text')->orderBy('sort')->firstOrFail();
         $field->update(['value' => 'Unique Heading 4821']);
         \App\Support\Content::forget('about-us');
-        $this->get('/about-us.php')->assertOk()->assertSee('Unique Heading 4821');
+        $this->get('/about-us')->assertOk()->assertSee('Unique Heading 4821');
 
         $this->actingAs($this->editor())->put('/admin/pages/about-us/content', ['hidden' => [$field->id => '1']])->assertSessionHas('success');
         auth()->logout();
-        $this->get('/about-us.php')->assertOk()->assertDontSee('Unique Heading 4821');
+        $this->get('/about-us')->assertOk()->assertDontSee('Unique Heading 4821');
         $this->assertSame('Unique Heading 4821', $field->fresh()->value);
 
         $this->actingAs($this->editor())->put('/admin/pages/about-us/content', ['hidden' => [$field->id => '0']]);
         auth()->logout();
-        $this->get('/about-us.php')->assertSee('Unique Heading 4821');
+        $this->get('/about-us')->assertSee('Unique Heading 4821');
     }
 
     public function test_paragraphs_can_be_added_after_a_field_and_deleted_again(): void
@@ -131,13 +131,13 @@ class ContentTest extends CmsTestCase
         $extra = ContentField::where('scope', 'about-us')->where('key', $field->key . '~1')->firstOrFail();
         $this->assertSame($field->section, $extra->section);
         $this->assertSame(1, ContentField::where('scope', 'about-us')->where('key', 'like', $field->key . '~%')->count(), 'a blank paragraph must not be saved');
-        $this->get('/about-us.php')->assertOk()->assertSee('An extra paragraph 7391');
+        $this->get('/about-us')->assertOk()->assertSee('An extra paragraph 7391');
 
         $this->actingAs($this->editor())->get('/admin/pages/about-us/content')->assertOk()->assertSee('An extra paragraph 7391')->assertSee('Delete this added paragraph');
         $this->actingAs($this->editor())->put('/admin/pages/about-us/content', ['delete_fields' => [$extra->id => '1']]);
         auth()->logout();
         $this->assertNull(ContentField::find($extra->id));
-        $this->get('/about-us.php')->assertDontSee('An extra paragraph 7391');
+        $this->get('/about-us')->assertDontSee('An extra paragraph 7391');
     }
 
     public function test_original_fields_cannot_be_deleted_only_hidden(): void
@@ -190,7 +190,7 @@ class ContentTest extends CmsTestCase
         $path = $field->fresh()->value;
         $this->assertStringStartsWith('uploads/images/', $path);
         \Storage::disk('uploads')->assertExists(substr($path, strlen('uploads/')));
-        $this->get('/contact-us.php')->assertSee($path, false);
+        $this->get('/contact-us')->assertSee($path, false);
 
         // wrong type is refused and the current picture stays
         $this->put('/admin/pages/contact-us/content', ['images' => [$field->id => UploadedFile::fake()->create('x.php', 1, 'application/x-php')]])->assertSessionHasErrors("images.{$field->id}");
@@ -208,7 +208,7 @@ class ContentTest extends CmsTestCase
         $field = ContentField::where('scope', 'global')->where('key', 'header.1')->firstOrFail();   // the menu button label, printed on every page
         $this->actingAs($this->editor())->put('/admin/shared', ['fields' => [$field->id => 'Shared Banner Text']])->assertSessionHas('success');
         auth()->logout();
-        foreach (['/', '/about-us.php', '/contact-us.php'] as $url) {
+        foreach (['/', '/about-us', '/contact-us'] as $url) {
             $this->get($url)->assertOk()->assertSee('Shared Banner Text');
         }
     }
@@ -235,7 +235,7 @@ class ContentTest extends CmsTestCase
         $this->assertStringNotContainsString('script', $stored);
 
         auth()->logout();
-        $this->get('/3d-modeling-rendering.php')->assertSee('<ul class="rt"><li>Modeling</li>', false);
+        $this->get('/3d-modeling-rendering')->assertSee('<ul class="rt"><li>Modeling</li>', false);
         $this->actingAs($this->editor())->get($url)->assertOk()->assertSee('data-fmt-act="ul"', false);
     }
 
@@ -255,7 +255,7 @@ class ContentTest extends CmsTestCase
         $this->assertCount($count + 1, $items);
         $this->assertSame(['Do you sign NDAs?', 'Yes, always.'], $items[$count]);
         auth()->logout();
-        $this->get('/3d-modeling-rendering.php')->assertSee('Do you sign NDAs?')->assertSee('Yes, always.');
+        $this->get('/3d-modeling-rendering')->assertSee('Do you sign NDAs?')->assertSee('Yes, always.');
         $this->actingAs($this->editor());
 
         // edit the first row and move it to the end
@@ -379,7 +379,7 @@ class ContentTest extends CmsTestCase
         $this->put($url, $data)->assertSessionHas('success');
         $this->assertSame([], $filters->fresh()->items);
         auth()->logout();
-        $this->get('/seo-services.php')->assertOk()->assertDontSee('class="filter-tabs', false);
+        $this->get('/seo-services')->assertOk()->assertDontSee('class="filter-tabs', false);
     }
 
     public function test_office_tabs_can_be_added_and_removed(): void
@@ -396,7 +396,7 @@ class ContentTest extends CmsTestCase
         $this->assertCount(count($before) + 1, $items);
         $this->assertSame('Dubai', $items['united-arab-emirates']['city']);
         auth()->logout();
-        $this->get('/contact-us.php')->assertOk()->assertSee('United Arab Emirates');
+        $this->get('/contact-us')->assertOk()->assertSee('United Arab Emirates');
         $this->actingAs($this->editor());
 
         $data = $this->formData($url);

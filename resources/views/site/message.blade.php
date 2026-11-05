@@ -5,7 +5,7 @@
 <main class="page gp msg">
     @include('site.partials.site-header')
 
-    <section class="msg-hero">
+    <section class="msg-hero{{ $kind === 'thanks' ? ' msg-hero--thanks' : '' }}">
         <div class="container msg-hero__inner">
             @if($kind === 'thanks')
                 <span class="msg-icon" aria-hidden="true">
@@ -27,6 +27,26 @@
                     <?php btn($G('notfound.4', 'Contact us'), 'btn--stroke btn--cta', null, url($G('notfound.5', 'contact-us.php'))); ?>
                 @endif
             </div>
+
+            @if($kind === 'thanks')
+                <ol class="msg-steps" aria-label="What happens next">
+                    <li>
+                        <span class="msg-steps__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
+                        <strong>We read your message</strong>
+                        <span>Your enquiry goes straight to the right team.</span>
+                    </li>
+                    <li>
+                        <span class="msg-steps__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                        <strong>We get back to you</strong>
+                        <span>Usually within one working day.</span>
+                    </li>
+                    <li>
+                        <span class="msg-steps__ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 6l3 3"/></svg></span>
+                        <strong>We plan the next step</strong>
+                        <span>Scope, timeline and how we can help.</span>
+                    </li>
+                </ol>
+            @endif
         </div>
     </section>
 

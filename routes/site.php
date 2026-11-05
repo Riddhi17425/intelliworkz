@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SeoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 // enquiry / contact forms of every page (rate-limited, CSRF-protected, validated server-side)
 Route::post('/inquiries', [InquiryController::class, 'store'])->middleware('throttle:inquiries')->name('inquiries.store');
 
+Route::get('/robots.txt', [SeoController::class, 'robots'])->name('robots');
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('sitemap');
 Route::get('/thank-you', [PageController::class, 'thanks'])->name('thanks');
 Route::get('/', [PageController::class, 'show'])->defaults('slug', 'index')->name('home');
 Route::get('/index.php', [PageController::class, 'show'])->defaults('slug', 'index');

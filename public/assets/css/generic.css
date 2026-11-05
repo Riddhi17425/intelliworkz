@@ -86,6 +86,20 @@
 .msg-links ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; margin: 0; padding: 0; list-style: none; }
 .msg-links a { display: inline-block; padding: 10px 20px; font-weight: 500; color: var(--c-ink); border: 1px solid var(--c-border-gray); border-radius: 100px; transition: color .2s, border-color .2s, background .2s; }
 .msg-links a:hover { color: var(--c-white); background: var(--c-red); border-color: var(--c-red); }
+/* thank-you page: plain black hero like the other inner pages, one icon, one heading, three short steps */
+.msg-hero--thanks { min-height: 0; padding: clamp(64px, 8vw, 112px) 0 clamp(64px, 8vw, 104px); background: var(--c-black); border-bottom: 1px solid #1f1f24; }
+.msg-hero--thanks .msg-hero__inner { gap: 0; }
+.msg-hero--thanks .msg-icon { width: 84px; height: 84px; background: #138a5b; box-shadow: none; }
+.msg-hero--thanks .msg-icon svg { width: 38px; height: 38px; }
+.msg-hero--thanks .msg-title { margin-top: 32px; max-width: 900px; font-size: clamp(34px, 4.2vw, 64px); }
+.msg-hero--thanks .msg-text { margin-top: 20px; color: #c9c9d2; }
+.msg-hero--thanks .msg-actions { margin-top: 36px; }
+.msg-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; width: min(100%, 960px); margin: 72px 0 0; padding: 0; list-style: none; text-align: left; }
+.msg-steps li { display: flex; flex-direction: column; gap: 8px; padding: 28px 26px; background: #0e0e12; border: 1px solid #26262d; border-radius: 10px; }
+.msg-steps__ico { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 10px; color: var(--c-red); border: 1px solid var(--c-red); border-radius: 50%; }
+.msg-steps strong { font-size: 18px; font-weight: 600; line-height: 24px; color: #fff; }
+.msg-steps li > span:last-child { font-size: 15px; line-height: 23px; color: #a9a9b4; }
+@media (max-width: 760px) { .msg-steps { grid-template-columns: 1fr; gap: 12px; margin-top: 48px; } .msg-steps li { padding: 20px; } }
 @keyframes msg-pop { from { opacity: 0; transform: scale(.6); } }
 @keyframes msg-draw { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .msg-icon, .msg-icon svg { animation: none; stroke-dashoffset: 0; } }

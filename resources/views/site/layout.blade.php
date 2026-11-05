@@ -10,14 +10,15 @@
     <title>{{ $meta['title'] }}</title>
     @if($meta['description'])<meta name="description" content="{{ $meta['description'] }}">@endif
     @if($meta['keywords'])<meta name="keywords" content="{{ $meta['keywords'] }}">@endif
-    @if($meta['robots'])<meta name="robots" content="{{ $meta['robots'] }}">@endif
+    <meta name="robots" content="{{ $meta['robots'] ?: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }}">
     <link rel="canonical" href="{{ $meta['canonical'] }}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="{{ isset($page) && $page->isBlog() ? 'article' : 'website' }}">
     <meta property="og:site_name" content="{{ $settings['company_name'] ?? 'Intelliworkz' }}">
     <meta property="og:title" content="{{ $meta['title'] }}">
     @if($meta['description'])<meta property="og:description" content="{{ $meta['description'] }}">@endif
     <meta property="og:url" content="{{ $meta['canonical'] }}">
     @if($meta['image'])<meta property="og:image" content="{{ $meta['image'] }}">@endif
+    @include('site.partials.seo')
 
     <link rel="icon" type="image/png" sizes="100x100" href="{{ $settings['favicon'] ?? 'assets/images/favicon.png' }}">
     <link rel="apple-touch-icon" href="{{ $settings['favicon'] ?? 'assets/images/favicon.png' }}">

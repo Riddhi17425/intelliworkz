@@ -60,6 +60,18 @@
             input.insertAdjacentElement('afterend', note);
         };
 
+        /* the contact number takes digits, + - ( ) . and spaces only: anything else is removed as it is typed or pasted */
+        var phone = form.querySelector('[name="phone"]');
+        if (phone) {
+            phone.setAttribute('inputmode', 'tel');
+            phone.setAttribute('autocomplete', 'tel');
+            phone.setAttribute('maxlength', '40');
+            phone.addEventListener('input', function () {
+                var clean = phone.value.replace(/[^0-9+\-\s().]/g, '');
+                if (clean !== phone.value) phone.value = clean;
+            });
+        }
+
         form.addEventListener('input', function (e) {
             if (e.target && e.target.name && e.target.getAttribute('aria-invalid')) mark(e.target.name, false);
         });

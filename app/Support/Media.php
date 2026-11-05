@@ -95,9 +95,16 @@ class Media
     /** Remove a previously uploaded file, unless another page or list still points to it. Original site assets ("assets/...") are never deleted. */
     public static function delete(?string $path): void
     {
-        if (self::isUpload($path) && !self::inUse($path)) {
-            Storage::disk(self::DISK)->delete(substr($path, strlen('uploads/')));
+        if (!self::isUpload($path)) {
+            return;
         }
+        // Callers ask for the delete while the database still holds the old path, so checking "still in use?" right away
+        // always said yes and the file was never removed. Look again once the request has saved its changes.
+        app()->terminating(function () use ($path) {
+            if (!self::inUse($path)) {
+                Storage::disk(self::DISK)->delete(substr($path, strlen('uploads/')));
+            }
+        });
     }
 
     /** True while the path is still stored in any page content, content field or list. */
@@ -109,6 +116,7 @@ class Media
         $db = \Illuminate\Support\Facades\DB::class;
         return $db::table('content_fields')->where('value', 'like', $plain)->exists()
             || $db::table('content_lists')->where(fn ($q) => $q->where('items', 'like', $plain)->orWhere('items', 'like', $escaped))->exists()
+            || $db::table('site_settings')->where('value', 'like', $plain)->exists()
             || $db::table('pages')->where(fn ($q) => $q->where('content', 'like', $plain)->orWhere('featured_image', $path)->orWhere('og_image', $path))->exists();
     }
 

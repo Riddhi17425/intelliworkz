@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias(['admin.guard' => AdminGuard::class]);
         $middleware->web(prepend: [\App\Http\Middleware\CanonicalUrl::class]);
+        $middleware->append(\App\Http\Middleware\SecurityHeaders::class);
         $middleware->redirectGuestsTo(fn () => route('admin.login'));
         $middleware->redirectUsersTo(fn () => route('admin.dashboard'));
     })
@@ -22,6 +23,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, \Illuminate\Http\Request $request) {
             if ($request->expectsJson() || $request->is('admin', 'admin/*', 'up')) {
                 return null;
+            }
+            // /About-Us -> /about-us when such a page exists
+            if ($redirect = app(\App\Http\Controllers\PageController::class)->lowercaseRedirect($request)) {
+                return $redirect;
             }
             return app(\App\Http\Controllers\PageController::class)->notFound($request);
         });

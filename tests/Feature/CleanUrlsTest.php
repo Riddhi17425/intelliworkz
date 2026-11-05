@@ -43,4 +43,19 @@ class CleanUrlsTest extends CmsTestCase
         $this->assertMatchesRegularExpression('~<form[^>]*action="/inquiries"~', $this->get('/contact-us')->getContent());
         $this->assertMatchesRegularExpression('~<link rel="canonical" href="' . preg_quote(url('/blog'), '~') . '"~', $html);   // canonical stays absolute
     }
+
+    public function test_capital_letters_in_an_address_go_to_the_lower_case_page(): void
+    {
+        $this->get('/About-Us')->assertRedirect(url('/about-us'))->assertStatus(301);
+        $this->get('/BLOG')->assertRedirect(url('/blog'))->assertStatus(301);
+        $this->get('/Nothing-Here-Xyz')->assertNotFound();
+    }
+
+    public function test_every_response_carries_the_basic_security_headers(): void
+    {
+        $r = $this->get('/about-us');
+        $r->assertHeader('X-Frame-Options', 'SAMEORIGIN')->assertHeader('X-Content-Type-Options', 'nosniff')->assertHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+        $this->get('/nothing-here-xyz')->assertNotFound()->assertHeader('X-Content-Type-Options', 'nosniff');
+        $this->assertFalse($r->headers->has('X-Powered-By'));
+    }
 }

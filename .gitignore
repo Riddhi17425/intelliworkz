@@ -33,3 +33,6 @@ Thumbs.db
 
 # zip archives (e.g. config.zip, release packages) are never committed
 *.zip
+
+# database backups made while working on the site: they hold real data, never commit or upload them
+/storage/backups/

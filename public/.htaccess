@@ -26,9 +26,25 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-    # Redirect Trailing Slashes If Not A Folder...
+    # One address per page. These three only react to what the visitor really typed (THE_REQUEST), never to our own
+    # internal rewrites, so they cannot loop; when the domain points at this /public folder (the right set-up) the first two never match
+    # (the (?!public/) guard keeps them from redirecting to themselves there).
+    # a) /public/index.php/blog and /public/about-us  ->  /blog and /about-us   (the folder name must never show)
+    RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+    RewriteCond %{THE_REQUEST} \s/+public/index\.php(/[^\s?]*)?(\?[^\s]*)?\s [NC]
+    RewriteRule ^index\.php/?(.*)$ /$1 [R=301,L,NE]
+    RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+    RewriteCond %{THE_REQUEST} \s/+public/
+    RewriteRule ^(?!public/)(.*)$ /$1 [R=301,L,NE]
+    # b) /index.php and /index.php/about-us  ->  / and /about-us
+    RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+    RewriteCond %{THE_REQUEST} \s/+index\.php[/?\s]
+    RewriteRule ^index\.php/?(.*)$ /$1 [R=301,L,NE]
+
+    # Redirect Trailing Slashes If Not A Folder... (the address is read from what the visitor typed, so the
+    # folder name of a project-folder set-up never leaks into the redirect)
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteCond %{THE_REQUEST} \s(/\S*?[^/\s?])/+(?:\?\S*)?\sHTTP/
     RewriteRule ^ %1 [L,R=301]
 
     # Send Requests To Front Controller...

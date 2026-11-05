@@ -56,6 +56,26 @@ class PageController extends Controller
         return $this->rooted($request, response()->view($view, $this->data($page, $preview)));
     }
 
+    /** A capitalised address ("/About-Us", "/Blog/My-Post") goes to the real lower-case one, as long as such a published page exists. */
+    public function lowercaseRedirect(Request $request): ?\Illuminate\Http\RedirectResponse
+    {
+        $path = trim($request->path(), '/');
+        if (!$request->isMethodSafe() || $path === '' || $path === strtolower($path)
+            || !preg_match('~^(blog/)?[A-Za-z0-9][A-Za-z0-9-]*(\.php)?$~', $path)) {
+            return null;
+        }
+
+        $lower = strtolower($path);
+        $isBlog = str_starts_with($lower, 'blog/');
+        $slug = preg_replace('~\.php$~', '', preg_replace('~^blog/~', '', $lower));
+        $page = Page::published()->where('slug', $slug)->first();
+        if (!$page || $page->isBlog() !== $isBlog) {
+            return null;
+        }
+
+        return redirect($page->url() . ($request->getQueryString() ? '?' . $request->getQueryString() : ''), 301);
+    }
+
     /** Friendly 404 in the site design (called from the exception handler in bootstrap/app.php). */
     public function notFound(Request $request): Response
     {

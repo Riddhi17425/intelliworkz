@@ -34,7 +34,8 @@ class RootUrls
             $html = preg_replace_callback('~<(?:a|img|form|source|video|audio)\b[^>]*>~i', function ($tag) use ($hostRe, $basePath) {
                 return preg_replace_callback('~\b(href|src|action|poster)=(["\'])' . $hostRe . '(/[^"\']*)?\2~i', function ($m) use ($basePath) {
                     $path = $m[3] ?? '';
-                    return $m[1] . '=' . $m[2] . (rtrim($basePath, '/') . ($path === '' ? '/' : $path)) . $m[2];
+                    // url() already contains the sub-folder (e.g. /public), so it is not added a second time
+                    return $m[1] . '=' . $m[2] . ($path === '' ? rtrim($basePath, '/') . '/' : $path) . $m[2];
                 }, $tag[0]);
             }, $html);
         }

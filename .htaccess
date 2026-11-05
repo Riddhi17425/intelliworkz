@@ -1,7 +1,7 @@
 # Safety net for hosts where the whole project folder is the web root (the address then shows /public/index.php/...).
 # The right set-up is to point the domain at the "public" folder (then this file is never read).
 # Until then this file sends every request to /public, hides the application's private files and
-# forwards old addresses such as /public/index.php/blog to the clean one (/blog).
+# forwards old addresses such as /public/index.php/blog to the clean one (/blog; that part lives in public/.htaccess).
 
 <IfModule mod_rewrite.c>
     RewriteEngine On

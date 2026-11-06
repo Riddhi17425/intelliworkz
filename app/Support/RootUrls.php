@@ -76,6 +76,26 @@ class RootUrls
         }, $html);
 
         // inline style="background: url(assets/...)"
-        return preg_replace('/url\((["\']?)(?=(?:assets|uploads)\/)/i', 'url($1' . $root, $html);
+        $html = preg_replace('/url\((["\']?)(?=(?:assets|uploads)\/)/i', 'url($1' . $root, $html);
+
+        return self::contactButtons($html, $basePath);
+    }
+
+    /**
+     * Every BUTTON that leads to the contact page ("Start a Project", "Request a Quote", "Talk to our team" ...) lands on the
+     * enquiry form itself (/contact-us#contact-form) instead of the top of the page. Plain text links (menu, footer) are left as they are.
+     */
+    public static function contactButtons(string $html, string $basePath): string
+    {
+        $contact = preg_quote(rtrim($basePath, '/'), '~') . '/contact-us';
+
+        return preg_replace_callback('~<a\b[^>]*>~i', function ($m) use ($contact) {
+            $tag = $m[0];
+            if (!preg_match('~\bclass=(["\'])(.*?)\1~is', $tag, $c)
+                || !preg_match('~(?:^|\s)(?:[a-z0-9]+-)?btn(?:[_-]|\s|$)|__btn(?:\s|$)~i', $c[2])) {
+                return $tag;   // not a button
+            }
+            return preg_replace('~\bhref=(["\'])(' . $contact . '(?:\?[^#"\']*)?)\1~i', 'href=$1$2#contact-form$1', $tag, 1);
+        }, $html);
     }
 }

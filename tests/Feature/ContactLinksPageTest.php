@@ -10,7 +10,8 @@ class ContactLinksPageTest extends CmsTestCase
     {
         foreach (['/', '/about-us', '/seo-services'] as $url) {
             $html = $this->get($url)->assertOk()->getContent();
-            $this->assertStringContainsString('href="tel:+16149992286"', $html, $url);
+            $this->assertStringContainsString('+1 XXX XXX XXXX', $html, $url);   // USA number not decided yet: shown as a placeholder, not as a call link
+            $this->assertStringNotContainsString('tel:+1614', $html, $url);
             $this->assertStringContainsString('href="tel:+971563435362"', $html, $url);
             $this->assertStringContainsString('https://www.google.com/maps/search/?api=1&amp;query=5511%2C%20Mercier%20Street', $html, $url);
         }
@@ -19,8 +20,8 @@ class ContactLinksPageTest extends CmsTestCase
     public function test_contact_page_links_numbers_email_and_addresses(): void
     {
         $html = $this->get('/contact-us')->assertOk()->getContent();
-        $this->assertStringContainsString('href="tel:+919274002997"', $html);
-        $this->assertStringContainsString('href="tel:+919427801299"', $html);
+        $this->assertStringContainsString('href="tel:+919727700375"', $html);
+        $this->assertStringNotContainsString('9427801299', $html);   // the old second number is gone; one number only
         $this->assertStringContainsString('href="mailto:hello@intelliworkz.tech"', $html);
         $this->assertStringContainsString('class="addr-link"', $html);
     }

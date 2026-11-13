@@ -562,7 +562,7 @@
 @media (max-width: 640px) {
     /* office phone: one number per line, never split inside a number (the " , " between them is hidden) */
     .office__phone { align-items: center; }
-    .office__phone > span { display: flex; flex-direction: column; gap: 4px; font-size: 0; line-height: 0; }
+    .office__phone > span { display: flex; flex-direction: column; gap: 4px; }
     .office__phone > span a { font-size: 16px; line-height: 22px; font-weight: 500; color: var(--c-near-black); white-space: nowrap; }
 }
 .office__phone a { white-space: nowrap; }

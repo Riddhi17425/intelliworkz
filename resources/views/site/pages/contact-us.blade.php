@@ -101,7 +101,9 @@ $vc = 'assets/icons/video/';      // shared icons
                         </div>
                         <div class="ct-office__actions">
                             <a href="<?= $o['map'] ?>" target="_blank" rel="noopener" class="ct-office__btn ct-office__btn--ghost">{{ $G('contact.1', 'View on Map ↗') }}</a>
+                            <?php if (!empty($o['call'])): ?>
                             <a href="tel:<?= $o['call'] ?>" class="ct-office__btn ct-office__btn--red">{{ $G('contact.2', 'Call Office →') }}</a>
+                            <?php endif; ?>
                         </div>
                         <?php if ($o['blocks2']): ?>
                             <hr class="ct-office__rule">

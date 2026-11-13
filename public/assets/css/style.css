@@ -266,6 +266,79 @@ body.menu-locked { overflow: hidden; }
 .domain-grid::-webkit-scrollbar { display: none; }
 .domain-card { flex: 0 0 calc((100% - 60px) / 4); min-width: 0; scroll-snap-align: start; display: flex; flex-direction: column; }
 .domain-card__title { padding: 30px 22px; background: var(--c); border-radius: 12px 12px 0 0; font-weight: 600; font-size: 26px; line-height: 32px; color: var(--c-white); }
+/* Card headings, drawn only with CSS + SVG (no images):
+   - a gradient made from the card's own colour (--c) that slowly drifts like an aurora
+   - a two-tone line icon (pen tool / growth chart / book / clapperboard / cube) fully inside the heading, on a soft glow, floating a little
+   - two waves along the bottom edge that flow sideways in opposite directions, melting into the white card body
+   - tiny bubbles that rise through the heading
+   Everything is switched off for visitors who asked their device for reduced motion. */
+.domain-card__title { position: relative; overflow: hidden; isolation: isolate; --d: 0s;
+    --g: linear-gradient(115deg, color-mix(in srgb, var(--c) 76%, #fff) 0%, var(--c) 28%, color-mix(in srgb, var(--c) 64%, #000) 58%, var(--c) 82%, color-mix(in srgb, var(--c) 76%, #fff) 100%);
+    --glow: radial-gradient(closest-side, rgba(255, 255, 255, .30), rgba(255, 255, 255, 0));
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-opacity='.85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50 8 74 46 60 72H40L26 46Z' fill='white' fill-opacity='.18'/%3E%3Cpath d='M50 8v38' stroke-opacity='.45'/%3E%3Ccircle cx='50' cy='48' r='6' fill='white' fill-opacity='.45'/%3E%3Cpath d='M50 54v18'/%3E%3Crect x='36' y='77' width='28' height='9' rx='4' fill='white' fill-opacity='.28'/%3E%3Cpath d='M16 14l3.4 9 9 3.4-9 3.4-3.4 9-3.4-9-9-3.4 9-3.4Z' fill='white' fill-opacity='.4' stroke-width='2'/%3E%3Cpath d='M84 62l2.2 5.8 5.8 2.2-5.8 2.2L84 78l-2.2-5.8-5.8-2.2 5.8-2.2Z' fill='white' fill-opacity='.4' stroke-width='2'/%3E%3C/svg%3E"), var(--glow), var(--g);
+    background-repeat: no-repeat;
+    background-position: right 16px top 14%, right 0 top -14px, 0% 0;
+    background-size: 54px 54px, 86px 86px, 320% 100%;
+    transition: filter .4s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3); text-shadow: 0 1px 2px rgba(0, 0, 0, .22); }
+.domain-card:nth-child(5n+2) .domain-card__title { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-opacity='.85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='58' width='17' height='32' rx='3.5' fill='white' fill-opacity='.2'/%3E%3Crect x='41' y='42' width='17' height='48' rx='3.5' fill='white' fill-opacity='.26'/%3E%3Crect x='70' y='24' width='17' height='66' rx='3.5' fill='white' fill-opacity='.34'/%3E%3Cpath d='M8 94h86' stroke-opacity='.45'/%3E%3Cpath d='M12 38 34 24l16 8 34-22'/%3E%3Cpath d='M69 10h15v15'/%3E%3C/svg%3E"), var(--glow), var(--g); }
+.domain-card:nth-child(5n+3) .domain-card__title { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-opacity='.85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50 26Q30 14 8 20v58q22-6 42 6Z' fill='white' fill-opacity='.18'/%3E%3Cpath d='M50 26Q70 14 92 20v58q-22-6-42 6Z' fill='white' fill-opacity='.3'/%3E%3Cpath d='M50 26v58'/%3E%3Cpath d='M17 33q14-2 26 5M17 44q14-2 26 5M17 55q14-2 26 5M83 33q-14-2-26 5M83 44q-14-2-26 5' stroke-opacity='.45'/%3E%3Cpath d='M66 17v24l7-6 7 6V19' fill='white' fill-opacity='.5' stroke-width='2.4'/%3E%3C/svg%3E"), var(--glow), var(--g); }
+.domain-card:nth-child(5n+4) .domain-card__title { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-opacity='.85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='40' width='76' height='46' rx='6' fill='white' fill-opacity='.2'/%3E%3Cpath d='M12 40 8 22 84 10l4 18Z' fill='white' fill-opacity='.34'/%3E%3Cpath d='M27 36l-3-18M47 33l-3-18M67 30l-3-18' stroke-opacity='.5'/%3E%3Cpath d='M43 52l24 13-24 13Z' fill='white' fill-opacity='.6'/%3E%3C/svg%3E"), var(--glow), var(--g); }
+.domain-card:nth-child(5n+5) .domain-card__title { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='white' stroke-opacity='.85' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M50 12 80 28 50 44 20 28Z' fill='white' fill-opacity='.38'/%3E%3Cpath d='M20 28 50 44v34L20 62Z' fill='white' fill-opacity='.16'/%3E%3Cpath d='M80 28 50 44v34l30-16Z' fill='white' fill-opacity='.26'/%3E%3Cellipse cx='50' cy='60' rx='45' ry='13' stroke-opacity='.38' stroke-dasharray='2 7'/%3E%3Ccircle cx='95' cy='60' r='3.4' fill='white' fill-opacity='.7' stroke='none'/%3E%3C/svg%3E"), var(--glow), var(--g); }
+.domain-card:nth-child(5n+1) .domain-card__title { --d: -0s; }
+.domain-card:nth-child(5n+2) .domain-card__title { --d: -1.4s; }
+.domain-card:nth-child(5n+3) .domain-card__title { --d: -2.8s; }
+.domain-card:nth-child(5n+4) .domain-card__title { --d: -4.2s; }
+.domain-card:nth-child(5n+5) .domain-card__title { --d: -5.6s; }
+/* rising bubbles */
+.domain-card__title::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image:
+        radial-gradient(circle at 20% 72%, rgba(255, 255, 255, .55) 0 2.6px, transparent 3.6px),
+        radial-gradient(circle at 68% 30%, rgba(255, 255, 255, .4) 0 2px, transparent 3px),
+        radial-gradient(circle at 42% 55%, rgba(255, 255, 255, .38) 0 4px, transparent 5px),
+        radial-gradient(circle at 86% 82%, rgba(255, 255, 255, .5) 0 2.4px, transparent 3.4px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .42) 0 1.8px, transparent 2.8px);
+    background-size: 96px 120px, 96px 120px, 150px 170px, 150px 170px, 64px 90px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    -webkit-mask-image: linear-gradient(to top, #000 8%, transparent 92%); mask-image: linear-gradient(to top, #000 8%, transparent 92%);
+}
+/* flowing waves along the bottom edge */
+.domain-card__title::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 18px; z-index: -1; pointer-events: none;
+    /* the first two layers are the card's left/right border: they fade in from nothing and join the real border of the card body below,
+       because the white wave would otherwise hide the border for a few pixels */
+    background-image: linear-gradient(to bottom, transparent, var(--c) 65%), linear-gradient(to bottom, transparent, var(--c) 65%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 14'%3E%3Cpath d='M0 7Q60-1 120 7T240 7V14H0Z' fill='white'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 18'%3E%3Cpath d='M0 9Q40 0 80 9T160 9V18H0Z' fill='white' fill-opacity='.38'/%3E%3C/svg%3E");
+    background-repeat: no-repeat, no-repeat, repeat-x, repeat-x;
+    background-size: 1px 100%, 1px 100%, 240px 14px, 160px 18px;
+    background-position: left top, right top, 0 100%, 0 100%;
+}
+@keyframes domain-aurora {
+    from { background-position: right 16px top 6%, right 0 top -14px, 0% 0; }
+    to   { background-position: right 16px top 32%, right 0 top -14px, 100% 0; }
+}
+@keyframes domain-bubbles {
+    from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+    to   { background-position: 0 -120px, 0 -240px, 0 -170px, 0 -340px, 0 -90px; }
+}
+@keyframes domain-waves {
+    from { background-position: left top, right top, 0 100%, 0 100%; }
+    to   { background-position: left top, right top, 240px 100%, -160px 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .domain-card__title { animation: domain-aurora 7s ease-in-out infinite alternate; animation-delay: var(--d); }
+    .domain-card__title::before { animation: domain-bubbles 9s linear infinite; animation-delay: var(--d); }
+    .domain-card__title::after { animation: domain-waves 8s linear infinite; animation-delay: var(--d); }
+}
+/* Hover: the card lifts (effects.css). Its old shadow (24px down, 50px blur) was wider than the slider's padding, so it was cut off
+   in a hard straight line under the card. This one fits inside, so nothing is clipped. */
+@media (hover: hover) {
+    .domain-slider .domain-card:hover { box-shadow: 0 12px 18px -10px rgba(17, 17, 17, .30); }
+    .domain-slider .domain-card:hover .domain-card__title { filter: saturate(1.2) brightness(1.06); }
+}
+@media (max-width: 720px) {
+    .domain-card__title { background-size: 46px 46px, 72px 72px, 320% 100%; background-position: right 12px top 14%, right -2px top -10px, 0% 0; }
+}
 .domain-card__body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: 24px 22px; background: var(--c-white); border: 1px solid var(--c); border-top: 0; border-radius: 0 0 10px 10px; }
 .domain-card__main { display: flex; flex-direction: column; gap: 22px; }
 .domain-card__list { display: flex; flex-direction: column; gap: 12px; }

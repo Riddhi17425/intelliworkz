@@ -5,25 +5,18 @@
 
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* ---------- Scroll progress + back-to-top (every page) ---------- */
-    var bar = document.createElement('div');
-    bar.className = 'fx-progress';
-    bar.setAttribute('aria-hidden', 'true');
+    /* ---------- Back-to-top (every page). The red scroll-progress line along the top was removed on request. ---------- */
     var top = document.createElement('button');
     top.type = 'button';
     top.className = 'fx-top';
     top.setAttribute('aria-label', 'Back to top');
     top.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
-    document.body.appendChild(bar);
     document.body.appendChild(top);
 
     var ticking = false;
     var update = function () {
         ticking = false;
-        var doc = document.documentElement;
-        var max = doc.scrollHeight - window.innerHeight;
-        var y = window.pageYOffset || doc.scrollTop;
-        bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+        var y = window.pageYOffset || document.documentElement.scrollTop;
         top.classList.toggle('is-visible', y > 700);
     };
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
@@ -35,7 +28,7 @@
     if (reduce || !('IntersectionObserver' in window) || document.body.classList.contains('page-about')) return;
 
     /* ---------- Hero entrance ---------- */
-    var heroSel = '.hero__content > *, .hero__caption, .ve-hero__copy > *, .ve-hero .lead-form, .mf-hero__copy > *, .mf-hero__text > *, .ct-hero__text > *';
+    var heroSel = '.hero__content > *, .hero__caption, .ve-hero__copy > *, .ve-hero .lead-form, .mf-hero__copy > *, .mf-hero__text > *, .ct-hero__text > *, .pd-hero__copy > *, .pd-hero__media, .pd-stats';
     document.querySelectorAll(heroSel).forEach(function (el, i) {
         el.classList.add('fx-hero');
         el.style.setProperty('--fx-d', Math.min(i, 8));
@@ -55,10 +48,15 @@
         ['.ve-services__img, .mg-services__img, .td-services__img, .seo-services__img, .pk-services__img, .mf-dark__shot, .seo-pf__main, .ppt-scene__main', 'fx-zoom'],
         // blog pages
         ['.bx-bar, .bx-card, .bx-byline .bx-who, .bx-prose > h2, .bx-prose > p:has(> img:only-child), .bx-topics, .bx-author, .bx-art-foot__share, .bx-band__box, .lg-prose > h2, .lg-help, .lg-tabs .lg-wrap', 'fx-up'],
-        ['.bx-cover img', 'fx-zoom']
+        ['.bx-cover img', 'fx-zoom'],
+        // product pages (DataNote, Formezy, Docezy …)
+        ['.pd-head > .pd-eyebrow, .pd-head__lead, .pd-intro__copy > .pd-eyebrow, .pd-intro__copy > .pd-prose, .pd-intro__title > .pd-eyebrow, .pd-intro__head .pd-prose', 'fx-up'],
+        ['.pd-chip, .pd-card, .pd-challenge__note, .pd-module, .pd-hl__copy > *, .pd-tile, .pd-ind__card', 'fx-up'],
+        ['.pd-checks--light li, .pd-ben__copy > p, .pd-ben__copy > .h2, .pd-quote, .pd-clients__title, .pd-other, .pd-cta__box', 'fx-up'],
+        ['.pd-intro__media, .pd-compare__item, .pd-challenge__img, .pd-hl__media, .pd-ben__media', 'fx-zoom']
     ];
     var directional = { '.expertise__media': 'fx-left', '.expertise__content > *': 'fx-right', '.mf-buyers__img': 'fx-right', '.ct-card': 'fx-right', '.ct-offices': 'fx-right', '.ct-form__copy > *': 'fx-left' };
-    var skipInside = '[data-showcase], .offer-viewport, [data-slider], .mg-viewport, [data-examples], .pf-cards, .seo-gallery, .td-gallery, .ppt-gallery, .menu-drawer, .video-modal, .site-footer, .products__stage, .ve-hero, .hero';
+    var skipInside = '[data-showcase], .offer-viewport, [data-slider], .mg-viewport, [data-examples], .pf-cards, .seo-gallery, .td-gallery, .ppt-gallery, .menu-drawer, .video-modal, .site-footer, .products__stage, .ve-hero, .hero, .pd-hero, .pd-clients__track, .pd-feat__track';
 
     var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {

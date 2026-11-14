@@ -12,6 +12,10 @@
 .ct-hero__text .h1 { width: 985.78px; max-width: 100%; }
 .ct-hero__text p { font-weight: 500; font-size: 18px; line-height: 30px; color: var(--c-border-gray); }
 .ct-hero__copy { gap: 40px; }
+/* the hero ends a little below the buttons instead of keeping the 920px design height (no long empty band); the photo fills whatever height that gives */
+.ct-hero { min-height: 0; padding-bottom: 120px; }
+.ct-hero__photo, .ct-hero::before { height: calc(100% - 176px); }
+.ct-hero__photo { object-position: center 45%; }
 
 .ct-body { display: flex; flex-direction: column; align-items: center; gap: 100px; width: 100%; }
 

@@ -807,7 +807,7 @@
             "items": [
                 [
                     "Full Name",
-                    "Enter your first name",
+                    "Enter your full name",
                     "text",
                     "name"
                 ],

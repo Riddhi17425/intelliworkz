@@ -156,9 +156,9 @@
             "section": "form",
             "section_label": "Form",
             "key": "form.8",
-            "label": "Button text: Start a Project",
+            "label": "Form button text",
             "type": "text",
-            "value": "Start a Project",
+            "value": "Submit",
             "sort": 16
         },
         {
@@ -269,9 +269,9 @@
                             ]
                         ]
                     ],
-                    "phone": "+1 XXX XXX XXXX",
+                    "phone": "+1 614 999 2286",
                     "email": "hello@intelliworkz.tech",
-                    "call": "",
+                    "call": "+16149992286",
                     "blocks2": [],
                     "map": "https://www.google.com/maps/search/?api=1&query=5511+Mercier+Street+Lewis+Center+Ohio+43035"
                 },
@@ -358,7 +358,7 @@
             "items": [
                 [
                     "Full Name",
-                    "Enter your first name",
+                    "Enter your full name",
                     "text",
                     "name"
                 ],

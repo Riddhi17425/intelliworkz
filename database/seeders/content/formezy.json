@@ -1,0 +1,986 @@
+{
+    "page": {
+        "slug": "formezy",
+        "template": "product",
+        "is_system": false,
+        "title": "Formezy",
+        "meta_title": "Formezy EAP – Build Enterprise Systems Without Complex Development | Intelliworkz",
+        "meta_description": "Formezy is an Enterprise Application Platform to build ERP, CRM and workflow systems with no-code tools, workflow automation, AskEzy intelligence, mobile access and integrations.",
+        "config": {
+            "title": "Formezy EAP – Build Enterprise Systems Without Complex Development | Intelliworkz"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Product name (breadcrumb and product cards)",
+            "type": "text",
+            "value": "Formezy",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Small label above the heading",
+            "type": "text",
+            "value": "Enterprise Application Platform (EAP)",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading (H1)",
+            "type": "text",
+            "value": "Go Beyond ERP with Formezy EAP",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Tagline under the heading",
+            "type": "text",
+            "value": "Create, Automate & Improve Business Processes",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Intro paragraph",
+            "type": "textarea",
+            "value": "Build enterprise systems without complex development. Formezy brings form building, workflow automation, data analytics and integrations together in one user-friendly platform, so your systems are designed around how your operations actually work.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Product logo (shown on a white badge)",
+            "type": "image",
+            "value": "assets/images/products/formezy/logo.webp",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Product screenshot / mockup",
+            "type": "image",
+            "value": "assets/images/products/formezy/hero.webp",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "First button text",
+            "type": "text",
+            "value": "Book a Demo",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Second button text (product website)",
+            "type": "text",
+            "value": "Visit formezy.com",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://formezy.com/",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.12",
+            "label": "Breadcrumb: middle word",
+            "type": "text",
+            "value": "Software &amp; ERP",
+            "sort": 12
+        },
+        {
+            "section": "numbers",
+            "section_label": "Numbers",
+            "key": "stats.show",
+            "label": "Show the number strip at the bottom of the hero",
+            "type": "toggle",
+            "value": "1",
+            "sort": 13
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 14
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Enterprise Application Platform",
+            "sort": 15
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "What is Formezy?",
+            "sort": 16
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.3",
+            "label": "Text",
+            "type": "html",
+            "value": "<p>Formezy is an Enterprise Application Platform that transforms disconnected tools into a unified, intelligent system. Instead of relying on spreadsheets, multiple software, and manual processes, Formezy enables businesses to build fully integrated ERP, CRM, and workflow systems, designed around how their operations actually work.</p><p>Its applications extend across procurement, CRM, production, inventory, quality control and more.</p>",
+            "sort": 17
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.4",
+            "label": "Picture",
+            "type": "image",
+            "value": "assets/images/products/formezy/overview-before.webp",
+            "sort": 18
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.5",
+            "label": "Picture caption (only with a second picture)",
+            "type": "text",
+            "value": "Without Formezy: disconnected legacy tools",
+            "sort": 19
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.6",
+            "label": "Second picture (shows the two side by side, e.g. before / after)",
+            "type": "image",
+            "value": "assets/images/products/formezy/overview-after.webp",
+            "sort": 20
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.7",
+            "label": "Second picture caption",
+            "type": "text",
+            "value": "With Formezy: one unified, intelligent system",
+            "sort": 21
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "The problem",
+            "sort": 23
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Build from Chaos to Clarity",
+            "sort": 24
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Most businesses run on a patchwork of spreadsheets, emails and separate software. Formezy replaces it with one connected system.",
+            "sort": 25
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.4",
+            "label": "Picture next to the cards (optional)",
+            "type": "image",
+            "value": "",
+            "sort": 26
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.5",
+            "label": "Closing line under the cards",
+            "type": "text",
+            "value": "We are here to help: <strong>digitize execution, get real-time visibility and standardize processes.</strong>",
+            "sort": 27
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 28
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Modules",
+            "sort": 29
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Build Powerful Business Systems Your Way",
+            "sort": 30
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Start from a template, or compose from modules. Formezy flexes to match how your business actually works.",
+            "sort": 31
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 32
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Core capabilities",
+            "sort": 33
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Capabilities Built for Modern Business Operations",
+            "sort": 34
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "A versatile platform for how your teams actually work: design workflows, automate execution, govern access, and see everything in one connected layer.",
+            "sort": 35
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 36
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Platform",
+            "sort": 37
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Powering Every Layer of Your Operations",
+            "sort": 38
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "From day-to-day execution to leadership visibility, Formezy connects how work gets done with how it's measured, secured, and improved.",
+            "sort": 39
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 40
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Industries",
+            "sort": 41
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Solutions Across Industries",
+            "sort": 42
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Empowering diverse industries with tailored systems designed to match their unique workflows, operations, and business challenges.",
+            "sort": 43
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 44
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Why Formezy",
+            "sort": 45
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Why Modern Businesses Choose Formezy",
+            "sort": 46
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.3",
+            "label": "Text",
+            "type": "textarea",
+            "value": "Formezy combines flexibility, automation, and scalability to help businesses build and manage systems that truly match their operations.",
+            "sort": 47
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.4",
+            "label": "Picture (optional)",
+            "type": "image",
+            "value": "assets/images/products/formezy/benefits.webp",
+            "sort": 48
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 49
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Client testimonials",
+            "sort": 50
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "From Operational Complexity to Clarity",
+            "sort": 51
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Businesses across industries use Formezy to turn operational complexity into clarity.",
+            "sort": 52
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 53
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Trusted by Enterprises Worldwide",
+            "sort": 54
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.show",
+            "label": "Show the other products (added automatically from the other product pages)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 55
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Product suite",
+            "sort": 56
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Explore Our Other Products",
+            "sort": 57
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.3",
+            "label": "Link text on each card",
+            "type": "text",
+            "value": "Explore product",
+            "sort": 58
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Ready to Move Beyond Traditional Systems?",
+            "sort": 59
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.2",
+            "label": "Text",
+            "type": "textarea",
+            "value": "Design ERP-grade systems tailored to your business workflows, approvals, and operational structure, without the limitations of traditional software.",
+            "sort": 60
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.3",
+            "label": "First button text",
+            "type": "text",
+            "value": "Book a Demo",
+            "sort": 61
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.4",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 62
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.5",
+            "label": "Second button text",
+            "type": "text",
+            "value": "Visit formezy.com",
+            "sort": 63
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.6",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://formezy.com/",
+            "sort": 64
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.1",
+            "label": "Main product colour (hex, e.g. #03A261)",
+            "type": "text",
+            "value": "#6B3FA0",
+            "sort": 65
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.2",
+            "label": "Highlight colour used on dark backgrounds (hex)",
+            "type": "text",
+            "value": "#D4B47A",
+            "sort": 66
+        }
+    ],
+    "lists": [
+        {
+            "key": "pd_points",
+            "scope": "formezy",
+            "items": [
+                "Digitize execution",
+                "Get real-time visibility",
+                "Standardize processes"
+            ]
+        },
+        {
+            "key": "pd_stats",
+            "scope": "formezy",
+            "items": [
+                {
+                    "value": "Unified",
+                    "label": "Single platform"
+                },
+                {
+                    "value": "No-Code",
+                    "label": "Visual builder"
+                },
+                {
+                    "value": "Real-time",
+                    "label": "Data sync"
+                },
+                {
+                    "value": "Scalable",
+                    "label": "For any team size"
+                }
+            ]
+        },
+        {
+            "key": "pd_chips",
+            "scope": "formezy",
+            "items": []
+        },
+        {
+            "key": "pd_cards",
+            "scope": "formezy",
+            "items": [
+                {
+                    "title": "Manual Tracking",
+                    "text": "Spreadsheets, registers and follow-up calls make it hard to see what is really happening across teams and plants."
+                },
+                {
+                    "title": "Disconnected Systems",
+                    "text": "Data sits in separate tools, so it is entered twice, reconciled by hand and still does not match."
+                },
+                {
+                    "title": "Delayed Execution",
+                    "text": "Approvals wait in inboxes and issues surface late, so every decision and delivery slows down."
+                }
+            ]
+        },
+        {
+            "key": "pd_modules",
+            "scope": "formezy",
+            "items": [
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-business-workflows.webp",
+                    "title": "Business Workflows",
+                    "text": "Unify finance, inventory, procurement and HR into one configurable system that scales as your business grows."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-production.webp",
+                    "title": "MFG / Production Systems",
+                    "text": "Manage production workflows, execution tracking, and operational coordination across your manufacturing processes."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-quality-control.webp",
+                    "title": "Quality Control Systems",
+                    "text": "Standardize inspections, approvals, and quality workflows with real-time tracking and complete process visibility."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-crm.webp",
+                    "title": "CRM Systems",
+                    "text": "Manage the full customer lifecycle, from lead to renewal, on one unified timeline with complete visibility."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-supply-chain.webp",
+                    "title": "Supply Chain Systems",
+                    "text": "Track vendors, shipments and inventory in a single connected workflow with real-time alerts and SLA controls."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-operations.webp",
+                    "title": "Operations Management",
+                    "text": "Coordinate people, tasks, assets and projects across locations with full operational control and clarity."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-hr-people.webp",
+                    "title": "HR & People Systems",
+                    "text": "Streamline onboarding, leave management, performance reviews and payroll processes in a single platform."
+                },
+                {
+                    "look": "wide",
+                    "img": "assets/images/products/formezy/module-finance-compliance.webp",
+                    "title": "Finance & Compliance",
+                    "text": "Automate approvals, budget tracking and audit-ready reporting across all your financial workflows."
+                }
+            ]
+        },
+        {
+            "key": "pd_highlights",
+            "scope": "formezy",
+            "items": [
+                {
+                    "tag": "AskEzy intelligence",
+                    "title": "Get Answers. Stay in Control.",
+                    "img": "assets/images/products/formezy/hl-askezy.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "AskEzy is built into Formezy so teams can query live data, surface what needs attention, and act faster, without switching tools or digging through disconnected reports.",
+                    "points": [
+                        "Get accurate answers from business data",
+                        "Summarize reports, documents, and updates instantly",
+                        "Receive reminders for tasks, meetings, and operations",
+                        "Track real-time updates across workflows",
+                        "Understand what's happening without manual follow-ups"
+                    ]
+                },
+                {
+                    "tag": "Low-code / no-code",
+                    "title": "Build Business Applications Visually",
+                    "img": "assets/images/products/formezy/hl-low-code.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Empower teams to assemble workflows and apps with drag-and-drop components instead of heavy engineering, so ideas move from whiteboard to production without losing governance.",
+                    "points": [
+                        "Compose screens, validations, and data models visually",
+                        "Ship internal tools quickly with reusable modules",
+                        "Keep IT guardrails while business teams iterate safely"
+                    ]
+                },
+                {
+                    "tag": "Workflow automation",
+                    "title": "Work That Never Stalls in Inboxes",
+                    "img": "assets/images/products/formezy/hl-workflow-automation.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Replace manual follow-ups with structured automation: approvals, handoffs, and notifications run in sequence so work keeps moving.",
+                    "points": [
+                        "Trigger steps from events, schedules, or data changes",
+                        "Built-in escalations, reminders, and human-in-the-loop paths",
+                        "Monitor SLAs and bottlenecks from one operations view"
+                    ]
+                },
+                {
+                    "tag": "Mobile access",
+                    "title": "Operations Don't Stop at the Desk",
+                    "img": "assets/images/products/formezy/hl-mobile-access.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Access workflows, approvals, tasks, updates, and business operations from anywhere with Formezy Mobile Access, whether on the shopfloor, on-site, or on the move.",
+                    "points": [
+                        "Approve workflows and requests instantly",
+                        "Track tasks, updates, and activities in real time",
+                        "Access reports, documents, and operational data remotely",
+                        "Enable faster coordination across teams and locations"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "pd_features",
+            "scope": "formezy",
+            "items": [
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Role-Based Access",
+                    "text": "Keep sensitive operations visible only to the right people, with permissions scoped by role, team, and data sensitivity."
+                },
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Multi-Level Approvals",
+                    "text": "Sequential and parallel approval chains with delegation, escalations and reminders tied to the SLAs you define."
+                },
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Audit Logs",
+                    "text": "An immutable history of who changed what and when, with views and exports aligned to compliance reviews."
+                },
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Data Centralization",
+                    "text": "One governed layer for operational data, with shared definitions for customers, orders, and assets."
+                },
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Reporting & Dashboards",
+                    "text": "Reporting that draws from the same live records everyone uses, from the shopfloor to leadership."
+                },
+                {
+                    "img": "",
+                    "tag": "",
+                    "title": "Seamless Integrations",
+                    "text": "Connect Formezy with your existing systems, including Office 365, Excel, Google Sheets, NetSuite and Oracle."
+                }
+            ]
+        },
+        {
+            "key": "pd_industries",
+            "scope": "formezy",
+            "items": [
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-heavy-manufacturing.webp",
+                    "title": "Heavy Manufacturing",
+                    "text": ""
+                },
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-process-industries.webp",
+                    "title": "Process Industries",
+                    "text": ""
+                },
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-discrete-manufacturing.webp",
+                    "title": "Discrete Manufacturing",
+                    "text": ""
+                },
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-construction-epc.webp",
+                    "title": "Construction & EPC",
+                    "text": ""
+                },
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-retail-wholesale.webp",
+                    "title": "Retail & Wholesale",
+                    "text": ""
+                },
+                {
+                    "look": "photo",
+                    "img": "assets/images/products/formezy/industry-service-rental.webp",
+                    "title": "Service & Rental",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "key": "pd_benefits",
+            "scope": "formezy",
+            "items": [
+                "One unified platform instead of spreadsheets, multiple software and manual processes",
+                "ERP, CRM and workflow systems designed around how your operations actually work",
+                "A no-code visual builder, so teams adapt systems without complex development",
+                "Real-time data sync and visibility for teams and leadership",
+                "Integrations with the systems you already use",
+                "Mobile access for the shopfloor, on-site teams and people on the move"
+            ]
+        },
+        {
+            "key": "pd_testimonials",
+            "scope": "formezy",
+            "items": [
+                {
+                    "quote": "Formezy transformed how our plants operate. Real-time visibility, faster approvals, zero dependency on spreadsheets – it's the one system our entire operations team actually trusts and uses daily.",
+                    "name": "Heavy Metal & Tubes Pvt. Ltd.",
+                    "role": "Formezy client",
+                    "img": "assets/images/products/formezy/testimonial-heavy-metal-tubes.webp"
+                }
+            ]
+        },
+        {
+            "key": "pd_clients",
+            "scope": "formezy",
+            "items": [
+                {
+                    "img": "assets/images/products/formezy/clients/inter-agro-group.webp",
+                    "name": "Inter Agro Group"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/akar-industries.webp",
+                    "name": "Akar Industries"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/alpine-lifecare-llp.webp",
+                    "name": "Alpine Lifecare LLP"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/annkoot-agro-food-pvt-ltd.webp",
+                    "name": "Annkoot Agro Food Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/armstrong-machinery-llp.webp",
+                    "name": "Armstrong Machinery LLP"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/bhagwati-filters-pvt-ltd.webp",
+                    "name": "Bhagwati Filters Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/blumet-tubes-private-limited.webp",
+                    "name": "Blumet Tubes Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/conquest-engineering-private-limited.webp",
+                    "name": "Conquest Engineering Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/dorfner-20-microns-private-limited.webp",
+                    "name": "Dorfner-20 Microns Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/elica-pb-whirlpool-kitchen-appliances-private-limited.webp",
+                    "name": "Elica PB Whirlpool Kitchen Appliances"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/ethical-energy-petrochem-strategies-private-limited.webp",
+                    "name": "Ethical Energy Petrochem Strategies"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/fibcorp-polyweave-private-limited.webp",
+                    "name": "Fibcorp Polyweave Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/indian-inovatix-limited.webp",
+                    "name": "Indian Inovatix Limited"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/jai-industries.webp",
+                    "name": "Jai Industries"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/monit-paper-sales-agency.webp",
+                    "name": "Monit Paper Sales Agency"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/multiplast-polymer-private-limited.webp",
+                    "name": "Multiplast Polymer Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/navjivan-roller-flour-and-pulse-mills-pvt-ltd.webp",
+                    "name": "Navjivan Roller Flour & Pulse Mills"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/parishi-construction-and-equipment-rental-services.webp",
+                    "name": "Parishi Construction"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/pep-foods.webp",
+                    "name": "PEP Foods"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/purnima-enterprise.webp",
+                    "name": "Purnima Enterprise"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/sabar-pumps-pvt-ltd.webp",
+                    "name": "Sabar Pumps Pvt. Ltd."
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/tent-studio.webp",
+                    "name": "Tent Studio"
+                },
+                {
+                    "img": "assets/images/products/formezy/clients/bppl.webp",
+                    "name": "BPPL"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,974 @@
+{
+    "page": {
+        "slug": "datanote",
+        "template": "product",
+        "is_system": false,
+        "title": "DataNote",
+        "meta_title": "DataNote ERP – ERP, CRM & POS Business Software | Intelliworkz",
+        "meta_description": "DataNote OpenLogic ERP brings ERP, CRM, POS and mobile apps together: sales, finance, production, purchase, inventory, quality and HR in one platform for manufacturers and distributors.",
+        "config": {
+            "title": "DataNote ERP – ERP, CRM & POS Business Software | Intelliworkz"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Product name (breadcrumb and product cards)",
+            "type": "text",
+            "value": "DataNote",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Small label above the heading",
+            "type": "text",
+            "value": "OpenLogic ERP · CRM · POS",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading (H1)",
+            "type": "text",
+            "value": "Simplify All Your Business Operations with DataNote ERP",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Tagline under the heading",
+            "type": "text",
+            "value": "ERP, CRM & POS in One Business Platform",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Intro paragraph",
+            "type": "textarea",
+            "value": "Industry-specific ERP software with end-to-end solutions. DataNote brings inventory, sales, customer engagement, production, procurement, logistics, HR and administration together, so you can connect information and manage operations more effectively.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Product logo (shown on a white badge)",
+            "type": "image",
+            "value": "assets/images/products/datanote/logo.webp",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Product screenshot / mockup",
+            "type": "image",
+            "value": "assets/images/products/datanote/hero.webp",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "First button text",
+            "type": "text",
+            "value": "Request a Free Demo",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Second button text (product website)",
+            "type": "text",
+            "value": "Visit datanote.in",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://www.datanote.in/",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.12",
+            "label": "Breadcrumb: middle word",
+            "type": "text",
+            "value": "Software &amp; ERP",
+            "sort": 12
+        },
+        {
+            "section": "numbers",
+            "section_label": "Numbers",
+            "key": "stats.show",
+            "label": "Show the number strip at the bottom of the hero",
+            "type": "toggle",
+            "value": "1",
+            "sort": 13
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 14
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "About DataNote ERP",
+            "sort": 15
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Take Your Business Further with DataNote ERP & CRM",
+            "sort": 16
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.3",
+            "label": "Text",
+            "type": "html",
+            "value": "<p>DataNote is one of India's leading enterprise solutions, helping businesses implement cloud-based ERP that scales with them while keeping their data confidential, without sharing it with any third party, including the implementation partner.</p><p>Manage inventory, track sales, engage customers, analyze trends and optimize operations, all in one powerful platform, to increase profitability, improve customer satisfaction and gain a competitive edge.</p>",
+            "sort": 17
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.4",
+            "label": "Picture",
+            "type": "image",
+            "value": "assets/images/products/datanote/overview.webp",
+            "sort": 18
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.5",
+            "label": "Picture caption (only with a second picture)",
+            "type": "text",
+            "value": "",
+            "sort": 19
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.6",
+            "label": "Second picture (shows the two side by side, e.g. before / after)",
+            "type": "image",
+            "value": "",
+            "sort": 20
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.7",
+            "label": "Second picture caption",
+            "type": "text",
+            "value": "",
+            "sort": 21
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "What makes it different",
+            "sort": 23
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "The OpenLogic ERP Framework",
+            "sort": 24
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "With a traditional ERP, a business has to share its data, business logic, trade secrets and formulas with the implementation partner. DataNote's OpenLogic Framework splits the system in two: we handle the Structure Engine, while the Logic Engine stays with you.",
+            "sort": 25
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.4",
+            "label": "Picture next to the cards (optional)",
+            "type": "image",
+            "value": "",
+            "sort": 26
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.5",
+            "label": "Closing line under the cards",
+            "type": "text",
+            "value": "Execute and monitor the framework yourself, and <strong>keep it confidential from the rest of the world.</strong>",
+            "sort": 27
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 28
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "ERP modules",
+            "sort": 29
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Every Department, Connected in One ERP",
+            "sort": 30
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "From sales and finance to production and stores, every DataNote module works on the same live data, so each team works from one version of the truth.",
+            "sort": 31
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 32
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "",
+            "sort": 33
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "",
+            "sort": 34
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "",
+            "sort": 35
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 36
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Our ERP",
+            "sort": 37
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Features & Capabilities",
+            "sort": 38
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Everything a growing business needs from its ERP, built into one platform.",
+            "sort": 39
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 40
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Industries",
+            "sort": 41
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Industry-Specific ERP Solutions",
+            "sort": 42
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "DataNote develops and implements vertical-specific business management software that improves operational efficiency and drives business growth, for businesses of all sizes in India and abroad.",
+            "sort": 43
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 44
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Why DataNote",
+            "sort": 45
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Built for Consistent, Reliable Performance",
+            "sort": 46
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.3",
+            "label": "Text",
+            "type": "textarea",
+            "value": "DataNote is designed around real-world operational requirements, implemented against measurable business outcomes and supported as your business grows.",
+            "sort": 47
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.4",
+            "label": "Picture (optional)",
+            "type": "image",
+            "value": "",
+            "sort": 48
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 49
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Client stories",
+            "sort": 50
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Building Happy Clients",
+            "sort": 51
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Manufacturers and distributors across industries run their operations on DataNote.",
+            "sort": 52
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 53
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "",
+            "sort": 54
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.show",
+            "label": "Show the other products (added automatically from the other product pages)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 55
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Product suite",
+            "sort": 56
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Explore Our Other Products",
+            "sort": 57
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.3",
+            "label": "Link text on each card",
+            "type": "text",
+            "value": "Explore product",
+            "sort": 58
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Simplify Your Business Operations with DataNote",
+            "sort": 59
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.2",
+            "label": "Text",
+            "type": "textarea",
+            "value": "Get industry-specific ERP software, customized to the way you work. Book a free demo with our team.",
+            "sort": 60
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.3",
+            "label": "First button text",
+            "type": "text",
+            "value": "Request a Free Demo",
+            "sort": 61
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.4",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 62
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.5",
+            "label": "Second button text",
+            "type": "text",
+            "value": "Visit datanote.in",
+            "sort": 63
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.6",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://www.datanote.in/",
+            "sort": 64
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.1",
+            "label": "Main product colour (hex, e.g. #03A261)",
+            "type": "text",
+            "value": "#3533A8",
+            "sort": 65
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.2",
+            "label": "Highlight colour used on dark backgrounds (hex)",
+            "type": "text",
+            "value": "#F08A3C",
+            "sort": 66
+        }
+    ],
+    "lists": [
+        {
+            "key": "pd_points",
+            "scope": "datanote",
+            "items": [
+                "End-to-end, industry-specific ERP",
+                "Your business logic stays yours",
+                "Cloud-based and mobile-ready"
+            ]
+        },
+        {
+            "key": "pd_stats",
+            "scope": "datanote",
+            "items": [
+                {
+                    "value": "50,000+",
+                    "label": "Businesses trust DataNote"
+                },
+                {
+                    "value": "14+",
+                    "label": "Years of ERP experience"
+                },
+                {
+                    "value": "12+",
+                    "label": "Industry-specific solutions"
+                },
+                {
+                    "value": "ISO 27001",
+                    "label": "Information security"
+                },
+                {
+                    "value": "24/7",
+                    "label": "Emergency support"
+                }
+            ]
+        },
+        {
+            "key": "pd_chips",
+            "scope": "datanote",
+            "items": [
+                {
+                    "title": "ERP Framework",
+                    "text": "Streamline your operations and elevate your business."
+                },
+                {
+                    "title": "CRM Framework",
+                    "text": "Elevate customer connections with the power of CRM."
+                },
+                {
+                    "title": "DRMS",
+                    "text": "Efficiency in motion for your distribution network."
+                },
+                {
+                    "title": "POS",
+                    "text": "Seamless transactions and elevated experiences."
+                },
+                {
+                    "title": "Mobile Apps",
+                    "text": "Your business on the go, with limitless connectivity."
+                }
+            ]
+        },
+        {
+            "key": "pd_cards",
+            "scope": "datanote",
+            "items": [
+                {
+                    "title": "Structure Engine",
+                    "text": "DataNote's base source code: core features, add-ons and dedicated industry modules, with an API. It is the heart of the ERP and can deploy a full-fledged ERP solution in your unit without customization."
+                },
+                {
+                    "title": "Logic Engine",
+                    "text": "A one-of-its-kind engine that lets you customize every aspect of DataNote: personalize the interface, simplify processes and tailor modules to the way your unit operates. Ownership of the customized Logic Engine always stays with you."
+                }
+            ]
+        },
+        {
+            "key": "pd_modules",
+            "scope": "datanote",
+            "items": [
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-sales-crm.webp",
+                    "title": "Sales & CRM",
+                    "text": "Streamline sales processes and enhance customer relationship management."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-hr-payroll.webp",
+                    "title": "HR & Payroll",
+                    "text": "Automate payroll calculations, tax deductions, and compliance reporting."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-finance.webp",
+                    "title": "Finance",
+                    "text": "Automate financial tasks like accounting and get real-time insights."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-quality-control.webp",
+                    "title": "Quality Control",
+                    "text": "Track, analyze, and improve your production processes."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-sub-contracting.webp",
+                    "title": "Sub Contracting",
+                    "text": "Manage vendors and connect subcontracting with production and procurement."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-planning.webp",
+                    "title": "Planning",
+                    "text": "Make informed decisions and optimize resource allocation for efficiency."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-production.webp",
+                    "title": "Production",
+                    "text": "Coordinate scheduling, resource allocation, and inventory management."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-engineering.webp",
+                    "title": "Engineering",
+                    "text": "Coordinate project management, resource allocation, and budget tracking."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-store-inventory.webp",
+                    "title": "Store & Inventory",
+                    "text": "Keep track of stock, automate ordering and manage your stores."
+                },
+                {
+                    "look": "round",
+                    "img": "assets/images/products/datanote/module-purchase.webp",
+                    "title": "Purchase",
+                    "text": "Automate purchase orders, vendor management, and inventory tracking."
+                }
+            ]
+        },
+        {
+            "key": "pd_highlights",
+            "scope": "datanote",
+            "items": []
+        },
+        {
+            "key": "pd_features",
+            "scope": "datanote",
+            "items": [
+                {
+                    "img": "assets/images/products/datanote/feature-location-tracking.webp",
+                    "tag": "",
+                    "title": "Location Tracking",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-real-time-data.webp",
+                    "tag": "",
+                    "title": "Real-time Data",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-automation.webp",
+                    "tag": "",
+                    "title": "Automation",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-customization.webp",
+                    "tag": "",
+                    "title": "Customization",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-data-security.webp",
+                    "tag": "",
+                    "title": "Data Security",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-task-management.webp",
+                    "tag": "",
+                    "title": "Task Management",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-document-management.webp",
+                    "tag": "",
+                    "title": "Document Management",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-iso-audit-reports.webp",
+                    "tag": "",
+                    "title": "ISO Audit Reports",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-vendor-rating.webp",
+                    "tag": "",
+                    "title": "Vendor Rating",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-dynamic-dashboard.webp",
+                    "tag": "",
+                    "title": "Dynamic Dashboard",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-multi-currency.webp",
+                    "tag": "",
+                    "title": "Multi-Currency",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-export-documents.webp",
+                    "tag": "",
+                    "title": "Export Documents",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-auto-mail-sms.webp",
+                    "tag": "",
+                    "title": "Auto Mail & SMS Integration",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-mobile-accessibility.webp",
+                    "tag": "",
+                    "title": "Mobile Accessibility",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-component-tracking.webp",
+                    "tag": "",
+                    "title": "Component Process Tracking",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-analytics-reporting.webp",
+                    "tag": "",
+                    "title": "Analytics & Reporting",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-user-friendly.webp",
+                    "tag": "",
+                    "title": "User-Friendly Interface",
+                    "text": ""
+                },
+                {
+                    "img": "assets/images/products/datanote/feature-cost-management.webp",
+                    "tag": "",
+                    "title": "Cost Management",
+                    "text": ""
+                }
+            ]
+        },
+        {
+            "key": "pd_industries",
+            "scope": "datanote",
+            "items": [
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-engineering.webp",
+                    "title": "Engineering",
+                    "text": "Streamlines the entire production cycle and enables concurrent work with real-time data updating."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-food-beverages.webp",
+                    "title": "Food & Beverages",
+                    "text": "One ERP system to oversee operations and bring your products to market faster, at lower cost."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-metal-processing.webp",
+                    "title": "Metal Processing",
+                    "text": "For manufacturers, processors and service centres dealing with metals, tubes, pipes, coils, TMT bars, flanges and fasteners."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-plastics-rubber.webp",
+                    "title": "Plastics & Rubber",
+                    "text": "Handle day-to-day activities and monitor each stage, from raw material to finished product."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-textile-garments.webp",
+                    "title": "Textile & Garments",
+                    "text": "Comprehensive planning and monitoring of every production stage, from raw materials to finished goods."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-chemical-pharma.webp",
+                    "title": "Chemical & Pharma",
+                    "text": "Plan management, production monitoring, raw materials, machines and materials in one connected system."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-solar-electronics.webp",
+                    "title": "Solar & Electronics",
+                    "text": "Monitor management, the production cycle, labour and cost in one place."
+                },
+                {
+                    "look": "icon",
+                    "img": "assets/images/products/datanote/industry-building-material.webp",
+                    "title": "Building Material",
+                    "text": "Automate inventory management, customer service and vendor management."
+                }
+            ]
+        },
+        {
+            "key": "pd_benefits",
+            "scope": "datanote",
+            "items": [
+                "Systems built for consistent and reliable performance",
+                "Flexible architecture aligned to your operational structure",
+                "Implementation aligned with measurable business outcomes",
+                "Structured system design that supports scalability",
+                "Centralized data control with structured reporting",
+                "Multi-user, multi-location operational capability",
+                "Integration-ready across enterprise environments",
+                "Continuous platform support and system evolution"
+            ]
+        },
+        {
+            "key": "pd_testimonials",
+            "scope": "datanote",
+            "items": [
+                {
+                    "quote": "Elite Electronics, a company serving major air conditioner brands for over 27 years, has been using DataNote ERP for the past four years and can easily track every process from start to dispatch. Customer requirements are met by DataNote, which provides real-time stock and inventory updates.",
+                    "name": "Mr. Abhishek Dwivedi",
+                    "role": "Plant Head, Elite Electronics",
+                    "img": ""
+                },
+                {
+                    "quote": "DataNote ERP enhances customer experience and provides complete visibility across the supply chain, which is exactly what Topsun Energy Ltd. had been missing in its previous ERP system. We have fully implemented DataNote since 2008.",
+                    "name": "Mr. Chanakya Patel",
+                    "role": "Director, Topsun Energy Ltd.",
+                    "img": ""
+                },
+                {
+                    "quote": "DataNote ERP gave Kabhi B a flexible sales order processing solution, including online ordering. The item rate utility manages the rates of all their SKUs from a single window, and with the mobile app, every sales user now punches real-time orders, payments and returns.",
+                    "name": "Mr. Jagdish Sharma",
+                    "role": "AGM, Kanhai Foods Limited",
+                    "img": ""
+                },
+                {
+                    "quote": "POA Tanks recognizes DataNote as a flexible and easy-to-use data analytics system. It is recommended software for all plastic industry organizations having manufacturing facilities.",
+                    "name": "Mr. Rupen Budhdev",
+                    "role": "Director, Jumbo Quality Products Ltd.",
+                    "img": ""
+                }
+            ]
+        },
+        {
+            "key": "pd_clients",
+            "scope": "datanote",
+            "items": []
+        }
+    ]
+}

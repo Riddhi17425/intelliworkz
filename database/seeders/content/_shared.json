@@ -9,15 +9,15 @@
                 "title": "Branding & Creative",
                 "items": [
                     {
-                        "label": "Logo Design",
-                        "url": "logo-design"
+                        "label": "Logo Design & Vector Artwork",
+                        "url": "logo-design.php"
                     },
                     {
                         "label": "Brand Identity & Design",
                         "url": "services.php#svc-1"
                     },
                     {
-                        "label": "Marketing & Sales Collaterals",
+                        "label": "Marketing and Sales Collaterals",
                         "url": "marketing-sales-collaterals.php"
                     },
                     {
@@ -33,19 +33,11 @@
                         "url": "services.php#svc-1"
                     },
                     {
-                        "label": "Visual Identity Systems",
-                        "url": "services.php#svc-1"
-                    },
-                    {
                         "label": "PPT Design",
                         "url": "ppt-design.php"
                     },
                     {
                         "label": "Advertising Services",
-                        "url": "services.php#svc-1"
-                    },
-                    {
-                        "label": "UI/UX Design",
                         "url": "services.php#svc-1"
                     }
                 ]
@@ -68,6 +60,22 @@
                     {
                         "label": "GEO Services",
                         "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Content Marketing",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Social Campaigns",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "UI/UX Design",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Mobile App Development",
+                        "url": "services.php#svc-2"
                     }
                 ]
             },
@@ -83,11 +91,11 @@
                         "url": "magazine-design.php"
                     },
                     {
-                        "label": "Academic & Technical Publishing Support",
+                        "label": "Academic and Technical Publishing Support",
                         "url": "services.php#svc-3"
                     },
                     {
-                        "label": "Multilingual Publishing & Localization",
+                        "label": "Multilingual Publishing and Localization",
                         "url": "services.php#svc-3"
                     },
                     {
@@ -112,10 +120,6 @@
                         "url": "video-editing.php"
                     },
                     {
-                        "label": "Image Editing",
-                        "url": "services.php#svc-4"
-                    },
-                    {
                         "label": "Motion Graphics",
                         "url": "services.php#svc-4"
                     },
@@ -126,20 +130,12 @@
                     {
                         "label": "Product Video",
                         "url": "services.php#svc-4"
-                    },
-                    {
-                        "label": "Social Media Reels",
-                        "url": "services.php#svc-4"
                     }
                 ]
             },
             {
                 "title": "Animation",
                 "items": [
-                    {
-                        "label": "Product Demo Videos",
-                        "url": "services.php#svc-5"
-                    },
                     {
                         "label": "Corporate Videos & Shoots",
                         "url": "services.php#svc-5"
@@ -153,12 +149,29 @@
                         "url": "3d-modeling-rendering.php"
                     },
                     {
-                        "label": "3D Visualization (Product / Architectural / Industrial)",
+                        "label": "3D Visualization",
                         "url": "services.php#svc-5"
                     },
                     {
                         "label": "3D Animation",
                         "url": "services.php#svc-5"
+                    }
+                ]
+            },
+            {
+                "title": "Software & ERP",
+                "items": [
+                    {
+                        "label": "DataNote",
+                        "url": "datanote.php"
+                    },
+                    {
+                        "label": "Formezy",
+                        "url": "formezy.php"
+                    },
+                    {
+                        "label": "Docezy",
+                        "url": "docezy.php"
                     }
                 ]
             }
@@ -257,7 +270,7 @@
                 "title": "Branding & Creative",
                 "items": [
                     {
-                        "label": "Logo Design",
+                        "label": "Logo Design & Vector Artwork",
                         "url": "logo-design.php"
                     },
                     {
@@ -287,10 +300,6 @@
                     {
                         "label": "Advertising Services",
                         "url": "services.php#svc-1"
-                    },
-                    {
-                        "label": "UI/UX Design",
-                        "url": "services.php#svc-1"
                     }
                 ]
             },
@@ -319,7 +328,15 @@
                         "url": "services.php#svc-2"
                     },
                     {
-                        "label": "Lead Generation Campaigns",
+                        "label": "Social Campaigns",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "UI/UX Design",
+                        "url": "services.php#svc-2"
+                    },
+                    {
+                        "label": "Mobile App Development",
                         "url": "services.php#svc-2"
                     }
                 ]
@@ -397,12 +414,30 @@
                         "url": "3d-modeling-rendering.php"
                     },
                     {
-                        "label": "3D Visualization (Product / Architectural / Industrial)",
+                        "label": "3D Visualization",
                         "url": "services.php#svc-5"
                     },
                     {
                         "label": "3D Animation",
                         "url": "services.php#svc-5"
+                    }
+                ]
+            },
+            {
+                "handle": "products",
+                "title": "Software & ERP",
+                "items": [
+                    {
+                        "label": "DataNote",
+                        "url": "datanote.php"
+                    },
+                    {
+                        "label": "Formezy",
+                        "url": "formezy.php"
+                    },
+                    {
+                        "label": "Docezy",
+                        "url": "docezy.php"
                     }
                 ]
             }
@@ -423,7 +458,7 @@
             "map_opacity": ".4",
             "name": "USA",
             "address": "5511, Mercier Street,<br>Lewis Center, <br>Ohio 43035",
-            "phone": "+1 XXX XXX XXXX"
+            "phone": "+1 614 999 2286"
         },
         {
             "flag": "flag-dubai.svg",

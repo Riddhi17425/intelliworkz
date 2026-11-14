@@ -59,16 +59,16 @@ class CleanUrlsTest extends CmsTestCase
         $this->assertFalse($r->headers->has('X-Powered-By'));
     }
 
-    public function test_buttons_to_the_contact_page_land_on_its_form_but_plain_links_do_not(): void
+    public function test_every_link_to_the_contact_page_lands_on_its_form(): void
     {
         $home = $this->get('/')->assertOk()->getContent();
         // the top bar "Start a Project" button and the call-to-action buttons go straight to the enquiry form
         $this->assertMatchesRegularExpression('~<a href="/contact-us#contact-form" class="btn btn--header~', $home);
         $this->assertMatchesRegularExpression('~<a[^>]*class="btn btn--cta[^"]*"[^>]*href="/contact-us#contact-form"|<a[^>]*href="/contact-us#contact-form"[^>]*class="btn btn--cta~', $home);
-        // no button is left pointing at the top of the contact page
-        $this->assertDoesNotMatchRegularExpression('~<a(?=[^>]*class="[^"]*btn)[^>]*href="/contact-us"~', $home);
-        // text links in the menu / footer stay as they were
-        $this->assertMatchesRegularExpression('~<a href="/contact-us">~', $home);
+        // no link at all (button, menu, footer, text) is left pointing at the top of the contact page
+        foreach (['/', '/about-us', '/seo-services', '/services'] as $url) {
+            $this->assertDoesNotMatchRegularExpression('~<a[^>]*href="/contact-us(\?[^"#]*)?"~', $this->get($url)->getContent(), $url);
+        }
         // the target exists on the contact page
         $this->get('/contact-us')->assertOk()->assertSee('id="contact-form"', false);
     }

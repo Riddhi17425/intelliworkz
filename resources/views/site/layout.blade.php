@@ -68,6 +68,7 @@
 @yield('content')
 
 @include('site.partials.footer')
+@include('site.partials.quick-enquiry')
 
 <script src="{{ asset_url('assets/js/main.js') }}"></script>
 <script src="{{ asset_url('assets/js/effects.js') }}" defer></script>

@@ -224,4 +224,28 @@ return [
     'cs_services' => ['label' => 'Services delivered', 'section' => '06 Services Delivered', 'title' => 'title', 'sort' => 60, 'max' => 12,
         'fields' => ['title' => ['Service'], 'text' => ['Short description']]],
     'cs_capabilities' => ['label' => 'Capabilities applied', 'section' => '06 Services Delivered', 'kind' => 'strings', 'sort' => 70, 'max' => 10],
+
+    // ---------- product pages (template "product": DataNote, Formezy, Docezy …) ----------
+    // a section whose list is empty is left out of the page; "look" (round / wide, icon / photo) is a fixed design value
+    'pd_points' => ['label' => 'Key points next to the buttons', 'section' => 'Hero', 'kind' => 'strings', 'sort' => 5, 'max' => 4],
+    'pd_stats' => ['label' => 'Number strip', 'section' => 'Numbers', 'title' => 'label', 'sort' => 10,
+        'fields' => ['value' => ['Number or short word (e.g. 500+ or AWS)'], 'label' => ['Label']]],
+    'pd_chips' => ['label' => 'Highlights under the text', 'section' => 'Overview', 'title' => 'title', 'sort' => 20,
+        'fields' => ['title' => ['Title'], 'text' => ['Short text', 'textarea']]],
+    'pd_cards' => ['label' => 'Cards', 'section' => 'Challenges', 'title' => 'title', 'sort' => 30,
+        'fields' => ['title' => ['Title'], 'text' => ['Text', 'textarea']]],
+    'pd_modules' => ['label' => 'Module cards', 'section' => 'Modules', 'title' => 'title', 'sort' => 40,
+        'fields' => ['img' => ['Picture', 'image'], 'title' => ['Title'], 'text' => ['Text', 'textarea']]],
+    'pd_highlights' => ['label' => 'Feature rows (picture + text)', 'section' => 'Highlights', 'title' => 'title', 'sort' => 50,
+        'fields' => ['tag' => ['Small label'], 'title' => ['Heading'], 'text' => ['Text', 'textarea'], 'points' => ['Points (one per line)', 'lines'],
+            'img' => ['Picture', 'image'], 'btn' => ['Button text (optional)'], 'href' => ['Button link', 'url']]],
+    'pd_features' => ['label' => 'Feature tiles', 'section' => 'Features', 'title' => 'title', 'sort' => 60,
+        'fields' => ['img' => ['Icon (optional; without one the tile shows its number)', 'image'], 'tag' => ['Small label (optional)'], 'title' => ['Title'], 'text' => ['Text (optional)', 'textarea']]],
+    'pd_industries' => ['label' => 'Industry cards', 'section' => 'Industries', 'title' => 'title', 'sort' => 70,
+        'fields' => ['img' => ['Picture / icon', 'image'], 'title' => ['Industry'], 'text' => ['Text (optional)', 'textarea']]],
+    'pd_benefits' => ['label' => 'Benefit points', 'section' => 'Benefits', 'kind' => 'strings', 'sort' => 80],
+    'pd_testimonials' => ['label' => 'Testimonials', 'section' => 'Testimonials', 'title' => 'name', 'sort' => 90,
+        'fields' => ['quote' => ['Quote', 'textarea'], 'name' => ['Name'], 'role' => ['Role / company'], 'img' => ['Company logo (optional)', 'image']]],
+    'pd_clients' => ['label' => 'Client logos', 'section' => 'Clients', 'title' => 'name', 'sort' => 100,
+        'fields' => ['img' => ['Logo', 'image'], 'name' => ['Company name']]],
 ];

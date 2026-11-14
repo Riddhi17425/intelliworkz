@@ -166,26 +166,71 @@
 (function () {
     'use strict';
 
-    /* Sticky subnav – pins to the top of the viewport once the page scrolls past it */
+    /* Smart sticky subnav: scrolls away with the page; once past it, scrolling UP slides it back in pinned to the top,
+       scrolling DOWN slides it out again. Back at the top of the page it returns to its normal place.
+       html.nav-shown tells other sticky parts (legal tabs, blog sidebar) to sit below it. */
     var subnav = document.querySelector('.subnav');
-    if (subnav && false) {   // sticky behaviour switched off: the menu bar scrolls away with the page
-        var stickAt = 0;
-        var measure = function () {
-            subnav.classList.remove('is-stuck');
-            stickAt = subnav.getBoundingClientRect().top + window.pageYOffset;
+    var header = subnav ? subnav.closest('.site-header') : null;
+    var topbar = header ? header.querySelector('.topbar') : null;
+    if (subnav && header && topbar && 'IntersectionObserver' in window) {
+        var root = document.documentElement;
+        // where the page is is read with IntersectionObserver (immune to the desktop CSS zoom); scroll position only gives the direction
+        var headerOut = false, lastY = window.pageYOffset, ticking = false;
+        var setShown = function (shown) {
+            subnav.classList.toggle('is-hidden', !shown);
+            root.classList.toggle('nav-shown', shown);
+            if (!shown) {   // close an open dropdown as the bar leaves
+                subnav.querySelectorAll('.subnav__item.is-open').forEach(function (li) {
+                    li.classList.remove('is-open');
+                    li.querySelector('.subnav__btn').setAttribute('aria-expanded', 'false');
+                });
+            }
+        };
+        var unstick = function () {
+            subnav.classList.remove('is-stuck', 'is-hidden', 'is-anim');
+            root.classList.remove('nav-shown');
             subnav.parentNode.style.removeProperty('--subnav-h');
-            onScroll();
         };
-        var onScroll = function () {
-            var stuck = window.pageYOffset > stickAt;
-            if (stuck === subnav.classList.contains('is-stuck')) return;
-            if (stuck) subnav.parentNode.style.setProperty('--subnav-h', subnav.offsetHeight + 'px');
-            subnav.classList.toggle('is-stuck', stuck);
+        var visible = function () { return getComputedStyle(subnav).display !== 'none'; };   // phones/tablets have no bar
+        var stick = function () {
+            if (subnav.classList.contains('is-stuck') || !visible()) return;
+            subnav.parentNode.style.setProperty('--subnav-h', subnav.offsetHeight + 'px');   // keeps the header's height
+            subnav.classList.add('is-stuck', 'is-hidden');                                     // pinned, waiting off-screen
+            root.classList.remove('nav-shown');
+            requestAnimationFrame(function () { requestAnimationFrame(function () { subnav.classList.add('is-anim'); }); });
         };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', measure);
-        window.addEventListener('load', measure);
-        measure();
+        // the whole header (topbar + bar) has scrolled off: pin the bar, hidden
+        new IntersectionObserver(function (en) {
+            headerOut = !en[0].isIntersecting;
+            if (headerOut) stick();
+        }).observe(header);
+        // the topbar is back on screen: the bar's own place is right there, so it goes back to it
+        new IntersectionObserver(function (en) {
+            if (en[0].isIntersecting && subnav.classList.contains('is-stuck')) unstick();
+        }).observe(topbar);
+
+        // the bar answers to a deliberate scroll: it comes back only after the visitor has scrolled UP a fair way
+        // (SHOW_AFTER, in CSS pixels of the page) and leaves after a short scroll down; the distance builds up per direction
+        var SHOW_AFTER = 120, HIDE_AFTER = 24, travel = 0;
+        var update = function () {
+            ticking = false;
+            var now = window.pageYOffset, delta = now - lastY;
+            lastY = now;
+            if (!subnav.classList.contains('is-stuck') || !delta) { travel = 0; return; }
+            if ((delta > 0) !== (travel > 0)) travel = 0;        // direction changed: start counting again
+            travel += delta;
+            if (document.body.classList.contains('menu-locked')) return;
+            var z = parseFloat(getComputedStyle(root).getPropertyValue('--z')) || 1;   // desktop zoom: scroll is in screen pixels
+            var shown = !subnav.classList.contains('is-hidden');
+            if (!shown && travel <= -SHOW_AFTER * z) setShown(true);
+            else if (shown && travel >= HIDE_AFTER * z) setShown(false);
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        window.addEventListener('resize', function () { if (!visible()) unstick(); else if (headerOut) stick(); });
+        // keyboard users: tabbing into the hidden bar brings it back
+        subnav.addEventListener('focusin', function () { if (subnav.classList.contains('is-stuck')) setShown(true); });
     }
 
     /* Dropdowns – open on hover (desktop) and on click/tap; close on outside click or Esc */
@@ -246,6 +291,61 @@
         if (e.key !== 'Escape') return;
         closeAll();
         if (drawer.classList.contains('is-open')) setMenu(false);
+    });
+})();
+
+/* Side enquiry button: the fixed tab on the right edge slides the short enquiry form in (Esc, the × or the backdrop close it) */
+(function () {
+    'use strict';
+
+    var panel = document.getElementById('quick-enquiry');
+    var tab = document.querySelector('[data-qe-open]');
+    var backdrop = document.querySelector('.qe-backdrop');
+    if (!panel || !tab || !backdrop) return;
+
+    var isOpen = function () { return panel.classList.contains('is-open'); };
+    var set = function (open) {
+        if (open) backdrop.hidden = false;
+        requestAnimationFrame(function () {
+            panel.classList.toggle('is-open', open);
+            backdrop.classList.toggle('is-visible', open);
+        });
+        if (!open) setTimeout(function () { if (!isOpen()) backdrop.hidden = true; }, 350);
+        panel.setAttribute('aria-hidden', String(!open));
+        tab.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('menu-locked', open);
+        document.body.classList.toggle('qe-open', open);
+        if (open) {
+            setTimeout(function () { var f = panel.querySelector('input[name="name"]'); if (f) f.focus({ preventScroll: true }); }, 380);
+        } else {
+            tab.focus({ preventScroll: true });
+        }
+    };
+
+    // while the page's own enquiry form is on screen the tab steps aside (on phones it would sit on top of the form's fields)
+    if ('IntersectionObserver' in window) {
+        var inView = new Set();
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) { if (en.isIntersecting) inView.add(en.target); else inView.delete(en.target); });
+            document.body.classList.toggle('qe-form-near', inView.size > 0);
+        });
+        document.querySelectorAll('form[data-inquiry-form]:not(.qe-form)').forEach(function (f) { io.observe(f); });
+    }
+
+    tab.addEventListener('click', function () { set(true); });
+    document.querySelectorAll('[data-qe-close]').forEach(function (el) {
+        el.addEventListener('click', function () { set(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+        if (!isOpen()) return;
+        if (e.key === 'Escape') { set(false); return; }
+        if (e.key !== 'Tab') return;
+        // keep keyboard focus inside the open panel
+        var items = panel.querySelectorAll('button, input:not([type=hidden]):not(.hp-field), select, textarea, a[href]');
+        if (!items.length) return;
+        var first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 })();
 

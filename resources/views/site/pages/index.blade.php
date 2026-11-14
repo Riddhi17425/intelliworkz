@@ -109,6 +109,7 @@ $industry_text = $T('shared-copy.1');
             <div class="steps__line"></div>
             <img class="steps__red-line" src="assets/icons/steps-red-line.svg" width="1526" height="6" alt="">
             <h3 class="steps__badge">{!! $T('outsourcing.5') !!}</h3>
+            <?php if ($stepsSub = $T('outsourcing.13', '')): ?><p class="steps__sub">{!! $stepsSub !!}</p><?php endif; ?>
             <div class="steps__row">
                 <?php foreach ($outsourcing_steps as $s): ?>
                     <div class="step">
@@ -218,6 +219,7 @@ $industry_text = $T('shared-copy.1');
     </section>
 
     <!-- ============ PRODUCTS ============ -->
+    <?php if ((string) $T('products.show', '1') !== '0'): ?>
     <section class="products">
         <?php section_head($T('products.2'), $T('products.3'), 'section-head--products'); ?>
 
@@ -253,8 +255,10 @@ $industry_text = $T('shared-copy.1');
             </ul>
         </div>
     </section>
+    <?php endif; ?>
 
     <!-- ============ PROCESS ============ -->
+    <?php if ((string) $T('process.show', '1') !== '0'): ?>
     <section class="process">
         <?php section_head($T('process.1'), $T('process.2'), 'process__head'); ?>
 
@@ -275,14 +279,15 @@ $industry_text = $T('shared-copy.1');
             <?php endforeach; ?>
         </div>
     </section>
+    <?php endif; ?>
+
+    @include('site.sections.engagement')
 
     @php
         $showcase_title = $T('showcase.1') ?: null;
         $showcase_lead = $T('showcase.2') ?: null;
     @endphp
     @include('site.sections.showcase')
-
-    @include('site.sections.engagement')
 
     <!-- ============ INSIGHTS ============ -->
     @php

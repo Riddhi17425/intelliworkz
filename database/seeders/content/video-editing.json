@@ -83,7 +83,7 @@
             "key": "hero.8",
             "label": "Heading: Let's bring your magazine to life.",
             "type": "text",
-            "value": "Lets Discuss Video Editing",
+            "value": "Let&rsquo;s Discuss Your Video Editing",
             "sort": 8
         },
         {
@@ -374,7 +374,7 @@
             "items": [
                 [
                     "Full Name",
-                    "Enter your first name",
+                    "Enter your full name",
                     "text",
                     "name"
                 ],

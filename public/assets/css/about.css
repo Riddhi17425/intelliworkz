@@ -132,6 +132,8 @@
 /* these two pictures fade to white on their left side: zoom in on the right part */
 .ab-zoom { display: block; overflow: hidden; border-radius: 12px; }
 .ab-zoom img { border-radius: 0; transform: scale(1.65); transform-origin: 90% 50%; }
+/* the bottom-right office photo is a plain photo cut to this box's shape: shown whole, no zoom */
+.ab-purpose__wide img { transform: none; object-position: center; }
 .ab-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
 .ab-points li { display: flex; flex-direction: column; gap: 6px; }
 .ab-points .ab-ico { margin-bottom: 8px; }
@@ -320,6 +322,9 @@
 .ab-orbit__node rect, .ab-orbit__node circle { transition: stroke .3s, fill .3s; }
 .ab-orbit__node:hover rect { stroke: var(--c-red); fill: #1a0d10; }
 .ab-orbit__node:hover circle { fill: var(--c-red); }
+/* the icons are drawn in red: on the red hover circle they turn white so they stay visible */
+.ab-orbit__node image { transition: filter .3s; }
+.ab-orbit__node:hover image { filter: brightness(0) invert(1); }
 @keyframes ab-orbit-spin { to { transform: rotate(360deg); } }
 @keyframes ab-orbit-flow { to { stroke-dashoffset: -28; } }
 @keyframes ab-orbit-core { 0%, 100% { stroke: #2F323C; transform: scale(1); } 50% { stroke: var(--c-red); transform: scale(1.04); } }

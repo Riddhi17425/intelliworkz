@@ -1,0 +1,874 @@
+{
+    "page": {
+        "slug": "docezy",
+        "template": "product",
+        "is_system": false,
+        "title": "Docezy",
+        "meta_title": "Docezy – Secure Document Management System | Intelliworkz",
+        "meta_description": "Docezy helps businesses organize, store and share documents on one secure platform: one-click uploads, role-based user rights, global search, version control and activity logs.",
+        "config": {
+            "title": "Docezy – Secure Document Management System | Intelliworkz"
+        }
+    },
+    "fields": [
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.1",
+            "label": "Product name (breadcrumb and product cards)",
+            "type": "text",
+            "value": "Docezy",
+            "sort": 1
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.2",
+            "label": "Small label above the heading",
+            "type": "text",
+            "value": "Document Management System",
+            "sort": 2
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.3",
+            "label": "Main heading (H1)",
+            "type": "text",
+            "value": "Unlock Secure Document Management",
+            "sort": 3
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.4",
+            "label": "Tagline under the heading",
+            "type": "text",
+            "value": "Organize, Store & Share Documents Securely",
+            "sort": 4
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.5",
+            "label": "Intro paragraph",
+            "type": "textarea",
+            "value": "Seamlessly organize, store, and share your files with top-tier encryption and user-friendly features. Experience peace of mind with Docezy's robust security and intuitive interface.",
+            "sort": 5
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.6",
+            "label": "Product logo (shown on a white badge)",
+            "type": "image",
+            "value": "assets/images/products/docezy/logo.webp",
+            "sort": 6
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.7",
+            "label": "Product screenshot / mockup",
+            "type": "image",
+            "value": "assets/images/products/docezy/hero.webp",
+            "sort": 7
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.8",
+            "label": "First button text",
+            "type": "text",
+            "value": "Request a Demo",
+            "sort": 8
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.9",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 9
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.10",
+            "label": "Second button text (product website)",
+            "type": "text",
+            "value": "Visit docezy.co",
+            "sort": 10
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.11",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://docezy.co/",
+            "sort": 11
+        },
+        {
+            "section": "hero",
+            "section_label": "Hero",
+            "key": "hero.12",
+            "label": "Breadcrumb: middle word",
+            "type": "text",
+            "value": "Software &amp; ERP",
+            "sort": 12
+        },
+        {
+            "section": "numbers",
+            "section_label": "Numbers",
+            "key": "stats.show",
+            "label": "Show the number strip at the bottom of the hero",
+            "type": "toggle",
+            "value": "1",
+            "sort": 13
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 14
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Docezy at a glance",
+            "sort": 15
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Your All-in-One Document Management Solution",
+            "sort": 16
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.3",
+            "label": "Text",
+            "type": "html",
+            "value": "<p>Docezy provides a secure and centralized platform for all your business documents. Protect your confidential information with robust security features.</p><p>A predefined structure, one-click uploads, timely notifications and file sharing without size limits: everything your team needs to manage documents sits in one convenient window.</p>",
+            "sort": 17
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.4",
+            "label": "Picture",
+            "type": "image",
+            "value": "assets/images/products/docezy/overview.webp",
+            "sort": 18
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.5",
+            "label": "Picture caption (only with a second picture)",
+            "type": "text",
+            "value": "",
+            "sort": 19
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.6",
+            "label": "Second picture (shows the two side by side, e.g. before / after)",
+            "type": "image",
+            "value": "",
+            "sort": 20
+        },
+        {
+            "section": "overview",
+            "section_label": "Overview",
+            "key": "intro.7",
+            "label": "Second picture caption",
+            "type": "text",
+            "value": "",
+            "sort": 21
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 22
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "The problem",
+            "sort": 23
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Is Your Document Management a Mess?",
+            "sort": 24
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Scattered folders, endless email attachments and unclear versions slow teams down and put sensitive information at risk.",
+            "sort": 25
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.4",
+            "label": "Picture next to the cards (optional)",
+            "type": "image",
+            "value": "assets/images/products/docezy/challenge.webp",
+            "sort": 26
+        },
+        {
+            "section": "challenges",
+            "section_label": "Challenges",
+            "key": "challenge.5",
+            "label": "Closing line under the cards",
+            "type": "text",
+            "value": "Do these scenarios sound familiar? <strong>Docezy can help!</strong>",
+            "sort": 27
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 28
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "",
+            "sort": 29
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "",
+            "sort": 30
+        },
+        {
+            "section": "modules",
+            "section_label": "Modules",
+            "key": "modules.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "",
+            "sort": 31
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 32
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "How it works",
+            "sort": 33
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Organize with Ease, Secure Every File, Find Anything Fast",
+            "sort": 34
+        },
+        {
+            "section": "highlights",
+            "section_label": "Highlights",
+            "key": "highlights.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "",
+            "sort": 35
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 36
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Features",
+            "sort": 37
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Streamline Your Workflow with Docezy's Powerful Features",
+            "sort": 38
+        },
+        {
+            "section": "features",
+            "section_label": "Features",
+            "key": "features.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "Everything you need to organize, share, find and protect business documents, in one secure platform.",
+            "sort": 39
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 40
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "",
+            "sort": 41
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "",
+            "sort": 42
+        },
+        {
+            "section": "industries",
+            "section_label": "Industries",
+            "key": "industries.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "",
+            "sort": 43
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 44
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Docezy benefits",
+            "sort": 45
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Your Documents. In Safe Hands.",
+            "sort": 46
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.3",
+            "label": "Text",
+            "type": "textarea",
+            "value": "Trusted by businesses of all sizes, Docezy keeps every document secure, organized and within reach of the people who need it.",
+            "sort": 47
+        },
+        {
+            "section": "benefits",
+            "section_label": "Benefits",
+            "key": "benefits.4",
+            "label": "Picture (optional)",
+            "type": "image",
+            "value": "assets/images/products/docezy/benefits.webp",
+            "sort": 48
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 49
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "",
+            "sort": 50
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "",
+            "sort": 51
+        },
+        {
+            "section": "testimonials",
+            "section_label": "Testimonials",
+            "key": "testimonials.3",
+            "label": "Intro",
+            "type": "textarea",
+            "value": "",
+            "sort": 52
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.show",
+            "label": "Show this section",
+            "type": "toggle",
+            "value": "1",
+            "sort": 53
+        },
+        {
+            "section": "clients",
+            "section_label": "Clients",
+            "key": "clients.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Our Customers",
+            "sort": 54
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.show",
+            "label": "Show the other products (added automatically from the other product pages)",
+            "type": "toggle",
+            "value": "1",
+            "sort": 55
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.1",
+            "label": "Small label",
+            "type": "text",
+            "value": "Product suite",
+            "sort": 56
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.2",
+            "label": "Heading",
+            "type": "text",
+            "value": "Explore Our Other Products",
+            "sort": 57
+        },
+        {
+            "section": "other-products",
+            "section_label": "Other Products",
+            "key": "others.3",
+            "label": "Link text on each card",
+            "type": "text",
+            "value": "Explore product",
+            "sort": 58
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.1",
+            "label": "Heading",
+            "type": "text",
+            "value": "Get Started with Secure Document Management",
+            "sort": 59
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.2",
+            "label": "Text",
+            "type": "textarea",
+            "value": "See how Docezy organizes, protects and shares your business documents. Book a demo with our team.",
+            "sort": 60
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.3",
+            "label": "First button text",
+            "type": "text",
+            "value": "Request a Demo",
+            "sort": 61
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.4",
+            "label": "First button link",
+            "type": "url",
+            "value": "contact-us.php",
+            "sort": 62
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.5",
+            "label": "Second button text",
+            "type": "text",
+            "value": "Visit docezy.co",
+            "sort": 63
+        },
+        {
+            "section": "call-to-action",
+            "section_label": "Call To Action",
+            "key": "cta.6",
+            "label": "Second button link (opens in a new tab)",
+            "type": "url",
+            "value": "https://docezy.co/",
+            "sort": 64
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.1",
+            "label": "Main product colour (hex, e.g. #03A261)",
+            "type": "text",
+            "value": "#03A261",
+            "sort": 65
+        },
+        {
+            "section": "design-colours",
+            "section_label": "Design Colours",
+            "key": "theme.2",
+            "label": "Highlight colour used on dark backgrounds (hex)",
+            "type": "text",
+            "value": "#4FDB9C",
+            "sort": 66
+        }
+    ],
+    "lists": [
+        {
+            "key": "pd_points",
+            "scope": "docezy",
+            "items": [
+                "Top-tier encryption",
+                "One-click upload & download",
+                "Role-based user rights"
+            ]
+        },
+        {
+            "key": "pd_stats",
+            "scope": "docezy",
+            "items": [
+                {
+                    "value": "500+",
+                    "label": "Users trust Docezy"
+                },
+                {
+                    "value": "AWS",
+                    "label": "Secure, private infrastructure"
+                },
+                {
+                    "value": "1-Click",
+                    "label": "Upload & download"
+                },
+                {
+                    "value": "Any Size",
+                    "label": "File sharing without limits"
+                }
+            ]
+        },
+        {
+            "key": "pd_chips",
+            "scope": "docezy",
+            "items": [
+                {
+                    "title": "Easy organization",
+                    "text": "A predefined structure helps you organize every document."
+                },
+                {
+                    "title": "One-click upload",
+                    "text": "Upload and download business documents in just one click."
+                },
+                {
+                    "title": "Notifications",
+                    "text": "Timely alerts, so you never miss an important document."
+                },
+                {
+                    "title": "Easy document sharing",
+                    "text": "No more GB barriers when sending small or big files."
+                }
+            ]
+        },
+        {
+            "key": "pd_cards",
+            "scope": "docezy",
+            "items": [
+                {
+                    "title": "Version Vortex",
+                    "text": "Keeping track of different versions of the same document can be a nightmare. Did you save the latest update? Was it John or Jane who edited it last?"
+                },
+                {
+                    "title": "Security Sweat",
+                    "text": "Worried about your confidential documents falling into the wrong hands? Traditional storage methods offer little protection against breaches or accidental leaks."
+                },
+                {
+                    "title": "Compliance Chaos",
+                    "text": "Meeting industry regulations and data privacy laws can be a complex task if your documents are scattered and disorganized."
+                },
+                {
+                    "title": "Sharing Nightmares",
+                    "text": "Sharing documents with colleagues or clients can be a nightmare. Email attachments have size limitations, and managing different versions becomes a juggling act."
+                }
+            ]
+        },
+        {
+            "key": "pd_modules",
+            "scope": "docezy",
+            "items": []
+        },
+        {
+            "key": "pd_highlights",
+            "scope": "docezy",
+            "items": [
+                {
+                    "tag": "Organization",
+                    "title": "Dynamic Structure",
+                    "img": "assets/images/products/docezy/hl-dynamic-structure.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Experience the power of a dynamic document management system that adapts to your business needs, streamlining your workflow and enhancing productivity.",
+                    "points": [
+                        "Predefined categories for every document",
+                        "Customizable folders with favorites",
+                        "Financial year sorting for tax and accounting"
+                    ]
+                },
+                {
+                    "tag": "Access control",
+                    "title": "User Rights & Activity Log",
+                    "img": "assets/images/products/docezy/hl-user-rights.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Users get clearly defined rights, allowing secure access and control over sensitive information based on their roles, while a robust activity log keeps track of document changes and user interactions.",
+                    "points": [
+                        "Permissions based on employee roles",
+                        "Granular access to specific documents or folders",
+                        "Detailed logs of user activity and document access"
+                    ]
+                },
+                {
+                    "tag": "Search",
+                    "title": "Global Search",
+                    "img": "assets/images/products/docezy/hl-global-search.webp",
+                    "btn": "",
+                    "href": "",
+                    "text": "Quickly find and manage all your documents with a powerful global search. Stay organized and save valuable time with Docezy's comprehensive search capabilities.",
+                    "points": [
+                        "Search by keywords, filters or date ranges",
+                        "Version control with full revision history",
+                        "Flag important documents for quick retrieval"
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "pd_features",
+            "scope": "docezy",
+            "items": [
+                {
+                    "img": "assets/images/products/docezy/feature-01.webp",
+                    "tag": "Organization",
+                    "title": "Predefined Structure",
+                    "text": "Docezy eliminates the chaos with a pre-defined structure for categorizing documents."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-02.webp",
+                    "tag": "Organization",
+                    "title": "Customizable Folders",
+                    "text": "Create your own folder system and personalize it with favorites for easy access."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-03.webp",
+                    "tag": "Organization",
+                    "title": "Important Document Labeling",
+                    "text": "Flag critical documents for quick retrieval whenever needed."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-04.webp",
+                    "tag": "Organization",
+                    "title": "Financial Year Sorting",
+                    "text": "Organize documents chronologically and by financial year for effortless tax and accounting purposes."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-05.webp",
+                    "tag": "Uploads",
+                    "title": "One-Click Uploads",
+                    "text": "Spend less time uploading and downloading documents with Docezy's one-click functionality."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-06.webp",
+                    "tag": "Uploads",
+                    "title": "Seamless Sharing",
+                    "text": "Share documents of any size with ease, overcoming file size limitations."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-07.webp",
+                    "tag": "Collaboration",
+                    "title": "Document Sharing",
+                    "text": "Grant access to specific documents or folders with granular permission controls."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-08.webp",
+                    "tag": "Collaboration",
+                    "title": "Employee Authority",
+                    "text": "Set permissions based on employee roles for a secure and organized document sharing environment."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-09.webp",
+                    "tag": "Collaboration",
+                    "title": "Real-Time Notifications",
+                    "text": "Stay informed with timely alerts for important documents and expiry reminders."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-10.webp",
+                    "tag": "Search",
+                    "title": "Global Search",
+                    "text": "Find any document instantly using keywords, filters, or date ranges."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-11.webp",
+                    "tag": "Search",
+                    "title": "Version Control",
+                    "text": "Access previous versions of documents for effortless revision history tracking."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-12.webp",
+                    "tag": "Security",
+                    "title": "Multi-Layered Security",
+                    "text": "Docezy prioritizes your data security with robust encryption and access controls."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-13.webp",
+                    "tag": "Security",
+                    "title": "Secure Infrastructure",
+                    "text": "Your documents are stored in secure, private environments on Amazon Web Services (AWS)."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-14.webp",
+                    "tag": "Security",
+                    "title": "Advanced Security Protocols",
+                    "text": "Docezy safeguards your data against threats like XSS, CSRF, and SQL injection attacks."
+                },
+                {
+                    "img": "assets/images/products/docezy/feature-15.webp",
+                    "tag": "Security",
+                    "title": "Detailed Activity Logs",
+                    "text": "Track user activity for comprehensive document access monitoring."
+                }
+            ]
+        },
+        {
+            "key": "pd_industries",
+            "scope": "docezy",
+            "items": []
+        },
+        {
+            "key": "pd_benefits",
+            "scope": "docezy",
+            "items": [
+                "Store valuable documents securely on a single platform.",
+                "Access all your business documents through one convenient window.",
+                "Invite multiple users to manage your account seamlessly.",
+                "Eliminate team dependencies and work freely.",
+                "Track user activities with detailed logs.",
+                "Save time with powerful global search capabilities.",
+                "Enjoy easy subscription plans with anytime, anywhere access.",
+                "Benefit from free updates and maintenance."
+            ]
+        },
+        {
+            "key": "pd_testimonials",
+            "scope": "docezy",
+            "items": []
+        },
+        {
+            "key": "pd_clients",
+            "scope": "docezy",
+            "items": [
+                {
+                    "img": "assets/images/products/docezy/client-sosb.webp",
+                    "name": "S-OSB"
+                },
+                {
+                    "img": "assets/images/products/docezy/client-wallgrons.webp",
+                    "name": "Wallgreens"
+                },
+                {
+                    "img": "assets/images/products/docezy/client-yash-filters.webp",
+                    "name": "Yash Filters"
+                }
+            ]
+        }
+    ]
+}

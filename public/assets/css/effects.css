@@ -26,7 +26,6 @@ html { scroll-behavior: smooth; }
 @keyframes fx-breathe { from { transform: scale(1); } to { transform: scale(1.06); } }
 
 /* ---------- Scroll progress bar + back-to-top ---------- */
-.fx-progress { position: fixed; left: 0; top: 0; z-index: 3000; width: 100%; height: 3px; background: linear-gradient(90deg, var(--c-red), #ff6b7a); transform: scaleX(0); transform-origin: left; pointer-events: none; }
 .fx-top { position: fixed; right: 24px; bottom: 24px; z-index: 900; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: var(--c-red); color: #fff; box-shadow: 0 10px 28px rgba(196, 32, 48, .4); opacity: 0; transform: translateY(18px) scale(.9); pointer-events: none; transition: opacity .35s, transform .35s var(--fx-ease), background-color .2s; }
 .fx-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
 .fx-top:hover { background: #a91a28; transform: translateY(-4px); }
@@ -100,8 +99,6 @@ html { scroll-behavior: smooth; }
 .menu-toggle img { transition: transform .4s var(--fx-ease); }
 .menu-toggle:hover img { transform: rotate(90deg); }
 .subnav__btn { position: relative; }
-.subnav__btn::after { content: ""; position: absolute; left: 0; right: 14px; bottom: 10px; height: 2px; background: var(--c-red); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--fx-ease); }
-.subnav__btn:hover::after, .subnav__item.is-open .subnav__btn::after { transform: scaleX(1); }
 .footer-col__list a { position: relative; display: inline-block; transition: color .25s, transform .3s var(--fx-ease); }
 .footer-col__list a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--fx-ease); }
 .footer-col__list a:hover { transform: translateX(5px); }

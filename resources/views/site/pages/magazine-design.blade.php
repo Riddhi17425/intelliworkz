@@ -51,7 +51,7 @@ $vc = 'assets/icons/video/';       // icons shared with the video page
                     </div>
                     <div class="lead-form__fields">
                         <?php foreach (array_chunk($ve_form_fields ?? [
-                            ['Full Name', 'Enter your first name', 'text'], ['Company Name', 'Enter your company name', 'text'],
+                            ['Full Name', 'Enter your full name', 'text'], ['Company Name', 'Enter your company name', 'text'],
                             ['Email ID', 'Enter your email ID', 'email'], ['Contact Number', 'Enter your contact number', 'tel'],
                         ], 2) as $row): ?>
                             <div class="lead-form__row">

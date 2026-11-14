@@ -250,9 +250,18 @@
             "section": "outsourcing",
             "section_label": "Outsourcing",
             "key": "outsourcing.5",
-            "label": "Sub-heading: OUR 4-STEP ENGAGEMENT PROCESS",
+            "label": "Sub-heading: OUR 5-STEP ENGAGEMENT PROCESS",
             "type": "text",
-            "value": "OUR 4-STEP ENGAGEMENT PROCESS",
+            "value": "OUR 5-STEP ENGAGEMENT PROCESS",
+            "sort": 27
+        },
+        {
+            "section": "outsourcing",
+            "section_label": "Outsourcing",
+            "key": "outsourcing.13",
+            "label": "Sub-heading: From Requirement to Reliable Delivery",
+            "type": "text",
+            "value": "From Requirement to Reliable Delivery",
             "sort": 27
         },
         {
@@ -400,6 +409,15 @@
             "sort": 43
         },
         {
+            "section": "products",
+            "section_label": "Products",
+            "key": "products.show",
+            "label": "Show this section on the home page (On / Off)",
+            "type": "toggle",
+            "value": "0",
+            "sort": 43
+        },
+        {
             "section": "process",
             "section_label": "Process",
             "key": "process.1",
@@ -416,6 +434,15 @@
             "type": "text",
             "value": "We don't start with a fixed solution. We start by understanding what you need to achieve.",
             "sort": 45
+        },
+        {
+            "section": "process",
+            "section_label": "Process",
+            "key": "process.show",
+            "label": "Show this section on the home page (On / Off)",
+            "type": "toggle",
+            "value": "0",
+            "sort": 46
         },
         {
             "section": "insights",
@@ -477,15 +504,14 @@
                     "color": "var(--c-blue)",
                     "intro": "From brand foundations to digital experiences, we create identities and communication systems that connect with your audience.",
                     "items": [
-                        "Logo Design | logo-design.php",
+                        "Logo Design & Vector Artwork | logo-design.php",
                         "Brand Identity & Design",
                         "Marketing and Sales Collaterals | marketing-sales-collaterals.php",
                         "Packaging Design | packaging-design.php",
                         "Campaign Concepts & Ad Creatives",
                         "Corporate Communication",
                         "PPT Design | ppt-design.php",
-                        "Advertising Services",
-                        "UI/UX Design"
+                        "Advertising Services"
                     ],
                     "cta": "Explore Branding & Creative",
                     "href": "services.php#svc-1"
@@ -500,7 +526,9 @@
                         "AEO Services",
                         "GEO Services",
                         "Content Marketing",
-                        "Lead Generation Campaigns"
+                        "Social Campaigns",
+                        "UI/UX Design | ui-ux-design.php",
+                        "Mobile App Development"
                     ],
                     "cta": "Explore Digital Marketing",
                     "href": "services.php#svc-2"
@@ -556,23 +584,28 @@
             "items": [
                 {
                     "img": "assets/images/home/step-define-the-need.svg",
-                    "title": "Define the Need",
-                    "text": "Project, capability or team requirement defined upfront."
+                    "title": "Discovery",
+                    "text": "We review your requirements, in line with your business objective, target audience, existing workflow, and expected outcome."
                 },
                 {
                     "img": "assets/images/home/step-match-the-expertise.svg",
-                    "title": "Match the Expertise",
-                    "text": "We align the right creative or technical resources."
+                    "title": "Scope",
+                    "text": "We define the scope of work, determine the right approach, capabilities, resources, technology, and delivery structure."
                 },
                 {
                     "img": "assets/images/home/step-integrate-with-your-team.svg",
-                    "title": "Integrate With Your Team",
-                    "text": "Our specialists fit into your tools and processes."
+                    "title": "Kick-off",
+                    "text": "The kick-off meeting helps us to align with timelines and quality expectations. We formulate our internal QC document to ensure every project passes through stringent QC before it reaches you."
+                },
+                {
+                    "img": "assets/images/home/step-execute.svg",
+                    "title": "Execute",
+                    "text": "Our team continues to work as per the defined workflow. The project management team will ensure that projects are delivered as per SLA."
                 },
                 {
                     "img": "assets/images/home/step-scale-when-required.svg",
-                    "title": "Scale When Required",
-                    "text": "Increase or reduce capacity as requirements change."
+                    "title": "Scale",
+                    "text": "As your business grows and you have a need to scale the operations we will ensure that the right resources are in place that cater to your growing needs. Additionally we have tailored our engagement models that are suited to your needs."
                 }
             ]
         },

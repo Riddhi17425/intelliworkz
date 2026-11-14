@@ -211,4 +211,18 @@ return array (
     'footer_class' => 'site-footer--service',
     'phone_icon' => 'video/icon-phone-outline.svg',
   ),
+  // product pages (DataNote, Formezy, Docezy ...): pages with template "product" share this design
+  'product' =>
+  array (
+    'title' => 'Products | Intelliworkz',
+    'body_class' => 'page-product',
+    'extra_css' =>
+    array (
+      0 => 'assets/css/product.css',
+    ),
+    'no_zoom' => false,
+    'show_prefooter' => false,
+    'footer_class' => 'site-footer--service',
+    'phone_icon' => 'video/icon-phone-outline.svg',
+  ),
 );

@@ -69,8 +69,9 @@ class ContentImporter
     private function page(array $p, int $sort): int
     {
         $slug = $p['slug'];
-        $full = $p['config']['title'] ?? $slug;
-        $short = $slug === 'index' ? 'Home' : trim(Str::before($full, '|'));
+        // a seed may name the page and its browser title itself; otherwise both come from the old PHP page title
+        $full = $p['meta_title'] ?? $p['config']['title'] ?? $slug;
+        $short = $p['title'] ?? ($slug === 'index' ? 'Home' : trim(Str::before($full, '|')));
         $page = Page::withTrashed()->firstOrNew(['slug' => $slug]);
         if ($page->exists && !$this->force) {
             return 0;
@@ -249,6 +250,12 @@ class ContentImporter
             ['Page not found', 'notfound.4', 'Second button text', 'text', 'Contact us'],
             ['Page not found', 'notfound.5', 'Second button link', 'url', 'contact-us.php'],
             ['Page not found', 'notfound.6', 'Heading above the page links', 'text', 'Maybe you were looking for'],
+            ['Side enquiry button', 'enquiry.show', 'Show the enquiry button on the right edge of every page', 'toggle', '1'],
+            ['Side enquiry button', 'enquiry.1', 'Button text', 'text', 'Enquire Now'],
+            ['Side enquiry button', 'enquiry.5', 'Form: small label above the heading', 'text', 'Quick Enquiry'],
+            ['Side enquiry button', 'enquiry.2', 'Form: heading', 'text', 'Let&rsquo;s talk about your project'],
+            ['Side enquiry button', 'enquiry.3', 'Form: text', 'textarea', 'Share a few details and our team will get back to you within one working day.'],
+            ['Side enquiry button', 'enquiry.4', 'Form: send button text', 'text', 'Send Enquiry'],
         ];
         $n = 0;
         foreach ($fields as $i => [$section, $key, $label, $type, $value]) {

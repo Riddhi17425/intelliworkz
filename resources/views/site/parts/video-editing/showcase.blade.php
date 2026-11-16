@@ -7,8 +7,10 @@ $vc = 'assets/icons/video/';    // page icons
 $showcase_title = $T('dark-showcase-shared.1');
 $showcase_lead = $T('dark-showcase-shared.2') ?: null;
     $showcase_decor = [
-        ['src' => $vi . 'floor-glow.png',      'style' => 'left:1145.53px;top:508.46px;width:969.91px;height:599.17px;opacity:.5'],
-        ['src' => $vi . 'showcase-deco.png',   'style' => 'left:-111.5px;top:766px;width:699.31px;height:208.5px;opacity:.4'],
+        // film strip: full width along the bottom, in its own proportions, fading out upwards and at both ends (no hard edges behind the cards)
+        ['src' => $vi . 'floor-glow.png',      'class' => 'showcase__decor--film', 'style' => 'left:0;bottom:0;width:1920px;height:auto;opacity:.22'],
+        // sound wave: soft, centred behind the dots
+        ['src' => $vi . 'showcase-deco.png',   'class' => 'showcase__decor--wave', 'style' => 'left:50%;bottom:6px;width:1100px;height:auto;margin-left:-550px;opacity:.28'],
     ];
 @endphp
     @include('site.sections.showcase')

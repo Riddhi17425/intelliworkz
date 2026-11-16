@@ -266,6 +266,10 @@ body.modal-open { overflow: hidden; }
 
 /* dark showcase on the video pages: the decorative pictures stay behind the cards, and the cards are solid so no picture shows through them */
 .showcase__decor { z-index: 0; }
+/* soft edges: the decor pictures fade out instead of ending in a hard line behind the cards */
+.showcase__decor--film { -webkit-mask-image: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, .55) 45%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, .55) 45%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%); mask-composite: intersect; }
+.showcase__decor--wave { -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 78%, transparent 100%); }
+.showcase:has(.showcase__decor) { background: radial-gradient(70% 55% at 50% 100%, rgba(196, 32, 48, .14) 0%, rgba(196, 32, 48, 0) 70%), var(--c-black); }
 .showcase__content { z-index: 1; }
 .showcase .showcase-card { background: #050506; }
 

@@ -1,6 +1,6 @@
 <!-- ============ DARK SHOWCASE ============ -->
     <section class="showcase" data-showcase>
-        <?php foreach (($showcase_decor ?? []) as $d): ?><img class="showcase__decor" src="<?= $d['src'] ?>" alt="" style="<?= $d['style'] ?>"><?php endforeach; ?>
+        <?php foreach (($showcase_decor ?? []) as $d): ?><img class="showcase__decor<?= isset($d['class']) ? ' ' . $d['class'] : '' ?>" src="<?= $d['src'] ?>" alt="" style="<?= $d['style'] ?>"><?php endforeach; ?>
         <img class="showcase__bg" src="assets/icons/showcase-bg.svg" alt="">
         <div class="showcase__content">
             <div class="showcase__head">
